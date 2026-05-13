@@ -1,0 +1,18 @@
+Code staat op GitHub. Volgende stap: VPS aanmaken op Hetzner.
+
+Ga naar console.hetzner.cloud — maak een account of log in
+Maak een nieuw project aan: "ai-mentor"
+Klik Add Server en kies:
+Location: Falkenstein (EU)
+Image: Ubuntu 24.04
+Type: CX22 (2 vCPU, 4 GB, €4,49/m)
+SSH keys: klik Add SSH key — voer dit eerst uit in je VS Code terminal:
+
+cat ~/.ssh/id_ed25519.pub
+Als dat niks geeft:
+
+ssh-keygen -t ed25519 -C "jornbooneinf@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+Kopieer de output (begint met ssh-ed25519 ...) en plak die in Hetzner
+Klik Create & Buy now
+Geef aan als de server aangemaakt is.
