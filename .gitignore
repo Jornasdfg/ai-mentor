@@ -1,0 +1,28 @@
+# env
+.env
+.env.local
+.env*.local
+
+# Next.js
+.next/
+out/
+
+# node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# data versies (optioneel: verwijder deze regel als je versies wilt committen)
+# data/versions/
+
+# Google OAuth tokens + sync state — nooit committen
+data/google_tokens.json
+data/oauth_state.json
+data/google_calendar_sync_state.json
+data/google_calendar_channels.json
+data/google_calendar_event_cache.json
+data/google_calendar_sync_log.json
+data/calendar_outbox.json
+data/calendar_conflicts.json

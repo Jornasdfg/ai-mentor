@@ -1,0 +1,22 @@
+.next
+node_modules
+.env.local
+.env*.local
+
+# Data files — gebruik volumes in productie
+data/
+
+# Dev tools
+.git
+.gitignore
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp

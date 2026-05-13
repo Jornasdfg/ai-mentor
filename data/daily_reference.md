@@ -1,0 +1,49 @@
+# Daily Reference — AI Mentor
+Laatste update: woensdag 13 mei 2026
+
+## Vandaag niet onderhandelbaar
+- **Shotlist per Malaga locatie maken** (Weeze Malaga) | deadline: 2026-05-13
+- **Vimexx openstaande factuur betalen** (Administratie) | harde deadline: 2026-05-13
+- **Auto-DM flow backup maken** | harde deadline: 2026-05-14 | ~120min
+  → Werk aan de backup voor de auto-DM flow.
+- **Winactie blog en kader in Weeze artikel zetten** (Weeze) | harde deadline: 2026-05-14 | ~90min
+  → Schrijf de winactie blog en voeg het kader toe aan het Weeze artikel.
+- **Langs bij Rens van Vijven** | harde deadline: 2026-05-16
+
+## Vandaag voorbereiden (komt eraan)
+_Niets dat vandaag voorbereiding nodig heeft._
+
+## Covey Matrix
+
+### Q1 — Nu doen (urgent + belangrijk)
+- **Shotlist per Malaga locatie maken** (Weeze Malaga) | deadline: 2026-05-13
+- **Winactie blog en kader in Weeze artikel zetten** (Weeze) | harde deadline: 2026-05-14 | ~90min
+  → Schrijf de winactie blog en voeg het kader toe aan het Weeze artikel.
+
+### Q2 — Plannen (belangrijk, niet urgent)
+- **Autohuurtool afmaken** (Malaga) | zacht: 2026-05-14
+- **DFDS samenwerking opvolgen bij Charlie Kalb** (Brand Deals) | zacht: 2026-05-25
+
+### Q3 — Beperken (urgent, minder belangrijk)
+- **Vimexx openstaande factuur betalen** (Administratie) | harde deadline: 2026-05-13
+- **Auto-DM flow backup maken** | harde deadline: 2026-05-14 | ~120min
+  → Werk aan de backup voor de auto-DM flow.
+- **Langs bij Rens van Vijven** | harde deadline: 2026-05-16
+
+### Q4 — Parkeren (niet urgent, niet belangrijk)
+- **AI Video Analyzer verder bouwen** (AI Video Analyzer)
+
+## Komt eraan (deze week)
+- Auto-DM flow backup maken — over 1 dag
+- Winactie blog en kader in Weeze artikel zetten — over 1 dag
+- Langs bij Rens van Vijven — over 3 dagen
+
+## Actieve commitments
+- Weeze Malaga
+- Brand Deals
+
+## Routines deze week
+_Geen routines deze week._
+
+## Laatste beslissingen
+_Geen beslissingen gelogd._

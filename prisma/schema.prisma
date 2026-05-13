@@ -1,0 +1,151 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  id               String  @id
+  title            String
+  project          String?
+  status           String  @default("open")
+  priority         String  @default("P2")
+  hardDeadline     String?
+  softDeadline     String?
+  startBy          String?
+  leadTimeDays     Int?
+  estimatedMinutes Int?
+  nextAction       String?
+  tags             String  @default("[]")
+  source           String  @default("manual_input")
+  plannedDate      String?
+  plannedStart     String?
+  plannedEnd       String?
+  plannedMinutes   Int?
+  calendarSyncMode String?
+  calendarLink     String? // JSON blob (MentorCalendarLink)
+  createdAt        String  @default("")
+  updatedAt        String?
+
+  @@map("tasks")
+}
+
+model GoogleToken {
+  id                   String  @id @default("singleton")
+  provider             String  @default("google")
+  connected            Boolean @default(false)
+  calendarId           String  @default("primary")
+  scope                String  @default("")
+  accessToken          String?
+  refreshToken         String?
+  encryptedCredentials String? // JSON blob {iv, authTag, data}
+  expiryDate           BigInt  @default(0)
+  createdAt            String
+  updatedAt            String
+
+  @@map("google_tokens")
+}
+
+model GoogleCalendarSyncState {
+  calendarId            String  @id
+  nextSyncToken         String?
+  lastFullSyncAt        String?
+  lastIncrementalSyncAt String?
+  lastError             String?
+  updatedAt             String?
+
+  @@map("google_calendar_sync_state")
+}
+
+model GoogleCalendarChannel {
+  id          String  @id
+  calendarId  String
+  resourceId  String
+  resourceUri String  @default("")
+  tokenHash   String
+  expiration  BigInt
+  webhookUrl  String
+  active      Boolean @default(true)
+  createdAt   String
+  updatedAt   String
+
+  @@map("google_calendar_channels")
+}
+
+model GoogleCalendarEventCache {
+  calendarId         String
+  eventId            String
+  iCalUID            String  @default("")
+  etag               String  @default("")
+  status             String  @default("confirmed")
+  summary            String  @default("")
+  description        String?
+  start              String  @default("")
+  end                String  @default("")
+  updated            String  @default("")
+  htmlLink           String?
+  extendedProperties String? // JSON blob
+  raw                String? // JSON blob
+  lastSeenAt         String
+
+  @@id([calendarId, eventId])
+  @@map("google_calendar_event_cache")
+}
+
+model CalendarOutbox {
+  id            String  @id
+  type          String
+  taskId        String
+  calendarId    String
+  eventId       String?
+  payload       String  // JSON blob
+  status        String  @default("pending")
+  attempts      Int     @default(0)
+  lastError     String?
+  createdAt     String
+  updatedAt     String
+  nextAttemptAt String
+
+  @@map("calendar_outbox")
+}
+
+model CalendarConflict {
+  id                  String  @id
+  taskId              String
+  eventId             String
+  calendarId          String
+  status              String  @default("open")
+  detectedAt          String
+  resolvedAt          String?
+  resolution          String?
+  resolutionNote      String?
+  taskSnapshot        String  // JSON blob
+  googleEventSnapshot String  // JSON blob
+
+  @@map("calendar_conflicts")
+}
+
+model CalendarSyncLog {
+  id         String @id
+  type       String
+  calendarId String
+  message    String
+  createdAt  String
+
+  @@map("calendar_sync_log")
+}
+
+model DailyBriefing {
+  id            String  @id
+  date          String  // YYYY-MM-DD
+  content       String  // Markdown briefing text
+  taskCount     Int     @default(0)
+  conflictCount Int     @default(0)
+  sentVia       String? // "ntfy" | "email" | "both" | "none"
+  createdAt     String
+
+  @@map("daily_briefings")
+}

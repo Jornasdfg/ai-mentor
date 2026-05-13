@@ -1,0 +1,65 @@
+[
+  {
+    "id": "inbox_1778687621167",
+    "createdAt": "2026-05-13T15:53:41.167Z",
+    "source": "jorn",
+    "rawInput": "Ik heb alvast ook een auto-DM flow gemaakt, maar die gaat tot 500 dus ik moet morgen even werken aan een backup. Daarbij wil ik ook een winactie blog + kader in het Weeze artikel zetten + bovenin mijn link in bio",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778680443235",
+    "createdAt": "2026-05-13T13:54:03.235Z",
+    "source": "jorn",
+    "rawInput": "Ik krijg een brief van de Rabo om mijn saldo te vereffenen, ik sta rood, dus even achteraan morgen bij het doen van de administratie",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778622072453",
+    "createdAt": "2026-05-12T21:41:12.453Z",
+    "source": "jorn",
+    "rawInput": "Zorg dat ik voor autohuurtool en pinstrategietool nog voor Malaga afmaak",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778621818090",
+    "createdAt": "2026-05-12T21:36:58.090Z",
+    "source": "jorn",
+    "rawInput": "Perfect, voor morgen en overmorgen ook nog wel als deadline om de autohuurtool en pinstrategietool om te gebruiken, want hier ga in Malaga ook scripts voor maken",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778620080921",
+    "createdAt": "2026-05-12T21:08:00.921Z",
+    "source": "jorn",
+    "rawInput": "Maar als ik zelf zeg dat ik weet dat ik morgen dit gewoon kan passen in mijn planning want de scripts en planning heb ik in maar 2 uur af",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778619999623",
+    "createdAt": "2026-05-12T21:06:39.623Z",
+    "source": "jorn",
+    "rawInput": "Maar ik moet ook mijn tools afhebben",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  },
+  {
+    "id": "inbox_1778619971164",
+    "createdAt": "2026-05-12T21:06:11.164Z",
+    "source": "jorn",
+    "rawInput": "Wat moet ik morgen doen?",
+    "status": "new",
+    "detectedSignals": [],
+    "linkedTaskIds": []
+  }
+]

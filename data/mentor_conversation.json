@@ -1,0 +1,177 @@
+[
+  {
+    "id": "conv_1778687634506",
+    "createdAt": "2026-05-13T15:53:54.506Z",
+    "userMessage": "Ik heb alvast ook een auto-DM flow gemaakt, maar die gaat tot 500 dus ik moet morgen even werken aan een backup. Daarbij wil ik ook een winactie blog + kader in het Weeze artikel zetten + bovenin mijn link in bio",
+    "assistantSummary": "Vandaag moet je prioriteit liggen bij het maken van de shotlist voor de Malaga locaties en het betalen van de Vimexx factuur, beide met een harde deadline vandaag. Morgen kun je werken aan de auto-DM ",
+    "recommendedTaskIds": [
+      "Shotlist per Malaga locatie maken",
+      "Vimexx openstaande factuur betalen"
+    ],
+    "topPriorityTaskId": "Shotlist per Malaga locatie maken",
+    "decisionsMade": [],
+    "patchesProposed": [
+      {
+        "operation": "add_task",
+        "reason": "Jorn wil werken aan een backup voor de auto-DM flow.",
+        "data": {
+          "title": "Auto-DM flow backup maken",
+          "project": null,
+          "priority": "P1",
+          "hardDeadline": "2026-05-14",
+          "softDeadline": null,
+          "estimatedMinutes": 120,
+          "nextAction": "Werk aan de backup voor de auto-DM flow.",
+          "tags": [],
+          "reason": "Noodzakelijk om de auto-DM flow te ondersteunen.",
+          "plannedDate": null,
+          "plannedStart": null,
+          "plannedEnd": null,
+          "plannedMinutes": 0,
+          "calendarSyncMode": "none"
+        }
+      },
+      {
+        "operation": "add_task",
+        "reason": "Jorn wil een winactie blog en kader in het Weeze artikel zetten.",
+        "data": {
+          "title": "Winactie blog en kader in Weeze artikel zetten",
+          "project": "Weeze",
+          "priority": "P2",
+          "hardDeadline": null,
+          "softDeadline": null,
+          "estimatedMinutes": 90,
+          "nextAction": "Schrijf de winactie blog en voeg het kader toe aan het Weeze artikel.",
+          "tags": [
+            "malaga"
+          ],
+          "reason": "Verhoogt de betrokkenheid bij het Weeze artikel.",
+          "plannedDate": null,
+          "plannedStart": null,
+          "plannedEnd": null,
+          "plannedMinutes": 0,
+          "calendarSyncMode": "none"
+        }
+      }
+    ],
+    "patchesApplied": []
+  },
+  {
+    "id": "conv_1778680451764",
+    "createdAt": "2026-05-13T13:54:11.764Z",
+    "userMessage": "Ik krijg een brief van de Rabo om mijn saldo te vereffenen, ik sta rood, dus even achteraan morgen bij het doen van de administratie",
+    "assistantSummary": "Vandaag moet de focus liggen op de taken met harde deadlines voor de Weeze Malaga trip. Zorg ervoor dat de shotlist, hookvarianten en CTA/winactie-uitleg vandaag worden afgerond. Betaal ook de Vimexx ",
+    "recommendedTaskIds": [
+      "Shotlist per Malaga locatie maken",
+      "Hookvarianten kiezen voor Malaga video's",
+      "CTA en winactie-uitleg aanscherpen",
+      "Vimexx openstaande factuur betalen"
+    ],
+    "topPriorityTaskId": "Shotlist per Malaga locatie maken",
+    "decisionsMade": [],
+    "patchesProposed": [
+      {
+        "operation": "add_task",
+        "reason": "Jorn moet zijn saldo vereffenen bij de Rabo.",
+        "data": {
+          "title": "Saldo vereffenen bij Rabo",
+          "project": "Administratie",
+          "priority": "P1",
+          "hardDeadline": null,
+          "softDeadline": "2026-05-14",
+          "estimatedMinutes": 30,
+          "nextAction": "Neem contact op met de Rabo om het saldo te vereffenen.",
+          "tags": [
+            "administratie"
+          ],
+          "reason": "Jorn staat rood en moet dit oplossen.",
+          "plannedDate": "2026-05-14",
+          "plannedStart": null,
+          "plannedEnd": null,
+          "plannedMinutes": 0,
+          "calendarSyncMode": "manual"
+        }
+      }
+    ],
+    "patchesApplied": []
+  },
+  {
+    "id": "conv_1778622095303",
+    "createdAt": "2026-05-12T21:41:35.303Z",
+    "userMessage": "Zorg dat ik voor autohuurtool en pinstrategietool nog voor Malaga afmaak",
+    "assistantSummary": "Vandaag ligt de focus op de taken met een harde deadline van morgen, die allemaal gerelateerd zijn aan het Weeze Malaga project. De autohuurtool en pinstrategietool zijn belangrijk, maar hebben geen h",
+    "recommendedTaskIds": [
+      "Reel 1 script definitief maken voor Malaga / Weeze",
+      "Reel 2 winactie script definitief maken",
+      "Shotlist per Malaga locatie maken",
+      "Hookvarianten kiezen voor Malaga video's",
+      "CTA en winactie-uitleg aanscherpen"
+    ],
+    "topPriorityTaskId": "Reel 1 script definitief maken voor Malaga / Weeze",
+    "decisionsMade": [],
+    "patchesProposed": [
+      {
+        "operation": "add_task",
+        "reason": "Jorn wil de autohuurtool afmaken voor het Malaga project.",
+        "data": {
+          "title": "Autohuurtool afmaken",
+          "project": "Malaga",
+          "priority": "P1",
+          "hardDeadline": null,
+          "softDeadline": "2026-05-14",
+          "estimatedMinutes": 0,
+          "tags": [
+            "malaga"
+          ],
+          "reason": "Belangrijk voor het Malaga project, maar geen harde deadline."
+        }
+      },
+      {
+        "operation": "add_task",
+        "reason": "Jorn wil de pinstrategietool afmaken voor het Malaga project.",
+        "data": {
+          "title": "Pinstrategietool afmaken",
+          "project": "Malaga",
+          "priority": "P1",
+          "hardDeadline": null,
+          "softDeadline": "2026-05-14",
+          "estimatedMinutes": 0,
+          "tags": [
+            "malaga"
+          ],
+          "reason": "Belangrijk voor het Malaga project, maar geen harde deadline."
+        }
+      }
+    ],
+    "patchesApplied": []
+  },
+  {
+    "id": "conv_1778621828790",
+    "createdAt": "2026-05-12T21:37:08.790Z",
+    "userMessage": "Perfect, voor morgen en overmorgen ook nog wel als deadline om de autohuurtool en pinstrategietool om te gebruiken, want hier ga in Malaga ook scripts voor maken",
+    "assistantSummary": "De focus ligt vandaag op de taken met een harde deadline van morgen, die allemaal gerelateerd zijn aan de Weeze Malaga reis. Deze taken zijn urgent en belangrijk, dus ze vallen in Q1. De autohuurtool ",
+    "recommendedTaskIds": [
+      "Reel 1 script definitief maken voor Malaga / Weeze",
+      "Reel 2 winactie script definitief maken",
+      "Shotlist per Malaga locatie maken",
+      "Hookvarianten kiezen voor Malaga video's",
+      "CTA en winactie-uitleg aanscherpen"
+    ],
+    "topPriorityTaskId": "Reel 1 script definitief maken voor Malaga / Weeze",
+    "decisionsMade": [],
+    "patchesProposed": [
+      {
+        "operation": "add_task",
+        "reason": "Nieuwe input over tools voor scripts in Malaga.",
+        "data": {
+          "title": "Autohuurtool en pinstrategietool voorbereiden voor scripts in Malaga",
+          "priority": "P1",
+          "coveyQuadrant": "Q2",
+          "deadline": "2026-05-14",
+          "description": "Voorbereiden van tools voor gebruik in scripts tijdens de Malaga reis."
+        }
+      }
+    ],
+    "patchesApplied": []
+  }
+]
