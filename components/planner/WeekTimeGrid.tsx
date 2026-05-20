@@ -1,171 +1,212 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
 import ScheduleBlockCard from "./ScheduleBlockCard";
 import GoogleEventBlock from "./GoogleEventBlock";
 
 interface GoogleEvent {
-  id: string; title: string; start: string; end: string; allDay: boolean; source: "google_calendar"; calendarId: string;
+  id: string; title: string; start: string; end: string;
+  allDay: boolean; source: "google_calendar"; calendarId: string;
 }
-
 interface Props {
-  weekDays: string[];          // ["2026-05-20", ...]  7 days
+  weekDays: string[];
   blocks: ScheduleBlock[];
   googleEvents: GoogleEvent[];
   tasks: MentorTask[];
-  draggingTask: MentorTask | null;
-  onDropTask: (taskId: string, start: string, end: string) => Promise<void>;
+  onDropTask: (taskId: string, start: string, end: string, durationMins: number) => Promise<void>;
   onMoveBlock: (blockId: string, start: string, end: string) => Promise<void>;
-  startHour?: number;  // default 7
-  endHour?: number;    // default 22
+  startHour?: number;
+  endHour?: number;
 }
 
-const DAY_NL = ["zo", "ma", "di", "wo", "do", "vr", "za"];
+const HOUR_H = 64; // px per hour
+const DAY_NL = ["zo","ma","di","wo","do","vr","za"];
 const MONTH_NL = ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
 
-function labelDay(iso: string): string {
+function labelDay(iso: string) {
   const d = new Date(`${iso}T12:00:00Z`);
-  return `${DAY_NL[d.getUTCDay()]} ${d.getUTCDate()} ${MONTH_NL[d.getUTCMonth()]}`;
+  return { wd: DAY_NL[d.getUTCDay()], day: d.getUTCDate(), month: MONTH_NL[d.getUTCMonth()] };
 }
 
-function positionInGrid(dtISO: string, startHour: number, endHour: number): number {
-  if (!dtISO || !dtISO.includes("T")) return 0;
-  const [, timePart] = dtISO.split("T");
-  const [h, m] = timePart.split(":").map(Number);
-  const totalMins = (endHour - startHour) * 60;
-  const offsetMins = (h - startHour) * 60 + m;
-  return Math.max(0, Math.min(100, (offsetMins / totalMins) * 100));
+function dtToY(dt: string, startHour: number): number {
+  if (!dt || !dt.includes("T")) return 0;
+  const t = dt.slice(11, 16);
+  const [h, m] = t.split(":").map(Number);
+  return Math.max(0, (h - startHour) * HOUR_H + (m / 60) * HOUR_H);
 }
 
-function heightInGrid(startISO: string, endISO: string, startHour: number, endHour: number): number {
-  const totalMins = (endHour - startHour) * 60;
-  const mins = Math.max(15, (new Date(endISO).getTime() - new Date(startISO).getTime()) / 60000);
-  return Math.min(100, (mins / totalMins) * 100);
+function minsToH(mins: number): number {
+  return (mins / 60) * HOUR_H;
+}
+
+function yToDateTime(y: number, dayISO: string, startHour: number): string {
+  const totalMins = Math.max(0, (y / HOUR_H) * 60);
+  const snapped = Math.round(totalMins / 15) * 15;
+  const absMin = startHour * 60 + snapped;
+  const h = Math.min(23, Math.floor(absMin / 60));
+  const m = absMin % 60;
+  return `${dayISO}T${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:00`;
 }
 
 export default function WeekTimeGrid({
   weekDays, blocks, googleEvents, tasks,
-  draggingTask, onDropTask, onMoveBlock,
+  onDropTask, onMoveBlock,
   startHour = 7, endHour = 22,
 }: Props) {
-  const draggingBlockRef = useRef<ScheduleBlock | null>(null);
   const totalHours = endHour - startHour;
-  const hourLabels = Array.from({ length: totalHours + 1 }, (_, i) => startHour + i);
+  const gridH = totalHours * HOUR_H;
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isToday = (iso: string) => iso === new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
 
-  function snapToSlot(pct: number, dayISO: string): { start: string; end: string } {
-    const totalMins = totalHours * 60;
-    const rawMins = Math.round((pct / 100) * totalMins / 15) * 15;
-    const offsetMins = Math.max(0, Math.min(totalMins - 30, rawMins));
-    const startH = Math.floor((startHour * 60 + offsetMins) / 60);
-    const startM = (startHour * 60 + offsetMins) % 60;
-    const durationMins = draggingTask?.estimatedMinutes ?? draggingBlockRef.current?.durationMinutes ?? 60;
-    const endOffsetMins = offsetMins + durationMins;
-    const endH = Math.floor((startHour * 60 + endOffsetMins) / 60);
-    const endM = (startHour * 60 + endOffsetMins) % 60;
-    const pad = (n: number) => String(n).padStart(2, "0");
-    return {
-      start: `${dayISO}T${pad(startH)}:${pad(startM)}:00`,
-      end: `${dayISO}T${pad(endH)}:${pad(endM)}:00`,
-    };
+  // Scroll to current time on mount
+  useEffect(() => {
+    if (!scrollRef.current) return;
+    const now = new Date();
+    const nowH = now.getHours() + now.getMinutes() / 60;
+    const y = Math.max(0, (nowH - startHour - 1) * HOUR_H);
+    scrollRef.current.scrollTop = y;
+  }, [startHour]);
+
+  // Current time Y
+  function currentTimeY(): number {
+    const now = new Date();
+    const h = now.getHours() + now.getMinutes() / 60;
+    return (h - startHour) * HOUR_H;
   }
 
-  function handleDragOver(e: React.DragEvent<HTMLDivElement>) {
+  function handleDragOver(e: React.DragEvent) {
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
   }
 
   function handleDrop(e: React.DragEvent<HTMLDivElement>, dayISO: string) {
     e.preventDefault();
-    const col = e.currentTarget;
-    const rect = col.getBoundingClientRect();
-    const pct = ((e.clientY - rect.top) / rect.height) * 100;
-    const { start, end } = snapToSlot(pct, dayISO);
+    e.stopPropagation();
+    const type = e.dataTransfer.getData("dnd-type");
+    const id = e.dataTransfer.getData("dnd-id");
+    const duration = parseInt(e.dataTransfer.getData("dnd-duration") || "60", 10);
+    if (!id) return;
 
-    if (draggingBlockRef.current) {
-      onMoveBlock(draggingBlockRef.current.id, start, end);
-      draggingBlockRef.current = null;
-    } else if (draggingTask) {
-      onDropTask(draggingTask.id, start, end);
+    const rect = e.currentTarget.getBoundingClientRect();
+    const y = e.clientY - rect.top;
+    const start = yToDateTime(y, dayISO, startHour);
+    const endD = new Date(start);
+    endD.setMinutes(endD.getMinutes() + duration);
+    const end = `${dayISO}T${String(endD.getHours()).padStart(2,"0")}:${String(endD.getMinutes()).padStart(2,"0")}:00`;
+
+    if (type === "task") {
+      onDropTask(id, start, end, duration);
+    } else if (type === "block") {
+      onMoveBlock(id, start, end);
     }
   }
 
-  const isToday = (iso: string) => iso === new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+  const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
+  const nowY = currentTimeY();
+  const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
 
   return (
-    <div className="flex h-full overflow-hidden">
-      {/* Time axis */}
-      <div className="w-10 shrink-0 relative">
-        <div className="h-7 border-b border-border" /> {/* header spacer */}
-        <div className="relative" style={{ height: `calc(100% - 1.75rem)` }}>
+    <div className="flex flex-col h-full overflow-hidden bg-zinc-950">
+      {/* Day header row */}
+      <div className="flex shrink-0 border-b border-zinc-800">
+        <div className="w-12 shrink-0" />
+        {weekDays.map(iso => {
+          const { wd, day, month } = labelDay(iso);
+          const today = isToday(iso);
+          return (
+            <div key={iso} className={`flex-1 py-2 text-center border-l border-zinc-800 ${today ? "bg-blue-950/30" : ""}`}>
+              <div className={`text-xs uppercase tracking-wide ${today ? "text-blue-400" : "text-zinc-500"}`}>{wd}</div>
+              <div className={`text-sm font-semibold ${today ? "text-blue-300" : "text-zinc-200"}`}>
+                {today ? (
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 text-white text-xs">{day}</span>
+                ) : day}
+              </div>
+              <div className="text-[10px] text-zinc-600">{month}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Scrollable grid body */}
+      <div ref={scrollRef} className="flex flex-1 overflow-y-auto overflow-x-hidden">
+        {/* Time axis */}
+        <div className="w-12 shrink-0 relative" style={{ height: gridH }}>
           {hourLabels.map(h => (
             <div
               key={h}
-              className="absolute w-full text-right pr-1 text-xs text-muted font-mono"
-              style={{ top: `${((h - startHour) / totalHours) * 100}%`, transform: "translateY(-50%)" }}
+              className="absolute right-2 text-[10px] text-zinc-600 select-none"
+              style={{ top: (h - startHour) * HOUR_H - 7 }}
             >
-              {String(h).padStart(2, "0")}
+              {String(h).padStart(2,"0")}:00
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Day columns */}
-      <div className="flex-1 grid overflow-hidden" style={{ gridTemplateColumns: `repeat(${weekDays.length}, 1fr)` }}>
+        {/* Day columns */}
         {weekDays.map(dayISO => {
           const dayBlocks = blocks.filter(b => b.start.startsWith(dayISO));
-          const dayEvents = googleEvents.filter(e => e.start.startsWith(dayISO));
-
+          const dayEvents = googleEvents.filter(e => e.start.startsWith(dayISO) || (e.allDay && e.start.slice(0,10) === dayISO));
+          const today = isToday(dayISO);
           return (
-            <div key={dayISO} className="flex flex-col border-l border-border min-w-0">
-              {/* Day header */}
-              <div className={`h-7 flex items-center justify-center border-b border-border shrink-0 ${isToday(dayISO) ? "bg-accent/10 text-accent" : ""}`}>
-                <span className="text-xs font-mono">{labelDay(dayISO)}</span>
-              </div>
+            <div
+              key={dayISO}
+              className={`flex-1 relative border-l border-zinc-800 ${today ? "bg-blue-950/10" : ""}`}
+              style={{ height: gridH }}
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, dayISO)}
+            >
+              {/* Hour lines */}
+              {hourLabels.map(h => (
+                <div
+                  key={h}
+                  className="absolute left-0 right-0 border-t border-zinc-800/60 pointer-events-none"
+                  style={{ top: (h - startHour) * HOUR_H }}
+                />
+              ))}
+              {/* Half-hour lines */}
+              {hourLabels.map(h => (
+                <div
+                  key={`${h}h`}
+                  className="absolute left-0 right-0 border-t border-zinc-800/30 pointer-events-none"
+                  style={{ top: (h - startHour) * HOUR_H + HOUR_H / 2 }}
+                />
+              ))}
 
-              {/* Grid body */}
-              <div
-                className="relative flex-1 overflow-hidden cursor-crosshair"
-                onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, dayISO)}
-              >
-                {/* Hour grid lines */}
-                {hourLabels.map(h => (
-                  <div
-                    key={h}
-                    className="absolute left-0 right-0 border-t border-border/30"
-                    style={{ top: `${((h - startHour) / totalHours) * 100}%` }}
-                  />
-                ))}
+              {/* Current time line (today only) */}
+              {today && nowY > 0 && nowY < gridH && (
+                <div
+                  className="absolute left-0 right-0 flex items-center pointer-events-none z-10"
+                  style={{ top: nowY }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-red-500 -ml-1 shrink-0" />
+                  <div className="flex-1 border-t border-red-500" />
+                </div>
+              )}
 
-                {/* Google events */}
-                {dayEvents.map(ev => (
-                  <GoogleEventBlock
-                    key={ev.id}
-                    event={ev}
-                    style={{
-                      top: `${positionInGrid(ev.start, startHour, endHour)}%`,
-                      height: `${heightInGrid(ev.start, ev.end, startHour, endHour)}%`,
-                    }}
-                  />
-                ))}
+              {/* Google events */}
+              {dayEvents.map(ev => {
+                const top = dtToY(ev.start, startHour);
+                const h = ev.allDay ? HOUR_H : Math.max(20, minsToH(
+                  (new Date(ev.end).getTime() - new Date(ev.start).getTime()) / 60000
+                ));
+                return (
+                  <div key={ev.id} className="absolute left-0.5 right-0.5" style={{ top, height: h }}>
+                    <GoogleEventBlock event={ev} heightPx={h} />
+                  </div>
+                );
+              })}
 
-                {/* Schedule blocks */}
-                {dayBlocks.map(block => {
-                  const task = tasks.find(t => t.id === block.taskId);
-                  return (
-                    <ScheduleBlockCard
-                      key={block.id}
-                      block={block}
-                      task={task}
-                      style={{
-                        top: `${positionInGrid(block.start, startHour, endHour)}%`,
-                        height: `${heightInGrid(block.start, block.end, startHour, endHour)}%`,
-                      }}
-                      onMove={() => { draggingBlockRef.current = block; }}
-                    />
-                  );
-                })}
-              </div>
+              {/* Schedule blocks */}
+              {dayBlocks.map(block => {
+                const top = dtToY(block.start, startHour);
+                const h = Math.max(22, minsToH(block.durationMinutes));
+                const task = tasks.find(t => t.id === block.taskId);
+                return (
+                  <div key={block.id} className="absolute left-0.5 right-0.5" style={{ top, height: h }}>
+                    <ScheduleBlockCard block={block} task={task} heightPx={h} />
+                  </div>
+                );
+              })}
             </div>
           );
         })}
