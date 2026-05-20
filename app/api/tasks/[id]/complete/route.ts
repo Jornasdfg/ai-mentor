@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readTasks, writeTasks, readDecisions } from "@/lib/mentor/mentorStorage";
 import { regenerateDailyReference } from "@/lib/mentor/dailyReferenceGenerator";
+import { removeBlocksForTask } from "@/lib/scheduler/scheduleStorage";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 
 export async function POST(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -13,6 +15,8 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
     await writeTasks(tasks);
     const decisions = await readDecisions();
     await regenerateDailyReference(tasks, decisions);
+    await removeBlocksForTask(id);
+    recalculateSchedule({ triggeredBy: "task_completed", horizonDays: 28, syncToGoogle: false }).catch(() => {});
     return NextResponse.json({ ok: true, task: tasks[idx] });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
