@@ -2,20 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { readTasks, writeTasks, ensureDataFiles, readDecisions, readRecurringTasks } from "@/lib/mentor/mentorStorage";
 import { materializeRecurringTasks, getTodayISO } from "@/lib/mentor/recurringTaskEngine";
 import { regenerateDailyReference } from "@/lib/mentor/dailyReferenceGenerator";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import type { MentorTask } from "@/lib/mentorTypes";
 
 export async function GET() {
   await ensureDataFiles();
-
   const [tasks, templates] = await Promise.all([readTasks(), readRecurringTasks()]);
   const todayISO = getTodayISO();
-
   const { tasks: updatedTasks, newCount } = materializeRecurringTasks(tasks, templates, todayISO, 14);
-
-  if (newCount > 0) {
-    await writeTasks(updatedTasks);
-  }
-
+  if (newCount > 0) await writeTasks(updatedTasks);
   return NextResponse.json({ tasks: updatedTasks });
 }
 
@@ -40,7 +35,7 @@ export async function POST(req: NextRequest) {
       startBy: body.startBy ?? null,
       leadTimeDays: body.leadTimeDays,
       deadlineType: body.deadlineType ?? (body.hardDeadline ? "hard" : "none"),
-      estimatedMinutes: body.estimatedMinutes,
+      estimatedMinutes: body.estimatedMinutes ?? 30,
       nextAction: body.nextAction,
       source: body.source ?? "manual_input",
       reason: body.reason,
@@ -51,12 +46,21 @@ export async function POST(req: NextRequest) {
       plannedStart: body.plannedStart ?? null,
       plannedEnd: body.plannedEnd ?? null,
       plannedMinutes: body.plannedMinutes ?? null,
-      calendarSyncMode: body.calendarSyncMode ?? "none",
+      calendarSyncMode: body.calendarSyncMode ?? "auto",
+      // Scheduler defaults
+      autoSchedule: body.autoSchedule ?? (body.plannedStart ? "off" : "auto"),
+      schedulingWindowId: body.schedulingWindowId ?? "window_work",
+      splittable: body.splittable ?? true,
+      minBlockMinutes: body.minBlockMinutes ?? 30,
+      autoIgnore: body.autoIgnore ?? false,
+      locked: body.locked ?? false,
     };
     tasks.push(newTask);
     await writeTasks(tasks);
     const decisions = await readDecisions();
     await regenerateDailyReference(tasks, decisions);
+    // Trigger scheduler after task create (fire-and-forget to keep response fast)
+    recalculateSchedule({ triggeredBy: "task_created", horizonDays: 28, syncToGoogle: true }).catch(() => {});
     return NextResponse.json({ task: newTask });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
