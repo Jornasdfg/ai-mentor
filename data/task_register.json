@@ -130,16 +130,16 @@
     "project": "Malaga",
     "status": "open",
     "priority": "P1",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": "2026-05-14",
+    "deadline": "2026-05-27",
+    "hardDeadline": "2026-05-27",
+    "softDeadline": "2026-05-26",
     "startBy": null,
     "deadlineType": "none",
     "estimatedMinutes": 0,
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-05-12",
+    "updatedAt": "2026-05-20",
     "tags": [
       "malaga"
     ]
@@ -396,7 +396,7 @@
     "id": "task_mail_fbto_verzekering_20260520",
     "title": "FBTO reisverzekering controleren voor verlenging 1 juni",
     "project": "Administratie",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": "2026-06-01",
     "hardDeadline": "2026-06-01",
@@ -410,13 +410,14 @@
       "mail",
       "verzekering",
       "administratie"
-    ]
+    ],
+    "completedAt": "2026-05-20T21:18:16.230Z"
   },
   {
     "id": "task_mail_linkedin_bericht_20260520",
     "title": "LinkedIn bericht beantwoorden — Boone Media",
     "project": null,
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -429,7 +430,8 @@
     "tags": [
       "mail",
       "linkedin"
-    ]
+    ],
+    "completedAt": "2026-05-20T21:07:54.188Z"
   },
   {
     "id": "task_stale_schiphol_20260520",
