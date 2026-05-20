@@ -1,65 +1,85 @@
 "use client";
 import type { MentorTask, ScheduleBlock } from "@/lib/mentorTypes";
 
+const PRIORITY_CONFIG: Record<string, { label: string; border: string; dot: string; text: string }> = {
+  P0: { label: "Do ASAP",  border: "border-l-2 border-red-500",     dot: "bg-red-500",     text: "text-red-300" },
+  P1: { label: "Hoog",     border: "border-l-2 border-orange-500",  dot: "bg-orange-500",  text: "text-orange-300" },
+  P2: { label: "Normaal",  border: "border-l-2 border-blue-500",    dot: "bg-blue-400",    text: "text-blue-300" },
+  P3: { label: "Laag",     border: "border-l-2 border-emerald-500", dot: "bg-emerald-500", text: "text-emerald-300" },
+};
+
 interface Props {
   tasks: MentorTask[];
   blocks: ScheduleBlock[];
-  onDragStart?: (task: MentorTask) => void;
 }
 
-const GROUPS = [
-  { label: "P0 — Do ASAP", filter: (t: MentorTask) => t.priority === "P0" && t.status !== "done" && t.status !== "cancelled" },
-  { label: "P1 — High",    filter: (t: MentorTask) => t.priority === "P1" && t.status !== "done" && t.status !== "cancelled" },
-  { label: "P2 — Normal",  filter: (t: MentorTask) => t.priority === "P2" && t.status !== "done" && t.status !== "cancelled" },
-  { label: "P3 — Low",     filter: (t: MentorTask) => t.priority === "P3" && t.status !== "done" && t.status !== "cancelled" },
-];
+function isActive(t: MentorTask) {
+  return t.status === "open" || t.status === "in_progress";
+}
 
-const PRIORITY_COLOR: Record<string, string> = {
-  P0: "text-danger", P1: "text-warning", P2: "text-accent", P3: "text-muted",
-};
+export default function PriorityTaskInbox({ tasks, blocks }: Props) {
+  const active = tasks.filter(isActive);
 
-const SCHEDULE_DOT: Record<string, string> = {
-  green: "bg-green-500", orange: "bg-orange-500", red: "bg-red-500", gray: "bg-gray-600",
-};
-
-export default function PriorityTaskInbox({ tasks, blocks, onDragStart }: Props) {
   function isScheduled(t: MentorTask): boolean {
     return blocks.some(b => b.taskId === t.id);
   }
 
+  function onDragStart(e: React.DragEvent, t: MentorTask) {
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("dnd-type", "task");
+    e.dataTransfer.setData("dnd-id", t.id);
+    e.dataTransfer.setData("dnd-duration", String(t.estimatedMinutes ?? 60));
+  }
+
+  const priorities = ["P0", "P1", "P2", "P3"] as const;
+
   return (
-    <div className="flex flex-col h-full overflow-y-auto">
-      <div className="px-3 py-2 border-b border-border">
-        <h3 className="text-xs font-mono font-bold text-gray-200">Inbox</h3>
-        <p className="text-xs text-muted font-mono">Sleep naar kalender</p>
+    <div className="flex flex-col h-full overflow-y-auto bg-zinc-950">
+      <div className="px-3 py-3 border-b border-zinc-800">
+        <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Taken</h3>
+        <p className="text-[10px] text-zinc-600 mt-0.5">Sleep naar kalender om in te plannen</p>
       </div>
 
-      {GROUPS.map(group => {
-        const groupTasks = tasks.filter(group.filter);
-        if (groupTasks.length === 0) return null;
+      {priorities.map(p => {
+        const cfg = PRIORITY_CONFIG[p];
+        const group = active.filter(t => t.priority === p);
+        if (group.length === 0) return null;
         return (
-          <div key={group.label} className="border-b border-border/50">
-            <div className="px-3 pt-2 pb-1">
-              <span className="text-xs font-mono font-bold text-muted uppercase tracking-wide">{group.label}</span>
+          <div key={p} className="mb-1">
+            <div className="px-3 pt-2.5 pb-1 flex items-center gap-2">
+              <div className={`w-2 h-2 rounded-full ${cfg.dot}`} />
+              <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">{cfg.label}</span>
+              <span className="text-[10px] text-zinc-700 ml-auto">{group.length}</span>
             </div>
-            <div className="px-2 pb-2 space-y-1">
-              {groupTasks.map(t => (
+            <div className="space-y-1 px-2">
+              {group.map(t => (
                 <div
                   key={t.id}
                   draggable
-                  onDragStart={() => onDragStart?.(t)}
-                  className="flex items-start gap-2 p-2 rounded border border-border bg-surface hover:border-accent/40 hover:bg-accent/5 cursor-grab active:cursor-grabbing transition-colors group"
+                  onDragStart={(e) => onDragStart(e, t)}
+                  className={`rounded-r bg-zinc-900 hover:bg-zinc-800 ${cfg.border} px-2.5 py-2 cursor-grab active:cursor-grabbing select-none transition-colors group`}
                 >
-                  <div className={`mt-1.5 w-2 h-2 rounded-full shrink-0 ${SCHEDULE_DOT[t.scheduleColorState ?? "gray"]}`} title={t.scheduleStatus ?? "unscheduled"} />
-                  <div className="flex-1 min-w-0">
-                    <p className={`text-xs font-mono font-medium truncate ${PRIORITY_COLOR[t.priority]}`}>{t.title}</p>
-                    {t.project && <p className="text-xs text-muted font-mono truncate">{t.project}</p>}
-                    <div className="flex gap-2 text-xs text-muted font-mono mt-0.5">
-                      {t.estimatedMinutes && <span>{t.estimatedMinutes}min</span>}
-                      {(t.hardDeadline ?? t.deadline) && <span>⏰ {(t.hardDeadline ?? t.deadline)!.slice(0, 10)}</span>}
-                      {!isScheduled(t) && <span className="text-warning">niet gepland</span>}
-                    </div>
+                  <div className="flex items-start justify-between gap-1">
+                    <p className="text-xs font-medium text-zinc-200 leading-tight line-clamp-2">{t.title}</p>
+                    {!isScheduled(t) && !t.estimatedMinutes && (
+                      <span className="text-[9px] text-zinc-600 shrink-0 mt-0.5">geen duur</span>
+                    )}
                   </div>
+                  <div className="flex items-center gap-2 mt-1">
+                    {t.project && <span className="text-[10px] text-zinc-500 truncate">{t.project}</span>}
+                    {t.estimatedMinutes && <span className="text-[10px] text-zinc-600">{t.estimatedMinutes}m</span>}
+                    {(t.hardDeadline ?? t.deadline) && (
+                      <span className="text-[10px] text-zinc-500 ml-auto shrink-0">
+                        ⏰ {(t.hardDeadline ?? t.deadline)!.slice(5)}
+                      </span>
+                    )}
+                  </div>
+                  {isScheduled(t) && (
+                    <div className="flex items-center gap-1 mt-1">
+                      <div className={`w-1.5 h-1.5 rounded-full ${t.scheduleColorState === "green" ? "bg-emerald-500" : t.scheduleColorState === "orange" ? "bg-amber-500" : t.scheduleColorState === "red" ? "bg-red-500" : "bg-zinc-600"}`} />
+                      <span className="text-[10px] text-zinc-600">gepland</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -67,51 +87,18 @@ export default function PriorityTaskInbox({ tasks, blocks, onDragStart }: Props)
         );
       })}
 
-      {/* Unscheduled */}
+      {/* Unschedulable tasks (no estimatedMinutes and autoSchedule off) */}
       {(() => {
-        const unscheduled = tasks.filter(t =>
-          (t.status === "open" || t.status === "in_progress") &&
-          (t.scheduleStatus === "unscheduled" || (!t.scheduleStatus && !blocks.some(b => b.taskId === t.id)))
-        );
-        if (unscheduled.length === 0) return null;
+        const noTime = active.filter(t => !t.estimatedMinutes && t.autoSchedule !== "off");
+        if (!noTime.length) return null;
         return (
-          <div className="border-b border-border/50">
-            <div className="px-3 pt-2 pb-1">
-              <span className="text-xs font-mono font-bold text-muted uppercase tracking-wide">Niet ingepland</span>
-            </div>
-            <div className="px-2 pb-2 space-y-1">
-              {unscheduled.map(t => (
-                <div key={t.id} draggable onDragStart={() => onDragStart?.(t)}
-                  className="flex items-start gap-2 p-2 rounded border border-border bg-surface hover:border-warning/40 cursor-grab transition-colors"
-                >
-                  <div className="mt-1.5 w-2 h-2 rounded-full shrink-0 bg-gray-600" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-mono truncate text-gray-300">{t.title}</p>
-                    {t.unscheduledReason && <p className="text-xs text-warning font-mono">{t.unscheduledReason}</p>}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })()}
-
-      {/* Missed deadline */}
-      {(() => {
-        const missed = tasks.filter(t => t.scheduleStatus === "missed" && t.status !== "done" && t.status !== "cancelled");
-        if (missed.length === 0) return null;
-        return (
-          <div>
-            <div className="px-3 pt-2 pb-1">
-              <span className="text-xs font-mono font-bold text-danger uppercase tracking-wide">Deadline gemist</span>
-            </div>
-            <div className="px-2 pb-2 space-y-1">
-              {missed.map(t => (
-                <div key={t.id} className="p-2 rounded border border-danger/30 bg-danger/5">
-                  <p className="text-xs font-mono text-danger truncate">{t.title}</p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-2 px-3 pb-3 border-t border-zinc-800/50">
+            <p className="text-[10px] text-zinc-600 uppercase tracking-wider pt-2 pb-1 font-semibold">Geen tijdschatting</p>
+            {noTime.map(t => (
+              <div key={t.id} className="py-1 border-l-2 border-zinc-700 pl-2 mb-1">
+                <p className="text-[10px] text-zinc-500 truncate">{t.title}</p>
+              </div>
+            ))}
           </div>
         );
       })()}
