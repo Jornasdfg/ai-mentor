@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import CostBadge from "@/components/CostBadge";
 import MentorChat from "@/components/MentorChat";
 import TaskBoard from "@/components/TaskBoard";
-import PlannerCalendar from "@/components/PlannerCalendar";
+import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
 import CoveyMatrix from "@/components/CoveyMatrix";
 import DailyFocus from "@/components/DailyFocus";
 import UpcomingWarnings from "@/components/UpcomingWarnings";
@@ -16,13 +16,12 @@ export default function Home() {
   const [advice, setAdvice] = useState<MentorAdvice | null>(null);
   const [quadrantFilter, setQuadrantFilter] = useState<CoveyQuadrant | null>(null);
   const [costRefresh, setCostRefresh] = useState(0);
-  const [mainView, setMainView] = useState<"tasks" | "calendar">("tasks");
+  const [mainView, setMainView] = useState<"tasks" | "planner">("tasks");
 
   const loadTasks = useCallback(async () => {
     try {
       const res = await fetch("/api/tasks");
       const data = await res.json() as { tasks: MentorTask[] };
-      // Enrich with client-side analysis
       const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
       const enriched = data.tasks.map(t => {
         const analysis = analyzeTask(t, { todayISO });
@@ -49,7 +48,6 @@ export default function Home() {
     loadTasks();
   }
 
-  // Compute top task for DailyFocus
   const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
   const activeTasks = tasks.filter(t => t.status === "open" || t.status === "in_progress");
   const p0q1Tasks = activeTasks.filter(t => t.priority === "P0" || t.coveyQuadrant === "Q1");
@@ -68,7 +66,7 @@ export default function Home() {
       <header className="flex items-center justify-between px-5 py-2.5 border-b border-border bg-panel shrink-0">
         <div className="flex items-center gap-3">
           <span className="text-sm font-mono font-semibold text-gray-100">AI Mentor</span>
-          <span className="text-xs text-muted font-mono">v3</span>
+          <span className="text-xs text-muted font-mono">v4</span>
         </div>
         <div className="flex items-center gap-4">
           <CostBadge refreshTrigger={costRefresh} />
@@ -92,13 +90,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right panel: TaskBoard + Chat */}
+        {/* Right panel: TaskBoard/Planner + Chat */}
         <div className="flex flex-1 min-w-0 min-h-0">
-          {/* Middle panel: Tasks or Calendar */}
+          {/* Middle panel */}
           <div className="flex flex-col flex-1 min-w-0 border-r border-border">
             <div className="shrink-0 px-4 py-2 border-b border-border bg-panel flex items-center justify-between">
               <span className="text-xs font-mono text-muted">
-                {mainView === "tasks" ? "Taken" : "Kalender"}
+                {mainView === "tasks" ? "Taken" : "Planner"}
               </span>
               <div className="flex items-center gap-1">
                 <button
@@ -112,14 +110,14 @@ export default function Home() {
                   Taken
                 </button>
                 <button
-                  onClick={() => setMainView("calendar")}
+                  onClick={() => setMainView("planner")}
                   className={`px-2 py-1 text-xs font-mono rounded border transition-colors ${
-                    mainView === "calendar"
+                    mainView === "planner"
                       ? "border-accent/50 text-accent bg-accent/10"
                       : "border-border text-muted hover:text-gray-200"
                   }`}
                 >
-                  Kalender
+                  Planner
                 </button>
               </div>
             </div>
@@ -132,10 +130,7 @@ export default function Home() {
                   onClearQuadrantFilter={() => setQuadrantFilter(null)}
                 />
               ) : (
-                <PlannerCalendar
-                  tasks={tasks}
-                  onTasksChange={loadTasks}
-                />
+                <PlannerWorkspace onTasksChange={loadTasks} />
               )}
             </div>
           </div>
