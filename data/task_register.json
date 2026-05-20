@@ -39,18 +39,19 @@
     "id": "task_malaga_shotlist",
     "title": "Shotlist per Malaga locatie maken",
     "project": "Weeze Malaga",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Zonder shotlist wordt opname chaotisch",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-05-12",
+    "updatedAt": "2026-05-20",
     "tags": [
       "malaga",
       "weeze",
       "shotlist"
-    ]
+    ],
+    "completedAt": "2026-05-20T19:02:20.840Z"
   },
   {
     "id": "task_malaga_hooks",
@@ -184,7 +185,7 @@
     "id": "task_mail_vimexx_factuur",
     "title": "Vimexx openstaande factuur betalen",
     "project": "Administratie",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": "2026-05-13",
     "hardDeadline": "2026-05-13",
@@ -193,12 +194,13 @@
     "source": "mail",
     "reason": "Openstaande factuur via Vimexx — betaallink in mail",
     "createdAt": "2026-05-13",
-    "updatedAt": "2026-05-13",
+    "updatedAt": "2026-05-20",
     "tags": [
       "mail",
       "betaling",
       "vimexx"
-    ]
+    ],
+    "completedAt": "2026-05-20T19:02:25.043Z"
   },
   {
     "id": "task_mail_wise_login",
@@ -225,7 +227,7 @@
     "id": "task_mail_dfds_charlie",
     "title": "DFDS samenwerking opvolgen bij Charlie Kalb",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -234,13 +236,14 @@
     "source": "mail",
     "reason": "Charlie (Brand Potential) is op vakantie t/m 25 mei — daarna terugkoppeling vanuit DFDS over de samenwerking verwacht",
     "createdAt": "2026-05-13",
-    "updatedAt": "2026-05-13",
+    "updatedAt": "2026-05-20",
     "tags": [
       "mail",
       "samenwerking",
       "dfds",
       "brand-deal"
-    ]
+    ],
+    "completedAt": "2026-05-20T19:03:03.402Z"
   },
   {
     "id": "task_1778680463555_vdl3",
@@ -287,7 +290,7 @@
     "id": "task_1778687650802_tqkd",
     "title": "Winactie blog en kader in Weeze artikel zetten",
     "project": "Weeze",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": "2026-05-14",
     "hardDeadline": "2026-05-14",
@@ -299,15 +302,16 @@
     "source": "manual_input",
     "reason": "Verhoogt de betrokkenheid bij het Weeze artikel.",
     "createdAt": "2026-05-13",
-    "updatedAt": "2026-05-13",
+    "updatedAt": "2026-05-20",
     "tags": [
       "malaga"
-    ]
+    ],
+    "completedAt": "2026-05-20T19:03:08.209Z"
   },
   {
     "id": "task_1778693602060_nfo0",
     "title": "Langs bij Rens van Vijven",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "deadline": "2026-05-16",
     "hardDeadline": "2026-05-16",
@@ -316,11 +320,11 @@
     "deadlineType": "hard",
     "source": "manual_input",
     "createdAt": "2026-05-13",
-    "updatedAt": "2026-05-13T18:29:54.230Z",
+    "updatedAt": "2026-05-20T19:15:00.674Z",
     "tags": [],
     "plannedDate": "2026-05-16",
-    "plannedStart": "2026-05-16T09:30:00",
-    "plannedEnd": "2026-05-16T11:30:00",
+    "plannedStart": "2026-05-16T09:30:00+02:00",
+    "plannedEnd": "2026-05-16T11:30:00+02:00",
     "plannedMinutes": 120,
     "calendarSyncMode": "auto",
     "calendarLink": {
@@ -328,9 +332,32 @@
       "calendarId": "primary",
       "eventId": "etm075v43cms74i36pess5iv4k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZXRtMDc1djQzY21zNzRpMzZwZXNzNWl2NGsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-05-13T18:29:54.230Z",
+      "lastSyncedAt": "2026-05-20T19:15:00.674Z",
       "syncStatus": "synced",
-      "syncError": null
-    }
+      "syncError": null,
+      "googleUpdatedAt": "2026-05-13T17:33:43.430Z"
+    },
+    "completedAt": "2026-05-20T19:02:36.629Z"
+  },
+  {
+    "id": "task_1779305046672_0qyk",
+    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
+    "status": "open",
+    "priority": "P2",
+    "deadline": "2026-05-21",
+    "hardDeadline": "2026-05-21",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "source": "manual_input",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [],
+    "plannedDate": null,
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": null,
+    "calendarSyncMode": "none",
+    "estimatedMinutes": 60
   }
 ]
