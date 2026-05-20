@@ -1,12 +1,10 @@
 // mentor-worker — background scheduler
-// Run with: npm run worker   (uses tsx worker/index.ts)
-// Docker:    command: ["npx", "tsx", "worker/index.ts"]
-//
 // Jobs:
-//   outbox-process  — every 5 min
-//   repair-sync     — every 15 min
-//   watch-ensure    — every 6 hours
-//   daily-briefing  — every day at 07:30 Europe/Amsterdam
+//   outbox-process    — every 5 min
+//   repair-sync       — every 15 min
+//   scheduler-repair  — every 10 min
+//   watch-ensure      — every 6 hours
+//   daily-briefing    — every day at 07:30 Europe/Amsterdam
 
 import cron from "node-cron";
 import { processPendingCalendarJobs } from "@/lib/calendar/calendarOutbox";
@@ -17,6 +15,7 @@ import { syncCacheToTasks } from "@/lib/calendar/googleTaskSyncMapper";
 import { readSyncState, appendSyncLog } from "@/lib/calendar/googleSyncStorage";
 import { isGoogleConnected } from "@/lib/calendar/googleTokenStorage";
 import { generateDailyBriefing } from "@/lib/briefing/dailyBriefing";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 
 const CALENDAR_ID = process.env.GOOGLE_DEFAULT_CALENDAR_ID ?? "primary";
 
@@ -46,20 +45,23 @@ cron.schedule("*/15 * * * *", () => {
     if (!(await isGoogleConnected())) return;
     const syncState = await readSyncState(CALENDAR_ID);
     const needsFull = !syncState?.nextSyncToken;
-
     const syncResult = needsFull
       ? await fullSyncCalendar(CALENDAR_ID)
       : await incrementalSyncCalendar(CALENDAR_ID);
-
     const taskResult = await syncCacheToTasks();
-
     await appendSyncLog(
-      "repair",
-      CALENDAR_ID,
+      "repair", CALENDAR_ID,
       `[worker] Repair (${syncResult.fullSync ? "full" : "incr"}): ` +
-      `${syncResult.changed} gewijzigd, ${syncResult.deleted} verwijderd, ` +
-      `tasks updated=${taskResult.updated} conflicts=${taskResult.conflicts}`
+      `${syncResult.changed} gewijzigd, ${syncResult.deleted} verwijderd, tasks updated=${taskResult.updated}`
     );
+  });
+});
+
+// ── Scheduler repair: every 10 minutes ───────────────────────────────────────
+cron.schedule("*/10 * * * *", () => {
+  run("scheduler-repair", async () => {
+    const result = await recalculateSchedule({ triggeredBy: "worker_repair", horizonDays: 28, syncToGoogle: true });
+    console.log(`[worker] [scheduler-repair] blocks=${result.run.blocksCreated} warnings=${result.warnings.length}`);
   });
 });
 
@@ -84,4 +86,4 @@ cron.schedule(
   { timezone: "Europe/Amsterdam" }
 );
 
-console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, watch-ensure/6h, briefing/07:30 AMS");
+console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, scheduler-repair/10m, watch-ensure/6h, briefing/07:30 AMS");
