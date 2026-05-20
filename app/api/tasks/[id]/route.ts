@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readTasks, writeTasks, readDecisions } from "@/lib/mentor/mentorStorage";
 import { regenerateDailyReference } from "@/lib/mentor/dailyReferenceGenerator";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import type { MentorTask } from "@/lib/mentorTypes";
 
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -15,7 +16,10 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const allowed: (keyof MentorTask)[] = [
       "title", "project", "priority", "status", "deadline", "hardDeadline", "softDeadline",
       "startBy", "leadTimeDays", "deadlineType", "estimatedMinutes", "nextAction",
-      "reason", "tags", "parkedReason"
+      "reason", "tags", "parkedReason",
+      // Scheduler fields
+      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
+      "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode",
     ];
     const update = Object.fromEntries(
       Object.entries(body).filter(([k]) => allowed.includes(k as keyof MentorTask))
@@ -24,6 +28,8 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     await writeTasks(tasks);
     const decisions = await readDecisions();
     await regenerateDailyReference(tasks, decisions);
+    // Reschedule after update (fire-and-forget)
+    recalculateSchedule({ triggeredBy: "task_updated", horizonDays: 28, syncToGoogle: true }).catch(() => {});
     return NextResponse.json({ task: tasks[idx] });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
