@@ -359,5 +359,105 @@
     "plannedMinutes": null,
     "calendarSyncMode": "none",
     "estimatedMinutes": 60
+  },
+  {
+    "id": "task_mail_mirjam_weeze_20260520",
+    "title": "V2 insturen — Airport Weeze (feedback Mirjam verwerken)",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P1",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "deadlineType": "none",
+    "source": "mail",
+    "reason": "Mirjam (Blue Flamingos) stuurde op 18 mei feedback op Video V1 Airport Weeze samenwerking. Feedback verwerken en V2 insturen.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [
+      "mail",
+      "samenwerking",
+      "weeze",
+      "video"
+    ]
+  },
+  {
+    "id": "task_mail_fbto_verzekering_20260520",
+    "title": "FBTO reisverzekering controleren voor verlenging 1 juni",
+    "project": "Administratie",
+    "status": "open",
+    "priority": "P1",
+    "deadline": "2026-06-01",
+    "hardDeadline": "2026-06-01",
+    "softDeadline": null,
+    "deadlineType": "hard",
+    "source": "mail",
+    "reason": "FBTO stuurt melding dat doorlopende reisverzekering per 1 juni 2026 wordt verlengd — gegevens controleren of alles nog klopt.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [
+      "mail",
+      "verzekering",
+      "administratie"
+    ]
+  },
+  {
+    "id": "task_mail_linkedin_bericht_20260520",
+    "title": "LinkedIn bericht beantwoorden — Boone Media",
+    "project": null,
+    "status": "open",
+    "priority": "P1",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "deadlineType": "none",
+    "source": "mail",
+    "reason": "LinkedIn notificatie: iemand heeft op 19 mei een bericht gestuurd via jorn@boone-media.nl — potentieel nieuwe klant of opdracht.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [
+      "mail",
+      "linkedin"
+    ]
+  },
+  {
+    "id": "task_stale_schiphol_20260520",
+    "title": "Schiphol (via Yune) opvolgen — 9 dagen geen contact",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "deadlineType": "none",
+    "source": "system",
+    "reason": "Status: Onderhandelen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maret.Trouerbach@yune.nl. Update vragen over tijdlijn.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [
+      "samenwerking",
+      "opvolging",
+      "schiphol"
+    ]
+  },
+  {
+    "id": "task_stale_easyhotel_20260520",
+    "title": "easyHotel opvolgen — 9 dagen geen contact",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "deadlineType": "none",
+    "source": "system",
+    "reason": "Status: Binnen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maddie.Simpson@easyhotel.com. Overlegdatum oppakken.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [
+      "samenwerking",
+      "opvolging",
+      "easyhotel"
+    ]
   }
 ]
