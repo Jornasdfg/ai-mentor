@@ -271,7 +271,7 @@
     "id": "task_1778687650802_wset",
     "title": "Auto-DM flow backup maken",
     "project": null,
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": "2026-05-14",
@@ -283,8 +283,16 @@
     "source": "manual_input",
     "reason": "Noodzakelijk om de auto-DM flow te ondersteunen.",
     "createdAt": "2026-05-13",
-    "updatedAt": "2026-05-13",
-    "tags": []
+    "updatedAt": "2026-05-20",
+    "tags": [],
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedStart": "2026-05-21T09:00:00",
+    "plannedEnd": "2026-05-21T11:00:00",
+    "plannedDate": "2026-05-21",
+    "plannedMinutes": 120,
+    "completedAt": "2026-05-20T20:58:48.148Z"
   },
   {
     "id": "task_1778687650802_tqkd",
@@ -353,12 +361,15 @@
     "createdAt": "2026-05-20",
     "updatedAt": "2026-05-20",
     "tags": [],
-    "plannedDate": null,
-    "plannedStart": null,
-    "plannedEnd": null,
-    "plannedMinutes": null,
+    "plannedDate": "2026-05-21",
+    "plannedStart": "2026-05-21T09:00:00",
+    "plannedEnd": "2026-05-21T10:00:00",
+    "plannedMinutes": 60,
     "calendarSyncMode": "none",
-    "estimatedMinutes": 60
+    "estimatedMinutes": 60,
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   },
   {
     "id": "task_mail_mirjam_weeze_20260520",
