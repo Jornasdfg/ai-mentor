@@ -19,6 +19,12 @@ export type CalendarSyncStatus =
   | "conflict"
   | "error";
 
+// ── Scheduler types ───────────────────────────────────────────────────────────
+export type AutoScheduleMode = "off" | "auto";
+export type ScheduleColorState = "green" | "orange" | "red" | "gray";
+export type ScheduleBlockStatus = "planned" | "locked" | "missed" | "unscheduled";
+export type SchedulingWindowType = "work" | "personal" | "anytime";
+
 export interface MentorCalendarLink {
   provider?: "google" | "calendarmcp";
   calendarId?: string | null;
@@ -26,7 +32,6 @@ export interface MentorCalendarLink {
   htmlLink?: string | null;
   etag?: string | null;
   googleUpdatedAt?: string | null;
-  // lastSyncedAt is canonical; lastSynced kept for backward compat with existing tasks
   lastSyncedAt?: string | null;
   lastSynced?: string | null;
   syncStatus?: CalendarSyncStatus;
@@ -59,52 +64,53 @@ export interface MentorTask {
   project?: string;
   status: MentorTaskStatus;
   priority: MentorPriority;
-  // Backward compat deadline field
   deadline?: string | null;
-  // New deadline fields
   hardDeadline?: string | null;
   softDeadline?: string | null;
   startBy?: string | null;
   leadTimeDays?: number;
   deadlineType?: DeadlineType;
-  // Time / planning
   estimatedMinutes?: number;
   nextAction?: string;
-  // Scoring (computed, not stored by AI)
   coveyQuadrant?: CoveyQuadrant;
   urgencyScore?: number;
   importanceScore?: number;
   deadlinePressure?: DeadlinePressure;
-  // Dependencies
   blockedBy?: string[];
   dependsOn?: string[];
-  // Lifecycle
   completedAt?: string | null;
   cancelledAt?: string | null;
   parkedReason?: string;
   lastRecommendedAt?: string | null;
   recommendationCount?: number;
-  // History log
   history?: Array<{ at: string; type: string; note: string }>;
-  // Source
   source: "manual_input" | "daily_reference" | "mail" | "monthly_goal" | "system" | "recurring_manual" | "calendar";
   reason?: string;
   createdAt: string;
   updatedAt: string;
   lastSeen?: string;
   tags?: string[];
-  // Recurring instance fields
   recurrenceTemplateId?: string | null;
   recurrenceDate?: string | null;
   recurrenceKey?: string | null;
   isRecurringInstance?: boolean;
-  // Calendar / planning fields
   plannedDate?: string | null;
   plannedStart?: string | null;
   plannedEnd?: string | null;
   plannedMinutes?: number | null;
   calendarSyncMode?: CalendarSyncMode;
   calendarLink?: MentorCalendarLink | null;
+  // Scheduler fields
+  autoSchedule?: AutoScheduleMode;
+  schedulingWindowId?: string | null;
+  minBlockMinutes?: number;
+  splittable?: boolean;
+  autoIgnore?: boolean;
+  locked?: boolean;
+  manualSortOrder?: number;
+  scheduleColorState?: ScheduleColorState;
+  scheduleStatus?: ScheduleBlockStatus;
+  unscheduledReason?: string | null;
 }
 
 export interface MentorRecurringTask {
@@ -112,19 +118,19 @@ export interface MentorRecurringTask {
   title: string;
   project?: string;
   frequency: RecurrenceFrequency;
-  interval: number;                // every N days/weeks/months
-  daysOfWeek?: number[];           // 0=Sun..6=Sat — used for weekly
-  dayOfMonth?: number;             // 1-31 — used for monthly
-  startDate: string;               // YYYY-MM-DD
-  endDate?: string | null;         // YYYY-MM-DD
+  interval: number;
+  daysOfWeek?: number[];
+  dayOfMonth?: number;
+  startDate: string;
+  endDate?: string | null;
   isActive: boolean;
   priority: MentorPriority;
   leadTimeDays?: number;
   estimatedMinutes?: number;
   nextAction?: string;
   tags?: string[];
-  hardDeadlineOffsetDays?: number; // offset from occurrenceDate → hardDeadline
-  softDeadlineOffsetDays?: number; // offset from occurrenceDate → softDeadline
+  hardDeadlineOffsetDays?: number;
+  softDeadlineOffsetDays?: number;
   executionMode: "manual" | "mcp_ready";
   futureMcpAction?: string;
   defaultPlannedTime?: string | null;
@@ -263,4 +269,52 @@ export interface ChatMessage {
   role: "user" | "assistant";
   content: string;
   timestamp: string;
+}
+
+// ── Scheduler interfaces ──────────────────────────────────────────────────────
+
+export interface SchedulingWindow {
+  id: string;
+  name: string;
+  type: SchedulingWindowType;
+  daysOfWeek: number[]; // 1=Mon..7=Sun (ISO weekday)
+  startTime: string;    // "HH:MM"
+  endTime: string;      // "HH:MM"
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ScheduleBlock {
+  id: string;
+  taskId: string;
+  title: string;
+  start: string;           // "YYYY-MM-DDTHH:MM:SS" local Amsterdam
+  end: string;
+  durationMinutes: number;
+  status: ScheduleBlockStatus;
+  colorState: ScheduleColorState;
+  source: "auto_scheduler" | "manual_drag" | "manual_plan";
+  locked: boolean;
+  schedulingWindowId?: string | null;
+  calendarEventId?: string | null;
+  calendarId?: string | null;
+  calendarSynced: boolean;
+  runId?: string | null;
+  unscheduledReason?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ScheduleRun {
+  id: string;
+  triggeredBy: "task_created" | "task_updated" | "google_webhook" | "worker_repair" | "manual" | "task_completed";
+  startedAt: string;
+  finishedAt: string | null;
+  horizonDays: number;
+  blocksCreated: number;
+  blocksRemoved: number;
+  warnings: string[];
+  status: "running" | "done" | "error";
+  errorMessage?: string | null;
 }
