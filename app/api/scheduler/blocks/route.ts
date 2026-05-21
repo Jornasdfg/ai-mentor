@@ -16,17 +16,16 @@ export async function GET(req: NextRequest) {
       readScheduleRuns(),
     ]);
 
-    // Filter blocks to requested range
     const filteredBlocks = blocks.filter(b => {
       if (from && b.start.slice(0, 10) < from) return false;
       if (to && b.start.slice(0, 10) > to) return false;
       return true;
     });
 
-    // Google events as busy blocks (non-mentor events)
     let googleEvents: Array<{
       id: string; title: string; start: string; end: string;
       allDay: boolean; source: "google_calendar"; calendarId: string;
+      description?: string | null; htmlLink?: string | null;
     }> = [];
 
     if (includeGoogle) {
@@ -51,6 +50,8 @@ export async function GET(req: NextRequest) {
           allDay: e.start.length <= 10,
           source: "google_calendar" as const,
           calendarId: e.calendarId,
+          description: e.description ?? null,
+          htmlLink: e.htmlLink ?? null,
         }));
     }
 

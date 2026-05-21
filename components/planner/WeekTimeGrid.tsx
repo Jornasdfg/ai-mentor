@@ -4,9 +4,10 @@ import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
 import ScheduleBlockCard from "./ScheduleBlockCard";
 import GoogleEventBlock from "./GoogleEventBlock";
 
-interface GoogleEvent {
+export interface GoogleEvent {
   id: string; title: string; start: string; end: string;
   allDay: boolean; source: "google_calendar"; calendarId: string;
+  description?: string | null; htmlLink?: string | null;
 }
 interface Props {
   weekDays: string[];
@@ -16,6 +17,7 @@ interface Props {
   onDropTask: (taskId: string, start: string, end: string, durationMins: number) => Promise<void>;
   onMoveBlock: (blockId: string, start: string, end: string) => Promise<void>;
   onClickBlock?: (block: ScheduleBlock, task?: MentorTask) => void;
+  onClickGoogleEvent?: (event: GoogleEvent) => void;
   startHour?: number;
   endHour?: number;
 }
@@ -29,11 +31,16 @@ function labelDay(iso: string) {
   return { wd: DAY_NL[d.getUTCDay()], day: d.getUTCDate(), month: MONTH_NL[d.getUTCMonth()] };
 }
 
+// Convert an ISO datetime (possibly with offset like +02:00) to Y position in the grid
+// Uses proper Date parsing to respect timezone offset
 function dtToY(dt: string, startHour: number): number {
   if (!dt || !dt.includes("T")) return 0;
-  const t = dt.slice(11, 16);
-  const [h, m] = t.split(":").map(Number);
-  return Math.max(0, (h - startHour) * HOUR_H + (m / 60) * HOUR_H);
+  const d = new Date(dt);
+  const h = d.toLocaleString("nl-NL", { hour: "numeric", hour12: false, timeZone: "Europe/Amsterdam" });
+  const m = d.toLocaleString("nl-NL", { minute: "numeric", timeZone: "Europe/Amsterdam" });
+  const hNum = parseInt(h, 10);
+  const mNum = parseInt(m, 10);
+  return Math.max(0, (hNum - startHour) * HOUR_H + (mNum / 60) * HOUR_H);
 }
 
 function minsToH(mins: number): number {
@@ -51,7 +58,7 @@ function yToDateTime(y: number, dayISO: string, startHour: number): string {
 
 export default function WeekTimeGrid({
   weekDays, blocks, googleEvents, tasks,
-  onDropTask, onMoveBlock, onClickBlock,
+  onDropTask, onMoveBlock, onClickBlock, onClickGoogleEvent,
   startHour = 7, endHour = 22,
 }: Props) {
   const totalHours = endHour - startHour;
@@ -62,15 +69,17 @@ export default function WeekTimeGrid({
   useEffect(() => {
     if (!scrollRef.current) return;
     const now = new Date();
-    const nowH = now.getHours() + now.getMinutes() / 60;
+    const h = now.toLocaleString("nl-NL", { hour: "numeric", hour12: false, timeZone: "Europe/Amsterdam" });
+    const nowH = parseInt(h, 10) + now.getMinutes() / 60;
     const y = Math.max(0, (nowH - startHour - 1) * HOUR_H);
     scrollRef.current.scrollTop = y;
   }, [startHour]);
 
   function currentTimeY(): number {
     const now = new Date();
-    const h = now.getHours() + now.getMinutes() / 60;
-    return (h - startHour) * HOUR_H;
+    const h = now.toLocaleString("nl-NL", { hour: "numeric", hour12: false, timeZone: "Europe/Amsterdam" });
+    const nowH = parseInt(h, 10) + now.getMinutes() / 60;
+    return (nowH - startHour) * HOUR_H;
   }
 
   function handleDragOver(e: React.DragEvent) {
@@ -144,7 +153,10 @@ export default function WeekTimeGrid({
         {/* Day columns */}
         {weekDays.map(dayISO => {
           const dayBlocks = blocks.filter(b => b.start.startsWith(dayISO));
-          const dayEvents = googleEvents.filter(e => e.start.startsWith(dayISO) || (e.allDay && e.start.slice(0,10) === dayISO));
+          const dayEvents = googleEvents.filter(e => {
+            const eDay = e.allDay ? e.start.slice(0, 10) : new Date(e.start).toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+            return eDay === dayISO;
+          });
           const today = isToday(dayISO);
           return (
             <div
@@ -184,13 +196,18 @@ export default function WeekTimeGrid({
 
               {/* Google events */}
               {dayEvents.map(ev => {
-                const top = dtToY(ev.start, startHour);
-                const h = ev.allDay ? HOUR_H : Math.max(20, minsToH(
-                  (new Date(ev.end).getTime() - new Date(ev.start).getTime()) / 60000
-                ));
+                const top = ev.allDay ? 0 : dtToY(ev.start, startHour);
+                const durationMins = ev.allDay
+                  ? totalHours * 60
+                  : Math.round((new Date(ev.end).getTime() - new Date(ev.start).getTime()) / 60000);
+                const h = Math.max(20, minsToH(durationMins));
                 return (
-                  <div key={ev.id} className="absolute left-0.5 right-0.5" style={{ top, height: h }}>
-                    <GoogleEventBlock event={ev} heightPx={h} />
+                  <div key={ev.id} className="absolute left-0.5 right-0.5 z-[1]" style={{ top, height: h }}>
+                    <GoogleEventBlock
+                      event={ev}
+                      heightPx={h}
+                      onClick={onClickGoogleEvent ? () => onClickGoogleEvent(ev) : undefined}
+                    />
                   </div>
                 );
               })}
@@ -201,7 +218,7 @@ export default function WeekTimeGrid({
                 const h = Math.max(22, minsToH(block.durationMinutes));
                 const task = tasks.find(t => t.id === block.taskId);
                 return (
-                  <div key={block.id} className="absolute left-0.5 right-0.5" style={{ top, height: h }}>
+                  <div key={block.id} className="absolute left-0.5 right-0.5 z-[2]" style={{ top, height: h }}>
                     <ScheduleBlockCard
                       block={block}
                       task={task}

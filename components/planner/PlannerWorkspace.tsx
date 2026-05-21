@@ -2,14 +2,11 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
 import PriorityTaskInbox from "./PriorityTaskInbox";
-import WeekTimeGrid from "./WeekTimeGrid";
+import WeekTimeGrid, { type GoogleEvent } from "./WeekTimeGrid";
 import MonthView from "./MonthView";
 import BlockDetailPanel from "./BlockDetailPanel";
+import GoogleEventPanel from "./GoogleEventPanel";
 
-interface GoogleEvent {
-  id: string; title: string; start: string; end: string;
-  allDay: boolean; source: "google_calendar"; calendarId: string;
-}
 interface SchedulerData {
   blocks: ScheduleBlock[];
   tasks: MentorTask[];
@@ -55,17 +52,16 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   const [showDev, setShowDev] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState<ScheduleBlock | null>(null);
+  const [selectedGoogleEvent, setSelectedGoogleEvent] = useState<GoogleEvent | null>(null);
   const pollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const weekDays = getWeekDays(weekBase);
 
-  // Determine date range to load based on view
   const rangeFrom = viewMode === "week" ? weekDays[0] : monthBase.slice(0, 7) + "-01";
   const rangeTo = viewMode === "week"
     ? weekDays[6]
     : (() => {
         const [y, m] = monthBase.split("-").map(Number);
-        const last = new Date(y, m, 0);
-        return last.toLocaleDateString("sv-SE");
+        return new Date(y, m, 0).toLocaleDateString("sv-SE");
       })();
 
   const load = useCallback(async () => {
@@ -77,7 +73,6 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
 
   useEffect(() => { load(); }, [load]);
 
-  // Auto-ensure watch is active on mount
   useEffect(() => {
     fetch("/api/google/calendar/watch/ensure", { method: "POST" }).catch(() => {});
   }, []);
@@ -93,6 +88,11 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     pollingRef.current = setInterval(load, 20000);
     return () => { if (pollingRef.current) clearInterval(pollingRef.current); };
   }, [load]);
+
+  function closeAllPanels() {
+    setSelectedBlock(null);
+    setSelectedGoogleEvent(null);
+  }
 
   async function recalculate() {
     setRecalcLoading(true);
@@ -127,14 +127,14 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
 
   async function handleCompleteTask(taskId: string) {
     await fetch(`/api/tasks/${taskId}/complete`, { method: "PATCH" });
-    setSelectedBlock(null);
+    closeAllPanels();
     await load();
     onTasksChange?.();
   }
 
   async function handleRemoveBlock(blockId: string) {
     await fetch(`/api/scheduler/blocks/${blockId}`, { method: "DELETE" });
-    setSelectedBlock(null);
+    closeAllPanels();
     await load();
   }
 
@@ -145,6 +145,26 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
       body: JSON.stringify({ taskId, mode: "direct" }),
     });
     await load();
+  }
+
+  async function handleImportGoogleEvent() {
+    if (!selectedGoogleEvent) return;
+    await fetch("/api/calendar/import-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        calendarId: selectedGoogleEvent.calendarId,
+        eventId: selectedGoogleEvent.id,
+        title: selectedGoogleEvent.title,
+        start: selectedGoogleEvent.start,
+        end: selectedGoogleEvent.end,
+        htmlLink: selectedGoogleEvent.htmlLink,
+        description: selectedGoogleEvent.description,
+      }),
+    });
+    closeAllPanels();
+    await load();
+    onTasksChange?.();
   }
 
   function handleMonthDayClick(dayISO: string) {
@@ -162,17 +182,19 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   const warnings = data?.warnings ?? [];
   const lastRun = data?.lastRun;
   const selectedTask = selectedBlock ? data?.tasks.find(t => t.id === selectedBlock.taskId) : undefined;
-
-  // Keep selectedBlock in sync with latest data
   const liveSelectedBlock = selectedBlock
     ? (data?.blocks.find(b => b.id === selectedBlock.id) ?? selectedBlock)
     : null;
+  const liveSelectedGoogleEvent = selectedGoogleEvent
+    ? (data?.googleEvents.find(e => e.id === selectedGoogleEvent.id) ?? selectedGoogleEvent)
+    : null;
+
+  const showPanel = liveSelectedBlock || liveSelectedGoogleEvent;
 
   return (
     <div className="flex flex-col h-full bg-zinc-950 text-zinc-100 w-full">
       {/* Toolbar */}
       <div className="flex items-center gap-3 px-4 py-2.5 border-b border-zinc-800 bg-zinc-900 shrink-0 flex-wrap gap-y-1.5">
-        {/* View toggle */}
         <div className="flex items-center gap-0.5 border border-zinc-700 rounded-md overflow-hidden">
           <button
             onClick={() => setViewMode("week")}
@@ -188,7 +210,6 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           </button>
         </div>
 
-        {/* Date navigation */}
         <div className="flex items-center gap-1.5 border border-zinc-700 rounded-md overflow-hidden">
           <button
             onClick={viewMode === "week" ? prevWeek : () => setMonthBase(mb => shiftMonth(mb, -1))}
@@ -238,7 +259,6 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
         </div>
       </div>
 
-      {/* Dev tools */}
       {showDev && (
         <div className="flex gap-2 px-4 py-2 bg-zinc-900/50 border-b border-zinc-800 shrink-0 flex-wrap">
           <span className="text-[10px] text-zinc-600 self-center uppercase tracking-wider">Dev:</span>
@@ -257,7 +277,6 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
         </div>
       )}
 
-      {/* Warnings */}
       {warnings.length > 0 && (
         <div className="px-4 py-2 bg-amber-950/30 border-b border-amber-900/40 shrink-0">
           <div className="flex flex-wrap gap-x-4 gap-y-0.5">
@@ -266,16 +285,13 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
         </div>
       )}
 
-      {/* Main content */}
       <div className="flex flex-1 min-h-0 overflow-hidden">
-        {/* Task inbox — only in week view */}
         {viewMode === "week" && (
           <div className="w-48 shrink-0 border-r border-zinc-800 overflow-hidden">
             <PriorityTaskInbox tasks={data?.tasks ?? []} blocks={data?.blocks ?? []} />
           </div>
         )}
 
-        {/* Calendar view */}
         <div className="flex-1 overflow-hidden">
           {loading ? (
             <div className="flex items-center justify-center h-full text-zinc-600 text-sm">Laden…</div>
@@ -288,8 +304,13 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
               onDropTask={handleDropTask}
               onMoveBlock={handleMoveBlock}
               onClickBlock={(block, task) => {
+                setSelectedGoogleEvent(null);
                 setSelectedBlock(block);
                 void task;
+              }}
+              onClickGoogleEvent={(ev) => {
+                setSelectedBlock(null);
+                setSelectedGoogleEvent(ev);
               }}
             />
           ) : (
@@ -303,15 +324,22 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           )}
         </div>
 
-        {/* Block detail panel */}
         {liveSelectedBlock && (
           <BlockDetailPanel
             block={liveSelectedBlock}
             task={selectedTask}
-            onClose={() => setSelectedBlock(null)}
+            onClose={closeAllPanels}
             onComplete={handleCompleteTask}
             onRemove={handleRemoveBlock}
             onSync={handleSyncBlock}
+          />
+        )}
+
+        {liveSelectedGoogleEvent && (
+          <GoogleEventPanel
+            event={liveSelectedGoogleEvent}
+            onClose={closeAllPanels}
+            onImportAsTask={handleImportGoogleEvent}
           />
         )}
       </div>
