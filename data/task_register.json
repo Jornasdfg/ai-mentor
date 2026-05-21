@@ -348,51 +348,6 @@
     "completedAt": "2026-05-20T19:02:36.629Z"
   },
   {
-    "id": "task_1779305046672_0qyk",
-    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
-    "status": "open",
-    "priority": "P2",
-    "deadline": "2026-05-21",
-    "hardDeadline": "2026-05-21",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "source": "manual_input",
-    "createdAt": "2026-05-20",
-    "updatedAt": "2026-05-20",
-    "tags": [],
-    "plannedDate": "2026-05-21",
-    "plannedStart": "2026-05-21T09:00:00",
-    "plannedEnd": "2026-05-21T10:00:00",
-    "plannedMinutes": 60,
-    "calendarSyncMode": "none",
-    "estimatedMinutes": 60,
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null
-  },
-  {
-    "id": "task_mail_mirjam_weeze_20260520",
-    "title": "V2 insturen: editen en opsturen Airport Weeze (feedback Mirjam verwerken",
-    "project": "Brand Deals",
-    "status": "open",
-    "priority": "P0",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "deadlineType": "none",
-    "source": "mail",
-    "reason": "Mirjam (Blue Flamingos) stuurde op 18 mei feedback op Video V1 Airport Weeze samenwerking. Feedback verwerken en V2 insturen.",
-    "createdAt": "2026-05-20",
-    "updatedAt": "2026-05-21",
-    "tags": [
-      "mail",
-      "samenwerking",
-      "weeze",
-      "video"
-    ]
-  },
-  {
     "id": "task_mail_fbto_verzekering_20260520",
     "title": "FBTO reisverzekering controleren voor verlenging 1 juni",
     "project": "Administratie",
@@ -476,7 +431,7 @@
   {
     "id": "task_1779373460905_cbpb",
     "title": "Extra shots opnemen voor Weeze aangepaste versie",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "deadline": null,
     "hardDeadline": null,
@@ -486,7 +441,7 @@
     "estimatedMinutes": 60,
     "source": "manual_input",
     "createdAt": "2026-05-21",
-    "updatedAt": "2026-05-21T14:30:00.270Z",
+    "updatedAt": "2026-05-21",
     "tags": [],
     "plannedDate": "2026-05-21",
     "plannedStart": "2026-05-21T17:00:00+02:00",
@@ -508,7 +463,8 @@
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T14:25:01.040Z"
-    }
+    },
+    "completedAt": "2026-05-21T17:30:07.566Z"
   },
   {
     "id": "task_1779373540896_x22m",
@@ -549,22 +505,22 @@
   },
   {
     "id": "task_1779373554831_3qil",
-    "title": "Mail nog opstellen met de winactie + stories online",
+    "title": "Mail updaten met nieuwe blogs & video in de planning voor later de middag",
     "status": "open",
     "priority": "P0",
-    "deadline": null,
-    "hardDeadline": null,
+    "deadline": "2026-05-22",
+    "hardDeadline": "2026-05-22",
     "softDeadline": null,
     "startBy": null,
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "source": "manual_input",
     "createdAt": "2026-05-21",
-    "updatedAt": "2026-05-21T14:45:00.478Z",
+    "updatedAt": "2026-05-21",
     "tags": [],
-    "plannedDate": "2026-05-21",
-    "plannedStart": "2026-05-21T19:00:00+02:00",
-    "plannedEnd": "2026-05-21T20:00:00+02:00",
+    "plannedDate": "2026-05-22",
+    "plannedStart": "2026-05-22T17:15:00+02:00",
+    "plannedEnd": "2026-05-22T18:15:00+02:00",
     "plannedMinutes": 60,
     "calendarSyncMode": "auto",
     "autoSchedule": "off",
@@ -578,10 +534,10 @@
       "calendarId": "primary",
       "eventId": "hken5skm421fano5bruepp7904",
       "htmlLink": "https://www.google.com/calendar/event?eid=aGtlbjVza200MjFmYW5vNWJydWVwcDc5MDQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-05-21T14:45:00.478Z",
+      "lastSyncedAt": "2026-05-21T17:45:00.326Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-05-21T14:30:00.841Z"
+      "googleUpdatedAt": "2026-05-21T17:35:00.584Z"
     }
   },
   {
@@ -658,5 +614,50 @@
       "googleUpdatedAt": "2026-05-21T14:55:01.167Z"
     },
     "cancelledAt": "2026-05-21T16:43:02.864Z"
+  },
+  {
+    "id": "task_1779305046672_0qyk",
+    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
+    "status": "open",
+    "priority": "P2",
+    "deadline": "2026-05-21",
+    "hardDeadline": "2026-05-21",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "source": "manual_input",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-20",
+    "tags": [],
+    "plannedDate": "2026-05-21",
+    "plannedStart": "2026-05-21T09:00:00",
+    "plannedEnd": "2026-05-21T10:00:00",
+    "plannedMinutes": 60,
+    "calendarSyncMode": "none",
+    "estimatedMinutes": 60,
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
+  },
+  {
+    "id": "task_mail_mirjam_weeze_20260520",
+    "title": "V2 insturen: editen en opsturen Airport Weeze (feedback Mirjam verwerken",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P0",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "deadlineType": "none",
+    "source": "mail",
+    "reason": "Mirjam (Blue Flamingos) stuurde op 18 mei feedback op Video V1 Airport Weeze samenwerking. Feedback verwerken en V2 insturen.",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-21",
+    "tags": [
+      "mail",
+      "samenwerking",
+      "weeze",
+      "video"
+    ]
   }
 ]
