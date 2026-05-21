@@ -624,7 +624,7 @@
   {
     "id": "task_1779375200577_8bik",
     "title": "h",
-    "status": "open",
+    "status": "cancelled",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -634,7 +634,7 @@
     "estimatedMinutes": 60,
     "source": "manual_input",
     "createdAt": "2026-05-21",
-    "updatedAt": "2026-05-21T15:30:00.313Z",
+    "updatedAt": "2026-05-21",
     "tags": [],
     "plannedDate": "2026-05-21",
     "plannedStart": "2026-05-21T16:00:00+02:00",
@@ -656,6 +656,7 @@
       "syncStatus": "deleted_remote",
       "syncError": "Google Calendar event is verwijderd of geannuleerd.",
       "googleUpdatedAt": "2026-05-21T14:55:01.167Z"
-    }
+    },
+    "cancelledAt": "2026-05-21T16:43:02.864Z"
   }
 ]
