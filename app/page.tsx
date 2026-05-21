@@ -11,12 +11,21 @@ import UpcomingWarnings from "@/components/UpcomingWarnings";
 import type { MentorTask, CoveyQuadrant, MentorAdvice } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
 
+type TabId = "planner" | "tasks" | "matrix" | "ai";
+
+const TABS: { id: TabId; label: string }[] = [
+  { id: "planner", label: "Planner" },
+  { id: "tasks",   label: "Taken" },
+  { id: "matrix",  label: "Matrix" },
+  { id: "ai",      label: "AI Mentor" },
+];
+
 export default function Home() {
   const [tasks, setTasks] = useState<MentorTask[]>([]);
   const [advice, setAdvice] = useState<MentorAdvice | null>(null);
   const [quadrantFilter, setQuadrantFilter] = useState<CoveyQuadrant | null>(null);
   const [costRefresh, setCostRefresh] = useState(0);
-  const [mainView, setMainView] = useState<"tasks" | "planner">("tasks");
+  const [activeTab, setActiveTab] = useState<TabId>("planner");
 
   const loadTasks = useCallback(async () => {
     try {
@@ -39,9 +48,7 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    loadTasks();
-  }, [loadTasks]);
+  useEffect(() => { loadTasks(); }, [loadTasks]);
 
   function handleMentorComplete() {
     setCostRefresh(n => n + 1);
@@ -52,7 +59,7 @@ export default function Home() {
   const activeTasks = tasks.filter(t => t.status === "open" || t.status === "in_progress");
   const p0q1Tasks = activeTasks.filter(t => t.priority === "P0" || t.coveyQuadrant === "Q1");
   const topTask = p0q1Tasks.length > 0
-    ? p0q1Tasks.sort((a, b) => {
+    ? [...p0q1Tasks].sort((a, b) => {
         const da = a.hardDeadline ?? a.deadline ?? "9999";
         const db = b.hardDeadline ?? b.deadline ?? "9999";
         return da.localeCompare(db);
@@ -61,85 +68,66 @@ export default function Home() {
   const topAnalysis = topTask ? analyzeTask(topTask, { todayISO }) : null;
 
   return (
-    <div className="flex flex-col h-screen bg-surface text-gray-200 overflow-hidden">
-      {/* Topbar */}
-      <header className="flex items-center justify-between px-5 py-2.5 border-b border-border bg-panel shrink-0">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-mono font-semibold text-gray-100">AI Mentor</span>
-          <span className="text-xs text-muted font-mono">v4</span>
-        </div>
+    <div className="flex flex-col h-screen bg-zinc-950 text-zinc-100 overflow-hidden">
+      {/* Header */}
+      <header className="flex items-center justify-between px-4 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0">
         <div className="flex items-center gap-4">
-          <CostBadge refreshTrigger={costRefresh} />
-          <span className="text-xs text-muted font-mono hidden sm:block">Ctrl+Enter sturen</span>
+          <span className="text-sm font-semibold text-zinc-100 tracking-tight">AI Mentor</span>
+          <span className="text-xs text-zinc-600 font-mono">v4</span>
+          <nav className="flex items-center gap-0.5 ml-2">
+            {TABS.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                  activeTab === tab.id
+                    ? "bg-blue-600 text-white"
+                    : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </nav>
         </div>
+        <CostBadge refreshTrigger={costRefresh} />
       </header>
 
-      {/* Main layout */}
-      <div className="flex flex-1 min-h-0">
-        {/* Left panel: Focus + Matrix */}
-        <div className="flex flex-col w-[340px] shrink-0 border-r border-border bg-surface overflow-y-auto p-3 space-y-3">
-          <DailyFocus advice={advice} topTask={topTask} topAnalysis={topAnalysis} />
-          <UpcomingWarnings advice={advice} />
-          <div>
-            <p className="text-xs font-mono text-muted uppercase tracking-wider mb-2">Covey Matrix</p>
-            <CoveyMatrix
-              tasks={tasks}
-              onFilterQuadrant={setQuadrantFilter}
-              activeFilter={quadrantFilter}
-            />
-          </div>
-        </div>
+      {/* Content */}
+      <div className="flex flex-1 min-h-0 overflow-hidden">
+        {activeTab === "planner" && (
+          <PlannerWorkspace onTasksChange={loadTasks} />
+        )}
 
-        {/* Right panel: TaskBoard/Planner + Chat */}
-        <div className="flex flex-1 min-w-0 min-h-0">
-          {/* Middle panel */}
-          <div className="flex flex-col flex-1 min-w-0 border-r border-border">
-            <div className="shrink-0 px-4 py-2 border-b border-border bg-panel flex items-center justify-between">
-              <span className="text-xs font-mono text-muted">
-                {mainView === "tasks" ? "Taken" : "Planner"}
-              </span>
-              <div className="flex items-center gap-1">
-                <button
-                  onClick={() => setMainView("tasks")}
-                  className={`px-2 py-1 text-xs font-mono rounded border transition-colors ${
-                    mainView === "tasks"
-                      ? "border-accent/50 text-accent bg-accent/10"
-                      : "border-border text-muted hover:text-gray-200"
-                  }`}
-                >
-                  Taken
-                </button>
-                <button
-                  onClick={() => setMainView("planner")}
-                  className={`px-2 py-1 text-xs font-mono rounded border transition-colors ${
-                    mainView === "planner"
-                      ? "border-accent/50 text-accent bg-accent/10"
-                      : "border-border text-muted hover:text-gray-200"
-                  }`}
-                >
-                  Planner
-                </button>
+        {activeTab === "tasks" && (
+          <TaskBoard
+            tasks={tasks}
+            onTasksChange={loadTasks}
+            quadrantFilter={quadrantFilter}
+            onClearQuadrantFilter={() => setQuadrantFilter(null)}
+          />
+        )}
+
+        {activeTab === "matrix" && (
+          <div className="flex flex-1 min-h-0 overflow-y-auto">
+            <div className="flex flex-col flex-1 p-5 gap-5 max-w-4xl mx-auto w-full">
+              <DailyFocus advice={advice} topTask={topTask} topAnalysis={topAnalysis} />
+              <UpcomingWarnings advice={advice} />
+              <div>
+                <p className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">Covey Matrix</p>
+                <CoveyMatrix
+                  tasks={tasks}
+                  onFilterQuadrant={setQuadrantFilter}
+                  activeFilter={quadrantFilter}
+                />
               </div>
             </div>
-            <div className="flex-1 min-h-0">
-              {mainView === "tasks" ? (
-                <TaskBoard
-                  tasks={tasks}
-                  onTasksChange={loadTasks}
-                  quadrantFilter={quadrantFilter}
-                  onClearQuadrantFilter={() => setQuadrantFilter(null)}
-                />
-              ) : (
-                <PlannerWorkspace onTasksChange={loadTasks} />
-              )}
-            </div>
           </div>
+        )}
 
-          {/* Chat panel */}
-          <div className="flex flex-col w-[340px] shrink-0 min-h-0">
-            <MentorChat onComplete={handleMentorComplete} onAdvice={setAdvice} />
-          </div>
-        </div>
+        {activeTab === "ai" && (
+          <MentorChat onComplete={handleMentorComplete} onAdvice={setAdvice} />
+        )}
       </div>
     </div>
   );

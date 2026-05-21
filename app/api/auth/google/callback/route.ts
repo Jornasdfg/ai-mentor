@@ -12,10 +12,12 @@ export async function GET(req: NextRequest) {
   const state = url.searchParams.get("state");
   const errorParam = url.searchParams.get("error");
 
+  const baseUrl = process.env.APP_BASE_URL ?? new URL(req.url).origin;
+
   if (errorParam) {
     console.warn("[google/callback] Google gaf een fout terug:", errorParam);
     return NextResponse.redirect(
-      new URL(`/?calendarError=${encodeURIComponent(errorParam)}`, req.url)
+      new URL(`/?calendarError=${encodeURIComponent(errorParam)}`, baseUrl)
     );
   }
 
@@ -60,7 +62,6 @@ export async function GET(req: NextRequest) {
   });
 
   if (!tokenRes.ok) {
-    // Log the status but not the body (may contain secrets)
     console.error("[google/callback] Token exchange mislukt, status:", tokenRes.status);
     return NextResponse.json(
       { error: `Token exchange mislukt (HTTP ${tokenRes.status})` },
@@ -104,8 +105,7 @@ export async function GET(req: NextRequest) {
     updatedAt: now,
   });
 
-  // Log success without exposing token values
   console.log("[google/callback] Google Calendar gekoppeld. Scope:", tokenData.scope);
 
-  return NextResponse.redirect(new URL("/?calendarConnected=1", req.url));
+  return NextResponse.redirect(new URL("/?calendarConnected=1", baseUrl));
 }

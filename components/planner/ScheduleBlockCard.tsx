@@ -16,9 +16,10 @@ interface Props {
   block: ScheduleBlock;
   task?: MentorTask;
   heightPx: number;
+  onClick?: () => void;
 }
 
-export default function ScheduleBlockCard({ block, task, heightPx }: Props) {
+export default function ScheduleBlockCard({ block, task, heightPx, onClick }: Props) {
   const s = DEADLINE_STYLE[block.colorState] ?? DEADLINE_STYLE.gray;
   const time = `${block.start.slice(11, 16)}–${block.end.slice(11, 16)}`;
   const isSmall = heightPx < 36;
@@ -35,8 +36,9 @@ export default function ScheduleBlockCard({ block, task, heightPx }: Props) {
     <div
       draggable
       onDragStart={onDragStart}
-      className={`absolute left-0.5 right-0.5 rounded-r overflow-hidden cursor-grab active:cursor-grabbing select-none ${s.bg} ${s.border} ${s.text} ${block.locked ? "opacity-90" : ""}`}
-      title={`${block.title} | ${time} | ${block.durationMinutes}min${block.locked ? " | 🔒 locked" : ""}`}
+      onClick={onClick}
+      className={`h-full w-full rounded-r overflow-hidden select-none ${s.bg} ${s.border} ${s.text} ${block.locked ? "opacity-90" : ""} hover:brightness-110 transition-all ${onClick ? "cursor-pointer" : "cursor-grab active:cursor-grabbing"}`}
+      title={`${block.title} | ${time} | ${block.durationMinutes}min${block.locked ? " | vergrendeld" : ""}`}
     >
       {isSmall ? (
         <div className="px-1.5 py-0.5 flex items-center gap-1 h-full">

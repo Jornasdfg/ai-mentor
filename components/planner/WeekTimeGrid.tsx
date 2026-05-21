@@ -15,11 +15,12 @@ interface Props {
   tasks: MentorTask[];
   onDropTask: (taskId: string, start: string, end: string, durationMins: number) => Promise<void>;
   onMoveBlock: (blockId: string, start: string, end: string) => Promise<void>;
+  onClickBlock?: (block: ScheduleBlock, task?: MentorTask) => void;
   startHour?: number;
   endHour?: number;
 }
 
-const HOUR_H = 64; // px per hour
+const HOUR_H = 64;
 const DAY_NL = ["zo","ma","di","wo","do","vr","za"];
 const MONTH_NL = ["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
 
@@ -50,7 +51,7 @@ function yToDateTime(y: number, dayISO: string, startHour: number): string {
 
 export default function WeekTimeGrid({
   weekDays, blocks, googleEvents, tasks,
-  onDropTask, onMoveBlock,
+  onDropTask, onMoveBlock, onClickBlock,
   startHour = 7, endHour = 22,
 }: Props) {
   const totalHours = endHour - startHour;
@@ -58,7 +59,6 @@ export default function WeekTimeGrid({
   const scrollRef = useRef<HTMLDivElement>(null);
   const isToday = (iso: string) => iso === new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
 
-  // Scroll to current time on mount
   useEffect(() => {
     if (!scrollRef.current) return;
     const now = new Date();
@@ -67,7 +67,6 @@ export default function WeekTimeGrid({
     scrollRef.current.scrollTop = y;
   }, [startHour]);
 
-  // Current time Y
   function currentTimeY(): number {
     const now = new Date();
     const h = now.getHours() + now.getMinutes() / 60;
@@ -172,7 +171,7 @@ export default function WeekTimeGrid({
                 />
               ))}
 
-              {/* Current time line (today only) */}
+              {/* Current time line */}
               {today && nowY > 0 && nowY < gridH && (
                 <div
                   className="absolute left-0 right-0 flex items-center pointer-events-none z-10"
@@ -203,7 +202,12 @@ export default function WeekTimeGrid({
                 const task = tasks.find(t => t.id === block.taskId);
                 return (
                   <div key={block.id} className="absolute left-0.5 right-0.5" style={{ top, height: h }}>
-                    <ScheduleBlockCard block={block} task={task} heightPx={h} />
+                    <ScheduleBlockCard
+                      block={block}
+                      task={task}
+                      heightPx={h}
+                      onClick={onClickBlock ? () => onClickBlock(block, task) : undefined}
+                    />
                   </div>
                 );
               })}

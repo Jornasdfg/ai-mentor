@@ -26,3 +26,4 @@ data/google_calendar_event_cache.json
 data/google_calendar_sync_log.json
 data/calendar_outbox.json
 data/calendar_conflicts.json
+sync_github.py
