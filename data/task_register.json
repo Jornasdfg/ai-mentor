@@ -738,5 +738,27 @@
     "createdAt": "2026-05-21",
     "updatedAt": "2026-05-21",
     "tags": []
+  },
+  {
+    "id": "task_1779402718137_n2ty",
+    "title": "Winnaar van Weeze bekendmaken",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q1",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 60,
+    "nextAction": "Winnaar bekendmaken, stories inplannen en contact opnemen.",
+    "plannedStart": "2026-05-25T09:30:00",
+    "plannedEnd": "2026-05-25T10:00:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "createdAt": "2026-05-21",
+    "updatedAt": "2026-05-21",
+    "tags": [],
+    "autoSchedule": "off"
   }
 ]
