@@ -139,10 +139,11 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-05-20",
+    "updatedAt": "2026-05-21",
     "tags": [
       "malaga"
-    ]
+    ],
+    "coveyQuadrant": "Q2"
   },
   {
     "id": "task_1778622106225_j9fn",
@@ -392,7 +393,7 @@
     "id": "task_stale_schiphol_20260520",
     "title": "Schiphol (via Yune) opvolgen — 9 dagen geen contact",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -401,18 +402,19 @@
     "source": "system",
     "reason": "Status: Onderhandelen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maret.Trouerbach@yune.nl. Update vragen over tijdlijn.",
     "createdAt": "2026-05-20",
-    "updatedAt": "2026-05-20",
+    "updatedAt": "2026-05-21",
     "tags": [
       "samenwerking",
       "opvolging",
       "schiphol"
-    ]
+    ],
+    "completedAt": "2026-05-21T19:19:32.722Z"
   },
   {
     "id": "task_stale_easyhotel_20260520",
     "title": "easyHotel opvolgen — 9 dagen geen contact",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -421,12 +423,13 @@
     "source": "system",
     "reason": "Status: Binnen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maddie.Simpson@easyhotel.com. Overlegdatum oppakken.",
     "createdAt": "2026-05-20",
-    "updatedAt": "2026-05-20",
+    "updatedAt": "2026-05-21",
     "tags": [
       "samenwerking",
       "opvolging",
       "easyhotel"
-    ]
+    ],
+    "completedAt": "2026-05-21T19:19:34.096Z"
   },
   {
     "id": "task_1779373460905_cbpb",
@@ -479,11 +482,11 @@
     "estimatedMinutes": 60,
     "source": "manual_input",
     "createdAt": "2026-05-21",
-    "updatedAt": "2026-05-21T14:45:00.478Z",
+    "updatedAt": "2026-05-21T19:45:00.910Z",
     "tags": [],
-    "plannedDate": "2026-05-21",
-    "plannedStart": "2026-05-21T19:00:00+02:00",
-    "plannedEnd": "2026-05-21T20:00:00+02:00",
+    "plannedDate": "2026-05-22",
+    "plannedStart": "2026-05-22T08:45:00+02:00",
+    "plannedEnd": "2026-05-22T09:45:00+02:00",
     "plannedMinutes": 60,
     "calendarSyncMode": "auto",
     "autoSchedule": "off",
@@ -497,15 +500,16 @@
       "calendarId": "primary",
       "eventId": "c4cdpb85guj0s7mk075pq1d1s8",
       "htmlLink": "https://www.google.com/calendar/event?eid=YzRjZHBiODVndWowczdtazA3NXBxMWQxczggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-05-21T14:45:00.478Z",
+      "lastSyncedAt": "2026-05-21T19:45:00.910Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-05-21T14:30:00.430Z"
-    }
+      "googleUpdatedAt": "2026-05-21T19:35:01.567Z"
+    },
+    "coveyQuadrant": "Q1"
   },
   {
     "id": "task_1779373554831_3qil",
-    "title": "Mail updaten met nieuwe blogs & video in de planning voor later de middag",
+    "title": "Mail aanpassen met blogartikelen (update nieuwe?) en video in de planning",
     "status": "open",
     "priority": "P0",
     "deadline": "2026-05-22",
@@ -538,7 +542,8 @@
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T17:35:00.584Z"
-    }
+    },
+    "coveyQuadrant": "Q1"
   },
   {
     "id": "task_1779375160067_guva",
@@ -575,7 +580,8 @@
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T14:52:44.213Z"
-    }
+    },
+    "coveyQuadrant": "Q1"
   },
   {
     "id": "task_1779375200577_8bik",
@@ -616,34 +622,10 @@
     "cancelledAt": "2026-05-21T16:43:02.864Z"
   },
   {
-    "id": "task_1779305046672_0qyk",
-    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
-    "status": "open",
-    "priority": "P2",
-    "deadline": "2026-05-21",
-    "hardDeadline": "2026-05-21",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "source": "manual_input",
-    "createdAt": "2026-05-20",
-    "updatedAt": "2026-05-20",
-    "tags": [],
-    "plannedDate": "2026-05-21",
-    "plannedStart": "2026-05-21T09:00:00",
-    "plannedEnd": "2026-05-21T10:00:00",
-    "plannedMinutes": 60,
-    "calendarSyncMode": "none",
-    "estimatedMinutes": 60,
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null
-  },
-  {
     "id": "task_mail_mirjam_weeze_20260520",
     "title": "V2 insturen: editen en opsturen Airport Weeze (feedback Mirjam verwerken",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "deadline": null,
     "hardDeadline": null,
@@ -658,6 +640,32 @@
       "samenwerking",
       "weeze",
       "video"
-    ]
+    ],
+    "completedAt": "2026-05-21T19:19:36.809Z"
+  },
+  {
+    "id": "task_1779305046672_0qyk",
+    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
+    "status": "done",
+    "priority": "P2",
+    "deadline": "2026-05-21",
+    "hardDeadline": "2026-05-21",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "source": "manual_input",
+    "createdAt": "2026-05-20",
+    "updatedAt": "2026-05-21",
+    "tags": [],
+    "plannedDate": "2026-05-21",
+    "plannedStart": "2026-05-21T09:00:00",
+    "plannedEnd": "2026-05-21T10:00:00",
+    "plannedMinutes": 60,
+    "calendarSyncMode": "none",
+    "estimatedMinutes": 60,
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "completedAt": "2026-05-21T19:19:40.937Z"
   }
 ]
