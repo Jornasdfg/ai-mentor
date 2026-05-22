@@ -760,5 +760,26 @@
       "googleUpdatedAt": "2026-05-21T17:35:00.584Z"
     },
     "coveyQuadrant": "Q1"
+  },
+  {
+    "id": "task_1779476668510_o3y1",
+    "title": "ZZP aansprakelijkheidsverzekering afsluiten",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Verzekering afsluiten",
+    "plannedStart": "2026-05-25T09:00:00",
+    "plannedEnd": "2026-05-25T09:30:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "createdAt": "2026-05-22",
+    "updatedAt": "2026-05-22",
+    "tags": []
   }
 ]
