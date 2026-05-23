@@ -781,5 +781,26 @@
     "createdAt": "2026-05-22",
     "updatedAt": "2026-05-22",
     "tags": []
+  },
+  {
+    "id": "task_1779572652568_f49t",
+    "title": "Financiën doen",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Financiën doornemen en bijwerken.",
+    "plannedStart": "2026-05-25T14:00:00",
+    "plannedEnd": "2026-05-25T14:30:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "createdAt": "2026-05-23",
+    "updatedAt": "2026-05-23",
+    "tags": []
   }
 ]
