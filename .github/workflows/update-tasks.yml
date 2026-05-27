@@ -1,0 +1,28 @@
+name: Update Task Register
+
+on:
+  repository_dispatch:
+    types: [update-tasks]
+
+jobs:
+  update-tasks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Write task_register.json
+        env:
+          TASKS_JSON: ${{ toJson(github.event.client_payload.tasks) }}
+        run: |
+          echo "$TASKS_JSON" > data/task_register.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "AI Mentor Bot"
+          git config user.email "bot@ai-mentor"
+          git add data/task_register.json
+          git diff --staged --quiet || git commit -m "routine: daily gmail sync ${{ github.event.client_payload.datum }}"
+          git push
