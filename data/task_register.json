@@ -1,7 +1,381 @@
 [
   {
-    "id": "test_dispatch",
+    "completedAt": "2026-05-13T11:45:19.033Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "id": "task_malaga_reel_1_script",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Externe samenwerking en nodig voor opname op locatie",
+    "source": "manual_input",
     "status": "done",
-    "title": "Dispatch test"
+    "tags": [
+      "malaga",
+      "weeze",
+      "script"
+    ],
+    "title": "Reel 1 script definitief maken voor Malaga / Weeze",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-13T11:45:21.292Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "id": "task_malaga_reel_2_winactie_script",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Winactie moet helder uitgelegd worden",
+    "source": "manual_input",
+    "status": "done",
+    "tags": [
+      "malaga",
+      "weeze",
+      "winactie"
+    ],
+    "title": "Reel 2 winactie script definitief maken",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-20T19:02:20.840Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "id": "task_malaga_shotlist",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Zonder shotlist wordt opname chaotisch",
+    "source": "manual_input",
+    "status": "done",
+    "tags": [
+      "malaga",
+      "weeze",
+      "shotlist"
+    ],
+    "title": "Shotlist per Malaga locatie maken",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "cancelledAt": "2026-05-13T15:53:36.107Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "id": "task_malaga_hooks",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Hooks bepalen bereik van de video's",
+    "source": "manual_input",
+    "status": "cancelled",
+    "tags": [
+      "malaga",
+      "weeze",
+      "hooks"
+    ],
+    "title": "Hookvarianten kiezen voor Malaga video's",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-13T15:50:22.223Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "id": "task_malaga_cta_winactie",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Duidelijke CTA nodig voor samenwerking",
+    "source": "manual_input",
+    "status": "done",
+    "tags": [
+      "malaga",
+      "weeze",
+      "cta"
+    ],
+    "title": "CTA en winactie-uitleg aanscherpen",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-13T11:45:31.412Z",
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-13",
+    "hardDeadline": "2026-05-13",
+    "id": "task_malaga_mirjam_vragen",
+    "priority": "P0",
+    "project": "Weeze Malaga",
+    "reason": "Open vragen kunnen uitvoering blokkeren",
+    "softDeadline": null,
+    "source": "manual_input",
+    "status": "done",
+    "tags": [
+      "weeze",
+      "klant"
+    ],
+    "title": "Contract Weeze ondertekenen en PVA met alle regels etc",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "createdAt": "2026-05-12",
+    "deadline": null,
+    "id": "task_ai_video_analyzer",
+    "priority": "P2",
+    "project": "AI Video Analyzer",
+    "reason": "Belangrijk maanddoel maar geen acute externe deadline zolang Malaga P0 is",
+    "source": "monthly_goal",
+    "status": "parked",
+    "tags": [
+      "ai-video-analyzer",
+      "tool"
+    ],
+    "title": "AI Video Analyzer verder bouwen",
+    "updatedAt": "2026-05-12"
+  },
+  {
+    "createdAt": "2026-05-12",
+    "deadline": "2026-05-27",
+    "deadlineType": "none",
+    "estimatedMinutes": 0,
+    "hardDeadline": "2026-05-27",
+    "id": "task_1778622106225_zbtb",
+    "priority": "P1",
+    "project": "Malaga",
+    "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
+    "softDeadline": "2026-05-26",
+    "source": "manual_input",
+    "startBy": null,
+    "status": "open",
+    "tags": [
+      "malaga"
+    ],
+    "title": "Autohuurrtool afmaken",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "cancelledAt": "2026-05-13T11:45:40.006Z",
+    "createdAt": "2026-05-12",
+    "deadline": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 0,
+    "hardDeadline": null,
+    "id": "task_1778622106225_j9fn",
+    "priority": "P1",
+    "project": "Malaga",
+    "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
+    "softDeadline": "2026-05-14",
+    "source": "manual_input",
+    "startBy": null,
+    "status": "cancelled",
+    "tags": [
+      "malaga"
+    ],
+    "title": "Pinstrategietool afmaken",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-13T15:53:27.655Z",
+    "createdAt": "2026-05-13",
+    "deadline": "2026-05-14",
+    "deadlineType": "hard",
+    "hardDeadline": "2026-05-14",
+    "id": "task_1778673471315_kryq",
+    "priority": "P0",
+    "softDeadline": "2026-05-13",
+    "source": "manual_input",
+    "startBy": null,
+    "status": "done",
+    "tags": [],
+    "title": "Maak nog Instagram Stories voorbereiden in Malaga",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-13T14:40:27.646Z",
+    "createdAt": "2026-05-13",
+    "deadline": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "hardDeadline": null,
+    "id": "task_1778680463555_vdl3",
+    "priority": "P1",
+    "project": "Administratie",
+    "reason": "Jorn staat rood en moet dit oplossen.",
+    "softDeadline": "2026-05-14",
+    "source": "manual_input",
+    "startBy": null,
+    "status": "done",
+    "tags": [
+      "administratie"
+    ],
+    "title": "Saldo vereffenen bij Rabo",
+    "updatedAt": "2026-05-13"
+  },
+  {
+    "completedAt": "2026-05-20T20:58:48.148Z",
+    "createdAt": "2026-05-13",
+    "deadline": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "hardDeadline": "2026-05-14",
+    "id": "task_1778687650802_wset",
+    "priority": "P1",
+    "project": null,
+    "reason": "Noodzakelijk om de auto-DM flow te ondersteunen.",
+    "softDeadline": null,
+    "source": "manual_input",
+    "startBy": null,
+    "status": "done",
+    "tags": [],
+    "title": "Auto-DM flow backup maken",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "completedAt": "2026-05-20T19:03:08.209Z",
+    "createdAt": "2026-05-13",
+    "deadline": "2026-05-14",
+    "deadlineType": "none",
+    "estimatedMinutes": 90,
+    "hardDeadline": "2026-05-14",
+    "id": "task_1778687650802_tqkd",
+    "priority": "P2",
+    "project": "Weeze",
+    "reason": "Verhoogt de betrokkenheid bij het Weeze artikel.",
+    "softDeadline": null,
+    "source": "manual_input",
+    "startBy": null,
+    "status": "done",
+    "tags": [
+      "malaga"
+    ],
+    "title": "Winactie blog en kader in Weeze artikel zetten",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "completedAt": "2026-05-20T19:02:36.629Z",
+    "createdAt": "2026-05-13",
+    "deadline": "2026-05-16",
+    "deadlineType": "hard",
+    "hardDeadline": "2026-05-16",
+    "id": "task_1778693602060_nfo0",
+    "priority": "P0",
+    "softDeadline": null,
+    "source": "manual_input",
+    "startBy": "2026-05-16",
+    "status": "done",
+    "tags": [],
+    "title": "Langs bij Rens van Vijven",
+    "updatedAt": "2026-05-20T19:15:00.674Z"
+  },
+  {
+    "createdAt": "2026-05-20",
+    "deadline": "2026-05-21",
+    "deadlineType": "hard",
+    "estimatedMinutes": 60,
+    "hardDeadline": "2026-05-21",
+    "id": "task_1779305046672_0qyk",
+    "priority": "P2",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "softDeadline": null,
+    "source": "manual_input",
+    "startBy": null,
+    "status": "open",
+    "tags": [],
+    "title": "Airport Weeze: reel editen, dashboard, stories, blog",
+    "unscheduledReason": null,
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "createdAt": "2026-05-20",
+    "deadline": null,
+    "deadlineType": "none",
+    "hardDeadline": null,
+    "id": "task_mail_mirjam_weeze_20260520",
+    "priority": "P1",
+    "project": "Brand Deals",
+    "reason": "Mirjam (Blue Flamingos) stuurde op 18 mei feedback op Video V1 Airport Weeze samenwerking. Feedback verwerken en V2 insturen.",
+    "softDeadline": null,
+    "source": "mail",
+    "status": "open",
+    "tags": [
+      "mail",
+      "samenwerking",
+      "weeze",
+      "video"
+    ],
+    "title": "V2 insturen — Airport Weeze (feedback Mirjam verwerken)",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "createdAt": "2026-05-20",
+    "deadline": null,
+    "deadlineType": "none",
+    "hardDeadline": null,
+    "id": "task_stale_schiphol_20260520",
+    "priority": "P2",
+    "project": "Brand Deals",
+    "reason": "Status: Onderhandelen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maret.Trouerbach@yune.nl. Update vragen over tijdlijn.",
+    "softDeadline": null,
+    "source": "system",
+    "status": "open",
+    "tags": [
+      "samenwerking",
+      "opvolging",
+      "schiphol"
+    ],
+    "title": "Schiphol (via Yune) opvolgen — 9 dagen geen contact",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "createdAt": "2026-05-20",
+    "deadline": null,
+    "deadlineType": "none",
+    "hardDeadline": null,
+    "id": "task_stale_easyhotel_20260520",
+    "priority": "P2",
+    "project": "Brand Deals",
+    "reason": "Status: Binnen. Laatste contact: 2026-05-11 (9 dagen geleden). Contact: Maddie.Simpson@easyhotel.com. Overlegdatum oppakken.",
+    "softDeadline": null,
+    "source": "system",
+    "status": "open",
+    "tags": [
+      "samenwerking",
+      "opvolging",
+      "easyhotel"
+    ],
+    "title": "easyHotel opvolgen — 9 dagen geen contact",
+    "updatedAt": "2026-05-20"
+  },
+  {
+    "createdAt": "2026-05-27",
+    "deadline": null,
+    "deadlineType": "none",
+    "hardDeadline": null,
+    "id": "task_mail_hoofdkraan_20260527",
+    "priority": "P1",
+    "project": null,
+    "reason": "Nieuwe opdracht via Hoofdkraan.nl: drukklare brochure + interactieve variant. Budget €25-40/uur. Reageren via platform op jorn@boone-media.nl (27 mei).",
+    "softDeadline": null,
+    "source": "mail",
+    "status": "open",
+    "tags": [
+      "mail",
+      "boone-media",
+      "opdracht"
+    ],
+    "title": "Reageer op Hoofdkraan.nl opdracht — Boone Media",
+    "updatedAt": "2026-05-27"
+  },
+  {
+    "createdAt": "2026-05-27",
+    "deadline": null,
+    "deadlineType": "none",
+    "hardDeadline": null,
+    "id": "task_mail_wp_spam_20260527",
+    "priority": "P2",
+    "project": null,
+    "reason": "Meerdere spamreacties wachten op moderatie op reishacker.nl (7 meldingen op 26-27 mei). Afwijzen in WordPress dashboard.",
+    "softDeadline": null,
+    "source": "mail",
+    "status": "open",
+    "tags": [
+      "mail",
+      "wordpress",
+      "spam"
+    ],
+    "title": "WordPress spam comments modereren — reishacker.nl",
+    "updatedAt": "2026-05-27"
   }
 ]
