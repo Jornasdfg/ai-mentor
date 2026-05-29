@@ -18,8 +18,10 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       "startBy", "leadTimeDays", "deadlineType", "estimatedMinutes", "nextAction",
       "reason", "tags", "parkedReason",
       // Scheduler fields
-      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
+      "taskKind", "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
       "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode",
+      // Planningsvelden (nodig om een afspraak op een vast tijdstip te zetten)
+      "plannedDate", "plannedStart", "plannedEnd", "plannedMinutes",
     ];
     const update = Object.fromEntries(
       Object.entries(body).filter(([k]) => allowed.includes(k as keyof MentorTask))

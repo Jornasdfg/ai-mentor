@@ -10,6 +10,7 @@ interface TaskCreateModalProps {
 
 export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalProps) {
   const [title, setTitle] = useState("");
+  const [taskKind, setTaskKind] = useState<"task" | "appointment">("task");
   const [project, setProject] = useState("");
   const [priority, setPriority] = useState<MentorPriority>("P2");
   const [status, setStatus] = useState<MentorTaskStatus>("open");
@@ -29,6 +30,9 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
 
   async function handleSave() {
     if (!title.trim()) { setError("Titel is verplicht"); return; }
+    if (taskKind === "appointment" && !(plannedDate && plannedTime)) {
+      setError("Een vaste afspraak heeft een datum én tijd nodig"); return;
+    }
     setSaving(true);
     setError(null);
     try {
@@ -70,11 +74,13 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
           nextAction: nextAction.trim() || undefined,
           tags: tags.split(",").map(t => t.trim()).filter(Boolean),
           source: "manual_input",
+          taskKind,
           plannedDate: plannedDateVal ?? null,
           plannedStart: plannedStart ?? null,
           plannedEnd: plannedEnd ?? null,
           plannedMinutes: plannedMins ?? null,
-          calendarSyncMode,
+          // Een vaste afspraak hoort in de agenda → forceer auto-sync naar Google.
+          calendarSyncMode: taskKind === "appointment" ? "auto" : calendarSyncMode,
         }),
       });
       if (!res.ok) {
@@ -117,6 +123,40 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             autoFocus
             className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
           />
+        </div>
+
+        {/* Type: flexibele taak vs vaste afspraak */}
+        <div>
+          <label className="block text-xs font-mono text-muted mb-1">Type</label>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setTaskKind("task")}
+              className={`flex-1 px-3 py-1.5 text-xs font-mono rounded border transition-colors ${
+                taskKind === "task"
+                  ? "border-accent text-accent bg-accent/10"
+                  : "border-border text-muted hover:text-gray-200"
+              }`}
+            >
+              Flexibele taak
+            </button>
+            <button
+              type="button"
+              onClick={() => setTaskKind("appointment")}
+              className={`flex-1 px-3 py-1.5 text-xs font-mono rounded border transition-colors ${
+                taskKind === "appointment"
+                  ? "border-accent text-accent bg-accent/10"
+                  : "border-border text-muted hover:text-gray-200"
+              }`}
+            >
+              Vaste afspraak
+            </button>
+          </div>
+          <p className="mt-1 text-[11px] font-mono text-muted">
+            {taskKind === "appointment"
+              ? "Vast tijdstip (datum + tijd hieronder verplicht). Wordt niet automatisch verschoven en gaat naar je Google Agenda."
+              : "Wordt automatisch ingepland in je vrije werkweek-tijd op basis van prioriteit en duur."}
+          </p>
         </div>
 
         {/* Project */}
