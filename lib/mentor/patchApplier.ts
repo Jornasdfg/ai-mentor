@@ -14,25 +14,41 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
       case "add_task": {
         const d = patch.data as Partial<MentorTask>;
         if (!d.title) break;
+        // Match by title regardless of status (including cancelled) to avoid duplicates
         const existingIdx = tasks.findIndex(
           t =>
             t.title.toLowerCase() === d.title!.toLowerCase() &&
             t.project === d.project &&
-            t.status !== "done" &&
-            t.status !== "cancelled"
+            t.status !== "done"
         );
         if (existingIdx >= 0) {
           const existing = tasks[existingIdx];
           const newPrio = d.priority ?? existing.priority;
-          if (PRIORITY_ORDER[newPrio] < PRIORITY_ORDER[existing.priority]) {
-            tasks[existingIdx] = { ...existing, priority: newPrio, updatedAt: now };
-          }
-          // Update estimatedMinutes or nextAction if provided
+          // Reopen cancelled/parked tasks if AI is adding them again
+          const newStatus = existing.status === "cancelled" || existing.status === "parked" ? "open" : existing.status;
+          tasks[existingIdx] = {
+            ...existing,
+            status: newStatus,
+            priority: PRIORITY_ORDER[newPrio] < PRIORITY_ORDER[existing.priority] ? newPrio : existing.priority,
+            updatedAt: now,
+          };
           if (d.estimatedMinutes !== undefined) {
             tasks[existingIdx] = { ...tasks[existingIdx], estimatedMinutes: d.estimatedMinutes, updatedAt: now };
           }
           if (d.nextAction) {
             tasks[existingIdx] = { ...tasks[existingIdx], nextAction: d.nextAction, updatedAt: now };
+          }
+          if (d.coveyQuadrant) {
+            tasks[existingIdx] = { ...tasks[existingIdx], coveyQuadrant: d.coveyQuadrant, updatedAt: now };
+          }
+          if (d.plannedStart) {
+            tasks[existingIdx] = {
+              ...tasks[existingIdx],
+              plannedStart: d.plannedStart,
+              plannedEnd: d.plannedEnd ?? undefined,
+              plannedMinutes: d.plannedMinutes ?? d.estimatedMinutes,
+              updatedAt: now,
+            };
           }
         } else {
           tasks.push({
@@ -41,6 +57,7 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
             project: d.project,
             status: d.status ?? "open",
             priority: d.priority ?? "P2",
+            coveyQuadrant: d.coveyQuadrant,
             deadline: d.deadline ?? null,
             hardDeadline: d.hardDeadline ?? d.deadline ?? null,
             softDeadline: d.softDeadline ?? null,
@@ -49,6 +66,9 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
             deadlineType: d.deadlineType ?? (d.hardDeadline ? "hard" : "none"),
             estimatedMinutes: d.estimatedMinutes,
             nextAction: d.nextAction,
+            plannedStart: d.plannedStart,
+            plannedEnd: d.plannedEnd,
+            plannedMinutes: d.plannedMinutes ?? d.estimatedMinutes,
             source: d.source ?? "manual_input",
             reason: d.reason,
             createdAt: d.createdAt ?? now,
@@ -64,7 +84,8 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
           const allowed = [
             "priority", "status", "deadline", "hardDeadline", "softDeadline",
             "startBy", "leadTimeDays", "deadlineType", "estimatedMinutes",
-            "nextAction", "reason", "tags", "lastSeen", "parkedReason"
+            "nextAction", "reason", "tags", "lastSeen", "parkedReason",
+            "coveyQuadrant", "plannedStart", "plannedEnd", "plannedMinutes",
           ];
           const safeUpdate = Object.fromEntries(
             Object.entries(patch.data).filter(([k]) => allowed.includes(k))

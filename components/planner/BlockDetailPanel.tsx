@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
 
 interface Props {
@@ -9,13 +9,21 @@ interface Props {
   onComplete: (taskId: string) => Promise<void>;
   onRemove: (blockId: string) => Promise<void>;
   onSync: (taskId: string) => Promise<void>;
+  onUpdateTask?: (taskId: string, updates: Record<string, unknown>) => Promise<void>;
 }
 
-const PRIORITY_COLOR: Record<string, string> = {
-  P0: "text-red-400 bg-red-400/10",
-  P1: "text-orange-400 bg-orange-400/10",
-  P2: "text-blue-400 bg-blue-400/10",
-  P3: "text-emerald-400 bg-emerald-400/10",
+const PRIORITY_STYLES: Record<string, { active: string; inactive: string; label: string }> = {
+  P0: { active: "bg-red-500/20 border-red-500 text-red-300", inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400", label: "P0" },
+  P1: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400", label: "P1" },
+  P2: { active: "bg-blue-500/20 border-blue-500 text-blue-300", inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400", label: "P2" },
+  P3: { active: "bg-emerald-500/20 border-emerald-500 text-emerald-300", inactive: "border-zinc-700 text-zinc-500 hover:border-emerald-500/50 hover:text-emerald-400", label: "P3" },
+};
+
+const Q_STYLES: Record<string, { active: string; inactive: string; sub: string }> = {
+  Q1: { active: "bg-red-500/20 border-red-500 text-red-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400",       sub: "Urgent & Belangrijk"        },
+  Q2: { active: "bg-blue-500/20 border-blue-500 text-blue-300",     inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400",     sub: "Niet Urgent & Belangrijk"   },
+  Q3: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400", sub: "Urgent & Onbelangrijk"      },
+  Q4: { active: "bg-zinc-700 border-zinc-600 text-zinc-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-400",        sub: "Niet Urgent & Onbelangrijk" },
 };
 
 function fmtDateTime(iso: string) {
@@ -26,12 +34,32 @@ function fmtDateTime(iso: string) {
   });
 }
 
-export default function BlockDetailPanel({ block, task, onClose, onComplete, onRemove, onSync }: Props) {
+export default function BlockDetailPanel({ block, task, onClose, onComplete, onRemove, onSync, onUpdateTask }: Props) {
   const [loading, setLoading] = useState<string | null>(null);
+  const [titleVal, setTitleVal] = useState(task?.title ?? block.title);
+  const [currentPriority, setCurrentPriority] = useState<string | null>(task?.priority ?? null);
+  const [currentQuadrant, setCurrentQuadrant] = useState<string>(task?.coveyQuadrant ?? "Q2");
+
+  useEffect(() => {
+    setTitleVal(task?.title ?? block.title);
+    setCurrentPriority(task?.priority ?? null);
+    setCurrentQuadrant(task?.coveyQuadrant ?? "Q2");
+  }, [block.id, task?.id]);
 
   async function run(key: string, fn: () => Promise<void>) {
     setLoading(key);
     try { await fn(); } finally { setLoading(null); }
+  }
+
+  async function handleSave() {
+    if (!block.taskId || !onUpdateTask) { onClose(); return; }
+    const newTitle = titleVal.trim();
+    if (!newTitle) { onClose(); return; }
+    // Always send title so block.title stays in sync even if task.title was already updated
+    const updates: Record<string, unknown> = { title: newTitle, coveyQuadrant: currentQuadrant };
+    if (currentPriority) updates.priority = currentPriority;
+    await run("save", () => onUpdateTask(block.taskId, updates));
+    onClose();
   }
 
   const durationH = Math.floor(block.durationMinutes / 60);
@@ -41,7 +69,20 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
     : `${durationM}m`;
 
   return (
-    <div className="flex flex-col h-full bg-zinc-900 border-l border-zinc-800 w-72 shrink-0">
+    <div className="
+      fixed sm:static bottom-0 sm:bottom-auto left-0 sm:left-auto right-0 sm:right-auto
+      z-50 sm:z-auto
+      w-full sm:w-72 sm:shrink-0
+      max-h-[88vh] sm:max-h-none sm:h-full
+      bg-zinc-900 border-t sm:border-t-0 sm:border-l border-zinc-800
+      rounded-t-2xl sm:rounded-none
+      flex flex-col overflow-hidden
+      shadow-2xl sm:shadow-none
+    ">
+      {/* Mobile drag handle */}
+      <div className="sm:hidden flex justify-center pt-2.5 pb-1 shrink-0">
+        <div className="w-10 h-1 rounded-full bg-zinc-700" />
+      </div>
       <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800 shrink-0">
         <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Blok details</span>
         <button
@@ -53,18 +94,72 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
       </div>
 
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {task?.priority && (
-          <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-bold ${PRIORITY_COLOR[task.priority] ?? "text-zinc-400"}`}>
-            {task.priority}
-          </span>
+        {/* Title */}
+        <div>
+          <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-1.5">Titel</p>
+          {block.taskId && onUpdateTask ? (
+            <input
+              value={titleVal}
+              onChange={e => setTitleVal(e.target.value)}
+              onKeyDown={e => { if (e.key === "Enter") handleSave(); if (e.key === "Escape") onClose(); }}
+              className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5 text-sm text-zinc-100 focus:outline-none focus:border-blue-500"
+            />
+          ) : (
+            <h2 className="text-sm font-semibold text-zinc-100 leading-snug">{titleVal}</h2>
+          )}
+        </div>
+
+        {/* Priority */}
+        {block.taskId && onUpdateTask && (
+          <div>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-1.5">Prioriteit</p>
+            <div className="flex gap-1">
+              {["P0","P1","P2","P3"].map(p => {
+                const s = PRIORITY_STYLES[p];
+                const isActive = currentPriority === p;
+                return (
+                  <button
+                    key={p}
+                    onClick={() => setCurrentPriority(p)}
+                    disabled={!!loading}
+                    className={`flex-1 py-1.5 text-xs font-bold rounded border transition-all ${isActive ? s.active : s.inactive}`}
+                  >
+                    {s.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         )}
 
-        <h2 className="text-sm font-semibold text-zinc-100 leading-snug">{block.title}</h2>
+        {/* Covey Kwadrant */}
+        {block.taskId && onUpdateTask && (
+          <div>
+            <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-1.5">Covey kwadrant</p>
+            <div className="grid grid-cols-2 gap-1">
+              {(["Q1","Q2","Q3","Q4"] as const).map(q => {
+                const s = Q_STYLES[q];
+                return (
+                  <button
+                    key={q}
+                    onClick={() => setCurrentQuadrant(q)}
+                    disabled={!!loading}
+                    className={`py-1.5 px-2 text-left rounded border transition-all ${currentQuadrant === q ? s.active : s.inactive}`}
+                  >
+                    <span className="text-[10px] font-bold block">{q}</span>
+                    <span className="text-[9px] opacity-70 leading-tight">{s.sub}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {task?.project && (
           <p className="text-xs text-zinc-500">Project: {task.project}</p>
         )}
 
+        {/* Times */}
         <div className="space-y-2 text-xs">
           <div className="flex gap-2">
             <span className="text-zinc-600 w-14 shrink-0">Start</span>
@@ -76,7 +171,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
           </div>
           <div className="flex gap-2">
             <span className="text-zinc-600 w-14 shrink-0">Duur</span>
-            <span className="text-zinc-300">{durationStr}</span>
+            <span className="text-zinc-300">{durationStr} <span className="text-zinc-600 italic">(versleep onderrand om aan te passen)</span></span>
           </div>
         </div>
 
@@ -113,16 +208,25 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
         {!block.calendarSynced && block.taskId && (
           <button
             onClick={() => run("sync", () => onSync(block.taskId))}
-            disabled={loading === "sync"}
+            disabled={!!loading}
             className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-400 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
           >
             {loading === "sync" ? "Synchroniseren..." : "↑ Sync naar Google Calendar"}
           </button>
         )}
+        {block.taskId && onUpdateTask && (
+          <button
+            onClick={handleSave}
+            disabled={!!loading}
+            className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-400 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
+          >
+            {loading === "save" ? "Opslaan..." : "↳ Opslaan & sluiten"}
+          </button>
+        )}
         {block.taskId && (
           <button
             onClick={() => run("complete", () => onComplete(block.taskId))}
-            disabled={loading === "complete"}
+            disabled={!!loading}
             className="w-full py-2 text-xs font-medium rounded-lg bg-emerald-600/20 border border-emerald-600/40 text-emerald-400 hover:bg-emerald-600/30 disabled:opacity-40 transition-colors"
           >
             {loading === "complete" ? "Voltooien..." : "✓ Taak voltooien"}
@@ -130,7 +234,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
         )}
         <button
           onClick={() => run("remove", () => onRemove(block.id))}
-          disabled={loading === "remove"}
+          disabled={!!loading}
           className="w-full py-2 text-xs font-medium rounded-lg border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 disabled:opacity-40 transition-colors"
         >
           {loading === "remove" ? "Verwijderen..." : "× Verwijder uit planning"}

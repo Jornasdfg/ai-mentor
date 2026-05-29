@@ -1,44 +1,76 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import CostBadge from "@/components/CostBadge";
 import MentorChat from "@/components/MentorChat";
 import TaskBoard from "@/components/TaskBoard";
 import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
-import CoveyMatrix from "@/components/CoveyMatrix";
-import DailyFocus from "@/components/DailyFocus";
-import UpcomingWarnings from "@/components/UpcomingWarnings";
-import type { MentorTask, CoveyQuadrant, MentorAdvice } from "@/lib/mentorTypes";
+import type { MentorTask } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
 
-type TabId = "planner" | "tasks" | "matrix" | "ai";
+type TabId = "planner" | "tasks" | "ai";
 
 const TABS: { id: TabId; label: string }[] = [
   { id: "planner", label: "Planner" },
-  { id: "tasks",   label: "Taken" },
-  { id: "matrix",  label: "Matrix" },
+  { id: "tasks",   label: "Taken"   },
   { id: "ai",      label: "AI Mentor" },
 ];
 
+function IconPlanner() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="5" width="16" height="14" rx="2"/>
+      <path d="M8 3v4M14 3v4M3 10h16"/>
+      <circle cx="8" cy="15" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="11" cy="15" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="14" cy="15" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+function IconTasks() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 6h9M9 11h9M9 16h9"/>
+      <polyline points="4,5 5,6.5 7,4"/>
+      <polyline points="4,10 5,11.5 7,9"/>
+      <polyline points="4,15 5,16.5 7,14"/>
+    </svg>
+  );
+}
+function IconAI() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="M8 14s1-2.5 3-2.5 3 2.5 3 2.5"/>
+      <circle cx="8.5" cy="9.5" r="1.2" fill="currentColor" stroke="none"/>
+      <circle cx="13.5" cy="9.5" r="1.2" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
+
+const TAB_ICONS: Record<TabId, React.ReactNode> = {
+  planner: <IconPlanner />,
+  tasks:   <IconTasks />,
+  ai:      <IconAI />,
+};
+
 export default function Home() {
-  const [tasks, setTasks] = useState<MentorTask[]>([]);
-  const [advice, setAdvice] = useState<MentorAdvice | null>(null);
-  const [quadrantFilter, setQuadrantFilter] = useState<CoveyQuadrant | null>(null);
+  const [tasks, setTasks]             = useState<MentorTask[]>([]);
   const [costRefresh, setCostRefresh] = useState(0);
-  const [activeTab, setActiveTab] = useState<TabId>("planner");
+  const [activeTab, setActiveTab]   = useState<TabId>("planner");
 
   const loadTasks = useCallback(async () => {
     try {
-      const res = await fetch("/api/tasks");
+      const res  = await fetch("/api/tasks");
       const data = await res.json() as { tasks: MentorTask[] };
       const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
       const enriched = data.tasks.map(t => {
         const analysis = analyzeTask(t, { todayISO });
         return {
           ...t,
-          coveyQuadrant: t.coveyQuadrant ?? analysis.coveyQuadrant,
-          urgencyScore: t.urgencyScore ?? analysis.urgencyScore,
-          importanceScore: t.importanceScore ?? analysis.importanceScore,
+          coveyQuadrant:    t.coveyQuadrant    ?? analysis.coveyQuadrant,
+          urgencyScore:     t.urgencyScore     ?? analysis.urgencyScore,
+          importanceScore:  t.importanceScore  ?? analysis.importanceScore,
           deadlinePressure: t.deadlinePressure ?? analysis.deadlinePressure,
         };
       });
@@ -55,26 +87,15 @@ export default function Home() {
     loadTasks();
   }
 
-  const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
-  const activeTasks = tasks.filter(t => t.status === "open" || t.status === "in_progress");
-  const p0q1Tasks = activeTasks.filter(t => t.priority === "P0" || t.coveyQuadrant === "Q1");
-  const topTask = p0q1Tasks.length > 0
-    ? [...p0q1Tasks].sort((a, b) => {
-        const da = a.hardDeadline ?? a.deadline ?? "9999";
-        const db = b.hardDeadline ?? b.deadline ?? "9999";
-        return da.localeCompare(db);
-      })[0]
-    : null;
-  const topAnalysis = topTask ? analyzeTask(topTask, { todayISO }) : null;
-
   return (
-    <div className="flex flex-col h-screen bg-zinc-950 text-zinc-100 overflow-hidden">
+    <div className="flex flex-col h-[100dvh] bg-zinc-950 text-zinc-100 overflow-hidden">
       {/* Header */}
       <header className="flex items-center justify-between px-4 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <span className="text-sm font-semibold text-zinc-100 tracking-tight">AI Mentor</span>
-          <span className="text-xs text-zinc-600 font-mono">v4</span>
-          <nav className="flex items-center gap-0.5 ml-2">
+          <span className="text-xs text-zinc-600 font-mono hidden sm:inline">v4</span>
+          <CostBadge refreshTrigger={costRefresh} />
+          <nav className="hidden sm:flex items-center gap-0.5 ml-2">
             {TABS.map(tab => (
               <button
                 key={tab.id}
@@ -90,45 +111,43 @@ export default function Home() {
             ))}
           </nav>
         </div>
-        <CostBadge refreshTrigger={costRefresh} />
       </header>
 
-      {/* Content */}
-      <div className="flex flex-1 min-h-0 overflow-hidden">
-        {activeTab === "planner" && (
-          <PlannerWorkspace onTasksChange={loadTasks} />
-        )}
+      {/* Main content */}
+      <div className="flex flex-1 min-h-0 overflow-hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
+        <div className="flex flex-1 min-h-0 overflow-hidden mb-[56px] sm:mb-0">
+          {activeTab === "planner" && (
+            <PlannerWorkspace onTasksChange={loadTasks} />
+          )}
 
-        {activeTab === "tasks" && (
-          <TaskBoard
-            tasks={tasks}
-            onTasksChange={loadTasks}
-            quadrantFilter={quadrantFilter}
-            onClearQuadrantFilter={() => setQuadrantFilter(null)}
-          />
-        )}
+          {activeTab === "tasks" && (
+            <TaskBoard tasks={tasks} onTasksChange={loadTasks} />
+          )}
 
-        {activeTab === "matrix" && (
-          <div className="flex flex-1 min-h-0 overflow-y-auto">
-            <div className="flex flex-col flex-1 p-5 gap-5 max-w-4xl mx-auto w-full">
-              <DailyFocus advice={advice} topTask={topTask} topAnalysis={topAnalysis} />
-              <UpcomingWarnings advice={advice} />
-              <div>
-                <p className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">Covey Matrix</p>
-                <CoveyMatrix
-                  tasks={tasks}
-                  onFilterQuadrant={setQuadrantFilter}
-                  activeFilter={quadrantFilter}
-                />
-              </div>
-            </div>
-          </div>
-        )}
-
-        {activeTab === "ai" && (
-          <MentorChat onComplete={handleMentorComplete} onAdvice={setAdvice} />
-        )}
+          {activeTab === "ai" && (
+            <MentorChat onComplete={handleMentorComplete} />
+          )}
+        </div>
       </div>
+
+      {/* Mobile bottom nav */}
+      <nav
+        className="sm:hidden fixed bottom-0 inset-x-0 z-50 bg-zinc-900/95 backdrop-blur-sm border-t border-zinc-800 flex"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        {TABS.map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex-1 py-2 flex flex-col items-center gap-0.5 transition-colors active:bg-zinc-800 ${
+              activeTab === tab.id ? "text-blue-400" : "text-zinc-500"
+            }`}
+          >
+            {TAB_ICONS[tab.id]}
+            <span className="text-[10px] font-medium">{tab.label}</span>
+          </button>
+        ))}
+      </nav>
     </div>
   );
 }

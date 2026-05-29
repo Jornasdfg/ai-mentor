@@ -10,126 +10,183 @@ interface TaskCardProps {
   onPark: (id: string) => void;
   onReopen: (id: string) => void;
   onEdit: (task: MentorTask) => void;
+  onUpdatePriority?: (id: string, priority: string) => void;
+  onDragStart?: () => void;
+  onDragEnd?: () => void;
 }
 
-const PRIORITY_COLORS: Record<string, string> = {
-  P0: "text-danger border-danger/40 bg-danger/10",
-  P1: "text-warning border-warning/40 bg-warning/10",
-  P2: "text-accent border-accent/40 bg-accent/10",
-  P3: "text-muted border-border bg-surface",
+const PRIORITIES = ["P0", "P1", "P2", "P3"] as const;
+
+const BORDER: Record<string, string> = {
+  P0: "border-l-red-500",
+  P1: "border-l-orange-400",
+  P2: "border-l-blue-500",
+  P3: "border-l-zinc-600",
 };
 
-const QUADRANT_COLORS: Record<string, string> = {
-  Q1: "text-danger",
-  Q2: "text-accent",
-  Q3: "text-warning",
-  Q4: "text-muted",
+const BADGE: Record<string, string> = {
+  P0: "bg-red-500/15 text-red-300 border-red-500/30 hover:bg-red-500/25",
+  P1: "bg-orange-500/15 text-orange-300 border-orange-500/30 hover:bg-orange-500/25",
+  P2: "bg-blue-500/15 text-blue-300 border-blue-500/30 hover:bg-blue-500/25",
+  P3: "bg-zinc-800 text-zinc-500 border-zinc-700 hover:bg-zinc-700",
 };
 
-const STATUS_BADGE: Record<string, string> = {
-  open: "text-success",
-  in_progress: "text-accent",
-  done: "text-muted line-through",
-  parked: "text-muted",
-  cancelled: "text-danger line-through",
+const Q_COLOR: Record<string, string> = {
+  Q1: "text-red-400",
+  Q2: "text-blue-400",
+  Q3: "text-orange-400",
+  Q4: "text-zinc-500",
 };
 
-export default function TaskCard({ task, onComplete, onCancel, onPark, onReopen, onEdit }: TaskCardProps) {
-  const [confirming, setConfirming] = useState<"cancel" | null>(null);
-  const isDone = task.status === "done" || task.status === "cancelled";
+function fmtPlanned(iso: string) {
+  return new Date(iso).toLocaleString("nl-NL", {
+    weekday: "short", day: "numeric", month: "short",
+    hour: "2-digit", minute: "2-digit",
+    timeZone: "Europe/Amsterdam",
+  });
+}
+
+export default function TaskCard({
+  task,
+  onComplete,
+  onCancel,
+  onPark,
+  onReopen,
+  onEdit,
+  onUpdatePriority,
+  onDragStart,
+  onDragEnd,
+}: TaskCardProps) {
+  const [confirming, setConfirming] = useState(false);
+
+  const isDone   = task.status === "done" || task.status === "cancelled";
   const isParked = task.status === "parked";
-
   const deadline = task.hardDeadline ?? task.deadline;
+  const canDrag  = !isDone && !!onDragStart;
+
+  const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+  const in3d  = new Date(Date.now() + 3 * 86400000).toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+  const dlCls = !deadline ? "" : deadline < today ? "text-red-400" : deadline <= in3d ? "text-amber-400" : "text-zinc-600";
+
+  function cyclePriority(e: React.MouseEvent) {
+    e.stopPropagation();
+    if (!onUpdatePriority || isDone) return;
+    const idx = PRIORITIES.indexOf(task.priority as typeof PRIORITIES[number]);
+    onUpdatePriority(task.id, PRIORITIES[(idx + 1) % PRIORITIES.length]);
+  }
 
   return (
-    <div className={`p-3 rounded border border-border bg-panel space-y-2 ${isDone ? "opacity-50" : ""}`}>
-      {/* Header */}
-      <div className="flex items-start justify-between gap-2">
-        <div className="flex-1 min-w-0">
-          <p className={`text-sm font-mono font-medium truncate ${STATUS_BADGE[task.status] ?? "text-gray-200"}`}>
-            {task.title}
-          </p>
-          {task.project && (
-            <p className="text-xs text-muted font-mono truncate">{task.project}</p>
-          )}
-        </div>
-        <div className="flex items-center gap-1 shrink-0">
+    <div
+      draggable={canDrag}
+      onDragStart={canDrag ? onDragStart : undefined}
+      onDragEnd={onDragEnd}
+      onClick={() => onEdit(task)}
+      className={`
+        border border-zinc-800 border-l-2 rounded-lg bg-zinc-900 select-none
+        ${BORDER[task.priority] ?? "border-l-zinc-600"}
+        ${isDone ? "opacity-40" : "hover:border-zinc-700 hover:bg-zinc-900/80 active:bg-zinc-800"}
+        cursor-pointer transition-colors
+      `}
+    >
+      <div className="p-2.5 space-y-1.5">
+
+        {/* Row 1: priority badge + quadrant + deadline */}
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={cyclePriority}
+            disabled={!onUpdatePriority || isDone}
+            title={onUpdatePriority && !isDone ? "Klik om prioriteit te wisselen" : undefined}
+            className={`
+              text-[10px] font-bold px-1.5 py-0.5 rounded border transition-all shrink-0
+              ${BADGE[task.priority] ?? ""}
+              ${onUpdatePriority && !isDone ? "cursor-pointer" : "cursor-default"}
+            `}
+          >
+            {task.priority}
+          </button>
+
           {task.coveyQuadrant && (
-            <span className={`text-xs font-mono font-bold ${QUADRANT_COLORS[task.coveyQuadrant] ?? "text-muted"}`}>
+            <span className={`text-[9px] font-bold shrink-0 ${Q_COLOR[task.coveyQuadrant] ?? "text-zinc-500"}`}>
               {task.coveyQuadrant}
             </span>
           )}
-          <span className={`text-xs font-mono px-1.5 py-0.5 rounded border ${PRIORITY_COLORS[task.priority] ?? ""}`}>
-            {task.priority}
-          </span>
-        </div>
-      </div>
 
-      {/* Meta */}
-      <div className="flex flex-wrap gap-2 text-xs font-mono text-muted">
-        {deadline && <span>Deadline: {deadline}</span>}
-        {task.softDeadline && <span>Zacht: {task.softDeadline}</span>}
-        {task.estimatedMinutes && <span>{task.estimatedMinutes}min</span>}
-        {task.nextAction && <span className="text-accent">-&gt; {task.nextAction}</span>}
-        {task.plannedStart && (
-          <span className="text-success">
-            Gepland: {task.plannedStart.slice(0, 10)} {task.plannedStart.slice(11, 16)}
-          </span>
-        )}
-        {task.calendarLink?.syncStatus === "synced" && (
-          <span className="text-accent">
-            {task.calendarLink.provider === "google" ? "Google synced ✓" : "gcal ✓"}
-          </span>
-        )}
-        {task.calendarLink?.syncStatus === "error" && (
-          <span className="text-danger" title={task.calendarLink.syncError ?? undefined}>
-            sync fout
-          </span>
-        )}
-      </div>
-
-      {/* Tags */}
-      {(task.tags ?? []).length > 0 && (
-        <div className="flex flex-wrap gap-1">
-          {(task.tags ?? []).filter(t => t !== "stale_seed").map(tag => (
-            <span key={tag} className="text-xs font-mono px-1.5 py-0.5 rounded bg-surface border border-border text-muted">
-              {tag}
-            </span>
-          ))}
-          {(task.tags ?? []).includes("stale_seed") && (
-            <span className="text-xs font-mono px-1.5 py-0.5 rounded bg-warning/10 border border-warning/30 text-warning">
-              verlopen seed
+          {deadline && (
+            <span className={`ml-auto text-[9px] font-mono tabular-nums shrink-0 ${dlCls}`}>
+              {deadline.slice(5)}
             </span>
           )}
         </div>
-      )}
 
-      {/* Actions */}
-      {confirming === "cancel" ? (
-        <div className="flex gap-2 pt-1">
-          <span className="text-xs text-muted font-mono">Zeker annuleren?</span>
-          <button onClick={() => { onCancel(task.id); setConfirming(null); }} className="text-xs font-mono text-danger hover:underline">Ja</button>
-          <button onClick={() => setConfirming(null)} className="text-xs font-mono text-muted hover:underline">Nee</button>
-        </div>
-      ) : (
-        <div className="flex flex-wrap gap-1.5 pt-1">
-          {!isDone && !isParked && (
-            <button onClick={() => onComplete(task.id)} className="text-xs font-mono px-2 py-1 rounded border border-success/40 text-success hover:bg-success/10 transition-colors">Klaar</button>
-          )}
-          {!isDone && (
-            <button onClick={() => onEdit(task)} className="text-xs font-mono px-2 py-1 rounded border border-border text-muted hover:border-accent hover:text-accent transition-colors">Bewerk</button>
-          )}
-          {!isDone && !isParked && (
-            <button onClick={() => onPark(task.id)} className="text-xs font-mono px-2 py-1 rounded border border-border text-muted hover:border-warning hover:text-warning transition-colors">Park</button>
-          )}
-          {!isDone && (
-            <button onClick={() => setConfirming("cancel")} className="text-xs font-mono px-2 py-1 rounded border border-border text-muted hover:border-danger hover:text-danger transition-colors">Annuleer</button>
-          )}
-          {isDone && (
-            <button onClick={() => onReopen(task.id)} className="text-xs font-mono px-2 py-1 rounded border border-border text-muted hover:border-accent hover:text-accent transition-colors">Heropenen</button>
-          )}
-        </div>
-      )}
+        {/* Title */}
+        <p className={`text-xs leading-snug ${isDone ? "line-through text-zinc-500" : "text-zinc-200"}`}>
+          {task.title}
+        </p>
+
+        {/* Planned in Planner */}
+        {task.plannedStart && !isDone && (
+          <div className="flex items-center gap-1 text-[10px] text-emerald-500/80">
+            <span>📅</span>
+            <span className="font-mono">{fmtPlanned(task.plannedStart)}</span>
+          </div>
+        )}
+
+        {/* Project / next action */}
+        {(task.project || task.nextAction) && (
+          <div className="space-y-0.5">
+            {task.project    && <p className="text-[10px] text-zinc-600 truncate">{task.project}</p>}
+            {task.nextAction && <p className="text-[10px] text-blue-400/70 truncate">→ {task.nextAction}</p>}
+          </div>
+        )}
+
+        {/* Actions */}
+        {confirming ? (
+          <div className="flex items-center gap-2 pt-0.5">
+            <span className="text-[10px] text-zinc-500">Zeker annuleren?</span>
+            <button
+              onClick={e => { e.stopPropagation(); onCancel(task.id); setConfirming(false); }}
+              className="text-[10px] text-red-400 hover:underline"
+            >Ja</button>
+            <button
+              onClick={e => { e.stopPropagation(); setConfirming(false); }}
+              className="text-[10px] text-zinc-500 hover:underline"
+            >Nee</button>
+          </div>
+        ) : isDone ? (
+          <button
+            onClick={e => { e.stopPropagation(); onReopen(task.id); }}
+            className="text-[10px] px-2 py-0.5 rounded border border-zinc-700 text-zinc-500 hover:text-zinc-200 hover:border-zinc-500 transition-colors"
+          >
+            Heropenen
+          </button>
+        ) : (
+          <div className="flex items-center gap-1 pt-0.5">
+            <button
+              onClick={e => { e.stopPropagation(); onComplete(task.id); }}
+              className="text-[10px] px-2 py-0.5 rounded border border-emerald-800/60 text-emerald-500 hover:bg-emerald-500/10 transition-colors"
+              title="Voltooien"
+            >
+              ✓ Klaar
+            </button>
+            {!isParked && (
+              <button
+                onClick={e => { e.stopPropagation(); onPark(task.id); }}
+                className="text-[10px] px-1.5 py-0.5 rounded border border-zinc-700 text-zinc-600 hover:text-amber-400 hover:border-amber-700/60 transition-colors"
+                title="Parkeren"
+              >
+                ⏸
+              </button>
+            )}
+            <button
+              onClick={e => { e.stopPropagation(); setConfirming(true); }}
+              className="text-[10px] px-1.5 py-0.5 rounded border border-zinc-700 text-zinc-600 hover:text-red-400 hover:border-red-800/60 transition-colors"
+              title="Annuleren"
+            >
+              ×
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

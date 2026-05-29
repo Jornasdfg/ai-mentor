@@ -16,7 +16,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const allowed: (keyof MentorTask)[] = [
       "title", "project", "priority", "status", "deadline", "hardDeadline", "softDeadline",
       "startBy", "leadTimeDays", "deadlineType", "estimatedMinutes", "nextAction",
-      "reason", "tags", "parkedReason",
+      "reason", "tags", "parkedReason", "coveyQuadrant",
       // Scheduler fields
       "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
       "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode",
@@ -26,11 +26,41 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     );
     tasks[idx] = { ...tasks[idx], ...update, updatedAt: now };
     await writeTasks(tasks);
+
+    // If title changed, sync it to all existing blocks for this task
+    if (typeof update.title === "string") {
+      const { readScheduleBlocks, writeScheduleBlocks } = await import("@/lib/scheduler/scheduleStorage");
+      const blocks = await readScheduleBlocks();
+      const changed = blocks.map(b => b.taskId === id ? { ...b, title: update.title as string } : b);
+      await writeScheduleBlocks(changed);
+    }
+
     const decisions = await readDecisions();
     await regenerateDailyReference(tasks, decisions);
-    // Reschedule after update (fire-and-forget)
-    recalculateSchedule({ triggeredBy: "task_updated", horizonDays: 28, syncToGoogle: true }).catch(() => {});
+    // Only reschedule when fields that affect scheduling actually changed
+    const schedulingFields = ["estimatedMinutes", "deadline", "hardDeadline", "softDeadline",
+      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable", "coveyQuadrant"];
+    if (schedulingFields.some(f => f in update)) {
+      recalculateSchedule({ triggeredBy: "task_updated", horizonDays: 28, syncToGoogle: true }).catch(() => {});
+    }
     return NextResponse.json({ task: tasks[idx] });
+  } catch (err) {
+    return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
+  }
+}
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const { id } = await params;
+    const { removeBlocksForTask } = await import("@/lib/scheduler/scheduleStorage");
+    const tasks = await readTasks();
+    const idx = tasks.findIndex(t => t.id === id);
+    if (idx < 0) return NextResponse.json({ error: "Taak niet gevonden" }, { status: 404 });
+    tasks.splice(idx, 1);
+    await writeTasks(tasks);
+    await removeBlocksForTask(id);
+    const decisions = await readDecisions();
+    await regenerateDailyReference(tasks, decisions);
+    return NextResponse.json({ ok: true });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
   }

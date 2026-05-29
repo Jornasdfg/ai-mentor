@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import type { AIClient, AIResponse } from "./aiClient";
+import type { AIClient, AIResponse, ChatMessage } from "./aiClient";
 
 // DeepSeek gebruikt een OpenAI-compatibele API.
 // Prijzen per 1M tokens (USD) — deepseek-chat V3
@@ -20,14 +20,18 @@ export class DeepSeekClient implements AIClient {
   }
 
   async complete(systemPrompt: string, userMessage: string): Promise<AIResponse> {
+    return this.completeChat(systemPrompt, [{ role: "user", content: userMessage }]);
+  }
+
+  async completeChat(systemPrompt: string, messages: ChatMessage[]): Promise<AIResponse> {
     const response = await this.client.chat.completions.create({
       model: this.model,
       messages: [
         { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
+        ...messages as OpenAI.ChatCompletionMessageParam[],
       ],
       temperature: 0.7,
-      max_tokens: 4096,
+      max_tokens: 800,
     });
 
     const text = response.choices[0]?.message?.content ?? "";

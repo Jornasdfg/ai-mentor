@@ -53,7 +53,20 @@ export default function GoogleEventPanel({ event, onClose, onImportAsTask }: Pro
   const isAllDay = !event.start.includes("T");
 
   return (
-    <div className="flex flex-col h-full bg-zinc-900 border-l border-zinc-800 w-72 shrink-0">
+    <div className="
+      fixed sm:static bottom-0 sm:bottom-auto left-0 sm:left-auto right-0 sm:right-auto
+      z-50 sm:z-auto
+      w-full sm:w-72 sm:shrink-0
+      max-h-[88vh] sm:max-h-none sm:h-full
+      bg-zinc-900 border-t sm:border-t-0 sm:border-l border-zinc-800
+      rounded-t-2xl sm:rounded-none
+      flex flex-col overflow-hidden
+      shadow-2xl sm:shadow-none
+    ">
+      {/* Mobile drag handle */}
+      <div className="sm:hidden flex justify-center pt-2.5 pb-1 shrink-0">
+        <div className="w-10 h-1 rounded-full bg-zinc-700" />
+      </div>
       <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800 shrink-0">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-indigo-400 shrink-0" />

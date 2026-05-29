@@ -1,0 +1,33 @@
+# Dev mode — hot reload, geen rebuild nodig
+# Gebruik: docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d mentor-web
+# Terug naar prod: docker compose up -d mentor-web
+
+services:
+  mentor-web:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npx next dev --hostname 0.0.0.0"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      DATABASE_URL: postgresql://mentor:${POSTGRES_PASSWORD:-mentor_local_dev}@postgres:5432/mentor
+      NODE_ENV: development
+    volumes:
+      - mentor_data:/app/data
+      - ./app:/app/app
+      - ./components:/app/components
+      - ./lib:/app/lib
+      - ./public:/app/public
+      - ./worker:/app/worker
+      - ./prisma:/app/prisma
+      - ./next.config.ts:/app/next.config.ts
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./tailwind.config.ts:/app/tailwind.config.ts
+      - ./postcss.config.mjs:/app/postcss.config.mjs
+      - ./package.json:/app/package.json
+      - ./node_modules:/app/node_modules
+    depends_on:
+      postgres:
+        condition: service_healthy

@@ -39,6 +39,16 @@ function shiftMonth(base: string, delta: number): string {
   const d = new Date(y, m - 1 + delta, 1);
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
 }
+function dayLabel(iso: string): string {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("nl-NL", {
+    weekday: "short", day: "numeric", month: "short", timeZone: "UTC",
+  });
+}
+function shiftDay(iso: string, delta: number): string {
+  const d = new Date(`${iso}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + delta);
+  return d.toISOString().slice(0, 10);
+}
 
 interface Props { onTasksChange?: () => void; }
 
@@ -54,11 +64,24 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   const [selectedBlock, setSelectedBlock] = useState<ScheduleBlock | null>(null);
   const [selectedGoogleEvent, setSelectedGoogleEvent] = useState<GoogleEvent | null>(null);
   const pollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const weekDays = getWeekDays(weekBase);
 
-  const rangeFrom = viewMode === "week" ? weekDays[0] : monthBase.slice(0, 7) + "-01";
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileDay, setMobileDay] = useState(todayISO());
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const weekDays = getWeekDays(weekBase);
+  const displayedDays = isMobile ? [mobileDay] : weekDays;
+
+  const rangeFrom = viewMode === "week"
+    ? (isMobile ? mobileDay : weekDays[0])
+    : monthBase.slice(0, 7) + "-01";
   const rangeTo = viewMode === "week"
-    ? weekDays[6]
+    ? (isMobile ? mobileDay : weekDays[6])
     : (() => {
         const [y, m] = monthBase.split("-").map(Number);
         return new Date(y, m, 0).toLocaleDateString("sv-SE");
@@ -72,18 +95,13 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   }, [rangeFrom, rangeTo]);
 
   useEffect(() => { load(); }, [load]);
-
-  useEffect(() => {
-    fetch("/api/google/calendar/watch/ensure", { method: "POST" }).catch(() => {});
-  }, []);
-
+  useEffect(() => { fetch("/api/google/calendar/watch/ensure", { method: "POST" }).catch(() => {}); }, []);
   useEffect(() => {
     fetch("/api/auth/google/status")
       .then(r => r.json())
       .then((j: { connected: boolean }) => setGoogleConnected(j.connected ?? false))
       .catch(() => {});
   }, []);
-
   useEffect(() => {
     pollingRef.current = setInterval(load, 20000);
     return () => { if (pollingRef.current) clearInterval(pollingRef.current); };
@@ -93,6 +111,15 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     setSelectedBlock(null);
     setSelectedGoogleEvent(null);
   }
+
+  function prevWeek() {
+    setWeekBase(w => { const d = new Date(`${w}T12:00:00Z`); d.setUTCDate(d.getUTCDate()-7); return d.toISOString().slice(0,10); });
+  }
+  function nextWeek() {
+    setWeekBase(w => { const d = new Date(`${w}T12:00:00Z`); d.setUTCDate(d.getUTCDate()+7); return d.toISOString().slice(0,10); });
+  }
+  function prevDay() { setMobileDay(d => shiftDay(d, -1)); }
+  function nextDay() { setMobileDay(d => shiftDay(d, 1)); }
 
   async function recalculate() {
     setRecalcLoading(true);
@@ -126,7 +153,7 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   }
 
   async function handleCompleteTask(taskId: string) {
-    await fetch(`/api/tasks/${taskId}/complete`, { method: "PATCH" });
+    await fetch(`/api/tasks/${taskId}`, { method: "DELETE" });
     closeAllPanels();
     await load();
     onTasksChange?.();
@@ -136,6 +163,26 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     await fetch(`/api/scheduler/blocks/${blockId}`, { method: "DELETE" });
     closeAllPanels();
     await load();
+  }
+
+  async function handleConfirmBlock(blockId: string) {
+    await fetch(`/api/scheduler/blocks/${blockId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ locked: true, source: "manual_plan", syncToGoogle: true }),
+    });
+    await load();
+    onTasksChange?.();
+  }
+
+  async function handleUpdateTask(taskId: string, updates: Record<string, unknown>) {
+    await fetch(`/api/tasks/${taskId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updates),
+    });
+    await load();
+    onTasksChange?.();
   }
 
   async function handleSyncBlock(taskId: string) {
@@ -167,16 +214,38 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     onTasksChange?.();
   }
 
-  function handleMonthDayClick(dayISO: string) {
-    setWeekBase(dayISO);
-    setViewMode("week");
+  async function handleCreateTask(title: string, start: string, end: string) {
+    const durationMins = Math.max(15, Math.round(
+      (new Date(`2000-01-01T${end.slice(11)}`).getTime() - new Date(`2000-01-01T${start.slice(11)}`).getTime()) / 60000
+    ));
+    const res = await fetch("/api/tasks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title,
+        priority: "P2",
+        estimatedMinutes: durationMins,
+        autoSchedule: "off",
+        plannedStart: start,
+        plannedEnd: end,
+        plannedMinutes: durationMins,
+      }),
+    });
+    if (!res.ok) return;
+    const { task } = await res.json() as { task: { id: string } };
+    await fetch("/api/scheduler/blocks/create-from-task", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ taskId: task.id, start, end, lock: true, syncToGoogle: true }),
+    });
+    await load();
+    onTasksChange?.();
   }
 
-  function prevWeek() {
-    setWeekBase(w => { const d = new Date(`${w}T12:00:00Z`); d.setUTCDate(d.getUTCDate()-7); return d.toISOString().slice(0,10); });
-  }
-  function nextWeek() {
-    setWeekBase(w => { const d = new Date(`${w}T12:00:00Z`); d.setUTCDate(d.getUTCDate()+7); return d.toISOString().slice(0,10); });
+  function handleMonthDayClick(dayISO: string) {
+    setMobileDay(dayISO);
+    setWeekBase(dayISO);
+    setViewMode("week");
   }
 
   const warnings = data?.warnings ?? [];
@@ -189,67 +258,42 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     ? (data?.googleEvents.find(e => e.id === selectedGoogleEvent.id) ?? selectedGoogleEvent)
     : null;
 
-  const showPanel = liveSelectedBlock || liveSelectedGoogleEvent;
-
   return (
     <div className="flex flex-col h-full bg-zinc-950 text-zinc-100 w-full">
-      {/* Toolbar */}
-      <div className="flex items-center gap-3 px-4 py-2.5 border-b border-zinc-800 bg-zinc-900 shrink-0 flex-wrap gap-y-1.5">
+
+      {/* ── Desktop toolbar ── */}
+      <div className="hidden sm:flex items-center gap-3 px-4 py-2.5 border-b border-zinc-800 bg-zinc-900 shrink-0 flex-wrap gap-y-1.5">
         <div className="flex items-center gap-0.5 border border-zinc-700 rounded-md overflow-hidden">
-          <button
-            onClick={() => setViewMode("week")}
-            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "week" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}
-          >
+          <button onClick={() => setViewMode("week")}
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "week" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}>
             Week
           </button>
-          <button
-            onClick={() => setViewMode("month")}
-            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "month" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}
-          >
+          <button onClick={() => setViewMode("month")}
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "month" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}>
             Maand
           </button>
         </div>
 
         <div className="flex items-center gap-1.5 border border-zinc-700 rounded-md overflow-hidden">
-          <button
-            onClick={viewMode === "week" ? prevWeek : () => setMonthBase(mb => shiftMonth(mb, -1))}
-            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm"
-          >
-            ‹
-          </button>
-          <button
-            onClick={() => {
-              if (viewMode === "week") setWeekBase(todayISO());
-              else setMonthBase(todayISO().slice(0, 7) + "-01");
-            }}
-            className="px-2 py-1.5 text-xs text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors"
-          >
-            Vandaag
-          </button>
-          <button
-            onClick={viewMode === "week" ? nextWeek : () => setMonthBase(mb => shiftMonth(mb, 1))}
-            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm"
-          >
-            ›
-          </button>
+          <button onClick={viewMode === "week" ? prevWeek : () => setMonthBase(mb => shiftMonth(mb, -1))}
+            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm">‹</button>
+          <button onClick={() => { if (viewMode === "week") setWeekBase(todayISO()); else setMonthBase(todayISO().slice(0, 7) + "-01"); }}
+            className="px-2 py-1.5 text-xs text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors">Vandaag</button>
+          <button onClick={viewMode === "week" ? nextWeek : () => setMonthBase(mb => shiftMonth(mb, 1))}
+            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm">›</button>
         </div>
 
         <span className="text-xs text-zinc-500 min-w-[160px]">
           {viewMode === "week" ? `${weekDays[0]} – ${weekDays[6]}` : monthLabel(monthBase)}
         </span>
 
-        <button
-          onClick={recalculate}
-          disabled={recalcLoading}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white text-xs font-semibold transition-colors"
-        >
+        <button onClick={recalculate} disabled={recalcLoading}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white text-xs font-semibold transition-colors">
           {recalcLoading ? "Plannen…" : "↺ Herplan"}
         </button>
 
         <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500">
-          {warnings.length > 0 && (
-            <span className="text-amber-400">⚠ {warnings.length} waarschuwing{warnings.length !== 1 ? "en" : ""}</span>
-          )}
+          {warnings.length > 0 && <span className="text-amber-400">⚠ {warnings.length}</span>}
           {lastRun?.finishedAt && <span>Run: {lastRun.finishedAt.slice(11,16)}</span>}
           <span className={`flex items-center gap-1 ${googleConnected ? "text-emerald-400" : "text-zinc-600"}`}>
             <span className={`w-1.5 h-1.5 rounded-full ${googleConnected ? "bg-emerald-400 animate-pulse" : "bg-zinc-600"}`} />
@@ -259,21 +303,50 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
         </div>
       </div>
 
+      {/* ── Mobile toolbar ── */}
+      <div className="sm:hidden flex items-center gap-2 px-3 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0">
+        {viewMode === "week" ? (
+          <>
+            <button onClick={prevDay}
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">‹</button>
+            <button
+              onClick={() => { setMobileDay(todayISO()); setWeekBase(todayISO()); }}
+              className="flex-1 text-center text-sm font-medium text-zinc-200 truncate">
+              {mobileDay === todayISO() ? "Vandaag" : dayLabel(mobileDay)}
+            </button>
+            <button onClick={nextDay}
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">›</button>
+          </>
+        ) : (
+          <>
+            <button onClick={() => setMonthBase(mb => shiftMonth(mb, -1))}
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">‹</button>
+            <span className="flex-1 text-center text-sm font-medium text-zinc-200">{monthLabel(monthBase)}</span>
+            <button onClick={() => setMonthBase(mb => shiftMonth(mb, 1))}
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">›</button>
+          </>
+        )}
+        <div className="flex items-center gap-1 ml-1">
+          <button onClick={() => setViewMode(v => v === "week" ? "month" : "week")}
+            className="px-2.5 py-1.5 rounded-lg bg-zinc-800 text-zinc-400 text-[11px] font-medium active:bg-zinc-700">
+            {viewMode === "week" ? "Maand" : "Week"}
+          </button>
+          <button onClick={recalculate} disabled={recalcLoading}
+            className="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-600 text-white disabled:opacity-50 active:bg-blue-500">
+            <span className="text-base">{recalcLoading ? "…" : "↺"}</span>
+          </button>
+        </div>
+      </div>
+
       {showDev && (
-        <div className="flex gap-2 px-4 py-2 bg-zinc-900/50 border-b border-zinc-800 shrink-0 flex-wrap">
+        <div className="hidden sm:flex gap-2 px-4 py-2 bg-zinc-900/50 border-b border-zinc-800 shrink-0 flex-wrap">
           <span className="text-[10px] text-zinc-600 self-center uppercase tracking-wider">Dev:</span>
           <button onClick={async () => { await fetch("/api/google/calendar/sync-now", { method: "POST" }); await load(); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">
-            Full sync
-          </button>
+            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Full sync</button>
           <button onClick={async () => { await fetch("/api/google/calendar/repair-sync", { method: "POST" }); await load(); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">
-            Repair sync
-          </button>
+            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Repair sync</button>
           <button onClick={async () => { await fetch("/api/google/calendar/watch/ensure", { method: "POST" }); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">
-            Ensure watch
-          </button>
+            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Ensure watch</button>
         </div>
       )}
 
@@ -287,22 +360,24 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
 
       <div className="flex flex-1 min-h-0 overflow-hidden">
         {viewMode === "week" && (
-          <div className="w-48 shrink-0 border-r border-zinc-800 overflow-hidden">
+          <div className="hidden sm:block w-48 shrink-0 border-r border-zinc-800 overflow-hidden">
             <PriorityTaskInbox tasks={data?.tasks ?? []} blocks={data?.blocks ?? []} />
           </div>
         )}
 
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-hidden min-w-0">
           {loading ? (
             <div className="flex items-center justify-center h-full text-zinc-600 text-sm">Laden…</div>
           ) : viewMode === "week" ? (
             <WeekTimeGrid
-              weekDays={weekDays}
+              weekDays={displayedDays}
               blocks={data?.blocks ?? []}
               googleEvents={data?.googleEvents ?? []}
               tasks={data?.tasks ?? []}
               onDropTask={handleDropTask}
               onMoveBlock={handleMoveBlock}
+              onCreateTask={handleCreateTask}
+              onConfirmBlock={handleConfirmBlock}
               onClickBlock={(block, task) => {
                 setSelectedGoogleEvent(null);
                 setSelectedBlock(block);
@@ -332,6 +407,7 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
             onComplete={handleCompleteTask}
             onRemove={handleRemoveBlock}
             onSync={handleSyncBlock}
+            onUpdateTask={handleUpdateTask}
           />
         )}
 
