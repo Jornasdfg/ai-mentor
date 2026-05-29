@@ -268,7 +268,8 @@ export async function recalculateSchedule(options: {
     const lockedMinutes = keptBlocks
       .filter(b => b.taskId === task.id && b.locked)
       .reduce((sum, b) => sum + b.durationMinutes, 0);
-    let remaining = Math.max(0, (task.estimatedMinutes ?? 30) - lockedMinutes);
+    const baseEstimate = task.estimatedMinutes && task.estimatedMinutes > 0 ? task.estimatedMinutes : 30;
+    let remaining = Math.max(0, baseEstimate - lockedMinutes);
     if (remaining <= 0) continue;
 
     const taskBlocks: ScheduleBlock[] = [];
