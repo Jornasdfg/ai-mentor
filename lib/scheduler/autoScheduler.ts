@@ -164,6 +164,17 @@ export async function recalculateSchedule(options: {
     readEventCache().catch(() => []),
   ]);
 
+  // ── 0. Vaste afspraken & handmatig vastgepinde taken (= bezet) ─────────────
+  // Een "appointment" heeft een vast tijdstip en wordt nooit auto-ingepland;
+  // flexibele taken worden eromheen gepland. Idem voor taken met autoSchedule "off"
+  // of locked die de gebruiker handmatig op een tijd heeft gezet.
+  const isFixed = (t: MentorTask) =>
+    (t.status === "open" || t.status === "in_progress") && !!t.plannedStart && !!t.plannedEnd &&
+    (t.taskKind === "appointment" || t.autoSchedule === "off" || t.locked === true);
+  const appointmentTasks = allTasks.filter(t => t.taskKind === "appointment" && isFixed(t));
+  const fixedTasks = allTasks.filter(isFixed);
+  const appointmentIds = new Set(appointmentTasks.map(t => t.id));
+
   // ── 1. Split existing blocks ──────────────────────────────────────────────
   const keptBlocks: ScheduleBlock[] = [];
   let removedCount = 0;
@@ -171,7 +182,8 @@ export async function recalculateSchedule(options: {
   for (const block of existingBlocks) {
     const blockDate = isoDateOf(block.start);
     const inHorizon = blockDate >= todayISO && blockDate <= horizonEnd;
-    if (inHorizon && block.source === "auto_scheduler" && !block.locked) {
+    // Verwijder herplanbare auto-blocks én oude appointment-blocks (regenereren we vers).
+    if (inHorizon && ((block.source === "auto_scheduler" && !block.locked) || appointmentIds.has(block.taskId))) {
       removedCount++;
     } else {
       keptBlocks.push(block);
@@ -198,7 +210,10 @@ export async function recalculateSchedule(options: {
     })
     .filter(e => dtMs(e.end) > dtMs(`${todayISO}T00:00:00`) && dtMs(e.start) < dtMs(`${horizonEnd}T23:59:59`));
 
-  const allBusy = [...lockedBusy, ...googleBusy];
+  // Vaste afspraken + handmatig vastgepinde taken → bezet, zodat flexibele taken eromheen plannen.
+  const fixedBusy: TimeSlot[] = fixedTasks.map(t => ({ start: t.plannedStart!, end: t.plannedEnd! }));
+
+  const allBusy = [...lockedBusy, ...googleBusy, ...fixedBusy];
   allBusy.sort((a, b) => a.start.localeCompare(b.start));
 
   // ── 3. Build available window slots ──────────────────────────────────────
@@ -219,9 +234,11 @@ export async function recalculateSchedule(options: {
   const schedulable = allTasks
     .filter(t => {
       if (t.status !== "open" && t.status !== "in_progress") return false;
+      if (t.taskKind === "appointment") return false; // vaste afspraken nooit auto-inplannen
       if (t.autoSchedule === "off") return false;
-      if (!t.estimatedMinutes || t.estimatedMinutes <= 0) return false;
       if (t.locked) return false;
+      // Geen estimatedMinutes-eis meer: oningeplande taken (incl. mail/routine) krijgen
+      // een standaardduur (zie remaining = estimatedMinutes ?? 30) en worden alsnog ingepland.
       return true;
     })
     .sort((a, b) => {
@@ -369,8 +386,34 @@ export async function recalculateSchedule(options: {
     }
   }
 
+  // ── 5b. Vaste afspraken als locked blocks (vers gegenereerd uit de taken) ──
+  const appointmentBlocks: ScheduleBlock[] = appointmentTasks
+    .filter(t => {
+      const d = isoDateOf(t.plannedStart!);
+      return d >= todayISO && d <= horizonEnd;
+    })
+    .map(t => ({
+      id: uniqueId(),
+      taskId: t.id,
+      title: t.title,
+      start: t.plannedStart!,
+      end: t.plannedEnd!,
+      durationMinutes: t.plannedMinutes ?? Math.max(15, Math.round(minutesBetween(t.plannedStart!, t.plannedEnd!))),
+      status: "locked" as const,
+      colorState: "gray" as const,
+      source: "manual_plan" as const,
+      locked: true,
+      schedulingWindowId: null,
+      calendarEventId: t.calendarLink?.eventId ?? null,
+      calendarId: t.calendarLink?.calendarId ?? null,
+      calendarSynced: t.calendarLink?.syncStatus === "synced",
+      runId,
+      createdAt: nowISO(),
+      updatedAt: nowISO(),
+    }));
+
   // ── 6. Write blocks ───────────────────────────────────────────────────────
-  const finalBlocks = [...keptBlocks, ...newBlocks];
+  const finalBlocks = [...keptBlocks, ...newBlocks, ...appointmentBlocks];
   await writeScheduleBlocks(finalBlocks);
   await writeTasks(updatedTasks);
 
