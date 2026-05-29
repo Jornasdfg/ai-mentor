@@ -372,6 +372,49 @@ YYYY-MM-DD
 
 ---
 
+## Scheduler & planning — afspraak vs. taak + auto-inplannen ★ NIEUW
+
+De planner en taken werken samen via `lib/scheduler/autoScheduler.ts` (`recalculateSchedule()`).
+Het verschil tussen een **vaste afspraak** en een **flexibele taak** is expliciet in het model.
+
+### Taaktype (`MentorTask.taskKind`)
+| `taskKind` | Betekenis | Gedrag |
+|------------|-----------|--------|
+| `"task"` (default) | Flexibele taak (bv. "bonnen in administratie") | Wordt **automatisch ingepland** in vrije werkweek-tijd op prioriteit + deadline. |
+| `"appointment"` | Vaste afspraak (bv. "Afspraak Jordi woensdag") | Vast tijdstip, **onverplaatsbaar**; telt als **bezet** zodat flexibele taken eromheen worden gepland; gaat naar Google Agenda (`calendarSyncMode: "auto"`). |
+
+Een afspraak heeft een vast `plannedStart`/`plannedEnd` en krijgt `autoSchedule: "off"`. In de
+TaskCreateModal kies je boven "Type": *Flexibele taak* of *Vaste afspraak* (afspraak vereist datum + tijd).
+
+### Auto-inplannen (`recalculateSchedule`)
+1. **Bezet** = locked blocks + externe (niet door de app gemaakte) Google-events + **vaste afspraken**
+   + handmatig vastgepinde taken (`autoSchedule "off"`/`locked` met een tijd).
+2. Bouwt vrije slots uit de **scheduling windows** (`scheduling_windows.json`; default Werk Ma–Vr 09:00–17:30,
+   Avond, Weekend) en trekt de bezette tijd eraf.
+3. Plant openstaande flexibele taken (`status` open/in_progress, niet `appointment`, `autoSchedule ≠ off`,
+   niet `locked`) op volgorde van prioriteit → deadline → `manualSortOrder`. **Zonder `estimatedMinutes`
+   gebruikt hij standaard 30 min** (zo worden ook mail-/routinetaken zonder schatting ingepland).
+4. Genereert `ScheduleBlock`s (`schedule_blocks.json`); afspraken worden als **locked blocks** getoond.
+   Niet-locked auto-blocks worden elke run opnieuw berekend; locked/handmatige blijven staan.
+5. Bij `syncToGoogle` worden blocks van taken met `calendarSyncMode: "auto"` naar Google gesynct (outbox).
+
+### Wanneer draait het (triggers)
+- **Bij taak aanmaken/wijzigen**: `POST /api/tasks` en `PATCH /api/tasks/[id]` triggeren `recalculate` (fire-and-forget).
+- **Periodiek**: worker-job `scheduler-repair` elke 10 min (`worker/index.ts`).
+- **Handmatig**: knop "↺ Herplan" in `SchedulerToolbar` → `POST /api/scheduler/recalculate`.
+- Vastgezette (`locked`) en vaste-afspraak-blokken worden nooit verschoven.
+
+### Belangrijkste bestanden
+| Bestand | Rol |
+|---------|-----|
+| `lib/scheduler/autoScheduler.ts` | `recalculateSchedule()` — slots, bezet-logica, inplannen, blocks |
+| `lib/scheduler/scheduleStorage.ts` | I/O voor `schedule_blocks.json`, `schedule_runs.json`, `scheduling_windows.json` |
+| `app/api/scheduler/recalculate/route.ts` | POST-trigger voor herplannen |
+| `app/api/scheduler/blocks/**` | CRUD + move/resize/create-from-task voor blocks |
+| `components/planner/*` | Planner-UI (WeekTimeGrid, SchedulerToolbar, PriorityTaskInbox, …) |
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)

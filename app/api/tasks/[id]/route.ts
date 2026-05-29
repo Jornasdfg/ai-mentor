@@ -18,8 +18,10 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       "startBy", "leadTimeDays", "deadlineType", "estimatedMinutes", "nextAction",
       "reason", "tags", "parkedReason", "coveyQuadrant",
       // Scheduler fields
-      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
+      "taskKind", "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
       "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode",
+      // Planningsvelden (nodig om een afspraak op een vast tijdstip te zetten)
+      "plannedDate", "plannedStart", "plannedEnd", "plannedMinutes",
     ];
     const update = Object.fromEntries(
       Object.entries(body).filter(([k]) => allowed.includes(k as keyof MentorTask))
@@ -39,7 +41,9 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     await regenerateDailyReference(tasks, decisions);
     // Only reschedule when fields that affect scheduling actually changed
     const schedulingFields = ["estimatedMinutes", "deadline", "hardDeadline", "softDeadline",
-      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable", "coveyQuadrant"];
+      "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable", "coveyQuadrant",
+      // Type/tijd/pin wijzigen → flexibele taken moeten opnieuw rond de afspraak plannen
+      "taskKind", "plannedStart", "plannedEnd", "plannedMinutes", "locked"];
     if (schedulingFields.some(f => f in update)) {
       recalculateSchedule({ triggeredBy: "task_updated", horizonDays: 28, syncToGoogle: true }).catch(() => {});
     }

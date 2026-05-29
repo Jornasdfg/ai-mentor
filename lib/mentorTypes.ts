@@ -21,6 +21,9 @@ export type CalendarSyncStatus =
 
 // ── Scheduler types ───────────────────────────────────────────────────────────
 export type AutoScheduleMode = "off" | "auto";
+// "appointment" = vast tijdstip, onverplaatsbaar (bv. afspraak Jordi woensdag) → telt als bezet.
+// "task" = flexibele taak (bv. bonnen administratie) → wordt automatisch ingepland.
+export type TaskKind = "task" | "appointment";
 export type ScheduleColorState = "green" | "orange" | "red" | "gray";
 export type ScheduleBlockStatus = "planned" | "locked" | "missed" | "unscheduled";
 export type SchedulingWindowType = "work" | "personal" | "anytime";
@@ -101,6 +104,7 @@ export interface MentorTask {
   calendarSyncMode?: CalendarSyncMode;
   calendarLink?: MentorCalendarLink | null;
   // Scheduler fields
+  taskKind?: TaskKind;        // default "task"; "appointment" = vast tijdstip, niet auto-inplannen
   autoSchedule?: AutoScheduleMode;
   schedulingWindowId?: string | null;
   minBlockMinutes?: number;

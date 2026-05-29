@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
     }
     const tasks = await readTasks();
     const now = new Date().toISOString().slice(0, 10);
+    const taskKind = body.taskKind ?? "task";
+    const isAppointment = taskKind === "appointment";
     const newTask: MentorTask = {
       id: `task_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
       title: body.title.trim(),
@@ -48,7 +50,9 @@ export async function POST(req: NextRequest) {
       plannedMinutes: body.plannedMinutes ?? null,
       calendarSyncMode: body.calendarSyncMode ?? "auto",
       // Scheduler defaults
-      autoSchedule: body.autoSchedule ?? (body.plannedStart ? "off" : "auto"),
+      taskKind,
+      // Afspraken (vast tijdstip) en handmatig geplande taken nooit auto-verschuiven.
+      autoSchedule: body.autoSchedule ?? (isAppointment || body.plannedStart ? "off" : "auto"),
       schedulingWindowId: body.schedulingWindowId ?? "window_work",
       splittable: body.splittable ?? true,
       minBlockMinutes: body.minBlockMinutes ?? 30,
