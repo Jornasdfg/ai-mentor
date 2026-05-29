@@ -884,9 +884,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-05-25T14:30:00",
+    "plannedEnd": "2026-05-29T09:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-05-25T14:00:00",
+    "plannedStart": "2026-05-29T09:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -894,7 +894,11 @@
     "status": "open",
     "tags": [],
     "title": "Financiën doen",
-    "updatedAt": "2026-05-23"
+    "updatedAt": "2026-05-23",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-05-29"
   },
   {
     "createdAt": "2026-05-29",
