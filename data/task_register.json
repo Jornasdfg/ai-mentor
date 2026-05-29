@@ -873,7 +873,14 @@
       "spam"
     ],
     "title": "WordPress spam comments modereren — reishacker.nl",
-    "updatedAt": "2026-05-27"
+    "updatedAt": "2026-05-27",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedStart": "2026-05-29T09:30:00",
+    "plannedEnd": "2026-05-29T10:00:00",
+    "plannedDate": "2026-05-29",
+    "plannedMinutes": 30
   },
   {
     "coveyQuadrant": "Q2",
