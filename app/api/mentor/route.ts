@@ -3,6 +3,7 @@ import { getAIClient } from "@/lib/ai/modelRouter";
 import { buildSystemPrompt } from "@/lib/mentor/systemPrompt";
 import { addCost } from "@/lib/storage/costStorage";
 import { readMentorState, ensureDataFiles } from "@/lib/mentor/mentorStorage";
+import { buildPlanningContext } from "@/lib/mentor/planningContext";
 import type { MentorPatch } from "@/lib/mentorTypes";
 
 interface ChatMessage {
@@ -42,7 +43,8 @@ export async function POST(req: NextRequest) {
     }
 
     const state = await readMentorState();
-    const systemPrompt = buildSystemPrompt(state.tasks);
+    const planningContext = await buildPlanningContext().catch(() => "");
+    const systemPrompt = buildSystemPrompt(state.tasks, planningContext);
 
     // Build conversation history — keep last 8 messages (4 exchanges) to limit tokens
     const history: ChatMessage[] = (body.conversationMessages ?? []).slice(-8);
