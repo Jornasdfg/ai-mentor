@@ -33,6 +33,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
   const [transcribing, setTranscribing] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
+  const recordStartRef = useRef<number>(0);
 
   async function toggleRecording() {
     if (recording) { mediaRecorderRef.current?.stop(); return; }
@@ -53,6 +54,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
         try {
           const fd = new FormData();
           fd.append("audio", blob, "audio.webm");
+          fd.append("durationMs", String(Date.now() - recordStartRef.current));
           const res = await fetch("/api/transcribe", { method: "POST", body: fd });
           const data = await res.json() as { text?: string; error?: string };
           if (!res.ok) throw new Error(data.error ?? "Transcriptie mislukt");
@@ -66,6 +68,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
         }
       };
       mediaRecorderRef.current = rec;
+      recordStartRef.current = Date.now();
       rec.start();
       setRecording(true);
       setError(null);

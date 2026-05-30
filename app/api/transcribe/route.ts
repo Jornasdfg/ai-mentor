@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI, { toFile } from "openai";
+import { addCost } from "@/lib/storage/costStorage";
 
 export const runtime = "nodejs";
+
+const WHISPER_USD_PER_MINUTE = 0.006;
 
 // Goedkope spraak→tekst via OpenAI Whisper (whisper-1, ~$0.006/min).
 // Ontvangt audio (multipart form, veld "audio") en geeft de transcriptie terug.
@@ -34,7 +37,13 @@ export async function POST(req: NextRequest) {
       language: "nl",
     });
 
-    return NextResponse.json({ text: result.text ?? "" });
+    // Kosten meetellen in de teller linksboven (Whisper: $0.006/min).
+    const durationMs = Number(form.get("durationMs")) || 0;
+    const seconds = durationMs > 0 ? durationMs / 1000 : 0;
+    const costUSD = (Math.max(seconds, 1) / 60) * WHISPER_USD_PER_MINUTE;
+    addCost(0, 0, costUSD).catch(() => {});
+
+    return NextResponse.json({ text: result.text ?? "", costUSD });
   } catch (err) {
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Transcriptie mislukt" },
