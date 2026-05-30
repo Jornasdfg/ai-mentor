@@ -113,15 +113,17 @@ export async function GET(req: NextRequest) {
   (async () => {
     try {
       const calId = process.env.GOOGLE_DEFAULT_CALENDAR_ID ?? "primary";
-      const [{ fullSyncCalendar }, { syncCacheToTasks }, { ensureWatchActive }, { recalculateSchedule }] = await Promise.all([
+      const [{ fullSyncCalendar }, { syncCacheToTasks }, { ensureWatchActive }, { recalculateSchedule }, { requeueFailedAuthJobs }] = await Promise.all([
         import("@/lib/calendar/googleSyncEngine"),
         import("@/lib/calendar/googleTaskSyncMapper"),
         import("@/lib/calendar/googleWatchManager"),
         import("@/lib/scheduler/autoScheduler"),
+        import("@/lib/calendar/calendarOutbox"),
       ]);
       await fullSyncCalendar(calId);
       await syncCacheToTasks();
       await ensureWatchActive(calId).catch(() => {}); // watch vereist HTTPS-webhook; niet blokkerend
+      await requeueFailedAuthJobs(); // eerder gestrande afspraak-pushes alsnog versturen
       await recalculateSchedule({ triggeredBy: "manual", horizonDays: 28, syncToGoogle: true });
       console.log("[google/callback] Init-sync + afspraken push voltooid.");
     } catch (e) {

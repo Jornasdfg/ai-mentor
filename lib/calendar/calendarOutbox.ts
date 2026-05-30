@@ -2,6 +2,7 @@ import * as fs from "fs/promises";
 import * as path from "path";
 import type { CalendarProvider } from "./types";
 import { readTasks, writeTasks } from "@/lib/mentor/mentorStorage";
+import { isInvalidGrant, markGoogleReauthNeeded } from "./googleTokenStorage";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const OUTBOX_FILE = path.join(DATA_DIR, "calendar_outbox.json");
@@ -165,7 +166,15 @@ export async function processPendingCalendarJobs(
       job.lastError = msg.slice(0, 300);
       job.updatedAt = new Date().toISOString();
 
-      if (job.attempts >= MAX_ATTEMPTS) {
+      if (isInvalidGrant(err)) {
+        // Auth verlopen: tel dit NIET als echte poging. Bewaar de job zodat hij na
+        // herkoppelen alsnog wordt verstuurd (geen verlies van afspraken).
+        job.attempts = Math.max(0, job.attempts - 1);
+        job.status = "pending";
+        job.nextAttemptAt = new Date(Date.now() + 300_000).toISOString();
+        await markGoogleReauthNeeded();
+        skipped++;
+      } else if (job.attempts >= MAX_ATTEMPTS) {
         job.status = "failed";
         failed++;
       } else {
@@ -201,6 +210,26 @@ export async function markJobFailed(jobId: string, reason: string): Promise<void
     };
     await writeOutbox(jobs);
   }
+}
+
+// Na herkoppelen: revive afspraak-jobs die eerder strandden op een auth-/tokenfout,
+// zodat ze alsnog naar Google worden gepusht.
+export async function requeueFailedAuthJobs(): Promise<number> {
+  const jobs = await readOutbox();
+  let n = 0;
+  const nowISO = new Date().toISOString();
+  for (const j of jobs) {
+    if (j.status === "failed" && /invalid_grant|unauthor|401|403|token|gekoppeld/i.test(j.lastError ?? "")) {
+      j.status = "pending";
+      j.attempts = 0;
+      j.lastError = null;
+      j.nextAttemptAt = nowISO;
+      j.updatedAt = nowISO;
+      n++;
+    }
+  }
+  if (n > 0) await writeOutbox(jobs);
+  return n;
 }
 
 export async function getOutboxStatus(): Promise<{
