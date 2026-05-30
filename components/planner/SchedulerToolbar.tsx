@@ -39,9 +39,13 @@ export default function SchedulerToolbar({
           <span>{blocksCount} blocks</span>
           {warningsCount > 0 && <span className="text-warning">⚠ {warningsCount}</span>}
           {lastRunAt && <span>Laatste run: {lastRunAt.slice(0, 16).replace("T", " ")}</span>}
-          <span className={googleConnected ? "text-success" : "text-muted"}>
-            {googleConnected ? "● Google" : "○ Google"}
-          </span>
+          {googleConnected ? (
+            <span className="text-success">● Google</span>
+          ) : (
+            <a href="/api/auth/google/start" className="text-accent hover:underline" title="Google Calendar opnieuw koppelen">
+              ○ Google — koppel opnieuw
+            </a>
+          )}
         </div>
 
         <button
