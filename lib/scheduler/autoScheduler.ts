@@ -75,9 +75,21 @@ interface TimeSlot {
   windowId?: string;
 }
 
+// Huidige tijd in Amsterdam, afgerond naar boven op 15 min → "YYYY-MM-DDTHH:MM:00".
+function nowLocalDT(): string {
+  const s = new Date().toLocaleString("sv-SE", { timeZone: "Europe/Amsterdam" }); // "2026-05-30 14:23:45"
+  const [date, time] = s.split(" ");
+  const [h, m] = time.split(":").map(Number);
+  let total = Math.ceil((h * 60 + m) / 15) * 15;
+  if (total >= 24 * 60) total = 24 * 60 - 1;
+  const hh = String(Math.floor(total / 60)).padStart(2, "0");
+  const mm = String(total % 60).padStart(2, "0");
+  return `${date}T${hh}:${mm}:00`;
+}
+
 // ── Build window slots for horizon ────────────────────────────────────────────
 
-function buildWindowSlots(windows: SchedulingWindow[], from: string, to: string): TimeSlot[] {
+function buildWindowSlots(windows: SchedulingWindow[], from: string, to: string, nowDT: string): TimeSlot[] {
   const slots: TimeSlot[] = [];
   let cursor = from;
   while (cursor <= to) {
@@ -85,11 +97,12 @@ function buildWindowSlots(windows: SchedulingWindow[], from: string, to: string)
     for (const win of windows) {
       if (!win.isActive) continue;
       if (!win.daysOfWeek.includes(wd)) continue;
-      slots.push({
-        start: toLocalDT(cursor, win.startTime),
-        end: toLocalDT(cursor, win.endTime),
-        windowId: win.id,
-      });
+      let start = toLocalDT(cursor, win.startTime);
+      const end = toLocalDT(cursor, win.endTime);
+      // Plan nooit in het verleden: klem de starttijd naar "nu".
+      if (start < nowDT) start = nowDT;
+      if (start >= end) continue; // venster is al voorbij vandaag
+      slots.push({ start, end, windowId: win.id });
     }
     cursor = addDays(cursor, 1);
   }
@@ -224,7 +237,7 @@ export async function recalculateSchedule(options: {
   }];
   if (activeWindows.length === 0) warnings.push("Geen actieve scheduling windows — fallback Ma-Vr 09:00-17:30");
 
-  const windowSlots = buildWindowSlots(baseWindows, todayISO, horizonEnd);
+  const windowSlots = buildWindowSlots(baseWindows, todayISO, horizonEnd, nowLocalDT());
   const slotPool: TimeSlot[] = subtractBusy(windowSlots, allBusy);
 
   // ── 4. Select and sort schedulable tasks ──────────────────────────────────
