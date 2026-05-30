@@ -61,7 +61,7 @@ export default function CostBadge({ refreshTrigger }: CostBadgeProps) {
   }
 
   const cost = summary?.totalCostUSD ?? 0;
-  const costColor = cost > 1 ? "text-red-400" : cost > 0.25 ? "text-orange-400" : "text-emerald-400";
+  const costColor = cost > 1 ? "text-red-600" : cost > 0.25 ? "text-orange-700" : "text-emerald-700";
 
   return (
     <div className="relative">
@@ -71,10 +71,10 @@ export default function CostBadge({ refreshTrigger }: CostBadgeProps) {
         className={`flex items-center gap-1 px-2 py-1 rounded-lg border transition-all font-mono text-sm font-semibold ${
           flash
             ? "border-emerald-500/60 bg-emerald-500/10"
-            : "border-zinc-700 bg-zinc-800/60 hover:border-zinc-500"
+            : "border-gray-200 bg-white/60 hover:border-gray-300"
         } ${costColor}`}
       >
-        <span className="text-xs text-zinc-500 font-normal mr-0.5">$</span>
+        <span className="text-xs text-zinc-600 font-normal mr-0.5">$</span>
         <span>{cost.toFixed(4)}</span>
         {summary && (
           <span className="text-[10px] text-zinc-600 font-normal ml-0.5">({summary.totalCalls}x)</span>
@@ -82,39 +82,39 @@ export default function CostBadge({ refreshTrigger }: CostBadgeProps) {
       </button>
 
       {showDetail && (
-        <div className="absolute left-0 top-full mt-1.5 z-50 w-64 rounded-xl border border-zinc-700 bg-zinc-900 shadow-xl p-3 space-y-2">
-          <p className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Kosten overzicht</p>
+        <div className="absolute left-0 top-full mt-1.5 z-50 w-64 rounded-xl border border-gray-200 bg-white shadow-xl p-3 space-y-2">
+          <p className="text-[10px] font-semibold text-zinc-600 uppercase tracking-wider">Kosten overzicht</p>
           <div className="space-y-1.5 text-xs font-mono">
             <div className="flex justify-between">
-              <span className="text-zinc-500">Totale kosten</span>
+              <span className="text-zinc-600">Totale kosten</span>
               <span className={`font-bold ${costColor}`}>${cost.toFixed(6)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-zinc-500">Aanroepen</span>
-              <span className="text-zinc-300">{summary?.totalCalls ?? 0}</span>
+              <span className="text-zinc-600">Aanroepen</span>
+              <span className="text-zinc-700">{summary?.totalCalls ?? 0}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-zinc-500">Input tokens</span>
-              <span className="text-zinc-300">{(summary?.totalInputTokens ?? 0).toLocaleString("nl-NL")}</span>
+              <span className="text-zinc-600">Input tokens</span>
+              <span className="text-zinc-700">{(summary?.totalInputTokens ?? 0).toLocaleString("nl-NL")}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-zinc-500">Output tokens</span>
-              <span className="text-zinc-300">{(summary?.totalOutputTokens ?? 0).toLocaleString("nl-NL")}</span>
+              <span className="text-zinc-600">Output tokens</span>
+              <span className="text-zinc-700">{(summary?.totalOutputTokens ?? 0).toLocaleString("nl-NL")}</span>
             </div>
             {summary?.lastUpdated && (
               <div className="flex justify-between">
-                <span className="text-zinc-500">Bijgewerkt</span>
-                <span className="text-zinc-500 text-[10px]">
+                <span className="text-zinc-600">Bijgewerkt</span>
+                <span className="text-zinc-600 text-[10px]">
                   {new Date(summary.lastUpdated).toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
                 </span>
               </div>
             )}
           </div>
-          <div className="pt-1.5 border-t border-zinc-800">
+          <div className="pt-1.5 border-t border-gray-200">
             <button
               onClick={handleReset}
               disabled={resetting}
-              className="text-xs font-mono text-red-500/60 hover:text-red-400 transition-colors disabled:opacity-40"
+              className="text-xs font-mono text-red-500/60 hover:text-red-600 transition-colors disabled:opacity-40"
             >
               {resetting ? "Resetten..." : "↺ Reset naar $0.00"}
             </button>

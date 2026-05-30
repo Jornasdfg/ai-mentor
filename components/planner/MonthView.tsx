@@ -15,14 +15,14 @@ interface Props {
 
 const DAY_NL = ["ma", "di", "wo", "do", "vr", "za", "zo"];
 const COLOR_BG: Record<string, string> = {
-  green: "bg-emerald-900/60 text-emerald-200",
-  orange: "bg-amber-900/60 text-amber-200",
-  red: "bg-red-900/60 text-red-200",
-  gray: "bg-zinc-800 text-zinc-300",
+  green: "bg-emerald-900/60 text-emerald-700",
+  orange: "bg-amber-900/60 text-amber-700",
+  red: "bg-red-900/60 text-red-600",
+  gray: "bg-white text-zinc-700",
 };
 const DOT: Record<string, string> = {
   green: "bg-emerald-400", orange: "bg-amber-400",
-  red: "bg-red-400", gray: "bg-zinc-500",
+  red: "bg-red-400", gray: "bg-gray-400",
 };
 
 function todayISO() {
@@ -57,8 +57,8 @@ export default function MonthView({ monthBase, blocks, googleEvents, tasks: _tas
   const weeks = Math.ceil(days.length / 7);
 
   return (
-    <div className="flex flex-col h-full bg-zinc-950 overflow-hidden">
-      <div className="grid grid-cols-7 shrink-0 border-b border-zinc-800">
+    <div className="flex flex-col h-full bg-gray-100 overflow-hidden">
+      <div className="grid grid-cols-7 shrink-0 border-b border-gray-200">
         {DAY_NL.map(d => (
           <div key={d} className="py-2 text-center text-[10px] font-semibold text-zinc-600 uppercase tracking-wider">{d}</div>
         ))}
@@ -75,9 +75,9 @@ export default function MonthView({ monthBase, blocks, googleEvents, tasks: _tas
               <div
                 key={iso}
                 onClick={() => onDayClick(iso)}
-                className={`border-b border-r border-zinc-800 p-1.5 cursor-pointer hover:bg-zinc-900/70 transition-colors min-h-[90px] ${!inMonth ? "opacity-25" : ""} ${isToday ? "bg-blue-950/20" : ""}`}
+                className={`border-b border-r border-gray-200 p-1.5 cursor-pointer hover:bg-gray-100/70 transition-colors min-h-[90px] ${!inMonth ? "opacity-25" : ""} ${isToday ? "bg-blue-950/20" : ""}`}
               >
-                <div className={`text-xs font-semibold mb-1 w-5 h-5 flex items-center justify-center rounded-full ${isToday ? "bg-blue-500 text-white" : "text-zinc-500"}`}>
+                <div className={`text-xs font-semibold mb-1 w-5 h-5 flex items-center justify-center rounded-full ${isToday ? "bg-blue-500 text-white" : "text-zinc-600"}`}>
                   {dayNum}
                 </div>
                 <div className="space-y-0.5">

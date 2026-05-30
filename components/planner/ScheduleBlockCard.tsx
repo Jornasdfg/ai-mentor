@@ -5,14 +5,14 @@ const SOLID_STYLE: Record<string, { bg: string; border: string; text: string }> 
   green:  { bg: "bg-emerald-900/70",  border: "border-l-[3px] border-emerald-400", text: "text-emerald-100" },
   orange: { bg: "bg-amber-900/70",    border: "border-l-[3px] border-amber-400",   text: "text-amber-100" },
   red:    { bg: "bg-red-900/70",      border: "border-l-[3px] border-red-400",     text: "text-red-100" },
-  gray:   { bg: "bg-zinc-800/70",     border: "border-l-[3px] border-zinc-500",    text: "text-zinc-300" },
+  gray:   { bg: "bg-white/70",     border: "border-l-[3px] border-gray-300",    text: "text-zinc-700" },
 };
 
 const SUGGESTION_STYLE: Record<string, { border: string; text: string; btn: string }> = {
-  green:  { border: "border-emerald-500/50", text: "text-emerald-300/80", btn: "bg-emerald-600/80 hover:bg-emerald-500 text-white" },
-  orange: { border: "border-amber-500/50",   text: "text-amber-300/80",   btn: "bg-amber-600/80 hover:bg-amber-500 text-white" },
-  red:    { border: "border-red-500/50",     text: "text-red-300/80",     btn: "bg-red-600/80 hover:bg-red-500 text-white" },
-  gray:   { border: "border-zinc-500/50",    text: "text-zinc-400/80",    btn: "bg-zinc-600/80 hover:bg-zinc-500 text-white" },
+  green:  { border: "border-emerald-500/50", text: "text-emerald-700/80", btn: "bg-emerald-600/80 hover:bg-emerald-500 text-white" },
+  orange: { border: "border-amber-500/50",   text: "text-amber-700/80",   btn: "bg-amber-600/80 hover:bg-amber-500 text-white" },
+  red:    { border: "border-red-500/50",     text: "text-red-600/80",     btn: "bg-red-600/80 hover:bg-red-500 text-white" },
+  gray:   { border: "border-gray-300/50",    text: "text-zinc-600/80",    btn: "bg-gray-400/80 hover:bg-gray-300 text-white" },
 };
 
 const PRIORITY_DOT: Record<string, string> = {
@@ -51,8 +51,8 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
           onDragStart={onDragStart}
           onClick={onClick}
           className={`absolute inset-0 ${onResizeStart ? "bottom-2" : ""} rounded-r overflow-hidden select-none
-            bg-zinc-900/40 border border-dashed ${s.border} ${s.text}
-            cursor-grab active:cursor-grabbing transition-all hover:bg-zinc-800/50`}
+            bg-white/40 border border-dashed ${s.border} ${s.text}
+            cursor-grab active:cursor-grabbing transition-all hover:bg-gray-100/50`}
           title={`Suggestie: ${block.title} | ${time} | Klik Plannen om te bevestigen`}
         >
           {isSmall ? (

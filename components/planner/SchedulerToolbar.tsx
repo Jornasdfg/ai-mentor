@@ -46,7 +46,7 @@ export default function SchedulerToolbar({
 
         <button
           onClick={() => setShowDev(v => !v)}
-          className="ml-auto text-xs font-mono text-muted hover:text-gray-200 transition-colors"
+          className="ml-auto text-xs font-mono text-muted hover:text-gray-800 transition-colors"
         >
           {showDev ? "▼ Dev" : "▶ Dev"}
         </button>

@@ -134,10 +134,10 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between">
-          <span className="text-sm font-mono font-semibold text-gray-100">
+          <span className="text-sm font-mono font-semibold text-gray-900">
             {isEdit ? "Routine bewerken" : "Nieuwe routine"}
           </span>
-          <button onClick={onClose} className="text-muted hover:text-gray-200 text-lg font-mono leading-none">x</button>
+          <button onClick={onClose} className="text-muted hover:text-gray-800 text-lg font-mono leading-none">x</button>
         </div>
 
         {error && (
@@ -154,7 +154,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             value={title}
             onChange={e => setTitle(e.target.value)}
             autoFocus
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           />
         </div>
 
@@ -165,7 +165,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             type="text"
             value={project}
             onChange={e => setProject(e.target.value)}
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           />
         </div>
 
@@ -176,7 +176,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             <select
               value={frequency}
               onChange={e => setFrequency(e.target.value as RecurrenceFrequency)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             >
               <option value="daily">Dagelijks</option>
               <option value="weekly">Wekelijks</option>
@@ -190,7 +190,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               min={1}
               value={interval}
               onChange={e => setInterval(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
                   className={`px-2 py-1 text-xs font-mono rounded border transition-colors ${
                     daysOfWeek.includes(day.value)
                       ? "border-accent text-accent bg-accent/10"
-                      : "border-border text-muted hover:border-accent/50 hover:text-gray-200"
+                      : "border-border text-muted hover:border-accent/50 hover:text-gray-800"
                   }`}
                 >
                   {day.label}
@@ -228,7 +228,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               max={31}
               value={dayOfMonth}
               onChange={e => setDayOfMonth(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         )}
@@ -241,7 +241,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               type="date"
               value={startDate}
               onChange={e => setStartDate(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
           <div>
@@ -250,7 +250,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               type="date"
               value={endDate}
               onChange={e => setEndDate(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
           <select
             value={priority}
             onChange={e => setPriority(e.target.value as MentorPriority)}
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           >
             {(["P0", "P1", "P2", "P3"] as MentorPriority[]).map(p => (
               <option key={p} value={p}>{p}</option>
@@ -278,7 +278,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               value={hardDeadlineOffsetDays}
               onChange={e => setHardDeadlineOffsetDays(e.target.value)}
               placeholder="0 = zelfde dag"
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
             />
           </div>
           <div>
@@ -287,7 +287,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               type="number"
               value={softDeadlineOffsetDays}
               onChange={e => setSoftDeadlineOffsetDays(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -301,7 +301,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               min={0}
               value={leadTimeDays}
               onChange={e => setLeadTimeDays(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
           <div>
@@ -311,7 +311,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               min={0}
               value={estimatedMinutes}
               onChange={e => setEstimatedMinutes(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -323,7 +323,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             type="text"
             value={nextAction}
             onChange={e => setNextAction(e.target.value)}
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           />
         </div>
 
@@ -334,7 +334,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             value={tags}
             onChange={e => setTags(e.target.value)}
             placeholder="bijv. dagstart, review"
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
           />
         </div>
 
@@ -348,7 +348,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
                 type="time"
                 value={defaultPlannedTime}
                 onChange={e => setDefaultPlannedTime(e.target.value)}
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
               />
             </div>
             <div>
@@ -360,7 +360,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
                 value={defaultDurationMinutes}
                 onChange={e => setDefaultDurationMinutes(e.target.value)}
                 placeholder={estimatedMinutes || "30"}
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
               />
             </div>
           </div>
@@ -369,7 +369,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
             <select
               value={calendarSyncMode}
               onChange={e => setCalendarSyncMode(e.target.value as CalendarSyncMode)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             >
               <option value="none">Geen</option>
               <option value="manual">Handmatig</option>
@@ -384,7 +384,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
           <select
             value={executionMode}
             onChange={e => setExecutionMode(e.target.value as "manual" | "mcp_ready")}
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           >
             <option value="manual">Handmatig</option>
             <option value="mcp_ready">MCP-ready (later)</option>
@@ -399,7 +399,7 @@ export default function RecurringTaskModal({ template, onClose, onSaved }: Recur
               value={futureMcpAction}
               onChange={e => setFutureMcpAction(e.target.value)}
               placeholder="bijv. send_slack_reminder, run_script"
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
             />
           </div>
         )}

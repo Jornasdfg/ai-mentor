@@ -31,12 +31,12 @@ export default function DailyFocus({ advice, topTask, topAnalysis }: DailyFocusP
       </div>
       {top ? (
         <>
-          <p className="text-sm font-mono font-semibold text-gray-100">{top.title}</p>
+          <p className="text-sm font-mono font-semibold text-gray-900">{top.title}</p>
           <p className="text-xs text-muted">{top.reason}</p>
         </>
       ) : topTask ? (
         <>
-          <p className="text-sm font-mono font-semibold text-gray-100">{topTask.title}</p>
+          <p className="text-sm font-mono font-semibold text-gray-900">{topTask.title}</p>
           {topTask.project && <p className="text-xs text-muted">{topTask.project}</p>}
         </>
       ) : null}

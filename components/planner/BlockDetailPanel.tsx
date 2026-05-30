@@ -13,17 +13,17 @@ interface Props {
 }
 
 const PRIORITY_STYLES: Record<string, { active: string; inactive: string; label: string }> = {
-  P0: { active: "bg-red-500/20 border-red-500 text-red-300", inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400", label: "P0" },
-  P1: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400", label: "P1" },
-  P2: { active: "bg-blue-500/20 border-blue-500 text-blue-300", inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400", label: "P2" },
-  P3: { active: "bg-emerald-500/20 border-emerald-500 text-emerald-300", inactive: "border-zinc-700 text-zinc-500 hover:border-emerald-500/50 hover:text-emerald-400", label: "P3" },
+  P0: { active: "bg-red-500/20 border-red-500 text-red-600", inactive: "border-gray-200 text-zinc-600 hover:border-red-600/50 hover:text-red-600", label: "P0" },
+  P1: { active: "bg-orange-500/20 border-orange-500 text-orange-700", inactive: "border-gray-200 text-zinc-600 hover:border-orange-500/50 hover:text-orange-700", label: "P1" },
+  P2: { active: "bg-blue-500/20 border-blue-500 text-blue-700", inactive: "border-gray-200 text-zinc-600 hover:border-blue-500/50 hover:text-blue-700", label: "P2" },
+  P3: { active: "bg-emerald-500/20 border-emerald-500 text-emerald-700", inactive: "border-gray-200 text-zinc-600 hover:border-emerald-500/50 hover:text-emerald-700", label: "P3" },
 };
 
 const Q_STYLES: Record<string, { active: string; inactive: string; sub: string }> = {
-  Q1: { active: "bg-red-500/20 border-red-500 text-red-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400",       sub: "Urgent & Belangrijk"        },
-  Q2: { active: "bg-blue-500/20 border-blue-500 text-blue-300",     inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400",     sub: "Niet Urgent & Belangrijk"   },
-  Q3: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400", sub: "Urgent & Onbelangrijk"      },
-  Q4: { active: "bg-zinc-700 border-zinc-600 text-zinc-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-400",        sub: "Niet Urgent & Onbelangrijk" },
+  Q1: { active: "bg-red-500/20 border-red-500 text-red-600",        inactive: "border-gray-200 text-zinc-600 hover:border-red-600/50 hover:text-red-600",       sub: "Urgent & Belangrijk"        },
+  Q2: { active: "bg-blue-500/20 border-blue-500 text-blue-700",     inactive: "border-gray-200 text-zinc-600 hover:border-blue-500/50 hover:text-blue-700",     sub: "Niet Urgent & Belangrijk"   },
+  Q3: { active: "bg-orange-500/20 border-orange-500 text-orange-700", inactive: "border-gray-200 text-zinc-600 hover:border-orange-500/50 hover:text-orange-700", sub: "Urgent & Onbelangrijk"      },
+  Q4: { active: "bg-gray-100 border-gray-300 text-zinc-700",        inactive: "border-gray-200 text-zinc-600 hover:border-gray-300 hover:text-zinc-600",        sub: "Niet Urgent & Onbelangrijk" },
 };
 
 function fmtDateTime(iso: string) {
@@ -74,20 +74,20 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
       z-50 sm:z-auto
       w-full sm:w-72 sm:shrink-0
       max-h-[88vh] sm:max-h-none sm:h-full
-      bg-zinc-900 border-t sm:border-t-0 sm:border-l border-zinc-800
+      bg-white border-t sm:border-t-0 sm:border-l border-gray-200
       rounded-t-2xl sm:rounded-none
       flex flex-col overflow-hidden
       shadow-2xl sm:shadow-none
     ">
       {/* Mobile drag handle */}
       <div className="sm:hidden flex justify-center pt-2.5 pb-1 shrink-0">
-        <div className="w-10 h-1 rounded-full bg-zinc-700" />
+        <div className="w-10 h-1 rounded-full bg-gray-100" />
       </div>
-      <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800 shrink-0">
-        <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Blok details</span>
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 shrink-0">
+        <span className="text-[10px] font-semibold text-zinc-600 uppercase tracking-wider">Blok details</span>
         <button
           onClick={onClose}
-          className="w-6 h-6 flex items-center justify-center rounded hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 transition-colors text-lg leading-none"
+          className="w-6 h-6 flex items-center justify-center rounded hover:bg-gray-100 text-zinc-600 hover:text-zinc-800 transition-colors text-lg leading-none"
         >
           ×
         </button>
@@ -102,10 +102,10 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
               value={titleVal}
               onChange={e => setTitleVal(e.target.value)}
               onKeyDown={e => { if (e.key === "Enter") handleSave(); if (e.key === "Escape") onClose(); }}
-              className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5 text-sm text-zinc-100 focus:outline-none focus:border-blue-500"
+              className="w-full bg-white border border-gray-200 rounded px-2 py-1.5 text-sm text-zinc-900 focus:outline-none focus:border-blue-500"
             />
           ) : (
-            <h2 className="text-sm font-semibold text-zinc-100 leading-snug">{titleVal}</h2>
+            <h2 className="text-sm font-semibold text-zinc-900 leading-snug">{titleVal}</h2>
           )}
         </div>
 
@@ -156,30 +156,30 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
         )}
 
         {task?.project && (
-          <p className="text-xs text-zinc-500">Project: {task.project}</p>
+          <p className="text-xs text-zinc-600">Project: {task.project}</p>
         )}
 
         {/* Times */}
         <div className="space-y-2 text-xs">
           <div className="flex gap-2">
             <span className="text-zinc-600 w-14 shrink-0">Start</span>
-            <span className="text-zinc-300">{fmtDateTime(block.start)}</span>
+            <span className="text-zinc-700">{fmtDateTime(block.start)}</span>
           </div>
           <div className="flex gap-2">
             <span className="text-zinc-600 w-14 shrink-0">Einde</span>
-            <span className="text-zinc-300">{block.end.slice(11, 16)}</span>
+            <span className="text-zinc-700">{block.end.slice(11, 16)}</span>
           </div>
           <div className="flex gap-2">
             <span className="text-zinc-600 w-14 shrink-0">Duur</span>
-            <span className="text-zinc-300">{durationStr} <span className="text-zinc-600 italic">(versleep onderrand om aan te passen)</span></span>
+            <span className="text-zinc-700">{durationStr} <span className="text-zinc-600 italic">(versleep onderrand om aan te passen)</span></span>
           </div>
         </div>
 
         {(task?.hardDeadline ?? task?.deadline) && (
           <div className={`flex items-center gap-2 text-xs px-2 py-1.5 rounded ${
-            block.colorState === "red" ? "bg-red-900/30 text-red-300" :
-            block.colorState === "orange" ? "bg-amber-900/30 text-amber-300" :
-            "bg-zinc-800 text-zinc-400"
+            block.colorState === "red" ? "bg-red-900/30 text-red-600" :
+            block.colorState === "orange" ? "bg-amber-900/30 text-amber-700" :
+            "bg-white text-zinc-600"
           }`}>
             <span>Deadline {(task.hardDeadline ?? task.deadline)!.slice(0, 10)}</span>
           </div>
@@ -187,7 +187,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
 
         <div className="flex items-center gap-2 text-xs">
           {block.calendarSynced
-            ? <span className="text-emerald-400">✓ Google Calendar gesynchroniseerd</span>
+            ? <span className="text-emerald-700">✓ Google Calendar gesynchroniseerd</span>
             : <span className="text-zinc-600">Niet gesynchroniseerd met Google</span>
           }
         </div>
@@ -197,19 +197,19 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
         )}
 
         {task?.nextAction && (
-          <div className="bg-zinc-800/60 rounded-lg p-3">
-            <p className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Volgende actie</p>
-            <p className="text-xs text-zinc-300 leading-relaxed">{task.nextAction}</p>
+          <div className="bg-white/60 rounded-lg p-3">
+            <p className="text-[10px] text-zinc-600 uppercase tracking-wider mb-1">Volgende actie</p>
+            <p className="text-xs text-zinc-700 leading-relaxed">{task.nextAction}</p>
           </div>
         )}
       </div>
 
-      <div className="px-4 py-3 border-t border-zinc-800 space-y-2 shrink-0">
+      <div className="px-4 py-3 border-t border-gray-200 space-y-2 shrink-0">
         {!block.calendarSynced && block.taskId && (
           <button
             onClick={() => run("sync", () => onSync(block.taskId))}
             disabled={!!loading}
-            className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-400 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
+            className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-700 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
           >
             {loading === "sync" ? "Synchroniseren..." : "↑ Sync naar Google Calendar"}
           </button>
@@ -218,7 +218,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
           <button
             onClick={handleSave}
             disabled={!!loading}
-            className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-400 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
+            className="w-full py-2 text-xs font-medium rounded-lg bg-blue-600/20 border border-blue-600/40 text-blue-700 hover:bg-blue-600/30 disabled:opacity-40 transition-colors"
           >
             {loading === "save" ? "Opslaan..." : "↳ Opslaan & sluiten"}
           </button>
@@ -227,7 +227,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
           <button
             onClick={() => run("complete", () => onComplete(block.taskId))}
             disabled={!!loading}
-            className="w-full py-2 text-xs font-medium rounded-lg bg-emerald-600/20 border border-emerald-600/40 text-emerald-400 hover:bg-emerald-600/30 disabled:opacity-40 transition-colors"
+            className="w-full py-2 text-xs font-medium rounded-lg bg-emerald-600/20 border border-emerald-600/40 text-emerald-700 hover:bg-emerald-600/30 disabled:opacity-40 transition-colors"
           >
             {loading === "complete" ? "Voltooien..." : "✓ Taak voltooien"}
           </button>
@@ -235,7 +235,7 @@ export default function BlockDetailPanel({ block, task, onClose, onComplete, onR
         <button
           onClick={() => run("remove", () => onRemove(block.id))}
           disabled={!!loading}
-          className="w-full py-2 text-xs font-medium rounded-lg border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 disabled:opacity-40 transition-colors"
+          className="w-full py-2 text-xs font-medium rounded-lg border border-gray-200 text-zinc-600 hover:text-zinc-800 hover:border-gray-300 disabled:opacity-40 transition-colors"
         >
           {loading === "remove" ? "Verwijderen..." : "× Verwijder uit planning"}
         </button>

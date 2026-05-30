@@ -354,20 +354,20 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
         {/* Quick plan bar */}
         <div className="grid grid-cols-1 xl:grid-cols-5 gap-2">
           <select value={planningTaskId} onChange={e => setPlanningTaskId(e.target.value)}
-            className="xl:col-span-2 px-2 py-1 text-xs font-mono bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60">
+            className="xl:col-span-2 px-2 py-1 text-xs font-mono bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60">
             <option value="">Taak plannen...</option>
             {unscheduledTasks.map(t => (
               <option key={t.id} value={t.id}>[{t.priority}] {t.title.slice(0, 40)}</option>
             ))}
           </select>
           <input type="date" value={planningDate} onChange={e => setPlanningDate(e.target.value)}
-            className="px-2 py-1 text-xs font-mono bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60" />
+            className="px-2 py-1 text-xs font-mono bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60" />
           <input type="time" value={planningTime} onChange={e => setPlanningTime(e.target.value)}
-            className="px-2 py-1 text-xs font-mono bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60" />
+            className="px-2 py-1 text-xs font-mono bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60" />
           <div className="flex gap-1.5">
             <input type="number" value={planningMinutes} onChange={e => setPlanningMinutes(Number(e.target.value))}
               min={5} step={5} placeholder="min"
-              className="w-16 px-2 py-1 text-xs font-mono bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60" />
+              className="w-16 px-2 py-1 text-xs font-mono bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60" />
             <button onClick={planTask} disabled={!planningTaskId}
               className="flex-1 px-2 py-1 text-xs font-mono rounded border border-accent/50 text-accent hover:bg-accent/10 disabled:opacity-40 transition-colors">
               Plan
@@ -425,15 +425,15 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
               {hasActiveWatch && watchStatus!.activeChannels[0] && (
                 <>
                   <span className="text-muted">Vervalt:</span>
-                  <span className="text-gray-200">
+                  <span className="text-gray-800">
                     {fmtTime(new Date(watchStatus!.activeChannels[0].expiration).toISOString())}
                   </span>
                 </>
               )}
               <span className="text-muted">Laatste full sync:</span>
-              <span className="text-gray-200">{fmtTime(primarySyncState?.lastFullSyncAt)}</span>
+              <span className="text-gray-800">{fmtTime(primarySyncState?.lastFullSyncAt)}</span>
               <span className="text-muted">Laatste incr. sync:</span>
-              <span className="text-gray-200">{fmtTime(primarySyncState?.lastIncrementalSyncAt)}</span>
+              <span className="text-gray-800">{fmtTime(primarySyncState?.lastIncrementalSyncAt)}</span>
               {primarySyncState?.lastError && (
                 <>
                   <span className="text-muted">Laatste fout:</span>
@@ -484,7 +484,7 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
                     <span className={`shrink-0 ${LOG_TYPE_COLOR[item.type] ?? "text-muted"}`}>
                       [{item.type}]
                     </span>
-                    <span className="text-gray-300 break-words min-w-0">{item.message}</span>
+                    <span className="text-gray-700 break-words min-w-0">{item.message}</span>
                     <span className="shrink-0 text-muted ml-auto">{item.createdAt.slice(11, 16)}</span>
                   </div>
                 ))}
@@ -511,7 +511,7 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
               <div key={day}
                 className={`border rounded bg-panel flex flex-col min-h-[400px] ${isToday ? "border-accent/50" : "border-border"}`}>
                 <div className={`px-2 py-1.5 border-b ${isToday ? "border-accent/30 bg-accent/5" : "border-border"}`}>
-                  <p className={`text-xs font-mono font-medium ${isToday ? "text-accent" : "text-gray-200"}`}>
+                  <p className={`text-xs font-mono font-medium ${isToday ? "text-accent" : "text-gray-800"}`}>
                     {labelDate(day)}
                   </p>
                 </div>
@@ -535,7 +535,7 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
                             {event.source === "mentor_task" ? "taak" : "gcal"}
                           </span>
                         </div>
-                        <p className="text-gray-200 leading-snug break-words">{event.title}</p>
+                        <p className="text-gray-800 leading-snug break-words">{event.title}</p>
                         <div className="flex flex-wrap gap-1 mt-1">
                           {event.source === "mentor_task" && event.taskId && (
                             <button onClick={() => syncTask(event.taskId!)} disabled={loadingSync === event.taskId}
@@ -551,7 +551,7 @@ export default function PlannerCalendar({ tasks, onTasksChange }: PlannerCalenda
                           )}
                           {event.htmlLink && (
                             <a href={event.htmlLink} target="_blank" rel="noreferrer"
-                              className="px-1.5 py-0.5 rounded border border-border text-muted hover:text-gray-200 transition-colors">
+                              className="px-1.5 py-0.5 rounded border border-border text-muted hover:text-gray-800 transition-colors">
                               Open
                             </a>
                           )}

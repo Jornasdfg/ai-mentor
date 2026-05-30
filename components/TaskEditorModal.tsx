@@ -10,17 +10,17 @@ interface Props {
 }
 
 const PRIORITY_STYLES: Record<string, { active: string; inactive: string }> = {
-  P0: { active: "bg-red-500/20 border-red-500 text-red-300",          inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400"       },
-  P1: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400"  },
-  P2: { active: "bg-blue-500/20 border-blue-500 text-blue-300",       inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400"      },
-  P3: { active: "bg-emerald-500/20 border-emerald-500 text-emerald-300", inactive: "border-zinc-700 text-zinc-500 hover:border-emerald-500/50 hover:text-emerald-400" },
+  P0: { active: "bg-red-500/20 border-red-500 text-red-600",          inactive: "border-gray-200 text-zinc-600 hover:border-red-600/50 hover:text-red-600"       },
+  P1: { active: "bg-orange-500/20 border-orange-500 text-orange-700", inactive: "border-gray-200 text-zinc-600 hover:border-orange-500/50 hover:text-orange-700"  },
+  P2: { active: "bg-blue-500/20 border-blue-500 text-blue-700",       inactive: "border-gray-200 text-zinc-600 hover:border-blue-500/50 hover:text-blue-700"      },
+  P3: { active: "bg-emerald-500/20 border-emerald-500 text-emerald-700", inactive: "border-gray-200 text-zinc-600 hover:border-emerald-500/50 hover:text-emerald-700" },
 };
 
 const Q_STYLES: Record<string, { active: string; inactive: string; sub: string }> = {
-  Q1: { active: "bg-red-500/20 border-red-500 text-red-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-red-600/50 hover:text-red-400",       sub: "Urgent & Belangrijk"         },
-  Q2: { active: "bg-blue-500/20 border-blue-500 text-blue-300",     inactive: "border-zinc-700 text-zinc-500 hover:border-blue-500/50 hover:text-blue-400",     sub: "Niet Urgent & Belangrijk"    },
-  Q3: { active: "bg-orange-500/20 border-orange-500 text-orange-300", inactive: "border-zinc-700 text-zinc-500 hover:border-orange-500/50 hover:text-orange-400", sub: "Urgent & Onbelangrijk"       },
-  Q4: { active: "bg-zinc-700 border-zinc-600 text-zinc-300",        inactive: "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-400",        sub: "Niet Urgent & Onbelangrijk"  },
+  Q1: { active: "bg-red-500/20 border-red-500 text-red-600",        inactive: "border-gray-200 text-zinc-600 hover:border-red-600/50 hover:text-red-600",       sub: "Urgent & Belangrijk"         },
+  Q2: { active: "bg-blue-500/20 border-blue-500 text-blue-700",     inactive: "border-gray-200 text-zinc-600 hover:border-blue-500/50 hover:text-blue-700",     sub: "Niet Urgent & Belangrijk"    },
+  Q3: { active: "bg-orange-500/20 border-orange-500 text-orange-700", inactive: "border-gray-200 text-zinc-600 hover:border-orange-500/50 hover:text-orange-700", sub: "Urgent & Onbelangrijk"       },
+  Q4: { active: "bg-gray-100 border-gray-300 text-zinc-700",        inactive: "border-gray-200 text-zinc-600 hover:border-gray-300 hover:text-zinc-600",        sub: "Niet Urgent & Onbelangrijk"  },
 };
 
 const TIME_PRESETS = [
@@ -41,8 +41,8 @@ function minsToLabel(m: number) {
   return `${h}u ${r}m`;
 }
 
-const INPUT = "w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-100 focus:outline-none focus:border-blue-500/60 placeholder-zinc-600";
-const LABEL = "block text-[10px] text-zinc-500 uppercase tracking-wider mb-1.5";
+const INPUT = "w-full bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-blue-500/60 placeholder-zinc-600";
+const LABEL = "block text-[10px] text-zinc-600 uppercase tracking-wider mb-1.5";
 
 export default function TaskEditorModal({ task, onClose, onSave }: Props) {
   const [title, setTitle]               = useState("");
@@ -107,21 +107,21 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
 
       {/* Sheet / modal — stopPropagation so tapping inside doesn't close */}
       <div
-        className="relative w-full sm:max-w-md bg-zinc-900 border border-zinc-800 rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col max-h-[92vh] sm:max-h-[88vh] cursor-default"
+        className="relative w-full sm:max-w-md bg-white border border-gray-200 rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col max-h-[92vh] sm:max-h-[88vh] cursor-default"
         onClick={e => e.stopPropagation()}
       >
         {/* Mobile drag handle */}
         <div className="sm:hidden flex justify-center pt-3 pb-1 shrink-0">
-          <div className="w-10 h-1 rounded-full bg-zinc-700" />
+          <div className="w-10 h-1 rounded-full bg-gray-100" />
         </div>
 
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800 shrink-0">
-          <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">Taak bewerken</span>
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 shrink-0">
+          <span className="text-[10px] font-semibold text-zinc-600 uppercase tracking-wider">Taak bewerken</span>
           {/* Large close button — easier to tap on mobile */}
           <button
             onClick={onClose}
-            className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-zinc-800 text-zinc-400 hover:text-zinc-100 transition-colors text-xl leading-none"
+            className="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 text-zinc-600 hover:text-zinc-900 transition-colors text-xl leading-none"
             aria-label="Sluiten"
           >
             ×
@@ -133,7 +133,7 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
 
           {/* Planned in Planner — read-only info */}
           {task.plannedStart && (
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-900/20 border border-emerald-700/30 text-emerald-300 text-xs">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-900/20 border border-emerald-700/30 text-emerald-700 text-xs">
               <span>📅</span>
               <div>
                 <span className="font-semibold">Ingepland in Planner: </span>
@@ -200,10 +200,10 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
                 type="date"
                 value={hardDeadline}
                 onChange={e => setHard(e.target.value)}
-                className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500/60 [color-scheme:dark]"
+                className="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500/60 [color-scheme:dark]"
               />
               {hardDeadline && (
-                <button onClick={() => setHard("")} className="text-[10px] text-zinc-600 hover:text-red-400 mt-1 transition-colors">× wissen</button>
+                <button onClick={() => setHard("")} className="text-[10px] text-zinc-600 hover:text-red-600 mt-1 transition-colors">× wissen</button>
               )}
             </div>
             <div>
@@ -212,10 +212,10 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
                 type="date"
                 value={softDeadline}
                 onChange={e => setSoft(e.target.value)}
-                className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-xs text-zinc-200 focus:outline-none focus:border-blue-500/60 [color-scheme:dark]"
+                className="w-full bg-white border border-gray-200 rounded-lg px-3 py-2 text-xs text-zinc-800 focus:outline-none focus:border-blue-500/60 [color-scheme:dark]"
               />
               {softDeadline && (
-                <button onClick={() => setSoft("")} className="text-[10px] text-zinc-600 hover:text-red-400 mt-1 transition-colors">× wissen</button>
+                <button onClick={() => setSoft("")} className="text-[10px] text-zinc-600 hover:text-red-600 mt-1 transition-colors">× wissen</button>
               )}
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
           <div>
             <label className={LABEL}>
               Geschatte tijd
-              {estimatedMins && <span className="ml-2 text-zinc-400 normal-case font-normal tracking-normal">{minsToLabel(estimatedMins)}</span>}
+              {estimatedMins && <span className="ml-2 text-zinc-600 normal-case font-normal tracking-normal">{minsToLabel(estimatedMins)}</span>}
             </label>
             <div className="flex flex-wrap gap-1.5 mb-2.5">
               {TIME_PRESETS.map(({ label, mins }) => (
@@ -233,8 +233,8 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
                   onClick={() => pickPreset(mins)}
                   className={`px-2.5 py-1.5 text-xs rounded-lg border transition-all ${
                     estimatedMins === mins
-                      ? "bg-blue-500/20 border-blue-500 text-blue-300"
-                      : "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-300"
+                      ? "bg-blue-500/20 border-blue-500 text-blue-700"
+                      : "border-gray-200 text-zinc-600 hover:border-gray-300 hover:text-zinc-700"
                   }`}
                 >
                   {label}
@@ -248,11 +248,11 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
                 placeholder="Eigen tijd…"
                 value={customMins}
                 onChange={e => onCustomChange(e.target.value)}
-                className="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:border-blue-500/60 placeholder-zinc-600"
+                className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-1.5 text-xs text-zinc-800 focus:outline-none focus:border-blue-500/60 placeholder-zinc-600"
               />
               <span className="text-xs text-zinc-600 shrink-0">min</span>
               {estimatedMins && (
-                <button onClick={() => { setMins(null); setCustomMins(""); }} className="text-[10px] text-zinc-600 hover:text-red-400 transition-colors shrink-0">× wissen</button>
+                <button onClick={() => { setMins(null); setCustomMins(""); }} className="text-[10px] text-zinc-600 hover:text-red-600 transition-colors shrink-0">× wissen</button>
               )}
             </div>
           </div>
@@ -263,14 +263,14 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
             <div className="grid grid-cols-2 gap-1.5">
               <button
                 onClick={() => setAutoSchedule("auto")}
-                className={`py-2 px-3 text-left rounded-lg border transition-all ${autoSchedule === "auto" ? "bg-blue-500/20 border-blue-500 text-blue-300" : "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-300"}`}
+                className={`py-2 px-3 text-left rounded-lg border transition-all ${autoSchedule === "auto" ? "bg-blue-500/20 border-blue-500 text-blue-700" : "border-gray-200 text-zinc-600 hover:border-gray-300 hover:text-zinc-700"}`}
               >
                 <span className="text-xs font-semibold block">🔄 Flexibel</span>
                 <span className="text-[9px] opacity-70">Auto-inplanbaar, beweeglijk</span>
               </button>
               <button
                 onClick={() => setAutoSchedule("off")}
-                className={`py-2 px-3 text-left rounded-lg border transition-all ${autoSchedule === "off" ? "bg-amber-500/20 border-amber-500 text-amber-300" : "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-300"}`}
+                className={`py-2 px-3 text-left rounded-lg border transition-all ${autoSchedule === "off" ? "bg-amber-500/20 border-amber-500 text-amber-700" : "border-gray-200 text-zinc-600 hover:border-gray-300 hover:text-zinc-700"}`}
               >
                 <span className="text-xs font-semibold block">📌 Vast / Deadline</span>
                 <span className="text-[9px] opacity-70">Exacte afspraak of harde deadline</span>
@@ -293,16 +293,16 @@ export default function TaskEditorModal({ task, onClose, onSave }: Props) {
         </div>
 
         {/* Footer */}
-        <div className="px-4 py-3 border-t border-zinc-800 flex gap-2 shrink-0">
+        <div className="px-4 py-3 border-t border-gray-200 flex gap-2 shrink-0">
           <button
             onClick={onClose}
-            className="flex-1 py-3 text-sm font-medium rounded-lg border border-zinc-700 text-zinc-400 hover:text-zinc-200 hover:border-zinc-500 transition-colors"
+            className="flex-1 py-3 text-sm font-medium rounded-lg border border-gray-200 text-zinc-600 hover:text-zinc-800 hover:border-gray-300 transition-colors"
           >
             Annuleren
           </button>
           <button
             onClick={handleSave}
-            className="flex-1 py-3 text-sm font-medium rounded-lg bg-blue-600/20 border border-blue-600/50 text-blue-300 hover:bg-blue-600/30 transition-colors"
+            className="flex-1 py-3 text-sm font-medium rounded-lg bg-blue-600/20 border border-blue-600/50 text-blue-700 hover:bg-blue-600/30 transition-colors"
           >
             Opslaan
           </button>

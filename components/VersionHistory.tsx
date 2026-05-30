@@ -56,7 +56,7 @@ export default function VersionHistory({ onRestoreVersion, refreshTrigger }: Ver
       <button
         onClick={() => setIsOpen((o) => !o)}
         className="w-full flex items-center justify-between px-4 py-2 text-xs font-mono
-                   text-muted hover:text-gray-200 bg-panel transition-colors"
+                   text-muted hover:text-gray-800 bg-panel transition-colors"
       >
         <span>Versiegeschiedenis</span>
         <span>{isOpen ? "▲" : "▼"}</span>
@@ -75,7 +75,7 @@ export default function VersionHistory({ onRestoreVersion, refreshTrigger }: Ver
                     className="w-full text-left px-4 py-2 text-xs font-mono hover:bg-panel
                                transition-colors flex items-center justify-between"
                   >
-                    <span className={expandedId === v.id ? "text-accent" : "text-gray-300"}>
+                    <span className={expandedId === v.id ? "text-accent" : "text-gray-700"}>
                       {v.label}
                     </span>
                     <span className="text-muted">{expandedId === v.id ? "▴" : "▾"}</span>
@@ -88,7 +88,7 @@ export default function VersionHistory({ onRestoreVersion, refreshTrigger }: Ver
                       ) : (
                         <>
                           <div className="max-h-32 overflow-y-auto rounded border border-border p-2 bg-panel">
-                            <pre className="text-xs text-gray-400 whitespace-pre-wrap font-mono leading-relaxed">
+                            <pre className="text-xs text-gray-500 whitespace-pre-wrap font-mono leading-relaxed">
                               {previewContent}
                             </pre>
                           </div>

@@ -88,11 +88,11 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-[100dvh] bg-zinc-950 text-zinc-100 overflow-hidden">
+    <div className="flex flex-col h-[100dvh] bg-gray-100 text-zinc-900 overflow-hidden">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0">
+      <header className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-white shrink-0">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold text-zinc-100 tracking-tight">AI Mentor</span>
+          <span className="text-sm font-semibold text-zinc-900 tracking-tight">AI Mentor</span>
           <span className="text-xs text-zinc-600 font-mono hidden sm:inline">v4</span>
           <CostBadge refreshTrigger={costRefresh} />
           <nav className="hidden sm:flex items-center gap-0.5 ml-2">
@@ -103,7 +103,7 @@ export default function Home() {
                 className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
                   activeTab === tab.id
                     ? "bg-blue-600 text-white"
-                    : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"
+                    : "text-zinc-600 hover:text-zinc-800 hover:bg-gray-100"
                 }`}
               >
                 {tab.label}
@@ -132,15 +132,15 @@ export default function Home() {
 
       {/* Mobile bottom nav */}
       <nav
-        className="sm:hidden fixed bottom-0 inset-x-0 z-50 bg-zinc-900/95 backdrop-blur-sm border-t border-zinc-800 flex"
+        className="sm:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 flex"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         {TABS.map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 py-2 flex flex-col items-center gap-0.5 transition-colors active:bg-zinc-800 ${
-              activeTab === tab.id ? "text-blue-400" : "text-zinc-500"
+            className={`flex-1 py-2 flex flex-col items-center gap-0.5 transition-colors active:bg-white ${
+              activeTab === tab.id ? "text-blue-700" : "text-zinc-600"
             }`}
           >
             {TAB_ICONS[tab.id]}

@@ -103,8 +103,8 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between">
-          <span className="text-sm font-mono font-semibold text-gray-100">Nieuwe taak</span>
-          <button onClick={onClose} className="text-muted hover:text-gray-200 text-lg font-mono leading-none">x</button>
+          <span className="text-sm font-mono font-semibold text-gray-900">Nieuwe taak</span>
+          <button onClick={onClose} className="text-muted hover:text-gray-800 text-lg font-mono leading-none">x</button>
         </div>
 
         {error && (
@@ -121,7 +121,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             value={title}
             onChange={e => setTitle(e.target.value)}
             autoFocus
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           />
         </div>
 
@@ -135,7 +135,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               className={`flex-1 px-3 py-1.5 text-xs font-mono rounded border transition-colors ${
                 taskKind === "task"
                   ? "border-accent text-accent bg-accent/10"
-                  : "border-border text-muted hover:text-gray-200"
+                  : "border-border text-muted hover:text-gray-800"
               }`}
             >
               Flexibele taak
@@ -146,7 +146,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               className={`flex-1 px-3 py-1.5 text-xs font-mono rounded border transition-colors ${
                 taskKind === "appointment"
                   ? "border-accent text-accent bg-accent/10"
-                  : "border-border text-muted hover:text-gray-200"
+                  : "border-border text-muted hover:text-gray-800"
               }`}
             >
               Vaste afspraak
@@ -166,7 +166,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             type="text"
             value={project}
             onChange={e => setProject(e.target.value)}
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
           />
         </div>
 
@@ -177,7 +177,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             <select
               value={priority}
               onChange={e => setPriority(e.target.value as MentorPriority)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             >
               {(["P0", "P1", "P2", "P3"] as MentorPriority[]).map(p => (
                 <option key={p} value={p}>{p}</option>
@@ -189,7 +189,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             <select
               value={status}
               onChange={e => setStatus(e.target.value as MentorTaskStatus)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             >
               <option value="open">Open</option>
               <option value="in_progress">In uitvoering</option>
@@ -205,7 +205,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               type="date"
               value={hardDeadline}
               onChange={e => setHardDeadline(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
           <div>
@@ -214,7 +214,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               type="date"
               value={softDeadline}
               onChange={e => setSoftDeadline(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -227,7 +227,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               type="date"
               value={startBy}
               onChange={e => setStartBy(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
           <div>
@@ -237,7 +237,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               min={0}
               value={leadTimeDays}
               onChange={e => setLeadTimeDays(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               min={0}
               value={estimatedMinutes}
               onChange={e => setEstimatedMinutes(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
           <div>
@@ -260,7 +260,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               type="text"
               value={nextAction}
               onChange={e => setNextAction(e.target.value)}
-              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+              className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
             />
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
             value={tags}
             onChange={e => setTags(e.target.value)}
             placeholder="bijv. klant, malaga, reis"
-            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+            className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
           />
         </div>
 
@@ -287,7 +287,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
                 type="date"
                 value={plannedDate}
                 onChange={e => setPlannedDate(e.target.value)}
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
               />
             </div>
             <div>
@@ -296,7 +296,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
                 type="time"
                 value={plannedTime}
                 onChange={e => setPlannedTime(e.target.value)}
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
               />
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
                 value={plannedMinutes}
                 onChange={e => setPlannedMinutes(e.target.value)}
                 placeholder="30"
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60 placeholder-muted"
               />
             </div>
             <div>
@@ -318,7 +318,7 @@ export default function TaskCreateModal({ onClose, onCreated }: TaskCreateModalP
               <select
                 value={calendarSyncMode}
                 onChange={e => setCalendarSyncMode(e.target.value as CalendarSyncMode)}
-                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-200 border border-border rounded focus:outline-none focus:border-accent/60"
+                className="w-full px-3 py-1.5 font-mono text-sm bg-surface text-gray-800 border border-border rounded focus:outline-none focus:border-accent/60"
               >
                 <option value="none">Geen</option>
                 <option value="manual">Handmatig</option>

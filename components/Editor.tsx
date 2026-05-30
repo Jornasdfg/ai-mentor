@@ -65,7 +65,7 @@ export default function Editor({
       <textarea
         value={content}
         onChange={(e) => onChange(e.target.value)}
-        className="flex-1 w-full p-4 font-mono text-sm bg-surface text-gray-200
+        className="flex-1 w-full p-4 font-mono text-sm bg-surface text-gray-800
                    resize-none focus:outline-none leading-relaxed min-h-0"
         spellCheck={false}
         placeholder="Laad het referentiebestand..."

@@ -97,10 +97,10 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
   }
 
   return (
-    <div className="flex flex-col h-full bg-zinc-950">
+    <div className="flex flex-col h-full bg-gray-100">
       {/* Header */}
-      <div className="px-4 py-2.5 border-b border-zinc-800 shrink-0 flex items-center justify-between">
-        <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">AI Mentor</span>
+      <div className="px-4 py-2.5 border-b border-gray-200 shrink-0 flex items-center justify-between">
+        <span className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">AI Mentor</span>
         <span className="text-[10px] text-zinc-700">gpt-4o-mini</span>
       </div>
 
@@ -108,7 +108,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
       <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
         {messages.length === 0 && !loading && (
           <div className="space-y-3 mt-2">
-            <p className="text-sm text-zinc-500 leading-relaxed">
+            <p className="text-sm text-zinc-600 leading-relaxed">
               Vertel wat er speelt, vraag om advies, of zeg wat je wil toevoegen aan je taken.
             </p>
             <div className="grid grid-cols-1 gap-1.5">
@@ -116,7 +116,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
                 <button
                   key={s}
                   onClick={() => handleSend(s)}
-                  className="text-left text-xs text-zinc-400 border border-zinc-800 rounded-lg px-3 py-2 hover:border-zinc-600 hover:text-zinc-200 transition-colors"
+                  className="text-left text-xs text-zinc-600 border border-gray-200 rounded-lg px-3 py-2 hover:border-gray-300 hover:text-zinc-800 transition-colors"
                 >
                   {s}
                 </button>
@@ -132,7 +132,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
               <div className={`rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
                 msg.role === "user"
                   ? "bg-blue-600 text-white rounded-br-sm"
-                  : "bg-zinc-800 text-zinc-100 rounded-bl-sm"
+                  : "bg-white text-zinc-900 rounded-bl-sm"
               }`}>
                 {msg.content}
               </div>
@@ -148,21 +148,21 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
                   msg.patchState === "applied"
                     ? "border-emerald-700/30 bg-emerald-900/10"
                     : msg.patchState === "dismissed"
-                    ? "border-zinc-800 bg-zinc-900/50 opacity-50"
+                    ? "border-gray-200 bg-white/50 opacity-50"
                     : "border-blue-500/25 bg-blue-500/5"
                 }`}>
                   {msg.patchState === "applied" ? (
-                    <p className="text-xs text-emerald-400">✓ Wijzigingen toegepast</p>
+                    <p className="text-xs text-emerald-700">✓ Wijzigingen toegepast</p>
                   ) : msg.patchState === "dismissed" ? (
                     <p className="text-xs text-zinc-600">Genegeerd</p>
                   ) : (
                     <>
-                      <p className="text-[10px] text-blue-400 uppercase tracking-wider font-semibold">
+                      <p className="text-[10px] text-blue-700 uppercase tracking-wider font-semibold">
                         {msg.patches.length} voorgestelde wijziging{msg.patches.length !== 1 ? "en" : ""}
                       </p>
                       <div className="space-y-0.5">
                         {msg.patches.map((p, i) => (
-                          <p key={i} className="text-xs text-zinc-400">
+                          <p key={i} className="text-xs text-zinc-600">
                             · {p.operation === "add_task" ? "➕" : p.operation === "update_task" ? "✏️" : "·"}{" "}
                             {(p.data as { title?: string })?.title ?? p.taskId ?? p.operation}
                           </p>
@@ -171,13 +171,13 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
                       <div className="flex gap-2 pt-0.5">
                         <button
                           onClick={() => applyPatches(msg.id, msg.patches!)}
-                          className="flex-1 py-1.5 text-xs font-medium rounded-lg bg-emerald-600/20 border border-emerald-600/40 text-emerald-400 hover:bg-emerald-600/30 transition-colors"
+                          className="flex-1 py-1.5 text-xs font-medium rounded-lg bg-emerald-600/20 border border-emerald-600/40 text-emerald-700 hover:bg-emerald-600/30 transition-colors"
                         >
                           ✓ Toepassen
                         </button>
                         <button
                           onClick={() => setMessages(prev => prev.map(m => m.id === msg.id ? { ...m, patchState: "dismissed" } : m))}
-                          className="px-3 py-1.5 text-xs rounded-lg border border-zinc-700 text-zinc-500 hover:text-zinc-300 transition-colors"
+                          className="px-3 py-1.5 text-xs rounded-lg border border-gray-200 text-zinc-600 hover:text-zinc-700 transition-colors"
                         >
                           ×
                         </button>
@@ -192,12 +192,12 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
 
         {loading && (
           <div className="flex justify-start">
-            <div className="bg-zinc-800 rounded-2xl rounded-bl-sm px-4 py-3">
+            <div className="bg-white rounded-2xl rounded-bl-sm px-4 py-3">
               <div className="flex gap-1 items-center">
                 {[0, 150, 300].map(delay => (
                   <span
                     key={delay}
-                    className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce"
+                    className="w-1.5 h-1.5 rounded-full bg-gray-300 animate-bounce"
                     style={{ animationDelay: `${delay}ms` }}
                   />
                 ))}
@@ -207,7 +207,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
         )}
 
         {error && (
-          <div className="p-3 rounded-lg border border-red-500/30 bg-red-500/10 text-xs text-red-400">
+          <div className="p-3 rounded-lg border border-red-500/30 bg-red-500/10 text-xs text-red-600">
             {error}
           </div>
         )}
@@ -216,7 +216,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
       </div>
 
       {/* Input */}
-      <div className="border-t border-zinc-800 p-3 shrink-0">
+      <div className="border-t border-gray-200 p-3 shrink-0">
         <div className="flex gap-2 items-end">
           <textarea
             ref={textareaRef}
@@ -227,7 +227,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
             }}
             placeholder="Typ een bericht... (Enter om te sturen, Shift+Enter voor nieuwe regel)"
             rows={1}
-            className="flex-1 px-3 py-2 text-sm bg-zinc-800 text-zinc-100 border border-zinc-700 rounded-xl resize-none focus:outline-none focus:border-blue-500/60 placeholder-zinc-600 leading-relaxed"
+            className="flex-1 px-3 py-2 text-sm bg-white text-zinc-900 border border-gray-200 rounded-xl resize-none focus:outline-none focus:border-blue-500/60 placeholder-zinc-600 leading-relaxed"
           />
           <button
             onClick={() => handleSend()}

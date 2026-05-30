@@ -209,17 +209,17 @@ export default function WeekTimeGrid({
   const nowY = currentTimeY();
 
   return (
-    <div className="flex flex-col h-full overflow-hidden bg-zinc-950">
+    <div className="flex flex-col h-full overflow-hidden bg-gray-100">
       {/* Day header row */}
-      <div className="flex shrink-0 border-b border-zinc-800 bg-zinc-950 sticky top-0 z-10">
+      <div className="flex shrink-0 border-b border-gray-200 bg-gray-100 sticky top-0 z-10">
         <div className="w-10 sm:w-12 shrink-0" />
         {weekDays.map(iso => {
           const { wd, day, month } = labelDay(iso);
           const today = isToday(iso);
           return (
-            <div key={iso} className={`flex-1 py-2 text-center border-l border-zinc-800 ${today ? "bg-blue-950/30" : ""}`}>
-              <div className={`text-[10px] sm:text-xs uppercase tracking-wide ${today ? "text-blue-400" : "text-zinc-500"}`}>{wd}</div>
-              <div className={`text-sm sm:text-sm font-semibold ${today ? "text-blue-300" : "text-zinc-200"}`}>
+            <div key={iso} className={`flex-1 py-2 text-center border-l border-gray-200 ${today ? "bg-blue-950/30" : ""}`}>
+              <div className={`text-[10px] sm:text-xs uppercase tracking-wide ${today ? "text-blue-700" : "text-zinc-600"}`}>{wd}</div>
+              <div className={`text-sm sm:text-sm font-semibold ${today ? "text-blue-700" : "text-zinc-800"}`}>
                 {today ? (
                   <span className="inline-flex items-center justify-center w-7 h-7 sm:w-6 sm:h-6 rounded-full bg-blue-500 text-white text-xs">{day}</span>
                 ) : day}
@@ -257,7 +257,7 @@ export default function WeekTimeGrid({
           return (
             <div
               key={dayISO}
-              className={`flex-1 relative border-l border-zinc-800 ${today ? "bg-blue-950/10" : ""} ${onCreateTask ? "cursor-cell" : ""}`}
+              className={`flex-1 relative border-l border-gray-200 ${today ? "bg-blue-950/10" : ""} ${onCreateTask ? "cursor-cell" : ""}`}
               style={{ height: gridH }}
               onDragOver={(e) => handleDragOver(e, dayISO)}
               onDragLeave={handleDragLeave}
@@ -268,7 +268,7 @@ export default function WeekTimeGrid({
               {hourLabels.map(h => (
                 <div
                   key={h}
-                  className="absolute left-0 right-0 border-t border-zinc-800/60 pointer-events-none"
+                  className="absolute left-0 right-0 border-t border-gray-200/60 pointer-events-none"
                   style={{ top: (h - startHour) * HOUR_H }}
                 />
               ))}
@@ -276,7 +276,7 @@ export default function WeekTimeGrid({
               {hourLabels.map(h => (
                 <div
                   key={`${h}h`}
-                  className="absolute left-0 right-0 border-t border-zinc-800/30 pointer-events-none"
+                  className="absolute left-0 right-0 border-t border-gray-200/30 pointer-events-none"
                   style={{ top: (h - startHour) * HOUR_H + HOUR_H / 2 }}
                 />
               ))}
@@ -359,7 +359,7 @@ export default function WeekTimeGrid({
                   style={{ top: quickCreate.top, minHeight: 58 }}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="bg-zinc-800 border border-blue-500/70 rounded-md">
+                  <div className="bg-white border border-blue-500/70 rounded-md">
                     <div className="flex items-center gap-1.5 px-2 pt-2 pb-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0 mt-0.5" />
                       <input
@@ -371,12 +371,12 @@ export default function WeekTimeGrid({
                           if (e.key === "Escape") closeQuickCreate();
                         }}
                         placeholder="Nieuwe taak…"
-                        className="flex-1 bg-transparent text-xs text-zinc-100 placeholder-zinc-500 focus:outline-none"
+                        className="flex-1 bg-transparent text-xs text-zinc-900 placeholder-zinc-500 focus:outline-none"
                         disabled={qcSubmitting}
                       />
                     </div>
                     <div className="flex items-center justify-between px-2 pb-1.5">
-                      <span className="text-[9px] text-zinc-500 font-mono">
+                      <span className="text-[9px] text-zinc-600 font-mono">
                         {quickCreate.start.slice(11,16)} – {quickCreate.end.slice(11,16)}
                       </span>
                       <span className="text-[9px] text-zinc-600">Enter ↵ · Esc</span>

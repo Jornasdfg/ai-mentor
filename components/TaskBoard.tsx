@@ -16,10 +16,10 @@ interface TaskBoardProps {
 type BoardView = "covey" | "agenda";
 
 const COLS: { key: CoveyQuadrant; label: string; sub: string; textCls: string; dropCls: string }[] = [
-  { key: "Q1", label: "Q1", sub: "Urgent & Belangrijk",         textCls: "text-red-400",    dropCls: "ring-red-500/40 bg-red-950/20"    },
-  { key: "Q2", label: "Q2", sub: "Niet Urgent & Belangrijk",    textCls: "text-blue-400",   dropCls: "ring-blue-500/40 bg-blue-950/20"  },
-  { key: "Q3", label: "Q3", sub: "Urgent & Onbelangrijk",       textCls: "text-orange-400", dropCls: "ring-orange-500/40 bg-orange-950/20" },
-  { key: "Q4", label: "Q4", sub: "Niet Urgent & Onbelangrijk",  textCls: "text-zinc-500",   dropCls: "ring-zinc-500/40 bg-zinc-800/30"  },
+  { key: "Q1", label: "Q1", sub: "Urgent & Belangrijk",         textCls: "text-red-600",    dropCls: "ring-red-500/40 bg-red-950/20"    },
+  { key: "Q2", label: "Q2", sub: "Niet Urgent & Belangrijk",    textCls: "text-blue-700",   dropCls: "ring-blue-500/40 bg-blue-950/20"  },
+  { key: "Q3", label: "Q3", sub: "Urgent & Onbelangrijk",       textCls: "text-orange-700", dropCls: "ring-orange-500/40 bg-orange-950/20" },
+  { key: "Q4", label: "Q4", sub: "Niet Urgent & Onbelangrijk",  textCls: "text-zinc-600",   dropCls: "ring-zinc-500/40 bg-white/30"  },
 ];
 
 const PRIO_ORDER: Record<string, number> = { P0: 0, P1: 1, P2: 2, P3: 3 };
@@ -104,10 +104,10 @@ function getAgendaGroups(tasks: MentorTask[]): AgendaGroup[] {
 
   return [
     { key: "overdue",  label: "Te laat",                                      headerCls: "text-red-500",   tasks: sortBucket(buckets.overdue)  },
-    { key: "today",    label: `Vandaag — ${fmtDateShort(today)}`,              headerCls: "text-red-400",   tasks: sortBucket(buckets.today)    },
-    { key: "soon",     label: `Binnenkort — t/m ${fmtDateShort(in3days)}`,    headerCls: "text-amber-400", tasks: sortBucket(buckets.soon)     },
-    { key: "thisWeek", label: `Deze week — t/m ${fmtDateShort(in7days)}`,     headerCls: "text-blue-400",  tasks: sortBucket(buckets.thisWeek) },
-    { key: "later2w",  label: "Volgende week",                                 headerCls: "text-zinc-400",  tasks: sortBucket(buckets.later2w)  },
+    { key: "today",    label: `Vandaag — ${fmtDateShort(today)}`,              headerCls: "text-red-600",   tasks: sortBucket(buckets.today)    },
+    { key: "soon",     label: `Binnenkort — t/m ${fmtDateShort(in3days)}`,    headerCls: "text-amber-700", tasks: sortBucket(buckets.soon)     },
+    { key: "thisWeek", label: `Deze week — t/m ${fmtDateShort(in7days)}`,     headerCls: "text-blue-700",  tasks: sortBucket(buckets.thisWeek) },
+    { key: "later2w",  label: "Volgende week",                                 headerCls: "text-zinc-600",  tasks: sortBucket(buckets.later2w)  },
     { key: "later",    label: "Later",                                         headerCls: "text-zinc-600",  tasks: sortBucket(buckets.later)    },
     { key: "flexible", label: "Flexibel — geen datum",                         headerCls: "text-zinc-600",  tasks: sortBucket(buckets.flexible) },
   ].filter(g => g.tasks.length > 0);
@@ -116,17 +116,17 @@ function getAgendaGroups(tasks: MentorTask[]): AgendaGroup[] {
 // ── Agenda row ────────────────────────────────────────────────────────────────
 
 const TYPE_ICON: Record<ScheduleType, { icon: string; cls: string; label: string }> = {
-  timed:    { icon: "📌", cls: "text-red-400",     label: "Vaste afspraak" },
-  scheduled:{ icon: "📅", cls: "text-emerald-400", label: "Ingepland" },
-  deadline: { icon: "⏰", cls: "text-amber-400",   label: "Deadline" },
+  timed:    { icon: "📌", cls: "text-red-600",     label: "Vaste afspraak" },
+  scheduled:{ icon: "📅", cls: "text-emerald-700", label: "Ingepland" },
+  deadline: { icon: "⏰", cls: "text-amber-700",   label: "Deadline" },
   flexible: { icon: "○",  cls: "text-zinc-600",    label: "Flexibel" },
 };
 
 const PRIO_CLS: Record<string, string> = {
-  P0: "text-red-300 bg-red-500/10 border-red-500/30",
-  P1: "text-orange-300 bg-orange-500/10 border-orange-500/30",
-  P2: "text-blue-300 bg-blue-500/10 border-blue-500/30",
-  P3: "text-zinc-500 bg-zinc-800 border-zinc-700",
+  P0: "text-red-600 bg-red-500/10 border-red-500/30",
+  P1: "text-orange-700 bg-orange-500/10 border-orange-500/30",
+  P2: "text-blue-700 bg-blue-500/10 border-blue-500/30",
+  P3: "text-zinc-600 bg-white border-gray-200",
 };
 
 interface AgendaRowProps {
@@ -154,7 +154,7 @@ function AgendaTaskRow({ task, onEdit, onComplete, onPark }: AgendaRowProps) {
   return (
     <div
       onClick={() => onEdit(task)}
-      className="flex items-center gap-2 px-3 py-2 hover:bg-zinc-800/60 cursor-pointer transition-colors border-b border-zinc-800/40 last:border-b-0 group"
+      className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100/60 cursor-pointer transition-colors border-b border-gray-200/40 last:border-b-0 group"
     >
       <span className={`text-sm shrink-0 ${ti.cls}`} title={ti.label}>{ti.icon}</span>
       <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border shrink-0 ${PRIO_CLS[task.priority] ?? ""}`}>
@@ -163,9 +163,9 @@ function AgendaTaskRow({ task, onEdit, onComplete, onPark }: AgendaRowProps) {
       {task.coveyQuadrant && (
         <span className="text-[9px] text-zinc-600 shrink-0">{task.coveyQuadrant}</span>
       )}
-      <span className="text-xs text-zinc-200 flex-1 truncate">{task.title}</span>
+      <span className="text-xs text-zinc-800 flex-1 truncate">{task.title}</span>
       {dateStr && (
-        <span className="text-[10px] text-zinc-500 font-mono shrink-0 hidden sm:inline">{dateStr}</span>
+        <span className="text-[10px] text-zinc-600 font-mono shrink-0 hidden sm:inline">{dateStr}</span>
       )}
       <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
         <button
@@ -175,7 +175,7 @@ function AgendaTaskRow({ task, onEdit, onComplete, onPark }: AgendaRowProps) {
         >✓</button>
         <button
           onClick={e => { e.stopPropagation(); onPark(task.id); }}
-          className="text-[10px] px-1.5 py-0.5 rounded border border-zinc-700 text-zinc-600 hover:text-amber-400 transition-colors"
+          className="text-[10px] px-1.5 py-0.5 rounded border border-gray-200 text-zinc-600 hover:text-amber-700 transition-colors"
           title="Parkeren"
         >⏸</button>
       </div>
@@ -260,19 +260,19 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
 
   return (
     <>
-      <div className="flex flex-col h-full min-h-0 bg-zinc-950">
+      <div className="flex flex-col h-full min-h-0 bg-gray-100">
 
         {/* Toolbar */}
-        <div className="flex items-center gap-2 px-3 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0 flex-wrap">
+        <div className="flex items-center gap-2 px-3 py-2 border-b border-gray-200 bg-white shrink-0 flex-wrap">
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-3 py-1 text-xs font-medium rounded border border-blue-600/40 text-blue-400 hover:bg-blue-600/10 transition-colors shrink-0"
+            className="px-3 py-1 text-xs font-medium rounded border border-blue-600/40 text-blue-700 hover:bg-blue-600/10 transition-colors shrink-0"
           >
             + Nieuwe taak
           </button>
           <button
             onClick={() => { setEditingRecurring(null); setShowRecurringModal(true); }}
-            className="px-3 py-1 text-xs font-medium rounded border border-zinc-700 text-zinc-400 hover:border-blue-600/40 hover:text-blue-400 transition-colors shrink-0"
+            className="px-3 py-1 text-xs font-medium rounded border border-gray-200 text-zinc-600 hover:border-blue-600/40 hover:text-blue-700 transition-colors shrink-0"
           >
             + Routine
           </button>
@@ -281,18 +281,18 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
             placeholder="Zoeken..."
             value={search}
             onChange={e => setSearch(e.target.value)}
-            className="flex-1 min-w-[80px] px-2 py-1 text-xs bg-zinc-800 text-zinc-200 border border-zinc-700 rounded focus:outline-none focus:border-blue-500/60 placeholder-zinc-600"
+            className="flex-1 min-w-[80px] px-2 py-1 text-xs bg-white text-zinc-800 border border-gray-200 rounded focus:outline-none focus:border-blue-500/60 placeholder-zinc-600"
           />
           {/* View toggle */}
-          <div className="flex rounded border border-zinc-700 overflow-hidden shrink-0">
+          <div className="flex rounded border border-gray-200 overflow-hidden shrink-0">
             <button
               onClick={() => setViewMode("covey")}
-              className={`px-2.5 py-1 text-xs font-medium transition-colors ${viewMode === "covey" ? "bg-zinc-700 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"}`}
+              className={`px-2.5 py-1 text-xs font-medium transition-colors ${viewMode === "covey" ? "bg-gray-100 text-zinc-900" : "text-zinc-600 hover:text-zinc-700"}`}
               title="Covey kwadrant"
             >⊞</button>
             <button
               onClick={() => setViewMode("agenda")}
-              className={`px-2.5 py-1 text-xs font-medium transition-colors border-l border-zinc-700 ${viewMode === "agenda" ? "bg-zinc-700 text-zinc-100" : "text-zinc-500 hover:text-zinc-300"}`}
+              className={`px-2.5 py-1 text-xs font-medium transition-colors border-l border-gray-200 ${viewMode === "agenda" ? "bg-gray-100 text-zinc-900" : "text-zinc-600 hover:text-zinc-700"}`}
               title="Agenda / datum"
             >≡</button>
           </div>
@@ -319,12 +319,12 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
                     onDrop={() => handleDrop(col.key)}
                     className={`
                       flex flex-col sm:flex-1 sm:min-h-0
-                      ${idx < COLS.length - 1 ? "border-b sm:border-b-0 sm:border-r border-zinc-800" : ""}
+                      ${idx < COLS.length - 1 ? "border-b sm:border-b-0 sm:border-r border-gray-200" : ""}
                       transition-all duration-100
                       ${isDrop ? `ring-1 ring-inset ${col.dropCls}` : ""}
                     `}
                   >
-                    <div className="px-3 py-2.5 border-b border-zinc-800 shrink-0 bg-zinc-950 sticky top-0 z-10">
+                    <div className="px-3 py-2.5 border-b border-gray-200 shrink-0 bg-gray-100 sticky top-0 z-10">
                       <div className="flex items-center justify-between">
                         <div className="flex items-baseline gap-2">
                           <span className={`text-sm font-bold ${col.textCls}`}>{col.label}</span>
@@ -363,7 +363,7 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
         {viewMode === "agenda" && (
           <div className="flex-1 min-h-0 overflow-y-auto">
             {/* Legend */}
-            <div className="flex items-center gap-4 px-3 py-1.5 border-b border-zinc-800/50 bg-zinc-900/50 flex-wrap">
+            <div className="flex items-center gap-4 px-3 py-1.5 border-b border-gray-200/50 bg-white/50 flex-wrap">
               {(Object.entries(TYPE_ICON) as [ScheduleType, typeof TYPE_ICON[ScheduleType]][]).map(([k, v]) => (
                 <span key={k} className={`text-[10px] flex items-center gap-1 ${v.cls}`}>
                   <span>{v.icon}</span>
@@ -378,7 +378,7 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
 
             {agendaGroups.map(group => (
               <div key={group.key}>
-                <div className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider ${group.headerCls} bg-zinc-900/80 border-b border-zinc-800 sticky top-0 z-10 flex items-center justify-between`}>
+                <div className={`px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider ${group.headerCls} bg-white/80 border-b border-gray-200 sticky top-0 z-10 flex items-center justify-between`}>
                   <span>{group.label}</span>
                   <span className="font-normal opacity-60">{group.tasks.length}</span>
                 </div>
@@ -399,16 +399,16 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
         )}
 
         {/* Routines accordion */}
-        <div className="border-t border-zinc-800 shrink-0">
+        <div className="border-t border-gray-200 shrink-0">
           <button
             onClick={() => setShowRoutines(v => !v)}
-            className="w-full px-3 py-2 flex items-center justify-between text-xs text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/40 transition-colors"
+            className="w-full px-3 py-2 flex items-center justify-between text-xs text-zinc-600 hover:text-zinc-700 hover:bg-gray-100/40 transition-colors"
           >
             <span>Routines ({recurringTasks.filter(t => t.isActive).length} actief)</span>
             <span className="text-zinc-600">{showRoutines ? "▲" : "▼"}</span>
           </button>
           {showRoutines && (
-            <div className="max-h-60 overflow-y-auto border-t border-zinc-800">
+            <div className="max-h-60 overflow-y-auto border-t border-gray-200">
               <RecurringTasksPanel
                 templates={recurringTasks}
                 onRefresh={() => { loadRecurring(); onTasksChange(); }}
@@ -419,16 +419,16 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
         </div>
 
         {/* Done accordion */}
-        <div className="border-t border-zinc-800 shrink-0">
+        <div className="border-t border-gray-200 shrink-0">
           <button
             onClick={() => setShowDone(v => !v)}
-            className="w-full px-3 py-2 flex items-center justify-between text-xs text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/40 transition-colors"
+            className="w-full px-3 py-2 flex items-center justify-between text-xs text-zinc-600 hover:text-zinc-700 hover:bg-gray-100/40 transition-colors"
           >
             <span>Gedaan ({done.length})</span>
             <span className="text-zinc-600">{showDone ? "▲" : "▼"}</span>
           </button>
           {showDone && (
-            <div className="max-h-60 overflow-y-auto border-t border-zinc-800 p-2 space-y-2">
+            <div className="max-h-60 overflow-y-auto border-t border-gray-200 p-2 space-y-2">
               {done.length === 0
                 ? <p className="text-[10px] text-zinc-700 italic p-1">Geen voltooide taken.</p>
                 : done.map(task => (

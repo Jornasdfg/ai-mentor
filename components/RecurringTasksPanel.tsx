@@ -144,7 +144,7 @@ function TemplateRow({ template, onEdit, onToggle, isLoading }: TemplateRowProps
     <div className={`p-3 rounded border border-border bg-panel space-y-1.5 ${isPaused ? "opacity-50" : ""}`}>
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-mono font-medium text-gray-100 truncate">
+          <p className="text-sm font-mono font-medium text-gray-900 truncate">
             {template.title}
           </p>
           {template.project && (

@@ -259,31 +259,31 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     : null;
 
   return (
-    <div className="flex flex-col h-full bg-zinc-950 text-zinc-100 w-full">
+    <div className="flex flex-col h-full bg-gray-100 text-zinc-900 w-full">
 
       {/* ── Desktop toolbar ── */}
-      <div className="hidden sm:flex items-center gap-3 px-4 py-2.5 border-b border-zinc-800 bg-zinc-900 shrink-0 flex-wrap gap-y-1.5">
-        <div className="flex items-center gap-0.5 border border-zinc-700 rounded-md overflow-hidden">
+      <div className="hidden sm:flex items-center gap-3 px-4 py-2.5 border-b border-gray-200 bg-white shrink-0 flex-wrap gap-y-1.5">
+        <div className="flex items-center gap-0.5 border border-gray-200 rounded-md overflow-hidden">
           <button onClick={() => setViewMode("week")}
-            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "week" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}>
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "week" ? "bg-blue-600 text-white" : "text-zinc-600 hover:text-zinc-800 hover:bg-gray-100"}`}>
             Week
           </button>
           <button onClick={() => setViewMode("month")}
-            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "month" ? "bg-blue-600 text-white" : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800"}`}>
+            className={`px-3 py-1.5 text-xs font-medium transition-colors ${viewMode === "month" ? "bg-blue-600 text-white" : "text-zinc-600 hover:text-zinc-800 hover:bg-gray-100"}`}>
             Maand
           </button>
         </div>
 
-        <div className="flex items-center gap-1.5 border border-zinc-700 rounded-md overflow-hidden">
+        <div className="flex items-center gap-1.5 border border-gray-200 rounded-md overflow-hidden">
           <button onClick={viewMode === "week" ? prevWeek : () => setMonthBase(mb => shiftMonth(mb, -1))}
-            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm">‹</button>
+            className="px-2 py-1.5 text-zinc-600 hover:text-zinc-800 hover:bg-gray-100 transition-colors text-sm">‹</button>
           <button onClick={() => { if (viewMode === "week") setWeekBase(todayISO()); else setMonthBase(todayISO().slice(0, 7) + "-01"); }}
-            className="px-2 py-1.5 text-xs text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors">Vandaag</button>
+            className="px-2 py-1.5 text-xs text-zinc-600 hover:text-zinc-800 hover:bg-gray-100 transition-colors">Vandaag</button>
           <button onClick={viewMode === "week" ? nextWeek : () => setMonthBase(mb => shiftMonth(mb, 1))}
-            className="px-2 py-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 transition-colors text-sm">›</button>
+            className="px-2 py-1.5 text-zinc-600 hover:text-zinc-800 hover:bg-gray-100 transition-colors text-sm">›</button>
         </div>
 
-        <span className="text-xs text-zinc-500 min-w-[160px]">
+        <span className="text-xs text-zinc-600 min-w-[160px]">
           {viewMode === "week" ? `${weekDays[0]} – ${weekDays[6]}` : monthLabel(monthBase)}
         </span>
 
@@ -292,43 +292,43 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           {recalcLoading ? "Plannen…" : "↺ Herplan"}
         </button>
 
-        <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500">
-          {warnings.length > 0 && <span className="text-amber-400">⚠ {warnings.length}</span>}
+        <div className="ml-auto flex items-center gap-3 text-xs text-zinc-600">
+          {warnings.length > 0 && <span className="text-amber-700">⚠ {warnings.length}</span>}
           {lastRun?.finishedAt && <span>Run: {lastRun.finishedAt.slice(11,16)}</span>}
-          <span className={`flex items-center gap-1 ${googleConnected ? "text-emerald-400" : "text-zinc-600"}`}>
-            <span className={`w-1.5 h-1.5 rounded-full ${googleConnected ? "bg-emerald-400 animate-pulse" : "bg-zinc-600"}`} />
+          <span className={`flex items-center gap-1 ${googleConnected ? "text-emerald-700" : "text-zinc-600"}`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${googleConnected ? "bg-emerald-400 animate-pulse" : "bg-gray-400"}`} />
             {googleConnected ? "Google live" : "Google uit"}
           </span>
-          <button onClick={() => setShowDev(v => !v)} className="text-zinc-600 hover:text-zinc-400 transition-colors">⚙</button>
+          <button onClick={() => setShowDev(v => !v)} className="text-zinc-600 hover:text-zinc-600 transition-colors">⚙</button>
         </div>
       </div>
 
       {/* ── Mobile toolbar ── */}
-      <div className="sm:hidden flex items-center gap-2 px-3 py-2 border-b border-zinc-800 bg-zinc-900 shrink-0">
+      <div className="sm:hidden flex items-center gap-2 px-3 py-2 border-b border-gray-200 bg-white shrink-0">
         {viewMode === "week" ? (
           <>
             <button onClick={prevDay}
-              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">‹</button>
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 text-lg active:bg-gray-100">‹</button>
             <button
               onClick={() => { setMobileDay(todayISO()); setWeekBase(todayISO()); }}
-              className="flex-1 text-center text-sm font-medium text-zinc-200 truncate">
+              className="flex-1 text-center text-sm font-medium text-zinc-800 truncate">
               {mobileDay === todayISO() ? "Vandaag" : dayLabel(mobileDay)}
             </button>
             <button onClick={nextDay}
-              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">›</button>
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 text-lg active:bg-gray-100">›</button>
           </>
         ) : (
           <>
             <button onClick={() => setMonthBase(mb => shiftMonth(mb, -1))}
-              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">‹</button>
-            <span className="flex-1 text-center text-sm font-medium text-zinc-200">{monthLabel(monthBase)}</span>
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 text-lg active:bg-gray-100">‹</button>
+            <span className="flex-1 text-center text-sm font-medium text-zinc-800">{monthLabel(monthBase)}</span>
             <button onClick={() => setMonthBase(mb => shiftMonth(mb, 1))}
-              className="w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-800 text-zinc-300 text-lg active:bg-zinc-700">›</button>
+              className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 text-lg active:bg-gray-100">›</button>
           </>
         )}
         <div className="flex items-center gap-1 ml-1">
           <button onClick={() => setViewMode(v => v === "week" ? "month" : "week")}
-            className="px-2.5 py-1.5 rounded-lg bg-zinc-800 text-zinc-400 text-[11px] font-medium active:bg-zinc-700">
+            className="px-2.5 py-1.5 rounded-lg bg-white text-zinc-600 text-[11px] font-medium active:bg-gray-100">
             {viewMode === "week" ? "Maand" : "Week"}
           </button>
           <button onClick={recalculate} disabled={recalcLoading}
@@ -339,28 +339,28 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
       </div>
 
       {showDev && (
-        <div className="hidden sm:flex gap-2 px-4 py-2 bg-zinc-900/50 border-b border-zinc-800 shrink-0 flex-wrap">
+        <div className="hidden sm:flex gap-2 px-4 py-2 bg-white/50 border-b border-gray-200 shrink-0 flex-wrap">
           <span className="text-[10px] text-zinc-600 self-center uppercase tracking-wider">Dev:</span>
           <button onClick={async () => { await fetch("/api/google/calendar/sync-now", { method: "POST" }); await load(); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Full sync</button>
+            className="text-[11px] px-2 py-1 rounded border border-gray-200 text-zinc-600 hover:text-zinc-800 transition-colors">Full sync</button>
           <button onClick={async () => { await fetch("/api/google/calendar/repair-sync", { method: "POST" }); await load(); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Repair sync</button>
+            className="text-[11px] px-2 py-1 rounded border border-gray-200 text-zinc-600 hover:text-zinc-800 transition-colors">Repair sync</button>
           <button onClick={async () => { await fetch("/api/google/calendar/watch/ensure", { method: "POST" }); }}
-            className="text-[11px] px-2 py-1 rounded border border-zinc-700 text-zinc-400 hover:text-zinc-200 transition-colors">Ensure watch</button>
+            className="text-[11px] px-2 py-1 rounded border border-gray-200 text-zinc-600 hover:text-zinc-800 transition-colors">Ensure watch</button>
         </div>
       )}
 
       {warnings.length > 0 && (
         <div className="px-4 py-2 bg-amber-950/30 border-b border-amber-900/40 shrink-0">
           <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-            {warnings.map((w, i) => <span key={i} className="text-[11px] text-amber-300">• {w}</span>)}
+            {warnings.map((w, i) => <span key={i} className="text-[11px] text-amber-700">• {w}</span>)}
           </div>
         </div>
       )}
 
       <div className="flex flex-1 min-h-0 overflow-hidden">
         {viewMode === "week" && (
-          <div className="hidden sm:block w-48 shrink-0 border-r border-zinc-800 overflow-hidden">
+          <div className="hidden sm:block w-48 shrink-0 border-r border-gray-200 overflow-hidden">
             <PriorityTaskInbox tasks={data?.tasks ?? []} blocks={data?.blocks ?? []} />
           </div>
         )}
