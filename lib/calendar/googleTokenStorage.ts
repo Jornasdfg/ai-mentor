@@ -161,3 +161,22 @@ export async function isGoogleConnected(): Promise<boolean> {
     return false;
   }
 }
+
+// Herkent een verlopen/ingetrokken refresh-token (Google geeft dan "invalid_grant").
+export function isInvalidGrant(err: unknown): boolean {
+  const msg = err instanceof Error ? err.message : String(err ?? "");
+  const data = (err as { response?: { data?: { error?: string } } })?.response?.data?.error;
+  return /invalid_grant/i.test(msg) || data === "invalid_grant";
+}
+
+// Zet de koppeling op "niet verbonden" zodat het systeem stopt met stilletjes falen
+// en de UI/health duidelijk om herkoppeling vraagt. Tokens blijven staan (recoverbaar).
+export async function markGoogleReauthNeeded(): Promise<void> {
+  try {
+    const t = await readGoogleTokens();
+    if (!t || !t.connected) return;
+    await writeGoogleTokens({ ...t, connected: false, updatedAt: new Date().toISOString() });
+  } catch {
+    /* niets — best effort */
+  }
+}

@@ -171,9 +171,8 @@ export async function recalculateSchedule(options: {
   const isFixed = (t: MentorTask) =>
     (t.status === "open" || t.status === "in_progress") && !!t.plannedStart && !!t.plannedEnd &&
     (t.taskKind === "appointment" || t.autoSchedule === "off" || t.locked === true);
-  const appointmentTasks = allTasks.filter(t => t.taskKind === "appointment" && isFixed(t));
   const fixedTasks = allTasks.filter(isFixed);
-  const appointmentIds = new Set(appointmentTasks.map(t => t.id));
+  const fixedIds = new Set(fixedTasks.map(t => t.id));
 
   // ── 1. Split existing blocks ──────────────────────────────────────────────
   const keptBlocks: ScheduleBlock[] = [];
@@ -183,7 +182,7 @@ export async function recalculateSchedule(options: {
     const blockDate = isoDateOf(block.start);
     const inHorizon = blockDate >= todayISO && blockDate <= horizonEnd;
     // Verwijder herplanbare auto-blocks én oude appointment-blocks (regenereren we vers).
-    if (inHorizon && ((block.source === "auto_scheduler" && !block.locked) || appointmentIds.has(block.taskId))) {
+    if (inHorizon && ((block.source === "auto_scheduler" && !block.locked) || fixedIds.has(block.taskId))) {
       removedCount++;
     } else {
       keptBlocks.push(block);
@@ -387,8 +386,8 @@ export async function recalculateSchedule(options: {
     }
   }
 
-  // ── 5b. Vaste afspraken als locked blocks (vers gegenereerd uit de taken) ──
-  const appointmentBlocks: ScheduleBlock[] = appointmentTasks
+  // ── 5b. Vaste afspraken (+ handmatig vastgepinde taken) als locked blocks ──
+  const appointmentBlocks: ScheduleBlock[] = fixedTasks
     .filter(t => {
       const d = isoDateOf(t.plannedStart!);
       return d >= todayISO && d <= horizonEnd;
@@ -418,11 +417,19 @@ export async function recalculateSchedule(options: {
   await writeScheduleBlocks(finalBlocks);
   await writeTasks(updatedTasks);
 
-  // ── 7. Queue Google sync for auto blocks ──────────────────────────────────
+  // ── 7. Queue Google sync ──────────────────────────────────────────────────
+  // - Flexibele auto-blokken: alleen bij calendarSyncMode "auto" (opt-in).
+  // - Vaste afspraken/gepinde taken: standaard pushen (tenzij calendarSyncMode "none").
   if (syncToGoogle) {
-    for (const block of newBlocks) {
+    const toSync: Array<{ block: ScheduleBlock; appointment: boolean }> = [
+      ...newBlocks.map(block => ({ block, appointment: false })),
+      ...appointmentBlocks.map(block => ({ block, appointment: true })),
+    ];
+    for (const { block, appointment } of toSync) {
       const task = updatedTasks.find(t => t.id === block.taskId);
-      if (!task || task.calendarSyncMode !== "auto") continue;
+      if (!task) continue;
+      const shouldSync = appointment ? task.calendarSyncMode !== "none" : task.calendarSyncMode === "auto";
+      if (!shouldSync) continue;
       await enqueueCalendarJob(
         task.calendarLink?.eventId ? "update_event" : "create_event",
         task.id,

@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 import type { calendar_v3 } from "googleapis";
-import { readGoogleTokens, writeGoogleTokens } from "./googleTokenStorage";
+import { readGoogleTokens, writeGoogleTokens, isInvalidGrant, markGoogleReauthNeeded } from "./googleTokenStorage";
 import {
   readSyncState,
   writeSyncState,
@@ -88,20 +88,29 @@ export async function fullSyncCalendar(
   let nextPageToken: string | undefined;
   let nextSyncToken: string | undefined;
 
-  do {
-    const res = await calendar.events.list({
-      calendarId,
-      timeMin,
-      timeMax,
-      singleEvents: true,
-      showDeleted: true,
-      maxResults: 250,
-      pageToken: nextPageToken,
-    });
-    for (const e of res.data.items ?? []) allEvents.push(mapEvent(e, calendarId));
-    nextPageToken = res.data.nextPageToken ?? undefined;
-    nextSyncToken = res.data.nextSyncToken ?? undefined;
-  } while (nextPageToken);
+  try {
+    do {
+      const res = await calendar.events.list({
+        calendarId,
+        timeMin,
+        timeMax,
+        singleEvents: true,
+        showDeleted: true,
+        maxResults: 250,
+        pageToken: nextPageToken,
+      });
+      for (const e of res.data.items ?? []) allEvents.push(mapEvent(e, calendarId));
+      nextPageToken = res.data.nextPageToken ?? undefined;
+      nextSyncToken = res.data.nextSyncToken ?? undefined;
+    } while (nextPageToken);
+  } catch (err: unknown) {
+    if (isInvalidGrant(err)) {
+      await markGoogleReauthNeeded();
+      await writeSyncState(calendarId, { lastError: "invalid_grant — Google opnieuw koppelen nodig" });
+      await appendSyncLog("error", calendarId, "invalid_grant: refresh-token verlopen — koppel Google opnieuw via /api/auth/google/start");
+    }
+    throw err;
+  }
 
   const { changed, deleted } = await upsertCachedEvents(allEvents);
   await writeSyncState(calendarId, {
@@ -163,6 +172,12 @@ export async function incrementalSyncCalendar(
       await appendSyncLog("error", calendarId, "syncToken verlopen (410 Gone) — full sync gestart");
       await writeSyncState(calendarId, { nextSyncToken: null, lastError: "syncToken verlopen (410)" });
       return fullSyncCalendar(calendarId);
+    }
+    if (isInvalidGrant(err)) {
+      await markGoogleReauthNeeded();
+      await writeSyncState(calendarId, { lastError: "invalid_grant — Google opnieuw koppelen nodig" });
+      await appendSyncLog("error", calendarId, "invalid_grant: refresh-token verlopen — koppel Google opnieuw via /api/auth/google/start");
+      throw err;
     }
     const msg = err instanceof Error ? err.message : "Onbekende fout";
     await writeSyncState(calendarId, { lastError: msg });
