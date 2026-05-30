@@ -29,6 +29,50 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
   const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [recording, setRecording] = useState(false);
+  const [transcribing, setTranscribing] = useState(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+
+  async function toggleRecording() {
+    if (recording) { mediaRecorderRef.current?.stop(); return; }
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mime = typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported("audio/webm")
+        ? "audio/webm"
+        : (typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported("audio/mp4") ? "audio/mp4" : "");
+      const rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+      chunksRef.current = [];
+      rec.ondataavailable = e => { if (e.data.size > 0) chunksRef.current.push(e.data); };
+      rec.onstop = async () => {
+        stream.getTracks().forEach(t => t.stop());
+        setRecording(false);
+        const blob = new Blob(chunksRef.current, { type: rec.mimeType || "audio/webm" });
+        if (blob.size === 0) return;
+        setTranscribing(true);
+        try {
+          const fd = new FormData();
+          fd.append("audio", blob, "audio.webm");
+          const res = await fetch("/api/transcribe", { method: "POST", body: fd });
+          const data = await res.json() as { text?: string; error?: string };
+          if (!res.ok) throw new Error(data.error ?? "Transcriptie mislukt");
+          const text = (data.text ?? "").trim();
+          if (text) setInput(prev => (prev ? prev + " " : "") + text);
+          textareaRef.current?.focus();
+        } catch (err) {
+          setError(err instanceof Error ? err.message : "Transcriptie mislukt");
+        } finally {
+          setTranscribing(false);
+        }
+      };
+      mediaRecorderRef.current = rec;
+      rec.start();
+      setRecording(true);
+      setError(null);
+    } catch {
+      setError("Geen toegang tot microfoon — sta microfoon toe in je browser.");
+    }
+  }
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -218,6 +262,21 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
       {/* Input */}
       <div className="border-t border-gray-200 p-3 shrink-0">
         <div className="flex gap-2 items-end">
+          <button
+            onClick={toggleRecording}
+            disabled={loading || transcribing}
+            title={recording ? "Stop opname" : transcribing ? "Bezig met transcriberen…" : "Spreek je bericht in"}
+            aria-label={recording ? "Stop opname" : "Spreek je bericht in"}
+            className={`w-9 h-9 flex items-center justify-center rounded-xl shrink-0 text-base transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
+              recording
+                ? "bg-red-600 text-white animate-pulse"
+                : transcribing
+                ? "bg-gray-200 text-zinc-500"
+                : "bg-white border border-gray-200 text-zinc-600 hover:text-zinc-800 hover:border-gray-300"
+            }`}
+          >
+            {transcribing ? "…" : recording ? "⏹" : "🎙️"}
+          </button>
           <textarea
             ref={textareaRef}
             value={input}
@@ -225,7 +284,7 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
             onKeyDown={e => {
               if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); }
             }}
-            placeholder="Typ een bericht... (Enter om te sturen, Shift+Enter voor nieuwe regel)"
+            placeholder={recording ? "Aan het luisteren… spreek je taak in" : "Typ of spreek een bericht in…"}
             rows={1}
             className="flex-1 px-3 py-2 text-sm bg-white text-zinc-900 border border-gray-200 rounded-xl resize-none focus:outline-none focus:border-blue-500/60 placeholder-zinc-600 leading-relaxed"
           />
