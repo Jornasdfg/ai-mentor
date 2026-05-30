@@ -415,6 +415,24 @@ TaskCreateModal kies je boven "Type": *Flexibele taak* of *Vaste afspraak* (afsp
 
 ---
 
+## Mentor-chat (in-app, POST /api/mentor) ★ FLEXIBEL
+
+De chat (`app/api/mentor/route.ts` + `lib/mentor/systemPrompt.ts`) is bewust flexibel én token-zuinig
+(geen extra AI-calls; alleen compacte server-side context).
+
+- **Schedule-bewust**: krijgt `buildPlanningContext()` mee (vrije tijd komende 9 dagen, werk-/avondvensters
+  minus blocks + Google-events). Vage periode → deadline-taak; concrete dag → stelt een ECHT vrij slot voor en vraagt.
+- **Kent bestaande taken op id**: de open-takenlijst toont per taak een `id:` → de chat kan precies verzetten,
+  herplannen, uit planning halen, deadline/prioriteit wijzigen, **parkeren, afronden, annuleren, samenvoegen**.
+- **Meerdere intenties per bericht** → meerdere patches in één antwoord.
+- **Dedup-bewust**: krijgt max 2 duplicaat-suggesties (met id's) mee; kan `merge_tasks` voorstellen.
+- **Veiligheid**: de chat past niets zelf toe; patches worden pas uitgevoerd als de gebruiker op
+  "Toepassen" klikt (`POST /api/mentor/apply-patches` → `applyMentorPatches`).
+- Output: strikt JSON `{ message, patches[] }`; patch-operaties: add_task, update_task, park_task,
+  complete_task, cancel_task, merge_tasks, add_decision.
+
+---
+
 ## Taak-dedup & merge (taken uit meerdere bronnen) ★ NIEUW
 
 Taken komen uit Gmail, Airtable, facturen, samenwerkingen en handmatige invoer en overlappen vaak.
