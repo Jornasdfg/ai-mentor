@@ -97,6 +97,17 @@ export default function WeekTimeGrid({
   const [qcTitle, setQcTitle] = useState("");
   const [qcSubmitting, setQcSubmitting] = useState(false);
 
+  // "Nu"-lijn: pas ná mount berekenen (en elke minuut verversen) zodat server- en
+  // client-render identiek starten → geen hydration mismatch.
+  const [nowY, setNowY] = useState<number | null>(null);
+  useEffect(() => {
+    const update = () => setNowY(currentTimeY());
+    update();
+    const id = setInterval(update, 60_000);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startHour]);
+
   useEffect(() => {
     if (!scrollRef.current) return;
     const now = new Date();
@@ -206,7 +217,6 @@ export default function WeekTimeGrid({
   }, [onMoveBlock]);
 
   const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
-  const nowY = currentTimeY();
 
   return (
     <div className="flex flex-col h-full overflow-hidden bg-gray-100">
@@ -282,7 +292,7 @@ export default function WeekTimeGrid({
               ))}
 
               {/* Current time line */}
-              {today && nowY > 0 && nowY < gridH && (
+              {today && nowY !== null && nowY > 0 && nowY < gridH && (
                 <div
                   className="absolute left-0 right-0 flex items-center pointer-events-none z-10"
                   style={{ top: nowY }}
