@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-05-30T13:00:01.296Z",
+    "updatedAt": "2026-05-30T13:15:00.242Z",
     "tags": [
       "malaga"
     ],
@@ -147,8 +147,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-05-30T15:00:00",
-    "plannedEnd": "2026-05-30T16:00:00",
+    "plannedStart": "2026-05-30T15:00:00+02:00",
+    "plannedEnd": "2026-05-30T16:00:00+02:00",
     "plannedDate": "2026-05-30",
     "plannedMinutes": 60,
     "autoSchedule": "auto",
@@ -157,9 +157,10 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-05-30T13:00:01.296Z",
+      "lastSyncedAt": "2026-05-30T13:15:00.242Z",
       "syncStatus": "synced",
-      "syncError": null
+      "syncError": null,
+      "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
     }
   },
   {
