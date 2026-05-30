@@ -107,5 +107,27 @@ export async function GET(req: NextRequest) {
 
   console.log("[google/callback] Google Calendar gekoppeld. Scope:", tokenData.scope);
 
+  // Direct flawless: meteen volledige sync + taken-mapping + watch + afspraken pushen,
+  // zodat de koppeling live is op het moment van koppelen (geen wachten op de worker).
+  // Fire-and-forget — blokkeert de redirect niet.
+  (async () => {
+    try {
+      const calId = process.env.GOOGLE_DEFAULT_CALENDAR_ID ?? "primary";
+      const [{ fullSyncCalendar }, { syncCacheToTasks }, { ensureWatchActive }, { recalculateSchedule }] = await Promise.all([
+        import("@/lib/calendar/googleSyncEngine"),
+        import("@/lib/calendar/googleTaskSyncMapper"),
+        import("@/lib/calendar/googleWatchManager"),
+        import("@/lib/scheduler/autoScheduler"),
+      ]);
+      await fullSyncCalendar(calId);
+      await syncCacheToTasks();
+      await ensureWatchActive(calId).catch(() => {}); // watch vereist HTTPS-webhook; niet blokkerend
+      await recalculateSchedule({ triggeredBy: "manual", horizonDays: 28, syncToGoogle: true });
+      console.log("[google/callback] Init-sync + afspraken push voltooid.");
+    } catch (e) {
+      console.error("[google/callback] init-sync fout:", e instanceof Error ? e.message : e);
+    }
+  })();
+
   return NextResponse.redirect(new URL("/?calendarConnected=1", baseUrl));
 }
