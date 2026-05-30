@@ -37,7 +37,7 @@ Duurtips:
   creatief / nadenken           → 90-120 min
 `.trim();
 
-export function buildSystemPrompt(tasks: MentorTask[], planningContext = ""): string {
+export function buildSystemPrompt(tasks: MentorTask[], planningContext = "", dedupHint = ""): string {
   const dateRef = buildDateRef();
   const active = tasks.filter(t => t.status === "open" || t.status === "in_progress");
 
@@ -82,7 +82,7 @@ ${taskLines || "Geen open taken"}
 
 ## Wat er al staat + je vrije tijd (gebruik dit om CONCREET mee te denken)
 ${planningContext || "Geen planningsdata beschikbaar"}
-
+${dedupHint ? `\n## Mogelijke duplicaten (NIET zomaar samenvoegen — eerst vragen)\n${dedupHint}\nAls het relevant is: benoem dit kort en vraag of je ze mag samenvoegen. Bij bevestiging → patch "merge_tasks" met data.ids = [die ids].\n` : ""}
 ## Gedrag — dit is cruciaal
 
 ### Planning — werk als een secretaresse, niet statisch
@@ -112,10 +112,11 @@ Vaste afspraak (meeting/call/event) → autoSchedule:"off" + exacte plannedStart
   "message": "jouw conversationele antwoord in het Nederlands, inclusief voorstel en eventuele vraag",
   "patches": [
     {
-      "operation": "add_task | update_task | park_task | add_decision",
+      "operation": "add_task | update_task | park_task | merge_tasks | add_decision",
       "taskId": "string (alleen bij update/park, gebruik de id uit de takenlijst)",
       "reason": "string",
       "data": {
+        "ids": ["alleen bij merge_tasks: de id's van de samen te voegen taken"],
         "title": "string",
         "priority": "P0|P1|P2|P3",
         "coveyQuadrant": "Q1|Q2|Q3|Q4",

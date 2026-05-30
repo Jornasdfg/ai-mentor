@@ -4,7 +4,16 @@ export type MentorTaskStatus = "open" | "in_progress" | "done" | "parked" | "can
 export type MentorMode = "daily_triage" | "capture_input" | "weekly_review" | "reference_cleanup" | "mail_ingest";
 export type MentorPatchOperation =
   | "add_task" | "update_task" | "park_task" | "complete_task" | "cancel_task"
+  | "merge_tasks"
   | "add_context_note" | "add_decision" | "add_inbox_item" | "update_daily_focus";
+
+// Herkomst van een taak — bewaard zodat we weten waar een taak vandaan komt en
+// hoeveel bronnen dezelfde taak bevestigen (telt mee voor prioriteit).
+export interface TaskSourceRef {
+  source: string;   // "mail" | "airtable" | "manual_input" | "system" | "monthly_goal" | ...
+  ref?: string;     // optionele sleutel: afzender, factuur-id, Airtable-record, etc.
+  at: string;       // ISO datum waarop deze bron de taak (bevestigde)
+}
 export type CoveyQuadrant = "Q1" | "Q2" | "Q3" | "Q4";
 export type DeadlinePressure = "overdue" | "today" | "tomorrow" | "this_week" | "future" | "none";
 export type DeadlineType = "hard" | "soft" | "none";
@@ -88,6 +97,9 @@ export interface MentorTask {
   recommendationCount?: number;
   history?: Array<{ at: string; type: string; note: string }>;
   source: "manual_input" | "daily_reference" | "mail" | "monthly_goal" | "system" | "recurring_manual" | "calendar";
+  sources?: TaskSourceRef[];        // alle bronnen die deze taak (bevestigden) — dedup/merge
+  mergedFrom?: string[];            // ids van taken die in deze taak zijn samengevoegd
+  supersededBy?: string | null;     // als deze taak is samengevoegd in een andere: doel-id
   reason?: string;
   createdAt: string;
   updatedAt: string;

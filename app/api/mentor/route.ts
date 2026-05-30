@@ -4,6 +4,7 @@ import { buildSystemPrompt } from "@/lib/mentor/systemPrompt";
 import { addCost } from "@/lib/storage/costStorage";
 import { readMentorState, ensureDataFiles } from "@/lib/mentor/mentorStorage";
 import { buildPlanningContext } from "@/lib/mentor/planningContext";
+import { readDedupSuggestions } from "@/lib/mentor/taskDedup";
 import type { MentorPatch } from "@/lib/mentorTypes";
 
 interface ChatMessage {
@@ -43,8 +44,15 @@ export async function POST(req: NextRequest) {
     }
 
     const state = await readMentorState();
-    const planningContext = await buildPlanningContext().catch(() => "");
-    const systemPrompt = buildSystemPrompt(state.tasks, planningContext);
+    const [planningContext, suggestions] = await Promise.all([
+      buildPlanningContext().catch(() => ""),
+      readDedupSuggestions().catch(() => []),
+    ]);
+    // Compacte hint (max 2) zodat de mentor mogelijke duplicaten kan aankaarten — token-zuinig.
+    const dedupHint = suggestions.slice(0, 2)
+      .map(s => `- "${s.titles[0]}" ↔ "${s.titles[1]}" (${s.reason}) [ids: ${s.ids.join(", ")}]`)
+      .join("\n");
+    const systemPrompt = buildSystemPrompt(state.tasks, planningContext, dedupHint);
 
     // Build conversation history — keep last 8 messages (4 exchanges) to limit tokens
     const history: ChatMessage[] = (body.conversationMessages ?? []).slice(-8);

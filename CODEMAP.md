@@ -415,6 +415,33 @@ TaskCreateModal kies je boven "Type": *Flexibele taak* of *Vaste afspraak* (afsp
 
 ---
 
+## Taak-dedup & merge (taken uit meerdere bronnen) ★ NIEUW
+
+Taken komen uit Gmail, Airtable, facturen, samenwerkingen en handmatige invoer en overlappen vaak.
+`lib/mentor/taskDedup.ts` is een **deterministische** engine (geen AI → gratis qua tokens).
+
+**Velden** (`MentorTask`): `sources: {source, ref?, at}[]` (alle bronnen die de taak bevestigen),
+`mergedFrom: string[]` (samengevoegde id's), `supersededBy` (doel-id als de taak is samengevoegd),
+`history` (wijzigingslog).
+
+**`dedupeTasks(tasks)`** — veilig (exact auto, twijfel als suggestie):
+- **Exacte auto-merge**: zelfde genormaliseerde titel + project → samenvoegen in de oudste (canoniek).
+  Vaste afspraken (`taskKind:"appointment"`) en al ingeplande taken worden NOOIT auto-gemerged.
+- **Merge-regels**: hoogste prioriteit wint, vroegste/strengste deadline wint, ontbrekende velden
+  aangevuld, tags + `sources` verenigd, `history` bijgewerkt; duplicaat → `status:"cancelled"` + `supersededBy`.
+- **Prioriteit omhoog** als ≥2 onafhankelijke bronnen dezelfde taak bevestigen (max tot P1).
+- **Suggesties** (geen auto): gelijkende titels (Jaccard ≥ 0.5) → `data/dedup_suggestions.json`.
+
+**Beslisser**: deterministische engine voor zekere gevallen; de **AI-mentor** beslist alleen bij twijfel.
+De mentor-chat krijgt max 2 suggesties (met id's) compact mee en kan na bevestiging een
+`merge_tasks`-patch sturen (`data.ids`). `mergeExplicit()` voert die uit.
+
+**Waar het draait**:
+- Worker-job **`dedup` elke 17 min**: `dedupeTasks` → schrijft suggesties, bij merges schrijft taken + herplant.
+- `patchApplier`: `add_task` registreert bron + hoogt prioriteit op bij meerdere bronnen; `merge_tasks` voegt expliciet samen.
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)

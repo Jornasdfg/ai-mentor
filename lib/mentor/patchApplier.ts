@@ -1,6 +1,15 @@
-import type { MentorPatch, MentorState, MentorTask, MentorDecision, MentorInboxItem } from "../mentorTypes";
+import type { MentorPatch, MentorState, MentorTask, MentorDecision, MentorInboxItem, TaskSourceRef } from "../mentorTypes";
+import { mergeExplicit } from "./taskDedup";
 
 const PRIORITY_ORDER: Record<string, number> = { P0: 0, P1: 1, P2: 2, P3: 3 };
+
+function bumpForSources(p: MentorTask["priority"], sources: TaskSourceRef[]): MentorTask["priority"] {
+  const distinct = new Set(sources.map(s => s.ref ? `${s.source}:${s.ref}` : s.source)).size;
+  if (distinct < 2) return p;
+  if (p === "P3") return "P2";
+  if (p === "P2") return "P1";
+  return p;
+}
 
 export function applyMentorPatches(currentState: MentorState, patches: MentorPatch[]): MentorState {
   let tasks = currentState.tasks.map(t => ({ ...t }));
@@ -50,6 +59,18 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
               updatedAt: now,
             };
           }
+          // Bron registreren + prioriteit ophogen als meerdere bronnen dit bevestigen
+          const ex = tasks[existingIdx];
+          const srcs: TaskSourceRef[] = [...(ex.sources ?? [{ source: ex.source ?? "manual_input", at: ex.createdAt ?? now }])];
+          const incSource = (d.source as string) ?? "manual_input";
+          if (!srcs.some(s => s.source === incSource)) srcs.push({ source: incSource, at: now });
+          tasks[existingIdx] = {
+            ...ex,
+            sources: srcs,
+            priority: bumpForSources(ex.priority, srcs),
+            history: [...(ex.history ?? []), { at: now, type: "confirm", note: `Bevestigd via ${incSource}` }],
+            updatedAt: now,
+          };
         } else {
           tasks.push({
             id: d.id ?? `task_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
@@ -70,6 +91,7 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
             plannedEnd: d.plannedEnd,
             plannedMinutes: d.plannedMinutes ?? d.estimatedMinutes,
             source: d.source ?? "manual_input",
+            sources: [{ source: d.source ?? "manual_input", at: d.createdAt ?? now }],
             reason: d.reason,
             createdAt: d.createdAt ?? now,
             updatedAt: now,
@@ -106,6 +128,14 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
             parkedReason: patch.reason,
             updatedAt: now,
           };
+        }
+        break;
+      }
+      case "merge_tasks": {
+        const ids = (patch.data.ids as string[] | undefined) ?? [];
+        const into = patch.target ?? (patch.data.into as string | undefined);
+        if (Array.isArray(ids) && ids.length >= 2) {
+          tasks = mergeExplicit(tasks, ids, into, now);
         }
         break;
       }
@@ -153,7 +183,7 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
 
 export const applyProposedPatches = applyMentorPatches;
 
-const SAFE_OPS = ["add_inbox_item", "add_task", "add_decision", "add_context_note", "park_task"];
+const SAFE_OPS = ["add_inbox_item", "add_task", "add_decision", "add_context_note", "park_task", "merge_tasks"];
 const CONDITIONAL_SAFE = ["update_task"];
 
 export function filterSafePatches(patches: MentorPatch[]): MentorPatch[] {

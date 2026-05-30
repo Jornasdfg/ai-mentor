@@ -16,6 +16,8 @@ import { readSyncState, appendSyncLog } from "@/lib/calendar/googleSyncStorage";
 import { isGoogleConnected } from "@/lib/calendar/googleTokenStorage";
 import { generateDailyBriefing } from "@/lib/briefing/dailyBriefing";
 import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
+import { readTasks, writeTasks } from "@/lib/mentor/mentorStorage";
+import { dedupeTasks, writeDedupSuggestions } from "@/lib/mentor/taskDedup";
 
 const CALENDAR_ID = process.env.GOOGLE_DEFAULT_CALENDAR_ID ?? "primary";
 
@@ -65,6 +67,20 @@ cron.schedule("*/10 * * * *", () => {
   });
 });
 
+// ── Dedup taken: every 17 minutes ────────────────────────────────────────────
+cron.schedule("*/17 * * * *", () => {
+  run("dedup", async () => {
+    const tasks = await readTasks();
+    const { tasks: deduped, mergedCount, suggestions } = dedupeTasks(tasks);
+    await writeDedupSuggestions(suggestions);
+    if (mergedCount > 0) {
+      await writeTasks(deduped);
+      await recalculateSchedule({ triggeredBy: "worker_repair", horizonDays: 28, syncToGoogle: true });
+    }
+    console.log(`[worker] [dedup] merged=${mergedCount} suggesties=${suggestions.length}`);
+  });
+});
+
 // ── Watch ensure: every 6 hours ──────────────────────────────────────────────
 cron.schedule("0 */6 * * *", () => {
   run("watch-ensure", async () => {
@@ -86,4 +102,4 @@ cron.schedule(
   { timezone: "Europe/Amsterdam" }
 );
 
-console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, scheduler-repair/10m, watch-ensure/6h, briefing/07:30 AMS");
+console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, scheduler-repair/10m, dedup/17m, watch-ensure/6h, briefing/07:30 AMS");
