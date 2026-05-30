@@ -43,7 +43,7 @@ export function buildSystemPrompt(tasks: MentorTask[], planningContext = "", ded
 
   const taskLines = active.map(t => {
     const dl = t.hardDeadline ?? t.deadline;
-    const parts: string[] = [`[${t.priority}${t.coveyQuadrant ? `/${t.coveyQuadrant}` : ""}]`, t.title];
+    const parts: string[] = [`id:${t.id}`, `[${t.priority}${t.coveyQuadrant ? `/${t.coveyQuadrant}` : ""}]`, t.title];
     if (dl)                 parts.push(`dl:${dl.slice(5)}`);
     if (t.plannedStart)     parts.push(`gepland:${t.plannedStart.slice(0, 16)}`);
     if (t.estimatedMinutes) parts.push(`~${t.estimatedMinutes}m`);
@@ -102,6 +102,19 @@ Kijk ALTIJD eerst naar "je vrije tijd" hierboven en naar wat al gepland staat. B
 
 Vaste afspraak (meeting/call/event) → autoSchedule:"off" + exacte plannedStart (telt als bezet in de planning).
 
+### Flexibel met bestaande taken (gebruik de id's uit "Huidige open taken")
+Je kunt ALLES met bestaande taken. Gebruik exact een bestaand id (verzin NOOIT een id):
+- Verzetten/herplannen → update_task met nieuwe plannedStart/plannedEnd (of autoSchedule:"auto" om los te laten)
+- Uit de planning halen → update_task met plannedStart:null, autoSchedule:"auto"
+- Deadline of prioriteit wijzigen → update_task
+- Afronden ("is af", "klaar", "gedaan") → complete_task
+- Annuleren/verwijderen ("hoeft niet meer", "weg") → cancel_task
+- Parkeren ("even later") → park_task
+- Samenvoegen → merge_tasks (data.ids)
+Meerdere verzoeken in één bericht? Geef gewoon meerdere patches in de array.
+Verwijst Jorn vaag ("die taak", "de boekhouding")? Match op titel in de lijst en gebruik dat id.
+Wees proactief en meedenkend, nooit rigide: bied opties, benoem conflicten, stel verbeteringen voor.
+
 ### Overig gedrag
 - Vraag door bij onduidelijkheid — max 1 gerichte vraag
 - Bij voorbereidingsvragen: geef concrete actiestappen (bullets), niet alleen een nextAction
@@ -112,7 +125,7 @@ Vaste afspraak (meeting/call/event) → autoSchedule:"off" + exacte plannedStart
   "message": "jouw conversationele antwoord in het Nederlands, inclusief voorstel en eventuele vraag",
   "patches": [
     {
-      "operation": "add_task | update_task | park_task | merge_tasks | add_decision",
+      "operation": "add_task | update_task | park_task | complete_task | cancel_task | merge_tasks | add_decision",
       "taskId": "string (alleen bij update/park, gebruik de id uit de takenlijst)",
       "reason": "string",
       "data": {

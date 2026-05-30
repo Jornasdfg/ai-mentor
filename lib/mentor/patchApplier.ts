@@ -112,9 +112,9 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
           const safeUpdate = Object.fromEntries(
             Object.entries(patch.data).filter(([k]) => allowed.includes(k))
           );
-          // Block done/cancelled via AI
-          if (safeUpdate.status === "done" || safeUpdate.status === "cancelled") break;
           tasks[idx] = { ...tasks[idx], ...safeUpdate, updatedAt: now };
+          if (safeUpdate.status === "done") tasks[idx].completedAt = new Date().toISOString();
+          if (safeUpdate.status === "cancelled") tasks[idx].cancelledAt = new Date().toISOString();
         }
         break;
       }
@@ -139,10 +139,28 @@ export function applyMentorPatches(currentState: MentorState, patches: MentorPat
         }
         break;
       }
-      case "complete_task":
-      case "cancel_task":
-        // Never auto-apply from AI
+      case "complete_task": {
+        const idx = tasks.findIndex(t => t.id === patch.taskId);
+        if (idx >= 0) {
+          tasks[idx] = {
+            ...tasks[idx], status: "done", completedAt: new Date().toISOString(),
+            history: [...(tasks[idx].history ?? []), { at: now, type: "complete", note: patch.reason ?? "Afgerond via mentor" }],
+            updatedAt: now,
+          };
+        }
         break;
+      }
+      case "cancel_task": {
+        const idx = tasks.findIndex(t => t.id === patch.taskId);
+        if (idx >= 0) {
+          tasks[idx] = {
+            ...tasks[idx], status: "cancelled", cancelledAt: new Date().toISOString(),
+            history: [...(tasks[idx].history ?? []), { at: now, type: "cancel", note: patch.reason ?? "Geannuleerd via mentor" }],
+            updatedAt: now,
+          };
+        }
+        break;
+      }
       case "add_decision": {
         const d = patch.data as Partial<MentorDecision>;
         if (!d.decision) break;
