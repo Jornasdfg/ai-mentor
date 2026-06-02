@@ -895,9 +895,9 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T21:40:00",
-    "plannedEnd": "2026-06-02T22:10:00",
-    "plannedDate": "2026-06-02",
+    "plannedStart": "2026-06-05T09:40:00",
+    "plannedEnd": "2026-06-05T10:10:00",
+    "plannedDate": "2026-06-05",
     "plannedMinutes": 30
   },
   {
@@ -909,9 +909,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-02T20:30:00",
+    "plannedEnd": "2026-06-02T21:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-02T20:00:00",
+    "plannedStart": "2026-06-02T21:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -1071,8 +1071,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T20:30:00",
-    "plannedEnd": "2026-06-02T21:00:00",
+    "plannedStart": "2026-06-02T21:30:00",
+    "plannedEnd": "2026-06-02T22:00:00",
     "plannedDate": "2026-06-02",
     "plannedMinutes": 30
   },
@@ -1124,9 +1124,9 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T21:00:00",
-    "plannedEnd": "2026-06-02T21:30:00",
-    "plannedDate": "2026-06-02",
+    "plannedStart": "2026-06-05T09:00:00",
+    "plannedEnd": "2026-06-05T09:30:00",
+    "plannedDate": "2026-06-05",
     "plannedMinutes": 30
   },
   {
@@ -1142,8 +1142,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 10,
     "nextAction": "Mail opstellen en verzenden",
-    "plannedStart": "2026-06-02T21:30:00",
-    "plannedEnd": "2026-06-02T21:40:00",
+    "plannedStart": "2026-06-05T09:30:00",
+    "plannedEnd": "2026-06-05T09:40:00",
     "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
@@ -1158,6 +1158,6 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-02"
+    "plannedDate": "2026-06-05"
   }
 ]
