@@ -895,8 +895,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T15:00:00",
-    "plannedEnd": "2026-06-02T15:30:00",
+    "plannedStart": "2026-06-02T15:40:00",
+    "plannedEnd": "2026-06-02T16:10:00",
     "plannedDate": "2026-06-02",
     "plannedMinutes": 30
   },
@@ -909,9 +909,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-02T13:30:00",
+    "plannedEnd": "2026-06-02T14:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-02T13:00:00",
+    "plannedStart": "2026-06-02T14:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -1030,7 +1030,7 @@
   {
     "id": "task_1780089583947_0i1t",
     "title": "Afspraak met B&E",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "coveyQuadrant": "Q1",
     "deadline": null,
@@ -1045,8 +1045,9 @@
     "plannedMinutes": 240,
     "source": "manual_input",
     "createdAt": "2026-05-29",
-    "updatedAt": "2026-05-29",
-    "tags": []
+    "updatedAt": "2026-06-02",
+    "tags": [],
+    "completedAt": "2026-06-02T11:41:53.589Z"
   },
   {
     "createdAt": "2026-05-30",
@@ -1070,8 +1071,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T13:30:00",
-    "plannedEnd": "2026-06-02T14:00:00",
+    "plannedStart": "2026-06-02T14:30:00",
+    "plannedEnd": "2026-06-02T15:00:00",
     "plannedDate": "2026-06-02",
     "plannedMinutes": 30
   },
@@ -1086,21 +1087,22 @@
     "reason": "Harm van Liere (bebedrijven.nl, Yerseke) stuurde op 28 mei een offerte PDF 'Offerte zeeuwland 2026' als reactie op de eerdere Excel-uitwisseling. Mail is starred. Offerte reviewen en beslissen hoe te reageren.",
     "softDeadline": null,
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "boone-media",
       "offerte"
     ],
     "title": "Offerte beoordelen en reageren — Harm (bebedrijven.nl)",
-    "updatedAt": "2026-05-30",
+    "updatedAt": "2026-06-02",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T14:00:00",
-    "plannedEnd": "2026-06-02T14:30:00",
+    "plannedStart": "2026-06-02T14:45:00",
+    "plannedEnd": "2026-06-02T15:15:00",
     "plannedDate": "2026-06-02",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-02T11:42:08.292Z"
   },
   {
     "createdAt": "2026-05-31",
@@ -1122,9 +1124,40 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-02T14:30:00",
-    "plannedEnd": "2026-06-02T15:00:00",
+    "plannedStart": "2026-06-02T15:00:00",
+    "plannedEnd": "2026-06-02T15:30:00",
     "plannedDate": "2026-06-02",
     "plannedMinutes": 30
+  },
+  {
+    "id": "task_1780400857769_nb2i",
+    "title": "Mail aan A&O sturen",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 10,
+    "nextAction": "Mail opstellen en verzenden",
+    "plannedStart": "2026-06-02T15:30:00",
+    "plannedEnd": "2026-06-02T15:40:00",
+    "plannedMinutes": 10,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-06-02"
+      }
+    ],
+    "createdAt": "2026-06-02",
+    "updatedAt": "2026-06-02",
+    "tags": [],
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-06-02"
   }
 ]
