@@ -88,22 +88,22 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-[100dvh] bg-gray-100 text-zinc-900 overflow-hidden">
+    <div className="flex flex-col h-[100dvh] text-zinc-900 overflow-hidden">
       {/* Header */}
-      <header className="flex items-center justify-between px-4 py-2 border-b border-gray-200 bg-white shrink-0">
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold text-zinc-900 tracking-tight">AI Mentor</span>
-          <span className="text-xs text-zinc-600 font-mono hidden sm:inline">v4</span>
+      <header className="flex items-center justify-between gap-2 px-4 py-2 border-b border-gray-200/70 bg-white/80 backdrop-blur-md shrink-0">
+        <div className="flex items-center gap-3 min-w-0">
+          <span className="text-sm font-extrabold tracking-tight bg-gradient-to-br from-accent to-accent2 bg-clip-text text-transparent shrink-0">AI Mentor</span>
+          <span className="text-xs text-zinc-500 hidden sm:inline shrink-0">v4</span>
           <CostBadge refreshTrigger={costRefresh} />
           <nav className="hidden sm:flex items-center gap-0.5 ml-2">
             {TABS.map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                className={`px-3.5 py-1.5 text-xs font-bold rounded-full transition-all active:scale-95 ${
                   activeTab === tab.id
-                    ? "bg-blue-600 text-white"
-                    : "text-zinc-600 hover:text-zinc-800 hover:bg-gray-100"
+                    ? "bg-gradient-to-br from-accent to-accent2 text-white shadow-soft"
+                    : "text-zinc-600 hover:text-zinc-800 hover:bg-white"
                 }`}
               >
                 {tab.label}
@@ -139,8 +139,8 @@ export default function Home() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 py-2 flex flex-col items-center gap-0.5 transition-colors active:bg-white ${
-              activeTab === tab.id ? "text-blue-700" : "text-zinc-600"
+            className={`flex-1 py-2 flex flex-col items-center gap-0.5 transition-all active:scale-95 ${
+              activeTab === tab.id ? "text-accent" : "text-zinc-500"
             }`}
           >
             {TAB_ICONS[tab.id]}

@@ -261,7 +261,7 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     : null;
 
   return (
-    <div className="flex flex-col h-full bg-gray-100 text-zinc-900 w-full">
+    <div className="flex flex-col h-full bg-transparent text-zinc-900 w-full min-w-0 overflow-x-hidden">
 
       {/* ── Desktop toolbar ── */}
       <div className="hidden sm:flex items-center gap-3 px-4 py-2.5 border-b border-gray-200 bg-white shrink-0 flex-wrap gap-y-1.5">

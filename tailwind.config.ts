@@ -8,28 +8,46 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Apple system stack — ook gemapt op "mono" zodat bestaande font-mono classes
-        // automatisch de strakke Apple-sans krijgen i.p.v. een terminal-monospace.
-        sans: ["-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', '"SF Pro"', '"Segoe UI"', "Roboto", "Helvetica", "Arial", "sans-serif"],
-        mono: ["-apple-system", "BlinkMacSystemFont", '"SF Pro Text"', '"SF Pro"', '"Segoe UI"', "Roboto", "Helvetica", "Arial", "sans-serif"],
+        // Nunito = rond, warm en luchtig, maar uitstekend leesbaar. App-breed gebruikt.
+        // "mono" wordt eveneens hierop gemapt zodat oude font-mono classes meegaan.
+        sans: ['"Nunito"', "ui-rounded", "-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", "Helvetica", "Arial", "sans-serif"],
+        mono: ['"Nunito"', "ui-rounded", "-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", "Helvetica", "Arial", "sans-serif"],
       },
       colors: {
-        // Apple "white" look
-        surface: "#f5f5f7",   // paginaachtergrond (Apple licht­grijs)
+        // Vrolijke, luchtige look
+        surface: "#f3f5fc",   // paginaachtergrond (zacht koel-warm)
         panel: "#ffffff",     // cards, panelen, headers
-        border: "#d2d2d7",    // hairline grijs
-        muted: "#6e6e73",     // secundaire tekst
-        accent: "#0071e3",    // Apple blauw
+        border: "#e3e6f0",    // zachte hairline
+        muted: "#6e6e80",     // secundaire tekst
+        accent: "#5b6cff",    // vriendelijk indigo-blauw
+        accent2: "#8b5cf6",   // violet (voor gradients/accenten)
         success: "#34c759",
         warning: "#ff9f0a",
         danger: "#ff3b30",
       },
       borderRadius: {
-        lg: "12px",
-        xl: "16px",
+        lg: "14px",
+        xl: "18px",
+        "2xl": "22px",
       },
       boxShadow: {
-        card: "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+        card: "0 1px 3px rgba(30,40,90,0.06), 0 1px 2px rgba(30,40,90,0.04)",
+        soft: "0 6px 22px rgba(40,50,110,0.08)",
+        lift: "0 10px 30px rgba(40,50,110,0.14)",
+      },
+      keyframes: {
+        msgIn: {
+          "0%": { opacity: "0", transform: "translateY(8px) scale(0.98)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        popIn: {
+          "0%": { opacity: "0", transform: "scale(0.96)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+      },
+      animation: {
+        "msg-in": "msgIn 0.28s cubic-bezier(0.22,1,0.36,1)",
+        "pop-in": "popIn 0.2s ease-out",
       },
     },
   },
