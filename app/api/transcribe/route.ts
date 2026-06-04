@@ -35,6 +35,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "OPENAI_API_KEY ontbreekt" }, { status: 500 });
     }
 
+    if (!req.headers.get("content-type")?.includes("multipart/form-data")) {
+      return NextResponse.json({ error: "Geen audio ontvangen" }, { status: 400 });
+    }
     const form = await req.formData();
     const audio = form.get("audio");
     if (!(audio instanceof Blob)) {

@@ -41,6 +41,8 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
   const meterRef = useRef<number | null>(null);
   const timerRef = useRef<number | null>(null);
   const cancelRef = useRef(false);
+  const peakRef = useRef(0);        // luidste gemeten niveau — om stilte/hallucinaties te weren
+  const meterOkRef = useRef(false); // of de geluidsmeter daadwerkelijk liep (anders stilte-check overslaan)
 
   const WAVE_BARS = 28;
 
@@ -81,7 +83,13 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
         setRecording(false);
         setLevels([]);
         const blob = new Blob(chunksRef.current, { type: recMime });
+        const durMs = Date.now() - recordStartRef.current;
         if (cancelRef.current || blob.size === 0) return;
+        // Te kort of (nagenoeg) stil → niet transcriberen: voorkomt gehallucineerde tekst.
+        if (durMs < 600 || (meterOkRef.current && peakRef.current < 0.015)) {
+          setError("Geen spraak gehoord — tik nogmaals en spreek wat duidelijker in.");
+          return;
+        }
         setTranscribing(true);
         try {
           const fd = new FormData();
@@ -106,6 +114,8 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
       };
       mediaRecorderRef.current = rec;
       recordStartRef.current = Date.now();
+      peakRef.current = 0;
+      meterOkRef.current = false;
       rec.start();
       setRecording(true);
       setError(null);
@@ -128,9 +138,11 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
           let sum = 0;
           for (let i = 0; i < data.length; i++) sum += data[i];
           const avg = sum / data.length / 255;            // 0..1
+          peakRef.current = Math.max(peakRef.current, avg);
           const level = Math.min(1, Math.max(0.05, avg * 1.9));
           setLevels(prev => [...prev.slice(1), level]);
         }, 70);
+        meterOkRef.current = true;
       } catch { /* meter optioneel */ }
 
       timerRef.current = window.setInterval(() => setElapsedMs(Date.now() - recordStartRef.current), 200);
