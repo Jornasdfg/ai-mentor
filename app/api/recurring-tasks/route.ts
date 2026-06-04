@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readRecurringTasks, writeRecurringTasks, ensureDataFiles } from "@/lib/mentor/mentorStorage";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import type { MentorRecurringTask } from "@/lib/mentorTypes";
 
 export async function GET() {
@@ -44,6 +45,13 @@ export async function POST(req: NextRequest) {
       softDeadlineOffsetDays: body.softDeadlineOffsetDays,
       executionMode: body.executionMode ?? "manual",
       futureMcpAction: body.futureMcpAction,
+      defaultPlannedTime: body.defaultPlannedTime ?? null,
+      defaultDurationMinutes: body.defaultDurationMinutes ?? null,
+      // Zonder vast tijdstip → flexibel maar vastgepind op de routine-dag (bv. de 1e v/d maand,
+      // elke maandag). Zo verschijnt de routine altijd op zijn dag in de planner.
+      pinToOccurrenceDate: body.pinToOccurrenceDate ?? !body.defaultPlannedTime,
+      calendarSyncMode: body.calendarSyncMode ?? "none",
+      calendarTitleTemplate: body.calendarTitleTemplate ?? null,
       createdAt: now,
       updatedAt: now,
     };
@@ -51,6 +59,9 @@ export async function POST(req: NextRequest) {
     const existing = await readRecurringTasks();
     existing.push(template);
     await writeRecurringTasks(existing);
+
+    // Materialiseer + plan de routine meteen in, zodat hij direct in de planner staat.
+    recalculateSchedule({ triggeredBy: "manual", horizonDays: 62, syncToGoogle: true }).catch(() => {});
 
     return NextResponse.json({ recurringTask: template });
   } catch (err) {

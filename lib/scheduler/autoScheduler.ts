@@ -163,11 +163,14 @@ export async function recalculateSchedule(options: {
   warnings: string[];
 }> {
   const { triggeredBy, horizonDays = 28, syncToGoogle = false } = options;
+  // Minimaal 62 dagen vooruit plannen: zo verschijnen maandelijkse routines (bv. "1e van de
+  // maand") altijd op hun dag, ook als die >28 dagen weg is.
+  const horizon = Math.max(horizonDays, 62);
   const warnings: string[] = [];
   const runId = `run_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
   const startedAt = nowISO();
   const todayISO = todayInAMS();
-  const horizonEnd = addDays(todayISO, horizonDays);
+  const horizonEnd = addDays(todayISO, horizon);
 
   await ensureDefaultSchedulingWindows();
 
@@ -182,7 +185,7 @@ export async function recalculateSchedule(options: {
   // Materialiseer terugkerende routines binnen de horizon (idempotent via recurrenceKey),
   // zodat bv. de wekelijkse analyse op elke komende maandag verschijnt én meteen meegepland wordt.
   const { tasks: allTasks, newCount: materializedCount } =
-    materializeRecurringTasks(rawTasks, recurringTemplates, todayISO, horizonDays);
+    materializeRecurringTasks(rawTasks, recurringTemplates, todayISO, horizon);
   if (materializedCount > 0) await writeTasks(allTasks);
 
   // ── 0. Vaste afspraken & handmatig vastgepinde taken (= bezet) ─────────────
@@ -484,7 +487,7 @@ export async function recalculateSchedule(options: {
     triggeredBy,
     startedAt,
     finishedAt: nowISO(),
-    horizonDays,
+    horizonDays: horizon,
     blocksCreated: newBlocks.length,
     blocksRemoved: removedCount,
     warnings,

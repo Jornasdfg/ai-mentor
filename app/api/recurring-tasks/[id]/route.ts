@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readRecurringTasks, writeRecurringTasks } from "@/lib/mentor/mentorStorage";
+import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import type { MentorRecurringTask } from "@/lib/mentorTypes";
 
 export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -15,6 +16,8 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       "startDate", "endDate", "isActive", "priority", "leadTimeDays",
       "estimatedMinutes", "nextAction", "tags", "hardDeadlineOffsetDays",
       "softDeadlineOffsetDays", "executionMode", "futureMcpAction",
+      "defaultPlannedTime", "defaultDurationMinutes", "pinToOccurrenceDate",
+      "calendarSyncMode", "calendarTitleTemplate",
     ];
     const update = Object.fromEntries(
       Object.entries(body).filter(([k]) => allowed.includes(k as keyof MentorRecurringTask))
@@ -22,6 +25,9 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const now = new Date().toISOString().slice(0, 10);
     templates[idx] = { ...templates[idx], ...update, updatedAt: now };
     await writeRecurringTasks(templates);
+
+    // Herplan zodat wijzigingen (dag, tijd, pin, actief) meteen in de planner doorwerken.
+    recalculateSchedule({ triggeredBy: "manual", horizonDays: 62, syncToGoogle: true }).catch(() => {});
 
     return NextResponse.json({ recurringTask: templates[idx] });
   } catch (err) {

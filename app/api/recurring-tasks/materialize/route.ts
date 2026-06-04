@@ -9,7 +9,7 @@ export async function POST() {
     const [tasks, templates] = await Promise.all([readTasks(), readRecurringTasks()]);
     const todayISO = getTodayISO();
 
-    const { tasks: updatedTasks, newCount } = materializeRecurringTasks(tasks, templates, todayISO, 14);
+    const { tasks: updatedTasks, newCount } = materializeRecurringTasks(tasks, templates, todayISO, 62);
 
     if (newCount > 0) {
       await writeTasks(updatedTasks);
