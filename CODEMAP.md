@@ -420,8 +420,11 @@ TaskCreateModal kies je boven "Type": *Flexibele taak* of *Vaste afspraak* (afsp
 De chat (`app/api/mentor/route.ts` + `lib/mentor/systemPrompt.ts`) is bewust flexibel én token-zuinig
 (geen extra AI-calls; alleen compacte server-side context).
 
-- **Schedule-bewust**: krijgt `buildPlanningContext()` mee (vrije tijd komende 9 dagen, werk-/avondvensters
+- **Schedule-bewust**: krijgt `buildPlanningContext()` mee (vrije tijd komende dagen, werk-/avondvensters
   minus blocks + Google-events). Vage periode → deadline-taak; concrete dag → stelt een ECHT vrij slot voor en vraagt.
+  **Flexibel auto-geplande blokken (~) tellen NIET als bezet** voor beschikbaarheid (`computePlanning` rekent
+  vrije tijd alleen tegen vaste items: afspraken/locked/handmatig/Google). Een vaste taak via de mentor mag dus
+  op een ~-plek landen (`autoSchedule:"off"` + `plannedStart`); de flexibele taak reflowt vanzelf.
 - **Kent bestaande taken op id**: de open-takenlijst toont per taak een `id:` → de chat kan precies verzetten,
   herplannen, uit planning halen, deadline/prioriteit wijzigen, **parkeren, afronden, annuleren, samenvoegen**.
 - **Meerdere intenties per bericht** → meerdere patches in één antwoord.
