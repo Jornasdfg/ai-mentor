@@ -193,6 +193,7 @@ export async function recalculateSchedule(options: {
 
   for (const block of existingBlocks) {
     const blockDate = isoDateOf(block.start);
+    if (blockDate < todayISO) { removedCount++; continue; } // ruim verleden blokken op
     const inHorizon = blockDate >= todayISO && blockDate <= horizonEnd;
     // Verwijder herplanbare auto-blocks én oude appointment-blocks (regenereren we vers).
     if (inHorizon && ((block.source === "auto_scheduler" && !block.locked) || fixedIds.has(block.taskId))) {
@@ -208,18 +209,17 @@ export async function recalculateSchedule(options: {
     .filter(b => b.locked || b.source !== "auto_scheduler")
     .map(b => ({ start: b.start, end: b.end }));
 
-  // Google events NOT created by this app → external busy blocks
+  // Google events NOT created by this app → external busy blocks.
+  // All-day events tellen NIET als bezet voor timed-planning (consistent met de chat-context);
+  // anders blokkeert een all-day item een hele dag (en door exclusieve einddatum zelfs de volgende).
   const googleBusy: TimeSlot[] = cachedGoogleEvents
     .filter(e => {
       if (e.status === "cancelled") return false;
-      const isMentor = !!e.extendedProperties?.private?.aiMentorTaskId;
-      return !isMentor;
+      if (!e.start || e.start.length <= 10) return false;       // all-day → overslaan
+      if (e.extendedProperties?.private?.aiMentorTaskId) return false; // app-event zit al in blocks
+      return true;
     })
-    .map(e => {
-      const start = e.start.length <= 10 ? `${e.start}T00:00:00` : e.start;
-      const end = e.end.length <= 10 ? `${e.end}T23:59:59` : e.end;
-      return { start, end };
-    })
+    .map(e => ({ start: e.start, end: e.end && e.end.length > 10 ? e.end : e.start }))
     .filter(e => dtMs(e.end) > dtMs(`${todayISO}T00:00:00`) && dtMs(e.start) < dtMs(`${horizonEnd}T23:59:59`));
 
   // Vaste afspraken + handmatig vastgepinde taken → bezet, zodat flexibele taken eromheen plannen.
@@ -264,8 +264,6 @@ export async function recalculateSchedule(options: {
       if (ma !== mb) return ma - mb;
       return a.createdAt.localeCompare(b.createdAt);
     });
-
-  console.error("[sched-debug]", JSON.stringify({ today: todayISO, now: nowLocalDT(), poolHead: slotPool.slice(0, 5), poolLen: slotPool.length, nSched: schedulable.length, busy: allBusy.slice(0, 5) }));
 
   // ── 5. Schedule tasks ─────────────────────────────────────────────────────
   const newBlocks: ScheduleBlock[] = [];
