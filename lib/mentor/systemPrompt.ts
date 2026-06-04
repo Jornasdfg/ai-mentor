@@ -37,7 +37,7 @@ Duurtips:
   creatief / nadenken           → 90-120 min
 `.trim();
 
-export function buildSystemPrompt(tasks: MentorTask[], planningContext = "", dedupHint = ""): string {
+export function buildSystemPrompt(tasks: MentorTask[], planningContext = "", dedupHint = "", weeklyReview = ""): string {
   const dateRef = buildDateRef();
   const active = tasks.filter(t => t.status === "open" || t.status === "in_progress");
 
@@ -88,6 +88,7 @@ Dagdelen: ochtend ≈ 09:00–12:00, middag ≈ 13:00–17:00, avond ≈ 19:00�
 Overlapt het gevraagde dagdeel met een "vrij"-bereik → antwoord JA en noem het concrete tijdslot.
 Zo niet → nee, en noem wat er die dag "gepland" staat of het dichtstbijzijnde vrije moment.
 Reken NOOIT zelf en verzin niets — baseer beschikbaarheid uitsluitend op deze planning.
+${weeklyReview ? `\n## Weekanalyse (van de maandag-routine — gebruik dit als context, niet opnieuw analyseren)\n${weeklyReview}\nVerwijst Jorn naar "de week", "vorige week", "de analyse" of "mijn focus"? Baseer je antwoord hierop. Breng het 1x proactief ter sprake als hij nog niet met de focus van deze week bezig is; daarna alleen op verzoek.\n` : ""}
 ${dedupHint ? `\n## Mogelijke duplicaten (NIET zomaar samenvoegen — eerst vragen)\n${dedupHint}\nAls het relevant is: benoem dit kort en vraag of je ze mag samenvoegen. Bij bevestiging → patch "merge_tasks" met data.ids = [die ids].\n` : ""}
 ## Gedrag — dit is cruciaal
 

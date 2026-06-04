@@ -334,3 +334,25 @@ export interface ScheduleRun {
   status: "running" | "done" | "error";
   errorMessage?: string | null;
 }
+
+// ── Wekelijkse analyse ─────────────────────────────────────────────────────────
+// Compacte retrospective die elke maandag door de losse routine wordt gegenereerd
+// op basis van de live taakdata. Bewust klein gehouden: de mentor krijgt alleen
+// de samenvatting + topfocus mee (token-zuinig), niet de volledige metrics.
+export interface WeeklyReview {
+  generatedAt: string;            // ISO tijdstip van generatie
+  weekStart: string;              // YYYY-MM-DD (maandag van de geanalyseerde week)
+  weekEnd: string;                // YYYY-MM-DD (zondag van de geanalyseerde week)
+  summary: string;                // 1-3 zinnen kernconclusie (token-zuinig)
+  highlights?: string[];          // wat ging goed / opviel (max ~5)
+  focusNextWeek?: string[];       // 1-3 concrete focuspunten voor de nieuwe week
+  metrics?: {
+    completed?: number;           // afgeronde taken vorige week
+    created?: number;             // nieuw aangemaakte taken
+    overdue?: number;             // taken met verstreken harde deadline
+    openP0?: number;              // open P0 die de nieuwe week ingaan
+    openP1?: number;
+    byProject?: Record<string, number>;  // afgerond per project
+  };
+  source?: string;                // bv. "monday-routine"
+}

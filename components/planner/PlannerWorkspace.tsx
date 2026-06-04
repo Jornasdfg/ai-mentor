@@ -7,6 +7,7 @@ import MonthView from "./MonthView";
 import BlockDetailPanel from "./BlockDetailPanel";
 import GoogleEventPanel from "./GoogleEventPanel";
 import WorkweekSettings from "./WorkweekSettings";
+import WeeklyReviewModal from "./WeeklyReviewModal";
 
 interface SchedulerData {
   blocks: ScheduleBlock[];
@@ -62,6 +63,8 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   const [recalcLoading, setRecalcLoading] = useState(false);
   const [showDev, setShowDev] = useState(false);
   const [showWorkweek, setShowWorkweek] = useState(false);
+  const [showReview, setShowReview] = useState(false);
+  const [reviewFresh, setReviewFresh] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState<ScheduleBlock | null>(null);
   const [selectedGoogleEvent, setSelectedGoogleEvent] = useState<GoogleEvent | null>(null);
@@ -102,6 +105,15 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
     fetch("/api/auth/google/status")
       .then(r => r.json())
       .then((j: { connected: boolean }) => setGoogleConnected(j.connected ?? false))
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    fetch("/api/weekly-review")
+      .then(r => r.json())
+      .then((j: { review: { generatedAt?: string } | null }) => {
+        const gen = j.review?.generatedAt ? Date.parse(j.review.generatedAt) : NaN;
+        setReviewFresh(Number.isFinite(gen) && (Date.now() - gen) / 86_400_000 <= 9);
+      })
       .catch(() => {});
   }, []);
   useEffect(() => {
@@ -299,6 +311,12 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           🗓 Werkweek
         </button>
 
+        <button onClick={() => setShowReview(true)}
+          className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-gray-200 text-zinc-700 hover:bg-gray-100 text-xs font-medium transition-colors">
+          📊 Weekanalyse
+          {reviewFresh && <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-blue-500" />}
+        </button>
+
         <div className="ml-auto flex items-center gap-3 text-xs text-zinc-600">
           {warnings.length > 0 && <span className="text-amber-700">⚠ {warnings.length}</span>}
           {lastRun?.finishedAt && <span>Run: {lastRun.finishedAt.slice(11,16)}</span>}
@@ -344,6 +362,11 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           </button>
           <button onClick={() => setShowWorkweek(true)}
             className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 active:bg-gray-100">🗓</button>
+          <button onClick={() => setShowReview(true)}
+            className="relative w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 active:bg-gray-100">
+            📊
+            {reviewFresh && <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-blue-500" />}
+          </button>
         </div>
       </div>
 
@@ -435,6 +458,8 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           onSaved={async () => { await load(); onTasksChange?.(); }}
         />
       )}
+
+      {showReview && <WeeklyReviewModal onClose={() => setShowReview(false)} />}
     </div>
   );
 }
