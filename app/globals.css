@@ -31,6 +31,15 @@ body {
   background: rgba(0, 113, 227, 0.18);
 }
 
+/* Opnameknop: zachtjes groeien/krimpen zodat zichtbaar is dat de opname loopt */
+@keyframes recordPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.12); }
+}
+.animate-record-pulse {
+  animation: recordPulse 1.4s ease-in-out infinite;
+}
+
 /* Scrollbar styling — licht & subtiel */
 ::-webkit-scrollbar {
   width: 8px;

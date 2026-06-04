@@ -31,36 +31,73 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [recording, setRecording] = useState(false);
   const [transcribing, setTranscribing] = useState(false);
+  const [levels, setLevels] = useState<number[]>([]);   // live geluidsgolf (0..1 per balkje)
+  const [elapsedMs, setElapsedMs] = useState(0);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const recordStartRef = useRef<number>(0);
+  const streamRef = useRef<MediaStream | null>(null);
+  const audioCtxRef = useRef<AudioContext | null>(null);
+  const meterRef = useRef<number | null>(null);
+  const timerRef = useRef<number | null>(null);
+  const cancelRef = useRef(false);
 
-  async function toggleRecording() {
-    if (recording) { mediaRecorderRef.current?.stop(); return; }
+  const WAVE_BARS = 28;
+
+  function fmtTime(ms: number): string {
+    const s = Math.floor(ms / 1000);
+    return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+  }
+
+  function teardownAudio() {
+    if (meterRef.current) { clearInterval(meterRef.current); meterRef.current = null; }
+    if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+    audioCtxRef.current?.close().catch(() => {});
+    audioCtxRef.current = null;
+    streamRef.current?.getTracks().forEach(t => t.stop());
+    streamRef.current = null;
+  }
+
+  // Stop opname; verstuur (send=true) of gooi weg (send=false).
+  function stopRecording(send: boolean) {
+    cancelRef.current = !send;
+    mediaRecorderRef.current?.stop();
+  }
+
+  async function startRecording() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      streamRef.current = stream;
       const mime = typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported("audio/webm")
         ? "audio/webm"
         : (typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported("audio/mp4") ? "audio/mp4" : "");
       const rec = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
       chunksRef.current = [];
+      cancelRef.current = false;
       rec.ondataavailable = e => { if (e.data.size > 0) chunksRef.current.push(e.data); };
       rec.onstop = async () => {
-        stream.getTracks().forEach(t => t.stop());
+        const recMime = rec.mimeType || mime || "audio/webm";
+        teardownAudio();
         setRecording(false);
-        const blob = new Blob(chunksRef.current, { type: rec.mimeType || "audio/webm" });
-        if (blob.size === 0) return;
+        setLevels([]);
+        const blob = new Blob(chunksRef.current, { type: recMime });
+        if (cancelRef.current || blob.size === 0) return;
         setTranscribing(true);
         try {
           const fd = new FormData();
-          fd.append("audio", blob, "audio.webm");
+          const fileName = recMime.includes("mp4") ? "audio.m4a" : "audio.webm";
+          fd.append("audio", blob, fileName);
           fd.append("durationMs", String(Date.now() - recordStartRef.current));
           const res = await fetch("/api/transcribe", { method: "POST", body: fd });
           const data = await res.json() as { text?: string; error?: string };
           if (!res.ok) throw new Error(data.error ?? "Transcriptie mislukt");
           const text = (data.text ?? "").trim();
-          if (text) setInput(prev => (prev ? prev + " " : "") + text);
-          textareaRef.current?.focus();
+          // ChatGPT-stijl: na opname meteen transcriberen én versturen.
+          if (text) {
+            const combined = (input ? input.trim() + " " : "") + text;
+            setInput("");
+            await handleSend(combined);
+          }
         } catch (err) {
           setError(err instanceof Error ? err.message : "Transcriptie mislukt");
         } finally {
@@ -72,10 +109,38 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
       rec.start();
       setRecording(true);
       setError(null);
+      setElapsedMs(0);
+      setLevels(new Array(WAVE_BARS).fill(0.05));
+
+      // Live geluidsgolf via Web Audio analyser.
+      try {
+        const AC: typeof AudioContext =
+          window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        const ctx = new AC();
+        audioCtxRef.current = ctx;
+        const source = ctx.createMediaStreamSource(stream);
+        const analyser = ctx.createAnalyser();
+        analyser.fftSize = 256;
+        source.connect(analyser);
+        const data = new Uint8Array(analyser.frequencyBinCount);
+        meterRef.current = window.setInterval(() => {
+          analyser.getByteFrequencyData(data);
+          let sum = 0;
+          for (let i = 0; i < data.length; i++) sum += data[i];
+          const avg = sum / data.length / 255;            // 0..1
+          const level = Math.min(1, Math.max(0.05, avg * 1.9));
+          setLevels(prev => [...prev.slice(1), level]);
+        }, 70);
+      } catch { /* meter optioneel */ }
+
+      timerRef.current = window.setInterval(() => setElapsedMs(Date.now() - recordStartRef.current), 200);
     } catch {
       setError("Geen toegang tot microfoon — sta microfoon toe in je browser.");
     }
   }
+
+  // Opruimen bij unmount.
+  useEffect(() => () => teardownAudio(), []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -264,41 +329,77 @@ export default function MentorChat({ onComplete }: { onComplete?: () => void }) 
 
       {/* Input */}
       <div className="border-t border-gray-200 p-3 shrink-0">
-        <div className="flex gap-2 items-end">
-          <button
-            onClick={toggleRecording}
-            disabled={loading || transcribing}
-            title={recording ? "Stop opname" : transcribing ? "Bezig met transcriberen…" : "Spreek je bericht in"}
-            aria-label={recording ? "Stop opname" : "Spreek je bericht in"}
-            className={`w-9 h-9 flex items-center justify-center rounded-xl shrink-0 text-base transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
-              recording
-                ? "bg-red-600 text-white animate-pulse"
-                : transcribing
-                ? "bg-gray-200 text-zinc-500"
-                : "bg-white border border-gray-200 text-zinc-600 hover:text-zinc-800 hover:border-gray-300"
-            }`}
-          >
-            {transcribing ? "…" : recording ? "⏹" : "🎙️"}
-          </button>
-          <textarea
-            ref={textareaRef}
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => {
-              if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); }
-            }}
-            placeholder={recording ? "Aan het luisteren… spreek je taak in" : "Typ of spreek een bericht in…"}
-            rows={1}
-            className="flex-1 px-3 py-2 text-sm bg-white text-zinc-900 border border-gray-200 rounded-xl resize-none focus:outline-none focus:border-blue-500/60 placeholder-zinc-600 leading-relaxed"
-          />
-          <button
-            onClick={() => handleSend()}
-            disabled={!input.trim() || loading}
-            className="w-9 h-9 flex items-center justify-center rounded-xl bg-blue-600 text-white hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0 text-lg"
-          >
-            ↑
-          </button>
-        </div>
+        {recording ? (
+          /* ── Opname-modus (ChatGPT-stijl): annuleren · live geluidsgolf · stop & verstuur ── */
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => stopRecording(false)}
+              aria-label="Opname annuleren"
+              title="Annuleren"
+              className="w-11 h-11 flex items-center justify-center rounded-full border border-gray-200 bg-white text-zinc-500 hover:text-red-600 hover:border-red-300 transition-colors shrink-0 text-lg"
+            >
+              ✕
+            </button>
+
+            <div className="flex-1 h-11 rounded-full bg-white border border-red-200 flex items-center gap-2 px-3 overflow-hidden">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shrink-0" />
+              <div className="flex-1 flex items-center justify-center gap-[2px] h-full overflow-hidden">
+                {levels.map((l, i) => (
+                  <span
+                    key={i}
+                    style={{ height: `${Math.round(5 + l * 26)}px` }}
+                    className="w-[3px] rounded-full bg-red-400 transition-[height] duration-75 ease-out shrink-0"
+                  />
+                ))}
+              </div>
+              <span className="text-[11px] tabular-nums text-zinc-500 shrink-0 w-9 text-right">{fmtTime(elapsedMs)}</span>
+            </div>
+
+            <button
+              onClick={() => stopRecording(true)}
+              aria-label="Stop opname en verstuur"
+              title="Stop & verstuur"
+              className="w-11 h-11 flex items-center justify-center rounded-full bg-red-600 text-white shrink-0 shadow-lg shadow-red-500/30 animate-record-pulse"
+            >
+              <span className="block w-3.5 h-3.5 rounded-[3px] bg-white" />
+            </button>
+          </div>
+        ) : (
+          <div className="flex gap-2 items-end">
+            <button
+              onClick={startRecording}
+              disabled={loading || transcribing}
+              title={transcribing ? "Bezig met transcriberen…" : "Spreek je bericht in"}
+              aria-label="Spreek je bericht in"
+              className={`w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center rounded-full shrink-0 text-lg transition-all active:scale-90 disabled:opacity-40 disabled:cursor-not-allowed ${
+                transcribing
+                  ? "bg-gray-200 text-zinc-500"
+                  : "bg-white border border-gray-200 text-zinc-600 hover:text-zinc-800 hover:border-gray-300"
+              }`}
+            >
+              {transcribing ? "…" : "🎙️"}
+            </button>
+            <textarea
+              ref={textareaRef}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); }
+              }}
+              placeholder={transcribing ? "Transcriberen…" : "Typ of spreek een bericht in…"}
+              rows={1}
+              disabled={transcribing}
+              className="flex-1 px-3 py-2 text-sm bg-white text-zinc-900 border border-gray-200 rounded-xl resize-none focus:outline-none focus:border-blue-500/60 placeholder-zinc-600 leading-relaxed disabled:opacity-60"
+            />
+            <button
+              onClick={() => handleSend()}
+              disabled={!input.trim() || loading}
+              className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-blue-600 text-white hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0 text-lg"
+            >
+              ↑
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
