@@ -118,6 +118,10 @@ export interface MentorTask {
   // Scheduler fields
   taskKind?: TaskKind;        // default "task"; "appointment" = vast tijdstip, niet auto-inplannen
   autoSchedule?: AutoScheduleMode;
+  // Dag-pin: als gezet, mag de auto-scheduler deze flexibele taak ALLEEN op deze datum
+  // plaatsen (YYYY-MM-DD). Tijd blijft flexibel. Gebruikt voor routines die op een vaste
+  // dag horen (bv. wekelijkse analyse → elke maandag).
+  scheduleOnDate?: string | null;
   schedulingWindowId?: string | null;
   minBlockMinutes?: number;
   splittable?: boolean;
@@ -151,6 +155,10 @@ export interface MentorRecurringTask {
   futureMcpAction?: string;
   defaultPlannedTime?: string | null;
   defaultDurationMinutes?: number | null;
+  // Als true: instances worden NIET op een vast tijdstip gezet, maar flexibel auto-gepland
+  // én vastgepind op hun occurrence-datum (scheduleOnDate). Zo blijft een wekelijkse routine
+  // op zijn dag (bv. maandag) maar mag de planner de tijd binnen die dag kiezen.
+  pinToOccurrenceDate?: boolean;
   calendarSyncMode?: CalendarSyncMode;
   calendarTitleTemplate?: string | null;
   createdAt: string;

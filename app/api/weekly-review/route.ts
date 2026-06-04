@@ -1,8 +1,51 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readWeeklyReview, writeWeeklyReview } from "@/lib/mentor/weeklyReviewStorage";
-import { readTasks, writeTasks, ensureDataFiles } from "@/lib/mentor/mentorStorage";
+import {
+  readTasks, writeTasks, ensureDataFiles,
+  readRecurringTasks, writeRecurringTasks,
+} from "@/lib/mentor/mentorStorage";
 import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
-import type { WeeklyReview, MentorTask } from "@/lib/mentorTypes";
+import { getTodayISO } from "@/lib/mentor/recurringTaskEngine";
+import type { WeeklyReview, MentorRecurringTask } from "@/lib/mentorTypes";
+
+const WEEKLY_REVIEW_ROUTINE_ID = "recurring_weekreview";
+
+// Borgt de wekelijkse analyse als TERUGKERENDE routine op maandag (flexibel, maar
+// vastgepind op de maandag). De scheduler materialiseert hem op de komende maandagen.
+// Ruimt tegelijk oude losse "task_weekreview_*"-taken op (vorige implementatie).
+async function ensureWeeklyReviewRoutine(): Promise<void> {
+  const templates = await readRecurringTasks();
+  if (!templates.some(t => t.id === WEEKLY_REVIEW_ROUTINE_ID)) {
+    const now = new Date().toISOString();
+    const template: MentorRecurringTask = {
+      id: WEEKLY_REVIEW_ROUTINE_ID,
+      title: "📊 Weekanalyse doorlezen & week plannen",
+      project: "Routine",
+      frequency: "weekly",
+      interval: 1,
+      daysOfWeek: [1],              // maandag
+      startDate: getTodayISO(),
+      isActive: true,
+      priority: "P1",
+      estimatedMinutes: 20,
+      nextAction: "Lees de weekanalyse en bepaal de focus voor deze week",
+      tags: ["weekreview", "routine"],
+      hardDeadlineOffsetDays: 0,    // deadline = de maandag zelf
+      executionMode: "manual",
+      defaultPlannedTime: null,     // geen vast tijdstip → flexibel binnen de dag
+      pinToOccurrenceDate: true,    // vastgepind op maandag
+      calendarSyncMode: "none",
+      createdAt: now,
+      updatedAt: now,
+    };
+    await writeRecurringTasks([...templates, template]);
+  }
+
+  // Oude losse weekreview-taken (zonder recurrenceKey) opruimen.
+  const tasks = await readTasks();
+  const cleaned = tasks.filter(t => !(t.id.startsWith("task_weekreview_") && !t.recurrenceKey));
+  if (cleaned.length !== tasks.length) await writeTasks(cleaned);
+}
 
 export const runtime = "nodejs";
 
@@ -42,56 +85,14 @@ export async function POST(req: NextRequest) {
     };
     await writeWeeklyReview(review);
 
-    // Borg de "weekanalyse doorlezen"-taak: deterministische id per week → geen duplicaten.
+    // Borg de wekelijkse analyse als terugkerende maandag-routine (en ruim oude losse taken op).
     await ensureDataFiles();
-    const tasks = await readTasks();
-    const reviewTaskId = `task_weekreview_${review.weekStart}`;
-    const alreadyOpen = tasks.some(t =>
-      t.id === reviewTaskId && (t.status === "open" || t.status === "in_progress")
-    );
-    let taskCreated = false;
-    if (!alreadyOpen) {
-      const now = new Date().toISOString().slice(0, 10);
-      const reviewTask: MentorTask = {
-        id: reviewTaskId,
-        title: `📊 Weekanalyse ${review.weekStart}–${review.weekEnd} doorlezen & week plannen`,
-        project: "Routine",
-        status: "open",
-        priority: "P1",
-        deadline: null,
-        hardDeadline: null,
-        softDeadline: null,
-        startBy: null,
-        deadlineType: "none",
-        estimatedMinutes: 20,
-        nextAction: "Lees de weekanalyse en bepaal de focus voor deze week",
-        source: "system",
-        reason: "Wekelijkse retrospective op basis van de geladen taakdata",
-        createdAt: now,
-        updatedAt: now,
-        tags: ["weekreview", "routine"],
-        plannedDate: null,
-        plannedStart: null,
-        plannedEnd: null,
-        plannedMinutes: null,
-        calendarSyncMode: "auto",
-        taskKind: "task",
-        autoSchedule: "auto",
-        schedulingWindowId: "window_work",
-        splittable: false,
-        minBlockMinutes: 20,
-        autoIgnore: false,
-        locked: false,
-      };
-      tasks.push(reviewTask);
-      await writeTasks(tasks);
-      taskCreated = true;
-    }
+    await ensureWeeklyReviewRoutine();
 
-    // Herplan zodat de review-taak meteen in de werkweek landt (fire-and-forget).
+    // Herplan: materialiseert de routine op de komende maandagen en plant ze in (fire-and-forget).
     recalculateSchedule({ triggeredBy: "manual", horizonDays: 28, syncToGoogle: true }).catch(() => {});
 
-    return NextResponse.json({ ok: true, taskCreated, review });
+    return NextResponse.json({ ok: true, review });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
   }

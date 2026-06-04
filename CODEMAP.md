@@ -478,15 +478,22 @@ publiek bereikbaar op `https://204.168.213.112.nip.io` (nginx → web-container 
    `x-mentor-routine-token: <MENTOR_ROUTINE_TOKEN>`.
 3. Het endpoint (`app/api/weekly-review/route.ts`):
    - Slaat de review op in `data/weekly_review.json` (`lib/mentor/weeklyReviewStorage.ts`).
-   - Borgt een **"📊 Weekanalyse doorlezen"-taak** met deterministische id
-     `task_weekreview_<weekStart>` (geen duplicaten), `autoSchedule:"auto"` → landt vanzelf in
-     de **werkweek** (zie scheduling windows). Zo doet Jorn de analyse iedere week écht.
+   - Borgt de analyse als **terugkerende routine** (`recurring_tasks.json`, id
+     `recurring_weekreview`): **wekelijks op maandag**, flexibel maar **vastgepind op de maandag**
+     (`pinToOccurrenceDate`). Ruimt oude losse `task_weekreview_*`-taken op.
    - Triggert `recalculateSchedule`.
 4. **Token-zuinig naar de mentor**: `buildWeeklyReviewSnippet()` geeft alléén de samenvatting +
    max 3 focuspunten mee aan de system-prompt, en alléén als de review < 9 dagen oud is. De
-   volledige metrics blijven in de app (UI-modal), niet in de prompt.
-5. **UI**: knop **📊 Weekanalyse** in de planner-toolbar (blauwe stip = verse review) →
-   `WeeklyReviewModal` toont samenvatting, metrics, focus en highlights.
+   volledige metrics blijven in `data/weekly_review.json`, niet in de prompt.
+
+### Dag-gepinde routines in de auto-scheduler
+- **`MentorTask.scheduleOnDate`** (YYYY-MM-DD): als gezet plant de auto-scheduler die flexibele
+  taak **alléén op die datum** (tijd blijft flexibel binnen de werkweek-vensters van die dag).
+- **`MentorRecurringTask.pinToOccurrenceDate`**: instances krijgen `scheduleOnDate = occurrenceDate`
+  + `autoSchedule:"auto"` (geen vast tijdstip). Zo blijft een wekelijkse routine op zijn dag (maandag),
+  meerdere weken vooruit, zonder op een andere dag te belanden.
+- **`recalculateSchedule()` materialiseert** terugkerende routines binnen de horizon (idempotent via
+  `recurrenceKey`) vóór het plannen — zodat ze ook in de planner verschijnen en meteen ingepland worden.
 
 **Beveiliging**: `MENTOR_ROUTINE_TOKEN` staat in `/app/.env.local` (server) én in de
 routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint geeft 401.

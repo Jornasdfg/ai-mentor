@@ -144,6 +144,9 @@ export function createTaskFromRecurringTemplate(
     plannedMinutes = durationMins;
   }
 
+  // Dag-gepinde routine: flexibel auto-plannen, maar vastgezet op de occurrence-dag.
+  const pinned = template.pinToOccurrenceDate === true && !template.defaultPlannedTime;
+
   return {
     id: `task_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
     title: template.title,
@@ -169,6 +172,9 @@ export function createTaskFromRecurringTemplate(
     plannedStart,
     plannedEnd,
     plannedMinutes,
+    taskKind: "task",
+    autoSchedule: pinned ? "auto" : (plannedStart ? "off" : "auto"),
+    scheduleOnDate: pinned ? occurrenceDate : null,
     calendarSyncMode: template.calendarSyncMode ?? "none",
     createdAt: now,
     updatedAt: now,

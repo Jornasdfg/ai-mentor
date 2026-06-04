@@ -1,4 +1,5 @@
-import { readTasks, writeTasks } from "@/lib/mentor/mentorStorage";
+import { readTasks, writeTasks, readRecurringTasks } from "@/lib/mentor/mentorStorage";
+import { materializeRecurringTasks } from "@/lib/mentor/recurringTaskEngine";
 import {
   readScheduleBlocks,
   writeScheduleBlocks,
@@ -170,12 +171,19 @@ export async function recalculateSchedule(options: {
 
   await ensureDefaultSchedulingWindows();
 
-  const [allTasks, existingBlocks, windows, cachedGoogleEvents] = await Promise.all([
+  const [rawTasks, existingBlocks, windows, cachedGoogleEvents, recurringTemplates] = await Promise.all([
     readTasks(),
     readScheduleBlocks(),
     readSchedulingWindows(),
     readEventCache().catch(() => []),
+    readRecurringTasks().catch(() => []),
   ]);
+
+  // Materialiseer terugkerende routines binnen de horizon (idempotent via recurrenceKey),
+  // zodat bv. de wekelijkse analyse op elke komende maandag verschijnt én meteen meegepland wordt.
+  const { tasks: allTasks, newCount: materializedCount } =
+    materializeRecurringTasks(rawTasks, recurringTemplates, todayISO, horizonDays);
+  if (materializedCount > 0) await writeTasks(allTasks);
 
   // ── 0. Vaste afspraken & handmatig vastgepinde taken (= bezet) ─────────────
   // Een "appointment" heeft een vast tijdstip en wordt nooit auto-ingepland;
@@ -291,6 +299,9 @@ export async function recalculateSchedule(options: {
     while (remaining > 0 && tempSlotIdx < slotPool.length) {
       const slot = slotPool[tempSlotIdx];
       if (!slot) { tempSlotIdx++; continue; }
+
+      // Dag-pin: routine-taken (bv. wekelijkse analyse) mogen alleen op hun eigen datum.
+      if (task.scheduleOnDate && isoDateOf(slot.start) !== task.scheduleOnDate) { tempSlotIdx++; continue; }
 
       // Respect startBy
       if (startBy && isoDateOf(slot.start) < startBy) { tempSlotIdx++; continue; }
