@@ -332,7 +332,7 @@ export async function recalculateSchedule(options: {
         // Splittable: take as much as fits, min minBlock
         const useMin = Math.min(slotMins, remaining);
         if (useMin < minBlock && remaining > minBlock) { tempSlotIdx++; continue; }
-        const actualMin = Math.max(useMin, Math.min(minBlock, remaining));
+        const actualMin = useMin; // nooit het slot/vensters overschrijden
         const blockEnd = addMinutes(slot.start, actualMin);
         const color = colorState(task, slot.start, todayISO);
         const block: ScheduleBlock = {
