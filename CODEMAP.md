@@ -724,20 +724,31 @@ GOOGLE_CALENDAR_WATCH_TTL_SECONDS=604800   # 7 dagen (Google max)
 
 ---
 
-## Tailwind kleurentokens (donker thema)
+## Tailwind kleurentokens & typografie (vrolijk licht thema)
 
-Gedefinieerd in `tailwind.config.ts` en `globals.css`:
+Gedefinieerd in `tailwind.config.ts` en `globals.css`. **Lettertype: Nunito** (rond, luchtig) app-breed
+(`font-sans` én `font-mono` gemapt op Nunito; geladen via Google Fonts-link in `app/layout.tsx`).
+Achtergrond: zachte verloop-tint (`globals.css` body). `html,body { overflow-x: hidden }` borgt dat er
+**nooit horizontaal gescrold** wordt; chat-bubbels gebruiken `.break-anywhere` + `min-w-0`.
 
 | Token | Kleur | Gebruik |
 |-------|-------|---------|
-| `bg-surface` | `#0f1117` | Hoofdachtergrond |
-| `bg-panel` | `#161b22` | Zijpanelen, headers |
-| `border-border` | `#21262d` | Alle randen |
-| `text-muted` | `#8b949e` | Secundaire tekst |
-| `text-accent` | `#58a6ff` | Accent, links, knoppen |
-| `text-success` | `#3fb950` | Bevestigingen, geplande taken |
-| `text-warning` | `#d29922` | Waarschuwingen |
-| `text-danger` | `#f85149` | Fouten, P0 |
+| `bg-surface` | `#f3f5fc` | Paginaachtergrond (zacht) |
+| `bg-panel` | `#ffffff` | Cards, panelen, headers |
+| `border-border` | `#e3e6f0` | Zachte hairline |
+| `text-muted` | `#6e6e80` | Secundaire tekst |
+| `text-accent` | `#5b6cff` | Accent (indigo) — vaak in gradient `from-accent to-accent2` |
+| `accent2` | `#8b5cf6` | Violet, tweede gradient-stop |
+| `success` | `#34c759` | Bevestigingen, geplande taken |
+| `warning` | `#ff9f0a` | Waarschuwingen |
+| `danger` | `#ff3b30` | Fouten, P0 |
+
+Animaties: `animate-msg-in` (chatbericht-entree), `animate-pop-in`, `animate-record-pulse` (opname),
+`shadow-soft`/`shadow-lift`; alles uit via `prefers-reduced-motion` (globals).
+
+**Belangrijk (geleerd):** na wijziging van `tailwind.config.ts` moet de dev-web-container herstart
+(`docker restart app-mentor-web-1`) — `next dev` cachet de Tailwind-config; een git pull alléén
+herlaadt de themewaarden niet.
 
 ---
 
