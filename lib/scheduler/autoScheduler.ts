@@ -265,6 +265,8 @@ export async function recalculateSchedule(options: {
       return a.createdAt.localeCompare(b.createdAt);
     });
 
+  console.error("[sched-debug]", JSON.stringify({ today: todayISO, now: nowLocalDT(), poolHead: slotPool.slice(0, 5), poolLen: slotPool.length, nSched: schedulable.length, busy: allBusy.slice(0, 5) }));
+
   // ── 5. Schedule tasks ─────────────────────────────────────────────────────
   const newBlocks: ScheduleBlock[] = [];
   const updatedTasks = allTasks.map(t => ({ ...t }));
