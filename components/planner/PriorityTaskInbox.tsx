@@ -1,5 +1,6 @@
 "use client";
 import type { MentorTask, ScheduleBlock } from "@/lib/mentorTypes";
+import { isRoutine } from "@/lib/mentor/taskCharacter";
 
 const PRIORITY_CONFIG: Record<string, { label: string; border: string; dot: string; text: string }> = {
   P0: { label: "Do ASAP",  border: "border-l-2 border-red-500",     dot: "bg-red-500",     text: "text-red-600" },
@@ -18,7 +19,8 @@ function isActive(t: MentorTask) {
 }
 
 export default function PriorityTaskInbox({ tasks, blocks }: Props) {
-  const active = tasks.filter(isActive);
+  // Routine-instances horen niet in de takenlijst — die leven alleen als blok in de planner.
+  const active = tasks.filter(t => isActive(t) && !isRoutine(t));
 
   function isScheduled(t: MentorTask): boolean {
     return blocks.some(b => b.taskId === t.id);

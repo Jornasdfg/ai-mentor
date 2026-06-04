@@ -1,5 +1,6 @@
 "use client";
 import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
+import { isRoutine } from "@/lib/mentor/taskCharacter";
 
 const SOLID_STYLE: Record<string, { bg: string; border: string; text: string }> = {
   green:  { bg: "bg-emerald-900/70",  border: "border-l-[3px] border-emerald-400", text: "text-emerald-100" },
@@ -33,6 +34,7 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
   const time = `${block.start.slice(11, 16)}–${block.end.slice(11, 16)}`;
   const isSmall = heightPx < 40;
   const colorKey = block.colorState ?? "gray";
+  const routine = task ? isRoutine(task) : false;
 
   function onDragStart(e: React.DragEvent) {
     e.stopPropagation();
@@ -58,13 +60,13 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
           {isSmall ? (
             <div className="px-1.5 py-0.5 flex items-center gap-1 h-full">
               <span className="text-[9px] opacity-60">◌</span>
-              <span className="text-[10px] font-medium truncate leading-none opacity-80">{block.title}</span>
+              <span className="text-[10px] font-medium truncate leading-none opacity-80">{routine ? "🔁 " : ""}{block.title}</span>
             </div>
           ) : (
             <div className="px-1.5 py-1 h-full flex flex-col justify-between">
               <div className="flex items-start gap-1">
                 <span className="text-[9px] mt-0.5 opacity-50 shrink-0">◌</span>
-                <span className="text-xs font-medium leading-tight line-clamp-2 opacity-80">{block.title}</span>
+                <span className="text-xs font-medium leading-tight line-clamp-2 opacity-80">{routine ? "🔁 " : ""}{block.title}</span>
               </div>
               <div className="flex items-center justify-between mt-auto gap-1">
                 <span className="text-[10px] opacity-50">{time}</span>
@@ -116,13 +118,13 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
         {isSmall ? (
           <div className="px-1.5 py-0.5 flex items-center gap-1 h-full">
             {task?.priority && <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${PRIORITY_DOT[task.priority] ?? "bg-gray-500"}`} />}
-            <span className="text-[10px] font-medium truncate leading-none">{block.title}</span>
+            <span className="text-[10px] font-medium truncate leading-none">{routine ? "🔁 " : ""}{block.title}</span>
           </div>
         ) : (
           <div className="px-1.5 py-1 h-full flex flex-col justify-between">
             <div className="flex items-start gap-1">
               {task?.priority && <span className={`mt-0.5 w-2 h-2 rounded-full shrink-0 ${PRIORITY_DOT[task.priority] ?? "bg-gray-500"}`} />}
-              <span className="text-xs font-semibold leading-tight line-clamp-2">{block.title}</span>
+              <span className="text-xs font-semibold leading-tight line-clamp-2">{routine ? "🔁 " : ""}{block.title}</span>
             </div>
             <div className="text-[10px] opacity-70 mt-auto">{time}</div>
           </div>

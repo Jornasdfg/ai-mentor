@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import type { MentorTask, CoveyQuadrant, MentorRecurringTask } from "@/lib/mentorTypes";
+import { isRoutine } from "@/lib/mentor/taskCharacter";
 import TaskCard from "./TaskCard";
 import TaskEditorModal from "./TaskEditorModal";
 import TaskCreateModal from "./TaskCreateModal";
@@ -239,8 +240,10 @@ export default function TaskBoard({ tasks, onTasksChange }: TaskBoardProps) {
     await api(`/api/tasks/${draggedId}`, "PATCH", { coveyQuadrant: q });
   }
 
-  const active = tasks.filter(t => t.status === "open" || t.status === "in_progress");
-  const done   = tasks.filter(t => t.status === "done" || t.status === "cancelled");
+  // Routine-instances horen niet in Covey/agenda — die staan in de Routines-accordion
+  // (template) en leven verder alleen als planbaar blok in de planner.
+  const active = tasks.filter(t => (t.status === "open" || t.status === "in_progress") && !isRoutine(t));
+  const done   = tasks.filter(t => (t.status === "done" || t.status === "cancelled") && !isRoutine(t));
 
   function filteredActive(): MentorTask[] {
     if (!search) return active;

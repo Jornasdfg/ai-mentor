@@ -495,6 +495,14 @@ publiek bereikbaar op `https://204.168.213.112.nip.io` (nginx → web-container 
 - **`recalculateSchedule()` materialiseert** terugkerende routines binnen de horizon (idempotent via
   `recurrenceKey`) vóór het plannen — zodat ze ook in de planner verschijnen en meteen ingepland worden.
 
+### Karakter-onderscheid: Taak / Afspraak / Routine (`lib/mentor/taskCharacter.ts`)
+`TaskKind = "task" | "appointment" | "routine"`. `isRoutine(task)` = `taskKind==="routine"` of
+`isRecurringInstance` of `recurrenceTemplateId`. Routine-instances worden **uitgefilterd** uit de
+Taken-lijst (TaskBoard Covey + Agenda), de `PriorityTaskInbox` naast de planner én de mentor-prompt
+(ruis + tokens) — ze leven **alleen als planbaar blok in de planner** (gemarkeerd met 🔁). De
+routine-**template** blijft zichtbaar in de "Routines"-accordion van de TaskBoard. Afspraken
+(`appointment`) tellen als bezet; routines zijn flexibel (vaak dag-gepind via `scheduleOnDate`).
+
 **Beveiliging**: `MENTOR_ROUTINE_TOKEN` staat in `/app/.env.local` (server) én in de
 routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint geeft 401.
 

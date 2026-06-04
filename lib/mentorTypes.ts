@@ -32,7 +32,9 @@ export type CalendarSyncStatus =
 export type AutoScheduleMode = "off" | "auto";
 // "appointment" = vast tijdstip, onverplaatsbaar (bv. afspraak Jordi woensdag) → telt als bezet.
 // "task" = flexibele taak (bv. bonnen administratie) → wordt automatisch ingepland.
-export type TaskKind = "task" | "appointment";
+// "routine" = instance van een terugkerende routine → flexibel planbaar (vaak dag-gepind),
+//             maar buiten de takenlijst/Covey gehouden; leeft alleen als blok in de planner.
+export type TaskKind = "task" | "appointment" | "routine";
 export type ScheduleColorState = "green" | "orange" | "red" | "gray";
 export type ScheduleBlockStatus = "planned" | "locked" | "missed" | "unscheduled";
 export type SchedulingWindowType = "work" | "personal" | "anytime";

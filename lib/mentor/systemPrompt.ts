@@ -1,4 +1,5 @@
 import type { MentorTask } from "@/lib/mentorTypes";
+import { isRoutine } from "@/lib/mentor/taskCharacter";
 
 const NL_DAYS = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
 
@@ -39,7 +40,8 @@ Duurtips:
 
 export function buildSystemPrompt(tasks: MentorTask[], planningContext = "", dedupHint = "", weeklyReview = ""): string {
   const dateRef = buildDateRef();
-  const active = tasks.filter(t => t.status === "open" || t.status === "in_progress");
+  // Routine-instances (terugkerend) niet meegeven: ruis + tokenverspilling.
+  const active = tasks.filter(t => (t.status === "open" || t.status === "in_progress") && !isRoutine(t));
 
   const taskLines = active.map(t => {
     const dl = t.hardDeadline ?? t.deadline;

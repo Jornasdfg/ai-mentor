@@ -172,7 +172,9 @@ export function createTaskFromRecurringTemplate(
     plannedStart,
     plannedEnd,
     plannedMinutes,
-    taskKind: "task",
+    // Karakter: instances van een routine zijn altijd "routine" (≠ losse taak/afspraak).
+    // Zo blijven ze uit de Taken-lijst/Covey en leven ze alleen als planbaar blok in de planner.
+    taskKind: "routine",
     autoSchedule: pinned ? "auto" : (plannedStart ? "off" : "auto"),
     scheduleOnDate: pinned ? occurrenceDate : null,
     calendarSyncMode: template.calendarSyncMode ?? "none",
