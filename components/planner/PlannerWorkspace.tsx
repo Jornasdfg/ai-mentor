@@ -6,6 +6,7 @@ import WeekTimeGrid, { type GoogleEvent } from "./WeekTimeGrid";
 import MonthView from "./MonthView";
 import BlockDetailPanel from "./BlockDetailPanel";
 import GoogleEventPanel from "./GoogleEventPanel";
+import WorkweekSettings from "./WorkweekSettings";
 
 interface SchedulerData {
   blocks: ScheduleBlock[];
@@ -60,6 +61,7 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
   const [viewMode, setViewMode] = useState<ViewMode>("week");
   const [recalcLoading, setRecalcLoading] = useState(false);
   const [showDev, setShowDev] = useState(false);
+  const [showWorkweek, setShowWorkweek] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState<ScheduleBlock | null>(null);
   const [selectedGoogleEvent, setSelectedGoogleEvent] = useState<GoogleEvent | null>(null);
@@ -292,6 +294,11 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           {recalcLoading ? "Plannen…" : "↺ Herplan"}
         </button>
 
+        <button onClick={() => setShowWorkweek(true)}
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-gray-200 text-zinc-700 hover:bg-gray-100 text-xs font-medium transition-colors">
+          🗓 Werkweek
+        </button>
+
         <div className="ml-auto flex items-center gap-3 text-xs text-zinc-600">
           {warnings.length > 0 && <span className="text-amber-700">⚠ {warnings.length}</span>}
           {lastRun?.finishedAt && <span>Run: {lastRun.finishedAt.slice(11,16)}</span>}
@@ -335,6 +342,8 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
             className="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-600 text-white disabled:opacity-50 active:bg-blue-500">
             <span className="text-base">{recalcLoading ? "…" : "↺"}</span>
           </button>
+          <button onClick={() => setShowWorkweek(true)}
+            className="w-8 h-8 flex items-center justify-center rounded-lg bg-white text-zinc-700 active:bg-gray-100">🗓</button>
         </div>
       </div>
 
@@ -419,6 +428,13 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
           />
         )}
       </div>
+
+      {showWorkweek && (
+        <WorkweekSettings
+          onClose={() => setShowWorkweek(false)}
+          onSaved={async () => { await load(); onTasksChange?.(); }}
+        />
+      )}
     </div>
   );
 }
