@@ -494,6 +494,11 @@ publiek bereikbaar op `https://204.168.213.112.nip.io` (nginx → web-container 
   meerdere weken vooruit, zonder op een andere dag te belanden.
 - **`recalculateSchedule()` materialiseert** terugkerende routines binnen de horizon (idempotent via
   `recurrenceKey`) vóór het plannen — zodat ze ook in de planner verschijnen en meteen ingepland worden.
+- **Horizon ≥ 62 dagen**: recalc plant altijd minstens ~2 maanden vooruit, zodat **maandelijkse**
+  routines (bv. "1e van de maand") altijd op hun dag verschijnen, ook al is die >28 dagen weg.
+- **Nieuwe routine = direct zichtbaar**: `POST`/`PATCH /api/recurring-tasks` pint standaard op de
+  occurrence-dag (`pinToOccurrenceDate = !defaultPlannedTime`) én triggert meteen een recalc. Een
+  routine met een vast tijdstip (`defaultPlannedTime`) wordt i.p.v. gepind als vaste tijd geplaatst.
 
 ### Karakter-onderscheid: Taak / Afspraak / Routine (`lib/mentor/taskCharacter.ts`)
 `TaskKind = "task" | "appointment" | "routine"`. `isRoutine(task)` = `taskKind==="routine"` of
