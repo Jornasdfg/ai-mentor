@@ -431,6 +431,15 @@ De chat (`app/api/mentor/route.ts` + `lib/mentor/systemPrompt.ts`) is bewust fle
 - Output: strikt JSON `{ message, patches[] }`; patch-operaties: add_task, update_task, park_task,
   complete_task, cancel_task, merge_tasks, add_decision.
 
+### Spraakinvoer (ChatGPT-stijl) — `MentorChat` + `POST /api/transcribe`
+- 1 tik = opname start: pulserende stop-knop (`animate-record-pulse`) + **live geluidsgolf** (Web Audio
+  `AnalyserNode`, ~70ms) + timer + annuleer-knop. 2e tik = transcriberen **én** direct versturen.
+- Stilte/te-kort-guard (client): geen transcriptie/verzending bij <600ms of (nagenoeg) stilte
+  (piekniveau via de meter) → voorkomt gehallucineerde auto-sends.
+- `/api/transcribe`: `gpt-4o-mini-transcribe` (accurater + ~$0.003/min) met **fallback** naar `whisper-1`;
+  `language:"nl"` + Nederlandse domein-prompt; bestandsnaam-extensie volgt het echte mime-type
+  (fix iOS/Safari `audio/mp4`). Kosten gaan naar de teller linksboven.
+
 ---
 
 ## Taak-dedup & merge (taken uit meerdere bronnen) ★ NIEUW
