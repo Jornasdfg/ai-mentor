@@ -460,6 +460,39 @@ De mentor-chat krijgt max 2 suggesties (met id's) compact mee en kan na bevestig
 
 ---
 
+## Routines & wekelijkse analyse ★ NIEUW
+
+Externe Claude-routines (claude.ai "Scheduled tasks") voeden de app via HTTP. De app is
+publiek bereikbaar op `https://204.168.213.112.nip.io` (nginx → web-container poort 3000).
+
+| Routine | Trigger | Voedt app via |
+|---------|---------|---------------|
+| **Ai mentor gmail daily** | dagelijks 07:00 | GitHub `repository_dispatch` → `task_register.json` |
+| **AI Mentor — wekelijkse analyse (maandag)** | ma 08:13 (`trig_014uuK6MEmRh9cj6n5tVJJRs`) | `POST /api/weekly-review` (token) |
+
+### Wekelijkse analyse-pijplijn
+1. De maandag-routine leest de **live taken** (`GET /api/tasks`), berekent **deterministisch in
+   Python** een retrospective van de vorige week (Ma–Zo): afgerond, nieuw, te laat, open P0/P1,
+   per project, top-3 focus uit open P0/P1.
+2. Ze post het compacte resultaat naar **`POST /api/weekly-review`** met header
+   `x-mentor-routine-token: <MENTOR_ROUTINE_TOKEN>`.
+3. Het endpoint (`app/api/weekly-review/route.ts`):
+   - Slaat de review op in `data/weekly_review.json` (`lib/mentor/weeklyReviewStorage.ts`).
+   - Borgt een **"📊 Weekanalyse doorlezen"-taak** met deterministische id
+     `task_weekreview_<weekStart>` (geen duplicaten), `autoSchedule:"auto"` → landt vanzelf in
+     de **werkweek** (zie scheduling windows). Zo doet Jorn de analyse iedere week écht.
+   - Triggert `recalculateSchedule`.
+4. **Token-zuinig naar de mentor**: `buildWeeklyReviewSnippet()` geeft alléén de samenvatting +
+   max 3 focuspunten mee aan de system-prompt, en alléén als de review < 9 dagen oud is. De
+   volledige metrics blijven in de app (UI-modal), niet in de prompt.
+5. **UI**: knop **📊 Weekanalyse** in de planner-toolbar (blauwe stip = verse review) →
+   `WeeklyReviewModal` toont samenvatting, metrics, focus en highlights.
+
+**Beveiliging**: `MENTOR_ROUTINE_TOKEN` staat in `/app/.env.local` (server) én in de
+routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint geeft 401.
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)
