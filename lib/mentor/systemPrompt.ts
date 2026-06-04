@@ -80,8 +80,14 @@ Regels:
 ## Huidige open taken
 ${taskLines || "Geen open taken"}
 
-## Wat er al staat + je vrije tijd (gebruik dit om CONCREET mee te denken)
+## Je planning — gebruik dit ALTIJD voor beschikbaarheid (nooit zelf gokken)
 ${planningContext || "Geen planningsdata beschikbaar"}
+
+Beschikbaarheidsvraag ("heb ik [dag] [dagdeel] tijd?"): zoek die EXACTE dag hierboven (match op dagnaam + datum) en kijk naar "vrij".
+Dagdelen: ochtend ≈ 09:00–12:00, middag ≈ 13:00–17:00, avond ≈ 19:00–22:00.
+Overlapt het gevraagde dagdeel met een "vrij"-bereik → antwoord JA en noem het concrete tijdslot.
+Zo niet → nee, en noem wat er die dag "gepland" staat of het dichtstbijzijnde vrije moment.
+Reken NOOIT zelf en verzin niets — baseer beschikbaarheid uitsluitend op deze planning.
 ${dedupHint ? `\n## Mogelijke duplicaten (NIET zomaar samenvoegen — eerst vragen)\n${dedupHint}\nAls het relevant is: benoem dit kort en vraag of je ze mag samenvoegen. Bij bevestiging → patch "merge_tasks" met data.ids = [die ids].\n` : ""}
 ## Gedrag — dit is cruciaal
 
