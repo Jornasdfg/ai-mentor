@@ -90,6 +90,11 @@ Dagdelen: ochtend ≈ 09:00–12:00, middag ≈ 13:00–17:00, avond ≈ 19:00�
 Overlapt het gevraagde dagdeel met een "vrij"-bereik → antwoord JA en noem het concrete tijdslot.
 Zo niet → nee, en noem wat er die dag "gepland" staat of het dichtstbijzijnde vrije moment.
 Reken NOOIT zelf en verzin niets — baseer beschikbaarheid uitsluitend op deze planning.
+LET OP: een "gepland"-tijd met "~" is een FLEXIBEL auto-ingepland blok (verplaatsbaar). Dat blokkeert NIETS:
+als Jorn daar een vast tijdstip wil ("doe maar 9–10"), plan je die taak gewoon op dat tijdstip
+(add_task/update_task met plannedStart/plannedEnd + autoSchedule:"off"). De flexibele taak wordt
+daarna automatisch herpland. Alleen een tijd ZONDER "~" (vaste afspraak) is echt bezet — waarschuw
+alleen dán voor een conflict.
 ${weeklyReview ? `\n## Weekanalyse (van de maandag-routine — gebruik dit als context, niet opnieuw analyseren)\n${weeklyReview}\nVerwijst Jorn naar "de week", "vorige week", "de analyse" of "mijn focus"? Baseer je antwoord hierop. Breng het 1x proactief ter sprake als hij nog niet met de focus van deze week bezig is; daarna alleen op verzoek.\n` : ""}
 ${dedupHint ? `\n## Mogelijke duplicaten (NIET zomaar samenvoegen — eerst vragen)\n${dedupHint}\nAls het relevant is: benoem dit kort en vraag of je ze mag samenvoegen. Bij bevestiging → patch "merge_tasks" met data.ids = [die ids].\n` : ""}
 ## Gedrag — dit is cruciaal

@@ -52,7 +52,10 @@ function nowMinAMS(): number {
   return toMin(new Date().toLocaleTimeString("nl-NL", { timeZone: "Europe/Amsterdam", hour: "2-digit", minute: "2-digit", hour12: false }));
 }
 
-interface Item { startMin: number; endMin: number; label: string }
+// fixed=true → echt bezet (afspraak, locked/handmatig blok, externe Google-afspraak).
+// fixed=false → flexibel auto-gepland blok: VERPLAATSBAAR, telt NIET als bezet, zodat een
+// vaste taak die je via de mentor invoert hier gewoon kan landen (de flexibele schuiven om).
+interface Item { startMin: number; endMin: number; label: string; fixed: boolean }
 interface Range { startMin: number; endMin: number }
 interface DayPlan { items: Item[]; free: Range[] }
 
@@ -71,15 +74,17 @@ async function computePlanning(): Promise<Map<string, DayPlan>> {
   const horizonEnd = addDays(today, HORIZON_DAYS - 1);
 
   const byDay = new Map<string, Item[]>();
-  const add = (day: string, s: number, e: number, label: string) => {
+  const add = (day: string, s: number, e: number, label: string, fixed: boolean) => {
     if (e <= s) return;
     if (!byDay.has(day)) byDay.set(day, []);
-    byDay.get(day)!.push({ startMin: s, endMin: e, label });
+    byDay.get(day)!.push({ startMin: s, endMin: e, label, fixed });
   };
   for (const b of blocks) {
     const day = b.start.slice(0, 10);
     if (day < today || day > horizonEnd) continue;
-    add(day, timeOf(b.start), timeOf(b.end), b.title || "taak");
+    // Flexibel auto-blok (suggestie, niet vastgezet) = verplaatsbaar → niet bezet.
+    const flexible = b.source === "auto_scheduler" && !b.locked;
+    add(day, timeOf(b.start), timeOf(b.end), b.title || "taak", !flexible);
   }
   for (const e of cache) {
     if (e.status === "cancelled") continue;
@@ -87,7 +92,7 @@ async function computePlanning(): Promise<Map<string, DayPlan>> {
     if (!e.start || e.start.length <= 10) continue;              // all-day overslaan
     const day = e.start.slice(0, 10);
     if (day < today || day > horizonEnd) continue;
-    add(day, timeOf(e.start), e.end ? timeOf(e.end) : timeOf(e.start) + 30, e.summary || "afspraak");
+    add(day, timeOf(e.start), e.end ? timeOf(e.end) : timeOf(e.start) + 30, e.summary || "afspraak", true);
   }
 
   const nowMin = nowMinAMS();
@@ -99,11 +104,12 @@ async function computePlanning(): Promise<Map<string, DayPlan>> {
     if (dayWindows.length === 0) continue;
 
     const items = (byDay.get(day) ?? []).sort((a, b) => a.startMin - b.startMin);
+    // Vrije ruimte = venster minus ALLEEN de vaste items; flexibele blokken tellen als vrij.
     const free: Range[] = [];
     for (const w of dayWindows) {
       let cursor = Math.max(toMin(w.startTime), i === 0 ? nowMin : 0);
       const wEnd = toMin(w.endTime);
-      const inWin = items.filter(b => b.endMin > cursor && b.startMin < wEnd);
+      const inWin = items.filter(b => b.fixed && b.endMin > cursor && b.startMin < wEnd);
       for (const b of inWin) {
         if (b.startMin - cursor >= MIN_FREE_MIN) free.push({ startMin: cursor, endMin: b.startMin });
         cursor = Math.max(cursor, b.endMin);
@@ -122,14 +128,14 @@ export async function buildPlanningContext(): Promise<string> {
   for (const [day, { items, free }] of plan) {
     const label = `${dowFull(day)} ${day.slice(8)}-${day.slice(5, 7)}`;
     const plannedStr = items.length
-      ? items.slice(0, MAX_ITEMS_PER_DAY).map(b => `${fromMin(b.startMin)} ${b.label.slice(0, 28)}`).join("; ")
+      ? items.slice(0, MAX_ITEMS_PER_DAY).map(b => `${b.fixed ? "" : "~"}${fromMin(b.startMin)} ${b.label.slice(0, 28)}`).join("; ")
       : "niets";
     const freeStr = free.length
       ? free.slice(0, MAX_FREE_PER_DAY).map(f => `${fromMin(f.startMin)}-${fromMin(f.endMin)}`).join(", ")
       : "vol";
     lines.push(`  ${label} — gepland: ${plannedStr} | vrij: ${freeStr}`);
   }
-  return `Je planning (komende dagen, binnen je werk-/avondvensters). "gepland" = al bezet, "vrij" = beschikbaar:\n${lines.join("\n")}`;
+  return `Je planning (komende dagen, binnen je werk-/avondvensters). "vrij" = beschikbaar. Bij "gepland": een tijd met "~" is een FLEXIBEL auto-ingepland blok (verplaatsbaar) — die ruimte mag je gebruiken voor een vaste taak/afspraak; de flexibele taak wordt vanzelf herpland. Een tijd zonder "~" is een vaste afspraak (echt bezet).\n${lines.join("\n")}`;
 }
 
 // Beantwoordt een beschikbaarheidsvraag deterministisch. Geeft null als het geen
@@ -184,8 +190,10 @@ export async function resolveAvailability(message: string): Promise<string | nul
     const slots = relevant.map(f => `${fromMin(f.startMin)}-${fromMin(f.endMin)}`).join(", ");
     return `BESCHIKBAARHEID (gebruik dit exact, dit is correct): ${periodLabel} is VRIJ — ${slots}. Antwoord bevestigend en noem dit tijdslot.`;
   }
-  const planned = dayPlan.items.length
-    ? dayPlan.items.slice(0, 4).map(b => `${fromMin(b.startMin)} ${b.label.slice(0, 24)}`).join("; ")
-    : "geen vrije ruimte in dat dagdeel";
-  return `BESCHIKBAARHEID (gebruik dit exact, dit is correct): ${periodLabel} is BEZET. Gepland: ${planned}.`;
+  // Alleen vaste items maken iets écht bezet; flexibele blokken zijn al als vrij behandeld.
+  const fixedItems = dayPlan.items.filter(b => b.fixed);
+  const planned = fixedItems.length
+    ? fixedItems.slice(0, 4).map(b => `${fromMin(b.startMin)} ${b.label.slice(0, 24)}`).join("; ")
+    : "geen ruimte binnen je vensters in dat dagdeel";
+  return `BESCHIKBAARHEID (gebruik dit exact, dit is correct): ${periodLabel} is BEZET door vaste afspraken. Gepland: ${planned}.`;
 }
