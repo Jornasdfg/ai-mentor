@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-08T17:00:00.547Z",
+    "updatedAt": "2026-06-08T18:00:00.460Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-08T17:00:00.547Z",
+      "lastSyncedAt": "2026-06-08T18:00:00.460Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -714,8 +714,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-08T20:00:00",
-    "plannedEnd": "2026-06-08T20:30:00",
+    "plannedStart": "2026-06-08T21:00:00",
+    "plannedEnd": "2026-06-08T21:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -801,8 +801,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Verzekering afsluiten",
-    "plannedStart": "2026-06-08T20:30:00",
-    "plannedEnd": "2026-06-08T21:00:00",
+    "plannedStart": "2026-06-08T21:30:00",
+    "plannedEnd": "2026-06-08T22:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-22",
@@ -903,8 +903,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T10:00:00",
-    "plannedEnd": "2026-06-09T10:30:00",
+    "plannedStart": "2026-06-09T11:00:00",
+    "plannedEnd": "2026-06-09T11:30:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   },
@@ -917,9 +917,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-08T21:30:00",
+    "plannedEnd": "2026-06-09T09:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-08T21:00:00",
+    "plannedStart": "2026-06-09T09:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -931,7 +931,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-08"
+    "plannedDate": "2026-06-09"
   },
   {
     "createdAt": "2026-05-29",
@@ -1221,9 +1221,9 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-08T21:30:00",
-    "plannedEnd": "2026-06-08T22:00:00",
-    "plannedDate": "2026-06-08",
+    "plannedStart": "2026-06-09T09:30:00",
+    "plannedEnd": "2026-06-09T10:00:00",
+    "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   },
   {
@@ -1277,8 +1277,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T09:00:00",
-    "plannedEnd": "2026-06-09T09:30:00",
+    "plannedStart": "2026-06-09T10:00:00",
+    "plannedEnd": "2026-06-09T10:30:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   },
@@ -1769,8 +1769,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T09:30:00",
-    "plannedEnd": "2026-06-09T10:00:00",
+    "plannedStart": "2026-06-09T10:30:00",
+    "plannedEnd": "2026-06-09T11:00:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   },
@@ -1795,8 +1795,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T10:30:00",
-    "plannedEnd": "2026-06-09T11:00:00",
+    "plannedStart": "2026-06-09T11:30:00",
+    "plannedEnd": "2026-06-09T12:00:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   }
