@@ -1,6 +1,65 @@
 # CODEMAP — AI Mentor v4
 
-Persoonlijke productiviteitscoach als Next.js 16 app. Combineert AI-advies (OpenAI/DeepSeek) met een taaksysteem op basis van Covey-kwadranten en een patch-gebaseerd state-model. Alle data is flat-file JSON, geen database.
+Persoonlijke productiviteitscoach als Next.js 16 app. Combineert AI-advies (OpenAI/DeepSeek) met een taaksysteem op basis van Covey-kwadranten en een patch-gebaseerd state-model. App-data is flat-file JSON (`data/`); er draait wel een PostgreSQL-container in de stack (zie beveiliging hieronder), maar de bron van waarheid is de JSON.
+
+---
+
+## ✅ WERKENDE VERSIE — 9 juni 2026 (na beveiligingsupdate) — LEES DIT EERST
+
+> Dit is het ijkpunt waarop je altijd kunt terugvallen. Werkt de live app niet meer zoals hier
+> beschreven, loop dan deze sectie punt voor punt na — meestal is er per ongeluk een **kale
+> `docker compose up -d`** gedraaid (zie deploy-regel hieronder).
+
+### Live server (Hetzner)
+- IP **204.168.213.112** · publiek: **https://204.168.213.112.nip.io** (nginx → web-container :3000) · ook `:3000` direct.
+- SSH: `ssh root@204.168.213.112` · app-map: **/app** · actieve branch: **`feature/appt-on-live`**.
+- Containers: `app-mentor-web-1` (next dev), `app-mentor-worker-1` (tsx), `app-postgres-1`.
+
+### 🚀 Deploy — DE GOUDEN REGEL
+- **Code uitrollen** = op de server in `/app`: `git pull origin feature/appt-on-live`. De web- en
+  worker-containers draaien **dev-mode met host-bind-mounts**, dus de bron hot-reloadt vanzelf
+  (worker zo nodig `docker restart app-mentor-worker-1`).
+- **Start/herstart van de stack MOET met BEIDE compose-bestanden:**
+  ```bash
+  docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+  ```
+- ⛔ **NOOIT een kale `docker compose up -d`** (zonder de dev-override). Dat zet web/worker terug
+  naar het **verouderde prod-image** (`cmd=[npm start]`, image `app-mentor-web`) **zónder de
+  source-bind-mounts** → je laatste code verdwijnt en de scheduler draait oude logica
+  (o.a. zonder `scheduleOnDate`-pinning → week-analyses stapelen op vandaag). Dit ging mis op 9-6-2026.
+- **Check welke modus draait:** `docker inspect app-mentor-web-1 --format '{{.Config.Cmd}}'`
+  → dev = `npx next dev` (goed) · prod/fout = `npm start`. Herstel: bovenstaand `up -d` met beide files.
+
+### 🔒 Database-beveiliging (BSI/CERT-Bund melding 9-6-2026)
+- PostgreSQL-poort in `docker-compose.yml` gebonden aan **`127.0.0.1:5432:5432`** (was `0.0.0.0` = open
+  op internet). App verbindt intern via `@postgres:5432`; beheer vanaf laptop via tunnel:
+  `ssh -L 5432:localhost:5432 root@204.168.213.112`.
+- **UFW firewall actief**: allow 22/80/443/3000, rest dicht. (Docker-poorten omzeilen ufw deels; ufw
+  beschermt vooral SSH. Bij ufw-wijziging altijd eerst `ufw allow OpenSSH`.)
+- **⚠️ `.env` vs `.env.local`**: Compose-substitutie `${POSTGRES_PASSWORD}` leest uit **`/app/.env`**
+  (of shell), **NIET** uit `.env.local` (die is enkel `env_file` runtime-env). Stond er geen `.env` →
+  viel terug op de zwakke default `mentor_local_dev`. Nu: sterk wachtwoord in `/app/.env`, en de
+  DB-rol ge-`ALTER`'d (`ALTER USER mentor WITH PASSWORD …`) zodat ze matchen (POSTGRES_PASSWORD-env
+  initialiseert alleen op een leeg volume). scram afgedwongen op netwerk; `127.0.0.1` heeft `trust`
+  in de image (alleen lokaal/host, niet extern).
+
+### 🗓️ Planner-interactie (kaarten verslepen/verlengen) — eindgedrag
+Geen zichtbaar sleep-icoon meer. `components/planner/ScheduleBlockCard.tsx` + `WeekTimeGrid.tsx`:
+- **Kort tikken** = openen/aanpassen (`BlockDetailPanel`, daar ook de tijd instelbaar).
+- **Telefoon — ingedrukt houden (long-press 250ms)**: op de **body** = verslepen; op de **onzichtbare
+  onderrand-strook** (`h-3.5`, alleen bij blokhoogte ≥ 44px) = verlengen/inkorten.
+- **Desktop**: onderrand hoveren (cursor ns-resize) + slepen = verlengen; body slepen = verplaatsen.
+- **Persistentie-fix**: `app/api/scheduler/blocks/[id]/move/route.ts` pint ná het verslepen óók de
+  onderliggende taak (`plannedStart/End`, `autoSchedule:"off"`, `locked`), anders herstelt recalc de
+  oude tijd ("springt terug").
+
+### 🩹 Herstel bij "autoplanner stapelt week-analyses op vandaag"
+Symptoom van het kale-`up -d`-image-probleem. Na het herstellen van de juiste dev-deploy (zie boven):
+1. Reset stale planning op de routine-instances (zet `plannedDate/Start/End/Minutes` op `null`,
+   `autoSchedule:"auto"`, `taskKind:"routine"` voor open `recurrenceTemplateId:"recurring_weekreview"`).
+2. `POST /api/scheduler/recalculate` → blokken regenereren (elke week-analyse op zijn eigen maandag 09:00).
+3. Push schone data naar GitHub: `cd /app && python3 sync_github.py push` (pull is non-destructief,
+   voegt alleen onbekende id's toe).
 
 ---
 
