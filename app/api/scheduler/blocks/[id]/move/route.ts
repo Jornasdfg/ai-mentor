@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readScheduleBlocks, writeScheduleBlocks } from "@/lib/scheduler/scheduleStorage";
 import { enqueueCalendarJob } from "@/lib/calendar/calendarOutbox";
-import { readTasks } from "@/lib/mentor/mentorStorage";
+import { readTasks, writeTasks } from "@/lib/mentor/mentorStorage";
 import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 
 export async function PATCH(
@@ -36,6 +36,27 @@ export async function PATCH(
       updatedAt: now,
     };
     await writeScheduleBlocks(blocks);
+
+    // CRUCIAAL: pin de onderliggende taak op het nieuwe tijdstip. Anders genereert
+    // recalculateSchedule het blok opnieuw op de OUDE plannedStart → "springt terug".
+    const taskId = blocks[idx].taskId;
+    if (taskId) {
+      const allTasks = await readTasks();
+      const ti = allTasks.findIndex(t => t.id === taskId);
+      if (ti !== -1) {
+        allTasks[ti] = {
+          ...allTasks[ti],
+          plannedDate: body.start.slice(0, 10),
+          plannedStart: body.start,
+          plannedEnd: body.end,
+          plannedMinutes: durationMinutes,
+          autoSchedule: "off",
+          locked: body.lock !== false,
+          updatedAt: now,
+        };
+        await writeTasks(allTasks);
+      }
+    }
 
     // Queue Google sync
     if (body.syncToGoogle !== false) {
