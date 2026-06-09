@@ -520,6 +520,13 @@ Taken-lijst (TaskBoard Covey + Agenda), de `PriorityTaskInbox` naast de planner 
 routine-**template** blijft zichtbaar in de "Routines"-accordion van de TaskBoard. Afspraken
 (`appointment`) tellen als bezet; routines zijn flexibel (vaak dag-gepind via `scheduleOnDate`).
 
+### Gemiste routine → pop-up bij openen (`components/MissedRoutineModal.tsx`)
+Bij het laden van de app (`app/page.tsx`) worden routine-instances gezocht die nog open staan terwijl
+hun gepinde dag (`scheduleOnDate`/`recurrenceDate`) voorbij is. Is er zo'n gemiste routine, dan
+verschijnt een pop-up ("Gisteren niet gedaan"): **Vandaag plannen** (`PATCH scheduleOnDate = vandaag`
+→ herplant op vandaag) of **Overslaan** (`POST /api/tasks/[id]/cancel`). Zo blijft een gepinde routine
+niet eindeloos als "geen vrije slots" op een voorbije dag hangen.
+
 **Beveiliging**: `MENTOR_ROUTINE_TOKEN` staat in `/app/.env.local` (server) én in de
 routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint geeft 401.
 
