@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-09T09:00:00.526Z",
+    "updatedAt": "2026-06-09T10:00:00.279Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-09T09:00:00.526Z",
+      "lastSyncedAt": "2026-06-09T10:00:00.279Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -714,8 +714,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-09T12:00:00",
-    "plannedEnd": "2026-06-09T12:30:00",
+    "plannedStart": "2026-06-09T13:00:00",
+    "plannedEnd": "2026-06-09T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -801,8 +801,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Verzekering afsluiten",
-    "plannedStart": "2026-06-09T12:30:00",
-    "plannedEnd": "2026-06-09T13:00:00",
+    "plannedStart": "2026-06-09T13:30:00",
+    "plannedEnd": "2026-06-09T14:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-22",
@@ -917,9 +917,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-09T13:30:00",
+    "plannedEnd": "2026-06-09T14:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-09T13:00:00",
+    "plannedStart": "2026-06-09T14:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -1221,8 +1221,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T13:30:00",
-    "plannedEnd": "2026-06-09T14:00:00",
+    "plannedStart": "2026-06-09T14:30:00",
+    "plannedEnd": "2026-06-09T15:00:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30
   },
@@ -1265,7 +1265,7 @@
     "reason": "Deal BEVESTIGD: easyHotel booking 16-17 juni voor content-samenwerking. Brief & contract nog niet ontvangen. Maddie (Maddie.Simpson@easyhotel.com) was OOO op 3 jun, terug 4 jun. Brief en contract verwachten/opvolgen nu Maddie terug is.",
     "softDeadline": "2026-06-07",
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "samenwerking",
@@ -1273,14 +1273,15 @@
       "brand-deal"
     ],
     "title": "Brief & contract opvolgen easyHotel — booking 16-17 juni",
-    "updatedAt": "2026-06-04",
+    "updatedAt": "2026-06-09",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T14:00:00",
-    "plannedEnd": "2026-06-09T14:30:00",
+    "plannedStart": "2026-06-09T14:15:00",
+    "plannedEnd": "2026-06-09T14:45:00",
     "plannedDate": "2026-06-09",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-09T09:15:55.886Z"
   },
   {
     "createdAt": "2026-06-04",
@@ -1758,21 +1759,22 @@
     "reason": "Nina (nina@whalar.com) stuurde 4 juni op de invoice-thread: 'As discussed via text, you are checking if you received payment end of April — could you confirm on this email chain so team Whalar is aware.' Jorn moet via de mail-thread bevestigen of hij betaling heeft ontvangen.",
     "softDeadline": null,
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "factuur",
       "samenwerking"
     ],
     "title": "Bevestig betaalstatus aan Nina — Whalar factuur 26059_04",
-    "updatedAt": "2026-06-05",
+    "updatedAt": "2026-06-09",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T14:30:00",
-    "plannedEnd": "2026-06-09T15:00:00",
+    "plannedStart": "2026-06-09T14:15:00",
+    "plannedEnd": "2026-06-09T14:45:00",
     "plannedDate": "2026-06-09",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-09T09:15:58.131Z"
   },
   {
     "createdAt": "2026-06-07",
@@ -1785,20 +1787,21 @@
     "reason": "Status: Binnen. Echte laatste contact: 2026-05-27 (videocall Maret, 11 dagen geleden). Geen mail naar Maret.Trouerbach@yune.nl in de afgelopen 10 dagen. Deal-uitkomst van de klant nog onbekend — opvolgen bij Maret voor update.",
     "softDeadline": null,
     "source": "system",
-    "status": "open",
+    "status": "done",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "title": "Schiphol (via Yune) opvolgen — 11 dagen geen contact",
-    "updatedAt": "2026-06-07",
+    "updatedAt": "2026-06-09",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-09T16:00:00",
-    "plannedEnd": "2026-06-09T16:30:00",
+    "plannedStart": "2026-06-09T15:15:00",
+    "plannedEnd": "2026-06-09T15:45:00",
     "plannedDate": "2026-06-09",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-09T09:16:00.048Z"
   },
   {
     "id": "task_1780956000978_e0nd",
