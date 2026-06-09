@@ -103,7 +103,9 @@ export async function POST(req: NextRequest) {
       linkinbioClicks,
       affiliateRevenueEur,
       affiliate,
+      affiliateReport: body.affiliateReport ?? (sameWeek ? prev!.affiliateReport ?? null : null),
       instagram: keepInstagram,
+      instagramCsv: sameWeek ? prev!.instagramCsv ?? null : null,
       insightText: sameWeek ? prev!.insightText ?? null : null,
       insightAt: sameWeek ? prev!.insightAt ?? null : null,
       funnel: prevFunnel

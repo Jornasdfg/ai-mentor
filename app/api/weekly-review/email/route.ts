@@ -37,7 +37,9 @@ export async function POST() {
             sent: true,
             via: "gmail-draft",
             to: TO,
-            message: "De weekdata wordt als concept in je Gmail gezet (map Concepten) — klaar om te lezen of door te sturen. Even ~1 min.",
+            subject,
+            text, // volledige data ook teruggeven → client downloadt 'm als back-up
+            message: "Concept met alle weekdata komt in je Gmail (map Concepten, ~1 min). De volledige ruwe data is ook gedownload.",
           });
         }
       } catch { /* val door naar fallback */ }

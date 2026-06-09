@@ -22,6 +22,16 @@ const fmt = (n: number | null | undefined) => (n === null || n === undefined ? "
 const pct = (a?: number | null, b?: number | null) =>
   a && b && b > 0 ? `${((a / b) * 100).toFixed(1)}%` : "—";
 
+function downloadText(text: string) {
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "reishacker-weekdata.txt";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function InstagramUploadModal({ onClose, onUploaded }: Props) {
   const [postFile, setPostFile] = useState<File | null>(null);
   const [storyFile, setStoryFile] = useState<File | null>(null);
@@ -68,18 +78,14 @@ export default function InstagramUploadModal({ onClose, onUploaded }: Props) {
       const res = await fetch("/api/weekly-review/email", { method: "POST" });
       const data = await res.json() as { sent?: boolean; to?: string; subject?: string; text?: string; message?: string; error?: string };
       if (!res.ok) throw new Error(data.error ?? "Mislukt");
+      // Volledige ruwe data altijd lokaal downloaden (gegarandeerd compleet, ongeacht het concept).
+      if (data.text) downloadText(data.text);
       if (data.sent) {
         setEmailMsg(data.message ?? `Verstuurd naar ${data.to}.`);
       } else if (data.text) {
-        // Zero-setup fallback: download volledige tekst + open mailconcept.
-        const blob = new Blob([data.text], { type: "text/plain;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url; a.download = "reishacker-weekdata.txt"; a.click();
-        URL.revokeObjectURL(url);
         const body = encodeURIComponent(data.text.slice(0, 6000));
         window.location.href = `mailto:${data.to}?subject=${encodeURIComponent(data.subject ?? "Weekdata")}&body=${body}`;
-        setEmailMsg("Mail nog niet automatisch ingesteld — bestand gedownload + mailconcept geopend.");
+        setEmailMsg("Mail niet automatisch ingesteld — volledige data gedownload + mailconcept geopend.");
       }
     } catch (err) {
       setEmailMsg(err instanceof Error ? err.message : "Fout");

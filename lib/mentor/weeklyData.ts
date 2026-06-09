@@ -66,6 +66,23 @@ export function buildWeeklyReportText(review: WeeklyReview, full: boolean): stri
     if (a["klik_transactie_ratio_pct"] !== undefined) L.push(`  Klik→transactie indicatie: ~${n(a["klik_transactie_ratio_pct"])}%`);
   }
 
+  // Volledige (ruwe) data voor diepe externe analyse: complete affiliate-rapport + alle CSV-rijen.
+  if (full) {
+    if (review.affiliateReport) {
+      L.push("", "==================== VOLLEDIG AFFILIATE-RAPPORT (routine) ====================", review.affiliateReport.trim());
+    }
+    if (a) {
+      L.push("", "==================== AFFILIATE DATA (JSON, alle velden) ====================", JSON.stringify(a, null, 2));
+    }
+    const csv = review.instagramCsv;
+    if (csv?.post) {
+      L.push("", "==================== RUWE CSV — POSTS/REELS (Meta Business Suite) ====================", csv.post.trim());
+    }
+    if (csv?.story) {
+      L.push("", "==================== RUWE CSV — STORIES (Meta Business Suite) ====================", csv.story.trim());
+    }
+  }
+
   if (!ig && !a && !m) L.push("\n(Nog geen data beschikbaar — upload je Instagram-week en laat de maandag-routine draaien.)");
   return L.join("\n");
 }

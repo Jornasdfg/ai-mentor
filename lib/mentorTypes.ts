@@ -375,6 +375,10 @@ export interface WeeklyReview {
   // Volledige DATA-regel van de "Affiliate + Klikdata Mentor"-routine (maandag 6u): affiliate-totalen
   // per netwerk + link-in-bio klikdata. Bewaard zodat de app dit kan combineren/mailen.
   affiliate?: Record<string, number | string> | null;
+  // Volledig leesbaar affiliate-rapport (tekst) van de routine — voor de complete mail.
+  affiliateReport?: string | null;
+  // Ruwe Meta Business Suite CSV-inhoud (verbatim), zodat de volledige data mee kan in de mail/analyse.
+  instagramCsv?: { post?: string | null; story?: string | null } | null;
   // Korte AI-conclusies (Knop 1 "Snel inzicht").
   insightText?: string | null;
   insightAt?: string | null;

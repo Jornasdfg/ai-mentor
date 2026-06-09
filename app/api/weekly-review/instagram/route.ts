@@ -48,6 +48,10 @@ export async function POST(req: NextRequest) {
       }),
       weekStart, weekEnd,
       instagram: summary,
+      instagramCsv: {
+        post: postCsv ?? existing?.instagramCsv?.post ?? null,
+        story: storyCsv ?? existing?.instagramCsv?.story ?? null,
+      },
       funnel: {
         instagramReach: summary.totals.reach,
         instagramViews: summary.totals.views,
