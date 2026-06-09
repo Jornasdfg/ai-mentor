@@ -91,6 +91,9 @@ export default function WeekTimeGrid({
 
   // Resize state
   const [resizeDelta, setResizeDelta] = useState<{ blockId: string; deltaPx: number } | null>(null);
+  // Move state (pointer-based, werkt op touch + muis)
+  const [moveState, setMoveState] = useState<{ blockId: string; dayISO: string; y: number } | null>(null);
+  const moveRef = useRef<{ block: ScheduleBlock; startClientY: number; origTopPx: number; dayISO: string } | null>(null);
 
   // Quick create state
   const [quickCreate, setQuickCreate] = useState<QuickCreate | null>(null);
@@ -186,35 +189,64 @@ export default function WeekTimeGrid({
     setQcTitle("");
   }
 
-  const handleResizeStart = useCallback((block: ScheduleBlock, e: React.MouseEvent, origHeight: number) => {
+  // Resize via pointer-events (touch + muis). De greep heeft touch-action:none zodat slepen niet scrollt.
+  const onResizePointerDown = useCallback((block: ScheduleBlock, e: React.PointerEvent) => {
     e.preventDefault();
     e.stopPropagation();
-
+    try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch { /* ignore */ }
     const startClientY = e.clientY;
+    const step = HOUR_H / (60 / SNAP_MINS);
 
-    function onMove(me: MouseEvent) {
-      const raw = me.clientY - startClientY;
-      const step = HOUR_H / (60 / SNAP_MINS);
-      const snapped = Math.round(raw / step) * step;
+    function onMove(me: PointerEvent) {
+      const snapped = Math.round((me.clientY - startClientY) / step) * step;
       setResizeDelta({ blockId: block.id, deltaPx: snapped });
     }
-
-    function onUp(me: MouseEvent) {
-      document.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseup", onUp);
-
-      const raw = me.clientY - startClientY;
-      const deltaMins = Math.round((raw / HOUR_H) * 60 / SNAP_MINS) * SNAP_MINS;
-      if (Math.abs(deltaMins) >= SNAP_MINS) {
-        const newEnd = addMinsToTimeStr(block.end, deltaMins);
-        onMoveBlock(block.id, block.start, newEnd);
-      }
+    function onUp(me: PointerEvent) {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+      const deltaMins = Math.round(((me.clientY - startClientY) / HOUR_H) * 60 / SNAP_MINS) * SNAP_MINS;
       setResizeDelta(null);
+      if (Math.abs(deltaMins) >= SNAP_MINS) {
+        onMoveBlock(block.id, block.start, addMinsToTimeStr(block.end, deltaMins));
+      }
     }
-
-    document.addEventListener("mousemove", onMove);
-    document.addEventListener("mouseup", onUp);
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
   }, [onMoveBlock]);
+
+  // Verplaatsen via pointer-events (touch + muis). Sleep-greep met touch-action:none.
+  const onMovePointerDown = useCallback((block: ScheduleBlock, e: React.PointerEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch { /* ignore */ }
+    const dayISO = block.start.slice(0, 10);
+    const origTopPx = dtToY(block.start, startHour);
+    moveRef.current = { block, startClientY: e.clientY, origTopPx, dayISO };
+    setMoveState({ blockId: block.id, dayISO, y: origTopPx });
+
+    function onMove(me: PointerEvent) {
+      const m = moveRef.current; if (!m) return;
+      const y = Math.max(0, snapY(m.origTopPx + (me.clientY - m.startClientY)));
+      setMoveState({ blockId: m.block.id, dayISO: m.dayISO, y });
+    }
+    function onUp(me: PointerEvent) {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
+      const m = moveRef.current; moveRef.current = null; setMoveState(null);
+      if (!m) return;
+      const y = Math.max(0, snapY(m.origTopPx + (me.clientY - m.startClientY)));
+      const newStart = yToDateTime(y, m.dayISO, startHour);
+      if (newStart !== m.block.start) {
+        onMoveBlock(m.block.id, newStart, addMinsToTimeStr(newStart, m.block.durationMinutes));
+      }
+    }
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
+  }, [onMoveBlock, startHour]);
 
   const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
 
@@ -264,6 +296,7 @@ export default function WeekTimeGrid({
           });
           const today = isToday(dayISO);
           const dropY = dragOver?.dayISO === dayISO ? dragOver.y : null;
+          const moveY = moveState?.dayISO === dayISO ? moveState.y : null;
           return (
             <div
               key={dayISO}
@@ -339,6 +372,19 @@ export default function WeekTimeGrid({
                 );
               })}
 
+              {/* Verplaats-indicator (slepen) */}
+              {moveY !== null && (
+                <div className="absolute left-0 right-0 pointer-events-none z-30" style={{ top: moveY }}>
+                  <div className="relative">
+                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500 absolute -left-1 -top-1.5" />
+                    <div className="border-t-2 border-blue-500 ml-1" />
+                    <div className="absolute left-3 -top-4 bg-blue-600 text-white text-[9px] font-mono px-1 py-0.5 rounded leading-none whitespace-nowrap">
+                      {yToDateTime(moveY, dayISO, startHour).slice(11, 16)}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Schedule blocks */}
               {dayBlocks.map(block => {
                 const top = dtToY(block.start, startHour);
@@ -347,15 +393,17 @@ export default function WeekTimeGrid({
                   ? Math.max(22, baseH + resizeDelta.deltaPx)
                   : baseH;
                 const task = tasks.find(t => t.id === block.taskId);
+                const isMoving = moveState?.blockId === block.id;
                 return (
-                  <div key={block.id} className="absolute left-0.5 right-0.5 z-[2]" style={{ top, height: h }}
+                  <div key={block.id} className={`absolute left-0.5 right-0.5 z-[2] ${isMoving ? "opacity-40" : ""}`} style={{ top, height: h }}
                     onClick={(e) => { e.stopPropagation(); closeQuickCreate(); }}>
                     <ScheduleBlockCard
                       block={block}
                       task={task}
                       heightPx={h}
                       onClick={onClickBlock ? () => onClickBlock(block, task) : undefined}
-                      onResizeStart={(e) => handleResizeStart(block, e, baseH)}
+                      onResizePointerDown={(e) => onResizePointerDown(block, e)}
+                      onMovePointerDown={(e) => onMovePointerDown(block, e)}
                       onConfirm={onConfirmBlock ? () => onConfirmBlock(block.id) : undefined}
                     />
                   </div>
