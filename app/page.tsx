@@ -7,6 +7,7 @@ import MentorChat from "@/components/MentorChat";
 import TaskBoard from "@/components/TaskBoard";
 import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
 import MissedRoutineModal, { type MissedItem } from "@/components/MissedRoutineModal";
+import InstagramWeekPrompt from "@/components/InstagramWeekPrompt";
 import type { MentorTask } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
 import { isRoutine } from "@/lib/mentor/taskCharacter";
@@ -197,6 +198,8 @@ export default function Home() {
           onClose={() => setMissedClosed(true)}
         />
       )}
+
+      <InstagramWeekPrompt />
     </div>
   );
 }

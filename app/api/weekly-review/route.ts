@@ -72,6 +72,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "summary, weekStart en weekEnd zijn verplicht" }, { status: 400 });
     }
 
+    // Bestaande review behouden (m.n. geüploade Instagram-data niet overschrijven).
+    const prev = await readWeeklyReview();
+    const linkinbioClicks = body.linkinbioClicks ?? prev?.linkinbioClicks ?? null;
+    const affiliateRevenueEur = body.affiliateRevenueEur ?? prev?.affiliateRevenueEur ?? null;
+    const keepInstagram = prev && prev.weekStart === body.weekStart ? prev.instagram ?? null : null;
+    const prevFunnel = prev && prev.weekStart === body.weekStart ? prev.funnel ?? null : null;
+
     const review: WeeklyReview = {
       generatedAt: body.generatedAt && !Number.isNaN(Date.parse(body.generatedAt))
         ? body.generatedAt
@@ -83,6 +90,12 @@ export async function POST(req: NextRequest) {
       focusNextWeek: Array.isArray(body.focusNextWeek) ? body.focusNextWeek.slice(0, 3).map(s => String(s).slice(0, 200)) : [],
       metrics: body.metrics && typeof body.metrics === "object" ? body.metrics : undefined,
       source: body.source ? String(body.source).slice(0, 40) : "monday-routine",
+      linkinbioClicks,
+      affiliateRevenueEur,
+      instagram: keepInstagram,
+      funnel: prevFunnel
+        ? { ...prevFunnel, linkinbioClicks, affiliateRevenueEur }
+        : null,
     };
     await writeWeeklyReview(review);
 

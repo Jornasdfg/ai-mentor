@@ -1,3 +1,5 @@
+import type { InstagramSummary } from "./instagram/parseMetaCsv";
+
 export type ModelProvider = "deepseek" | "openai";
 export type MentorPriority = "P0" | "P1" | "P2" | "P3";
 export type MentorTaskStatus = "open" | "in_progress" | "done" | "parked" | "cancelled";
@@ -365,4 +367,17 @@ export interface WeeklyReview {
     byProject?: Record<string, number>;  // afgerond per project
   };
   source?: string;                // bv. "monday-routine"
+
+  // Instagram-week (geüpload uit Meta Business Suite) + funnel naar link-in-bio en affiliate.
+  instagram?: InstagramSummary | null;
+  linkinbioClicks?: number | null;       // totaal clicks in link-in-bio (klikdata-feed/routine)
+  affiliateRevenueEur?: number | null;   // affiliate-inkomsten die week (affiliate-routine)
+  funnel?: {
+    instagramReach: number;
+    instagramViews: number;
+    storyLinkClicks: number;             // directe linkclicks vanuit stories (CSV)
+    linkinbioClicks?: number | null;
+    affiliateRevenueEur?: number | null;
+    uploadedAt: string;
+  } | null;
 }
