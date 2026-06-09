@@ -221,6 +221,48 @@ export default function WeekTimeGrid({
     );
   }
 
+  // Verlengen/inkorten met TOUCH: long-press (250ms) op de onderrand pakt 'm op; daarna slepen.
+  // Beweeg je vóór de long-press → het is scrollen (resize wordt geannuleerd).
+  function beginResizeTouch(block: ScheduleBlock, t0: { clientX: number; clientY: number }) {
+    const step = HOUR_H / (60 / SNAP_MINS);
+    const startY = t0.clientY, startX = t0.clientX;
+    let pickedUp = false, lastSnapped = 0;
+    const timer = window.setTimeout(() => {
+      pickedUp = true;
+      setResizeDelta({ blockId: block.id, deltaPx: 0 });
+      try { (navigator as Navigator & { vibrate?: (n: number) => void }).vibrate?.(15); } catch { /* ignore */ }
+    }, 250);
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener("touchmove", tm);
+      window.removeEventListener("touchend", te);
+      window.removeEventListener("touchcancel", te);
+    };
+    const tm = (e: TouchEvent) => {
+      const t = e.touches[0]; if (!t) return;
+      if (!pickedUp) {
+        if (Math.abs(t.clientY - startY) > 10 || Math.abs(t.clientX - startX) > 10) { cleanup(); setResizeDelta(null); }
+        return;
+      }
+      e.preventDefault();
+      lastSnapped = Math.round((t.clientY - startY) / step) * step;
+      setResizeDelta({ blockId: block.id, deltaPx: lastSnapped });
+    };
+    const te = (e: TouchEvent) => {
+      const wasPicked = pickedUp;
+      cleanup();
+      if (wasPicked) {
+        e.preventDefault();
+        setResizeDelta(null);
+        const deltaMins = Math.round((lastSnapped / HOUR_H) * 60 / SNAP_MINS) * SNAP_MINS;
+        if (Math.abs(deltaMins) >= SNAP_MINS) onMoveBlock(block.id, block.start, addMinsToTimeStr(block.end, deltaMins));
+      }
+    };
+    window.addEventListener("touchmove", tm, { passive: false });
+    window.addEventListener("touchend", te);
+    window.addEventListener("touchcancel", te);
+  }
+
   // Verplaatsen met de MUIS: klik-en-sleep op het blok (kleine drempel zodat een klik = openen).
   function beginBodyMoveMouse(block: ScheduleBlock, clientY0: number) {
     const dayISO = block.start.slice(0, 10);
@@ -445,7 +487,8 @@ export default function WeekTimeGrid({
                       task={task}
                       heightPx={h}
                       onClick={onClickBlock ? () => onClickBlock(block, task) : undefined}
-                      onResizeStart={(cy) => beginResize(block, cy)}
+                      onResizeMouseStart={(cy) => beginResize(block, cy)}
+                      onResizeTouchStart={(t) => beginResizeTouch(block, t)}
                       onBodyMouseDown={(cy) => beginBodyMoveMouse(block, cy)}
                       onBodyTouchStart={(t) => beginBodyMoveTouch(block, t)}
                       onConfirm={onConfirmBlock ? () => onConfirmBlock(block.id) : undefined}

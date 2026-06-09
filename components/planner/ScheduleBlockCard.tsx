@@ -25,14 +25,15 @@ interface Props {
   task?: MentorTask;
   heightPx: number;
   onClick?: () => void;
-  onResizeStart?: (clientY: number) => void;
+  onResizeMouseStart?: (clientY: number) => void;
+  onResizeTouchStart?: (t: { clientX: number; clientY: number }) => void;
   onBodyMouseDown?: (clientY: number) => void;
   onBodyTouchStart?: (t: { clientX: number; clientY: number }) => void;
   onConfirm?: () => void;
 }
 
 export default function ScheduleBlockCard({
-  block, task, heightPx, onClick, onResizeStart, onBodyMouseDown, onBodyTouchStart, onConfirm,
+  block, task, heightPx, onClick, onResizeMouseStart, onResizeTouchStart, onBodyMouseDown, onBodyTouchStart, onConfirm,
 }: Props) {
   const isSuggestion = block.source === "auto_scheduler" && !block.locked;
   const time = `${block.start.slice(11, 16)}–${block.end.slice(11, 16)}`;
@@ -46,22 +47,23 @@ export default function ScheduleBlockCard({
     onTouchStart: (e: React.TouchEvent) => { if (e.touches[0]) onBodyTouchStart?.({ clientX: e.touches[0].clientX, clientY: e.touches[0].clientY }); },
   };
 
-  // Verleng-greep (duur) — onderrand, altijd zichtbaar, ook op touch.
-  const ResizeGrip = onResizeStart ? (
+  // Verleng-zone (duur) — onzichtbare strook langs de onderrand. Geen icoon.
+  // Desktop: hover toont ns-resize-cursor, sleep = verlengen.
+  // Telefoon: ingedrukt houden op de onderrand = verlengen (long-press in de grid).
+  const canResize = (onResizeMouseStart || onResizeTouchStart) && heightPx >= 44;
+  const ResizeZone = canResize ? (
     <div
-      onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); onResizeStart(e.clientY); }}
-      onTouchStart={(e) => { e.stopPropagation(); if (e.touches[0]) onResizeStart(e.touches[0].clientY); }}
+      onMouseDown={(e) => { if (e.button === 0) { e.preventDefault(); e.stopPropagation(); onResizeMouseStart?.(e.clientY); } }}
+      onTouchStart={(e) => { e.stopPropagation(); if (e.touches[0]) onResizeTouchStart?.({ clientX: e.touches[0].clientX, clientY: e.touches[0].clientY }); }}
       onClick={(e) => e.stopPropagation()}
       style={{ touchAction: "none" }}
-      title="Sleep om de duur aan te passen"
+      title="Sleep vanaf de onderrand om de duur aan te passen"
       aria-label="Pas duur aan"
-      className="absolute bottom-0 left-0 right-0 h-5 flex items-end justify-center z-20 cursor-ns-resize bg-gradient-to-t from-black/10 to-transparent rounded-b"
-    >
-      <div className="mb-1 w-9 h-1 rounded-full bg-current opacity-50" />
-    </div>
+      className="absolute bottom-0 left-0 right-0 h-3.5 z-20 cursor-ns-resize"
+    />
   ) : null;
 
-  const bodyBottom = onResizeStart ? "bottom-4" : "";
+  const bodyBottom = "";
 
   if (isSuggestion) {
     const s = SUGGESTION_STYLE[colorKey] ?? SUGGESTION_STYLE.gray;
@@ -99,7 +101,7 @@ export default function ScheduleBlockCard({
             </div>
           )}
         </div>
-        {ResizeGrip}
+        {ResizeZone}
       </div>
     );
   }
@@ -128,7 +130,7 @@ export default function ScheduleBlockCard({
           </div>
         )}
       </div>
-      {ResizeGrip}
+      {ResizeZone}
     </div>
   );
 }
