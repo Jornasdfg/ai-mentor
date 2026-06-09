@@ -543,6 +543,18 @@ routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint
   `InstagramWeekPrompt` toont op **maandag (of dinsdag als nog niet gedaan)** een Start/Overslaan-pop-up;
   "overslaan" wordt per week in `localStorage` onthouden (`ig-skip-<maandag>`).
 
+### Affiliate/klikdata + acties (Snel inzicht / Naar mail)
+- De **"Affiliate + Klikdata Mentor"**-routine (`trig_01XgqBbxBbXw1mjL1KAvSw2X`, door Make ~ma 6u) berekent
+  affiliate-totalen + link-in-bio klikdata en **post die nu (STAP D, best-effort) naar
+  `/api/weekly-review`** (`affiliate`-blok + `linkinbioClicks` + `affiliateRevenueEur`). Hoofd-POST merget,
+  dus dit combineert met de geüploade Instagram-week tot één funnel.
+- **Knop 1 "Snel inzicht"** (`POST /api/weekly-review/insight`): korte AI-conclusies (gpt-4o-mini, token-zuinig)
+  over alle data; output wordt genormaliseerd naar bullets (json-mode tolerant) en bewaard als `insightText`.
+- **Knop 2 "Naar mail"** (`POST /api/weekly-review/email`): volledig tekstrapport (`lib/mentor/weeklyData.ts`)
+  naar `jornbooneinf@gmail.com` via **Resend** (`RESEND_API_KEY`); zonder key → de client downloadt het
+  rapport + opent een mailto-concept (zero-setup fallback). Voor diepe analyse in ChatGPT/Claude.
+- Beide knoppen staan in `InstagramUploadModal` (PC + mobiel).
+
 ---
 
 ## PWA & pushnotificaties (iPhone) ★ NIEUW
