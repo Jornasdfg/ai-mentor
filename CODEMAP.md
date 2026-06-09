@@ -530,6 +530,19 @@ niet eindeloos als "geen vrije slots" op een voorbije dag hangen.
 **Beveiliging**: `MENTOR_ROUTINE_TOKEN` staat in `/app/.env.local` (server) én in de
 routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint geeft 401.
 
+### Instagram-weekupload + funnel (Meta Business Suite)
+- **Parser** `lib/instagram/parseMetaCsv.ts`: leest NL Meta-content-exports (posts/reels én stories,
+  BOM + quoted velden), classificeert per rij (`Berichttype` → verhaal vs post/reel) en aggregeert
+  bereik/weergaven/linkclicks/volgers/interacties + top content.
+- **Upload** `POST /api/weekly-review/instagram` (multipart `postCsv`/`storyCsv`, open endpoint):
+  parse → `summarizeInstagram` → schrijft `instagram` + `funnel` in `weekly_review.json`.
+- **Funnel**: bereik/weergaven (wat volgers zagen) → link-in-bio (story-linkclicks uit CSV +
+  `linkinbioClicks` uit de klikdata-routine) → `affiliateRevenueEur` (affiliate-routine). De hoofd-POST
+  (`/api/weekly-review`) **merget** i.p.v. overschrijven, en accepteert `linkinbioClicks`/`affiliateRevenueEur`.
+- **UI**: `InstagramUploadModal` (twee file-pickers, PC + mobiel) toont funnel + breakdown + top.
+  `InstagramWeekPrompt` toont op **maandag (of dinsdag als nog niet gedaan)** een Start/Overslaan-pop-up;
+  "overslaan" wordt per week in `localStorage` onthouden (`ig-skip-<maandag>`).
+
 ---
 
 ## PWA & pushnotificaties (iPhone) ★ NIEUW
