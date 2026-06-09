@@ -94,7 +94,7 @@ export default function ScheduleBlockCard({
                     onMouseDown={(e) => e.stopPropagation()}
                     onTouchStart={(e) => e.stopPropagation()}
                     onClick={(e) => { e.stopPropagation(); onConfirm(); }}
-                    className={`shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-md transition-colors ${s.btn}`}
+                    className={`relative z-30 shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-md transition-colors ${s.btn}`}
                   >Plannen</button>
                 )}
               </div>
