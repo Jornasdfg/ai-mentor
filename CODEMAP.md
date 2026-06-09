@@ -550,9 +550,13 @@ routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint
   dus dit combineert met de geüploade Instagram-week tot één funnel.
 - **Knop 1 "Snel inzicht"** (`POST /api/weekly-review/insight`): korte AI-conclusies (gpt-4o-mini, token-zuinig)
   over alle data; output wordt genormaliseerd naar bullets (json-mode tolerant) en bewaard als `insightText`.
-- **Knop 2 "Naar mail"** (`POST /api/weekly-review/email`): volledig tekstrapport (`lib/mentor/weeklyData.ts`)
-  naar `jornbooneinf@gmail.com` via **Resend** (`RESEND_API_KEY`); zonder key → de client downloadt het
-  rapport + opent een mailto-concept (zero-setup fallback). Voor diepe analyse in ChatGPT/Claude.
+- **Knop 2 "Naar mail"** (`POST /api/weekly-review/email`): volledig tekstrapport (`lib/mentor/weeklyData.ts`).
+  Voorkeur: **vuurt de Gmail-concept-routine af** via de fire-API (`WEEKLY_EMAIL_FIRE_URL` +
+  `WEEKLY_EMAIL_FIRE_TOKEN`) — POST `{ text: <rapport> }` met header `anthropic-version: 2023-06-01`.
+  Die routine (`trig_01CMx2zgeXnR4upKX4Sxcf7u`, Gmail MCP) maakt een **concept** in
+  `jornbooneinf@gmail.com` (Gmail MCP kan alleen `create_draft`, niet verzenden). Daarna valt het terug
+  op **Resend** (`RESEND_API_KEY`) en als laatste op client-fallback (download .txt + mailto). Het concept
+  bevat alle data om in ChatGPT/Claude een diepe analyse te doen.
 - Beide knoppen staan in `InstagramUploadModal` (PC + mobiel).
 
 ---
