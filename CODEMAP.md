@@ -525,6 +525,31 @@ routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint
 
 ---
 
+## PWA & pushnotificaties (iPhone) ★ NIEUW
+
+De app is installeerbaar op het iPhone-beginscherm en stuurt Web Push-notificaties (iOS 16.4+,
+alleen vanaf het beginscherm-icoon).
+
+- **PWA**: `public/manifest.webmanifest` + iconen (`public/icon-192.png`, `icon-512.png`,
+  `apple-touch-icon.png`, gegenereerd via `scripts/gen-icons.mjs`) + `public/sw.js` (service worker:
+  `push` → `showNotification`, `notificationclick` → focus/open). Meta/links in `app/layout.tsx`.
+- **Web Push**: `lib/push/webPush.ts` (VAPID via `web-push`), `lib/push/pushStorage.ts`
+  (`data/push_subscriptions.json`). Routes: `GET /api/push/public-key`, `POST /api/push/subscribe`,
+  `/unsubscribe`, `/test`. UI: `components/EnableNotifications.tsx` (🔔-knop in de header) registreert
+  de SW, vraagt toestemming, abonneert en stuurt direct een testmelding.
+- **Triggers**:
+  - Worker-job **`reminders` elke minuut** (`lib/push/reminders.ts`, dedup via `data/notify_state.json`):
+    ~10 min vóór een vast/bevestigd blok, nieuwe `source:"mail"`-taken, en 1×/dag (na 08:00) een
+    deadline-waarschuwing (te laat/vandaag/morgen).
+  - `POST /api/weekly-review` stuurt een push als de maandag-analyse klaar is.
+- **Env**: `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` in `/app/.env.local` (privésleutel
+  nooit naar client; publieke sleutel via `/api/push/public-key`).
+- **Deploy-gotcha**: `npm install` MOET in de **alpine-container** (musl) draaien, niet op de host
+  (Ubuntu/glibc) — anders krijg je de verkeerde `@next/swc`-binding en faalt Turbopack. Gebruik
+  `docker run --rm -v /app:/app -w /app node:20-alpine npm install --no-package-lock`.
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)

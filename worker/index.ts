@@ -109,4 +109,4 @@ cron.schedule(
   { timezone: "Europe/Amsterdam" }
 );
 
-console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, scheduler-repair/10m, dedup/17m, watch-ensure/6h, briefing/07:30 AMS");
+console.log("[worker] Gestart. Jobs: outbox/5m, repair-sync/15m, scheduler-repair/10m, dedup/17m, reminders/1m, watch-ensure/6h, briefing/07:30 AMS");
