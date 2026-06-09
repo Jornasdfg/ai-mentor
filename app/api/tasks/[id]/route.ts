@@ -19,7 +19,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       "reason", "tags", "parkedReason", "coveyQuadrant",
       // Scheduler fields
       "taskKind", "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable",
-      "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode",
+      "autoIgnore", "locked", "manualSortOrder", "calendarSyncMode", "scheduleOnDate",
       // Planningsvelden (nodig om een afspraak op een vast tijdstip te zetten)
       "plannedDate", "plannedStart", "plannedEnd", "plannedMinutes",
     ];
@@ -43,7 +43,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const schedulingFields = ["estimatedMinutes", "deadline", "hardDeadline", "softDeadline",
       "autoSchedule", "schedulingWindowId", "minBlockMinutes", "splittable", "coveyQuadrant",
       // Type/tijd/pin wijzigen → flexibele taken moeten opnieuw rond de afspraak plannen
-      "taskKind", "plannedStart", "plannedEnd", "plannedMinutes", "locked"];
+      "taskKind", "plannedStart", "plannedEnd", "plannedMinutes", "locked", "scheduleOnDate"];
     if (schedulingFields.some(f => f in update)) {
       recalculateSchedule({ triggeredBy: "task_updated", horizonDays: 28, syncToGoogle: true }).catch(() => {});
     }

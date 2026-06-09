@@ -6,8 +6,10 @@ import EnableNotifications from "@/components/EnableNotifications";
 import MentorChat from "@/components/MentorChat";
 import TaskBoard from "@/components/TaskBoard";
 import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
+import MissedRoutineModal, { type MissedItem } from "@/components/MissedRoutineModal";
 import type { MentorTask } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
+import { isRoutine } from "@/lib/mentor/taskCharacter";
 
 type TabId = "planner" | "tasks" | "ai";
 
@@ -59,6 +61,9 @@ export default function Home() {
   const [tasks, setTasks]             = useState<MentorTask[]>([]);
   const [costRefresh, setCostRefresh] = useState(0);
   const [activeTab, setActiveTab]   = useState<TabId>("planner");
+  const [missedHandled, setMissedHandled] = useState<Set<string>>(new Set());
+  const [missedClosed, setMissedClosed]   = useState(false);
+  const [missedBusy, setMissedBusy]       = useState<string | null>(null);
 
   const loadTasks = useCallback(async () => {
     try {
@@ -86,6 +91,38 @@ export default function Home() {
   function handleMentorComplete() {
     setCostRefresh(n => n + 1);
     loadTasks();
+  }
+
+  // ── Gemiste routines: pop-up bij openen ("gisteren niet gedaan → vandaag plannen of overslaan") ──
+  const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+  const missedItems: MissedItem[] = tasks
+    .filter(t => isRoutine(t) && (t.status === "open" || t.status === "in_progress"))
+    .map(t => ({
+      id: t.id,
+      title: t.title,
+      missedDate: t.scheduleOnDate ?? t.recurrenceDate ?? t.hardDeadline ?? t.deadline ?? "",
+    }))
+    .filter(m => m.missedDate && m.missedDate < todayISO && !missedHandled.has(m.id));
+
+  async function planMissedToday(id: string) {
+    setMissedBusy(id);
+    try {
+      await fetch(`/api/tasks/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ scheduleOnDate: todayISO, autoSchedule: "auto", status: "open" }),
+      });
+      setMissedHandled(s => new Set(s).add(id));
+      await loadTasks();
+    } finally { setMissedBusy(null); }
+  }
+  async function skipMissed(id: string) {
+    setMissedBusy(id);
+    try {
+      await fetch(`/api/tasks/${id}/cancel`, { method: "POST" });
+      setMissedHandled(s => new Set(s).add(id));
+      await loadTasks();
+    } finally { setMissedBusy(null); }
   }
 
   return (
@@ -150,6 +187,16 @@ export default function Home() {
           </button>
         ))}
       </nav>
+
+      {!missedClosed && (
+        <MissedRoutineModal
+          items={missedItems}
+          busyId={missedBusy}
+          onPlanToday={planMissedToday}
+          onSkip={skipMissed}
+          onClose={() => setMissedClosed(true)}
+        />
+      )}
     </div>
   );
 }
