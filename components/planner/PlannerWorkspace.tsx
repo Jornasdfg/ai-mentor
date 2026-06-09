@@ -359,14 +359,6 @@ export default function PlannerWorkspace({ onTasksChange }: Props) {
         </div>
       )}
 
-      {warnings.length > 0 && (
-        <div className="px-4 py-2 bg-amber-950/30 border-b border-amber-900/40 shrink-0">
-          <div className="flex flex-wrap gap-x-4 gap-y-0.5">
-            {warnings.map((w, i) => <span key={i} className="text-[11px] text-amber-700">• {w}</span>)}
-          </div>
-        </div>
-      )}
-
       <div className="flex flex-1 min-h-0 overflow-hidden">
         {viewMode === "week" && (
           <div className="hidden sm:block w-48 shrink-0 border-r border-gray-200 overflow-hidden">
