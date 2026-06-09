@@ -557,6 +557,12 @@ routine-prompt (cloud). Bij rotatie **beide** bijwerken. Geen token → endpoint
   `jornbooneinf@gmail.com` (Gmail MCP kan alleen `create_draft`, niet verzenden). Daarna valt het terug
   op **Resend** (`RESEND_API_KEY`) en als laatste op client-fallback (download .txt + mailto). Het concept
   bevat alle data om in ChatGPT/Claude een diepe analyse te doen.
+  - **Volledigheid**: het rapport (`buildWeeklyReportText(..., full=true)`) bevat naast de samenvatting ook
+    de **ruwe Meta-CSV's** (`instagramCsv.post`/`.story`, verbatim, alle rijen) + het **volledige
+    affiliate-rapport/JSON**. De client **downloadt altijd** de complete `.txt` (gegarandeerd compleet,
+    ongeacht of het Gmail-concept grote tekst volledig overneemt).
+  - **Let op (rate limit)**: de fire-API heeft een routine-limiet (HTTP 429 "Routine limit reached");
+    bij overschrijding valt "Naar mail" terug op download + mailto. Reset ~15u of "Extra Usage" aanzetten.
 - Beide knoppen staan in `InstagramUploadModal` (PC + mobiel).
 
 ---
