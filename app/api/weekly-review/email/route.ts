@@ -16,6 +16,33 @@ export async function POST() {
 
     const text = buildWeeklyReportText(review, true);
     const subject = `Reishacker weekdata ${review.weekStart}–${review.weekEnd}`;
+
+    // Voorkeur: vuur de Gmail-concept-routine af (Claude Code routine met Gmail MCP).
+    // Maakt een concept met alle weekdata in jornbooneinf@gmail.com.
+    const fireUrl = process.env.WEEKLY_EMAIL_FIRE_URL;
+    const fireToken = process.env.WEEKLY_EMAIL_FIRE_TOKEN;
+    if (fireUrl && fireToken) {
+      try {
+        const res = await fetch(fireUrl, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${fireToken}`,
+            "Content-Type": "application/json",
+            "anthropic-version": "2023-06-01",
+          },
+          body: JSON.stringify({ text }),
+        });
+        if (res.ok) {
+          return NextResponse.json({
+            sent: true,
+            via: "gmail-draft",
+            to: TO,
+            message: "De weekdata wordt als concept in je Gmail gezet (map Concepten) — klaar om te lezen of door te sturen. Even ~1 min.",
+          });
+        }
+      } catch { /* val door naar fallback */ }
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
 
     if (apiKey) {

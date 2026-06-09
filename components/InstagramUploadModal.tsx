@@ -66,10 +66,10 @@ export default function InstagramUploadModal({ onClose, onUploaded }: Props) {
     setEmailLoading(true); setEmailMsg(null);
     try {
       const res = await fetch("/api/weekly-review/email", { method: "POST" });
-      const data = await res.json() as { sent?: boolean; to?: string; subject?: string; text?: string; error?: string };
+      const data = await res.json() as { sent?: boolean; to?: string; subject?: string; text?: string; message?: string; error?: string };
       if (!res.ok) throw new Error(data.error ?? "Mislukt");
       if (data.sent) {
-        setEmailMsg(`Verstuurd naar ${data.to}.`);
+        setEmailMsg(data.message ?? `Verstuurd naar ${data.to}.`);
       } else if (data.text) {
         // Zero-setup fallback: download volledige tekst + open mailconcept.
         const blob = new Blob([data.text], { type: "text/plain;charset=utf-8" });
