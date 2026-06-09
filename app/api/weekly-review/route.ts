@@ -6,6 +6,7 @@ import {
 } from "@/lib/mentor/mentorStorage";
 import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import { getTodayISO } from "@/lib/mentor/recurringTaskEngine";
+import { sendPushToAll } from "@/lib/push/webPush";
 import type { WeeklyReview, MentorRecurringTask } from "@/lib/mentorTypes";
 
 const WEEKLY_REVIEW_ROUTINE_ID = "recurring_weekreview";
@@ -91,6 +92,13 @@ export async function POST(req: NextRequest) {
 
     // Herplan: materialiseert de routine op de komende maandagen en plant ze in (fire-and-forget).
     recalculateSchedule({ triggeredBy: "manual", horizonDays: 28, syncToGoogle: true }).catch(() => {});
+
+    // Push: weekanalyse staat klaar (fire-and-forget).
+    sendPushToAll({
+      title: "📊 Weekanalyse staat klaar",
+      body: review.summary.slice(0, 140),
+      url: "/", tag: "weekly-review",
+    }).catch(() => {});
 
     return NextResponse.json({ ok: true, review });
   } catch (err) {

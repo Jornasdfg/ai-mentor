@@ -18,6 +18,7 @@ import { generateDailyBriefing } from "@/lib/briefing/dailyBriefing";
 import { recalculateSchedule } from "@/lib/scheduler/autoScheduler";
 import { readTasks, writeTasks } from "@/lib/mentor/mentorStorage";
 import { dedupeTasks, writeDedupSuggestions } from "@/lib/mentor/taskDedup";
+import { runReminders } from "@/lib/push/reminders";
 
 const CALENDAR_ID = process.env.GOOGLE_DEFAULT_CALENDAR_ID ?? "primary";
 
@@ -79,6 +80,12 @@ cron.schedule("*/17 * * * *", () => {
     }
     console.log(`[worker] [dedup] merged=${mergedCount} suggesties=${suggestions.length}`);
   });
+});
+
+// ── Push-herinneringen: elke minuut ──────────────────────────────────────────
+// (vóór een vast blok, nieuwe mail-taken, dagelijkse deadline-waarschuwing)
+cron.schedule("* * * * *", () => {
+  run("reminders", async () => { await runReminders(); });
 });
 
 // ── Watch ensure: every 6 hours ──────────────────────────────────────────────

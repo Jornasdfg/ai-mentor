@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import CostBadge from "@/components/CostBadge";
+import EnableNotifications from "@/components/EnableNotifications";
 import MentorChat from "@/components/MentorChat";
 import TaskBoard from "@/components/TaskBoard";
 import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
@@ -111,6 +112,7 @@ export default function Home() {
             ))}
           </nav>
         </div>
+        <EnableNotifications />
       </header>
 
       {/* Main content */}
