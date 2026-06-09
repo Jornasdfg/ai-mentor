@@ -221,20 +221,73 @@ export default function WeekTimeGrid({
     );
   }
 
-  // Verplaatsen via de sleep-greep.
-  function beginMove(block: ScheduleBlock, clientY0: number) {
+  // Verplaatsen met de MUIS: klik-en-sleep op het blok (kleine drempel zodat een klik = openen).
+  function beginBodyMoveMouse(block: ScheduleBlock, clientY0: number) {
     const dayISO = block.start.slice(0, 10);
     const origTopPx = dtToY(block.start, startHour);
-    let lastY = origTopPx;
-    setMoveState({ blockId: block.id, dayISO, y: origTopPx });
-    attachDrag(
-      (cy) => { lastY = Math.max(0, snapY(origTopPx + (cy - clientY0))); setMoveState({ blockId: block.id, dayISO, y: lastY }); },
-      () => {
+    let moved = false, lastY = origTopPx;
+    const mm = (e: MouseEvent) => {
+      if (!moved && Math.abs(e.clientY - clientY0) < 4) return;
+      moved = true;
+      lastY = Math.max(0, snapY(origTopPx + (e.clientY - clientY0)));
+      setMoveState({ blockId: block.id, dayISO, y: lastY });
+    };
+    const mu = () => {
+      window.removeEventListener("mousemove", mm);
+      window.removeEventListener("mouseup", mu);
+      if (!moved) return;
+      // Onderdruk de klik die ná een sleep volgt (anders opent het detailpaneel).
+      const sup = (ev: MouseEvent) => { ev.stopPropagation(); ev.preventDefault(); window.removeEventListener("click", sup, true); };
+      window.addEventListener("click", sup, true);
+      setMoveState(null);
+      const newStart = yToDateTime(lastY, dayISO, startHour);
+      if (newStart !== block.start) onMoveBlock(block.id, newStart, addMinsToTimeStr(newStart, block.durationMinutes));
+    };
+    window.addEventListener("mousemove", mm);
+    window.addEventListener("mouseup", mu);
+  }
+
+  // Verplaatsen met TOUCH: long-press (250ms) op het blok pakt 'm op; daarna slepen.
+  // Beweeg je vóór de long-press → het is scrollen (drag wordt geannuleerd).
+  function beginBodyMoveTouch(block: ScheduleBlock, t0: { clientX: number; clientY: number }) {
+    const dayISO = block.start.slice(0, 10);
+    const origTopPx = dtToY(block.start, startHour);
+    const startY = t0.clientY, startX = t0.clientX;
+    let pickedUp = false, lastY = origTopPx;
+    const timer = window.setTimeout(() => {
+      pickedUp = true;
+      setMoveState({ blockId: block.id, dayISO, y: origTopPx });
+      try { (navigator as Navigator & { vibrate?: (n: number) => void }).vibrate?.(15); } catch { /* ignore */ }
+    }, 250);
+    const cleanup = () => {
+      clearTimeout(timer);
+      window.removeEventListener("touchmove", tm);
+      window.removeEventListener("touchend", te);
+      window.removeEventListener("touchcancel", te);
+    };
+    const tm = (e: TouchEvent) => {
+      const t = e.touches[0]; if (!t) return;
+      if (!pickedUp) {
+        if (Math.abs(t.clientY - startY) > 10 || Math.abs(t.clientX - startX) > 10) { cleanup(); setMoveState(null); }
+        return;
+      }
+      e.preventDefault();
+      lastY = Math.max(0, snapY(origTopPx + (t.clientY - startY)));
+      setMoveState({ blockId: block.id, dayISO, y: lastY });
+    };
+    const te = (e: TouchEvent) => {
+      const wasPicked = pickedUp;
+      cleanup();
+      if (wasPicked) {
+        e.preventDefault();
         setMoveState(null);
         const newStart = yToDateTime(lastY, dayISO, startHour);
         if (newStart !== block.start) onMoveBlock(block.id, newStart, addMinsToTimeStr(newStart, block.durationMinutes));
-      },
-    );
+      }
+    };
+    window.addEventListener("touchmove", tm, { passive: false });
+    window.addEventListener("touchend", te);
+    window.addEventListener("touchcancel", te);
   }
 
   const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
@@ -376,15 +429,16 @@ export default function WeekTimeGrid({
 
               {/* Schedule blocks */}
               {dayBlocks.map(block => {
-                const top = dtToY(block.start, startHour);
                 const baseH = Math.max(22, minsToH(block.durationMinutes));
                 const h = resizeDelta?.blockId === block.id
                   ? Math.max(22, baseH + resizeDelta.deltaPx)
                   : baseH;
                 const task = tasks.find(t => t.id === block.taskId);
                 const isMoving = moveState?.blockId === block.id;
+                // Tijdens slepen volgt de kaart de vinger; anders staat hij op zijn eigen tijd.
+                const top = isMoving ? moveState!.y : dtToY(block.start, startHour);
                 return (
-                  <div key={block.id} className={`absolute left-0.5 right-0.5 z-[2] ${isMoving ? "opacity-40" : ""}`} style={{ top, height: h }}
+                  <div key={block.id} className={`absolute left-0.5 right-0.5 ${isMoving ? "z-40 shadow-lg ring-2 ring-blue-400/60 rounded" : "z-[2]"}`} style={{ top, height: h }}
                     onClick={(e) => { e.stopPropagation(); closeQuickCreate(); }}>
                     <ScheduleBlockCard
                       block={block}
@@ -392,7 +446,8 @@ export default function WeekTimeGrid({
                       heightPx={h}
                       onClick={onClickBlock ? () => onClickBlock(block, task) : undefined}
                       onResizeStart={(cy) => beginResize(block, cy)}
-                      onMoveStart={(cy) => beginMove(block, cy)}
+                      onBodyMouseDown={(cy) => beginBodyMoveMouse(block, cy)}
+                      onBodyTouchStart={(t) => beginBodyMoveTouch(block, t)}
                       onConfirm={onConfirmBlock ? () => onConfirmBlock(block.id) : undefined}
                     />
                   </div>

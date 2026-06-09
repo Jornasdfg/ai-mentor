@@ -26,34 +26,27 @@ interface Props {
   heightPx: number;
   onClick?: () => void;
   onResizeStart?: (clientY: number) => void;
-  onMoveStart?: (clientY: number) => void;
+  onBodyMouseDown?: (clientY: number) => void;
+  onBodyTouchStart?: (t: { clientX: number; clientY: number }) => void;
   onConfirm?: () => void;
 }
 
-export default function ScheduleBlockCard({ block, task, heightPx, onClick, onResizeStart, onMoveStart, onConfirm }: Props) {
+export default function ScheduleBlockCard({
+  block, task, heightPx, onClick, onResizeStart, onBodyMouseDown, onBodyTouchStart, onConfirm,
+}: Props) {
   const isSuggestion = block.source === "auto_scheduler" && !block.locked;
   const time = `${block.start.slice(11, 16)}–${block.end.slice(11, 16)}`;
   const isSmall = heightPx < 40;
   const colorKey = block.colorState ?? "gray";
   const routine = task ? isRoutine(task) : false;
-  const showMoveGrip = !!onMoveStart && heightPx >= 30;
 
-  // Sleep-greep (verplaatsen) — rechtsboven, touch-action:none zodat slepen niet scrollt.
-  const MoveGrip = showMoveGrip ? (
-    <div
-      onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); onMoveStart!(e.clientY); }}
-      onTouchStart={(e) => { e.stopPropagation(); if (e.touches[0]) onMoveStart!(e.touches[0].clientY); }}
-      onClick={(e) => e.stopPropagation()}
-      style={{ touchAction: "none" }}
-      title="Sleep om te verplaatsen"
-      aria-label="Verplaats blok"
-      className="absolute top-0 right-0 w-9 h-7 flex items-center justify-center z-20 cursor-grab active:cursor-grabbing opacity-50 hover:opacity-90"
-    >
-      <span className="text-[13px] leading-none select-none">⠿</span>
-    </div>
-  ) : null;
+  // Hele blok = sleepbaar (verplaatsen). Tikken/klikken (zonder slepen) opent details.
+  const bodyDragProps = {
+    onMouseDown: (e: React.MouseEvent) => { if (e.button === 0) onBodyMouseDown?.(e.clientY); },
+    onTouchStart: (e: React.TouchEvent) => { if (e.touches[0]) onBodyTouchStart?.({ clientX: e.touches[0].clientX, clientY: e.touches[0].clientY }); },
+  };
 
-  // Verleng-greep (duur) — onderrand, altijd zichtbaar (ook op touch).
+  // Verleng-greep (duur) — onderrand, altijd zichtbaar, ook op touch.
   const ResizeGrip = onResizeStart ? (
     <div
       onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); onResizeStart(e.clientY); }}
@@ -62,23 +55,24 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
       style={{ touchAction: "none" }}
       title="Sleep om de duur aan te passen"
       aria-label="Pas duur aan"
-      className="absolute bottom-0 left-0 right-0 h-4 flex items-end justify-center z-20 cursor-ns-resize"
+      className="absolute bottom-0 left-0 right-0 h-5 flex items-end justify-center z-20 cursor-ns-resize bg-gradient-to-t from-black/10 to-transparent rounded-b"
     >
-      <div className="mb-0.5 w-8 h-1 rounded-full bg-current opacity-40" />
+      <div className="mb-1 w-9 h-1 rounded-full bg-current opacity-50" />
     </div>
   ) : null;
 
-  const bodyBottom = onResizeStart ? "bottom-3.5" : "";
+  const bodyBottom = onResizeStart ? "bottom-4" : "";
 
   if (isSuggestion) {
     const s = SUGGESTION_STYLE[colorKey] ?? SUGGESTION_STYLE.gray;
     return (
       <div className="h-full w-full relative group">
         <div
+          {...bodyDragProps}
           onClick={onClick}
           className={`absolute inset-0 ${bodyBottom} rounded-r overflow-hidden select-none
-            bg-white/40 border border-dashed ${s.border} ${s.text} cursor-pointer transition-all hover:bg-gray-100/50`}
-          title={`Suggestie: ${block.title} | ${time}`}
+            bg-white/40 border border-dashed ${s.border} ${s.text} cursor-grab active:cursor-grabbing transition-all hover:bg-gray-100/50`}
+          title={`${block.title} | ${time} · sleep om te verplaatsen, tik voor details`}
         >
           {isSmall ? (
             <div className="px-1.5 py-0.5 flex items-center gap-1 h-full">
@@ -87,14 +81,16 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
             </div>
           ) : (
             <div className="px-1.5 py-1 h-full flex flex-col justify-between">
-              <div className="flex items-start gap-1 pr-7">
+              <div className="flex items-start gap-1">
                 <span className="text-[9px] mt-0.5 opacity-50 shrink-0">◌</span>
                 <span className="text-xs font-medium leading-tight line-clamp-2 opacity-80">{routine ? "🔁 " : ""}{block.title}</span>
               </div>
               <div className="flex items-center justify-between mt-auto gap-1">
                 <span className="text-[10px] opacity-50">{time}</span>
-                {onConfirm && heightPx >= 52 && (
+                {onConfirm && heightPx >= 56 && (
                   <button
+                    onMouseDown={(e) => e.stopPropagation()}
+                    onTouchStart={(e) => e.stopPropagation()}
                     onClick={(e) => { e.stopPropagation(); onConfirm(); }}
                     className={`shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-md transition-colors ${s.btn}`}
                   >Plannen</button>
@@ -103,7 +99,6 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
             </div>
           )}
         </div>
-        {MoveGrip}
         {ResizeGrip}
       </div>
     );
@@ -113,9 +108,10 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
   return (
     <div className="h-full w-full relative group">
       <div
+        {...bodyDragProps}
         onClick={onClick}
-        className={`absolute inset-0 ${bodyBottom} rounded-r overflow-hidden select-none ${s.bg} ${s.border} ${s.text} transition-all ${onClick ? "cursor-pointer hover:brightness-110" : ""}`}
-        title={`${block.title} | ${time} | ${block.durationMinutes}min${block.locked ? " | vergrendeld" : ""}`}
+        className={`absolute inset-0 ${bodyBottom} rounded-r overflow-hidden select-none ${s.bg} ${s.border} ${s.text} transition-all cursor-grab active:cursor-grabbing`}
+        title={`${block.title} | ${time} | ${block.durationMinutes}min · sleep om te verplaatsen, tik voor details`}
       >
         {isSmall ? (
           <div className="px-1.5 py-0.5 flex items-center gap-1 h-full">
@@ -124,7 +120,7 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
           </div>
         ) : (
           <div className="px-1.5 py-1 h-full flex flex-col justify-between">
-            <div className="flex items-start gap-1 pr-7">
+            <div className="flex items-start gap-1">
               {task?.priority && <span className={`mt-0.5 w-2 h-2 rounded-full shrink-0 ${PRIORITY_DOT[task.priority] ?? "bg-gray-500"}`} />}
               <span className="text-xs font-semibold leading-tight line-clamp-2">{routine ? "🔁 " : ""}{block.title}</span>
             </div>
@@ -132,7 +128,6 @@ export default function ScheduleBlockCard({ block, task, heightPx, onClick, onRe
           </div>
         )}
       </div>
-      {MoveGrip}
       {ResizeGrip}
     </div>
   );
