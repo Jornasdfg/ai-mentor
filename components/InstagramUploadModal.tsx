@@ -29,18 +29,62 @@ export default function InstagramUploadModal({ onClose, onUploaded }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [ig, setIg] = useState<InstagramSummary | null>(null);
   const [funnel, setFunnel] = useState<Funnel | null>(null);
+  const [hasData, setHasData] = useState(false);
+  const [insight, setInsight] = useState<string | null>(null);
+  const [insightLoading, setInsightLoading] = useState(false);
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [emailMsg, setEmailMsg] = useState<string | null>(null);
   const postRef = useRef<HTMLInputElement>(null);
   const storyRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch("/api/weekly-review")
       .then(r => r.json())
-      .then((j: { review: { instagram?: InstagramSummary | null; funnel?: Funnel | null } | null }) => {
-        if (j.review?.instagram) setIg(j.review.instagram);
-        if (j.review?.funnel) setFunnel(j.review.funnel);
+      .then((j: { review: { instagram?: InstagramSummary | null; funnel?: Funnel | null; affiliate?: unknown; insightText?: string | null } | null }) => {
+        const r = j.review;
+        if (r?.instagram) setIg(r.instagram);
+        if (r?.funnel) setFunnel(r.funnel);
+        if (r?.insightText) setInsight(r.insightText);
+        setHasData(!!(r?.instagram || r?.funnel || r?.affiliate));
       })
       .catch(() => {});
   }, []);
+
+  async function runInsight() {
+    setInsightLoading(true); setEmailMsg(null);
+    try {
+      const res = await fetch("/api/weekly-review/insight", { method: "POST" });
+      const data = await res.json() as { insight?: string; error?: string };
+      if (!res.ok) throw new Error(data.error ?? "Mislukt");
+      setInsight(data.insight ?? "");
+    } catch (err) {
+      setInsight(null); setEmailMsg(err instanceof Error ? err.message : "Fout");
+    } finally { setInsightLoading(false); }
+  }
+
+  async function sendEmail() {
+    setEmailLoading(true); setEmailMsg(null);
+    try {
+      const res = await fetch("/api/weekly-review/email", { method: "POST" });
+      const data = await res.json() as { sent?: boolean; to?: string; subject?: string; text?: string; error?: string };
+      if (!res.ok) throw new Error(data.error ?? "Mislukt");
+      if (data.sent) {
+        setEmailMsg(`Verstuurd naar ${data.to}.`);
+      } else if (data.text) {
+        // Zero-setup fallback: download volledige tekst + open mailconcept.
+        const blob = new Blob([data.text], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; a.download = "reishacker-weekdata.txt"; a.click();
+        URL.revokeObjectURL(url);
+        const body = encodeURIComponent(data.text.slice(0, 6000));
+        window.location.href = `mailto:${data.to}?subject=${encodeURIComponent(data.subject ?? "Weekdata")}&body=${body}`;
+        setEmailMsg("Mail nog niet automatisch ingesteld — bestand gedownload + mailconcept geopend.");
+      }
+    } catch (err) {
+      setEmailMsg(err instanceof Error ? err.message : "Fout");
+    } finally { setEmailLoading(false); }
+  }
 
   async function upload() {
     if (!postFile && !storyFile) { setError("Kies minstens één CSV (posts/reels of stories)."); return; }
@@ -122,6 +166,26 @@ export default function InstagramUploadModal({ onClose, onUploaded }: Props) {
           >
             {uploading ? "Analyseren…" : "Uploaden & analyseren"}
           </button>
+
+          {/* Acties na de runs */}
+          <div className="rounded-xl border border-gray-200 bg-white p-3 space-y-2">
+            <p className="text-[11px] font-bold text-zinc-700 uppercase tracking-wide">Na de runs</p>
+            <div className="flex gap-2">
+              <button onClick={runInsight} disabled={insightLoading || !hasData}
+                className="flex-1 py-2 text-xs font-bold rounded-full bg-gradient-to-br from-accent to-accent2 text-white shadow-soft active:scale-95 disabled:opacity-50 transition-all">
+                {insightLoading ? "Denkt na…" : "⚡ Snel inzicht"}
+              </button>
+              <button onClick={sendEmail} disabled={emailLoading || !hasData}
+                className="flex-1 py-2 text-xs font-bold rounded-full bg-white border border-gray-200 text-zinc-700 hover:border-accent/40 hover:text-accent active:scale-95 disabled:opacity-50 transition-all">
+                {emailLoading ? "Versturen…" : "✉️ Naar mail"}
+              </button>
+            </div>
+            {!hasData && <p className="text-[10px] text-zinc-500">Upload eerst je Instagram-week of wacht op de maandag-routine.</p>}
+            {emailMsg && <p className="text-[11px] text-zinc-600">{emailMsg}</p>}
+            {insight && (
+              <div className="rounded-lg bg-blue-50 border border-blue-100 px-3 py-2 text-[12px] text-zinc-800 whitespace-pre-wrap leading-relaxed break-anywhere">{insight}</div>
+            )}
+          </div>
 
           {ig && (
             <div className="space-y-3 pt-1">

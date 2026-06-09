@@ -372,6 +372,12 @@ export interface WeeklyReview {
   instagram?: InstagramSummary | null;
   linkinbioClicks?: number | null;       // totaal clicks in link-in-bio (klikdata-feed/routine)
   affiliateRevenueEur?: number | null;   // affiliate-inkomsten die week (affiliate-routine)
+  // Volledige DATA-regel van de "Affiliate + Klikdata Mentor"-routine (maandag 6u): affiliate-totalen
+  // per netwerk + link-in-bio klikdata. Bewaard zodat de app dit kan combineren/mailen.
+  affiliate?: Record<string, number | string> | null;
+  // Korte AI-conclusies (Knop 1 "Snel inzicht").
+  insightText?: string | null;
+  insightAt?: string | null;
   funnel?: {
     instagramReach: number;
     instagramViews: number;

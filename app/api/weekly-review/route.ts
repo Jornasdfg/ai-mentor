@@ -74,10 +74,20 @@ export async function POST(req: NextRequest) {
 
     // Bestaande review behouden (m.n. geüploade Instagram-data niet overschrijven).
     const prev = await readWeeklyReview();
-    const linkinbioClicks = body.linkinbioClicks ?? prev?.linkinbioClicks ?? null;
-    const affiliateRevenueEur = body.affiliateRevenueEur ?? prev?.affiliateRevenueEur ?? null;
-    const keepInstagram = prev && prev.weekStart === body.weekStart ? prev.instagram ?? null : null;
-    const prevFunnel = prev && prev.weekStart === body.weekStart ? prev.funnel ?? null : null;
+    const sameWeek = !!prev && prev.weekStart === body.weekStart;
+    const toNum = (v: unknown): number | null => {
+      const n = typeof v === "number" ? v : typeof v === "string" ? parseFloat(v.replace(",", ".").replace(/[^\d.-]/g, "")) : NaN;
+      return Number.isFinite(n) ? n : null;
+    };
+    const affiliate = body.affiliate ?? (sameWeek ? prev!.affiliate ?? null : null);
+    const linkinbioClicks = body.linkinbioClicks
+      ?? toNum(affiliate?.["linkinbio_outbound_kliks_7d"])
+      ?? (sameWeek ? prev!.linkinbioClicks ?? null : null) ?? null;
+    const affiliateRevenueEur = body.affiliateRevenueEur
+      ?? toNum(affiliate?.["totaal_commissie_eur"])
+      ?? (sameWeek ? prev!.affiliateRevenueEur ?? null : null) ?? null;
+    const keepInstagram = sameWeek ? prev!.instagram ?? null : null;
+    const prevFunnel = sameWeek ? prev!.funnel ?? null : null;
 
     const review: WeeklyReview = {
       generatedAt: body.generatedAt && !Number.isNaN(Date.parse(body.generatedAt))
@@ -92,7 +102,10 @@ export async function POST(req: NextRequest) {
       source: body.source ? String(body.source).slice(0, 40) : "monday-routine",
       linkinbioClicks,
       affiliateRevenueEur,
+      affiliate,
       instagram: keepInstagram,
+      insightText: sameWeek ? prev!.insightText ?? null : null,
+      insightAt: sameWeek ? prev!.insightAt ?? null : null,
       funnel: prevFunnel
         ? { ...prevFunnel, linkinbioClicks, affiliateRevenueEur }
         : null,
