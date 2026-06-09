@@ -13,6 +13,26 @@ const SYSTEM =
   "Wees scherp en bruikbaar, max ~120 woorden, eindig met één concrete actie voor deze week. " +
   "Herhaal niet alle ruwe cijfers; geef inzicht. Geen JSON, alleen bullets.";
 
+// De app-AI-client kan JSON forceren; haal er nette bullets uit ongeacht de vorm.
+function normalizeInsight(text: string): string {
+  const t = (text ?? "").trim();
+  try {
+    const j = JSON.parse(t) as unknown;
+    const arr = Array.isArray(j)
+      ? j
+      : (() => {
+          const o = j as Record<string, unknown>;
+          const known = o.result ?? o.conclusions ?? o.bullets ?? o.insights ?? o.items;
+          if (Array.isArray(known)) return known;
+          const firstArray = Object.values(o).find(v => Array.isArray(v));
+          return Array.isArray(firstArray) ? firstArray : null;
+        })();
+    if (Array.isArray(arr)) return arr.map(x => String(x).trim()).filter(Boolean).join("\n");
+    if (typeof j === "string") return j;
+  } catch { /* geen JSON → ruwe tekst */ }
+  return t;
+}
+
 // Knop 1: korte AI-conclusies in de app (token-zuinig: compacte context, gpt-4o-mini).
 export async function POST() {
   try {
@@ -25,7 +45,7 @@ export async function POST() {
     const ai = await client.completeChat(SYSTEM, [{ role: "user", content: context }]);
     addCost(ai.inputTokens, ai.outputTokens, ai.costUSD).catch(() => {});
 
-    const insight = (ai.text ?? "").trim();
+    const insight = normalizeInsight(ai.text ?? "");
     await writeWeeklyReview({ ...review, insightText: insight, insightAt: new Date().toISOString() });
 
     return NextResponse.json({ insight, costUSD: ai.costUSD });
