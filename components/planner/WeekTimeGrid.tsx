@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ScheduleBlock, MentorTask } from "@/lib/mentorTypes";
 import ScheduleBlockCard from "./ScheduleBlockCard";
 import GoogleEventBlock from "./GoogleEventBlock";
@@ -93,7 +93,6 @@ export default function WeekTimeGrid({
   const [resizeDelta, setResizeDelta] = useState<{ blockId: string; deltaPx: number } | null>(null);
   // Move state (pointer-based, werkt op touch + muis)
   const [moveState, setMoveState] = useState<{ blockId: string; dayISO: string; y: number } | null>(null);
-  const moveRef = useRef<{ block: ScheduleBlock; startClientY: number; origTopPx: number; dayISO: string } | null>(null);
 
   // Quick create state
   const [quickCreate, setQuickCreate] = useState<QuickCreate | null>(null);
@@ -189,64 +188,54 @@ export default function WeekTimeGrid({
     setQcTitle("");
   }
 
-  // Resize via pointer-events (touch + muis). De greep heeft touch-action:none zodat slepen niet scrollt.
-  const onResizePointerDown = useCallback((block: ScheduleBlock, e: React.PointerEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch { /* ignore */ }
-    const startClientY = e.clientY;
+  // Universele drag: muis + touch (touchmove passive:false → preventDefault stopt scroll op iOS).
+  function attachDrag(onMoveY: (clientY: number) => void, onEnd: () => void) {
+    const mm = (e: MouseEvent) => onMoveY(e.clientY);
+    const tm = (e: TouchEvent) => { if (e.touches[0]) { e.preventDefault(); onMoveY(e.touches[0].clientY); } };
+    const finish = () => {
+      window.removeEventListener("mousemove", mm);
+      window.removeEventListener("mouseup", finish);
+      window.removeEventListener("touchmove", tm);
+      window.removeEventListener("touchend", finish);
+      window.removeEventListener("touchcancel", finish);
+      onEnd();
+    };
+    window.addEventListener("mousemove", mm);
+    window.addEventListener("mouseup", finish);
+    window.addEventListener("touchmove", tm, { passive: false });
+    window.addEventListener("touchend", finish);
+    window.addEventListener("touchcancel", finish);
+  }
+
+  // Verlengen/inkorten via de onderrand-greep.
+  function beginResize(block: ScheduleBlock, clientY0: number) {
     const step = HOUR_H / (60 / SNAP_MINS);
+    let lastSnapped = 0;
+    attachDrag(
+      (cy) => { lastSnapped = Math.round((cy - clientY0) / step) * step; setResizeDelta({ blockId: block.id, deltaPx: lastSnapped }); },
+      () => {
+        setResizeDelta(null);
+        const deltaMins = Math.round((lastSnapped / HOUR_H) * 60 / SNAP_MINS) * SNAP_MINS;
+        if (Math.abs(deltaMins) >= SNAP_MINS) onMoveBlock(block.id, block.start, addMinsToTimeStr(block.end, deltaMins));
+      },
+    );
+  }
 
-    function onMove(me: PointerEvent) {
-      const snapped = Math.round((me.clientY - startClientY) / step) * step;
-      setResizeDelta({ blockId: block.id, deltaPx: snapped });
-    }
-    function onUp(me: PointerEvent) {
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-      window.removeEventListener("pointercancel", onUp);
-      const deltaMins = Math.round(((me.clientY - startClientY) / HOUR_H) * 60 / SNAP_MINS) * SNAP_MINS;
-      setResizeDelta(null);
-      if (Math.abs(deltaMins) >= SNAP_MINS) {
-        onMoveBlock(block.id, block.start, addMinsToTimeStr(block.end, deltaMins));
-      }
-    }
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    window.addEventListener("pointercancel", onUp);
-  }, [onMoveBlock]);
-
-  // Verplaatsen via pointer-events (touch + muis). Sleep-greep met touch-action:none.
-  const onMovePointerDown = useCallback((block: ScheduleBlock, e: React.PointerEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch { /* ignore */ }
+  // Verplaatsen via de sleep-greep.
+  function beginMove(block: ScheduleBlock, clientY0: number) {
     const dayISO = block.start.slice(0, 10);
     const origTopPx = dtToY(block.start, startHour);
-    moveRef.current = { block, startClientY: e.clientY, origTopPx, dayISO };
+    let lastY = origTopPx;
     setMoveState({ blockId: block.id, dayISO, y: origTopPx });
-
-    function onMove(me: PointerEvent) {
-      const m = moveRef.current; if (!m) return;
-      const y = Math.max(0, snapY(m.origTopPx + (me.clientY - m.startClientY)));
-      setMoveState({ blockId: m.block.id, dayISO: m.dayISO, y });
-    }
-    function onUp(me: PointerEvent) {
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-      window.removeEventListener("pointercancel", onUp);
-      const m = moveRef.current; moveRef.current = null; setMoveState(null);
-      if (!m) return;
-      const y = Math.max(0, snapY(m.origTopPx + (me.clientY - m.startClientY)));
-      const newStart = yToDateTime(y, m.dayISO, startHour);
-      if (newStart !== m.block.start) {
-        onMoveBlock(m.block.id, newStart, addMinsToTimeStr(newStart, m.block.durationMinutes));
-      }
-    }
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    window.addEventListener("pointercancel", onUp);
-  }, [onMoveBlock, startHour]);
+    attachDrag(
+      (cy) => { lastY = Math.max(0, snapY(origTopPx + (cy - clientY0))); setMoveState({ blockId: block.id, dayISO, y: lastY }); },
+      () => {
+        setMoveState(null);
+        const newStart = yToDateTime(lastY, dayISO, startHour);
+        if (newStart !== block.start) onMoveBlock(block.id, newStart, addMinsToTimeStr(newStart, block.durationMinutes));
+      },
+    );
+  }
 
   const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
 
@@ -402,8 +391,8 @@ export default function WeekTimeGrid({
                       task={task}
                       heightPx={h}
                       onClick={onClickBlock ? () => onClickBlock(block, task) : undefined}
-                      onResizePointerDown={(e) => onResizePointerDown(block, e)}
-                      onMovePointerDown={(e) => onMovePointerDown(block, e)}
+                      onResizeStart={(cy) => beginResize(block, cy)}
+                      onMoveStart={(cy) => beginMove(block, cy)}
                       onConfirm={onConfirmBlock ? () => onConfirmBlock(block.id) : undefined}
                     />
                   </div>

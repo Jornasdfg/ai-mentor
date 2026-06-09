@@ -25,48 +25,50 @@ interface Props {
   task?: MentorTask;
   heightPx: number;
   onClick?: () => void;
-  onResizePointerDown?: (e: React.PointerEvent) => void;
-  onMovePointerDown?: (e: React.PointerEvent) => void;
+  onResizeStart?: (clientY: number) => void;
+  onMoveStart?: (clientY: number) => void;
   onConfirm?: () => void;
 }
 
-export default function ScheduleBlockCard({ block, task, heightPx, onClick, onResizePointerDown, onMovePointerDown, onConfirm }: Props) {
+export default function ScheduleBlockCard({ block, task, heightPx, onClick, onResizeStart, onMoveStart, onConfirm }: Props) {
   const isSuggestion = block.source === "auto_scheduler" && !block.locked;
   const time = `${block.start.slice(11, 16)}–${block.end.slice(11, 16)}`;
   const isSmall = heightPx < 40;
   const colorKey = block.colorState ?? "gray";
   const routine = task ? isRoutine(task) : false;
-  const showMoveGrip = !!onMovePointerDown && heightPx >= 30;
+  const showMoveGrip = !!onMoveStart && heightPx >= 30;
 
   // Sleep-greep (verplaatsen) — rechtsboven, touch-action:none zodat slepen niet scrollt.
   const MoveGrip = showMoveGrip ? (
     <div
-      onPointerDown={(e) => { e.stopPropagation(); onMovePointerDown!(e); }}
+      onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); onMoveStart!(e.clientY); }}
+      onTouchStart={(e) => { e.stopPropagation(); if (e.touches[0]) onMoveStart!(e.touches[0].clientY); }}
       onClick={(e) => e.stopPropagation()}
       style={{ touchAction: "none" }}
       title="Sleep om te verplaatsen"
       aria-label="Verplaats blok"
-      className="absolute top-0 right-0 w-8 h-6 flex items-center justify-center z-20 cursor-grab active:cursor-grabbing opacity-50 hover:opacity-90"
+      className="absolute top-0 right-0 w-9 h-7 flex items-center justify-center z-20 cursor-grab active:cursor-grabbing opacity-50 hover:opacity-90"
     >
-      <span className="text-[12px] leading-none select-none">⠿</span>
+      <span className="text-[13px] leading-none select-none">⠿</span>
     </div>
   ) : null;
 
   // Verleng-greep (duur) — onderrand, altijd zichtbaar (ook op touch).
-  const ResizeGrip = onResizePointerDown ? (
+  const ResizeGrip = onResizeStart ? (
     <div
-      onPointerDown={(e) => { e.stopPropagation(); onResizePointerDown(e); }}
+      onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); onResizeStart(e.clientY); }}
+      onTouchStart={(e) => { e.stopPropagation(); if (e.touches[0]) onResizeStart(e.touches[0].clientY); }}
       onClick={(e) => e.stopPropagation()}
       style={{ touchAction: "none" }}
       title="Sleep om de duur aan te passen"
       aria-label="Pas duur aan"
-      className="absolute bottom-0 left-0 right-0 h-3.5 flex items-end justify-center z-20 cursor-ns-resize"
+      className="absolute bottom-0 left-0 right-0 h-4 flex items-end justify-center z-20 cursor-ns-resize"
     >
-      <div className="mb-0.5 w-7 h-1 rounded-full bg-current opacity-40" />
+      <div className="mb-0.5 w-8 h-1 rounded-full bg-current opacity-40" />
     </div>
   ) : null;
 
-  const bodyBottom = onResizePointerDown ? "bottom-3" : "";
+  const bodyBottom = onResizeStart ? "bottom-3.5" : "";
 
   if (isSuggestion) {
     const s = SUGGESTION_STYLE[colorKey] ?? SUGGESTION_STYLE.gray;
