@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-10T03:00:01.057Z",
+    "updatedAt": "2026-06-10T04:00:01.014Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-10T03:00:01.057Z",
+      "lastSyncedAt": "2026-06-10T04:00:01.014Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1886,7 +1886,7 @@
     "estimatedMinutes": 60,
     "source": "manual_input",
     "createdAt": "2026-06-09",
-    "updatedAt": "2026-06-10T02:55:00.827Z",
+    "updatedAt": "2026-06-10T03:55:00.775Z",
     "tags": [],
     "plannedDate": "2026-06-10",
     "plannedStart": "2026-06-10T19:30:00+02:00",
@@ -1905,7 +1905,7 @@
       "calendarId": "primary",
       "eventId": "3c83i605uf7h2auh1o0s7gf84s",
       "htmlLink": "https://www.google.com/calendar/event?eid=M2M4M2k2MDV1ZjdoMmF1aDFvMHM3Z2Y4NHMgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-10T02:55:00.827Z",
+      "lastSyncedAt": "2026-06-10T03:55:00.775Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-09T17:40:01.665Z"
