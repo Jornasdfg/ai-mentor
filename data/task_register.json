@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-15T21:00:00.788Z",
+    "updatedAt": "2026-06-15T22:00:00.835Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-15T21:00:00.788Z",
+      "lastSyncedAt": "2026-06-15T22:00:00.835Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -2121,5 +2121,43 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-16"
+  },
+  {
+    "id": "task_1781560800690_vy5p",
+    "title": "📊 Weekanalyse doorlezen & week plannen",
+    "project": "Routine",
+    "status": "open",
+    "priority": "P1",
+    "source": "recurring_manual",
+    "deadline": "2026-08-17",
+    "hardDeadline": "2026-08-17",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 20,
+    "nextAction": "Lees de weekanalyse en bepaal de focus voor deze week",
+    "tags": [
+      "weekreview",
+      "routine",
+      "recurring"
+    ],
+    "reason": "Routine: \"📊 Weekanalyse doorlezen & week plannen\"",
+    "isRecurringInstance": true,
+    "recurrenceTemplateId": "recurring_weekreview",
+    "recurrenceDate": "2026-08-17",
+    "recurrenceKey": "recurring_weekreview:2026-08-17",
+    "plannedDate": "2026-08-17",
+    "plannedStart": "2026-08-17T09:00:00",
+    "plannedEnd": "2026-08-17T09:20:00",
+    "plannedMinutes": 20,
+    "taskKind": "routine",
+    "autoSchedule": "auto",
+    "scheduleOnDate": "2026-08-17",
+    "calendarSyncMode": "none",
+    "createdAt": "2026-06-16",
+    "updatedAt": "2026-06-16",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   }
 ]
