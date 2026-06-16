@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "source": "gmail",
+    "docType": "factuur",
+    "merchant": "Vimexx",
+    "amount": "",
+    "date": "2026-06-16",
+    "kind": "zakelijk",
+    "paymentStatus": "openstaand",
+    "category": "Hosting",
+    "description": "Openstaande factuur / bestelling 20264776077 — handmatig betalen vóór vervaldatum (verlenging hosting/domein)",
+    "dedupKey": "factuur:vimexx:20264776077",
+    "sourceUrl": "https://mail.google.com/mail/u/0/#all/19ecdf62cc5e0d9a"
+  }
+]
