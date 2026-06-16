@@ -676,6 +676,10 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
   `<input accept="image/*" capture>`), bewerken/wissen.
 - **Env**: `RECEIPTS_TOKEN` in `/app/.env.local` (alleen voor de ingest-route; niet in de client).
   Na wijzigen env de stack herladen met **beide** compose-bestanden.
+- **nginx upload-limiet (server, niet in repo)**: foto's zijn enkele MB's → nginx default
+  `client_max_body_size 1M` gaf **413 Request Entity Too Large**. Opgelost met
+  `client_max_body_size 25M;` in het HTTPS-server-blok van `/etc/nginx/sites-enabled/ai-mentor`
+  (`nginx -t` + `systemctl reload nginx`). App-route limiteert zelf op 20MB.
 - **iPhone-Shortcut (minimaal)**: Wallet-/Transactie-automatisering → **Maak foto** → **Converteer naar
   JPEG** → "Inhoud van URL ophalen" `POST` multipart `photo=<JPEG>` naar `…/api/receipts/ingest` met de
   token-header. **Geen vragen in de Shortcut** — de AI leest de details alvast in en de bon komt als
