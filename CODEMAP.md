@@ -676,8 +676,10 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
   `<input accept="image/*" capture>`), bewerken/wissen.
 - **Env**: `RECEIPTS_TOKEN` in `/app/.env.local` (alleen voor de ingest-route; niet in de client).
   Na wijzigen env de stack herladen met **beide** compose-bestanden.
-- **iPhone-Shortcut**: Wallet-/Transactie-automatisering → foto → "Vraag om invoer" → **Converteer naar
-  JPEG** → "Inhoud van URL ophalen" `POST` multipart naar `…/api/receipts/ingest` met de token-header.
+- **iPhone-Shortcut (minimaal)**: Wallet-/Transactie-automatisering → **Maak foto** → **Converteer naar
+  JPEG** → "Inhoud van URL ophalen" `POST` multipart `photo=<JPEG>` naar `…/api/receipts/ingest` met de
+  token-header. **Geen vragen in de Shortcut** — de AI leest de details alvast in en de bon komt als
+  `reviewed:false` ("Te controleren") binnen; type (zakelijk/privé) + omschrijving zet je daarna in de app.
 
 ---
 
