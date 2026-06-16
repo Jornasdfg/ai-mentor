@@ -13,7 +13,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     const body = await req.json() as Partial<{
       description: string; merchant: string | null; kind: string;
       amount: string; amountCents: number | null; date: string;
-      category: string | null; note: string | null;
+      category: string | null; note: string | null; reviewed: boolean;
     }>;
 
     const receipts = await readReceipts();
@@ -30,6 +30,8 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     if (body.date !== undefined && /^\d{4}-\d{2}-\d{2}$/.test(body.date)) patch.date = body.date;
     if (body.amountCents !== undefined) patch.amountCents = body.amountCents;
     else if (body.amount !== undefined) patch.amountCents = parseAmountToCents(body.amount);
+    // Expliciet meegegeven reviewed-waarde, anders markeert elke bewerking de bon als gecontroleerd.
+    patch.reviewed = body.reviewed !== undefined ? body.reviewed : true;
 
     receipts[idx] = { ...r, ...patch };
     await writeReceipts(receipts);

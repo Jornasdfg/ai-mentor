@@ -17,6 +17,7 @@ interface Receipt {
   source: "shortcut" | "manual";
   note: string | null;
   aiAnalyzed: boolean;
+  reviewed: boolean;
   createdAt: string;
 }
 
@@ -66,9 +67,25 @@ export default function FinanceWorkspace() {
 
   const monthReceipts = useMemo(
     () => receipts.filter(r => r.date.slice(0, 7) === month)
-      .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (a.createdAt < b.createdAt ? 1 : -1))),
+      .sort((a, b) => {
+        // Nog te controleren bonnen bovenaan, daarna nieuwste datum eerst.
+        if (a.reviewed !== b.reviewed) return a.reviewed ? 1 : -1;
+        if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+        return a.createdAt < b.createdAt ? 1 : -1;
+      }),
     [receipts, month]
   );
+
+  const toReview = useMemo(() => monthReceipts.filter(r => !r.reviewed).length, [monthReceipts]);
+
+  async function approve(id: string) {
+    await fetch(`/api/receipts/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reviewed: true }),
+    });
+    setReceipts(rs => rs.map(r => (r.id === id ? { ...r, reviewed: true } : r)));
+  }
 
   const totals = useMemo(() => {
     let zak = 0, priv = 0, onb = 0;
@@ -115,7 +132,12 @@ export default function FinanceWorkspace() {
           <TotalCard label="Privé" value={eur(totals.priv)} accent="text-emerald-600" />
           <TotalCard label="Totaal" value={eur(totals.total)} accent="text-zinc-800" />
         </div>
-        {totals.onb > 0 && (
+        {toReview > 0 && (
+          <p className="mt-1.5 text-[11px] font-semibold text-amber-600">
+            🧾 {toReview} {toReview === 1 ? "bon" : "bonnen"} te controleren — tik “bewerk” om type/omschrijving te zetten of “✓” als de AI het goed had.
+          </p>
+        )}
+        {toReview === 0 && totals.onb > 0 && (
           <p className="mt-1.5 text-[11px] text-zinc-500">Nog {eur(totals.onb)} ongecategoriseerd (zet op zakelijk/privé).</p>
         )}
       </div>
@@ -131,7 +153,7 @@ export default function FinanceWorkspace() {
           </div>
         ) : (
           monthReceipts.map(r => (
-            <ReceiptRow key={r.id} r={r} onEdit={() => setEditing(r)} onDelete={() => handleDelete(r.id)} />
+            <ReceiptRow key={r.id} r={r} onEdit={() => setEditing(r)} onDelete={() => handleDelete(r.id)} onApprove={() => approve(r.id)} />
           ))
         )}
       </div>
@@ -164,10 +186,10 @@ function TotalCard({ label, value, accent }: { label: string; value: string; acc
   );
 }
 
-function ReceiptRow({ r, onEdit, onDelete }: { r: Receipt; onEdit: () => void; onDelete: () => void }) {
+function ReceiptRow({ r, onEdit, onDelete, onApprove }: { r: Receipt; onEdit: () => void; onDelete: () => void; onApprove: () => void }) {
   const [zoom, setZoom] = useState(false);
   return (
-    <div className="flex items-center gap-3 rounded-xl bg-panel border border-border p-2.5 shadow-soft">
+    <div className={`flex items-center gap-3 rounded-xl bg-panel border p-2.5 shadow-soft ${r.reviewed ? "border-border" : "border-amber-300 ring-1 ring-amber-200"}`}>
       {r.imageFile ? (
         <button onClick={() => setZoom(true)} className="shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -182,6 +204,7 @@ function ReceiptRow({ r, onEdit, onDelete }: { r: Receipt; onEdit: () => void; o
           {r.aiAnalyzed && <span title="Door AI ingelezen" className="text-[10px]">✨</span>}
         </div>
         <div className="flex items-center gap-1.5 mt-0.5">
+          {!r.reviewed && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700">Controleren</span>}
           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${KIND_BADGE[r.kind]}`}>{KIND_LABEL[r.kind]}</span>
           {r.category && <span className="text-[10px] text-zinc-500 truncate">{r.category}</span>}
           <span className="text-[10px] text-zinc-400">· {r.date}</span>
@@ -189,7 +212,8 @@ function ReceiptRow({ r, onEdit, onDelete }: { r: Receipt; onEdit: () => void; o
       </div>
       <div className="shrink-0 text-right">
         <div className="text-sm font-extrabold text-zinc-800">{eur(r.amountCents)}</div>
-        <div className="flex items-center gap-1 justify-end mt-0.5">
+        <div className="flex items-center gap-1.5 justify-end mt-0.5">
+          {!r.reviewed && <button onClick={onApprove} title="AI klopt — markeer gecontroleerd" className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700">✓</button>}
           <button onClick={onEdit} className="text-[11px] text-zinc-400 hover:text-accent">bewerk</button>
           <button onClick={onDelete} className="text-[11px] text-zinc-400 hover:text-danger">wis</button>
         </div>

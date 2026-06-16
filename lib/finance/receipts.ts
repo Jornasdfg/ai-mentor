@@ -22,6 +22,7 @@ export interface Receipt {
   note: string | null;
   aiAnalyzed: boolean;        // is de bon door AI geanalyseerd?
   aiRaw: string | null;       // ruwe AI-samenvatting (debug/inzicht)
+  reviewed: boolean;          // door de gebruiker bevestigd (false = nog controleren)
   createdAt: string;          // ISO
   updatedAt: string;          // ISO
 }
@@ -164,6 +165,8 @@ export function buildReceipt(
     note: input.note?.toString().trim() || null,
     aiAnalyzed: false,
     aiRaw: null,
+    // Handmatig toegevoegd = meteen bevestigd; via Shortcut gepusht = nog controleren in de app.
+    reviewed: source === "manual",
     createdAt: now,
     updatedAt: now,
   };
