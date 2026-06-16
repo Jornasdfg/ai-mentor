@@ -651,6 +651,36 @@ alleen vanaf het beginscherm-icoon).
 
 ---
 
+## Financiën / Bonnen (standalone) ★ NIEUW (9-6-2026)
+
+**Volledig losstaande module** — raakt taken/planner/scheduler niet. Eigen storage, eigen routes,
+eigen tab. Doel: bonnen fotograferen (o.a. via iPhone-Shortcut na een Wallet-betaling) → AI leest
+bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelijk/privé).
+
+- **Storage** `lib/finance/receipts.ts`: `Receipt`-type + I/O naar **`data/receipts.json`** (metadata)
+  en **`data/receipts/`** (de foto's). Bevat `parseAmountToCents` (NL "12,50" + EN), `normalizeKind`,
+  `buildReceipt`. Niets hiervan in `task_register.json`.
+- **AI-analyse** `lib/finance/analyzeReceipt.ts`: goedkoop vision-model (`gpt-4o-mini`, `detail:"low"`,
+  model override via `RECEIPTS_VISION_MODEL`) → JSON {merchant, amount, date, category, kind, summary}.
+  Kosten via `addCost()` in de kostenteller. HEIC wordt overgeslagen (Shortcut levert JPEG).
+- **Samenvoegen** `lib/finance/createFromForm.ts`: bouwt + bewaart een bon uit multipart; bij een foto
+  draait AI en vult **ontbrekende** velden aan (handmatige invoer wint).
+- **API**:
+  - `POST /api/receipts/ingest` — **token-beveiligd** (header `x-receipts-token: $RECEIPTS_TOKEN`),
+    multipart, voor de iPhone-Shortcut. Velden: `photo`, `description`, `kind` (zakelijk|prive),
+    `amount`, `date`, `note`.
+  - `GET /api/receipts` (lijst) · `POST /api/receipts` (handmatig toevoegen, multipart) — open, net als `/api/tasks`.
+  - `GET /api/receipts/[id]/image` (serveert foto uit de volume) · `PATCH`/`DELETE /api/receipts/[id]`.
+- **UI** `components/finance/FinanceWorkspace.tsx` + tab **"Financiën"** in `app/page.tsx`: maand-navigatie,
+  totaalkaarten (zakelijk/privé/totaal), galerij met thumbnails, handmatig toevoegen (camera via
+  `<input accept="image/*" capture>`), bewerken/wissen.
+- **Env**: `RECEIPTS_TOKEN` in `/app/.env.local` (alleen voor de ingest-route; niet in de client).
+  Na wijzigen env de stack herladen met **beide** compose-bestanden.
+- **iPhone-Shortcut**: Wallet-/Transactie-automatisering → foto → "Vraag om invoer" → **Converteer naar
+  JPEG** → "Inhoud van URL ophalen" `POST` multipart naar `…/api/receipts/ingest` met de token-header.
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)
