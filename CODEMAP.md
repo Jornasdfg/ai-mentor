@@ -684,6 +684,11 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
   JPEG** → "Inhoud van URL ophalen" `POST` multipart `photo=<JPEG>` naar `…/api/receipts/ingest` met de
   token-header. **Geen vragen in de Shortcut** — de AI leest de details alvast in en de bon komt als
   `reviewed:false` ("Te controleren") binnen; type (zakelijk/privé) + omschrijving zet je daarna in de app.
+- **Facturen via de dagelijkse Gmail-routine** (`trig_0153sCpJAEmXByJ83W9d9NmQ`, STAP 6B): scant mail op
+  facturen/bonnen, bepaalt betaald/openstaand, en POST't nieuwe naar dezelfde ingest met `source=gmail`,
+  `docType`, `paymentStatus` en een **stabiele `dedupKey`** (`gmail:<messageId>`). De server dedupt
+  idempotent (`findByDedupKey` → `duplicate:true`), dus dagelijkse herhaling voegt niets dubbel toe.
+  ⚠️ `RECEIPTS_TOKEN` staat INLINE in de routine-prompt **én** in `/app/.env.local` — bij rotatie BEIDE bijwerken.
 
 ---
 
