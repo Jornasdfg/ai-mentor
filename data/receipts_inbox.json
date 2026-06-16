@@ -1,0 +1,15 @@
+[
+  {
+    "source": "gmail",
+    "docType": "factuur",
+    "merchant": "TESTBRUG",
+    "amount": "10,00",
+    "date": "2026-06-17",
+    "kind": "zakelijk",
+    "paymentStatus": "openstaand",
+    "category": "Test",
+    "description": "Bridge test",
+    "dedupKey": "test:bridge:001",
+    "sourceUrl": "https://example.com"
+  }
+]
