@@ -8,16 +8,18 @@ import TaskBoard from "@/components/TaskBoard";
 import PlannerWorkspace from "@/components/planner/PlannerWorkspace";
 import MissedRoutineModal, { type MissedItem } from "@/components/MissedRoutineModal";
 import InstagramWeekPrompt from "@/components/InstagramWeekPrompt";
+import FinanceWorkspace from "@/components/finance/FinanceWorkspace";
 import type { MentorTask } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
 import { isRoutine } from "@/lib/mentor/taskCharacter";
 
-type TabId = "planner" | "tasks" | "ai";
+type TabId = "planner" | "tasks" | "ai" | "finance";
 
 const TABS: { id: TabId; label: string }[] = [
-  { id: "planner", label: "Planner" },
-  { id: "tasks",   label: "Taken"   },
-  { id: "ai",      label: "AI Mentor" },
+  { id: "planner",  label: "Planner" },
+  { id: "tasks",    label: "Taken"   },
+  { id: "ai",       label: "AI Mentor" },
+  { id: "finance",  label: "Financiën" },
 ];
 
 function IconPlanner() {
@@ -51,11 +53,21 @@ function IconAI() {
     </svg>
   );
 }
+function IconFinance() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="5" width="16" height="12" rx="2"/>
+      <path d="M3 9h16"/>
+      <circle cx="7" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+    </svg>
+  );
+}
 
 const TAB_ICONS: Record<TabId, React.ReactNode> = {
   planner: <IconPlanner />,
   tasks:   <IconTasks />,
   ai:      <IconAI />,
+  finance: <IconFinance />,
 };
 
 export default function Home() {
@@ -166,6 +178,10 @@ export default function Home() {
 
           {activeTab === "ai" && (
             <MentorChat onComplete={handleMentorComplete} />
+          )}
+
+          {activeTab === "finance" && (
+            <FinanceWorkspace />
           )}
         </div>
       </div>
