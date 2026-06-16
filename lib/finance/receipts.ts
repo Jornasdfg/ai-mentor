@@ -6,19 +6,25 @@ import path from "path";
 // map met bonfoto's in de data-volume. Niets hiervan raakt task_register.json.
 
 export type ReceiptKind = "zakelijk" | "prive" | "onbekend";
+export type DocType = "bon" | "factuur";
+export type PaymentStatus = "betaald" | "openstaand" | "onbekend";
 
 export interface Receipt {
   id: string;                 // "receipt_<ts>_<rand>"
+  docType: DocType;           // bon (kassabon) of factuur
   description: string;        // korte omschrijving (gebruiker of AI)
   merchant: string | null;    // winkel/leverancier (AI of handmatig)
   kind: ReceiptKind;          // zakelijk / privé / onbekend
   amountCents: number | null; // bedrag in centen (null = onbekend)
   currency: string;           // "EUR"
-  date: string;               // YYYY-MM-DD — transactiedatum
+  date: string;               // YYYY-MM-DD — transactie/factuurdatum
   category: string | null;    // bv. "Boodschappen", "Reizen", "Software"
+  paymentStatus: PaymentStatus; // betaald / openstaand / onbekend (vooral voor facturen)
   imageFile: string | null;   // bestandsnaam in data/receipts/
   imageMime: string | null;   // bv. "image/jpeg"
-  source: "shortcut" | "manual";
+  source: "shortcut" | "manual" | "gmail";
+  sourceUrl: string | null;   // bv. link naar de Gmail-mail
+  dedupKey: string | null;    // stabiele sleutel voor idempotente import (bv. gmail-id / factuurnr)
   note: string | null;
   aiAnalyzed: boolean;        // is de bon door AI geanalyseerd?
   aiRaw: string | null;       // ruwe AI-samenvatting (debug/inzicht)
@@ -120,6 +126,23 @@ export function normalizeKind(input: string | null | undefined): ReceiptKind {
   return "onbekend";
 }
 
+export function normalizeDocType(input: string | null | undefined): DocType {
+  return /factuur|invoice|nota|rekening/i.test((input ?? "").toString()) ? "factuur" : "bon";
+}
+
+export function normalizePaymentStatus(input: string | null | undefined): PaymentStatus {
+  const s = (input ?? "").toString().trim().toLowerCase();
+  if (/betaald|paid|voldaan|verwerkt|afgeschreven/.test(s)) return "betaald";
+  if (/open|onbetaald|unpaid|te\s*betalen|verschuldigd|nog\s*voldoen/.test(s)) return "openstaand";
+  return "onbekend";
+}
+
+// Vindt een bestaande bon/factuur met dezelfde dedupKey (voor idempotente import).
+export function findByDedupKey(receipts: Receipt[], key: string | null | undefined): Receipt | undefined {
+  if (!key) return undefined;
+  return receipts.find(r => r.dedupKey && r.dedupKey === key);
+}
+
 function isoDateOrToday(input: string | null | undefined): string {
   const s = (input ?? "").toString().trim();
   // Accepteer YYYY-MM-DD; anders vandaag (Amsterdam).
@@ -132,6 +155,7 @@ export function newReceiptId(): string {
 }
 
 export interface ReceiptInput {
+  docType?: string | null;
   description?: string | null;
   merchant?: string | null;
   kind?: string | null;
@@ -139,6 +163,9 @@ export interface ReceiptInput {
   amountCents?: number | null;  // al geparsed (UI)
   date?: string | null;
   category?: string | null;
+  paymentStatus?: string | null;
+  sourceUrl?: string | null;
+  dedupKey?: string | null;
   note?: string | null;
 }
 
@@ -150,22 +177,27 @@ export function buildReceipt(
 ): Receipt {
   const now = new Date().toISOString();
   const cents = input.amountCents != null ? input.amountCents : parseAmountToCents(input.amount);
+  const docType = normalizeDocType(input.docType);
   return {
     id,
-    description: (input.description ?? "").toString().trim() || "Bon",
+    docType,
+    description: (input.description ?? "").toString().trim() || (docType === "factuur" ? "Factuur" : "Bon"),
     merchant: input.merchant?.toString().trim() || null,
     kind: normalizeKind(input.kind),
     amountCents: cents,
     currency: "EUR",
     date: isoDateOrToday(input.date),
     category: input.category?.toString().trim() || null,
+    paymentStatus: normalizePaymentStatus(input.paymentStatus),
     imageFile: image.file,
     imageMime: image.mime,
     source,
+    sourceUrl: input.sourceUrl?.toString().trim() || null,
+    dedupKey: input.dedupKey?.toString().trim() || null,
     note: input.note?.toString().trim() || null,
     aiAnalyzed: false,
     aiRaw: null,
-    // Handmatig toegevoegd = meteen bevestigd; via Shortcut gepusht = nog controleren in de app.
+    // Handmatig toegevoegd = meteen bevestigd; gepusht (shortcut/gmail) = nog controleren in de app.
     reviewed: source === "manual",
     createdAt: now,
     updatedAt: now,

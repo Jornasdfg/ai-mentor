@@ -17,8 +17,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Stuur als multipart/form-data" }, { status: 400 });
     }
     const form = await req.formData();
-    const receipt = await createReceiptFromForm(form, "manual");
-    return NextResponse.json({ ok: true, receipt });
+    const { receipt, duplicate } = await createReceiptFromForm(form, "manual");
+    return NextResponse.json({ ok: true, duplicate, receipt });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
   }

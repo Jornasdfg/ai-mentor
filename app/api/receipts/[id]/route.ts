@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   readReceipts, writeReceipts, deleteReceiptImage,
-  parseAmountToCents, normalizeKind, type Receipt,
+  parseAmountToCents, normalizeKind, normalizeDocType, normalizePaymentStatus, type Receipt,
 } from "@/lib/finance/receipts";
 
 export const runtime = "nodejs";
@@ -11,9 +11,9 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   try {
     const { id } = await params;
     const body = await req.json() as Partial<{
-      description: string; merchant: string | null; kind: string;
+      docType: string; description: string; merchant: string | null; kind: string;
       amount: string; amountCents: number | null; date: string;
-      category: string | null; note: string | null; reviewed: boolean;
+      category: string | null; paymentStatus: string; note: string | null; reviewed: boolean;
     }>;
 
     const receipts = await readReceipts();
@@ -22,9 +22,11 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
 
     const r = receipts[idx];
     const patch: Partial<Receipt> = { updatedAt: new Date().toISOString() };
+    if (body.docType !== undefined) patch.docType = normalizeDocType(body.docType);
     if (body.description !== undefined) patch.description = body.description.trim() || "Bon";
     if (body.merchant !== undefined) patch.merchant = body.merchant?.toString().trim() || null;
     if (body.kind !== undefined) patch.kind = normalizeKind(body.kind);
+    if (body.paymentStatus !== undefined) patch.paymentStatus = normalizePaymentStatus(body.paymentStatus);
     if (body.category !== undefined) patch.category = body.category?.toString().trim() || null;
     if (body.note !== undefined) patch.note = body.note?.toString().trim() || null;
     if (body.date !== undefined && /^\d{4}-\d{2}-\d{2}$/.test(body.date)) patch.date = body.date;

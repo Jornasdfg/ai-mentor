@@ -1,7 +1,10 @@
 import { addCost } from "@/lib/storage/costStorage";
-import { parseAmountToCents, normalizeKind, type ReceiptKind } from "./receipts";
+import {
+  parseAmountToCents, normalizeKind, normalizeDocType, normalizePaymentStatus,
+  type ReceiptKind, type DocType, type PaymentStatus,
+} from "./receipts";
 
-// AI-analyse van een bonfoto met een goedkoop vision-model (gpt-4o-mini, detail:"low").
+// AI-analyse van een bon/factuur-foto met een goedkoop vision-model (gpt-4o-mini, detail:"low").
 // Kosten ~fractie cent per bon; worden in de kostenteller gelogd.
 // Vult ontbrekende velden aan — handmatige invoer van de gebruiker heeft voorrang.
 
@@ -11,6 +14,8 @@ export interface ReceiptAnalysis {
   date: string | null;        // YYYY-MM-DD
   category: string | null;
   kind: ReceiptKind;
+  docType: DocType;
+  paymentStatus: PaymentStatus;
   summary: string | null;
 }
 
@@ -18,14 +23,16 @@ export interface ReceiptAnalysis {
 const IN_PER_TOKEN = 0.15 / 1_000_000;
 const OUT_PER_TOKEN = 0.60 / 1_000_000;
 
-const SYSTEM = `Je bent een nauwkeurige bonnen-scanner voor een Nederlandse administratie.
-Analyseer de bon/kassabon op de afbeelding en geef UITSLUITEND JSON terug:
+const SYSTEM = `Je bent een nauwkeurige bonnen- en facturen-scanner voor een Nederlandse administratie.
+Analyseer de afbeelding en geef UITSLUITEND JSON terug:
 {
+  "docType": "bon of factuur (kassabon=bon; factuur/nota/rekening met factuurnummer=factuur)",
   "merchant": "naam winkel/leverancier of null",
   "amount": "totaalbedrag als string, bv. 12,50 (gebruik het EINDTOTAAL incl. btw) of null",
   "date": "YYYY-MM-DD of null",
   "category": "korte categorie: Boodschappen, Horeca, Reizen, Software, Kantoor, Brandstof, Overig",
   "kind": "zakelijk of prive (gok op basis van het type aankoop; bij twijfel prive)",
+  "paymentStatus": "betaald (kassabon/pinbon = betaald) of openstaand (factuur 'te betalen') of onbekend",
   "summary": "1 korte zin wat er gekocht is"
 }
 Lees het eindtotaal, niet een subtotaal of btw-bedrag. Geen extra tekst buiten de JSON.`;
@@ -79,8 +86,8 @@ export async function analyzeReceiptImage(
     const content = json.choices?.[0]?.message?.content;
     if (!content) return null;
     const parsed = JSON.parse(content) as {
-      merchant?: string | null; amount?: string | null; date?: string | null;
-      category?: string | null; kind?: string | null; summary?: string | null;
+      docType?: string | null; merchant?: string | null; amount?: string | null; date?: string | null;
+      category?: string | null; kind?: string | null; paymentStatus?: string | null; summary?: string | null;
     };
 
     const date = parsed.date && /^\d{4}-\d{2}-\d{2}$/.test(parsed.date) ? parsed.date : null;
@@ -90,6 +97,8 @@ export async function analyzeReceiptImage(
       date,
       category: parsed.category?.toString().trim() || null,
       kind: normalizeKind(parsed.kind),
+      docType: normalizeDocType(parsed.docType),
+      paymentStatus: normalizePaymentStatus(parsed.paymentStatus),
       summary: parsed.summary?.toString().trim() || null,
     };
   } catch {

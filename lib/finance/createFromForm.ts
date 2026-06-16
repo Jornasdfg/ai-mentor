@@ -1,6 +1,6 @@
 import {
   readReceipts, writeReceipts, saveReceiptImage, buildReceipt, newReceiptId,
-  type Receipt,
+  findByDedupKey, type Receipt,
 } from "./receipts";
 import { analyzeReceiptImage } from "./analyzeReceipt";
 
@@ -11,18 +11,25 @@ function str(form: FormData, key: string): string | null {
   return typeof v === "string" && v.trim() ? v.trim() : null;
 }
 
-// Bouwt + bewaart een bon uit een multipart-formulier. Foto optioneel.
+// Bouwt + bewaart een bon/factuur uit een multipart-formulier. Foto optioneel.
 // Bij een foto draait AI-analyse en vult ontbrekende velden aan (handmatige invoer wint).
+// Met een dedupKey is de import idempotent: bestaat die al, dan wordt niets toegevoegd.
 export async function createReceiptFromForm(
   form: FormData,
   source: Receipt["source"]
-): Promise<Receipt> {
-  const photo = form.get("photo") ?? form.get("image") ?? form.get("file");
+): Promise<{ receipt: Receipt; duplicate: boolean }> {
+  const dedupKey = str(form, "dedupKey");
+  const all = await readReceipts();
 
+  // Idempotent: zelfde factuur/bon niet opnieuw toevoegen.
+  const existing = findByDedupKey(all, dedupKey);
+  if (existing) return { receipt: existing, duplicate: true };
+
+  const photo = form.get("photo") ?? form.get("image") ?? form.get("file");
   let buffer: Buffer | null = null;
   let mime: string | null = null;
   if (photo instanceof Blob && photo.size > 0) {
-    if (photo.size > MAX_IMAGE_BYTES) throw new Error("Foto te groot (max 20MB)");
+    if (photo.size > MAX_IMAGE_BYTES) throw new Error("Bestand te groot (max 20MB)");
     mime = photo.type || "image/jpeg";
     buffer = Buffer.from(await photo.arrayBuffer());
   }
@@ -30,16 +37,22 @@ export async function createReceiptFromForm(
   const id = newReceiptId();
   const userGaveDate = !!str(form, "date");
   const userGaveDescription = !!str(form, "description");
+  const userGaveDocType = !!str(form, "docType");
+  const userGavePayment = !!str(form, "paymentStatus");
 
   const receipt = buildReceipt(
     id,
     {
+      docType: str(form, "docType"),
       description: str(form, "description"),
       merchant: str(form, "merchant"),
       kind: str(form, "kind"),
       amount: str(form, "amount"),
       date: str(form, "date"),
       category: str(form, "category"),
+      paymentStatus: str(form, "paymentStatus"),
+      sourceUrl: str(form, "sourceUrl"),
+      dedupKey,
       note: str(form, "note"),
     },
     source,
@@ -55,6 +68,8 @@ export async function createReceiptFromForm(
       if (!receipt.merchant) receipt.merchant = analysis.merchant;
       if (!receipt.category) receipt.category = analysis.category;
       if (receipt.kind === "onbekend") receipt.kind = analysis.kind;
+      if (!userGaveDocType && analysis.docType) receipt.docType = analysis.docType;
+      if (!userGavePayment && analysis.paymentStatus) receipt.paymentStatus = analysis.paymentStatus;
       if (!userGaveDate && analysis.date) receipt.date = analysis.date;
       if (!userGaveDescription && analysis.summary) receipt.description = analysis.summary;
     }
@@ -64,8 +79,7 @@ export async function createReceiptFromForm(
   }
 
   receipt.updatedAt = new Date().toISOString();
-  const all = await readReceipts();
   all.unshift(receipt);
   await writeReceipts(all);
-  return receipt;
+  return { receipt, duplicate: false };
 }

@@ -4,8 +4,11 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 // Standalone financiën-tab. Geen koppeling met taken/planner.
 type ReceiptKind = "zakelijk" | "prive" | "onbekend";
+type DocType = "bon" | "factuur";
+type PaymentStatus = "betaald" | "openstaand" | "onbekend";
 interface Receipt {
   id: string;
+  docType: DocType;
   description: string;
   merchant: string | null;
   kind: ReceiptKind;
@@ -13,13 +16,22 @@ interface Receipt {
   currency: string;
   date: string;
   category: string | null;
+  paymentStatus: PaymentStatus;
   imageFile: string | null;
-  source: "shortcut" | "manual";
+  source: "shortcut" | "manual" | "gmail";
+  sourceUrl: string | null;
   note: string | null;
   aiAnalyzed: boolean;
   reviewed: boolean;
   createdAt: string;
 }
+
+const PAY_BADGE: Record<PaymentStatus, string> = {
+  betaald: "bg-emerald-100 text-emerald-700",
+  openstaand: "bg-red-100 text-red-700",
+  onbekend: "bg-gray-100 text-zinc-500",
+};
+const PAY_LABEL: Record<PaymentStatus, string> = { betaald: "Betaald", openstaand: "Openstaand", onbekend: "Betaling?" };
 
 const MONTHS_NL = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
 
@@ -203,11 +215,16 @@ function ReceiptRow({ r, onEdit, onDelete, onApprove }: { r: Receipt; onEdit: ()
           <span className="text-sm font-semibold text-zinc-800 truncate">{r.merchant || r.description}</span>
           {r.aiAnalyzed && <span title="Door AI ingelezen" className="text-[10px]">✨</span>}
         </div>
-        <div className="flex items-center gap-1.5 mt-0.5">
+        <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
           {!r.reviewed && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700">Controleren</span>}
+          {r.docType === "factuur" && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-violet-100 text-violet-700">Factuur</span>}
           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${KIND_BADGE[r.kind]}`}>{KIND_LABEL[r.kind]}</span>
+          {(r.docType === "factuur" || r.paymentStatus !== "onbekend") && (
+            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full ${PAY_BADGE[r.paymentStatus]}`}>{PAY_LABEL[r.paymentStatus]}</span>
+          )}
           {r.category && <span className="text-[10px] text-zinc-500 truncate">{r.category}</span>}
           <span className="text-[10px] text-zinc-400">· {r.date}</span>
+          {r.sourceUrl && <a href={r.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[10px] text-accent hover:underline">✉︎ mail</a>}
         </div>
       </div>
       <div className="shrink-0 text-right">
@@ -238,12 +255,14 @@ function ReceiptForm({
   onSaved: () => void;
 }) {
   const [file, setFile] = useState<File | null>(null);
+  const [docType, setDocType] = useState<DocType>(receipt?.docType ?? "bon");
   const [description, setDescription] = useState(receipt?.description ?? "");
   const [merchant, setMerchant] = useState(receipt?.merchant ?? "");
   const [kind, setKind] = useState<ReceiptKind>(receipt?.kind ?? "onbekend");
   const [amount, setAmount] = useState(receipt?.amountCents != null ? (receipt.amountCents / 100).toFixed(2).replace(".", ",") : "");
   const [date, setDate] = useState(receipt?.date ?? todayISO());
   const [category, setCategory] = useState(receipt?.category ?? "");
+  const [paymentStatus, setPaymentStatus] = useState<PaymentStatus>(receipt?.paymentStatus ?? "onbekend");
   const [note, setNote] = useState(receipt?.note ?? "");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -254,12 +273,14 @@ function ReceiptForm({
       if (mode === "add") {
         const fd = new FormData();
         if (file) fd.append("photo", file);
+        fd.append("docType", docType);
         fd.append("description", description);
         fd.append("merchant", merchant);
         fd.append("kind", kind);
         fd.append("amount", amount);
         fd.append("date", date);
         fd.append("category", category);
+        fd.append("paymentStatus", paymentStatus);
         fd.append("note", note);
         const res = await fetch("/api/receipts", { method: "POST", body: fd });
         if (!res.ok) throw new Error((await res.json()).error || "Mislukt");
@@ -267,7 +288,7 @@ function ReceiptForm({
         const res = await fetch(`/api/receipts/${receipt.id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ description, merchant, kind, amount, date, category, note }),
+          body: JSON.stringify({ docType, description, merchant, kind, amount, date, category, paymentStatus, note }),
         });
         if (!res.ok) throw new Error((await res.json()).error || "Mislukt");
       }
@@ -304,6 +325,18 @@ function ReceiptForm({
             </div>
           )}
 
+          <div>
+            <label className="block text-xs font-semibold text-zinc-600 mb-1">Soort</label>
+            <div className="flex gap-2">
+              {(["bon", "factuur"] as const).map(d => (
+                <button key={d} onClick={() => setDocType(d)}
+                  className={`flex-1 py-2 text-xs font-bold rounded-xl border transition-all capitalize ${
+                    docType === d ? "border-accent bg-accent/10 text-accent" : "border-border text-zinc-500"
+                  }`}>{d === "bon" ? "Bon" : "Factuur"}</button>
+              ))}
+            </div>
+          </div>
+
           <Field label="Omschrijving"><input value={description} onChange={e => setDescription(e.target.value)} placeholder="bv. Lunch met klant" className={inputCls} /></Field>
           <div className="grid grid-cols-2 gap-3">
             <Field label="Bedrag (€)"><input value={amount} onChange={e => setAmount(e.target.value)} inputMode="decimal" placeholder="12,50" className={inputCls} /></Field>
@@ -319,6 +352,18 @@ function ReceiptForm({
                   className={`flex-1 py-2 text-xs font-bold rounded-xl border transition-all ${
                     kind === k ? "border-accent bg-accent/10 text-accent" : "border-border text-zinc-500"
                   }`}>{KIND_LABEL[k]}</button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-zinc-600 mb-1">Betaalstatus{docType === "factuur" ? "" : " (optioneel)"}</label>
+            <div className="flex gap-2">
+              {(["betaald", "openstaand", "onbekend"] as const).map(p => (
+                <button key={p} onClick={() => setPaymentStatus(p)}
+                  className={`flex-1 py-2 text-xs font-bold rounded-xl border transition-all ${
+                    paymentStatus === p ? "border-accent bg-accent/10 text-accent" : "border-border text-zinc-500"
+                  }`}>{PAY_LABEL[p]}</button>
               ))}
             </div>
           </div>
