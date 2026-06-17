@@ -4,12 +4,25 @@
     "docType": "factuur",
     "merchant": "Vimexx",
     "amount": "",
-    "date": "2026-06-16",
+    "date": "2026-06-17",
+    "kind": "zakelijk",
+    "paymentStatus": "betaald",
+    "category": "Hosting",
+    "description": "Vimexx hosting factuur 20262625224 (betaald, PDF-bijlage in mail)",
+    "dedupKey": "factuur:vimexx:20262625224",
+    "sourceUrl": "https://mail.google.com/mail/u/0/#all/19ed3cb3f12527fb"
+  },
+  {
+    "source": "gmail",
+    "docType": "factuur",
+    "merchant": "Vimexx",
+    "amount": "",
+    "date": "2026-06-17",
     "kind": "zakelijk",
     "paymentStatus": "openstaand",
     "category": "Hosting",
-    "description": "Openstaande factuur / bestelling 20264776077 — handmatig betalen vóór vervaldatum (verlenging hosting/domein)",
+    "description": "Vimexx openstaande factuur / bestelling 20264776077 (nog handmatig te betalen)",
     "dedupKey": "factuur:vimexx:20264776077",
-    "sourceUrl": "https://mail.google.com/mail/u/0/#all/19ecdf62cc5e0d9a"
+    "sourceUrl": "https://mail.google.com/mail/u/0/#all/19ed31c8a6b8be10"
   }
 ]
