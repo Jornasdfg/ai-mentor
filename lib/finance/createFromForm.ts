@@ -1,6 +1,6 @@
 import {
   readReceipts, writeReceipts, saveReceiptImage, buildReceipt, newReceiptId,
-  findByDedupKey, withReceiptsLock, logIngest, type Receipt,
+  findByDedupKey, withReceiptsLock, logIngest, isPlausibleReceiptDate, type Receipt,
 } from "./receipts";
 import { analyzeReceiptImage } from "./analyzeReceipt";
 
@@ -77,7 +77,7 @@ export async function createReceiptFromForm(
       if (receipt.kind === "onbekend") receipt.kind = analysis.kind;
       if (!userGaveDocType && analysis.docType) receipt.docType = analysis.docType;
       if (!userGavePayment && analysis.paymentStatus) receipt.paymentStatus = analysis.paymentStatus;
-      if (!userGaveDate && analysis.date) receipt.date = analysis.date;
+      if (!userGaveDate && analysis.date && isPlausibleReceiptDate(analysis.date)) receipt.date = analysis.date;
       if (!userGaveDescription && analysis.summary) receipt.description = analysis.summary;
     }
     const file = await saveReceiptImage(id, buffer, mime);

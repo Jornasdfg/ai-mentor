@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
-  readReceipts, writeReceipts, readReceiptImage, withReceiptsLock,
+  readReceipts, writeReceipts, readReceiptImage, withReceiptsLock, isPlausibleReceiptDate,
 } from "@/lib/finance/receipts";
 import { analyzeReceiptImage } from "@/lib/finance/analyzeReceipt";
 
@@ -34,7 +34,7 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
         // Nieuwe lezing wint (corrigeert oude fout); alleen overschrijven als AI iets vond.
         amountCents: analysis.amountCents != null ? analysis.amountCents : cur.amountCents,
         merchant: analysis.merchant || cur.merchant,
-        date: analysis.date || cur.date,
+        date: (analysis.date && isPlausibleReceiptDate(analysis.date)) ? analysis.date : cur.date,
         category: analysis.category || cur.category,
         docType: analysis.docType,
         paymentStatus: analysis.paymentStatus !== "onbekend" ? analysis.paymentStatus : cur.paymentStatus,

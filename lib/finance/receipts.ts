@@ -185,6 +185,21 @@ export function findByDedupKey(receipts: Receipt[], key: string | null | undefin
   return receipts.find(r => r.dedupKey && r.dedupKey === key);
 }
 
+// Een door AI gelezen bondatum is alleen geloofwaardig als hij niet in de toekomst
+// ligt en niet absurd oud is (>~13 mnd). Anders is het meestal een misread → we
+// vallen terug op vandaag (toevoegdatum), zodat de bon niet in een vreemde maand
+// "verdwijnt".
+export function isPlausibleReceiptDate(dateStr: string | null | undefined): boolean {
+  if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) return false;
+  const d = new Date(dateStr + "T12:00:00");
+  if (isNaN(d.getTime())) return false;
+  const now = Date.now();
+  const dayMs = 86_400_000;
+  if (d.getTime() > now + 2 * dayMs) return false;        // toekomst
+  if (d.getTime() < now - 400 * dayMs) return false;       // ouder dan ~13 mnd
+  return true;
+}
+
 function isoDateOrToday(input: string | null | undefined): string {
   const s = (input ?? "").toString().trim();
   // Accepteer YYYY-MM-DD; anders vandaag (Amsterdam).
