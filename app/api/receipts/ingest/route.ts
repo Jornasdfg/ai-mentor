@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createReceiptFromForm } from "@/lib/finance/createFromForm";
+import { logIngest } from "@/lib/finance/receipts";
 
 export const runtime = "nodejs";
 
@@ -34,6 +35,8 @@ export async function POST(req: NextRequest) {
       date: receipt.date,
     });
   } catch (err) {
-    return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
+    const msg = err instanceof Error ? err.message : "Fout";
+    await logIngest({ ts: new Date().toISOString(), source: "shortcut", hasPhoto: false, mime: null, sizeKB: null, dedupKey: null, result: "error", receiptId: null, amountCents: null, error: msg });
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

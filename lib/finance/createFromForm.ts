@@ -1,6 +1,6 @@
 import {
   readReceipts, writeReceipts, saveReceiptImage, buildReceipt, newReceiptId,
-  findByDedupKey, withReceiptsLock, type Receipt,
+  findByDedupKey, withReceiptsLock, logIngest, type Receipt,
 } from "./receipts";
 import { analyzeReceiptImage } from "./analyzeReceipt";
 
@@ -19,14 +19,20 @@ export async function createReceiptFromForm(
   source: Receipt["source"]
 ): Promise<{ receipt: Receipt; duplicate: boolean }> {
   const dedupKey = str(form, "dedupKey");
+  const photo = form.get("photo") ?? form.get("image") ?? form.get("file");
+  const hasPhoto = photo instanceof Blob && photo.size > 0;
+  const mimeForLog = hasPhoto ? ((photo as Blob).type || "image/jpeg") : null;
+  const sizeKB = hasPhoto ? Math.round((photo as Blob).size / 1024) : null;
 
   // Snelle pre-check (mag buiten de lock): bestaat de dedupKey al, dan klaar.
   if (dedupKey) {
     const pre = findByDedupKey(await readReceipts(), dedupKey);
-    if (pre) return { receipt: pre, duplicate: true };
+    if (pre) {
+      await logIngest({ ts: new Date().toISOString(), source, hasPhoto, mime: mimeForLog, sizeKB, dedupKey, result: "duplicate", receiptId: pre.id, amountCents: pre.amountCents, error: null });
+      return { receipt: pre, duplicate: true };
+    }
   }
 
-  const photo = form.get("photo") ?? form.get("image") ?? form.get("file");
   let buffer: Buffer | null = null;
   let mime: string | null = null;
   if (photo instanceof Blob && photo.size > 0) {
@@ -87,7 +93,7 @@ export async function createReceiptFromForm(
 
   // Onder lock: opnieuw lezen, definitieve dedup, toevoegen, schrijven.
   // Voorkomt dat gelijktijdige uploads elkaars schrijfactie overschrijven.
-  return withReceiptsLock(async () => {
+  const out = await withReceiptsLock(async () => {
     const all = await readReceipts();
     const existing = findByDedupKey(all, dedupKey);
     if (existing) return { receipt: existing, duplicate: true };
@@ -95,4 +101,11 @@ export async function createReceiptFromForm(
     await writeReceipts(all);
     return { receipt, duplicate: false };
   });
+
+  await logIngest({
+    ts: new Date().toISOString(), source, hasPhoto, mime: mimeForLog, sizeKB, dedupKey,
+    result: out.duplicate ? "duplicate" : "created",
+    receiptId: out.receipt.id, amountCents: out.receipt.amountCents, error: null,
+  });
+  return out;
 }

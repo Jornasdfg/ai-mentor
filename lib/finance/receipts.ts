@@ -60,6 +60,36 @@ export async function writeReceipts(receipts: Receipt[]): Promise<void> {
   await fs.writeFile(registerPath(), JSON.stringify(receipts, null, 2), "utf-8");
 }
 
+// ── Ingest-logboek (diagnose: welke pushes kwamen binnen?) ───────────────────
+export interface IngestLogEntry {
+  ts: string;
+  source: string;
+  hasPhoto: boolean;
+  mime: string | null;
+  sizeKB: number | null;
+  dedupKey: string | null;
+  result: "created" | "duplicate" | "error";
+  receiptId: string | null;
+  amountCents: number | null;
+  error: string | null;
+}
+function ingestLogPath(): string { return path.join(getDataDir(), "receipts_ingest_log.json"); }
+export async function readIngestLog(): Promise<IngestLogEntry[]> {
+  try { return JSON.parse(await fs.readFile(ingestLogPath(), "utf-8")) as IngestLogEntry[]; }
+  catch { return []; }
+}
+export async function logIngest(entry: IngestLogEntry): Promise<void> {
+  try {
+    await withReceiptsLock(async () => {
+      const log = await readIngestLog();
+      log.unshift(entry);
+      if (log.length > 200) log.length = 200;
+      await fs.mkdir(getDataDir(), { recursive: true });
+      await fs.writeFile(ingestLogPath(), JSON.stringify(log, null, 2), "utf-8");
+    });
+  } catch { /* logboek is best-effort */ }
+}
+
 // ── Schrijf-lock ──────────────────────────────────────────────────────────────
 // receipts.json wordt via read-modify-write bijgewerkt. Bij gelijktijdige uploads
 // (meerdere bonnen kort na elkaar uit de iPhone-automatisering) zou een tweede write
