@@ -99,6 +99,20 @@ export default function FinanceWorkspace() {
     setReceipts(rs => rs.map(r => (r.id === id ? { ...r, reviewed: true } : r)));
   }
 
+  const [rescanId, setRescanId] = useState<string | null>(null);
+  async function rescan(id: string) {
+    setRescanId(id);
+    try {
+      const res = await fetch(`/api/receipts/${id}/rescan`, { method: "POST" });
+      const d = await res.json() as { ok?: boolean; receipt?: Receipt; error?: string };
+      if (d.ok && d.receipt) {
+        setReceipts(rs => rs.map(r => (r.id === id ? d.receipt as Receipt : r)));
+      } else {
+        alert("Opnieuw scannen mislukt: " + (d.error || "onbekend"));
+      }
+    } finally { setRescanId(null); }
+  }
+
   const totals = useMemo(() => {
     let zak = 0, priv = 0, onb = 0;
     for (const r of monthReceipts) {
@@ -165,7 +179,7 @@ export default function FinanceWorkspace() {
           </div>
         ) : (
           monthReceipts.map(r => (
-            <ReceiptRow key={r.id} r={r} onEdit={() => setEditing(r)} onDelete={() => handleDelete(r.id)} onApprove={() => approve(r.id)} />
+            <ReceiptRow key={r.id} r={r} onEdit={() => setEditing(r)} onDelete={() => handleDelete(r.id)} onApprove={() => approve(r.id)} onRescan={() => rescan(r.id)} rescanning={rescanId === r.id} />
           ))
         )}
       </div>
@@ -198,7 +212,7 @@ function TotalCard({ label, value, accent }: { label: string; value: string; acc
   );
 }
 
-function ReceiptRow({ r, onEdit, onDelete, onApprove }: { r: Receipt; onEdit: () => void; onDelete: () => void; onApprove: () => void }) {
+function ReceiptRow({ r, onEdit, onDelete, onApprove, onRescan, rescanning }: { r: Receipt; onEdit: () => void; onDelete: () => void; onApprove: () => void; onRescan: () => void; rescanning: boolean }) {
   const [zoom, setZoom] = useState(false);
   return (
     <div className={`flex items-center gap-3 rounded-xl bg-panel border p-2.5 shadow-soft ${r.reviewed ? "border-border" : "border-amber-300 ring-1 ring-amber-200"}`}>
@@ -231,6 +245,7 @@ function ReceiptRow({ r, onEdit, onDelete, onApprove }: { r: Receipt; onEdit: ()
         <div className="text-sm font-extrabold text-zinc-800">{eur(r.amountCents)}</div>
         <div className="flex items-center gap-1.5 justify-end mt-0.5">
           {!r.reviewed && <button onClick={onApprove} title="AI klopt — markeer gecontroleerd" className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700">✓</button>}
+          {r.imageFile && <button onClick={onRescan} disabled={rescanning} title="Foto opnieuw laten lezen met AI" className="text-[11px] text-zinc-400 hover:text-accent disabled:opacity-50">{rescanning ? "…" : "↻"}</button>}
           <button onClick={onEdit} className="text-[11px] text-zinc-400 hover:text-accent">bewerk</button>
           <button onClick={onDelete} className="text-[11px] text-zinc-400 hover:text-danger">wis</button>
         </div>
