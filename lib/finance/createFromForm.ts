@@ -1,6 +1,6 @@
 import {
   readReceipts, writeReceipts, saveReceiptImage, buildReceipt, newReceiptId,
-  findByDedupKey, type Receipt,
+  findByDedupKey, withReceiptsLock, type Receipt,
 } from "./receipts";
 import { analyzeReceiptImage } from "./analyzeReceipt";
 
@@ -19,11 +19,12 @@ export async function createReceiptFromForm(
   source: Receipt["source"]
 ): Promise<{ receipt: Receipt; duplicate: boolean }> {
   const dedupKey = str(form, "dedupKey");
-  const all = await readReceipts();
 
-  // Idempotent: zelfde factuur/bon niet opnieuw toevoegen.
-  const existing = findByDedupKey(all, dedupKey);
-  if (existing) return { receipt: existing, duplicate: true };
+  // Snelle pre-check (mag buiten de lock): bestaat de dedupKey al, dan klaar.
+  if (dedupKey) {
+    const pre = findByDedupKey(await readReceipts(), dedupKey);
+    if (pre) return { receipt: pre, duplicate: true };
+  }
 
   const photo = form.get("photo") ?? form.get("image") ?? form.get("file");
   let buffer: Buffer | null = null;
@@ -78,8 +79,20 @@ export async function createReceiptFromForm(
     receipt.imageMime = mime;
   }
 
+  // iPhone-bonnen (en gmail-bonnen) zijn vrijwel altijd zakelijk → default zakelijk
+  // i.p.v. onbekend/privé wanneer er geen expliciete keuze is gemaakt.
+  if (source !== "manual" && receipt.kind === "onbekend") receipt.kind = "zakelijk";
+
   receipt.updatedAt = new Date().toISOString();
-  all.unshift(receipt);
-  await writeReceipts(all);
-  return { receipt, duplicate: false };
+
+  // Onder lock: opnieuw lezen, definitieve dedup, toevoegen, schrijven.
+  // Voorkomt dat gelijktijdige uploads elkaars schrijfactie overschrijven.
+  return withReceiptsLock(async () => {
+    const all = await readReceipts();
+    const existing = findByDedupKey(all, dedupKey);
+    if (existing) return { receipt: existing, duplicate: true };
+    all.unshift(receipt);
+    await writeReceipts(all);
+    return { receipt, duplicate: false };
+  });
 }

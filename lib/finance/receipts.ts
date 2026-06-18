@@ -60,6 +60,18 @@ export async function writeReceipts(receipts: Receipt[]): Promise<void> {
   await fs.writeFile(registerPath(), JSON.stringify(receipts, null, 2), "utf-8");
 }
 
+// ── Schrijf-lock ──────────────────────────────────────────────────────────────
+// receipts.json wordt via read-modify-write bijgewerkt. Bij gelijktijdige uploads
+// (meerdere bonnen kort na elkaar uit de iPhone-automatisering) zou een tweede write
+// een eerste kunnen overschrijven → verloren bon. Deze in-process mutex serialiseert
+// alle wijzigingen, zodat elke bon bewaard blijft.
+let receiptsLock: Promise<unknown> = Promise.resolve();
+export function withReceiptsLock<T>(fn: () => Promise<T>): Promise<T> {
+  const run = receiptsLock.then(fn, fn);
+  receiptsLock = run.then(() => {}, () => {});
+  return run;
+}
+
 export async function saveReceiptImage(id: string, buffer: Buffer, mime: string): Promise<string> {
   await fs.mkdir(imagesDir(), { recursive: true });
   const ext = mimeToExt(mime);

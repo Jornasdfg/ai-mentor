@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
-  readReceipts, writeReceipts, deleteReceiptImage,
+  readReceipts, writeReceipts, deleteReceiptImage, withReceiptsLock,
   parseAmountToCents, normalizeKind, normalizeDocType, normalizePaymentStatus, type Receipt,
 } from "@/lib/finance/receipts";
 
@@ -16,6 +16,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       category: string | null; paymentStatus: string; note: string | null; reviewed: boolean;
     }>;
 
+    return await withReceiptsLock(async () => {
     const receipts = await readReceipts();
     const idx = receipts.findIndex(r => r.id === id);
     if (idx === -1) return NextResponse.json({ error: "Bon niet gevonden" }, { status: 404 });
@@ -38,6 +39,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     receipts[idx] = { ...r, ...patch };
     await writeReceipts(receipts);
     return NextResponse.json({ ok: true, receipt: receipts[idx] });
+    });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
   }
@@ -47,6 +49,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
 export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
+    return await withReceiptsLock(async () => {
     const receipts = await readReceipts();
     const idx = receipts.findIndex(r => r.id === id);
     if (idx === -1) return NextResponse.json({ error: "Bon niet gevonden" }, { status: 404 });
@@ -54,6 +57,7 @@ export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ 
     receipts.splice(idx, 1);
     await writeReceipts(receipts);
     return NextResponse.json({ ok: true });
+    });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : "Fout" }, { status: 500 });
   }
