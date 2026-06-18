@@ -660,9 +660,15 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
 - **Storage** `lib/finance/receipts.ts`: `Receipt`-type + I/O naar **`data/receipts.json`** (metadata)
   en **`data/receipts/`** (de foto's). Bevat `parseAmountToCents` (NL "12,50" + EN), `normalizeKind`,
   `buildReceipt`. Niets hiervan in `task_register.json`.
-- **AI-analyse** `lib/finance/analyzeReceipt.ts`: goedkoop vision-model (`gpt-4o-mini`, `detail:"low"`,
-  model override via `RECEIPTS_VISION_MODEL`) → JSON {merchant, amount, date, category, kind, summary}.
-  Kosten via `addCost()` in de kostenteller. HEIC wordt overgeslagen (Shortcut levert JPEG).
+- **AI-analyse** `lib/finance/analyzeReceipt.ts`: vision-model (`gpt-4o-mini`, **`detail:"high"`** zodat
+  cijfers/totaalregel leesbaar zijn — `detail:"low"` las bedragen vrijwel altijd fout; model override via
+  `RECEIPTS_VISION_MODEL`, bv. `gpt-4o` voor nog meer OCR-precisie) → JSON {docType, merchant, amount, date,
+  category, kind, paymentStatus, summary}. Prompt leest expliciet het EINDTOTAAL en leunt **zakelijk**.
+  45s timeout (bon wordt zonder AI bewaard bij time-out). Kosten via `addCost()`. HEIC overgeslagen.
+- **Betrouwbaarheid**: `withReceiptsLock` serialiseert alle read-modify-writes op `receipts.json`
+  (create/PATCH/DELETE) → geen verloren bonnen bij gelijktijdige uploads. Default `kind=zakelijk` bij
+  shortcut/gmail-push (niet manueel). Gmail-routine gebruikt **altijd `dedupKey="gmail:<messageId>"`**
+  (stabiel per mail; factuurnummer-sleutel was fragiel bij misread → dubbele bon).
 - **Samenvoegen** `lib/finance/createFromForm.ts`: bouwt + bewaart een bon uit multipart; bij een foto
   draait AI en vult **ontbrekende** velden aan (handmatige invoer wint).
 - **API**:
