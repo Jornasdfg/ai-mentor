@@ -130,6 +130,7 @@ export async function deleteReceiptImage(filename: string | null): Promise<void>
 }
 
 function mimeToExt(mime: string): string {
+  if (mime.includes("pdf")) return ".pdf";
   if (mime.includes("png")) return ".png";
   if (mime.includes("webp")) return ".webp";
   if (mime.includes("heic") || mime.includes("heif")) return ".heic";
