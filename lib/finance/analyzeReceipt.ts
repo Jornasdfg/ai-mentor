@@ -19,9 +19,13 @@ export interface ReceiptAnalysis {
   summary: string | null;
 }
 
-// gpt-4o-mini prijs (USD per token)
-const IN_PER_TOKEN = 0.15 / 1_000_000;
-const OUT_PER_TOKEN = 0.60 / 1_000_000;
+// Prijs per token (USD) per model — zodat de kostenteller klopt ongeacht RECEIPTS_VISION_MODEL.
+function priceFor(model: string): { input: number; output: number } {
+  const m = model.toLowerCase();
+  if (m.includes("gpt-4o-mini")) return { input: 0.15 / 1e6, output: 0.60 / 1e6 };
+  if (m.includes("gpt-4o")) return { input: 2.50 / 1e6, output: 10.0 / 1e6 };
+  return { input: 0.15 / 1e6, output: 0.60 / 1e6 }; // veilige default (mini-tarief)
+}
 
 const SYSTEM = `Je bent een zeer nauwkeurige bonnen- en facturen-scanner voor een Nederlandse zakelijke administratie.
 Lees de afbeelding zorgvuldig en geef UITSLUITEND JSON terug:
@@ -95,7 +99,8 @@ export async function analyzeReceiptImage(
     const inTok = json.usage?.prompt_tokens ?? 0;
     const outTok = json.usage?.completion_tokens ?? 0;
     if (inTok || outTok) {
-      await addCost(inTok, outTok, inTok * IN_PER_TOKEN + outTok * OUT_PER_TOKEN).catch(() => {});
+      const p = priceFor(model);
+      await addCost(inTok, outTok, inTok * p.input + outTok * p.output).catch(() => {});
     }
 
     const content = json.choices?.[0]?.message?.content;
