@@ -57,6 +57,7 @@ export default function FinanceWorkspace() {
   const [receipts, setReceipts] = useState<Receipt[]>([]);
   const [loading, setLoading] = useState(true);
   const [month, setMonth] = useState<string>(() => monthKey(new Date()));
+  const [showAll, setShowAll] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
   const [editing, setEditing] = useState<Receipt | null>(null);
 
@@ -78,14 +79,14 @@ export default function FinanceWorkspace() {
   }, [receipts]);
 
   const monthReceipts = useMemo(
-    () => receipts.filter(r => r.date.slice(0, 7) === month)
+    () => (showAll ? receipts.slice() : receipts.filter(r => r.date.slice(0, 7) === month))
       .sort((a, b) => {
         // Nog te controleren bonnen bovenaan, daarna nieuwste datum eerst.
         if (a.reviewed !== b.reviewed) return a.reviewed ? 1 : -1;
         if (a.date !== b.date) return a.date < b.date ? 1 : -1;
         return a.createdAt < b.createdAt ? 1 : -1;
       }),
-    [receipts, month]
+    [receipts, month, showAll]
   );
 
   const toReview = useMemo(() => monthReceipts.filter(r => !r.reviewed).length, [monthReceipts]);
@@ -144,14 +145,20 @@ export default function FinanceWorkspace() {
       <div className="shrink-0 px-4 pt-3 pb-2 border-b border-border bg-panel">
         <div className="flex items-center justify-between gap-2 mb-3">
           <div className="flex items-center gap-1">
-            <button onClick={() => shiftMonth(-1)} className="w-8 h-8 rounded-full hover:bg-surface text-zinc-500 text-lg leading-none">‹</button>
-            <span className="text-sm font-bold text-zinc-800 min-w-[120px] text-center capitalize">{monthLabel}</span>
-            <button onClick={() => shiftMonth(1)} className="w-8 h-8 rounded-full hover:bg-surface text-zinc-500 text-lg leading-none">›</button>
+            <button disabled={showAll} onClick={() => shiftMonth(-1)} className="w-8 h-8 rounded-full hover:bg-surface text-zinc-500 text-lg leading-none disabled:opacity-25">‹</button>
+            <span className="text-sm font-bold text-zinc-800 min-w-[120px] text-center capitalize">{showAll ? "Alle bonnen" : monthLabel}</span>
+            <button disabled={showAll} onClick={() => shiftMonth(1)} className="w-8 h-8 rounded-full hover:bg-surface text-zinc-500 text-lg leading-none disabled:opacity-25">›</button>
           </div>
-          <button
-            onClick={() => setShowAdd(true)}
-            className="px-3.5 py-1.5 text-xs font-bold rounded-full bg-gradient-to-br from-accent to-accent2 text-white shadow-soft active:scale-95"
-          >+ Bon</button>
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => setShowAll(v => !v)}
+              className={`px-3 py-1.5 text-xs font-bold rounded-full transition-all active:scale-95 ${showAll ? "bg-accent/15 text-accent" : "text-zinc-500 hover:bg-surface"}`}
+            >{showAll ? "Per maand" : "Alles"}</button>
+            <button
+              onClick={() => setShowAdd(true)}
+              className="px-3.5 py-1.5 text-xs font-bold rounded-full bg-gradient-to-br from-accent to-accent2 text-white shadow-soft active:scale-95"
+            >+ Bon</button>
+          </div>
         </div>
         <div className="grid grid-cols-3 gap-2">
           <TotalCard label="Zakelijk" value={eur(totals.zak)} accent="text-accent" />
@@ -174,7 +181,7 @@ export default function FinanceWorkspace() {
           <p className="text-center text-sm text-zinc-400 mt-8">Laden…</p>
         ) : monthReceipts.length === 0 ? (
           <div className="text-center mt-10 px-6">
-            <p className="text-sm text-zinc-500">Nog geen bonnen in {monthLabel}.</p>
+            <p className="text-sm text-zinc-500">{showAll ? "Nog geen bonnen." : `Nog geen bonnen in ${monthLabel}.`}</p>
             <p className="text-xs text-zinc-400 mt-1">Voeg er een toe met “+ Bon”, of stuur er een vanaf je iPhone-Shortcut.</p>
           </div>
         ) : (
