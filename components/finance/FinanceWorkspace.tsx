@@ -18,6 +18,7 @@ interface Receipt {
   category: string | null;
   paymentStatus: PaymentStatus;
   imageFile: string | null;
+  imageMime: string | null;
   source: "shortcut" | "manual" | "gmail";
   sourceUrl: string | null;
   note: string | null;
@@ -221,9 +222,13 @@ function TotalCard({ label, value, accent }: { label: string; value: string; acc
 
 function ReceiptRow({ r, onEdit, onDelete, onApprove, onRescan, rescanning }: { r: Receipt; onEdit: () => void; onDelete: () => void; onApprove: () => void; onRescan: () => void; rescanning: boolean }) {
   const [zoom, setZoom] = useState(false);
+  const isPdf = (r.imageMime || "").includes("pdf");
+  const openUrl = (r.imageFile && isPdf) ? `/api/receipts/${r.id}/image` : r.sourceUrl;
   return (
     <div className={`flex items-center gap-3 rounded-xl bg-panel border p-2.5 shadow-soft ${r.reviewed ? "border-border" : "border-amber-300 ring-1 ring-amber-200"}`}>
-      {r.imageFile ? (
+      {r.imageFile && isPdf ? (
+        <a href={`/api/receipts/${r.id}/image`} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} title="Open de factuur-PDF" className="shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg hover:bg-accent/20">📄</a>
+      ) : r.imageFile ? (
         <button onClick={() => setZoom(true)} className="shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={`/api/receipts/${r.id}/image`} alt="" className="w-12 h-12 rounded-lg object-cover bg-surface" />
@@ -247,7 +252,7 @@ function ReceiptRow({ r, onEdit, onDelete, onApprove, onRescan, rescanning }: { 
           )}
           {r.category && <span className="text-[10px] text-zinc-500 truncate">{r.category}</span>}
           <span className="text-[10px] text-zinc-400">· {r.date}</span>
-          {r.sourceUrl && <a href={r.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[10px] font-semibold text-accent hover:underline">📄 {r.docType === "factuur" ? "Open factuur" : "Open"}</a>}
+          {openUrl && <a href={openUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[10px] font-semibold text-accent hover:underline">📄 {r.docType === "factuur" ? "Open factuur" : "Open"}</a>}
         </div>
       </div>
       <div className="shrink-0 text-right">

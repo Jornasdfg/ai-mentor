@@ -13,9 +13,12 @@ const STATE_FILE = path.join(DATA_DIR, "oauth_state.json");
 export async function GET() {
   const clientId = process.env.GOOGLE_CLIENT_ID;
   const redirectUri = process.env.GOOGLE_REDIRECT_URI;
-  const scopes =
+  const calendarScope =
     process.env.GOOGLE_CALENDAR_SCOPES ??
     "https://www.googleapis.com/auth/calendar.events";
+  // Gmail-leesrecht erbij: de app haalt factuur-PDF's (bijlagen) op om bedragen te lezen.
+  const gmailScope = "https://www.googleapis.com/auth/gmail.readonly";
+  const scopes = `${calendarScope} ${gmailScope}`;
 
   if (!clientId || !redirectUri) {
     return NextResponse.json(

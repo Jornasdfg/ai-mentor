@@ -59,6 +59,8 @@ export async function createReceiptFromForm(
       category: str(form, "category"),
       paymentStatus: str(form, "paymentStatus"),
       sourceUrl: str(form, "sourceUrl"),
+      gmailMessageId: str(form, "gmailMessageId"),
+      gmailAttachmentId: str(form, "gmailAttachmentId"),
       dedupKey,
       note: str(form, "note"),
     },

@@ -23,7 +23,9 @@ export interface Receipt {
   imageFile: string | null;   // bestandsnaam in data/receipts/
   imageMime: string | null;   // bv. "image/jpeg"
   source: "shortcut" | "manual" | "gmail";
-  sourceUrl: string | null;   // bv. link naar de Gmail-mail
+  sourceUrl: string | null;   // bv. link naar de Gmail-mail / factuurpagina
+  gmailMessageId: string | null;   // Gmail message-id (om de bijlage/PDF op te halen)
+  gmailAttachmentId: string | null; // optioneel; anders zoekt de app de PDF in de message
   dedupKey: string | null;    // stabiele sleutel voor idempotente import (bv. gmail-id / factuurnr)
   note: string | null;
   aiAnalyzed: boolean;        // is de bon door AI geanalyseerd?
@@ -222,6 +224,8 @@ export interface ReceiptInput {
   category?: string | null;
   paymentStatus?: string | null;
   sourceUrl?: string | null;
+  gmailMessageId?: string | null;
+  gmailAttachmentId?: string | null;
   dedupKey?: string | null;
   note?: string | null;
 }
@@ -250,6 +254,8 @@ export function buildReceipt(
     imageMime: image.mime,
     source,
     sourceUrl: input.sourceUrl?.toString().trim() || null,
+    gmailMessageId: input.gmailMessageId?.toString().trim() || null,
+    gmailAttachmentId: input.gmailAttachmentId?.toString().trim() || null,
     dedupKey: input.dedupKey?.toString().trim() || null,
     note: input.note?.toString().trim() || null,
     aiAnalyzed: false,
