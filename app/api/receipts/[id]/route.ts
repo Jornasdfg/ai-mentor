@@ -14,7 +14,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       docType: string; description: string; merchant: string | null; kind: string;
       amount: string; amountCents: number | null; date: string;
       category: string | null; paymentStatus: string; note: string | null; reviewed: boolean;
-      sourceUrl: string | null;
+      sourceUrl: string | null; gmailMessageId: string | null; gmailAttachmentId: string | null;
     }>;
 
     return await withReceiptsLock(async () => {
@@ -32,6 +32,8 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
     if (body.category !== undefined) patch.category = body.category?.toString().trim() || null;
     if (body.note !== undefined) patch.note = body.note?.toString().trim() || null;
     if (body.sourceUrl !== undefined) patch.sourceUrl = body.sourceUrl?.toString().trim() || null;
+    if (body.gmailMessageId !== undefined) patch.gmailMessageId = body.gmailMessageId?.toString().trim() || null;
+    if (body.gmailAttachmentId !== undefined) patch.gmailAttachmentId = body.gmailAttachmentId?.toString().trim() || null;
     if (body.date !== undefined && /^\d{4}-\d{2}-\d{2}$/.test(body.date)) patch.date = body.date;
     if (body.amountCents !== undefined) patch.amountCents = body.amountCents;
     else if (body.amount !== undefined) patch.amountCents = parseAmountToCents(body.amount);
