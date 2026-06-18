@@ -228,6 +228,8 @@ function ReceiptRow({ r, onEdit, onDelete, onApprove, onRescan, rescanning }: { 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={`/api/receipts/${r.id}/image`} alt="" className="w-12 h-12 rounded-lg object-cover bg-surface" />
         </button>
+      ) : r.sourceUrl ? (
+        <a href={r.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} title="Open de factuur" className="shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-lg hover:bg-accent/20">📄</a>
       ) : (
         <div className="shrink-0 w-12 h-12 rounded-lg bg-surface flex items-center justify-center text-zinc-300 text-lg">🧾</div>
       )}
@@ -245,7 +247,7 @@ function ReceiptRow({ r, onEdit, onDelete, onApprove, onRescan, rescanning }: { 
           )}
           {r.category && <span className="text-[10px] text-zinc-500 truncate">{r.category}</span>}
           <span className="text-[10px] text-zinc-400">· {r.date}</span>
-          {r.sourceUrl && <a href={r.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[10px] text-accent hover:underline">✉︎ mail</a>}
+          {r.sourceUrl && <a href={r.sourceUrl} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className="text-[10px] font-semibold text-accent hover:underline">📄 {r.docType === "factuur" ? "Open factuur" : "Open"}</a>}
         </div>
       </div>
       <div className="shrink-0 text-right">
