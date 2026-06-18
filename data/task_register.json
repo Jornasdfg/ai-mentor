@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-18T09:00:00.932Z",
+    "updatedAt": "2026-06-18T10:00:00.353Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-18T09:00:00.932Z",
+      "lastSyncedAt": "2026-06-18T10:00:00.353Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -905,8 +905,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-19T10:30:00",
-    "plannedEnd": "2026-06-19T11:00:00",
+    "plannedStart": "2026-06-19T10:00:00",
+    "plannedEnd": "2026-06-19T10:30:00",
     "plannedDate": "2026-06-19",
     "plannedMinutes": 30
   },
@@ -1856,7 +1856,7 @@
     "reason": "Vimexx kon op 8 juni producten niet automatisch verlengen: incasso niet (correct) ingesteld of saldo ontoereikend. Open verlengbestelling staat klaar — betaalmethode instellen of handmatig verlengen anders dreigen domeinen/hosting te verlopen.",
     "softDeadline": null,
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "hosting",
@@ -1864,14 +1864,15 @@
       "administratie"
     ],
     "title": "Vimexx betaalmethode instellen — automatische verlenging mislukt",
-    "updatedAt": "2026-06-09",
+    "updatedAt": "2026-06-18",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-18T20:30:00",
-    "plannedEnd": "2026-06-18T21:00:00",
+    "plannedStart": "2026-06-18T21:00:00",
+    "plannedEnd": "2026-06-18T21:30:00",
     "plannedDate": "2026-06-18",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-18T09:38:57.203Z"
   },
   {
     "id": "task_1781024039374_jf7h",
@@ -2012,8 +2013,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Mails online zetten en versturen",
-    "plannedStart": "2026-06-18T12:30:00",
-    "plannedEnd": "2026-06-18T13:30:00",
+    "plannedStart": "2026-06-18T13:00:00",
+    "plannedEnd": "2026-06-18T14:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2043,8 +2044,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-18T20:00:00",
-    "plannedEnd": "2026-06-18T22:00:00",
+    "plannedStart": "2026-06-19T09:00:00",
+    "plannedEnd": "2026-06-19T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2059,7 +2060,7 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-18"
+    "plannedDate": "2026-06-19"
   },
   {
     "id": "task_1781270866394_hon8",
@@ -2074,8 +2075,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-18T15:00:00",
-    "plannedEnd": "2026-06-18T16:00:00",
+    "plannedStart": "2026-06-18T15:30:00",
+    "plannedEnd": "2026-06-18T16:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2163,34 +2164,6 @@
     "unscheduledReason": null
   },
   {
-    "createdAt": "2026-06-16",
-    "deadline": "2026-06-16",
-    "deadlineType": "hard",
-    "hardDeadline": "2026-06-16",
-    "id": "task_mail_schiphol_doc_20260616",
-    "priority": "P1",
-    "project": "Brand Deals",
-    "reason": "Anoniem Schiphol-contact (Yune) bevestigde op 15 jun de 'EXTREME DAYTRIP Dublin'-invalshoek en beloofde vandaag (16 jun) Duty Free content-tips te sturen in Google Doc 'Concepten Jorn'. Jorn vliegt morgen (17 jun 18:15 via Schiphol naar Dublin) — doc checken, tips verwerken in contentstrategie.",
-    "softDeadline": null,
-    "source": "mail",
-    "status": "open",
-    "tags": [
-      "mail",
-      "samenwerking",
-      "schiphol",
-      "content"
-    ],
-    "title": "Schiphol conceptendoc checken — Duty Free tips voor Dublin trip (vlucht morgen)",
-    "updatedAt": "2026-06-16",
-    "scheduleColorState": "red",
-    "scheduleStatus": "missed",
-    "unscheduledReason": null,
-    "plannedStart": "2026-06-18T13:30:00",
-    "plannedEnd": "2026-06-18T14:00:00",
-    "plannedDate": "2026-06-18",
-    "plannedMinutes": 30
-  },
-  {
     "id": "task_1781596367031_b4lw",
     "title": "Tikkie maken voor Moodbar en 32",
     "status": "open",
@@ -2203,8 +2176,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-18T16:00:00",
-    "plannedEnd": "2026-06-18T17:00:00",
+    "plannedStart": "2026-06-18T16:30:00",
+    "plannedEnd": "2026-06-18T17:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2234,8 +2207,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 0,
     "nextAction": "Zorg ervoor dat de post online staat voor de deadline.",
-    "plannedStart": "2026-06-18T17:00:00",
-    "plannedEnd": "2026-06-18T17:30:00",
+    "plannedStart": "2026-06-18T19:00:00",
+    "plannedEnd": "2026-06-18T19:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -2265,8 +2238,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Post editen en inplannen voor publicatie.",
-    "plannedStart": "2026-06-18T14:00:00",
-    "plannedEnd": "2026-06-18T15:00:00",
+    "plannedStart": "2026-06-18T14:30:00",
+    "plannedEnd": "2026-06-18T15:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2294,21 +2267,22 @@
     "reason": "Social planningstool (usefoam) meldt op 15 jun dat de Instagram-koppeling van reishacker.nl verbroken is. Opnieuw verbinden zodat content en metrics blijven lopen (zelfde type issue als de eerdere TikTok-herverbinding).",
     "softDeadline": null,
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "reishacker",
       "instagram"
     ],
     "title": "Instagram opnieuw verbinden voor reishacker.nl planningstool",
-    "updatedAt": "2026-06-16",
+    "updatedAt": "2026-06-18",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-19T11:00:00",
-    "plannedEnd": "2026-06-19T11:30:00",
+    "plannedStart": "2026-06-19T10:45:00",
+    "plannedEnd": "2026-06-19T11:15:00",
     "plannedDate": "2026-06-19",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-18T09:38:58.879Z"
   },
   {
     "createdAt": "2026-06-17",
@@ -2331,8 +2305,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-18T21:00:00",
-    "plannedEnd": "2026-06-18T21:30:00",
+    "plannedStart": "2026-06-18T20:30:00",
+    "plannedEnd": "2026-06-18T21:00:00",
     "plannedDate": "2026-06-18",
     "plannedMinutes": 30
   },
@@ -2347,25 +2321,26 @@
     "reason": "Boone Media (Actief). Marrigje van Olst stuurde 30 mei de gradient-afbeeldingen (INSTAGRAM POSTS.zip, 3 formaten). Echte laatste contact 30 mei; Jorn heeft sindsdien (18 dgn) niet gereageerd — bal ligt bij Jorn.",
     "softDeadline": null,
     "source": "system",
-    "status": "open",
+    "status": "done",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "title": "Interior Pro (Marian/Marrigje) opvolgen — reageren op aangeleverde gradient-afbeeldingen (18 dgn stil)",
-    "updatedAt": "2026-06-17",
+    "updatedAt": "2026-06-18",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-19T11:30:00",
-    "plannedEnd": "2026-06-19T12:00:00",
+    "plannedStart": "2026-06-19T10:45:00",
+    "plannedEnd": "2026-06-19T11:15:00",
     "plannedDate": "2026-06-19",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-18T09:39:03.130Z"
   },
   {
     "id": "task_1781716109949_wq6s",
     "title": "Manychat opzeggen",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2375,8 +2350,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Manychat account opzeggen",
-    "plannedStart": "2026-06-18T19:00:00",
-    "plannedEnd": "2026-06-18T19:30:00",
+    "plannedStart": "2026-06-18T19:15:00",
+    "plannedEnd": "2026-06-18T19:45:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -2386,17 +2361,18 @@
       }
     ],
     "createdAt": "2026-06-17",
-    "updatedAt": "2026-06-17",
+    "updatedAt": "2026-06-18",
     "tags": [],
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-18"
+    "plannedDate": "2026-06-18",
+    "completedAt": "2026-06-18T09:40:41.338Z"
   },
   {
     "id": "task_1781725291476_g1ws",
     "title": "Verifiëren of NS abonnement goed gegaan is",
-    "status": "open",
+    "status": "done",
     "priority": "P0",
     "coveyQuadrant": "Q1",
     "deadline": null,
@@ -2406,8 +2382,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Controleer de bevestiging van het abonnement en eventuele betalingen.",
-    "plannedStart": "2026-06-18T11:00:00",
-    "plannedEnd": "2026-06-18T11:30:00",
+    "plannedStart": "2026-06-18T12:00:00",
+    "plannedEnd": "2026-06-18T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -2417,11 +2393,40 @@
       }
     ],
     "createdAt": "2026-06-17",
-    "updatedAt": "2026-06-17",
+    "updatedAt": "2026-06-18",
     "tags": [],
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-18"
+    "plannedDate": "2026-06-18",
+    "completedAt": "2026-06-18T09:59:12.608Z"
+  },
+  {
+    "createdAt": "2026-06-16",
+    "deadline": "2026-06-16",
+    "deadlineType": "hard",
+    "hardDeadline": "2026-06-16",
+    "id": "task_mail_schiphol_doc_20260616",
+    "priority": "P1",
+    "project": "Brand Deals",
+    "reason": "Anoniem Schiphol-contact (Yune) bevestigde op 15 jun de 'EXTREME DAYTRIP Dublin'-invalshoek en beloofde vandaag (16 jun) Duty Free content-tips te sturen in Google Doc 'Concepten Jorn'. Jorn vliegt morgen (17 jun 18:15 via Schiphol naar Dublin) — doc checken, tips verwerken in contentstrategie.",
+    "softDeadline": null,
+    "source": "mail",
+    "status": "open",
+    "tags": [
+      "mail",
+      "samenwerking",
+      "schiphol",
+      "content"
+    ],
+    "title": "Schiphol conceptendoc checken — Duty Free tips voor Dublin trip (vlucht morgen)",
+    "updatedAt": "2026-06-16",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedStart": "2026-06-18T14:00:00",
+    "plannedEnd": "2026-06-18T14:30:00",
+    "plannedDate": "2026-06-18",
+    "plannedMinutes": 30
   }
 ]
