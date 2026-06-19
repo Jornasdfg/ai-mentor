@@ -1,16 +1,1 @@
-[
-  {
-    "source": "gmail",
-    "docType": "bon",
-    "merchant": "CapCut",
-    "amount": "",
-    "date": "2026-06-18",
-    "kind": "zakelijk",
-    "paymentStatus": "betaald",
-    "category": "Software",
-    "description": "CapCut Pro monthly abonnement - betaling ontvangen (videobewerking Reishacker)",
-    "dedupKey": "gmail:19edadcba4af80fd",
-    "gmailMessageId": "19edadcba4af80fd",
-    "sourceUrl": "https://cashier-my4a.pipopay.com/pipo_fe/invoice/information?fp_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGFuZGFyZF9jbGFpbXMiOnsiZXhwIjoxODEzMzI0MzM4LCJqdGkiOiJBa0FBQUZ0QkVhUXFoVTBmcEJZbjRrZnlxZklWIiwiaWF0IjoxNzgxNzg4MzM4fSwia2luZiI6eyJrdHAiOiJLTVNWMl9TSUdOX0tFWSJ9LCJtYWluYWN0IjoiMTEyMDIyMDNMYXhwNjEiLCJzdWJhY3QiOiI3MzQwMTg1MTM1MTE3MjcyMDY2IiwidWlkIjoiQXdGeDFpTzE4U3RXaXI5OUNLTDk5a1owbG5IbEFBIiwicm8iOiJBRE1JTiIsInNjIjoiSU5WT0lDRV9BUFBMWSIsImV4X20iOnsiZXh0cmEiOiJRRUNuT3d3aGNzRXFlN1o3UkRSTE1WT2NBanRvcmcrZnNGeW4vS0hldWJhc3JXUWdZeFRFNmhLeExTUjVhVkJsNzQ0eEJ3WnlWZ1ROOUg2MiJ9LCJ0IjoxfQ"
-  }
-]
+[]
