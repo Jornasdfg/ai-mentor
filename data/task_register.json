@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-20T11:00:00.970Z",
+    "updatedAt": "2026-06-20T12:00:01.026Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-20T11:00:00.970Z",
+      "lastSyncedAt": "2026-06-20T12:00:01.026Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -715,8 +715,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-20T14:00:00",
-    "plannedEnd": "2026-06-20T14:30:00",
+    "plannedStart": "2026-06-20T16:00:00",
+    "plannedEnd": "2026-06-20T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -905,8 +905,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-21T10:30:00",
-    "plannedEnd": "2026-06-21T11:00:00",
+    "plannedStart": "2026-06-21T12:30:00",
+    "plannedEnd": "2026-06-21T13:00:00",
     "plannedDate": "2026-06-21",
     "plannedMinutes": 30
   },
@@ -919,9 +919,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-20T15:00:00",
+    "plannedEnd": "2026-06-20T17:00:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-20T14:30:00",
+    "plannedStart": "2026-06-20T16:30:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -2013,8 +2013,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Mails online zetten en versturen",
-    "plannedStart": "2026-06-20T14:00:00",
-    "plannedEnd": "2026-06-20T15:00:00",
+    "plannedStart": "2026-06-20T15:00:00",
+    "plannedEnd": "2026-06-20T16:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2044,8 +2044,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-20T15:00:00",
-    "plannedEnd": "2026-06-20T17:00:00",
+    "plannedStart": "2026-06-21T10:30:00",
+    "plannedEnd": "2026-06-21T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2060,7 +2060,7 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-20"
+    "plannedDate": "2026-06-21"
   },
   {
     "id": "task_1781270866394_hon8",
@@ -2075,8 +2075,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-20T15:00:00",
-    "plannedEnd": "2026-06-20T16:00:00",
+    "plannedStart": "2026-06-20T16:00:00",
+    "plannedEnd": "2026-06-20T17:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2176,8 +2176,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-20T16:00:00",
-    "plannedEnd": "2026-06-20T17:00:00",
+    "plannedStart": "2026-06-20T16:30:00",
+    "plannedEnd": "2026-06-20T17:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2207,8 +2207,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 0,
     "nextAction": "Zorg ervoor dat de post online staat voor de deadline.",
-    "plannedStart": "2026-06-20T17:00:00",
-    "plannedEnd": "2026-06-20T17:30:00",
+    "plannedStart": "2026-06-20T14:30:00",
+    "plannedEnd": "2026-06-20T15:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -2274,9 +2274,9 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-20T15:00:00",
-    "plannedEnd": "2026-06-20T15:30:00",
-    "plannedDate": "2026-06-20",
+    "plannedStart": "2026-06-21T10:00:00",
+    "plannedEnd": "2026-06-21T10:30:00",
+    "plannedDate": "2026-06-21",
     "plannedMinutes": 30
   },
   {
@@ -2444,8 +2444,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het aanpassen van de AI-gegenereerde blog naar een meer menselijke toon.",
-    "plannedStart": "2026-06-20T13:00:00",
-    "plannedEnd": "2026-06-20T14:00:00",
+    "plannedStart": "2026-06-20T15:00:00",
+    "plannedEnd": "2026-06-20T16:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2485,8 +2485,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-21T11:00:00",
-    "plannedEnd": "2026-06-21T11:30:00",
+    "plannedStart": "2026-06-21T13:00:00",
+    "plannedEnd": "2026-06-21T13:30:00",
     "plannedDate": "2026-06-21",
     "plannedMinutes": 30
   }
