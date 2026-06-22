@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "source": "gmail",
+    "docType": "factuur",
+    "merchant": "Airtable",
+    "amount": "29,04",
+    "date": "2026-06-20",
+    "kind": "zakelijk",
+    "paymentStatus": "betaald",
+    "category": "Software",
+    "description": "Airtable maandafrekening 'My First Workspace' (juni 2026) — $29.04 afgeschreven van betaalmethode",
+    "dedupKey": "gmail:19ee4373553e9f6e",
+    "gmailMessageId": "19ee4373553e9f6e",
+    "sourceUrl": "https://mail.google.com/mail/u/0/#all/19ee4373553e9f6e"
+  }
+]
