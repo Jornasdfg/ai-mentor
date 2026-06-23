@@ -5,8 +5,8 @@ import path from "path";
 // raakt niets aan. Regels (Van Vijven):
 //  - Werkdagen = dinsdag/woensdag/donderdag → standaard "Navragen".
 //  - Maandag/vrijdag → standaard "Vrij" (in principe vrij om in te vullen).
-//  - NIET MOGELIJK (vol gekleurd) ALLEEN als er een VAST item (echte afspraak / vastgezet /
-//    handmatig geplaatst) op die dag staat. Een los flexibel auto-blokje blokkeert NIET.
+//  - NIET MOGELIJK (vol gekleurd) ALLEEN als er een VASTE afspraak OVERDAG (06:00–18:00) staat.
+//    Een los flexibel auto-blokje of een AVOND-afspraak blokkeert NIET (werk is overdag).
 
 export type DayStatus = "vast" | "navragen" | "vrij";
 
@@ -36,13 +36,23 @@ function isFixed(b: Block): boolean {
   return b.locked === true || (b.source !== undefined && b.source !== "auto_scheduler");
 }
 
+// Overdag = start tussen 06:00 en 18:00. Avondafspraken tellen NIET mee voor
+// beschikbaarheid (Van Vijven-werk is overdag rijden).
+const DAY_START = 6, DAY_END = 18;
+function isDaytime(b: Block): boolean {
+  const t = (b.start ?? "").slice(11, 16); // "HH:mm"
+  if (!/^\d{2}:\d{2}$/.test(t)) return true; // onbekende tijd → tel mee (veilig)
+  const h = parseInt(t.slice(0, 2), 10);
+  return h >= DAY_START && h < DAY_END;
+}
+
 export async function computeAvailability(dates: string[]): Promise<DayAvailability[]> {
   const blocks = await readBlocks();
   return dates.map(date => {
     const dayBlocks = blocks.filter(b => (b.start ?? "").slice(0, 10) === date);
     const weekday = isoWeekday(date);
     const isWorkDay = weekday >= 2 && weekday <= 4; // di/wo/do
-    const hasFixed = dayBlocks.some(isFixed);       // echte afspraak/vastgezet item
+    const hasFixed = dayBlocks.some(b => isFixed(b) && isDaytime(b)); // vaste afspraak OVERDAG
 
     let status: DayStatus;
     let note: string;
