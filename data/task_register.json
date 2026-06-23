@@ -139,7 +139,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-23T13:00:00.383Z",
+    "updatedAt": "2026-06-23T14:00:00.364Z",
     "tags": [
       "malaga"
     ],
@@ -157,7 +157,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-23T13:00:00.383Z",
+      "lastSyncedAt": "2026-06-23T14:00:00.364Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -715,8 +715,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-24T10:00:00",
-    "plannedEnd": "2026-06-24T10:30:00",
+    "plannedStart": "2026-06-23T21:30:00",
+    "plannedEnd": "2026-06-23T22:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -725,7 +725,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-24"
+    "plannedDate": "2026-06-23"
   },
   {
     "id": "task_1779402718137_n2ty",
@@ -905,8 +905,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-24T13:30:00",
-    "plannedEnd": "2026-06-24T14:00:00",
+    "plannedStart": "2026-06-24T11:30:00",
+    "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
     "plannedMinutes": 30
   },
@@ -919,9 +919,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-24T11:00:00",
+    "plannedEnd": "2026-06-24T09:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-24T10:30:00",
+    "plannedStart": "2026-06-24T09:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -1424,7 +1424,7 @@
     "id": "task_1780599534893_k6so",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
-    "status": "open",
+    "status": "cancelled",
     "priority": "P1",
     "source": "recurring_manual",
     "deadline": "2026-06-22",
@@ -1453,10 +1453,11 @@
     "scheduleOnDate": "2026-06-22",
     "calendarSyncMode": "none",
     "createdAt": "2026-06-04",
-    "updatedAt": "2026-06-04",
+    "updatedAt": "2026-06-23",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
-    "unscheduledReason": "Geen vrije slots beschikbaar"
+    "unscheduledReason": "Geen vrije slots beschikbaar",
+    "cancelledAt": "2026-06-23T13:22:07.191Z"
   },
   {
     "id": "task_1780599534894_a8he",
@@ -2003,7 +2004,7 @@
   {
     "id": "task_1781267108616_eyzk",
     "title": "Legend WK-pool mails online zetten en versturen",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2013,8 +2014,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Mails online zetten en versturen",
-    "plannedStart": "2026-06-23T16:00:00",
-    "plannedEnd": "2026-06-23T17:00:00",
+    "plannedStart": "2026-06-23T16:30:00",
+    "plannedEnd": "2026-06-23T17:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2024,12 +2025,13 @@
       }
     ],
     "createdAt": "2026-06-12",
-    "updatedAt": "2026-06-12",
+    "updatedAt": "2026-06-23",
     "tags": [],
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-23"
+    "plannedDate": "2026-06-23",
+    "completedAt": "2026-06-23T13:22:24.125Z"
   },
   {
     "id": "task_1781267325101_9tm5",
@@ -2044,8 +2046,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-24T11:30:00",
-    "plannedEnd": "2026-06-24T13:30:00",
+    "plannedStart": "2026-06-24T09:30:00",
+    "plannedEnd": "2026-06-24T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2197,7 +2199,7 @@
   {
     "id": "task_1781610815830_ckvv",
     "title": "Ledgnd WK post online zetten",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2207,8 +2209,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 0,
     "nextAction": "Zorg ervoor dat de post online staat voor de deadline.",
-    "plannedStart": "2026-06-23T21:30:00",
-    "plannedEnd": "2026-06-23T22:00:00",
+    "plannedStart": "2026-06-24T09:00:00",
+    "plannedEnd": "2026-06-24T09:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -2218,12 +2220,13 @@
       }
     ],
     "createdAt": "2026-06-16",
-    "updatedAt": "2026-06-16",
+    "updatedAt": "2026-06-23",
     "tags": [],
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-23"
+    "plannedDate": "2026-06-24",
+    "completedAt": "2026-06-23T13:22:19.768Z"
   },
   {
     "createdAt": "2026-06-16",
@@ -2264,20 +2267,21 @@
     "reason": "Boone Media (Actief). Harm@bebedrijven.nl stuurde 3 jun het SEVENP-antwoord door en vraagt of de Claude Office-plugin (Word/Excel/PPT/Outlook) volstaat voor hun automatisering. Echte laatste contact 3 jun; Jorn heeft sindsdien (14 dgn) niet meer geantwoord — bal ligt bij Jorn.",
     "softDeadline": null,
     "source": "system",
-    "status": "open",
+    "status": "done",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "title": "B&E Bedrijven (Harm) opvolgen — antwoord op Claude-integratievraag (14 dgn stil)",
-    "updatedAt": "2026-06-17",
+    "updatedAt": "2026-06-23",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-24T11:00:00",
-    "plannedEnd": "2026-06-24T11:30:00",
+    "plannedStart": "2026-06-24T09:00:00",
+    "plannedEnd": "2026-06-24T09:30:00",
     "plannedDate": "2026-06-24",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-23T13:22:31.481Z"
   },
   {
     "createdAt": "2026-06-17",
@@ -2434,7 +2438,7 @@
   {
     "id": "task_1781867689233_csy8",
     "title": "Blog humaniseren",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2444,8 +2448,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het aanpassen van de AI-gegenereerde blog naar een meer menselijke toon.",
-    "plannedStart": "2026-06-24T09:00:00",
-    "plannedEnd": "2026-06-24T10:00:00",
+    "plannedStart": "2026-06-23T21:00:00",
+    "plannedEnd": "2026-06-23T22:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2455,12 +2459,13 @@
       }
     ],
     "createdAt": "2026-06-19",
-    "updatedAt": "2026-06-19",
+    "updatedAt": "2026-06-23",
     "tags": [],
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-24"
+    "plannedDate": "2026-06-23",
+    "completedAt": "2026-06-23T13:22:27.728Z"
   },
   {
     "createdAt": "2026-06-20",
@@ -2473,7 +2478,7 @@
     "reason": "Whalar (notices@whalar.com) verkoopt zijn agency-business; per ~22 jun gaan alle creator-contracten over naar Mist Agency Newco Ltd. Legal notice vraagt Jorn via de link ontvangst/akkoord te bevestigen voor zijn Skyscanner/H2 2025 contract. Voorwaarden, rates en payouts blijven gelijk — even bevestigen zodat de overdracht netjes verloopt.",
     "softDeadline": null,
     "source": "mail",
-    "status": "open",
+    "status": "done",
     "tags": [
       "mail",
       "samenwerking",
@@ -2481,14 +2486,15 @@
       "contract"
     ],
     "title": "Contractoverdracht naar Mist bevestigen — Whalar",
-    "updatedAt": "2026-06-20",
+    "updatedAt": "2026-06-23",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-24T14:00:00",
-    "plannedEnd": "2026-06-24T14:30:00",
+    "plannedStart": "2026-06-24T11:30:00",
+    "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-23T13:22:36.466Z"
   },
   {
     "id": "task_1781963500882_8u3b",
@@ -2528,20 +2534,21 @@
     "reason": "Status 'Binnen'. Verblijf easyHotel Amsterdam (16-17 juni) is voltooid, maar sinds ~5 juni geen menselijk contact meer met Maddie Simpson (Maddie.Simpson@easyhotel.com) - alleen een automatische OOO (3 jun) en een ReviewPro-gastenenquete (17 jun). Content uit het verblijf nog op te leveren / samenwerking weer oppakken.",
     "softDeadline": null,
     "source": "system",
-    "status": "open",
+    "status": "done",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "title": "easyHotel opvolgen — 16 dagen geen contact",
-    "updatedAt": "2026-06-21",
+    "updatedAt": "2026-06-23",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-24T14:30:00",
-    "plannedEnd": "2026-06-24T15:00:00",
+    "plannedStart": "2026-06-24T11:30:00",
+    "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-23T13:22:39.436Z"
   },
   {
     "id": "task_1782165600715_frf3",
@@ -2592,7 +2599,7 @@
     "reason": "Boone Media (Actief). Jorn stuurde 3 jun factuur 26065_1 (mei-uren) naar info@vanvijventransport.nl. Echte laatste contact 3 jun (eigen verzonden mail); sindsdien 20 dgn geen reactie en nog geen herinnering verstuurd — bal ligt bij Jorn om te herinneren.",
     "softDeadline": null,
     "source": "system",
-    "status": "open",
+    "status": "done",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -2602,9 +2609,10 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-24T15:00:00",
-    "plannedEnd": "2026-06-24T15:30:00",
+    "plannedStart": "2026-06-24T11:30:00",
+    "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
-    "plannedMinutes": 30
+    "plannedMinutes": 30,
+    "completedAt": "2026-06-23T13:22:41.385Z"
   }
 ]
