@@ -14,7 +14,7 @@ function fmtDate(iso: string): string {
 }
 const STATUS_STYLE: Record<DayStatus, { box: string; label: string }> = {
   vast:     { box: "background:#ef4444;color:#fff",                 label: "Niet mogelijk" },
-  flexibel: { box: "background:#fde68a;color:#92400e",              label: "Flexibel" },
+  navragen: { box: "background:#fde68a;color:#92400e",              label: "Navragen" },
   vrij:     { box: "background:#d1fae5;color:#065f46",              label: "Vrij" },
 };
 
@@ -57,7 +57,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
         <section style={card}>
           <h2 style={h2}>Beschikbaarheid</h2>
           <p style={{ color: "#64748b", fontSize: 12, margin: "0 0 12px" }}>
-            Werkdagen zijn <b>di/wo/do</b>. Ma/vr in principe vrij — even overleggen. Staat er iets in de agenda, dan niet mogelijk.
+            Werkdagen <b>di/wo/do</b> staan standaard op <b>Navragen</b>. Ma/vr in principe <b>Vrij</b>. Alleen als er al een vaste afspraak staat, is het <b>Niet mogelijk</b>.
           </p>
           {weeks.map((wk, i) => (
             <div key={i} style={{ marginBottom: 12 }}>
@@ -77,7 +77,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
             </div>
           ))}
           <div style={{ display: "flex", gap: 12, marginTop: 6, fontSize: 11, color: "#64748b" }}>
-            <Legend color="#d1fae5" text="Vrij" /><Legend color="#fde68a" text="Flexibel" /><Legend color="#ef4444" text="Niet mogelijk" />
+            <Legend color="#d1fae5" text="Vrij" /><Legend color="#fde68a" text="Navragen" /><Legend color="#ef4444" text="Niet mogelijk" />
           </div>
         </section>
 

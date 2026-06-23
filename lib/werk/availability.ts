@@ -3,13 +3,12 @@ import path from "path";
 
 // Leidt beschikbaarheid af uit de PLANNING (data/schedule_blocks.json) — ALLEEN-LEZEN,
 // raakt niets aan. Regels (Van Vijven):
-//  - Werkdagen = dinsdag/woensdag/donderdag.
-//  - VAST (vol gekleurd, "niet mogelijk"): er staat een vast item (afspraak/locked/handmatig)
-//    op die dag. Op ma/vr geldt: ELK agenda-item = niet mogelijk.
-//  - FLEXIBEL (vage kleur): alleen flexibele (auto-geplande) items op die dag.
-//  - VRIJ: leeg. Ma/vr leeg = "vrij — even navragen".
+//  - Werkdagen = dinsdag/woensdag/donderdag → standaard "Navragen".
+//  - Maandag/vrijdag → standaard "Vrij" (in principe vrij om in te vullen).
+//  - NIET MOGELIJK (vol gekleurd) ALLEEN als er een VAST item (echte afspraak / vastgezet /
+//    handmatig geplaatst) op die dag staat. Een los flexibel auto-blokje blokkeert NIET.
 
-export type DayStatus = "vast" | "flexibel" | "vrij";
+export type DayStatus = "vast" | "navragen" | "vrij";
 
 interface Block { start?: string; source?: string; locked?: boolean; title?: string }
 
@@ -43,23 +42,19 @@ export async function computeAvailability(dates: string[]): Promise<DayAvailabil
     const dayBlocks = blocks.filter(b => (b.start ?? "").slice(0, 10) === date);
     const weekday = isoWeekday(date);
     const isWorkDay = weekday >= 2 && weekday <= 4; // di/wo/do
-    const hasFixed = dayBlocks.some(isFixed);
-    const hasAny = dayBlocks.length > 0;
+    const hasFixed = dayBlocks.some(isFixed);       // echte afspraak/vastgezet item
 
     let status: DayStatus;
     let note: string;
-    if (weekday === 1 || weekday === 5) {
-      // ma/vr: in principe vrij, maar elk item = niet mogelijk
-      if (hasAny) { status = "vast"; note = "Niet mogelijk (staat al iets gepland)"; }
-      else { status = "vrij"; note = "Vrij — even navragen"; }
-    } else if (weekday >= 6) {
-      status = hasFixed ? "vast" : (hasAny ? "flexibel" : "vrij");
-      note = "Weekend";
+    if (hasFixed) {
+      // Alleen een VASTE afspraak maakt een dag niet mogelijk.
+      status = "vast"; note = "Niet mogelijk — staat al een afspraak";
+    } else if (weekday >= 2 && weekday <= 4) {
+      status = "navragen"; note = "Werkdag — even navragen";
+    } else if (weekday === 1 || weekday === 5) {
+      status = "vrij"; note = "In principe vrij — even navragen";
     } else {
-      // di/wo/do
-      if (hasFixed) { status = "vast"; note = "Niet mogelijk"; }
-      else if (hasAny) { status = "flexibel"; note = "Deels gepland (flexibel)"; }
-      else { status = "vrij"; note = "Beschikbaar"; }
+      status = "vrij"; note = "Weekend";
     }
     return { date, weekday, isWorkDay, status, note };
   });
