@@ -17,7 +17,8 @@ export async function getShareToken(): Promise<string> {
     const t = JSON.parse(raw) as { token?: string };
     if (t.token) return t.token;
   } catch { /* nog niet aangemaakt */ }
-  const token = "vv_" + crypto.randomBytes(18).toString("hex");
+  // Herkenbaar (naam Rens) + kort geheim deel.
+  const token = "rens-" + crypto.randomBytes(3).toString("hex");
   await fs.mkdir(dataDir(), { recursive: true });
   await fs.writeFile(FILE(), JSON.stringify({ token, createdAt: new Date().toISOString() }, null, 2), "utf-8");
   return token;
