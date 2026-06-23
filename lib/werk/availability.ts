@@ -23,6 +23,35 @@ async function readBlocks(): Promise<Block[]> {
   } catch { return []; }
 }
 
+// ── Google Calendar-events (echte afspraken/vakanties) ────────────────────────
+interface GEvent { summary?: string; start?: string; end?: string; status?: string }
+async function readGoogleEvents(): Promise<GEvent[]> {
+  try {
+    const c = JSON.parse(await fs.readFile(path.join(dataDir(), "google_calendar_event_cache.json"), "utf-8"));
+    return Array.isArray(c?.events) ? c.events as GEvent[] : [];
+  } catch { return []; }
+}
+// Info-events die NIET blokkeren (verjaardagen e.d.).
+const INFO_RE = /verjaardag|gefeliciteerd|jarig|birthday|🎂|naamdag|feestdag/i;
+function isAllDayEvent(e: GEvent): boolean { return /^\d{4}-\d{2}-\d{2}$/.test(e.start ?? ""); }
+
+// Blokkeert een Google-event deze datum? Hele-dag/meerdaags (vakantie, bruiloft) → ja
+// (behalve verjaardag-achtige info-events). Getimed → alleen overdag (06–18).
+function googleBlocksDate(events: GEvent[], date: string): GEvent | null {
+  for (const e of events) {
+    if (e.status === "cancelled") continue;
+    if (isAllDayEvent(e)) {
+      const s = e.start ?? "", en = e.end ?? "";          // end is EXCLUSIEF bij hele-dag
+      if (s && en && s <= date && date < en && !INFO_RE.test(e.summary ?? "")) return e;
+    } else {
+      if ((e.start ?? "").slice(0, 10) !== date) continue;
+      const h = parseInt((e.start ?? "").slice(11, 13), 10);
+      if (Number.isFinite(h) && h >= DAY_START && h < DAY_END) return e;
+    }
+  }
+  return null;
+}
+
 export interface DayAvailability {
   date: string;          // YYYY-MM-DD
   weekday: number;       // 1=ma ... 7=zo
@@ -47,18 +76,19 @@ function isDaytime(b: Block): boolean {
 }
 
 export async function computeAvailability(dates: string[]): Promise<DayAvailability[]> {
-  const blocks = await readBlocks();
+  const [blocks, gevents] = await Promise.all([readBlocks(), readGoogleEvents()]);
   return dates.map(date => {
     const dayBlocks = blocks.filter(b => (b.start ?? "").slice(0, 10) === date);
     const weekday = isoWeekday(date);
     const isWorkDay = weekday >= 2 && weekday <= 4; // di/wo/do
-    const hasFixed = dayBlocks.some(b => isFixed(b) && isDaytime(b)); // vaste afspraak OVERDAG
+    const gBusy = googleBlocksDate(gevents, date);                   // Google-agenda (vakantie/afspraak)
+    const hasFixed = dayBlocks.some(b => isFixed(b) && isDaytime(b)) || !!gBusy; // vaste afspraak OVERDAG of Google-event
 
     let status: DayStatus;
     let note: string;
     if (hasFixed) {
-      // Alleen een VASTE afspraak maakt een dag niet mogelijk.
-      status = "vast"; note = "Niet mogelijk — staat al een afspraak";
+      // Een vaste afspraak (planning of Google-agenda) maakt de dag niet mogelijk.
+      status = "vast"; note = "Niet mogelijk — staat al iets in de agenda";
     } else if (weekday >= 2 && weekday <= 4) {
       status = "navragen"; note = "Werkdag — even navragen";
     } else if (weekday === 1 || weekday === 5) {
