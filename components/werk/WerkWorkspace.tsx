@@ -30,16 +30,27 @@ export default function WerkWorkspace() {
   }, []);
   useEffect(() => { load(); }, [load]);
 
+  async function openShareLink() {
+    try {
+      const res = await fetch("/api/werk/share");
+      const { path } = await res.json() as { path: string };
+      const url = `${window.location.origin}${path}`;
+      try { await navigator.clipboard.writeText(url); } catch { /* clipboard kan falen */ }
+      window.open(url, "_blank");
+      alert("Werkgever-link gekopieerd:\n" + url);
+    } catch { alert("Kon de werkgever-link niet ophalen."); }
+  }
+
   return (
     <div className="flex flex-col h-full w-full overflow-hidden bg-surface">
       <div className="shrink-0 px-4 pt-3 pb-2 border-b border-border bg-panel">
         <div className="flex items-center justify-between gap-2">
           <span className="text-sm font-extrabold text-zinc-800">🚚 Van Vijven Transport</span>
-          <a
-            href="/werk/werkgever" target="_blank" rel="noreferrer"
+          <button
+            onClick={openShareLink}
             className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent hover:bg-accent/20"
-            title="Open de werkgever-weergave (deelbare link)"
-          >👁 Werkgever-link</a>
+            title="Kopieer/open de deelbare werkgever-link"
+          >🔗 Werkgever-link</button>
         </div>
         <div className="flex gap-2 mt-3">
           {(["uren", "vrachtbonnen"] as const).map(t => (
