@@ -46,8 +46,19 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
   for (let i = 0; i < availability.length; i += 5) weeks.push(availability.slice(i, i + 5));
 
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", background: "#f3f5fc", minHeight: "100vh", margin: 0 }}>
-      <div style={{ maxWidth: 640, margin: "0 auto", padding: "20px 16px 60px" }}>
+    <main style={{ fontFamily: "system-ui, sans-serif", background: "#f3f5fc", minHeight: "100vh", margin: 0, overflowX: "hidden" }}>
+      <style>{`
+        *{box-sizing:border-box}
+        .wk-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}
+        .wk-cell{border:1px solid #e2e8f0;border-radius:10px;padding:6px 2px;text-align:center;min-width:0;overflow:hidden}
+        .wk-work{border:2px solid #5b6cff;padding:5px 1px}
+        .wk-dow{font-size:10px;color:#64748b;text-transform:uppercase}
+        .wk-date{font-size:12px;font-weight:700;color:#1e293b;line-height:1.05;margin-bottom:3px}
+        .wk-badge{font-size:9px;font-weight:700;border-radius:6px;padding:3px 1px;white-space:normal;line-height:1.05;word-break:break-word}
+        .fr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+        @media(min-width:520px){.wk-date{font-size:14px}.wk-dow{font-size:11px}.wk-badge{font-size:11px;padding:4px 2px}.wk-cell{padding:8px 4px}}
+      `}</style>
+      <div style={{ maxWidth: 640, margin: "0 auto", padding: "16px 12px 60px" }}>
         <header style={{ marginBottom: 20 }}>
           <h1 style={{ fontSize: 22, margin: 0, color: "#1e293b" }}>🚚 Jorn — Van Vijven Transport</h1>
           <p style={{ color: "#64748b", margin: "4px 0 0", fontSize: 14 }}>Overzicht uren, vrachtbonnen en beschikbaarheid.</p>
@@ -62,14 +73,14 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
           {weeks.map((wk, i) => (
             <div key={i} style={{ marginBottom: 12 }}>
               <div style={{ fontSize: 11, color: "#94a3b8", marginBottom: 4 }}>{i === 0 ? "Deze week" : `Week van ${fmtDate(wk[0].date)}`}</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 6 }}>
+              <div className="wk-grid">
                 {wk.map(d => {
                   const s = STATUS_STYLE[d.status];
                   return (
-                    <div key={d.date} title={d.note} style={{ borderRadius: 10, padding: "8px 4px", textAlign: "center", border: d.isWorkDay ? "2px solid #5b6cff" : "1px solid #e2e8f0" }}>
-                      <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase" }}>{DAY_NL[d.weekday]}</div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: "#1e293b" }}>{fmtDate(d.date)}</div>
-                      <div style={{ marginTop: 4, fontSize: 10, fontWeight: 700, borderRadius: 6, padding: "3px 2px", ...styleObj(s.box) }}>{s.label}</div>
+                    <div key={d.date} title={d.note} className={"wk-cell" + (d.isWorkDay ? " wk-work" : "")}>
+                      <div className="wk-dow">{DAY_NL[d.weekday]}</div>
+                      <div className="wk-date">{fmtDate(d.date)}</div>
+                      <div className="wk-badge" style={styleObj(s.box)}>{s.label}</div>
                     </div>
                   );
                 })}
@@ -102,7 +113,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
         <section style={card}>
           <h2 style={h2}>Vrachtbonnen</h2>
           {recentFreight.length === 0 ? <p style={muted}>Nog geen vrachtbonnen.</p> : (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 8 }}>
+            <div className="fr-grid">
               {recentFreight.map(v => (
                 <a key={v.id} href={`/api/werk/freight/${v.id}/image`} target="_blank" rel="noreferrer" style={{ display: "block" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
