@@ -698,6 +698,27 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
 
 ---
 
+## Tools-menu & Werk (Van Vijven) — standalone ★ NIEUW (18-06-2026)
+
+De 4e nav-plek is een **☰ "Meer"-menu** (`app/page.tsx`, `showTools`) dat een tools-popup opent met
+**Financiën** en **Van Vijven (werk)**. Nieuwe tools = één entry bijzetten in `TOOLS`.
+
+**Werk-tool** (`lib/werk/*`, `components/werk/WerkWorkspace.tsx`) — volledig LOS van taken/planner/financiën:
+- **Opslag** `lib/werk/workStore.ts`: `work_hours.json` + `vrachtbonnen.json` + foto's in `data/werk_images/`;
+  eigen `withWorkLock`. Uren via aantal óf begin/eind (`hoursFromRange`).
+- **API**: `GET/POST /api/werk/hours` (+`[id]` DELETE), `GET/POST /api/werk/freight` (+`[id]`, `/image`).
+- **Airtable-push** `lib/werk/airtable.ts`: bij elke nieuwe urenregel → Airtable base `appMDfQOyPOaEASe7`
+  tabel **Uren** (`tbllhWzPiugvol1ZE`): Omschrijving="Werkdag (dd-mm-jjjj)", Datum, Uren (tekst),
+  **Klant="Van Vijven Transport"**, Beschrijving=notitie. Vereist **`AIRTABLE_TOKEN`** (PAT, `data.records:write`)
+  in `/app/.env.local` — zonder token is het een no-op (alleen lokaal). ⚠️ token alleen server-side.
+- **Werkgever-deellink** (token, alleen-lezen): `app/werk/[token]/page.tsx` (server-rendered). Token in
+  `data/werk_share.json` (`lib/werk/share.ts`); `GET /api/werk/share` geeft de link. Toont **gewerkte uren**,
+  **vrachtbonnen** en **beschikbaarheid** (`lib/werk/availability.ts`, leest `schedule_blocks.json` READ-ONLY):
+  werkdagen di/wo/do; **vast** (afspraak/locked/handmatig) = niet mogelijk (rood), **flexibel** (alleen
+  auto-blokken) = vaag, **vrij** = leeg; ma/vr in principe vrij maar elk agenda-item = niet mogelijk.
+
+---
+
 ## Datamodel
 
 ### MentorTask (kern)
