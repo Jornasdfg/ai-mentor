@@ -34,7 +34,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
   const [hours, freight, availability] = await Promise.all([
     loadVisibleHours(),
     readFreight(),
-    computeAvailability(workWeekDates(todayISO, 2)),
+    computeAvailability(workWeekDates(todayISO, 4)),
   ]);
 
   // Uren groeperen per datum (laatste 6 weken).
@@ -61,7 +61,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
           </p>
           {weeks.map((wk, i) => (
             <div key={i} style={{ marginBottom: 12 }}>
-              <div style={{ fontSize: 11, color: "#94a3b8", marginBottom: 4 }}>{i === 0 ? "Deze week" : "Volgende week"}</div>
+              <div style={{ fontSize: 11, color: "#94a3b8", marginBottom: 4 }}>{i === 0 ? "Deze week" : `Week van ${fmtDate(wk[0].date)}`}</div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 6 }}>
                 {wk.map(d => {
                   const s = STATUS_STYLE[d.status];
