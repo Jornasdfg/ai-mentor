@@ -703,7 +703,11 @@ bedrag/winkel/datum in → langzaam je financiën bijhouden (maandtotaal zakelij
 De 4e nav-plek is een **☰ "Meer"-menu** (`app/page.tsx`, `showTools`) dat een tools-popup opent met
 **Financiën** en **Van Vijven (werk)**. Nieuwe tools = één entry bijzetten in `TOOLS`.
 
-**Werk-tool** (`lib/werk/*`, `components/werk/WerkWorkspace.tsx`) — volledig LOS van taken/planner/financiën:
+**Werk-tool** (`lib/werk/*`, `components/werk/WerkWorkspace.tsx`) — **multi-client** (`lib/werk/clients.ts`:
+Van Vijven Transport + Ledgnd). Per klant: eigen Airtable-Klant, eigen deellink-slug, en wel/geen
+vrachtbonnen (Van Vijven=wel, Ledgnd=geen → bij Ledgnd telt de **beschrijving per dag**). `WorkHours.client`
+scheidt de data; uren met Airtable-status "Verwerkt" worden verborgen (`loadVisibleHours`). Volledig LOS
+van taken/planner/financiën:
 - **Opslag** `lib/werk/workStore.ts`: `work_hours.json` + `vrachtbonnen.json` + foto's in `data/werk_images/`;
   eigen `withWorkLock`. Uren via aantal óf begin/eind (`hoursFromRange`).
 - **API**: `GET/POST /api/werk/hours` (+`[id]` DELETE), `GET/POST /api/werk/freight` (+`[id]`, `/image`).
