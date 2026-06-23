@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import type { ClientId } from "./clients";
 
 // ── Standalone Werk-module (Van Vijven Transport) ─────────────────────────────
 // Volledig losstaand van taken/planner/financiën/scheduler. Eigen JSON-bestanden
@@ -7,6 +8,7 @@ import path from "path";
 
 export interface WorkHours {
   id: string;              // "wh_<ts>_<rand>"
+  client: ClientId;        // welke werkgever (vanvijven | ledgnd)
   date: string;            // YYYY-MM-DD
   hours: number;           // aantal uren (bv. 8.5)
   start: string | null;    // optioneel "HH:mm"

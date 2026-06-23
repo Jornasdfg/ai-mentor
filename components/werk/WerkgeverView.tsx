@@ -1,7 +1,8 @@
-import { isValidShareToken } from "@/lib/werk/share";
+import { resolveShareToken } from "@/lib/werk/share";
 import { readFreight } from "@/lib/werk/workStore";
 import { loadVisibleHours } from "@/lib/werk/hoursView";
 import { computeAvailability, workWeekDates, type DayStatus } from "@/lib/werk/availability";
+import { CLIENTS } from "@/lib/werk/clients";
 
 // Gedeelde, alleen-lezen werkgever-weergave. Gebruikt door /werk/[token] én /u/[code].
 const DAY_NL = ["", "ma", "di", "wo", "do", "vr", "za", "zo"];
@@ -18,8 +19,8 @@ const STATUS_STYLE: Record<DayStatus, { box: string; label: string }> = {
 };
 
 export default async function WerkgeverView({ token }: { token: string }) {
-  const ok = await isValidShareToken(token);
-  if (!ok) {
+  const client = await resolveShareToken(token);
+  if (!client) {
     return (
       <main style={{ fontFamily: "system-ui, sans-serif", maxWidth: 520, margin: "60px auto", padding: 24, textAlign: "center", color: "#334155" }}>
         <h1 style={{ fontSize: 20 }}>Geen toegang</h1>
@@ -27,11 +28,12 @@ export default async function WerkgeverView({ token }: { token: string }) {
       </main>
     );
   }
+  const cfg = CLIENTS[client];
 
   const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
   const [hours, freight, availability] = await Promise.all([
-    loadVisibleHours(),
-    readFreight(),
+    loadVisibleHours(client),
+    cfg.showFreight ? readFreight() : Promise.resolve([]),
     computeAvailability(workWeekDates(todayISO, 4)),
   ]);
 
@@ -56,8 +58,8 @@ export default async function WerkgeverView({ token }: { token: string }) {
       `}</style>
       <div style={{ maxWidth: 640, margin: "0 auto", padding: "16px 12px 60px" }}>
         <header style={{ marginBottom: 20 }}>
-          <h1 style={{ fontSize: 22, margin: 0, color: "#1e293b" }}>🚚 Jorn — Van Vijven Transport</h1>
-          <p style={{ color: "#64748b", margin: "4px 0 0", fontSize: 14 }}>Overzicht uren, vrachtbonnen en beschikbaarheid.</p>
+          <h1 style={{ fontSize: 22, margin: 0, color: "#1e293b" }}>{cfg.emoji} {cfg.headerName}</h1>
+          <p style={{ color: "#64748b", margin: "4px 0 0", fontSize: 14 }}>Overzicht uren{cfg.showFreight ? ", vrachtbonnen" : ""} en beschikbaarheid.</p>
         </header>
 
         <section style={card}>
@@ -90,33 +92,36 @@ export default async function WerkgeverView({ token }: { token: string }) {
         <section style={card}>
           <h2 style={h2}>Gewerkte uren</h2>
           {recentHours.length === 0 ? <p style={muted}>Nog geen uren geregistreerd.</p> : (
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
-              <tbody>
-                {recentHours.map(h => (
-                  <tr key={h.id} style={{ borderTop: "1px solid #eef2f7" }}>
-                    <td style={{ padding: "8px 0", color: "#475569" }}>{fmtDate(h.date)}{h.start && h.end ? ` · ${h.start}–${h.end}` : ""}</td>
-                    <td style={{ padding: "8px 0", textAlign: "right", fontWeight: 700, color: "#1e293b" }}>{h.hours.toFixed(2).replace(".", ",")} uur</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </section>
-
-        <section style={card}>
-          <h2 style={h2}>Vrachtbonnen</h2>
-          {recentFreight.length === 0 ? <p style={muted}>Nog geen vrachtbonnen.</p> : (
-            <div className="fr-grid">
-              {recentFreight.map(v => (
-                <a key={v.id} href={`/api/werk/freight/${v.id}/image`} target="_blank" rel="noreferrer" style={{ display: "block" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/api/werk/freight/${v.id}/image`} alt="" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid #e2e8f0" }} />
-                  <div style={{ fontSize: 10, color: "#94a3b8", marginTop: 2 }}>{fmtDate(v.date)}</div>
-                </a>
+            <div>
+              {recentHours.map(h => (
+                <div key={h.id} style={{ borderTop: "1px solid #eef2f7", padding: "8px 0" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
+                    <span style={{ color: "#475569", fontSize: 14 }}>{fmtDate(h.date)}{h.start && h.end ? ` · ${h.start}–${h.end}` : ""}</span>
+                    <span style={{ fontWeight: 700, color: "#1e293b", fontSize: 14, whiteSpace: "nowrap" }}>{h.hours > 0 ? `${h.hours.toFixed(2).replace(".", ",")} uur` : "—"}</span>
+                  </div>
+                  {h.note && <div style={{ color: "#64748b", fontSize: 12, marginTop: 2, lineHeight: 1.3 }}>{h.note}</div>}
+                </div>
               ))}
             </div>
           )}
         </section>
+
+        {cfg.showFreight && (
+          <section style={card}>
+            <h2 style={h2}>Vrachtbonnen</h2>
+            {recentFreight.length === 0 ? <p style={muted}>Nog geen vrachtbonnen.</p> : (
+              <div className="fr-grid">
+                {recentFreight.map(v => (
+                  <a key={v.id} href={`/api/werk/freight/${v.id}/image`} target="_blank" rel="noreferrer" style={{ display: "block" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`/api/werk/freight/${v.id}/image`} alt="" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid #e2e8f0" }} />
+                    <div style={{ fontSize: 10, color: "#94a3b8", marginTop: 2 }}>{fmtDate(v.date)}</div>
+                  </a>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
 
         <p style={{ textAlign: "center", color: "#cbd5e1", fontSize: 11, marginTop: 24 }}>Alleen-lezen overzicht · AI Mentor</p>
       </div>

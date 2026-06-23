@@ -1,5 +1,6 @@
 import { readHours, writeHours, withWorkLock, type WorkHours } from "./workStore";
 import { fetchHoursStatuses } from "./airtable";
+import { normalizeClient, type ClientId } from "./clients";
 
 // Uren waarvan de Airtable-status "Verwerkt" is, worden NIET getoond (in de app
 // én in de werkgever-link). "Nog te verwerken" e.d. blijven zichtbaar.
@@ -9,8 +10,8 @@ export function isProcessed(status?: string | null): boolean {
 
 // Leest de uren, ververst de Airtable-status (best-effort), bewaart die, en geeft
 // alleen de NIET-verwerkte uren terug.
-export async function loadVisibleHours(): Promise<WorkHours[]> {
-  const all = await readHours();
+export async function loadVisibleHours(client?: ClientId): Promise<WorkHours[]> {
+  const all = (client ? (await readHours()).filter(h => normalizeClient(h.client) === client) : await readHours());
   let statuses: Record<string, string> = {};
   try { statuses = await fetchHoursStatuses(); } catch { /* offline/niet geconfigureerd */ }
 

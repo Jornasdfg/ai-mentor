@@ -14,7 +14,7 @@ import type { MentorTask } from "@/lib/mentorTypes";
 import { analyzeTask } from "@/lib/mentor/taskAnalyzer";
 import { isRoutine } from "@/lib/mentor/taskCharacter";
 
-type TabId = "planner" | "tasks" | "ai" | "finance" | "werk";
+type TabId = "planner" | "tasks" | "ai" | "finance" | "vanvijven" | "ledgnd";
 
 // Directe tabs in de balk.
 const NAV_TABS: { id: TabId; label: string }[] = [
@@ -25,8 +25,9 @@ const NAV_TABS: { id: TabId; label: string }[] = [
 
 // Tools onder het ☰-menu (hier komen er meer bij).
 const TOOLS: { id: TabId; label: string; emoji: string; desc: string }[] = [
-  { id: "finance", label: "Financiën", emoji: "💶", desc: "Bonnen, facturen & maandtotalen" },
-  { id: "werk",    label: "Van Vijven (werk)", emoji: "🚚", desc: "Uren & vrachtbonnen + werkgever-link" },
+  { id: "finance",   label: "Financiën", emoji: "💶", desc: "Bonnen, facturen & maandtotalen" },
+  { id: "vanvijven", label: "Van Vijven (werk)", emoji: "🚚", desc: "Uren & vrachtbonnen + werkgever-link" },
+  { id: "ledgnd",    label: "Ledgnd (werk)", emoji: "💡", desc: "Uren + beschrijving + werkgever-link" },
 ];
 
 function IconPlanner() {
@@ -143,7 +144,7 @@ export default function Home() {
     } finally { setMissedBusy(null); }
   }
 
-  const toolActive = activeTab === "finance" || activeTab === "werk";
+  const toolActive = activeTab === "finance" || activeTab === "vanvijven" || activeTab === "ledgnd";
   function openTool(id: TabId) { setActiveTab(id); setShowTools(false); }
 
   return (
@@ -201,8 +202,12 @@ export default function Home() {
             <FinanceWorkspace />
           )}
 
-          {activeTab === "werk" && (
-            <WerkWorkspace />
+          {activeTab === "vanvijven" && (
+            <WerkWorkspace client="vanvijven" />
+          )}
+
+          {activeTab === "ledgnd" && (
+            <WerkWorkspace client="ledgnd" />
           )}
         </div>
       </div>

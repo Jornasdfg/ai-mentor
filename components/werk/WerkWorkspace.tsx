@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { CLIENTS, type ClientId } from "@/lib/werk/clients";
 
-// Standalone Werk-tool (Van Vijven Transport). Geen koppeling met de rest van de app.
+// Standalone Werk-tool, per werkgever (Van Vijven / Ledgnd). Geen koppeling met de rest van de app.
 interface WorkHours {
   id: string; date: string; hours: number; start: string | null; end: string | null;
   note: string | null; airtableRecordId: string | null;
@@ -12,7 +13,8 @@ interface Vrachtbon { id: string; date: string; description: string | null; imag
 function todayISO() { return new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" }); }
 const inputCls = "w-full px-3 py-2 text-sm rounded-xl border border-border bg-surface focus:outline-none focus:border-accent text-zinc-800";
 
-export default function WerkWorkspace() {
+export default function WerkWorkspace({ client }: { client: ClientId }) {
+  const cfg = CLIENTS[client];
   const [tab, setTab] = useState<"uren" | "vrachtbonnen">("uren");
   const [hours, setHours] = useState<WorkHours[]>([]);
   const [freight, setFreight] = useState<Vrachtbon[]>([]);
@@ -20,19 +22,19 @@ export default function WerkWorkspace() {
 
   const load = useCallback(async () => {
     try {
-      const [h, f] = await Promise.all([
-        fetch("/api/werk/hours").then(r => r.json()),
-        fetch("/api/werk/freight").then(r => r.json()),
-      ]);
+      const h = await fetch(`/api/werk/hours?client=${client}`).then(r => r.json());
       setHours(h.hours ?? []);
-      setFreight(f.freight ?? []);
+      if (cfg.showFreight) {
+        const f = await fetch("/api/werk/freight").then(r => r.json());
+        setFreight(f.freight ?? []);
+      }
     } catch { /* stil */ } finally { setLoading(false); }
-  }, []);
-  useEffect(() => { load(); }, [load]);
+  }, [client, cfg.showFreight]);
+  useEffect(() => { setLoading(true); setTab("uren"); load(); }, [load]);
 
   async function openShareLink() {
     try {
-      const res = await fetch("/api/werk/share");
+      const res = await fetch(`/api/werk/share?client=${client}`);
       const { path } = await res.json() as { path: string };
       const url = `${window.location.origin}${path}`;
       try { await navigator.clipboard.writeText(url); } catch { /* clipboard kan falen */ }
@@ -41,37 +43,41 @@ export default function WerkWorkspace() {
     } catch { alert("Kon de werkgever-link niet ophalen."); }
   }
 
+  const tabs: Array<"uren" | "vrachtbonnen"> = cfg.showFreight ? ["uren", "vrachtbonnen"] : ["uren"];
+
   return (
     <div className="flex flex-col h-full w-full overflow-hidden bg-surface">
       <div className="shrink-0 px-4 pt-3 pb-2 border-b border-border bg-panel">
         <div className="flex items-center justify-between gap-2">
-          <span className="text-sm font-extrabold text-zinc-800">🚚 Van Vijven Transport</span>
+          <span className="text-sm font-extrabold text-zinc-800">{cfg.emoji} {cfg.airtableKlant}</span>
           <button
             onClick={openShareLink}
             className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-accent/10 text-accent hover:bg-accent/20"
             title="Kopieer/open de deelbare werkgever-link"
           >🔗 Werkgever-link</button>
         </div>
-        <div className="flex gap-2 mt-3">
-          {(["uren", "vrachtbonnen"] as const).map(t => (
-            <button key={t} onClick={() => setTab(t)}
-              className={`flex-1 py-2 text-xs font-bold rounded-xl border transition-all ${tab === t ? "border-accent bg-accent/10 text-accent" : "border-border text-zinc-500"}`}>
-              {t === "uren" ? "Uren" : "Vrachtbonnen"}
-            </button>
-          ))}
-        </div>
+        {tabs.length > 1 && (
+          <div className="flex gap-2 mt-3">
+            {tabs.map(t => (
+              <button key={t} onClick={() => setTab(t)}
+                className={`flex-1 py-2 text-xs font-bold rounded-xl border transition-all ${tab === t ? "border-accent bg-accent/10 text-accent" : "border-border text-zinc-500"}`}>
+                {t === "uren" ? "Uren" : "Vrachtbonnen"}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="flex-1 overflow-y-auto">
         {loading ? <p className="text-center text-sm text-zinc-400 mt-8">Laden…</p>
-          : tab === "uren" ? <UrenTab hours={hours} onChange={load} />
+          : tab === "uren" ? <UrenTab hours={hours} onChange={load} client={client} />
           : <VrachtbonnenTab freight={freight} onChange={load} />}
       </div>
     </div>
   );
 }
 
-function UrenTab({ hours, onChange }: { hours: WorkHours[]; onChange: () => void }) {
+function UrenTab({ hours, onChange, client }: { hours: WorkHours[]; onChange: () => void; client: ClientId }) {
   const [date, setDate] = useState(todayISO());
   const [h, setH] = useState("");
   const [start, setStart] = useState("");
@@ -87,7 +93,7 @@ function UrenTab({ hours, onChange }: { hours: WorkHours[]; onChange: () => void
     try {
       const res = await fetch("/api/werk/hours", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ date, hours: h, start, end, note }),
+        body: JSON.stringify({ date, hours: h, start, end, note, client }),
       });
       const j = await res.json();
       if (!res.ok) throw new Error(j.error || "Mislukt");

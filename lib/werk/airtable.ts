@@ -1,4 +1,5 @@
 import type { WorkHours } from "./workStore";
+import { CLIENTS } from "./clients";
 
 // Pusht een urenregel naar de Airtable "Uren"-tabel (Boone Media base).
 // Bestemming staat vast op de juiste base/tabel; alleen de PAT komt uit env.
@@ -29,7 +30,7 @@ export async function pushHoursToAirtable(entry: WorkHours): Promise<string | nu
     "Omschrijving": `Werkdag (${nlDate(entry.date)})`,
     "Datum": entry.date,                                   // Airtable date-veld accepteert ISO
     "Uren": String(entry.hours).replace(".", ","),         // "Uren" is een tekstveld
-    "Klant": "Van Vijven Transport",
+    "Klant": CLIENTS[entry.client]?.airtableKlant ?? "Van Vijven Transport",
   };
   if (entry.note) fields["Beschrijving"] = entry.note;
 
