@@ -1,5 +1,6 @@
 import { isValidShareToken } from "@/lib/werk/share";
-import { readHours, readFreight } from "@/lib/werk/workStore";
+import { readFreight } from "@/lib/werk/workStore";
+import { loadVisibleHours } from "@/lib/werk/hoursView";
 import { computeAvailability, workWeekDates, type DayStatus } from "@/lib/werk/availability";
 
 export const dynamic = "force-dynamic";
@@ -31,7 +32,7 @@ export default async function WerkgeverPage({ params }: { params: Promise<{ toke
 
   const todayISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
   const [hours, freight, availability] = await Promise.all([
-    readHours(),
+    loadVisibleHours(),
     readFreight(),
     computeAvailability(workWeekDates(todayISO, 2)),
   ]);

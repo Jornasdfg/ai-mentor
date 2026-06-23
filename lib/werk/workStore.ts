@@ -14,6 +14,7 @@ export interface WorkHours {
   note: string | null;
   airtableRecordId: string | null; // gevuld zodra naar Airtable gepusht
   airtableSyncedAt: string | null;
+  airtableStatus: string | null;   // laatst bekende Airtable-status (bv. "Nog te verwerken" / "Verwerkt")
   createdAt: string;
   updatedAt: string;
 }

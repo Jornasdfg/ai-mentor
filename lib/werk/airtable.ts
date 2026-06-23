@@ -42,3 +42,30 @@ export async function pushHoursToAirtable(entry: WorkHours): Promise<string | nu
   const json = await res.json() as { id?: string };
   return json.id ?? null;
 }
+
+// Haalt per Airtable-record de huidige Status op (om "Verwerkt"-uren te verbergen).
+// Geeft { recordId: statusNaam }. Leeg object als niet geconfigureerd of bij fout.
+export async function fetchHoursStatuses(): Promise<Record<string, string>> {
+  const token = process.env.AIRTABLE_TOKEN;
+  if (!token) return {};
+  const base = process.env.WERK_AIRTABLE_BASE || DEFAULT_BASE;
+  const table = encodeURIComponent(process.env.WERK_AIRTABLE_TABLE || DEFAULT_TABLE);
+  const out: Record<string, string> = {};
+  let offset: string | undefined;
+  do {
+    const url = new URL(`https://api.airtable.com/v0/${base}/${table}`);
+    url.searchParams.set("pageSize", "100");
+    url.searchParams.append("fields[]", "Status");
+    if (offset) url.searchParams.set("offset", offset);
+    const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    if (!res.ok) break;
+    const j = await res.json() as { records?: { id: string; fields?: { Status?: unknown } }[]; offset?: string };
+    for (const r of j.records ?? []) {
+      const s = r.fields?.Status;
+      out[r.id] = typeof s === "string" ? s : (s && typeof s === "object" && "name" in s ? String((s as { name: unknown }).name) : "");
+    }
+    offset = j.offset;
+  } while (offset);
+  return out;
+}
+

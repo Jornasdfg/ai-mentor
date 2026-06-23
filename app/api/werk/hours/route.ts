@@ -4,12 +4,13 @@ import {
   type WorkHours,
 } from "@/lib/werk/workStore";
 import { pushHoursToAirtable } from "@/lib/werk/airtable";
+import { loadVisibleHours } from "@/lib/werk/hoursView";
 
 export const runtime = "nodejs";
 
-// GET — alle uren (nieuwste eerst).
+// GET — uren (nieuwste eerst), zonder de in Airtable als "Verwerkt" gemarkeerde.
 export async function GET() {
-  const hours = (await readHours()).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (a.createdAt < b.createdAt ? 1 : -1)));
+  const hours = (await loadVisibleHours()).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : (a.createdAt < b.createdAt ? 1 : -1)));
   return NextResponse.json({ hours });
 }
 
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
       note: body.note?.toString().trim() || null,
       airtableRecordId: null,
       airtableSyncedAt: null,
+      airtableStatus: null,
       createdAt: now,
       updatedAt: now,
     };
