@@ -68,9 +68,14 @@ export default function MonthView({ monthBase, blocks, googleEvents, tasks: _tas
           {days.map(({ iso, inMonth }) => {
             const isToday = iso === today;
             const dayBlocks = blocks.filter(b => b.start.startsWith(iso));
-            const dayGEvents = googleEvents.filter(e => e.start.startsWith(iso));
-            const total = dayBlocks.length + dayGEvents.length;
+            // Meerdaagse/hele-dag events die DEZE dag bedekken → doorlopende rode balk.
+            const allDayCover = googleEvents.filter(e => e.allDay && e.start.slice(0, 10) <= iso && iso <= e.end.slice(0, 10));
+            const timedToday = googleEvents.filter(e => !e.allDay && e.start.startsWith(iso));
+            const total = dayBlocks.length + timedToday.length;
             const dayNum = parseInt(iso.slice(8), 10);
+            const [Y, M, D] = iso.split("-").map(Number);
+            const wd = new Date(Date.UTC(Y, M - 1, D)).getUTCDay(); // 0=zo
+            const isWeekStart = wd === 1; // maandag → titel opnieuw tonen
             return (
               <div
                 key={iso}
@@ -80,20 +85,31 @@ export default function MonthView({ monthBase, blocks, googleEvents, tasks: _tas
                 <div className={`text-xs font-semibold mb-1 w-5 h-5 flex items-center justify-center rounded-full ${isToday ? "bg-blue-500 text-white" : "text-zinc-600"}`}>
                   {dayNum}
                 </div>
+                {/* Doorlopende balk voor meerdaagse/hele-dag events (vakantie e.d.) */}
+                <div className="space-y-0.5 mb-0.5">
+                  {allDayCover.map(e => {
+                    const showTitle = e.start.slice(0, 10) === iso || isWeekStart;
+                    return (
+                      <div key={e.id} className="-mx-1.5 px-1.5 py-0.5 text-[10px] text-white bg-red-500 truncate font-semibold" title={e.title}>
+                        {showTitle ? e.title : " "}
+                      </div>
+                    );
+                  })}
+                </div>
                 <div className="space-y-0.5">
-                  {dayBlocks.slice(0, 3).map(b => (
+                  {dayBlocks.slice(0, 2).map(b => (
                     <div key={b.id} className={`flex items-center gap-1 px-1 py-0.5 rounded text-[10px] truncate ${COLOR_BG[b.colorState] ?? COLOR_BG.gray}`} title={b.title}>
                       <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${DOT[b.colorState] ?? DOT.gray}`} />
                       <span className="truncate">{b.start.slice(11, 16)} {b.title}</span>
                     </div>
                   ))}
-                  {dayGEvents.slice(0, Math.max(0, 3 - dayBlocks.length)).map(e => (
+                  {timedToday.slice(0, Math.max(0, 2 - dayBlocks.length)).map(e => (
                     <div key={e.id} className="flex items-center gap-1 px-1 py-0.5 rounded text-[10px] bg-indigo-900/40 text-indigo-300 truncate" title={e.title}>
                       <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
-                      <span className="truncate">{e.allDay ? "" : e.start.slice(11, 16)} {e.title}</span>
+                      <span className="truncate">{e.start.slice(11, 16)} {e.title}</span>
                     </div>
                   ))}
-                  {total > 3 && <div className="text-[10px] text-zinc-600 px-1">+{total - 3} meer</div>}
+                  {total > 2 && <div className="text-[10px] text-zinc-600 px-1">+{total - 2} meer</div>}
                 </div>
               </div>
             );

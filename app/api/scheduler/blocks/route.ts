@@ -3,6 +3,13 @@ import { readScheduleBlocks, readScheduleRuns } from "@/lib/scheduler/scheduleSt
 import { readTasks } from "@/lib/mentor/mentorStorage";
 import { readEventCache } from "@/lib/calendar/googleSyncStorage";
 
+function addDaysISO(iso: string, days: number): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString().slice(0, 10);
+}
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -37,22 +44,31 @@ export async function GET(req: NextRequest) {
           return !isMentor;
         })
         .filter(e => {
-          const start = e.start.length <= 10 ? e.start : e.start.slice(0, 10);
-          if (from && start < from) return false;
-          if (to && start > to) return false;
+          const allDay = e.start.length <= 10;
+          const startDay = e.start.slice(0, 10);
+          // Hele-dag-eind is EXCLUSIEF in Google → laatste dag = eind - 1.
+          const lastDay = allDay ? addDaysISO(e.end.slice(0, 10), -1) : e.end.slice(0, 10);
+          // Overlap-test (niet alleen startdag) zodat meerdaagse events ook in latere weken tonen.
+          if (to && startDay > to) return false;
+          if (from && lastDay < from) return false;
           return true;
         })
-        .map(e => ({
-          id: e.eventId,
-          title: e.summary,
-          start: e.start.length <= 10 ? `${e.start}T00:00:00` : e.start,
-          end: e.end.length <= 10 ? `${e.end}T23:59:59` : e.end,
-          allDay: e.start.length <= 10,
-          source: "google_calendar" as const,
-          calendarId: e.calendarId,
-          description: e.description ?? null,
-          htmlLink: e.htmlLink ?? null,
-        }));
+        .map(e => {
+          const allDay = e.start.length <= 10;
+          // Voor hele-dag: eind inclusief laatste dag (eind-exclusief − 1 dag) op 23:59:59.
+          const endIso = allDay ? `${addDaysISO(e.end.slice(0, 10), -1)}T23:59:59` : e.end;
+          return {
+            id: e.eventId,
+            title: e.summary,
+            start: allDay ? `${e.start}T00:00:00` : e.start,
+            end: endIso,
+            allDay,
+            source: "google_calendar" as const,
+            calendarId: e.calendarId,
+            description: e.description ?? null,
+            htmlLink: e.htmlLink ?? null,
+          };
+        });
     }
 
     const lastRun = runs[0] ?? null;

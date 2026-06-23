@@ -334,6 +334,29 @@ export default function WeekTimeGrid({
 
   const hourLabels = Array.from({ length: totalHours }, (_, i) => startHour + i);
 
+  // ── Hele-dag / meerdaagse Google-events → balken bovenaan die over de dagen lopen ──
+  const numDays = weekDays.length;
+  const allDayRowEnds: number[] = []; // greedy row-packing: laatste eindkolom per rij
+  const allDayBars = (numDays > 0 ? googleEvents.filter(e => e.allDay) : [])
+    .map(ev => {
+      const sDay = ev.start.slice(0, 10);
+      const lDay = ev.end.slice(0, 10); // eind is inclusief laatste dag (23:59:59)
+      const left = sDay < weekDays[0] ? weekDays[0] : sDay;
+      const right = lDay > weekDays[numDays - 1] ? weekDays[numDays - 1] : lDay;
+      if (left > right) return null;
+      const startIdx = weekDays.indexOf(left);
+      const endIdx = weekDays.indexOf(right);
+      if (startIdx < 0 || endIdx < 0) return null;
+      let row = allDayRowEnds.findIndex(end => end < startIdx);
+      if (row === -1) { row = allDayRowEnds.length; allDayRowEnds.push(endIdx); } else { allDayRowEnds[row] = endIdx; }
+      const contLeft = sDay < weekDays[0];           // loopt door van vóór deze week
+      const contRight = lDay > weekDays[numDays - 1]; // loopt door na deze week
+      return { id: ev.id, ev, startIdx, endIdx, row, contLeft, contRight,
+        leftPct: (startIdx / numDays) * 100, widthPct: ((endIdx - startIdx + 1) / numDays) * 100 };
+    })
+    .filter((b): b is NonNullable<typeof b> => b !== null);
+  const allDayRows = allDayRowEnds.length;
+
   return (
     <div className="flex flex-col h-full overflow-hidden bg-gray-100">
       {/* Day header row */}
@@ -356,6 +379,32 @@ export default function WeekTimeGrid({
         })}
       </div>
 
+      {/* Hele-dag / meerdaagse events (vakantie, bruiloft) — balken die over de dagen lopen */}
+      {allDayBars.length > 0 && (
+        <div className="flex shrink-0 border-b border-gray-200 bg-gray-50">
+          <div className="w-10 sm:w-12 shrink-0 flex items-start justify-end pr-1 pt-1 text-[8px] text-zinc-400 leading-tight">hele<br/>dag</div>
+          <div className="flex-1 relative" style={{ minHeight: allDayRows * 20 + 6, padding: "3px 0" }}>
+            {allDayBars.map(bar => (
+              <button
+                key={bar.id}
+                onClick={() => onClickGoogleEvent?.(bar.ev)}
+                title={bar.ev.title}
+                className="absolute h-[17px] flex items-center bg-red-500 hover:bg-red-600 text-white text-[10px] font-semibold px-1.5 truncate text-left shadow-sm"
+                style={{
+                  left: `calc(${bar.leftPct}% + 2px)`,
+                  width: `calc(${bar.widthPct}% - 4px)`,
+                  top: bar.row * 20 + 3,
+                  borderTopLeftRadius: bar.contLeft ? 0 : 5, borderBottomLeftRadius: bar.contLeft ? 0 : 5,
+                  borderTopRightRadius: bar.contRight ? 0 : 5, borderBottomRightRadius: bar.contRight ? 0 : 5,
+                }}
+              >
+                {bar.contLeft ? "◀ " : ""}{bar.ev.title}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Scrollable grid body */}
       <div ref={scrollRef} className="flex flex-1 overflow-y-auto overflow-x-hidden">
         {/* Time axis */}
@@ -375,7 +424,8 @@ export default function WeekTimeGrid({
         {weekDays.map(dayISO => {
           const dayBlocks = blocks.filter(b => b.start.startsWith(dayISO));
           const dayEvents = googleEvents.filter(e => {
-            const eDay = e.allDay ? e.start.slice(0, 10) : new Date(e.start).toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
+            if (e.allDay) return false; // hele-dag/meerdaags → balk bovenaan, niet in de kolom
+            const eDay = new Date(e.start).toLocaleDateString("sv-SE", { timeZone: "Europe/Amsterdam" });
             return eDay === dayISO;
           });
           const today = isToday(dayISO);
