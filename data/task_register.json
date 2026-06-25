@@ -534,7 +534,7 @@
   },
   {
     "id": "task_1778622106225_zbtb",
-    "title": "Autohuurtool afmaken",
+    "title": "Autohuurtool en esimtool afmaken",
     "project": "Malaga",
     "status": "open",
     "priority": "P1",
@@ -547,7 +547,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-25T06:00:00.675Z",
+    "updatedAt": "2026-06-25T07:00:00.540Z",
     "tags": [
       "malaga"
     ],
@@ -565,7 +565,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T06:00:00.675Z",
+      "lastSyncedAt": "2026-06-25T07:00:00.540Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1313,8 +1313,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-25T17:00:00",
-    "plannedEnd": "2026-06-25T17:30:00",
+    "plannedStart": "2026-06-25T16:00:00",
+    "plannedEnd": "2026-06-25T16:30:00",
     "plannedDate": "2026-06-25",
     "plannedMinutes": 30
   },
@@ -2454,8 +2454,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-25T15:00:00",
-    "plannedEnd": "2026-06-25T17:00:00",
+    "plannedStart": "2026-06-25T14:00:00",
+    "plannedEnd": "2026-06-25T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2907,7 +2907,7 @@
   {
     "id": "task_1781963500882_8u3b",
     "title": "Knippen met Evan",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2928,12 +2928,13 @@
       }
     ],
     "createdAt": "2026-06-20",
-    "updatedAt": "2026-06-20",
+    "updatedAt": "2026-06-25",
     "tags": [],
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-25"
+    "plannedDate": "2026-06-25",
+    "completedAt": "2026-06-25T06:22:52.033Z"
   },
   {
     "createdAt": "2026-06-21",
@@ -3031,7 +3032,7 @@
     "id": "task_1782289423247_giew",
     "title": "Ledgnd BV opvolgen — 12 dagen geen reactie (open factuur 26001_5)",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -3042,7 +3043,7 @@
     "source": "system",
     "reason": "Boone Media, status Actief. Jorn stuurde 12 jun een herinnering voor factuur 26001_5 (WK Poule 2026 video) naar finance@ledgnd.com; nog geen reactie ontvangen. 12 dagen stil op de betaling. De WK-pool campagne zelf loopt wel door.",
     "createdAt": "2026-06-24",
-    "updatedAt": "2026-06-25T06:00:00.675Z",
+    "updatedAt": "2026-06-25T06:30:01.064Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3067,17 +3068,18 @@
       "calendarId": "primary",
       "eventId": "ihdjgter0c9tla12ljfb8su3jk",
       "htmlLink": "https://www.google.com/calendar/event?eid=aWhkamd0ZXIwYzl0bGExMmxqZmI4c3Uzamsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T06:00:00.675Z",
+      "lastSyncedAt": "2026-06-25T06:30:01.064Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:01.514Z"
-    }
+    },
+    "completedAt": "2026-06-25T06:22:57.740Z"
   },
   {
     "id": "task_1782289424066_kijt",
     "title": "Interior Pro / SketchupPlaza opvolgen — 25 dagen geen contact",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -3088,7 +3090,7 @@
     "source": "system",
     "reason": "Boone Media, status Actief. Contact Marian/Marrigje van Olst (marian@interiorpro.ai) stuurde 30 mei Instagram-posts (gradient afbeeldingen, 3 formaten); Jorn heeft nog niet gereageerd. 25 dagen stil — reactie staat open.",
     "createdAt": "2026-06-24",
-    "updatedAt": "2026-06-25T06:00:00.675Z",
+    "updatedAt": "2026-06-25T06:30:01.064Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3113,17 +3115,18 @@
       "calendarId": "primary",
       "eventId": "6e9h48q24u99pouprn2f7moktk",
       "htmlLink": "https://www.google.com/calendar/event?eid=NmU5aDQ4cTI0dTk5cG91cHJuMmY3bW9rdGsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T06:00:00.675Z",
+      "lastSyncedAt": "2026-06-25T06:30:01.064Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:02.143Z"
-    }
+    },
+    "completedAt": "2026-06-25T06:22:59.259Z"
   },
   {
     "id": "task_1782294002569_y3to",
     "title": "easyHotel opvolgen — 19 dagen geen contact",
     "project": "Brand Deals",
-    "status": "open",
+    "status": "done",
     "priority": "P2",
     "deadline": null,
     "hardDeadline": null,
@@ -3134,7 +3137,7 @@
     "source": "system",
     "reason": "Reishacker, status Binnen. Echte laatste contact 5 jun (daarna alleen automatische out-of-office op 3 jun) met Maddie Simpson (Maddie.Simpson@easyhotel.com). Verblijf easyHotel Amsterdam Arena Blvd was 16-17 jun en is inmiddels gepasseerd; concept/script + post-stay deliverables staan nog open. 19 dagen stil.",
     "createdAt": "2026-06-24",
-    "updatedAt": "2026-06-25T06:00:00.675Z",
+    "updatedAt": "2026-06-25T06:30:01.064Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3159,11 +3162,12 @@
       "calendarId": "primary",
       "eventId": "ij2ndt6qr5j3kem61qpepeg1c8",
       "htmlLink": "https://www.google.com/calendar/event?eid=aWoybmR0NnFyNWoza2VtNjFxcGVwZWcxYzggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T06:00:00.675Z",
+      "lastSyncedAt": "2026-06-25T06:30:01.064Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:02.934Z"
-    }
+    },
+    "completedAt": "2026-06-25T06:23:01.748Z"
   },
   {
     "id": "task_1782300399631_xbko",
