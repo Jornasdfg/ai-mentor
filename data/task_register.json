@@ -547,7 +547,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-25T21:45:01.037Z",
+    "updatedAt": "2026-06-25T23:00:00.996Z",
     "tags": [
       "malaga"
     ],
@@ -555,9 +555,9 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-26T09:00:00",
-    "plannedEnd": "2026-06-26T10:00:00",
-    "plannedDate": "2026-06-26",
+    "plannedStart": "2026-05-30T15:00:00+02:00",
+    "plannedEnd": "2026-05-30T16:00:00+02:00",
+    "plannedDate": "2026-05-30",
     "plannedMinutes": 60,
     "autoSchedule": "auto",
     "calendarLink": {
@@ -565,7 +565,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T21:45:01.037Z",
+      "lastSyncedAt": "2026-06-25T23:00:00.996Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -3215,14 +3215,14 @@
     "source": "system",
     "reason": "Status 'Binnen', echte laatste contact 5 jun (20 dagen). Contact: Maddie Simpson (Maddie.Simpson@easyhotel.com). Contract getekend; verblijf easyHotel Amsterdam Arena Blvd was gepland 16-17 jun en die datum is gepasseerd, maar geen e-mailcontact sindsdien. Checken: is de content gefilmd/geleverd en de factuur verstuurd?",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-25T21:55:01.043Z",
+    "updatedAt": "2026-06-25T23:00:00.996Z",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "plannedDate": "2026-06-26",
-    "plannedStart": "2026-06-26T17:00:00",
-    "plannedEnd": "2026-06-26T17:30:00",
+    "plannedStart": "2026-06-26T17:00:00+02:00",
+    "plannedEnd": "2026-06-26T17:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3240,7 +3240,7 @@
       "calendarId": "primary",
       "eventId": "02ssgd4a3ispb3cpornrhe6ss0",
       "htmlLink": "https://www.google.com/calendar/event?eid=MDJzc2dkNGEzaXNwYjNjcG9ybnJoZTZzczAgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T21:55:01.043Z",
+      "lastSyncedAt": "2026-06-25T23:00:00.996Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-25T19:55:02.266Z"
@@ -3260,14 +3260,14 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-25T21:55:00.813Z",
+    "updatedAt": "2026-06-25T23:00:00.996Z",
     "tags": [
       "mail",
       "samenwerking"
     ],
     "plannedDate": "2026-06-26",
-    "plannedStart": "2026-06-26T14:00:00",
-    "plannedEnd": "2026-06-26T14:30:00",
+    "plannedStart": "2026-06-26T14:00:00+02:00",
+    "plannedEnd": "2026-06-26T14:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3285,7 +3285,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T21:55:00.813Z",
+      "lastSyncedAt": "2026-06-25T23:00:00.996Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-25T19:55:01.698Z"
@@ -3305,15 +3305,15 @@
     "source": "mail",
     "reason": "Jorn stuurde 12 jun een herinnering aan finance@ledgnd.com voor factuur 26001_5 (WK Poule 2026 video); 13 dagen geen reactie. Controleer eerst of de betaling misschien al binnen is (zoals eerder bij Whalar), zo niet nogmaals navragen — Jorn heeft sowieso lopend contact met Ledgnd (Sergey/Jordi, WK-poule).",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-25T21:55:01.327Z",
+    "updatedAt": "2026-06-25T23:00:00.996Z",
     "tags": [
       "mail",
       "factuur",
       "opvolging"
     ],
     "plannedDate": "2026-06-26",
-    "plannedStart": "2026-06-26T19:00:00",
-    "plannedEnd": "2026-06-26T19:30:00",
+    "plannedStart": "2026-06-26T19:00:00+02:00",
+    "plannedEnd": "2026-06-26T19:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3331,7 +3331,7 @@
       "calendarId": "primary",
       "eventId": "of519j48vjj83rqn83017726f4",
       "htmlLink": "https://www.google.com/calendar/event?eid=b2Y1MTlqNDh2amo4M3JxbjgzMDE3NzI2ZjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-25T21:55:01.327Z",
+      "lastSyncedAt": "2026-06-25T23:00:00.996Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-25T19:55:02.818Z"
