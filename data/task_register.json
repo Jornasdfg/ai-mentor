@@ -547,7 +547,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-26T18:00:00.963Z",
+    "updatedAt": "2026-06-26T19:00:01.179Z",
     "tags": [
       "malaga"
     ],
@@ -565,7 +565,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T18:00:00.963Z",
+      "lastSyncedAt": "2026-06-26T19:00:01.179Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1102,8 +1102,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-27T11:00:00",
-    "plannedEnd": "2026-06-27T11:30:00",
+    "plannedStart": "2026-06-27T12:00:00",
+    "plannedEnd": "2026-06-27T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1307,9 +1307,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-27T12:00:00",
+    "plannedEnd": "2026-06-27T13:00:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-27T11:30:00",
+    "plannedStart": "2026-06-27T12:30:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -2434,8 +2434,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-27T13:00:00",
-    "plannedEnd": "2026-06-27T15:00:00",
+    "plannedStart": "2026-06-27T14:00:00",
+    "plannedEnd": "2026-06-27T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2465,8 +2465,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-26T21:00:00",
-    "plannedEnd": "2026-06-26T22:00:00",
+    "plannedStart": "2026-06-27T09:00:00",
+    "plannedEnd": "2026-06-27T10:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2481,7 +2481,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-26"
+    "plannedDate": "2026-06-27"
   },
   {
     "id": "task_1781279449111_1iaj",
@@ -2566,8 +2566,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-27T09:00:00",
-    "plannedEnd": "2026-06-27T10:00:00",
+    "plannedStart": "2026-06-27T10:00:00",
+    "plannedEnd": "2026-06-27T11:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -3088,8 +3088,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Saldo controleren en bijwerken",
-    "plannedStart": "2026-06-27T10:00:00",
-    "plannedEnd": "2026-06-27T11:00:00",
+    "plannedStart": "2026-06-27T11:00:00",
+    "plannedEnd": "2026-06-27T12:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -3120,14 +3120,14 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-26T18:00:00.963Z",
+    "updatedAt": "2026-06-26T19:00:01.179Z",
     "tags": [
       "mail",
       "samenwerking"
     ],
     "plannedDate": "2026-06-27",
-    "plannedStart": "2026-06-27T12:00:00+02:00",
-    "plannedEnd": "2026-06-27T12:30:00+02:00",
+    "plannedStart": "2026-06-27T13:00:00+02:00",
+    "plannedEnd": "2026-06-27T13:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3145,10 +3145,10 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T18:00:00.963Z",
+      "lastSyncedAt": "2026-06-26T19:00:01.179Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T17:55:00.948Z"
+      "googleUpdatedAt": "2026-06-26T18:55:01.125Z"
     }
   },
   {
@@ -3259,13 +3259,13 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen 'Waar zat je aan te denken?'. Ze merken op dat hun doelgroep premium is terwijl Reishacker budget-tips geeft — Jorn moet terugkoppelen met een concreet voorstel. Jorn heeft nog niet gereageerd in de thread.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T18:00:00.963Z",
+    "updatedAt": "2026-06-26T19:00:01.179Z",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-06-27",
-    "plannedStart": "2026-06-27T12:30:00+02:00",
-    "plannedEnd": "2026-06-27T13:00:00+02:00",
+    "plannedStart": "2026-06-27T13:30:00+02:00",
+    "plannedEnd": "2026-06-27T14:00:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3283,10 +3283,10 @@
       "calendarId": "primary",
       "eventId": "p5oqed1gfubp7jc7gf0j2u1vlk",
       "htmlLink": "https://www.google.com/calendar/event?eid=cDVvcWVkMWdmdWJwN2pjN2dmMGoydTF2bGsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T18:00:00.963Z",
+      "lastSyncedAt": "2026-06-26T19:00:01.179Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T17:55:01.470Z"
+      "googleUpdatedAt": "2026-06-26T18:55:01.850Z"
     }
   },
   {
@@ -3493,7 +3493,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T18:00:00.963Z",
+    "updatedAt": "2026-06-26T19:00:01.179Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3518,7 +3518,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T18:00:00.963Z",
+      "lastSyncedAt": "2026-06-26T19:00:01.179Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
