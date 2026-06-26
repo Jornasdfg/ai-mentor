@@ -547,7 +547,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "malaga"
     ],
@@ -565,7 +565,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1102,8 +1102,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-26T16:00:00",
-    "plannedEnd": "2026-06-26T16:30:00",
+    "plannedStart": "2026-06-26T17:00:00",
+    "plannedEnd": "2026-06-26T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1292,9 +1292,9 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-06-26T21:30:00",
-    "plannedEnd": "2026-06-26T22:00:00",
-    "plannedDate": "2026-06-26",
+    "plannedStart": "2026-06-27T09:30:00",
+    "plannedEnd": "2026-06-27T10:00:00",
+    "plannedDate": "2026-06-27",
     "plannedMinutes": 30
   },
   {
@@ -1306,9 +1306,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-26T17:00:00",
+    "plannedEnd": "2026-06-26T19:30:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-26T16:30:00",
+    "plannedStart": "2026-06-26T19:00:00",
     "priority": "P1",
     "softDeadline": null,
     "source": "manual_input",
@@ -2433,8 +2433,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-26T19:30:00",
-    "plannedEnd": "2026-06-26T21:30:00",
+    "plannedStart": "2026-06-26T20:00:00",
+    "plannedEnd": "2026-06-26T22:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2464,8 +2464,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-26T13:00:00",
-    "plannedEnd": "2026-06-26T14:00:00",
+    "plannedStart": "2026-06-26T14:00:00",
+    "plannedEnd": "2026-06-26T15:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2565,8 +2565,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-26T14:00:00",
-    "plannedEnd": "2026-06-26T15:00:00",
+    "plannedStart": "2026-06-26T15:00:00",
+    "plannedEnd": "2026-06-26T16:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -3087,8 +3087,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Saldo controleren en bijwerken",
-    "plannedStart": "2026-06-26T15:00:00",
-    "plannedEnd": "2026-06-26T16:00:00",
+    "plannedStart": "2026-06-26T16:00:00",
+    "plannedEnd": "2026-06-26T17:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -3119,14 +3119,14 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "mail",
       "samenwerking"
     ],
     "plannedDate": "2026-06-26",
-    "plannedStart": "2026-06-26T17:00:00+02:00",
-    "plannedEnd": "2026-06-26T17:30:00+02:00",
+    "plannedStart": "2026-06-26T19:30:00+02:00",
+    "plannedEnd": "2026-06-26T20:00:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3144,10 +3144,10 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:01.505Z"
+      "googleUpdatedAt": "2026-06-26T10:55:01.611Z"
     }
   },
   {
@@ -3164,56 +3164,10 @@
     "source": "mail",
     "reason": "Jorn stuurde 12 jun een herinnering aan finance@ledgnd.com voor factuur 26001_5 (WK Poule 2026 video); 13 dagen geen reactie. Controleer eerst of de betaling misschien al binnen is (zoals eerder bij Whalar), zo niet nogmaals navragen — Jorn heeft sowieso lopend contact met Ledgnd (Sergey/Jordi, WK-poule).",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "mail",
       "factuur",
-      "opvolging"
-    ],
-    "plannedDate": "2026-06-27",
-    "plannedStart": "2026-06-27T09:00:00+02:00",
-    "plannedEnd": "2026-06-27T09:30:00+02:00",
-    "plannedMinutes": 30,
-    "calendarSyncMode": "auto",
-    "taskKind": "task",
-    "autoSchedule": "auto",
-    "schedulingWindowId": "window_work",
-    "splittable": true,
-    "minBlockMinutes": 30,
-    "autoIgnore": false,
-    "locked": false,
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "calendarLink": {
-      "provider": "google",
-      "calendarId": "primary",
-      "eventId": "of519j48vjj83rqn83017726f4",
-      "htmlLink": "https://www.google.com/calendar/event?eid=b2Y1MTlqNDh2amo4M3JxbjgzMDE3NzI2ZjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
-      "syncStatus": "synced",
-      "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:02.689Z"
-    }
-  },
-  {
-    "id": "task_1782457802574_4add",
-    "title": "Interior Pro / SketchupPlaza opvolgen — 27 dagen stil",
-    "project": "Brand Deals",
-    "status": "open",
-    "priority": "P2",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 30,
-    "source": "system",
-    "reason": "Status 'Actief'. Echte laatste contact 30 mei: Marrigje van Olst (marrigjevanolst@gmail.com) leverde de gradient Instagram-posts (3 formaten) aan; Jorn heeft sindsdien 27 dagen niet gereageerd. Contactrecord: marian@interiorpro.ai.",
-    "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
-    "tags": [
-      "samenwerking",
       "opvolging"
     ],
     "plannedDate": "2026-06-27",
@@ -3234,12 +3188,58 @@
     "calendarLink": {
       "provider": "google",
       "calendarId": "primary",
-      "eventId": "rifvnpvtuj29kqhvvst8km32gs",
-      "htmlLink": "https://www.google.com/calendar/event?eid=cmlmdm5wdnR1ajI5a3FodnZzdDhrbTMyZ3Mgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "eventId": "of519j48vjj83rqn83017726f4",
+      "htmlLink": "https://www.google.com/calendar/event?eid=b2Y1MTlqNDh2amo4M3JxbjgzMDE3NzI2ZjQgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:03.749Z"
+      "googleUpdatedAt": "2026-06-26T10:55:02.705Z"
+    }
+  },
+  {
+    "id": "task_1782457802574_4add",
+    "title": "Interior Pro / SketchupPlaza opvolgen — 27 dagen stil",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "source": "system",
+    "reason": "Status 'Actief'. Echte laatste contact 30 mei: Marrigje van Olst (marrigjevanolst@gmail.com) leverde de gradient Instagram-posts (3 formaten) aan; Jorn heeft sindsdien 27 dagen niet gereageerd. Contactrecord: marian@interiorpro.ai.",
+    "createdAt": "2026-06-26",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
+    "tags": [
+      "samenwerking",
+      "opvolging"
+    ],
+    "plannedDate": "2026-06-27",
+    "plannedStart": "2026-06-27T11:00:00+02:00",
+    "plannedEnd": "2026-06-27T11:30:00+02:00",
+    "plannedMinutes": 30,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "rifvnpvtuj29kqhvvst8km32gs",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cmlmdm5wdnR1ajI5a3FodnZzdDhrbTMyZ3Mgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-06-26T10:55:04.052Z"
     }
   },
   {
@@ -3256,13 +3256,13 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen 'Waar zat je aan te denken?'. Ze merken op dat hun doelgroep premium is terwijl Reishacker budget-tips geeft — Jorn moet terugkoppelen met een concreet voorstel. Jorn heeft nog niet gereageerd in de thread.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-06-26",
-    "plannedStart": "2026-06-26T19:00:00+02:00",
-    "plannedEnd": "2026-06-26T19:30:00+02:00",
+    "plannedStart": "2026-06-26T20:00:00+02:00",
+    "plannedEnd": "2026-06-26T20:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3280,10 +3280,10 @@
       "calendarId": "primary",
       "eventId": "p5oqed1gfubp7jc7gf0j2u1vlk",
       "htmlLink": "https://www.google.com/calendar/event?eid=cDVvcWVkMWdmdWJwN2pjN2dmMGoydTF2bGsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:02.033Z"
+      "googleUpdatedAt": "2026-06-26T10:55:02.148Z"
     }
   },
   {
@@ -3396,7 +3396,53 @@
     "source": "system",
     "reason": "Status 'Actief'. Echte laatste contact 12 jun (Jorn stuurde herinnering factuur 26001_5 naar finance@ledgnd.com — nog onbetaald, geen reactie). Daarnaast wacht Jorn op Sergey's Zoho-CSV voor de Hortisoccer WK Pool. Recente info@ledgnd.com mails zijn geautomatiseerde poule-nieuwsbrieven, geen persoonlijk contact. Contact: Jordi/Sergey/finance@ledgnd.com.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
+    "tags": [
+      "samenwerking",
+      "opvolging"
+    ],
+    "plannedDate": "2026-06-27",
+    "plannedStart": "2026-06-27T11:30:00+02:00",
+    "plannedEnd": "2026-06-27T12:00:00+02:00",
+    "plannedMinutes": 30,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "0tv1m802ds43csjto5ipb2ing8",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MHR2MW04MDJkczQzY3NqdG81aXBiMmluZzggam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-06-26T10:55:04.524Z"
+    }
+  },
+  {
+    "id": "task_1782371402897_y0mc",
+    "title": "easyHotel opvolgen — 20 dagen geen contact",
+    "project": "Brand Deals",
+    "status": "open",
+    "priority": "P2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "source": "system",
+    "reason": "Status 'Binnen', echte laatste contact 5 jun (20 dagen). Contact: Maddie Simpson (Maddie.Simpson@easyhotel.com). Contract getekend; verblijf easyHotel Amsterdam Arena Blvd was gepland 16-17 jun en die datum is gepasseerd, maar geen e-mailcontact sindsdien. Checken: is de content gefilmd/geleverd en de factuur verstuurd?",
+    "createdAt": "2026-06-25",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3419,58 +3465,12 @@
     "calendarLink": {
       "provider": "google",
       "calendarId": "primary",
-      "eventId": "0tv1m802ds43csjto5ipb2ing8",
-      "htmlLink": "https://www.google.com/calendar/event?eid=MHR2MW04MDJkczQzY3NqdG81aXBiMmluZzggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
-      "syncStatus": "synced",
-      "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:04.347Z"
-    }
-  },
-  {
-    "id": "task_1782371402897_y0mc",
-    "title": "easyHotel opvolgen — 20 dagen geen contact",
-    "project": "Brand Deals",
-    "status": "open",
-    "priority": "P2",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 30,
-    "source": "system",
-    "reason": "Status 'Binnen', echte laatste contact 5 jun (20 dagen). Contact: Maddie Simpson (Maddie.Simpson@easyhotel.com). Contract getekend; verblijf easyHotel Amsterdam Arena Blvd was gepland 16-17 jun en die datum is gepasseerd, maar geen e-mailcontact sindsdien. Checken: is de content gefilmd/geleverd en de factuur verstuurd?",
-    "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
-    "tags": [
-      "samenwerking",
-      "opvolging"
-    ],
-    "plannedDate": "2026-06-27",
-    "plannedStart": "2026-06-27T09:30:00+02:00",
-    "plannedEnd": "2026-06-27T10:00:00+02:00",
-    "plannedMinutes": 30,
-    "calendarSyncMode": "auto",
-    "taskKind": "task",
-    "autoSchedule": "auto",
-    "schedulingWindowId": "window_work",
-    "splittable": true,
-    "minBlockMinutes": 30,
-    "autoIgnore": false,
-    "locked": false,
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "calendarLink": {
-      "provider": "google",
-      "calendarId": "primary",
       "eventId": "02ssgd4a3ispb3cpornrhe6ss0",
       "htmlLink": "https://www.google.com/calendar/event?eid=MDJzc2dkNGEzaXNwYjNjcG9ybnJoZTZzczAgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:03.182Z"
+      "googleUpdatedAt": "2026-06-26T10:55:03.399Z"
     }
   },
   {
@@ -3488,14 +3488,14 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-26T10:00:00.524Z",
+    "updatedAt": "2026-06-26T11:00:00.699Z",
     "tags": [
       "samenwerking",
       "opvolging"
     ],
     "plannedDate": "2026-06-27",
-    "plannedStart": "2026-06-27T11:00:00+02:00",
-    "plannedEnd": "2026-06-27T11:30:00+02:00",
+    "plannedStart": "2026-06-27T12:00:00+02:00",
+    "plannedEnd": "2026-06-27T12:30:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3513,10 +3513,10 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-26T10:00:00.524Z",
+      "lastSyncedAt": "2026-06-26T11:00:00.699Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-26T09:55:04.824Z"
+      "googleUpdatedAt": "2026-06-26T10:55:05.057Z"
     }
   }
 ]
