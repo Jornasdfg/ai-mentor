@@ -4,7 +4,7 @@
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-06-29",
     "hardDeadline": "2026-06-29",
@@ -35,14 +35,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782288396068_adnv",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-06",
     "hardDeadline": "2026-07-06",
@@ -73,14 +77,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396068_7p30",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-13",
     "hardDeadline": "2026-07-13",
@@ -111,14 +119,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396068_8d56",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-20",
     "hardDeadline": "2026-07-20",
@@ -149,14 +161,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396069_oayx",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-27",
     "hardDeadline": "2026-07-27",
@@ -187,14 +203,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396069_tg48",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-03",
     "hardDeadline": "2026-08-03",
@@ -225,14 +245,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396069_bi1t",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-10",
     "hardDeadline": "2026-08-10",
@@ -263,14 +287,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396069_ffj7",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-17",
     "hardDeadline": "2026-08-17",
@@ -301,14 +329,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396070_9ql6",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-24",
     "hardDeadline": "2026-08-24",
@@ -339,7 +371,11 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1782288396070_dvpf",
@@ -372,13 +408,17 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782288396070_deih",
     "title": "Facturen opstellen en doorsturen",
     "status": "open",
-    "priority": "P2",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-01",
     "hardDeadline": "2026-08-01",
@@ -405,14 +445,18 @@
     "updatedAt": "2026-06-24",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_malaga_reel_1_script",
     "title": "Reel 1 script definitief maken voor Malaga / Weeze",
     "project": "Weeze Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Externe samenwerking en nodig voor opname op locatie",
@@ -423,14 +467,18 @@
       "weeze",
       "script"
     ],
-    "completedAt": "2026-05-13T11:45:19.033Z"
+    "completedAt": "2026-05-13T11:45:19.033Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 100,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_malaga_reel_2_winactie_script",
     "title": "Reel 2 winactie script definitief maken",
     "project": "Weeze Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Winactie moet helder uitgelegd worden",
@@ -441,14 +489,18 @@
       "weeze",
       "winactie"
     ],
-    "completedAt": "2026-05-13T11:45:21.292Z"
+    "completedAt": "2026-05-13T11:45:21.292Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 100,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_malaga_shotlist",
     "title": "Shotlist per Malaga locatie maken",
     "project": "Weeze Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Zonder shotlist wordt opname chaotisch",
@@ -459,14 +511,18 @@
       "weeze",
       "shotlist"
     ],
-    "completedAt": "2026-05-20T19:02:20.840Z"
+    "completedAt": "2026-05-20T19:02:20.840Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 100,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_malaga_hooks",
     "title": "Hookvarianten kiezen voor Malaga video's",
     "project": "Weeze Malaga",
     "status": "cancelled",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Hooks bepalen bereik van de video's",
@@ -477,14 +533,18 @@
       "weeze",
       "hooks"
     ],
-    "cancelledAt": "2026-05-13T15:53:36.107Z"
+    "cancelledAt": "2026-05-13T15:53:36.107Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 100,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_malaga_cta_winactie",
     "title": "CTA en winactie-uitleg aanscherpen",
     "project": "Weeze Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Duidelijke CTA nodig voor samenwerking",
@@ -495,14 +555,18 @@
       "weeze",
       "cta"
     ],
-    "completedAt": "2026-05-13T15:50:22.223Z"
+    "completedAt": "2026-05-13T15:50:22.223Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 100,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_malaga_mirjam_vragen",
     "title": "Contract Weeze ondertekenen en PVA met alle regels etc",
     "project": "Weeze Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": "2026-05-13",
     "source": "manual_input",
     "reason": "Open vragen kunnen uitvoering blokkeren",
@@ -514,14 +578,18 @@
     ],
     "hardDeadline": "2026-05-13",
     "softDeadline": null,
-    "completedAt": "2026-05-13T11:45:31.412Z"
+    "completedAt": "2026-05-13T11:45:31.412Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 60,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_ai_video_analyzer",
     "title": "AI Video Analyzer verder bouwen",
     "project": "AI Video Analyzer",
     "status": "parked",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "source": "monthly_goal",
     "reason": "Belangrijk maanddoel maar geen acute externe deadline zolang Malaga P0 is",
@@ -530,28 +598,32 @@
     "tags": [
       "ai-video-analyzer",
       "tool"
-    ]
+    ],
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 30,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1778622106225_zbtb",
     "title": "Autohuurtool en esimtool afmaken",
     "project": "Malaga",
     "status": "open",
-    "priority": "P1",
+    "priority": "P0",
     "deadline": "2026-05-27",
     "hardDeadline": "2026-05-27",
     "softDeadline": "2026-05-26",
     "startBy": null,
     "deadlineType": "none",
-    "estimatedMinutes": 60,
+    "estimatedMinutes": 240,
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T12:15:01.129Z",
     "tags": [
       "malaga"
     ],
-    "coveyQuadrant": "Q2",
+    "coveyQuadrant": "Q1",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -565,12 +637,15 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T12:15:01.129Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
     },
-    "locked": false
+    "locked": false,
+    "urgencyScore": 100,
+    "importanceScore": 60,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1778622106225_j9fn",
@@ -591,13 +666,17 @@
     "tags": [
       "malaga"
     ],
-    "cancelledAt": "2026-05-13T11:45:40.006Z"
+    "cancelledAt": "2026-05-13T11:45:40.006Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1778673471315_kryq",
     "title": "Maak nog Instagram Stories voorbereiden in Malaga",
     "status": "done",
-    "priority": "P0",
+    "priority": "P3",
     "deadline": "2026-05-14",
     "hardDeadline": "2026-05-14",
     "softDeadline": "2026-05-13",
@@ -607,14 +686,18 @@
     "createdAt": "2026-05-13",
     "updatedAt": "2026-05-13",
     "tags": [],
-    "completedAt": "2026-05-13T15:53:27.655Z"
+    "completedAt": "2026-05-13T15:53:27.655Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_mail_vimexx_factuur",
     "title": "Vimexx openstaande factuur betalen",
     "project": "Administratie",
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": "2026-05-13",
     "hardDeadline": "2026-05-13",
     "softDeadline": null,
@@ -628,14 +711,18 @@
       "betaling",
       "vimexx"
     ],
-    "completedAt": "2026-05-20T19:02:25.043Z"
+    "completedAt": "2026-05-20T19:02:25.043Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_mail_wise_login",
     "title": "Wise login nieuw apparaat controleren",
     "project": null,
     "status": "done",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -649,7 +736,11 @@
       "security",
       "wise"
     ],
-    "completedAt": "2026-05-13T12:07:15.453Z"
+    "completedAt": "2026-05-13T12:07:15.453Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_mail_dfds_charlie",
@@ -671,14 +762,18 @@
       "dfds",
       "brand-deal"
     ],
-    "completedAt": "2026-05-20T19:03:03.402Z"
+    "completedAt": "2026-05-20T19:03:03.402Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1778680463555_vdl3",
     "title": "Saldo vereffenen bij Rabo",
     "project": "Administratie",
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": "2026-05-14",
@@ -693,14 +788,18 @@
     "tags": [
       "administratie"
     ],
-    "completedAt": "2026-05-13T14:40:27.646Z"
+    "completedAt": "2026-05-13T14:40:27.646Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1778687650802_wset",
     "title": "Auto-DM flow backup maken",
     "project": null,
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": "2026-05-14",
     "softDeadline": null,
@@ -720,14 +819,18 @@
     "plannedEnd": "2026-05-21T11:00:00",
     "plannedDate": "2026-05-21",
     "plannedMinutes": 120,
-    "completedAt": "2026-05-20T20:58:48.148Z"
+    "completedAt": "2026-05-20T20:58:48.148Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1778687650802_tqkd",
     "title": "Winactie blog en kader in Weeze artikel zetten",
     "project": "Weeze",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": "2026-05-14",
     "hardDeadline": "2026-05-14",
     "softDeadline": null,
@@ -742,13 +845,17 @@
     "tags": [
       "malaga"
     ],
-    "completedAt": "2026-05-20T19:03:08.209Z"
+    "completedAt": "2026-05-20T19:03:08.209Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 60,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1778693602060_nfo0",
     "title": "Langs bij Rens van Vijven",
     "status": "done",
-    "priority": "P0",
+    "priority": "P3",
     "deadline": "2026-05-16",
     "hardDeadline": "2026-05-16",
     "softDeadline": null,
@@ -773,14 +880,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-05-13T17:33:43.430Z"
     },
-    "completedAt": "2026-05-20T19:02:36.629Z"
+    "completedAt": "2026-05-20T19:02:36.629Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_mail_fbto_verzekering_20260520",
     "title": "FBTO reisverzekering controleren voor verlenging 1 juni",
     "project": "Administratie",
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": "2026-06-01",
     "hardDeadline": "2026-06-01",
     "softDeadline": null,
@@ -794,14 +905,18 @@
       "verzekering",
       "administratie"
     ],
-    "completedAt": "2026-05-20T21:18:16.230Z"
+    "completedAt": "2026-05-20T21:18:16.230Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_mail_linkedin_bericht_20260520",
     "title": "LinkedIn bericht beantwoorden — Boone Media",
     "project": null,
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -814,14 +929,18 @@
       "mail",
       "linkedin"
     ],
-    "completedAt": "2026-05-20T21:07:54.188Z"
+    "completedAt": "2026-05-20T21:07:54.188Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_stale_schiphol_20260520",
     "title": "Schiphol (via Yune) opvolgen — 9 dagen geen contact",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -835,13 +954,17 @@
       "opvolging",
       "schiphol"
     ],
-    "completedAt": "2026-05-21T19:19:32.722Z"
+    "completedAt": "2026-05-21T19:19:32.722Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779373460905_cbpb",
     "title": "Extra shots opnemen voor Weeze aangepaste versie",
     "status": "done",
-    "priority": "P0",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -873,13 +996,17 @@
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T14:25:01.040Z"
     },
-    "completedAt": "2026-05-21T17:30:07.566Z"
+    "completedAt": "2026-05-21T17:30:07.566Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779373540896_x22m",
     "title": "Video Harm-Jan stopcontacten maken & Youtube shorts in planning & factuur opmaken",
     "status": "done",
-    "priority": "P0",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -911,14 +1038,17 @@
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T19:35:01.567Z"
     },
-    "coveyQuadrant": "Q1",
-    "completedAt": "2026-05-29T19:18:41.385Z"
+    "coveyQuadrant": "Q4",
+    "completedAt": "2026-05-29T19:18:41.385Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779375160067_guva",
     "title": "Videobellen naar Schiphol voor samenwerking",
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -950,14 +1080,17 @@
       "syncError": "Google Calendar event is verwijderd of geannuleerd.",
       "googleUpdatedAt": "2026-05-21T14:52:44.213Z"
     },
-    "coveyQuadrant": "Q1",
-    "completedAt": "2026-05-27T08:43:45.100Z"
+    "coveyQuadrant": "Q4",
+    "completedAt": "2026-05-27T08:43:45.100Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779375200577_8bik",
     "title": "h",
     "status": "cancelled",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -989,14 +1122,18 @@
       "syncError": "Google Calendar event is verwijderd of geannuleerd.",
       "googleUpdatedAt": "2026-05-21T14:55:01.167Z"
     },
-    "cancelledAt": "2026-05-21T16:43:02.864Z"
+    "cancelledAt": "2026-05-21T16:43:02.864Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_mail_mirjam_weeze_20260520",
     "title": "V2 insturen: editen en opsturen Airport Weeze (feedback Mirjam verwerken",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P0",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1011,13 +1148,17 @@
       "weeze",
       "video"
     ],
-    "completedAt": "2026-05-21T19:19:36.809Z"
+    "completedAt": "2026-05-21T19:19:36.809Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779305046672_0qyk",
     "title": "Airport Weeze: reel editen, dashboard, stories, blog",
     "status": "done",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": "2026-05-21",
     "hardDeadline": "2026-05-21",
     "softDeadline": null,
@@ -1036,13 +1177,17 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "completedAt": "2026-05-21T19:19:40.937Z"
+    "completedAt": "2026-05-21T19:19:40.937Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1779394403457_yjwe",
     "title": "Bonnen van de vakantie invullen",
     "status": "cancelled",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1061,13 +1206,17 @@
     "plannedEnd": "2026-05-21T09:30:00",
     "plannedDate": "2026-05-21",
     "plannedMinutes": 30,
-    "cancelledAt": "2026-05-21T20:31:40.796Z"
+    "cancelledAt": "2026-05-21T20:31:40.796Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779394473332_xsfe",
     "title": "Bootje varen met vrienden",
     "status": "done",
-    "priority": "P1",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1087,14 +1236,18 @@
     "plannedDate": "2026-05-21",
     "plannedMinutes": 360,
     "cancelledAt": "2026-05-21T20:43:07.468Z",
-    "completedAt": "2026-05-27T08:43:59.200Z"
+    "completedAt": "2026-05-27T08:43:59.200Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779396786331_9et8",
     "title": "Bonnen van de Malaga reis in administratie zetten",
     "status": "open",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1102,8 +1255,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-06-27T14:30:00",
-    "plannedEnd": "2026-06-27T15:00:00",
+    "plannedStart": "2026-06-28T13:20:00",
+    "plannedEnd": "2026-06-28T13:50:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1112,14 +1265,17 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-27"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779402718137_n2ty",
     "title": "Winnaar van Weeze bekendmaken",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q1",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1135,13 +1291,16 @@
     "updatedAt": "2026-05-27",
     "tags": [],
     "autoSchedule": "off",
-    "completedAt": "2026-05-27T08:43:47.068Z"
+    "completedAt": "2026-05-27T08:43:47.068Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1779373554831_3qil",
     "title": "Mail aanpassen met blogartikelen (update nieuwe?) en video in de planning",
     "status": "done",
-    "priority": "P0",
+    "priority": "P3",
     "deadline": "2026-05-22",
     "hardDeadline": "2026-05-22",
     "softDeadline": null,
@@ -1173,15 +1332,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-05-21T17:35:00.584Z"
     },
-    "coveyQuadrant": "Q1",
-    "completedAt": "2026-05-27T08:43:41.929Z"
+    "coveyQuadrant": "Q4",
+    "completedAt": "2026-05-27T08:43:41.929Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1779476668510_o3y1",
     "title": "ZZP aansprakelijkheidsverzekering afsluiten",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1200,14 +1362,17 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-09",
-    "completedAt": "2026-06-09T16:52:45.185Z"
+    "completedAt": "2026-06-09T16:52:45.185Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_mail_gearup_affiliate_20260525",
     "title": "GearUP affiliate aanbod evalueren — via Impact.com",
     "project": "Brand Deals",
     "status": "cancelled",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1221,14 +1386,18 @@
       "affiliate",
       "reishacker"
     ],
-    "cancelledAt": "2026-05-27T08:44:04.336Z"
+    "cancelledAt": "2026-05-27T08:44:04.336Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_mail_hoofdkraan_meta_20260525",
     "title": "Meta Ads opdracht reageren — Hoofdkraan.nl (Boone Media)",
     "project": "Boone Media",
     "status": "cancelled",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1242,12 +1411,21 @@
       "boone-media",
       "meta-ads"
     ],
-    "cancelledAt": "2026-05-27T08:44:08.595Z"
+    "cancelledAt": "2026-05-27T08:44:08.595Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "test_dispatch",
     "status": "done",
-    "title": "Dispatch test"
+    "title": "Dispatch test",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "priority": "P3"
   },
   {
     "createdAt": "2026-05-27",
@@ -1255,7 +1433,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_hoofdkraan_20260527",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Nieuwe opdracht via Hoofdkraan.nl: drukklare brochure + interactieve variant. Budget €25-40/uur. Reageren via platform op jorn@boone-media.nl (27 mei).",
     "softDeadline": null,
@@ -1268,7 +1446,11 @@
     ],
     "title": "Reageer op Hoofdkraan.nl opdracht — Boone Media",
     "updatedAt": "2026-05-27",
-    "cancelledAt": "2026-05-27T08:57:29.867Z"
+    "cancelledAt": "2026-05-27T08:57:29.867Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-27",
@@ -1276,7 +1458,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_wp_spam_20260527",
-    "priority": "P2",
+    "priority": "P3",
     "project": null,
     "reason": "Meerdere spamreacties wachten op moderatie op reishacker.nl (7 meldingen op 26-27 mei). Afwijzen in WordPress dashboard.",
     "softDeadline": null,
@@ -1296,10 +1478,14 @@
     "plannedEnd": "2026-06-27T11:45:00",
     "plannedDate": "2026-06-27",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-26T12:43:58.504Z"
+    "completedAt": "2026-06-26T12:43:58.504Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
-    "coveyQuadrant": "Q2",
+    "coveyQuadrant": "Q4",
     "createdAt": "2026-05-23",
     "deadline": null,
     "deadlineType": "none",
@@ -1307,10 +1493,10 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-06-27T15:30:00",
+    "plannedEnd": "2026-06-28T14:20:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-06-27T15:00:00",
-    "priority": "P1",
+    "plannedStart": "2026-06-28T13:50:00",
+    "priority": "P3",
     "softDeadline": null,
     "source": "manual_input",
     "startBy": null,
@@ -1321,7 +1507,10 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-27"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-29",
@@ -1329,7 +1518,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_ryanair_dublin_20260529",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Ryanair accepteert geen afgedrukte instapkaarten meer voor vlucht P3BV4G naar Dublin. Ryanair-app verplicht voor digitale instapkaart — app downloaden/klaarzetten.",
     "softDeadline": null,
@@ -1341,7 +1530,11 @@
     ],
     "title": "Ryanair app checken — digitale instapkaart Dublin (P3BV4G)",
     "updatedAt": "2026-05-29",
-    "cancelledAt": "2026-05-29T19:36:23.642Z"
+    "cancelledAt": "2026-05-29T19:36:23.642Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-29",
@@ -1362,7 +1555,11 @@
     ],
     "title": "Whalar factuur 26059_04 opvolgen bij Jodeci",
     "updatedAt": "2026-05-29",
-    "cancelledAt": "2026-05-29T19:36:17.199Z"
+    "cancelledAt": "2026-05-29T19:36:17.199Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-29",
@@ -1370,7 +1567,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_knab_rente_20260529",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Knab meldt dat er nog 3 dagen zijn om in te leggen voor 2% rente (deadline ~1 juni). Beslissen of en hoeveel je inlegt.",
     "softDeadline": "2026-06-01",
@@ -1382,7 +1579,11 @@
     ],
     "title": "Knab: beslissing 2% rente — deadline over 3 dagen",
     "updatedAt": "2026-05-29",
-    "cancelledAt": "2026-05-29T19:36:26.011Z"
+    "cancelledAt": "2026-05-29T19:36:26.011Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-29",
@@ -1390,7 +1591,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_clawlab_deal_20260529",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Leanne van Clawlab stuurde via Impact.com een uitnodiging voor samenwerking rond hun DIY tufting kit (home decor). Beoordelen of dit past bij je audience en of je wil reageren.",
     "softDeadline": null,
@@ -1403,7 +1604,11 @@
     ],
     "title": "Clawlab samenwerkingsvoorstel beoordelen",
     "updatedAt": "2026-05-29",
-    "cancelledAt": "2026-05-29T19:36:11.713Z"
+    "cancelledAt": "2026-05-29T19:36:11.713Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-29",
@@ -1411,7 +1616,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_schiphol_20260529",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Status: Binnen. Laatste contact: 2026-05-11 (18 dagen geleden). Contact: Maret.Trouerbach@yune.nl. Videocall was gepland op 26 mei (gedaan op 27 mei) — update vragen over de deal-uitkomst.",
     "softDeadline": null,
@@ -1423,14 +1628,18 @@
     ],
     "title": "Schiphol (via Yune) opvolgen — 18 dagen geen contact",
     "updatedAt": "2026-05-29",
-    "cancelledAt": "2026-05-29T19:36:07.101Z"
+    "cancelledAt": "2026-05-29T19:36:07.101Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1780089583947_0i1t",
     "title": "Afspraak met B&E",
     "status": "done",
-    "priority": "P0",
-    "coveyQuadrant": "Q1",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1445,7 +1654,10 @@
     "createdAt": "2026-05-29",
     "updatedAt": "2026-06-02",
     "tags": [],
-    "completedAt": "2026-06-02T11:41:53.589Z"
+    "completedAt": "2026-06-02T11:41:53.589Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-30",
@@ -1473,7 +1685,11 @@
     "plannedEnd": "2026-06-05T10:15:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T18:04:48.041Z"
+    "completedAt": "2026-06-04T18:04:48.041Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-30",
@@ -1481,7 +1697,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_harm_offerte_20260530",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Harm van Liere (bebedrijven.nl, Yerseke) stuurde op 28 mei een offerte PDF 'Offerte zeeuwland 2026' als reactie op de eerdere Excel-uitwisseling. Mail is starred. Offerte reviewen en beslissen hoe te reageren.",
     "softDeadline": null,
@@ -1501,7 +1717,11 @@
     "plannedEnd": "2026-06-02T15:15:00",
     "plannedDate": "2026-06-02",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-02T11:42:08.292Z"
+    "completedAt": "2026-06-02T11:42:08.292Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-05-31",
@@ -1509,7 +1729,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_marrigje_afbeeldingen_20260531",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Marrigje van Olst stuurde op 30 mei Instagram gradient-afbeeldingen (INSTAGRAM POSTS.zip, 3 formaten) naar jorn@gmail.com. Waarschijnlijk design deliverable voor Interior Pro / eigen content. Jorn heeft nog niet gereageerd.",
     "softDeadline": null,
@@ -1527,14 +1747,18 @@
     "plannedEnd": "2026-06-05T10:15:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T18:05:08.953Z"
+    "completedAt": "2026-06-04T18:05:08.953Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1780400857769_nb2i",
     "title": "Mail aan A&O sturen",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -1559,7 +1783,10 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-05",
-    "completedAt": "2026-06-04T18:04:54.992Z"
+    "completedAt": "2026-06-04T18:04:54.992Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-03",
@@ -1587,7 +1814,11 @@
     "plannedEnd": "2026-06-05T10:45:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T18:04:59.583Z"
+    "completedAt": "2026-06-04T18:04:59.583Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-04",
@@ -1595,7 +1826,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_hetzner_postgresql_20260604",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "BSI (CERT-Bund) via Hetzner: server 204.168.213.112 heeft poort 5432 (PostgreSQL) open naar het internet. Direct beveiligen: poort dichtgooien of beperken tot applicatieserver/VPN. Onbeveiligde DBMS is kwetsbaar voor externe aanvallen.",
     "softDeadline": null,
@@ -1615,7 +1846,11 @@
     "plannedEnd": "2026-06-10T10:15:00",
     "plannedDate": "2026-06-10",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-09T18:44:01.603Z"
+    "completedAt": "2026-06-09T18:44:01.603Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-04",
@@ -1623,7 +1858,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_harm_claude_advies_20260604",
-    "priority": "P1",
+    "priority": "P3",
     "project": "Boone Media",
     "reason": "SEVENP (Kyra van der Meijden) antwoordde dat Claude Desktop niet kan in hun omgeving, maar de Claude Office-plugin (Word/Excel/PPT/Outlook) wel. Harm forwarded dit aan Jorn met de vraag of de Office-plugin voldoet voor hun automatisering. Jorn heeft nog niet gereageerd.",
     "softDeadline": null,
@@ -1643,7 +1878,11 @@
     "plannedEnd": "2026-06-05T10:45:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T18:05:12.668Z"
+    "completedAt": "2026-06-04T18:05:12.668Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-04",
@@ -1672,7 +1911,11 @@
     "plannedEnd": "2026-06-09T14:45:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-09T09:15:55.886Z"
+    "completedAt": "2026-06-09T09:15:55.886Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-04",
@@ -1680,7 +1923,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_ledgnd_admin_20260604",
-    "priority": "P2",
+    "priority": "P3",
     "project": "Boone Media",
     "reason": "Jordi van Ledgnd stuurde admin-uitnodiging voor de Ledgnd x HortiSoccer WK Pool (wk.ledgnd.com). Jorn werkt actief aan dit project — admin-account activeren via de link in de mail.",
     "softDeadline": null,
@@ -1700,7 +1943,11 @@
     "plannedEnd": "2026-06-05T13:40:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T07:48:46.155Z"
+    "completedAt": "2026-06-04T07:48:46.155Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-04",
@@ -1708,7 +1955,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_metricool_tiktok_20260604",
-    "priority": "P2",
+    "priority": "P3",
     "project": null,
     "reason": "Metricool meldt dat TikTok-verbinding van reishacker.nl verbroken is (toegang ingetrokken). Herstellen via Metricool dashboard zodat TikTok-posts weer ingepland kunnen worden.",
     "softDeadline": null,
@@ -1729,14 +1976,18 @@
     "plannedEnd": "2026-06-05T13:40:00",
     "plannedDate": "2026-06-05",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-04T07:48:47.629Z"
+    "completedAt": "2026-06-04T07:48:47.629Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1780599534893_orah",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "cancelled",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-06-08",
     "hardDeadline": "2026-06-08",
@@ -1768,14 +2019,18 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
-    "cancelledAt": "2026-06-09T13:35:31.903Z"
+    "cancelledAt": "2026-06-09T13:35:31.903Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780599534893_vyk5",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "cancelled",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-06-15",
     "hardDeadline": "2026-06-15",
@@ -1807,14 +2062,18 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
-    "cancelledAt": "2026-06-27T11:44:08.748Z"
+    "cancelledAt": "2026-06-27T11:44:08.748Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780599534893_k6so",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "cancelled",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-06-22",
     "hardDeadline": "2026-06-22",
@@ -1846,14 +2105,18 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
-    "cancelledAt": "2026-06-23T13:22:07.191Z"
+    "cancelledAt": "2026-06-23T13:22:07.191Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780599534894_a8he",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-06-29",
     "hardDeadline": "2026-06-29",
@@ -1884,14 +2147,18 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1780602426888_yc1g",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-06",
     "hardDeadline": "2026-07-06",
@@ -1922,14 +2189,18 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1780602426889_myt0",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-13",
     "hardDeadline": "2026-07-13",
@@ -1960,14 +2231,18 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1780602426889_h3ix",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-20",
     "hardDeadline": "2026-07-20",
@@ -1998,14 +2273,18 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1780602426889_f7y2",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-07-27",
     "hardDeadline": "2026-07-27",
@@ -2036,14 +2315,18 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1780602426889_1395",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-03",
     "hardDeadline": "2026-08-03",
@@ -2074,7 +2357,11 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1780602426890_vwn0",
@@ -2107,13 +2394,17 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1780602426890_8l06",
     "title": "Facturen opstellen en doorsturen",
     "status": "open",
-    "priority": "P2",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-01",
     "hardDeadline": "2026-08-01",
@@ -2140,7 +2431,11 @@
     "updatedAt": "2026-06-04",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "createdAt": "2026-06-05",
@@ -2168,7 +2463,11 @@
     "plannedEnd": "2026-06-09T14:45:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-09T09:15:58.131Z"
+    "completedAt": "2026-06-09T09:15:58.131Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-07",
@@ -2176,7 +2475,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_schiphol_20260607",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Status: Binnen. Echte laatste contact: 2026-05-27 (videocall Maret, 11 dagen geleden). Geen mail naar Maret.Trouerbach@yune.nl in de afgelopen 10 dagen. Deal-uitkomst van de klant nog onbekend — opvolgen bij Maret voor update.",
     "softDeadline": null,
@@ -2195,14 +2494,18 @@
     "plannedEnd": "2026-06-09T15:45:00",
     "plannedDate": "2026-06-09",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-09T09:16:00.048Z"
+    "completedAt": "2026-06-09T09:16:00.048Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1780956000978_e0nd",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-10",
     "hardDeadline": "2026-08-10",
@@ -2233,7 +2536,11 @@
     "updatedAt": "2026-06-09",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "createdAt": "2026-06-09",
@@ -2241,7 +2548,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_vimexx_verlenging_20260609",
-    "priority": "P1",
+    "priority": "P3",
     "project": null,
     "reason": "Vimexx kon op 8 juni producten niet automatisch verlengen: incasso niet (correct) ingesteld of saldo ontoereikend. Open verlengbestelling staat klaar — betaalmethode instellen of handmatig verlengen anders dreigen domeinen/hosting te verlopen.",
     "softDeadline": null,
@@ -2262,13 +2569,17 @@
     "plannedEnd": "2026-06-18T21:30:00",
     "plannedDate": "2026-06-18",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-18T09:38:57.203Z"
+    "completedAt": "2026-06-18T09:38:57.203Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1781024039374_jf7h",
     "title": "Langs bij Thijs voor AI sensor",
     "status": "done",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -2301,8 +2612,11 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-09T17:40:01.665Z"
     },
-    "coveyQuadrant": "Q2",
-    "completedAt": "2026-06-12T09:10:08.138Z"
+    "coveyQuadrant": "Q4",
+    "completedAt": "2026-06-12T09:10:08.138Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-10",
@@ -2332,7 +2646,11 @@
     "plannedEnd": "2026-06-17T10:30:00",
     "plannedDate": "2026-06-17",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-16T19:04:55.535Z"
+    "completedAt": "2026-06-16T19:04:55.535Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 60,
+    "deadlinePressure": "overdue"
   },
   {
     "createdAt": "2026-06-10",
@@ -2340,7 +2658,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_allianz_bounce_20260610",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Jorn stuurde op 9 jun een samenwerkingsvoorstel naar marketing@allianzdirect.nl (auto-reply: leest geen incoming) en cc info@allianzdirect.nl (550 bounced). Bericht nooit ontvangen — juist contactadres opzoeken op allianzdirect.nl en opnieuw sturen.",
     "softDeadline": null,
@@ -2360,7 +2678,11 @@
     "plannedEnd": "2026-06-12T15:15:00",
     "plannedDate": "2026-06-12",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-12T09:10:13.441Z"
+    "completedAt": "2026-06-12T09:10:13.441Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-12",
@@ -2368,7 +2690,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_schiphol_20260612",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Status: Binnen. Echte laatste contact: 2026-05-27 (videocall, 16 dagen geleden). Geen mail naar Maret.Trouerbach@yune.nl in de afgelopen 14 dagen in sent zichtbaar. Deal-uitkomst van de klant nog onbekend — bij Maret opvolgen voor update.",
     "softDeadline": null,
@@ -2388,14 +2710,18 @@
     "plannedEnd": "2026-06-12T15:15:00",
     "plannedDate": "2026-06-12",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-12T09:10:22.680Z"
+    "completedAt": "2026-06-12T09:10:22.680Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1781267108616_eyzk",
     "title": "Legend WK-pool mails online zetten en versturen",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-13",
     "softDeadline": null,
@@ -2420,14 +2746,17 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-06-23",
-    "completedAt": "2026-06-23T13:22:24.125Z"
+    "completedAt": "2026-06-23T13:22:24.125Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781267325101_9tm5",
     "title": "LinkedIn-strategie neerzetten",
     "status": "open",
     "priority": "P2",
-    "coveyQuadrant": "Q2",
+    "coveyQuadrant": "Q3",
     "deadline": null,
     "hardDeadline": "2026-06-23",
     "softDeadline": null,
@@ -2435,8 +2764,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-06-30T11:30:00",
-    "plannedEnd": "2026-06-30T13:30:00",
+    "plannedStart": "2026-06-28T11:10:00",
+    "plannedEnd": "2026-06-28T13:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2446,19 +2775,22 @@
       }
     ],
     "createdAt": "2026-06-12",
-    "updatedAt": "2026-06-12",
+    "updatedAt": "2026-06-27",
     "tags": [],
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-30"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 100,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781270866394_hon8",
     "title": "Click-out van Reishacker verbeteren",
     "status": "open",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
     "deadline": null,
     "hardDeadline": "2026-06-19",
     "softDeadline": null,
@@ -2466,8 +2798,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-27T15:00:00",
-    "plannedEnd": "2026-06-27T16:00:00",
+    "plannedStart": "2026-06-28T10:00:00",
+    "plannedEnd": "2026-06-28T11:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2482,14 +2814,17 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-27"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 100,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781279449111_1iaj",
     "title": "Blogautomatiseringen aanpassen",
     "status": "done",
-    "priority": "P2",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-23",
     "softDeadline": null,
@@ -2514,14 +2849,17 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-17",
-    "completedAt": "2026-06-16T19:05:24.986Z"
+    "completedAt": "2026-06-16T19:05:24.986Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781560800690_vy5p",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-17",
     "hardDeadline": "2026-08-17",
@@ -2552,24 +2890,28 @@
     "updatedAt": "2026-06-16",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "id": "task_1781596367031_b4lw",
     "title": "Tikkie maken voor Moodbar en 32",
     "status": "open",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
     "deadline": null,
     "hardDeadline": "2026-06-19",
     "softDeadline": null,
     "startBy": null,
     "deadlineType": "hard",
-    "estimatedMinutes": 60,
+    "estimatedMinutes": 10,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-27T16:00:00",
-    "plannedEnd": "2026-06-27T17:00:00",
-    "plannedMinutes": 60,
+    "plannedStart": "2026-06-28T11:00:00",
+    "plannedEnd": "2026-06-28T11:10:00",
+    "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
       {
@@ -2578,19 +2920,22 @@
       }
     ],
     "createdAt": "2026-06-16",
-    "updatedAt": "2026-06-16",
+    "updatedAt": "2026-06-27",
     "tags": [],
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-27"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 100,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781610815830_ckvv",
     "title": "Ledgnd WK post online zetten",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-19",
     "softDeadline": null,
@@ -2615,7 +2960,10 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-06-24",
-    "completedAt": "2026-06-23T13:22:19.768Z"
+    "completedAt": "2026-06-23T13:22:19.768Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "createdAt": "2026-06-16",
@@ -2623,7 +2971,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_instagram_reconnect_20260616",
-    "priority": "P2",
+    "priority": "P3",
     "project": null,
     "reason": "Social planningstool (usefoam) meldt op 15 jun dat de Instagram-koppeling van reishacker.nl verbroken is. Opnieuw verbinden zodat content en metrics blijven lopen (zelfde type issue als de eerdere TikTok-herverbinding).",
     "softDeadline": null,
@@ -2643,7 +2991,11 @@
     "plannedEnd": "2026-06-19T11:15:00",
     "plannedDate": "2026-06-19",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-18T09:38:58.879Z"
+    "completedAt": "2026-06-18T09:38:58.879Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-17",
@@ -2670,7 +3022,11 @@
     "plannedEnd": "2026-06-24T09:30:00",
     "plannedDate": "2026-06-24",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-23T13:22:31.481Z"
+    "completedAt": "2026-06-23T13:22:31.481Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-17",
@@ -2678,7 +3034,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_interiorpro_20260617",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Boone Media",
     "reason": "Boone Media (Actief). Marrigje van Olst stuurde 30 mei de gradient-afbeeldingen (INSTAGRAM POSTS.zip, 3 formaten). Echte laatste contact 30 mei; Jorn heeft sindsdien (18 dgn) niet gereageerd — bal ligt bij Jorn.",
     "softDeadline": null,
@@ -2697,14 +3053,18 @@
     "plannedEnd": "2026-06-19T11:15:00",
     "plannedDate": "2026-06-19",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-18T09:39:03.130Z"
+    "completedAt": "2026-06-18T09:39:03.130Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1781716109949_wq6s",
     "title": "Manychat opzeggen",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-19",
     "softDeadline": null,
@@ -2729,14 +3089,17 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-18",
-    "completedAt": "2026-06-18T09:40:41.338Z"
+    "completedAt": "2026-06-18T09:40:41.338Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781725291476_g1ws",
     "title": "Verifiëren of NS abonnement goed gegaan is",
     "status": "done",
-    "priority": "P0",
-    "coveyQuadrant": "Q1",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-18",
     "softDeadline": null,
@@ -2761,14 +3124,17 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-18",
-    "completedAt": "2026-06-18T09:59:12.608Z"
+    "completedAt": "2026-06-18T09:59:12.608Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781610881180_dypq",
     "title": "Post Harm Jan over airco editen en plannen",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q1",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-18",
     "softDeadline": null,
@@ -2793,7 +3159,10 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-18",
-    "completedAt": "2026-06-18T12:43:01.324Z"
+    "completedAt": "2026-06-18T12:43:01.324Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue"
   },
   {
     "createdAt": "2026-06-16",
@@ -2822,14 +3191,18 @@
     "plannedEnd": "2026-06-18T17:15:00",
     "plannedDate": "2026-06-18",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-18T12:42:59.806Z"
+    "completedAt": "2026-06-18T12:42:59.806Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 10,
+    "importanceScore": 60,
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1781867689233_csy8",
     "title": "Blog humaniseren",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-06-30",
     "softDeadline": null,
@@ -2854,7 +3227,10 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-23",
-    "completedAt": "2026-06-23T13:22:27.728Z"
+    "completedAt": "2026-06-23T13:22:27.728Z",
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "createdAt": "2026-06-20",
@@ -2862,7 +3238,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_mail_whalar_assignment_20260620",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Whalar (notices@whalar.com) verkoopt zijn agency-business; per ~22 jun gaan alle creator-contracten over naar Mist Agency Newco Ltd. Legal notice vraagt Jorn via de link ontvangst/akkoord te bevestigen voor zijn Skyscanner/H2 2025 contract. Voorwaarden, rates en payouts blijven gelijk — even bevestigen zodat de overdracht netjes verloopt.",
     "softDeadline": null,
@@ -2883,14 +3259,18 @@
     "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-23T13:22:36.466Z"
+    "completedAt": "2026-06-23T13:22:36.466Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1781963500882_8u3b",
     "title": "Knippen met Evan",
     "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -2915,14 +3295,17 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-25",
-    "completedAt": "2026-06-25T06:22:52.033Z"
+    "completedAt": "2026-06-25T06:22:52.033Z",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782165600715_frf3",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P1",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-08-24",
     "hardDeadline": "2026-08-24",
@@ -2953,7 +3336,11 @@
     "updatedAt": "2026-06-23",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
   },
   {
     "createdAt": "2026-06-23",
@@ -2961,7 +3348,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_vanvijven_20260623",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Boone Media",
     "reason": "Boone Media (Actief). Jorn stuurde 3 jun factuur 26065_1 (mei-uren) naar info@vanvijventransport.nl. Echte laatste contact 3 jun (eigen verzonden mail); sindsdien 20 dgn geen reactie en nog geen herinnering verstuurd — bal ligt bij Jorn om te herinneren.",
     "softDeadline": null,
@@ -2980,14 +3367,18 @@
     "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-23T13:22:41.385Z"
+    "completedAt": "2026-06-23T13:22:41.385Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782289423247_giew",
     "title": "Ledgnd BV opvolgen — 12 dagen geen reactie (open factuur 26001_5)",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3027,14 +3418,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:01.514Z"
     },
-    "completedAt": "2026-06-25T06:22:57.740Z"
+    "completedAt": "2026-06-25T06:22:57.740Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782289424066_kijt",
     "title": "Interior Pro / SketchupPlaza opvolgen — 25 dagen geen contact",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3074,24 +3469,28 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:02.143Z"
     },
-    "completedAt": "2026-06-25T06:22:59.259Z"
+    "completedAt": "2026-06-25T06:22:59.259Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782300399631_xbko",
     "title": "Rabobank saldo effen maken",
     "status": "open",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
     "deadline": null,
     "hardDeadline": "2026-06-30",
     "softDeadline": null,
     "startBy": null,
     "deadlineType": "hard",
-    "estimatedMinutes": 60,
+    "estimatedMinutes": 10,
     "nextAction": "Saldo controleren en bijwerken",
-    "plannedStart": "2026-06-27T16:30:00",
-    "plannedEnd": "2026-06-27T17:30:00",
-    "plannedMinutes": 60,
+    "plannedStart": "2026-06-28T13:10:00",
+    "plannedEnd": "2026-06-28T13:20:00",
+    "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
       {
@@ -3100,12 +3499,15 @@
       }
     ],
     "createdAt": "2026-06-24",
-    "updatedAt": "2026-06-24",
+    "updatedAt": "2026-06-27",
     "tags": [],
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-06-27"
+    "plannedDate": "2026-06-28",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782371403702_d8ls",
@@ -3121,14 +3523,14 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T13:00:00.914Z",
     "tags": [
       "mail",
       "samenwerking"
     ],
-    "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T10:30:00+02:00",
-    "plannedEnd": "2026-06-30T11:00:00+02:00",
+    "plannedDate": "2026-06-27",
+    "plannedStart": "2026-06-27T16:30:00+02:00",
+    "plannedEnd": "2026-06-27T17:00:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3146,17 +3548,21 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T13:00:00.914Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-27T11:50:01.626Z"
-    }
+      "googleUpdatedAt": "2026-06-27T12:55:00.948Z"
+    },
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782371444262_b0ti",
     "title": "Openstaande factuur 26001_5 navragen bij Ledgnd",
     "status": "done",
-    "priority": "P2",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3197,14 +3603,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:01.798Z"
     },
-    "completedAt": "2026-06-26T12:43:56.962Z"
+    "completedAt": "2026-06-26T12:43:56.962Z",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782457802574_4add",
     "title": "Interior Pro / SketchupPlaza opvolgen — 27 dagen stil",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3244,13 +3654,17 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:03.001Z"
     },
-    "completedAt": "2026-06-26T12:44:11.258Z"
+    "completedAt": "2026-06-26T12:44:11.258Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782457804141_ocao",
     "title": "Reageer op Ontdek Napels met concreet samenwerkingsvoorstel — Iris & Joël",
-    "status": "open",
-    "priority": "P1",
+    "status": "done",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3260,13 +3674,13 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen 'Waar zat je aan te denken?'. Ze merken op dat hun doelgroep premium is terwijl Reishacker budget-tips geeft — Jorn moet terugkoppelen met een concreet voorstel. Jorn heeft nog niet gereageerd in de thread.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T12:30:00.401Z",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T11:00:00+02:00",
-    "plannedEnd": "2026-06-30T11:30:00+02:00",
+    "plannedStart": "2026-06-30T14:05:00+02:00",
+    "plannedEnd": "2026-06-30T14:35:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3284,18 +3698,23 @@
       "calendarId": "primary",
       "eventId": "p5oqed1gfubp7jc7gf0j2u1vlk",
       "htmlLink": "https://www.google.com/calendar/event?eid=cDVvcWVkMWdmdWJwN2pjN2dmMGoydTF2bGsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T12:30:00.401Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-27T11:50:02.264Z"
-    }
+      "googleUpdatedAt": "2026-06-27T12:25:02.057Z"
+    },
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-27T12:24:19.676Z"
   },
   {
     "id": "task_stale_easyhotel_20260520",
     "title": "easyHotel opvolgen — 9 dagen geen contact",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3309,7 +3728,11 @@
       "opvolging",
       "easyhotel"
     ],
-    "completedAt": "2026-05-21T19:19:34.096Z"
+    "completedAt": "2026-05-21T19:19:34.096Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "createdAt": "2026-06-21",
@@ -3317,7 +3740,7 @@
     "deadlineType": "none",
     "hardDeadline": null,
     "id": "task_stale_easyhotel_20260621",
-    "priority": "P2",
+    "priority": "P1",
     "project": "Brand Deals",
     "reason": "Status 'Binnen'. Verblijf easyHotel Amsterdam (16-17 juni) is voltooid, maar sinds ~5 juni geen menselijk contact meer met Maddie Simpson (Maddie.Simpson@easyhotel.com) - alleen een automatische OOO (3 jun) en een ReviewPro-gastenenquete (17 jun). Content uit het verblijf nog op te leveren / samenwerking weer oppakken.",
     "softDeadline": null,
@@ -3336,14 +3759,18 @@
     "plannedEnd": "2026-06-24T12:00:00",
     "plannedDate": "2026-06-24",
     "plannedMinutes": 30,
-    "completedAt": "2026-06-23T13:22:39.436Z"
+    "completedAt": "2026-06-23T13:22:39.436Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782294002569_y3to",
     "title": "easyHotel opvolgen — 19 dagen geen contact",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3383,14 +3810,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-24T19:55:02.934Z"
     },
-    "completedAt": "2026-06-25T06:23:01.748Z"
+    "completedAt": "2026-06-25T06:23:01.748Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782457804858_brto",
     "title": "Ledgnd BV opvolgen — 14 dagen stil",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3430,14 +3861,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:03.604Z"
     },
-    "completedAt": "2026-06-26T12:44:08.644Z"
+    "completedAt": "2026-06-26T12:44:08.644Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782371402897_y0mc",
     "title": "easyHotel opvolgen — 20 dagen geen contact",
     "project": "Brand Deals",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3477,14 +3912,18 @@
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:02.388Z"
     },
-    "completedAt": "2026-06-26T12:44:06.231Z"
+    "completedAt": "2026-06-26T12:44:06.231Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782460577697_ijp0",
     "title": "Kleine-klussen.nl opvolgen — 28 dagen geen contact",
     "project": "Boone Media",
     "status": "done",
-    "priority": "P2",
+    "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3494,7 +3933,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T13:00:00.914Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3519,18 +3958,22 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T13:00:00.914Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
     },
-    "completedAt": "2026-06-26T12:44:03.750Z"
+    "completedAt": "2026-06-26T12:44:03.750Z",
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 60,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1782544209289_zxca",
     "title": "Tarief delen of beleefd afwijzen — TCE/Emergent (Falak)",
-    "status": "open",
-    "priority": "P2",
+    "status": "done",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3540,13 +3983,13 @@
     "source": "mail",
     "reason": "Concrete inkomende paid-collab aanvraag aan Reishacker met duidelijke deliverables (1 IG Reel + Story + link in bio 7 dagen, repost). Agency vraagt expliciet om tarief; Jorn heeft nog niet gereageerd.",
     "createdAt": "2026-06-27",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T12:30:00.401Z",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T13:30:00+02:00",
-    "plannedEnd": "2026-06-30T14:00:00+02:00",
+    "plannedStart": "2026-06-30T14:35:00+02:00",
+    "plannedEnd": "2026-06-30T15:05:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3564,17 +4007,22 @@
       "calendarId": "primary",
       "eventId": "d2s4ab4bv1hjpqd199g9078s14",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZDJzNGFiNGJ2MWhqcHFkMTk5ZzkwNzhzMTQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T12:30:00.401Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-27T11:50:02.941Z"
-    }
+      "googleUpdatedAt": "2026-06-27T12:25:02.684Z"
+    },
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-27T12:24:10.835Z"
   },
   {
     "id": "task_1782544210176_0t1r",
     "title": "Reageren op SpinDrive iGaming-collab voorstel (Jason)",
-    "status": "open",
-    "priority": "P2",
+    "status": "done",
+    "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
     "softDeadline": null,
@@ -3584,13 +4032,13 @@
     "source": "mail",
     "reason": "Concrete inkomende paid-collab aanvraag aan Reishacker: 1-2 IG Stories betaalde test met langdurige intentie. Wil deze maand een gesprek. Jorn heeft nog niet gereageerd. Wel afwegen: iGaming past mogelijk niet bij merk.",
     "createdAt": "2026-06-27",
-    "updatedAt": "2026-06-27T12:00:00.878Z",
+    "updatedAt": "2026-06-27T12:30:00.401Z",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T14:00:00+02:00",
-    "plannedEnd": "2026-06-30T14:30:00+02:00",
+    "plannedStart": "2026-06-30T15:05:00+02:00",
+    "plannedEnd": "2026-06-30T15:35:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -3608,10 +4056,15 @@
       "calendarId": "primary",
       "eventId": "j67rflbr6va7plb7ub3s0o63q4",
       "htmlLink": "https://www.google.com/calendar/event?eid=ajY3cmZsYnI2dmE3cGxiN3ViM3MwbzYzcTQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-27T12:00:00.878Z",
+      "lastSyncedAt": "2026-06-27T12:30:00.401Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-27T11:50:03.437Z"
-    }
+      "googleUpdatedAt": "2026-06-27T12:25:03.169Z"
+    },
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-27T12:24:13.603Z"
   }
 ]
