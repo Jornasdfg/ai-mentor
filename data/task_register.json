@@ -3524,7 +3524,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-28T19:00:01.057Z",
+    "updatedAt": "2026-06-28T20:00:01.044Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -3549,10 +3549,10 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-28T19:00:01.057Z",
+      "lastSyncedAt": "2026-06-28T20:00:01.044Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-28T14:55:01.170Z"
+      "googleUpdatedAt": "2026-06-28T19:25:01.575Z"
     },
     "coveyQuadrant": "Q2",
     "urgencyScore": 0,
@@ -3934,7 +3934,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-28T19:00:01.057Z",
+    "updatedAt": "2026-06-28T20:00:01.044Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3959,7 +3959,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-28T19:00:01.057Z",
+      "lastSyncedAt": "2026-06-28T20:00:01.044Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4067,5 +4067,40 @@
     "importanceScore": 20,
     "deadlinePressure": "none",
     "completedAt": "2026-06-27T12:24:13.603Z"
+  },
+  {
+    "id": "task_1782673462692_w9k1",
+    "title": "Fvd lidmaatschap opzeggen",
+    "description": "Zorg ervoor dat het lidmaatschap van Fvd wordt opgezegd.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "nextAction": "Opzegformulier invullen en versturen.",
+    "plannedStart": "2026-06-30T14:20:00",
+    "plannedEnd": "2026-06-30T14:35:00",
+    "plannedMinutes": 15,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-06-28"
+      }
+    ],
+    "createdAt": "2026-06-28",
+    "updatedAt": "2026-06-28",
+    "tags": [],
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-06-30",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
   }
 ]
