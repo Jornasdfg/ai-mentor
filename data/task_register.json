@@ -37,16 +37,16 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1782288396068_adnv",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-07-06",
     "hardDeadline": "2026-07-06",
@@ -78,10 +78,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782288396068_7p30",
@@ -2149,16 +2149,16 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1780602426888_yc1g",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-07-06",
     "hardDeadline": "2026-07-06",
@@ -2190,10 +2190,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1780602426889_myt0",
@@ -3230,7 +3230,7 @@
     "completedAt": "2026-06-23T13:22:27.728Z",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "createdAt": "2026-06-20",
@@ -3505,9 +3505,9 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-06-30",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week",
+    "deadlinePressure": "tomorrow",
     "coveyManual": true
   },
   {
@@ -3524,7 +3524,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-29T07:00:00.659Z",
+    "updatedAt": "2026-06-29T08:00:00.630Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -3549,7 +3549,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T07:00:00.659Z",
+      "lastSyncedAt": "2026-06-29T08:00:00.630Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-28T19:25:01.575Z"
@@ -3934,7 +3934,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-29T07:00:00.659Z",
+    "updatedAt": "2026-06-29T08:00:00.630Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3959,7 +3959,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T07:00:00.659Z",
+      "lastSyncedAt": "2026-06-29T08:00:00.630Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4102,5 +4102,53 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
+  },
+  {
+    "id": "task_1782717005099_uxdo",
+    "title": "Meedenken over wekelijks rapportage-dashboard — Bennie (B&E Bedrijven)",
+    "status": "open",
+    "priority": "P3",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 240,
+    "source": "mail",
+    "reason": "Bestaande klant Bennie vraagt concreet om mee te denken/bouwen aan een systeem waarin medewerkers wekelijks KPI's/vragen invullen die tot 1 managementrapport gebundeld worden. Hij liep vast in Claude en stuurde docx + Claude-share mee. Jorn heeft nog niet gereageerd.",
+    "createdAt": "2026-06-29",
+    "updatedAt": "2026-06-29T07:55:00.789Z",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-06-30",
+    "plannedStart": "2026-06-30T14:35:00+02:00",
+    "plannedEnd": "2026-06-30T17:30:00+02:00",
+    "plannedMinutes": 175,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "jf6jghi9e4l66mafsu03p3ils0",
+      "htmlLink": "https://www.google.com/calendar/event?eid=amY2amdoaTllNGw2Nm1hZnN1MDNwM2lsczAgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-29T07:55:00.789Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-06-29T07:25:01.596Z"
+    }
   }
 ]
