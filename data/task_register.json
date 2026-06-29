@@ -619,7 +619,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-29T21:00:01.207Z",
+    "updatedAt": "2026-06-29T22:00:01.111Z",
     "tags": [
       "malaga"
     ],
@@ -637,7 +637,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T21:00:01.207Z",
+      "lastSyncedAt": "2026-06-29T22:00:01.111Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -3525,7 +3525,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-29T21:00:01.207Z",
+    "updatedAt": "2026-06-29T22:00:01.111Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -3550,7 +3550,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T21:00:01.207Z",
+      "lastSyncedAt": "2026-06-29T22:00:01.111Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-29T19:55:01.524Z"
@@ -3935,7 +3935,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-29T21:00:01.207Z",
+    "updatedAt": "2026-06-29T22:00:01.111Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3960,7 +3960,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T21:00:01.207Z",
+      "lastSyncedAt": "2026-06-29T22:00:01.111Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4158,7 +4158,7 @@
     "id": "task_1782743836929_kc5i",
     "title": "Post maken",
     "description": "Maak een post voor social media.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -4183,13 +4183,14 @@
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-29T21:01:18.003Z"
   },
   {
     "id": "task_1782743836935_5wz3",
     "title": "Reminder-mail versturen",
     "description": "Stuur een reminder-mail naar de betrokkenen.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -4214,7 +4215,8 @@
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-29T21:01:20.440Z"
   },
   {
     "id": "task_1782743888030_02np",
@@ -4251,7 +4253,7 @@
     "id": "task_1782743920370_qlet",
     "title": "Video's controleren en maken voor kleineklussen.nl",
     "description": "Controleer en maak twee video's voor de klant kleineklussen.nl.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -4280,7 +4282,8 @@
     "plannedDate": "2026-07-03",
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-29T21:01:30.077Z"
   },
   {
     "id": "task_1782745992424_dta1",
@@ -4321,7 +4324,7 @@
     "id": "task_1782747738795_wfih",
     "title": "Mail naar Joris over workflow en vertaling",
     "description": "Informeer Joris dat ik een workflow plus eerste Duitse vertaling heb gemaakt middels totale AI-automatisering. Vermeld dat het veel datatokens kost voor de cloud, maar dat de workflow handig en bruikbaar is voor toekomstige teeltrapporten.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -4346,7 +4349,8 @@
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-06-29T21:01:26.996Z"
   },
   {
     "id": "task_1782748349217_t8f3",
@@ -4417,5 +4421,74 @@
     "urgencyScore": 60,
     "importanceScore": 20,
     "deadlinePressure": "this_week"
+  },
+  {
+    "id": "task_1782767130847_nw2s",
+    "title": "Video's maken voor kleine klussen",
+    "description": "",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 60,
+    "nextAction": "Video's maken voor kleine klussen inplannen",
+    "plannedStart": "2026-06-30T09:00:00",
+    "plannedEnd": "2026-06-30T10:00:00",
+    "plannedMinutes": 60,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-06-29"
+      }
+    ],
+    "createdAt": "2026-06-29",
+    "updatedAt": "2026-06-29",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none"
+  },
+  {
+    "id": "task_1782770400958_i1tp",
+    "title": "📊 Weekanalyse doorlezen & week plannen",
+    "project": "Routine",
+    "status": "open",
+    "priority": "P1",
+    "source": "recurring_manual",
+    "deadline": "2026-08-31",
+    "hardDeadline": "2026-08-31",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 20,
+    "nextAction": "Lees de weekanalyse en bepaal de focus voor deze week",
+    "tags": [
+      "weekreview",
+      "routine",
+      "recurring"
+    ],
+    "reason": "Routine: \"📊 Weekanalyse doorlezen & week plannen\"",
+    "isRecurringInstance": true,
+    "recurrenceTemplateId": "recurring_weekreview",
+    "recurrenceDate": "2026-08-31",
+    "recurrenceKey": "recurring_weekreview:2026-08-31",
+    "plannedDate": "2026-08-31",
+    "plannedStart": "2026-08-31T09:00:00",
+    "plannedEnd": "2026-08-31T09:20:00",
+    "plannedMinutes": 20,
+    "taskKind": "routine",
+    "autoSchedule": "auto",
+    "scheduleOnDate": "2026-08-31",
+    "calendarSyncMode": "none",
+    "createdAt": "2026-06-30",
+    "updatedAt": "2026-06-30",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   }
 ]
