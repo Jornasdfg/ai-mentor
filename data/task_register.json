@@ -3524,7 +3524,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-29T09:00:00.597Z",
+    "updatedAt": "2026-06-29T10:00:00.532Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -3549,7 +3549,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T09:00:00.597Z",
+      "lastSyncedAt": "2026-06-29T10:00:00.532Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-28T19:25:01.575Z"
@@ -3934,7 +3934,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-29T09:00:00.597Z",
+    "updatedAt": "2026-06-29T10:00:00.532Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3959,7 +3959,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T09:00:00.597Z",
+      "lastSyncedAt": "2026-06-29T10:00:00.532Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4106,7 +4106,7 @@
   {
     "id": "task_1782717005099_uxdo",
     "title": "Meedenken over wekelijks rapportage-dashboard — Bennie (B&E Bedrijven)",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -4117,7 +4117,7 @@
     "source": "mail",
     "reason": "Bestaande klant Bennie vraagt concreet om mee te denken/bouwen aan een systeem waarin medewerkers wekelijks KPI's/vragen invullen die tot 1 managementrapport gebundeld worden. Hij liep vast in Claude en stuurde docx + Claude-share mee. Jorn heeft nog niet gereageerd.",
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-06-29T08:55:01.706Z",
+    "updatedAt": "2026-06-29T09:45:00.814Z",
     "tags": [
       "mail"
     ],
@@ -4145,10 +4145,11 @@
       "calendarId": "primary",
       "eventId": "jf6jghi9e4l66mafsu03p3ils0",
       "htmlLink": "https://www.google.com/calendar/event?eid=amY2amdoaTllNGw2Nm1hZnN1MDNwM2lsczAgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T08:55:01.706Z",
+      "lastSyncedAt": "2026-06-29T09:45:00.813Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-29T07:25:01.596Z"
-    }
+    },
+    "completedAt": "2026-06-29T09:43:55.855Z"
   }
 ]
