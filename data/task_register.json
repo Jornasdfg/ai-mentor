@@ -619,7 +619,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-29T16:00:01.159Z",
+    "updatedAt": "2026-06-29T17:00:01.194Z",
     "tags": [
       "malaga"
     ],
@@ -637,7 +637,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T16:00:01.159Z",
+      "lastSyncedAt": "2026-06-29T17:00:01.194Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1255,8 +1255,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-01T14:10:00",
-    "plannedEnd": "2026-07-01T14:40:00",
+    "plannedStart": "2026-07-01T19:40:00",
+    "plannedEnd": "2026-07-01T20:10:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1493,9 +1493,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-07-01T15:10:00",
+    "plannedEnd": "2026-07-01T20:40:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-07-01T14:40:00",
+    "plannedStart": "2026-07-01T20:10:00",
     "priority": "P3",
     "softDeadline": null,
     "source": "manual_input",
@@ -3525,7 +3525,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-29T16:00:01.159Z",
+    "updatedAt": "2026-06-29T17:00:01.194Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -3550,10 +3550,10 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T16:00:01.159Z",
+      "lastSyncedAt": "2026-06-29T17:00:01.194Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-29T15:55:01.279Z"
+      "googleUpdatedAt": "2026-06-29T16:45:01.363Z"
     },
     "coveyQuadrant": "Q2",
     "urgencyScore": 0,
@@ -3935,7 +3935,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-29T16:00:01.159Z",
+    "updatedAt": "2026-06-29T17:00:01.194Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -3960,7 +3960,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T16:00:01.159Z",
+      "lastSyncedAt": "2026-06-29T17:00:01.194Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4261,8 +4261,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Bepaal de deadline en duur voor deze taak.",
-    "plannedStart": "2026-07-01T15:10:00",
-    "plannedEnd": "2026-07-01T17:10:00",
+    "plannedStart": "2026-07-03T13:40:00",
+    "plannedEnd": "2026-07-03T15:40:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -4277,7 +4277,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-01",
+    "plannedDate": "2026-07-03",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -4382,5 +4382,40 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-01"
+  },
+  {
+    "id": "task_1782750425478_0q4m",
+    "title": "Inspiratiedashboard integreren met contentplanning",
+    "description": "Maak het inspiratiedashboard live en koppel het aan de contentplanning. Zorg ervoor dat de analyse dagelijks draait en dat er een levende buyer persona is.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Begin met het uitwerken van de integratie en functionaliteiten.",
+    "plannedStart": "2026-07-03T09:00:00",
+    "plannedEnd": "2026-07-03T13:00:00",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-06-29"
+      }
+    ],
+    "createdAt": "2026-06-29",
+    "updatedAt": "2026-06-29",
+    "tags": [],
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-03",
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week"
   }
 ]
