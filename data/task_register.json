@@ -1176,7 +1176,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-30T20:55:00.972Z",
+    "updatedAt": "2026-06-30T21:55:00.990Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -1201,7 +1201,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T20:55:00.972Z",
+      "lastSyncedAt": "2026-06-30T21:55:00.990Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T15:55:01.475Z"
@@ -1547,8 +1547,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-06-30T09:00:00",
-    "plannedEnd": "2026-06-30T10:00:00",
+    "plannedStart": "2026-07-04T12:00:00",
+    "plannedEnd": "2026-07-04T13:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1562,7 +1562,11 @@
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-04"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1680,7 +1684,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-06-30T21:00:00.247Z",
+    "updatedAt": "2026-06-30T22:00:01.247Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1692,7 +1696,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-06-30T21:00:00.247Z",
+      "lastSyncedAt": "2026-06-30T22:00:01.247Z",
       "syncError": null
     }
   },
@@ -1710,8 +1714,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 15,
     "nextAction": "Reageren op het huis in Kroatië.",
-    "plannedStart": "2026-07-04T14:00:00",
-    "plannedEnd": "2026-07-04T14:15:00",
+    "plannedStart": "2026-07-04T15:00:00",
+    "plannedEnd": "2026-07-04T15:15:00",
     "plannedMinutes": 15,
     "source": "manual_input",
     "sources": [
@@ -4457,7 +4461,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-30T21:00:00.247Z",
+    "updatedAt": "2026-06-30T22:00:01.247Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -4482,7 +4486,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T21:00:00.247Z",
+      "lastSyncedAt": "2026-06-30T22:00:01.247Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
@@ -4590,5 +4594,38 @@
     "importanceScore": 20,
     "deadlinePressure": "none",
     "completedAt": "2026-06-27T12:24:13.603Z"
+  },
+  {
+    "id": "task_1782856801030_7l5f",
+    "title": "Facturen opstellen en doorsturen",
+    "status": "open",
+    "priority": "P2",
+    "source": "recurring_manual",
+    "deadline": "2026-09-01",
+    "hardDeadline": "2026-09-01",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "tags": [
+      "recurring"
+    ],
+    "reason": "Routine: \"Facturen opstellen en doorsturen\"",
+    "isRecurringInstance": true,
+    "recurrenceTemplateId": "recur_1780602018786_c9mr",
+    "recurrenceDate": "2026-09-01",
+    "recurrenceKey": "recur_1780602018786_c9mr:2026-09-01",
+    "plannedDate": "2026-09-01",
+    "plannedStart": "2026-09-01T09:00:00",
+    "plannedEnd": "2026-09-01T09:30:00",
+    "plannedMinutes": 30,
+    "taskKind": "routine",
+    "autoSchedule": "auto",
+    "scheduleOnDate": "2026-09-01",
+    "calendarSyncMode": "none",
+    "createdAt": "2026-07-01",
+    "updatedAt": "2026-07-01",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   }
 ]
