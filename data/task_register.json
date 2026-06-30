@@ -398,8 +398,8 @@
     "recurrenceDate": "2026-07-01",
     "recurrenceKey": "recur_1780602018786_c9mr:2026-07-01",
     "plannedDate": "2026-07-01",
-    "plannedStart": "2026-07-01T09:40:00",
-    "plannedEnd": "2026-07-01T10:10:00",
+    "plannedStart": "2026-07-01T10:40:00",
+    "plannedEnd": "2026-07-01T11:10:00",
     "plannedMinutes": 30,
     "taskKind": "routine",
     "autoSchedule": "auto",
@@ -487,7 +487,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-30T11:00:00.678Z",
+    "updatedAt": "2026-06-30T11:30:01.080Z",
     "tags": [
       "malaga"
     ],
@@ -505,7 +505,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T11:00:00.678Z",
+      "lastSyncedAt": "2026-06-30T11:30:01.080Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -528,8 +528,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-03T14:30:00",
-    "plannedEnd": "2026-07-03T15:00:00",
+    "plannedStart": "2026-07-04T12:00:00",
+    "plannedEnd": "2026-07-04T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -538,7 +538,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-03",
+    "plannedDate": "2026-07-04",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -552,9 +552,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-07-02T21:40:00",
+    "plannedEnd": "2026-07-03T13:40:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-07-02T21:10:00",
+    "plannedStart": "2026-07-03T13:10:00",
     "priority": "P3",
     "softDeadline": null,
     "source": "manual_input",
@@ -566,7 +566,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-02",
+    "plannedDate": "2026-07-03",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -844,8 +844,8 @@
     "recurrenceDate": "2026-07-01",
     "recurrenceKey": "recur_1780602018786_c9mr:2026-07-01",
     "plannedDate": "2026-07-01",
-    "plannedStart": "2026-07-01T09:10:00",
-    "plannedEnd": "2026-07-01T09:40:00",
+    "plannedStart": "2026-07-01T10:10:00",
+    "plannedEnd": "2026-07-01T10:40:00",
     "plannedMinutes": 30,
     "taskKind": "routine",
     "autoSchedule": "auto",
@@ -987,8 +987,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-06-30T19:00:00",
-    "plannedEnd": "2026-06-30T20:00:00",
+    "plannedStart": "2026-06-30T20:00:00",
+    "plannedEnd": "2026-06-30T21:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1063,8 +1063,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 10,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-06-30T20:00:00",
-    "plannedEnd": "2026-06-30T20:10:00",
+    "plannedStart": "2026-06-30T21:00:00",
+    "plannedEnd": "2026-06-30T21:10:00",
     "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
@@ -1176,14 +1176,14 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-06-30T11:00:00.678Z",
+    "updatedAt": "2026-06-30T12:00:00.730Z",
     "tags": [
       "mail",
       "samenwerking"
     ],
     "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T17:00:00+02:00",
-    "plannedEnd": "2026-06-30T17:30:00+02:00",
+    "plannedStart": "2026-06-30T19:30:00+02:00",
+    "plannedEnd": "2026-06-30T20:00:00+02:00",
     "plannedMinutes": 30,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1201,10 +1201,10 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T11:00:00.678Z",
+      "lastSyncedAt": "2026-06-30T12:00:00.730Z",
       "syncStatus": "synced",
       "syncError": null,
-      "googleUpdatedAt": "2026-06-30T10:55:00.826Z"
+      "googleUpdatedAt": "2026-06-30T11:55:01.628Z"
     },
     "coveyQuadrant": "Q2",
     "urgencyScore": 0,
@@ -1508,8 +1508,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Koppelen van de kaarten aan Apple Pay.",
-    "plannedStart": "2026-07-01T13:25:00",
-    "plannedEnd": "2026-07-01T17:25:00",
+    "plannedStart": "2026-07-03T11:00:00",
+    "plannedEnd": "2026-07-03T15:00:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1524,10 +1524,10 @@
     "urgencyScore": 60,
     "importanceScore": 20,
     "deadlinePressure": "this_week",
-    "scheduleColorState": "green",
+    "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-01"
+    "plannedDate": "2026-07-03"
   },
   {
     "id": "task_1782750425478_0q4m",
@@ -1543,8 +1543,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het uitwerken van de integratie en functionaliteiten.",
-    "plannedStart": "2026-07-03T11:00:00",
-    "plannedEnd": "2026-07-03T15:00:00",
+    "plannedStart": "2026-07-03T09:00:00",
+    "plannedEnd": "2026-07-03T13:00:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1651,7 +1651,7 @@
     "source": "mail",
     "reason": "Bennie vraagt expliciet 'Woensdag doen dan?' voor het doorlopen van de weekrapportages/dashboard. Jorn gaf opties (di-middag/woensdag/vrijdagochtend) maar heeft woensdag nog niet definitief bevestigd; Bennie wacht op antwoord.",
     "createdAt": "2026-06-30",
-    "updatedAt": "2026-06-30T11:00:00.678Z",
+    "updatedAt": "2026-06-30T12:00:00.730Z",
     "tags": [
       "mail"
     ],
@@ -1679,7 +1679,7 @@
       "calendarId": "primary",
       "eventId": "90ldp455nqnh9cq8lbf7fs6gu8",
       "htmlLink": "https://www.google.com/calendar/event?eid=OTBsZHA0NTVucW5oOWNxOGxiZjdmczZndTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T11:00:00.678Z",
+      "lastSyncedAt": "2026-06-30T12:00:00.730Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T09:55:01.401Z"
@@ -4411,7 +4411,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-06-30T11:00:00.678Z",
+    "updatedAt": "2026-06-30T12:00:00.730Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -4436,7 +4436,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T11:00:00.678Z",
+      "lastSyncedAt": "2026-06-30T12:00:00.730Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
