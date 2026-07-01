@@ -1140,7 +1140,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-07-01T15:55:00.559Z",
+    "updatedAt": "2026-07-01T16:55:00.540Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -1165,7 +1165,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T15:55:00.559Z",
+      "lastSyncedAt": "2026-07-01T16:55:00.540Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T15:55:01.475Z"
@@ -1564,7 +1564,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-01T16:00:00.743Z",
+    "updatedAt": "2026-07-01T17:00:00.690Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1576,7 +1576,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-01T16:00:00.743Z",
+      "lastSyncedAt": "2026-07-01T17:00:00.690Z",
       "syncError": null
     }
   },
