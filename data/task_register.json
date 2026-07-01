@@ -411,9 +411,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1782288396070_deih",
@@ -528,8 +528,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-04T11:00:00",
-    "plannedEnd": "2026-07-04T11:30:00",
+    "plannedStart": "2026-07-04T11:40:00",
+    "plannedEnd": "2026-07-04T12:10:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -552,9 +552,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-07-04T12:00:00",
+    "plannedEnd": "2026-07-04T12:40:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-07-04T11:30:00",
+    "plannedStart": "2026-07-04T12:10:00",
     "priority": "P3",
     "softDeadline": null,
     "source": "manual_input",
@@ -853,13 +853,13 @@
     "calendarSyncMode": "none",
     "createdAt": "2026-06-04",
     "updatedAt": "2026-06-04",
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
+    "scheduleColorState": "gray",
+    "scheduleStatus": "unscheduled",
+    "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1780602426890_8l06",
@@ -953,8 +953,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-01T19:40:00",
-    "plannedEnd": "2026-07-01T21:40:00",
+    "plannedStart": "2026-07-03T10:15:00",
+    "plannedEnd": "2026-07-03T12:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -969,7 +969,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-01",
+    "plannedDate": "2026-07-03",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -987,8 +987,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-07-01T16:30:00",
-    "plannedEnd": "2026-07-01T17:30:00",
+    "plannedStart": "2026-07-01T19:30:00",
+    "plannedEnd": "2026-07-01T20:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1063,8 +1063,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 10,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-07-01T19:30:00",
-    "plannedEnd": "2026-07-01T19:40:00",
+    "plannedStart": "2026-07-01T20:30:00",
+    "plannedEnd": "2026-07-01T20:40:00",
     "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
@@ -1158,7 +1158,7 @@
     "plannedDate": "2026-06-30",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "coveyManual": true,
     "completedAt": "2026-06-29T10:32:28.810Z"
   },
@@ -1176,7 +1176,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-07-01T06:55:00.703Z",
+    "updatedAt": "2026-07-01T07:55:01.502Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -1201,7 +1201,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T06:55:00.703Z",
+      "lastSyncedAt": "2026-07-01T07:55:01.502Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T15:55:01.475Z"
@@ -1410,8 +1410,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-03T11:10:00",
-    "plannedEnd": "2026-07-03T15:10:00",
+    "plannedStart": "2026-07-03T12:15:00",
+    "plannedEnd": "2026-07-03T16:15:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1477,8 +1477,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Koppelen van de kaarten aan Apple Pay.",
-    "plannedStart": "2026-07-03T10:00:00",
-    "plannedEnd": "2026-07-03T14:00:00",
+    "plannedStart": "2026-07-03T10:40:00",
+    "plannedEnd": "2026-07-03T14:40:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1547,8 +1547,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-07-04T12:00:00",
-    "plannedEnd": "2026-07-04T13:00:00",
+    "plannedStart": "2026-07-04T12:40:00",
+    "plannedEnd": "2026-07-04T13:40:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1684,7 +1684,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-01T07:00:01.005Z",
+    "updatedAt": "2026-07-01T08:00:00.871Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1696,7 +1696,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-01T07:00:01.005Z",
+      "lastSyncedAt": "2026-07-01T08:00:00.871Z",
       "syncError": null
     }
   },
@@ -1714,8 +1714,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 15,
     "nextAction": "Reageren op het huis in Kroatië.",
-    "plannedStart": "2026-07-04T15:00:00",
-    "plannedEnd": "2026-07-04T15:15:00",
+    "plannedStart": "2026-07-04T15:40:00",
+    "plannedEnd": "2026-07-04T15:55:00",
     "plannedMinutes": 15,
     "source": "manual_input",
     "sources": [
@@ -1739,7 +1739,7 @@
     "id": "task_1782856801030_7l5f",
     "title": "Facturen opstellen en doorsturen",
     "status": "open",
-    "priority": "P2",
+    "priority": "P3",
     "source": "recurring_manual",
     "deadline": "2026-09-01",
     "hardDeadline": "2026-09-01",
@@ -1766,7 +1766,59 @@
     "updatedAt": "2026-07-01",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future"
+  },
+  {
+    "id": "task_1782889807089_j6p7",
+    "title": "Bevestig woensdag-afspraak weekrapportages — Bennie (B&E Bedrijven)",
+    "status": "open",
+    "priority": "P3",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "source": "mail",
+    "reason": "Bennie's laatste bericht (29 juni 14:50) 'Woensdag doen dan?' is onbeantwoord; Jorn had woensdag als optie gegeven en woensdag is vandaag (1 juli) — afspraak over dashboard/weekrapportages moet bevestigd worden.",
+    "createdAt": "2026-07-01",
+    "updatedAt": "2026-07-01T08:00:00.871Z",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-07-04",
+    "plannedStart": "2026-07-04T15:55:00+02:00",
+    "plannedEnd": "2026-07-04T16:10:00+02:00",
+    "plannedMinutes": 15,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "u24mo7n88q6ro14sfg6ld0uu2c",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dTI0bW83bjg4cTZybzE0c2ZnNmxkMHV1MmMgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-07-01T08:00:00.871Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-07-01T07:55:01.100Z"
+    }
   },
   {
     "id": "task_malaga_reel_1_script",
@@ -3916,7 +3968,7 @@
     "completedAt": "2026-06-23T13:22:27.728Z",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "createdAt": "2026-06-20",
@@ -4494,7 +4546,7 @@
     "source": "system",
     "reason": "Geen contact sinds 2026-05-29 (deterministisch via Gmail geverifieerd op Info@kleine-klussen.nl). Laatste echte contact bevestigd, deal staat op actief.",
     "createdAt": "2026-06-26",
-    "updatedAt": "2026-07-01T07:00:01.005Z",
+    "updatedAt": "2026-07-01T08:00:00.871Z",
     "tags": [
       "samenwerking",
       "opvolging"
@@ -4519,7 +4571,7 @@
       "calendarId": "primary",
       "eventId": "49n707g9fat2gp2s42017gncb4",
       "htmlLink": "https://www.google.com/calendar/event?eid=NDluNzA3ZzlmYXQyZ3AyczQyMDE3Z25jYjQgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T07:00:01.005Z",
+      "lastSyncedAt": "2026-07-01T08:00:00.871Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-26T12:45:04.075Z"
