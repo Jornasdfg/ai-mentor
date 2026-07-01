@@ -1176,7 +1176,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-07-01T09:55:01.162Z",
+    "updatedAt": "2026-07-01T10:55:01.027Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -1201,7 +1201,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T09:55:01.162Z",
+      "lastSyncedAt": "2026-07-01T10:55:01.027Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T15:55:01.475Z"
@@ -1246,55 +1246,6 @@
     "importanceScore": 20,
     "deadlinePressure": "none",
     "completedAt": "2026-06-29T10:37:50.568Z"
-  },
-  {
-    "id": "task_1782717005099_uxdo",
-    "title": "Meedenken over wekelijks rapportage-dashboard — Bennie (B&E Bedrijven)",
-    "status": "done",
-    "priority": "P3",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 240,
-    "source": "mail",
-    "reason": "Bestaande klant Bennie vraagt concreet om mee te denken/bouwen aan een systeem waarin medewerkers wekelijks KPI's/vragen invullen die tot 1 managementrapport gebundeld worden. Hij liep vast in Claude en stuurde docx + Claude-share mee. Jorn heeft nog niet gereageerd.",
-    "createdAt": "2026-06-29",
-    "updatedAt": "2026-06-29T09:45:00.814Z",
-    "tags": [
-      "mail"
-    ],
-    "plannedDate": "2026-06-30",
-    "plannedStart": "2026-06-30T14:35:00+02:00",
-    "plannedEnd": "2026-06-30T17:30:00+02:00",
-    "plannedMinutes": 175,
-    "calendarSyncMode": "auto",
-    "taskKind": "task",
-    "autoSchedule": "auto",
-    "schedulingWindowId": "window_work",
-    "splittable": true,
-    "minBlockMinutes": 30,
-    "autoIgnore": false,
-    "locked": false,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "calendarLink": {
-      "provider": "google",
-      "calendarId": "primary",
-      "eventId": "jf6jghi9e4l66mafsu03p3ils0",
-      "htmlLink": "https://www.google.com/calendar/event?eid=amY2amdoaTllNGw2Nm1hZnN1MDNwM2lsczAgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-29T09:45:00.813Z",
-      "syncStatus": "synced",
-      "syncError": null,
-      "googleUpdatedAt": "2026-06-29T07:25:01.596Z"
-    },
-    "completedAt": "2026-06-29T09:43:55.855Z"
   },
   {
     "id": "task_1782743836929_kc5i",
@@ -1786,7 +1737,7 @@
     "source": "mail",
     "reason": "Bennie's laatste bericht (29 juni 14:50) 'Woensdag doen dan?' is onbeantwoord; Jorn had woensdag als optie gegeven en woensdag is vandaag (1 juli) — afspraak over dashboard/weekrapportages moet bevestigd worden.",
     "createdAt": "2026-07-01",
-    "updatedAt": "2026-07-01T10:00:00.834Z",
+    "updatedAt": "2026-07-01T11:00:00.822Z",
     "tags": [
       "mail"
     ],
@@ -1814,10 +1765,59 @@
       "calendarId": "primary",
       "eventId": "u24mo7n88q6ro14sfg6ld0uu2c",
       "htmlLink": "https://www.google.com/calendar/event?eid=dTI0bW83bjg4cTZybzE0c2ZnNmxkMHV1MmMgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T10:00:00.834Z",
+      "lastSyncedAt": "2026-07-01T11:00:00.822Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-07-01T09:55:00.770Z"
     }
+  },
+  {
+    "id": "task_1782717005099_uxdo",
+    "title": "Meedenken over wekelijks rapportage-dashboard — Bennie (B&E Bedrijven)",
+    "status": "done",
+    "priority": "P3",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 240,
+    "source": "mail",
+    "reason": "Bestaande klant Bennie vraagt concreet om mee te denken/bouwen aan een systeem waarin medewerkers wekelijks KPI's/vragen invullen die tot 1 managementrapport gebundeld worden. Hij liep vast in Claude en stuurde docx + Claude-share mee. Jorn heeft nog niet gereageerd.",
+    "createdAt": "2026-06-29",
+    "updatedAt": "2026-06-29T09:45:00.814Z",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-06-30",
+    "plannedStart": "2026-06-30T14:35:00+02:00",
+    "plannedEnd": "2026-06-30T17:30:00+02:00",
+    "plannedMinutes": 175,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "jf6jghi9e4l66mafsu03p3ils0",
+      "htmlLink": "https://www.google.com/calendar/event?eid=amY2amdoaTllNGw2Nm1hZnN1MDNwM2lsczAgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-29T09:45:00.813Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-06-29T07:25:01.596Z"
+    },
+    "completedAt": "2026-06-29T09:43:55.855Z"
   }
 ]
