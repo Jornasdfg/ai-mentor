@@ -528,8 +528,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-04T17:00:00",
-    "plannedEnd": "2026-07-04T17:30:00",
+    "plannedStart": "2026-07-04T10:40:00",
+    "plannedEnd": "2026-07-04T11:10:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -552,9 +552,9 @@
     "hardDeadline": null,
     "id": "task_1779572652568_f49t",
     "nextAction": "Financiën doornemen en bijwerken.",
-    "plannedEnd": "2026-07-04T10:40:00",
+    "plannedEnd": "2026-07-04T11:40:00",
     "plannedMinutes": 30,
-    "plannedStart": "2026-07-04T10:10:00",
+    "plannedStart": "2026-07-04T11:10:00",
     "priority": "P3",
     "softDeadline": null,
     "source": "manual_input",
@@ -953,8 +953,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-03T14:10:00",
-    "plannedEnd": "2026-07-03T16:10:00",
+    "plannedStart": "2026-07-03T15:00:00",
+    "plannedEnd": "2026-07-03T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -987,8 +987,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-07-03T13:00:00",
-    "plannedEnd": "2026-07-03T14:00:00",
+    "plannedStart": "2026-07-03T14:00:00",
+    "plannedEnd": "2026-07-03T15:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1063,8 +1063,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 10,
     "nextAction": "Maak tikkies voor Moodbar en 32 en stuur ze naar vrienden.",
-    "plannedStart": "2026-07-03T14:00:00",
-    "plannedEnd": "2026-07-03T14:10:00",
+    "plannedStart": "2026-07-03T15:00:00",
+    "plannedEnd": "2026-07-03T15:10:00",
     "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
@@ -1140,7 +1140,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-07-01T16:55:00.540Z",
+    "updatedAt": "2026-07-01T17:55:00.601Z",
     "tags": [
       "mail",
       "samenwerking"
@@ -1165,7 +1165,7 @@
       "calendarId": "primary",
       "eventId": "e5030rr53gqs9vg3hl2tbpbq2k",
       "htmlLink": "https://www.google.com/calendar/event?eid=ZTUwMzBycjUzZ3FzOXZnM2hsMnRicGJxMmsgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-01T16:55:00.540Z",
+      "lastSyncedAt": "2026-07-01T17:55:00.601Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-06-30T15:55:01.475Z"
@@ -1289,8 +1289,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-04T12:25:00",
-    "plannedEnd": "2026-07-04T16:25:00",
+    "plannedStart": "2026-07-04T10:10:00",
+    "plannedEnd": "2026-07-04T14:10:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1356,8 +1356,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Koppelen van de kaarten aan Apple Pay.",
-    "plannedStart": "2026-07-04T13:10:00",
-    "plannedEnd": "2026-07-04T17:10:00",
+    "plannedStart": "2026-07-04T13:25:00",
+    "plannedEnd": "2026-07-04T17:25:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1427,8 +1427,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-07-04T10:40:00",
-    "plannedEnd": "2026-07-04T11:40:00",
+    "plannedStart": "2026-07-04T11:40:00",
+    "plannedEnd": "2026-07-04T12:40:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1564,7 +1564,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-01T17:00:00.690Z",
+    "updatedAt": "2026-07-01T18:00:00.715Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1576,7 +1576,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-01T17:00:00.690Z",
+      "lastSyncedAt": "2026-07-01T18:00:00.715Z",
       "syncError": null
     }
   },
