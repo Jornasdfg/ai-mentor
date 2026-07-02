@@ -1312,7 +1312,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-02T11:00:00.873Z",
+    "updatedAt": "2026-07-02T12:00:00.843Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1324,7 +1324,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-02T11:00:00.873Z",
+      "lastSyncedAt": "2026-07-02T12:00:00.843Z",
       "syncError": null
     }
   },
