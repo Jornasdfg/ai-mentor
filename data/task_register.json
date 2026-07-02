@@ -445,7 +445,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-02T21:00:00.811Z",
+    "updatedAt": "2026-07-02T22:00:00.793Z",
     "tags": [
       "malaga"
     ],
@@ -463,7 +463,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-02T21:00:00.811Z",
+      "lastSyncedAt": "2026-07-02T22:00:00.793Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1082,9 +1082,9 @@
     "createdAt": "2026-06-29",
     "updatedAt": "2026-06-29",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1117,9 +1117,9 @@
     "createdAt": "2026-06-29",
     "updatedAt": "2026-06-29",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1158,7 +1158,7 @@
     "plannedDate": "2026-07-04",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "completedAt": "2026-07-01T11:12:04.900Z"
   },
   {
@@ -1263,7 +1263,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-02T21:00:00.811Z",
+    "updatedAt": "2026-07-02T22:00:00.793Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1275,7 +1275,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-02T21:00:00.811Z",
+      "lastSyncedAt": "2026-07-02T22:00:00.793Z",
       "syncError": null
     }
   },
@@ -1498,9 +1498,9 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-07",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1702,9 +1702,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "history": [
       {
         "at": "2026-07-02",
@@ -1740,9 +1740,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "history": [
       {
         "at": "2026-07-02",
@@ -1778,9 +1778,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "history": [
       {
         "at": "2026-07-02",
@@ -1816,9 +1816,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1898,9 +1898,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1933,9 +1933,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null
@@ -1967,9 +1967,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1980,8 +1980,8 @@
     "title": "Concept voor The Backroom app draaien",
     "description": "Draai een concept voor de app The Backroom.",
     "status": "open",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
     "deadline": null,
     "hardDeadline": "2026-07-10",
     "softDeadline": null,
@@ -2002,9 +2002,9 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 20,
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future",
+    "deadlinePressure": "this_week",
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null
