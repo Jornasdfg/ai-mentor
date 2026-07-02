@@ -445,7 +445,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-02T16:00:00.993Z",
+    "updatedAt": "2026-07-02T17:00:00.968Z",
     "tags": [
       "malaga"
     ],
@@ -463,7 +463,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-02T16:00:00.993Z",
+      "lastSyncedAt": "2026-07-02T17:00:00.968Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -486,8 +486,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-07T15:40:00",
-    "plannedEnd": "2026-07-07T16:10:00",
+    "plannedStart": "2026-07-08T13:10:00",
+    "plannedEnd": "2026-07-08T13:40:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -496,7 +496,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-07",
+    "plannedDate": "2026-07-08",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -1175,8 +1175,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-07-07T16:10:00",
-    "plannedEnd": "2026-07-07T17:10:00",
+    "plannedStart": "2026-07-08T13:40:00",
+    "plannedEnd": "2026-07-08T14:40:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1194,7 +1194,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-07"
+    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1263,7 +1263,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-02T16:00:00.993Z",
+    "updatedAt": "2026-07-02T17:00:00.968Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1275,7 +1275,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-02T16:00:00.993Z",
+      "lastSyncedAt": "2026-07-02T17:00:00.968Z",
       "syncError": null
     }
   },
@@ -1827,7 +1827,7 @@
   {
     "id": "task_1783006655903_hy0n",
     "title": "GrillMe skill downloaden en gebruiken in Gevibecode dashboards",
-    "description": "Download en implementeer de GrillMe skill in de twee nieuwe Gevibecode dashboards.",
+    "description": "Download de GrillMe skill en implementeer deze in de twee nieuwe Gevibecode dashboards.",
     "status": "open",
     "priority": "P3",
     "coveyQuadrant": "Q4",
@@ -1838,7 +1838,7 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Download de skill en begin met de implementatie.",
-    "plannedStart": "2026-07-08T14:00:00",
+    "plannedStart": "2026-07-09T11:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1856,15 +1856,20 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08",
+    "plannedDate": "2026-07-09",
     "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      },
       {
         "at": "2026-07-02",
         "type": "confirm",
         "note": "Bevestigd via manual_input"
       }
     ],
-    "plannedEnd": "2026-07-08T16:00:00"
+    "plannedEnd": "2026-07-09T13:10:00"
   },
   {
     "id": "task_1783007892523_1lcc",
@@ -1900,6 +1905,109 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-07"
+  },
+  {
+    "id": "task_1783008577642_x08b",
+    "title": "Sentiment van Reishacker en reiswereld verbeteren in AI Mentor dashboard",
+    "description": "Zoek naar een manier om het sentiment van Reishacker en alles wat in de reiswereld gaande is overzichtelijk te krijgen in het AI Mentor dashboard.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Zoek naar een oplossing voor sentimentanalyse.",
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": 0,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null
+  },
+  {
+    "id": "task_1783008577642_4xvx",
+    "title": "TikTok-analyse integreren in dashboard",
+    "description": "Zoek naar een manier om TikTok-analyse in het dashboard op te nemen.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
+    "plannedStart": "2026-07-08T09:10:00",
+    "plannedEnd": "2026-07-08T11:10:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08"
+  },
+  {
+    "id": "task_1783010182234_vco1",
+    "title": "Concept voor The Backroom app draaien",
+    "description": "Draai een concept voor de app The Backroom.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Kies een dag en tijd voor het draaien van het concept.",
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": 0,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   },
   {
     "id": "task_1782803404535_9hv6",
