@@ -445,7 +445,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-06-30T11:30:01.080Z",
+    "updatedAt": "2026-07-02T16:00:00.993Z",
     "tags": [
       "malaga"
     ],
@@ -463,7 +463,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T11:30:01.080Z",
+      "lastSyncedAt": "2026-07-02T16:00:00.993Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -486,8 +486,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-07T12:30:00",
-    "plannedEnd": "2026-07-07T13:00:00",
+    "plannedStart": "2026-07-07T15:40:00",
+    "plannedEnd": "2026-07-07T16:10:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -832,8 +832,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-03T14:00:00",
-    "plannedEnd": "2026-07-03T16:00:00",
+    "plannedStart": "2026-07-04T12:00:00",
+    "plannedEnd": "2026-07-04T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -848,7 +848,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-03",
+    "plannedDate": "2026-07-04",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -866,8 +866,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-07-03T15:30:00",
-    "plannedEnd": "2026-07-03T16:30:00",
+    "plannedStart": "2026-07-03T16:30:00",
+    "plannedEnd": "2026-07-03T17:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1069,8 +1069,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-04T13:00:00",
-    "plannedEnd": "2026-07-04T17:00:00",
+    "plannedStart": "2026-07-04T13:30:00",
+    "plannedEnd": "2026-07-04T17:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1085,7 +1085,7 @@
     "urgencyScore": 80,
     "importanceScore": 20,
     "deadlinePressure": "tomorrow",
-    "scheduleColorState": "orange",
+    "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-04"
@@ -1175,8 +1175,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-07-07T13:00:00",
-    "plannedEnd": "2026-07-07T14:00:00",
+    "plannedStart": "2026-07-07T16:10:00",
+    "plannedEnd": "2026-07-07T17:10:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1239,55 +1239,6 @@
     "deadlinePressure": "future"
   },
   {
-    "id": "task_1782803404535_9hv6",
-    "title": "Bevestig woensdag-afspraak weekrapportages — Bennie (B&E)",
-    "status": "done",
-    "priority": "P3",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 15,
-    "source": "mail",
-    "reason": "Bennie vraagt expliciet 'Woensdag doen dan?' voor het doorlopen van de weekrapportages/dashboard. Jorn gaf opties (di-middag/woensdag/vrijdagochtend) maar heeft woensdag nog niet definitief bevestigd; Bennie wacht op antwoord.",
-    "createdAt": "2026-06-30",
-    "updatedAt": "2026-06-30T13:30:01.039Z",
-    "tags": [
-      "mail"
-    ],
-    "plannedDate": "2026-07-03",
-    "plannedStart": "2026-07-03T15:10:00+02:00",
-    "plannedEnd": "2026-07-03T15:25:00+02:00",
-    "plannedMinutes": 15,
-    "calendarSyncMode": "auto",
-    "taskKind": "task",
-    "autoSchedule": "auto",
-    "schedulingWindowId": "window_work",
-    "splittable": true,
-    "minBlockMinutes": 30,
-    "autoIgnore": false,
-    "locked": false,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "calendarLink": {
-      "provider": "google",
-      "calendarId": "primary",
-      "eventId": "90ldp455nqnh9cq8lbf7fs6gu8",
-      "htmlLink": "https://www.google.com/calendar/event?eid=OTBsZHA0NTVucW5oOWNxOGxiZjdmczZndTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-06-30T13:30:01.039Z",
-      "syncStatus": "synced",
-      "syncError": null,
-      "googleUpdatedAt": "2026-06-30T13:25:01.696Z"
-    },
-    "completedAt": "2026-06-30T13:26:46.005Z"
-  },
-  {
     "id": "task_1782743888030_02np",
     "title": "Scripts voor vakantie Montenegro uitwerken",
     "description": "Zorg ervoor dat alle scripts duidelijk zijn voor de vakantie naar Montenegro.",
@@ -1312,7 +1263,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-02T15:00:00.922Z",
+    "updatedAt": "2026-07-02T16:00:00.993Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1324,7 +1275,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-02T15:00:00.922Z",
+      "lastSyncedAt": "2026-07-02T16:00:00.993Z",
       "syncError": null
     }
   },
@@ -1495,8 +1446,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-04T12:30:00",
-    "plannedEnd": "2026-07-04T15:30:00",
+    "plannedStart": "2026-07-08T09:00:00",
+    "plannedEnd": "2026-07-08T12:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1514,7 +1465,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-07-04"
+    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1782932717316_7cvg",
@@ -1530,8 +1481,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ontvang de foto en maak de post aan.",
-    "plannedStart": "2026-07-07T10:30:00",
-    "plannedEnd": "2026-07-07T12:30:00",
+    "plannedStart": "2026-07-07T11:30:00",
+    "plannedEnd": "2026-07-07T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1723,6 +1674,281 @@
     "importanceScore": 20,
     "deadlinePressure": "overdue",
     "cancelledAt": "2026-07-01T22:04:09.627Z"
+  },
+  {
+    "id": "task_1783006233317_8x03",
+    "title": "Concepten voor Schiphol online zetten",
+    "description": "",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 60,
+    "nextAction": "Zet de concepten online.",
+    "plannedStart": "2026-07-03T09:00:00",
+    "plannedEnd": "2026-07-03T10:00:00",
+    "plannedMinutes": 60,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ]
+  },
+  {
+    "id": "task_1783006233320_lg8l",
+    "title": "Sentimentonderzoek voor Legend doen",
+    "description": "Inclusief overzicht van besproken contentvormen.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Voer het sentimentonderzoek uit en maak een overzicht.",
+    "plannedStart": "2026-07-03T10:00:00",
+    "plannedEnd": "2026-07-03T12:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ]
+  },
+  {
+    "id": "task_1783006233321_d1qi",
+    "title": "Controleer Hedgerhacker deals",
+    "description": "Zorg ervoor dat alles goed online staat.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 30,
+    "nextAction": "Controleer of de Hedgerhacker deals goed online staan.",
+    "plannedStart": "2026-07-03T12:00:00",
+    "plannedEnd": "2026-07-03T12:30:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ]
+  },
+  {
+    "id": "task_1783006410999_gvsy",
+    "title": "Tikkie sturen voor mosseltjes Matthea Reineker",
+    "description": "",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 10,
+    "nextAction": "Stuur een tikkie voor de mosseltjes.",
+    "plannedStart": "2026-07-07T13:30:00",
+    "plannedEnd": "2026-07-07T13:40:00",
+    "plannedMinutes": 10,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-07"
+  },
+  {
+    "id": "task_1783006655903_hy0n",
+    "title": "GrillMe skill downloaden en gebruiken in Gevibecode dashboards",
+    "description": "Download en implementeer de GrillMe skill in de twee nieuwe Gevibecode dashboards.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Download de skill en begin met de implementatie.",
+    "plannedStart": "2026-07-08T14:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ],
+    "plannedEnd": "2026-07-08T16:00:00"
+  },
+  {
+    "id": "task_1783007892523_1lcc",
+    "title": "Sentiment van Reishacker verbeteren in AI Mentor dashboard",
+    "description": "Zoek naar manieren om het sentiment van Reishacker en de reiswereld beter in het dashboard te integreren, nu is er alleen de API beschikbaar.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met het onderzoeken van integratiemogelijkheden.",
+    "plannedStart": "2026-07-07T13:40:00",
+    "plannedEnd": "2026-07-07T15:40:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-02",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-07"
+  },
+  {
+    "id": "task_1782803404535_9hv6",
+    "title": "Bevestig woensdag-afspraak weekrapportages — Bennie (B&E)",
+    "status": "done",
+    "priority": "P3",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "source": "mail",
+    "reason": "Bennie vraagt expliciet 'Woensdag doen dan?' voor het doorlopen van de weekrapportages/dashboard. Jorn gaf opties (di-middag/woensdag/vrijdagochtend) maar heeft woensdag nog niet definitief bevestigd; Bennie wacht op antwoord.",
+    "createdAt": "2026-06-30",
+    "updatedAt": "2026-06-30T13:30:01.039Z",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-07-03",
+    "plannedStart": "2026-07-03T15:10:00+02:00",
+    "plannedEnd": "2026-07-03T15:25:00+02:00",
+    "plannedMinutes": 15,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "90ldp455nqnh9cq8lbf7fs6gu8",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTBsZHA0NTVucW5oOWNxOGxiZjdmczZndTggam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-06-30T13:30:01.039Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-06-30T13:25:01.696Z"
+    },
+    "completedAt": "2026-06-30T13:26:46.005Z"
   },
   {
     "id": "task_1782288396068_brbz",
