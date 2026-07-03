@@ -486,8 +486,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-08T10:30:00",
-    "plannedEnd": "2026-07-08T11:00:00",
+    "plannedStart": "2026-07-08T16:00:00",
+    "plannedEnd": "2026-07-08T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -866,8 +866,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-07-04T14:30:00",
-    "plannedEnd": "2026-07-04T15:30:00",
+    "plannedStart": "2026-07-04T15:30:00",
+    "plannedEnd": "2026-07-04T16:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1009,7 +1009,7 @@
   {
     "id": "task_1782371403702_d8ls",
     "title": "Ontdek Napels beantwoorden met concreet voorstel — Iris & Joël",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -1020,7 +1020,7 @@
     "source": "mail",
     "reason": "Iris & Joël (ontdeknapels@gmail.com) reageerden 24 jun op Jorns intro en vragen expliciet 'waar zat je aan te denken?'. Ze geven aan dat hun doelgroep premium is t.o.v. Reishackers budget-tips. Jorn heeft nog niet teruggekoppeld en gaat binnenkort zelf naar Napels — stuur een concreet samenwerkingsidee.",
     "createdAt": "2026-06-25",
-    "updatedAt": "2026-07-01T21:55:01.081Z",
+    "updatedAt": "2026-07-03",
     "tags": [
       "mail",
       "samenwerking"
@@ -1053,7 +1053,8 @@
     "coveyQuadrant": "Q2",
     "urgencyScore": 0,
     "importanceScore": 60,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-07-03T14:06:26.911Z"
   },
   {
     "id": "task_1782745992424_dta1",
@@ -1104,8 +1105,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Koppelen van de kaarten aan Apple Pay.",
-    "plannedStart": "2026-07-07T11:00:00",
-    "plannedEnd": "2026-07-07T15:00:00",
+    "plannedStart": "2026-07-07T12:00:00",
+    "plannedEnd": "2026-07-07T16:00:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1328,8 +1329,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-08T11:00:00",
-    "plannedEnd": "2026-07-08T14:00:00",
+    "plannedStart": "2026-07-08T10:00:00",
+    "plannedEnd": "2026-07-08T13:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1762,9 +1763,9 @@
     "id": "task_1783007892523_1lcc",
     "title": "Sentiment van Reishacker verbeteren in AI Mentor dashboard",
     "description": "Zoek naar manieren om het sentiment van Reishacker en de reiswereld beter in het dashboard te integreren, nu is er alleen de API beschikbaar.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-03",
     "softDeadline": null,
@@ -1783,15 +1784,16 @@
       }
     ],
     "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-07"
+    "plannedDate": "2026-07-07",
+    "completedAt": "2026-07-03T14:01:34.050Z"
   },
   {
     "id": "task_1783008577642_x08b",
@@ -1898,6 +1900,200 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "completedAt": "2026-07-03T06:56:42.630Z"
+  },
+  {
+    "id": "task_1783087579648_bvce",
+    "title": "Vercel bellen voor marketing mail",
+    "description": "Neem contact op met Vercel voor de marketing mail.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 30,
+    "nextAction": "Bellen met Vercel",
+    "plannedStart": "2026-07-08T15:30:00",
+    "plannedEnd": "2026-07-08T16:00:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08"
+  },
+  {
+    "id": "task_1783088381822_7lir",
+    "title": "Click-out loop afmaken en Analytics flow pushen",
+    "description": "Afmaken van de Click-out loop en de Analytics flow in AI mentor pushen.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met de Click-out loop en Analytics flow.",
+    "plannedStart": "2026-07-08T13:00:00",
+    "plannedEnd": "2026-07-08T15:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08",
+    "history": [
+      {
+        "at": "2026-07-03",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      },
+      {
+        "at": "2026-07-03",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ]
+  },
+  {
+    "id": "task_1783088412362_jtt6",
+    "title": "Hedge server uitbreiden met vliegtickets en hotelopties",
+    "description": "Uitbreiden van de hedge server met vliegtickets en hotelopties.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Plan de uitbreiding van de hedge server.",
+    "plannedStart": "2026-07-09T11:00:00",
+    "plannedEnd": "2026-07-09T13:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "history": [
+      {
+        "at": "2026-07-03",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-09"
+  },
+  {
+    "id": "task_1783088483577_pojv",
+    "title": "Sentimentautomatisering van Reishacker naar Legend",
+    "description": "Automatisering van het sentimentonderzoek van Reishacker naar Legend.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-08",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Plan de sentimentautomatisering.",
+    "plannedStart": "2026-07-08T09:30:00",
+    "plannedEnd": "2026-07-08T11:30:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08"
+  },
+  {
+    "id": "task_1783088483578_97nx",
+    "title": "Boardroom app afcoderen en koppelen aan server",
+    "description": "Afcoderen van de boardroom app en koppelen aan de server.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-08",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Plan de afcodering van de boardroom app.",
+    "plannedStart": "2026-07-08T11:00:00",
+    "plannedEnd": "2026-07-08T13:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1782750425478_0q4m",
