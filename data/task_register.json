@@ -445,7 +445,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-03T09:00:00.553Z",
+    "updatedAt": "2026-07-03T10:00:00.610Z",
     "tags": [
       "malaga"
     ],
@@ -463,7 +463,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-03T09:00:00.553Z",
+      "lastSyncedAt": "2026-07-03T10:00:00.610Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -486,8 +486,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-08T13:10:00",
-    "plannedEnd": "2026-07-08T13:40:00",
+    "plannedStart": "2026-07-07T15:00:00",
+    "plannedEnd": "2026-07-07T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -496,7 +496,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08",
+    "plannedDate": "2026-07-07",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -1165,7 +1165,7 @@
     "id": "task_1782767130847_nw2s",
     "title": "Video's maken voor kleine klussen",
     "description": "",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1175,8 +1175,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Video's maken voor kleine klussen inplannen",
-    "plannedStart": "2026-07-08T11:10:00",
-    "plannedEnd": "2026-07-08T12:10:00",
+    "plannedStart": "2026-07-07T15:30:00",
+    "plannedEnd": "2026-07-07T16:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1186,7 +1186,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-06-29",
+    "updatedAt": "2026-07-03",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1194,7 +1194,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08"
+    "plannedDate": "2026-07-07",
+    "completedAt": "2026-07-03T09:50:47.979Z"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1263,7 +1264,7 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-03T09:00:00.553Z",
+    "updatedAt": "2026-07-03T10:00:00.610Z",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1275,7 +1276,7 @@
     "calendarLink": {
       "syncStatus": "synced",
       "googleUpdatedAt": "2026-06-30T16:15:01.170Z",
-      "lastSyncedAt": "2026-07-03T09:00:00.553Z",
+      "lastSyncedAt": "2026-07-03T10:00:00.610Z",
       "syncError": null
     }
   },
@@ -1447,8 +1448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-08T14:10:00",
-    "plannedEnd": "2026-07-08T17:10:00",
+    "plannedStart": "2026-07-08T09:00:00",
+    "plannedEnd": "2026-07-08T12:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1472,9 +1473,9 @@
     "id": "task_1782932717316_7cvg",
     "title": "Foto ontvangen en post maken",
     "description": "Zorg ervoor dat de foto voor de post ontvangen wordt en maak de post aan.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-03",
     "softDeadline": null,
@@ -1493,15 +1494,16 @@
       }
     ],
     "createdAt": "2026-07-01",
-    "updatedAt": "2026-07-01",
+    "updatedAt": "2026-07-03",
     "tags": [],
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-07",
-    "urgencyScore": 90,
+    "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "today",
+    "completedAt": "2026-07-03T09:45:18.141Z"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1795,9 +1797,9 @@
     "id": "task_1783006410999_gvsy",
     "title": "Tikkie sturen voor mosseltjes Matthea Reineker",
     "description": "",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-03",
     "softDeadline": null,
@@ -1805,8 +1807,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 10,
     "nextAction": "Stuur een tikkie voor de mosseltjes.",
-    "plannedStart": "2026-07-07T13:00:00",
-    "plannedEnd": "2026-07-07T13:10:00",
+    "plannedStart": "2026-07-07T11:00:00",
+    "plannedEnd": "2026-07-07T11:10:00",
     "plannedMinutes": 10,
     "source": "manual_input",
     "sources": [
@@ -1816,15 +1818,16 @@
       }
     ],
     "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-07"
+    "plannedDate": "2026-07-07",
+    "completedAt": "2026-07-03T09:47:40.309Z"
   },
   {
     "id": "task_1783006655903_hy0n",
@@ -1888,8 +1891,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het onderzoeken van integratiemogelijkheden.",
-    "plannedStart": "2026-07-07T13:10:00",
-    "plannedEnd": "2026-07-07T15:10:00",
+    "plannedStart": "2026-07-07T11:00:00",
+    "plannedEnd": "2026-07-07T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1913,6 +1916,42 @@
     "id": "task_1783008577642_x08b",
     "title": "Sentiment van Reishacker en reiswereld verbeteren in AI Mentor dashboard",
     "description": "Zoek naar een manier om het sentiment van Reishacker en alles wat in de reiswereld gaande is overzichtelijk te krijgen in het AI Mentor dashboard.",
+    "status": "cancelled",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Zoek naar een oplossing voor sentimentanalyse.",
+    "plannedStart": "2026-07-07T13:00:00",
+    "plannedEnd": "2026-07-07T15:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "today",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-07",
+    "cancelledAt": "2026-07-03T09:47:55.057Z"
+  },
+  {
+    "id": "task_1783008577642_4xvx",
+    "title": "TikTok-analyse integreren in dashboard",
+    "description": "Zoek naar een manier om TikTok-analyse in het dashboard op te nemen.",
     "status": "open",
     "priority": "P2",
     "coveyQuadrant": "Q3",
@@ -1922,9 +1961,9 @@
     "startBy": null,
     "deadlineType": "hard",
     "estimatedMinutes": 120,
-    "nextAction": "Zoek naar een oplossing voor sentimentanalyse.",
-    "plannedStart": "2026-07-07T15:10:00",
-    "plannedEnd": "2026-07-07T17:10:00",
+    "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
+    "plannedStart": "2026-07-07T13:00:00",
+    "plannedEnd": "2026-07-07T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1943,41 +1982,6 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-07"
-  },
-  {
-    "id": "task_1783008577642_4xvx",
-    "title": "TikTok-analyse integreren in dashboard",
-    "description": "Zoek naar een manier om TikTok-analyse in het dashboard op te nemen.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
-    "deadline": null,
-    "hardDeadline": "2026-07-03",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 120,
-    "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-08T09:00:00",
-    "plannedEnd": "2026-07-08T11:00:00",
-    "plannedMinutes": 120,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-02"
-      }
-    ],
-    "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-02",
-    "tags": [],
-    "urgencyScore": 90,
-    "importanceScore": 20,
-    "deadlinePressure": "today",
-    "scheduleColorState": "red",
-    "scheduleStatus": "missed",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1783010182234_vco1",
