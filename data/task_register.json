@@ -445,7 +445,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-03T21:00:00.814Z",
+    "updatedAt": "2026-07-03T22:00:00.817Z",
     "tags": [
       "malaga"
     ],
@@ -463,7 +463,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-03T21:00:00.814Z",
+      "lastSyncedAt": "2026-07-03T22:00:00.817Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -486,8 +486,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-08T17:00:00",
-    "plannedEnd": "2026-07-08T17:30:00",
+    "plannedStart": "2026-07-09T10:30:00",
+    "plannedEnd": "2026-07-09T11:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -496,7 +496,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08",
+    "plannedDate": "2026-07-09",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -1083,9 +1083,9 @@
     "createdAt": "2026-06-29",
     "updatedAt": "2026-06-29",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1118,9 +1118,9 @@
     "createdAt": "2026-06-29",
     "updatedAt": "2026-06-29",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1329,8 +1329,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-09T09:00:00",
-    "plannedEnd": "2026-07-09T12:00:00",
+    "plannedStart": "2026-07-09T11:00:00",
+    "plannedEnd": "2026-07-09T14:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1383,7 +1383,7 @@
     "plannedDate": "2026-07-07",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "completedAt": "2026-07-03T09:45:18.141Z"
   },
   {
@@ -1588,7 +1588,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "history": [
       {
         "at": "2026-07-02",
@@ -1625,16 +1625,19 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "history": [
       {
         "at": "2026-07-02",
         "type": "confirm",
         "note": "Bevestigd via manual_input"
       }
-    ]
+    ],
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null
   },
   {
     "id": "task_1783006233321_d1qi",
@@ -1665,7 +1668,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "history": [
       {
         "at": "2026-07-02",
@@ -1704,7 +1707,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1788,7 +1791,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1824,7 +1827,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -1845,8 +1848,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-07T15:30:00",
-    "plannedEnd": "2026-07-07T17:30:00",
+    "plannedStart": "2026-07-08T10:30:00",
+    "plannedEnd": "2026-07-08T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1858,13 +1861,13 @@
     "createdAt": "2026-07-02",
     "updatedAt": "2026-07-02",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-07"
+    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1783010182234_vco1",
@@ -1915,8 +1918,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-08T16:30:00",
-    "plannedEnd": "2026-07-08T17:00:00",
+    "plannedStart": "2026-07-09T10:00:00",
+    "plannedEnd": "2026-07-09T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1931,10 +1934,10 @@
     "urgencyScore": 60,
     "importanceScore": 20,
     "deadlinePressure": "this_week",
-    "scheduleColorState": "green",
+    "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08"
+    "plannedDate": "2026-07-09"
   },
   {
     "id": "task_1783088381822_7lir",
@@ -1997,8 +2000,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-09T12:00:00",
-    "plannedEnd": "2026-07-09T14:00:00",
+    "plannedStart": "2026-07-09T14:00:00",
+    "plannedEnd": "2026-07-09T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2091,7 +2094,7 @@
     "importanceScore": 20,
     "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
+    "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-08"
   },
@@ -2159,7 +2162,7 @@
     "plannedDate": "2026-07-04",
     "urgencyScore": 10,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "completedAt": "2026-07-01T11:12:04.900Z"
   },
   {
