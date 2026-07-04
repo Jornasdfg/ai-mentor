@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-09T15:00:00",
-    "plannedEnd": "2026-07-09T15:30:00",
+    "plannedStart": "2026-07-09T15:30:00",
+    "plannedEnd": "2026-07-09T16:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-07T11:30:00",
-    "plannedEnd": "2026-07-07T13:30:00",
+    "plannedStart": "2026-07-07T12:00:00",
+    "plannedEnd": "2026-07-07T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -799,8 +799,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Verbeter de duidelijkheid voor volgers over de click-out.",
-    "plannedStart": "2026-07-07T10:30:00",
-    "plannedEnd": "2026-07-07T11:30:00",
+    "plannedStart": "2026-07-07T11:00:00",
+    "plannedEnd": "2026-07-07T12:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1472,8 +1472,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Voer het sentimentonderzoek uit en maak een overzicht.",
-    "plannedStart": "2026-07-08T15:00:00",
-    "plannedEnd": "2026-07-08T17:00:00",
+    "plannedStart": "2026-07-08T15:30:00",
+    "plannedEnd": "2026-07-08T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1709,8 +1709,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-08T15:30:00",
-    "plannedEnd": "2026-07-08T17:30:00",
+    "plannedStart": "2026-07-09T09:00:00",
+    "plannedEnd": "2026-07-09T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1728,7 +1728,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08"
+    "plannedDate": "2026-07-09"
   },
   {
     "id": "task_1783010182234_vco1",
@@ -1779,8 +1779,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-09T14:30:00",
-    "plannedEnd": "2026-07-09T15:00:00",
+    "plannedStart": "2026-07-09T15:00:00",
+    "plannedEnd": "2026-07-09T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1861,8 +1861,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-10T10:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedStart": "2026-07-10T10:30:00",
+    "plannedEnd": "2026-07-10T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1903,8 +1903,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-09T10:30:00",
-    "plannedEnd": "2026-07-09T12:30:00",
+    "plannedStart": "2026-07-09T11:00:00",
+    "plannedEnd": "2026-07-09T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1938,8 +1938,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-09T12:30:00",
-    "plannedEnd": "2026-07-09T14:30:00",
+    "plannedStart": "2026-07-09T13:00:00",
+    "plannedEnd": "2026-07-09T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
