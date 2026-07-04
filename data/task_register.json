@@ -37,9 +37,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1782288396068_7p30",
@@ -501,9 +501,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1780602426889_myt0",
@@ -1973,8 +1973,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Reageren op Maarten",
-    "plannedStart": "2026-07-04T12:00:00",
-    "plannedEnd": "2026-07-04T12:30:00",
+    "plannedStart": "2026-07-10T12:30:00",
+    "plannedEnd": "2026-07-10T13:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1988,7 +1988,11 @@
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1782288396070_dvpf",
