@@ -1182,38 +1182,6 @@
     "deadlinePressure": "future"
   },
   {
-    "id": "task_1782904392689_sac9",
-    "title": "Onafhankelijke Hertzner server bouwen voor Hackerdeals en restylen deals",
-    "description": "Bouw een onafhankelijke Hertzner server voor Hackerdeals en restyle de deals.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 180,
-    "nextAction": "Begin met de bouw van de server en het restylen van de deals.",
-    "plannedStart": "2026-07-03T09:00:00",
-    "plannedEnd": "2026-07-03T12:00:00",
-    "plannedMinutes": 180,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-01"
-      }
-    ],
-    "createdAt": "2026-07-01",
-    "updatedAt": "2026-07-03",
-    "tags": [],
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "completedAt": "2026-07-03T06:56:50.735Z"
-  },
-  {
     "id": "task_1782904519422_0q06",
     "title": "Afbouwen Virality Dashboard met AI Fable model",
     "description": "Gebruik het nieuwste AI Fable model om Schiphol content te analyseren.",
@@ -1501,45 +1469,6 @@
     "plannedDate": "2026-07-08"
   },
   {
-    "id": "task_1783006233321_d1qi",
-    "title": "Controleer Hedgerhacker deals",
-    "description": "Zorg ervoor dat alles goed online staat.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": "2026-07-03",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 30,
-    "nextAction": "Controleer of de Hedgerhacker deals goed online staan.",
-    "plannedStart": "2026-07-03T12:00:00",
-    "plannedEnd": "2026-07-03T12:30:00",
-    "plannedMinutes": 30,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-02"
-      }
-    ],
-    "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-03",
-    "tags": [],
-    "urgencyScore": 10,
-    "importanceScore": 20,
-    "deadlinePressure": "overdue",
-    "history": [
-      {
-        "at": "2026-07-02",
-        "type": "confirm",
-        "note": "Bevestigd via manual_input"
-      }
-    ],
-    "completedAt": "2026-07-03T06:56:31.637Z"
-  },
-  {
     "id": "task_1783006410999_gvsy",
     "title": "Tikkie sturen voor mosseltjes Matthea Reineker",
     "description": "",
@@ -1574,54 +1503,6 @@
     "unscheduledReason": null,
     "plannedDate": "2026-07-07",
     "completedAt": "2026-07-03T09:47:40.309Z"
-  },
-  {
-    "id": "task_1783006655903_hy0n",
-    "title": "GrillMe skill downloaden en gebruiken in Gevibecode dashboards",
-    "description": "Download de GrillMe skill en implementeer deze in de twee nieuwe Gevibecode dashboards.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 120,
-    "nextAction": "Download de skill en begin met de implementatie.",
-    "plannedStart": "2026-07-09T09:00:00",
-    "plannedMinutes": 120,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-02"
-      }
-    ],
-    "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-03",
-    "tags": [],
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-09",
-    "history": [
-      {
-        "at": "2026-07-02",
-        "type": "confirm",
-        "note": "Bevestigd via manual_input"
-      },
-      {
-        "at": "2026-07-02",
-        "type": "confirm",
-        "note": "Bevestigd via manual_input"
-      }
-    ],
-    "plannedEnd": "2026-07-09T11:00:00",
-    "completedAt": "2026-07-03T06:56:59.072Z"
   },
   {
     "id": "task_1783007892523_1lcc",
@@ -1729,41 +1610,6 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-09"
-  },
-  {
-    "id": "task_1783010182234_vco1",
-    "title": "Concept voor The Backroom app draaien",
-    "description": "Draai een concept voor de app The Backroom.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": "2026-07-10",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 120,
-    "nextAction": "Kies een dag en tijd voor het draaien van het concept.",
-    "plannedStart": null,
-    "plannedEnd": null,
-    "plannedMinutes": 0,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-02"
-      }
-    ],
-    "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-03",
-    "tags": [],
-    "urgencyScore": 10,
-    "importanceScore": 20,
-    "deadlinePressure": "this_week",
-    "scheduleColorState": "green",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "completedAt": "2026-07-03T06:56:42.630Z"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1993,6 +1839,160 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-10"
+  },
+  {
+    "id": "task_1782904392689_sac9",
+    "title": "Onafhankelijke Hertzner server bouwen voor Hackerdeals en restylen deals",
+    "description": "Bouw een onafhankelijke Hertzner server voor Hackerdeals en restyle de deals.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 180,
+    "nextAction": "Begin met de bouw van de server en het restylen van de deals.",
+    "plannedStart": "2026-07-03T09:00:00",
+    "plannedEnd": "2026-07-03T12:00:00",
+    "plannedMinutes": 180,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-01"
+      }
+    ],
+    "createdAt": "2026-07-01",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "completedAt": "2026-07-03T06:56:50.735Z"
+  },
+  {
+    "id": "task_1783006233321_d1qi",
+    "title": "Controleer Hedgerhacker deals",
+    "description": "Zorg ervoor dat alles goed online staat.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 30,
+    "nextAction": "Controleer of de Hedgerhacker deals goed online staan.",
+    "plannedStart": "2026-07-03T12:00:00",
+    "plannedEnd": "2026-07-03T12:30:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ],
+    "completedAt": "2026-07-03T06:56:31.637Z"
+  },
+  {
+    "id": "task_1783006655903_hy0n",
+    "title": "GrillMe skill downloaden en gebruiken in Gevibecode dashboards",
+    "description": "Download de GrillMe skill en implementeer deze in de twee nieuwe Gevibecode dashboards.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Download de skill en begin met de implementatie.",
+    "plannedStart": "2026-07-09T09:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-09",
+    "history": [
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      },
+      {
+        "at": "2026-07-02",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ],
+    "plannedEnd": "2026-07-09T11:00:00",
+    "completedAt": "2026-07-03T06:56:59.072Z"
+  },
+  {
+    "id": "task_1783010182234_vco1",
+    "title": "Concept voor The Backroom app draaien",
+    "description": "Draai een concept voor de app The Backroom.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Kies een dag en tijd voor het draaien van het concept.",
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": 0,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-02"
+      }
+    ],
+    "createdAt": "2026-07-02",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "completedAt": "2026-07-03T06:56:42.630Z"
   },
   {
     "id": "task_1782288396070_dvpf",
