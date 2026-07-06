@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T09:00:00.869Z",
+    "updatedAt": "2026-07-06T10:00:00.889Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T09:00:00.869Z",
+      "lastSyncedAt": "2026-07-06T10:00:00.889Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1529,6 +1529,111 @@
     "unscheduledReason": null,
     "plannedDate": "2026-07-10",
     "completedAt": "2026-07-06T06:22:05.667Z"
+  },
+  {
+    "id": "task_1783330530819_3xdm",
+    "title": "Plugin bestemming in Grid toepassen",
+    "description": "De plugin die vanochtend is gemaakt toepassen in Grid.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 240,
+    "nextAction": "Plugin toepassen in Grid.",
+    "plannedStart": "2026-07-10T14:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedMinutes": 180,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
+  },
+  {
+    "id": "task_1783330530819_x2bf",
+    "title": "Buyer persona onderzoek voor Montenegro",
+    "description": "Onderzoeken wat mijn buyer persona zou willen weten over Montenegro.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": "2026-07-07",
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 60,
+    "nextAction": "Onderzoek doen naar de buyer persona.",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T10:00:00",
+    "plannedMinutes": 60,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-11"
+  },
+  {
+    "id": "task_1783330653866_6gpg",
+    "title": "Kleine klussenpost online zetten op LinkedIn",
+    "description": "Plaats de kleine klussenpost op je LinkedIn-profiel.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Kies een tijd om de post online te zetten.",
+    "plannedStart": "2026-07-11T10:00:00",
+    "plannedEnd": "2026-07-11T10:30:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1782371403702_d8ls",
