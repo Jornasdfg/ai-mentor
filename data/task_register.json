@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T19:00:01.332Z",
+    "updatedAt": "2026-07-06T20:00:01.929Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T19:00:01.332Z",
+      "lastSyncedAt": "2026-07-06T20:00:01.929Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T17:00:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-10T12:00:00",
+    "plannedEnd": "2026-07-10T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1068,8 +1068,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-11T09:00:00",
-    "plannedEnd": "2026-07-11T12:00:00",
+    "plannedStart": "2026-07-10T12:30:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1087,7 +1087,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1387,7 +1387,7 @@
     "id": "task_1783088412362_jtt6",
     "title": "Hedge server uitbreiden met vliegtickets en hotelopties",
     "description": "Uitbreiden van de hedge server met vliegtickets en hotelopties.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1397,8 +1397,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-11T12:00:00",
-    "plannedEnd": "2026-07-11T14:00:00",
+    "plannedStart": "2026-07-10T15:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1408,7 +1408,7 @@
       }
     ],
     "createdAt": "2026-07-03",
-    "updatedAt": "2026-07-03",
+    "updatedAt": "2026-07-06",
     "tags": [],
     "history": [
       {
@@ -1423,7 +1423,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-10",
+    "completedAt": "2026-07-06T19:20:47.895Z"
   },
   {
     "id": "task_1783088483577_pojv",
@@ -1581,8 +1582,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T14:00:00",
-    "plannedEnd": "2026-07-11T15:00:00",
+    "plannedStart": "2026-07-10T15:30:00",
+    "plannedEnd": "2026-07-10T16:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1600,7 +1601,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1783330653866_6gpg",
@@ -1616,8 +1617,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T15:00:00",
-    "plannedEnd": "2026-07-11T15:30:00",
+    "plannedStart": "2026-07-10T16:30:00",
+    "plannedEnd": "2026-07-10T17:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1635,15 +1636,15 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1783332083545_l09s",
     "title": "Bron maken voor website tools en GA4-analisator",
     "description": "Documenteer de tools die op de website zijn gebouwd en voeg een GA4-analisator toe voor de AI mentor sessie.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-10",
     "softDeadline": null,
@@ -1664,13 +1665,14 @@
     "createdAt": "2026-07-06",
     "updatedAt": "2026-07-06",
     "tags": [],
-    "urgencyScore": 60,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-09",
+    "completedAt": "2026-07-06T19:20:36.882Z"
   },
   {
     "id": "task_1783333190190_hkzp",
@@ -1686,8 +1688,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T09:00:00",
-    "plannedEnd": "2026-07-10T11:00:00",
+    "plannedStart": "2026-07-09T13:30:00",
+    "plannedEnd": "2026-07-09T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1705,15 +1707,15 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-09"
   },
   {
     "id": "task_1783336410551_6hf3",
     "title": "AI buyer persona updaten",
     "description": "Gebruik de goede GitHub voor personificeren van content.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-10",
     "softDeadline": null,
@@ -1721,8 +1723,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het updaten van de AI buyer persona.",
-    "plannedStart": "2026-07-10T11:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedStart": "2026-07-09T15:30:00",
+    "plannedEnd": "2026-07-09T16:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1734,20 +1736,21 @@
     "createdAt": "2026-07-06",
     "updatedAt": "2026-07-06",
     "tags": [],
-    "urgencyScore": 60,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10",
+    "plannedDate": "2026-07-09",
     "history": [
       {
         "at": "2026-07-06",
         "type": "confirm",
         "note": "Bevestigd via manual_input"
       }
-    ]
+    ],
+    "completedAt": "2026-07-06T19:20:41.130Z"
   },
   {
     "id": "task_1783343603418_nhz3",
@@ -1763,8 +1766,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan het onderzoek in een beschikbare tijd.",
-    "plannedStart": "2026-07-11T15:30:00",
-    "plannedEnd": "2026-07-11T17:30:00",
+    "plannedStart": "2026-07-11T10:30:00",
+    "plannedEnd": "2026-07-11T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1833,8 +1836,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Maak een lijst van figuren om te benaderen.",
-    "plannedStart": "2026-07-10T16:00:00",
-    "plannedEnd": "2026-07-10T17:00:00",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T12:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
