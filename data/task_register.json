@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T11:00:00.827Z",
+    "updatedAt": "2026-07-06T12:00:00.835Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T11:00:00.827Z",
+      "lastSyncedAt": "2026-07-06T12:00:00.835Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T15:00:00",
-    "plannedEnd": "2026-07-10T15:30:00",
+    "plannedStart": "2026-07-10T12:00:00",
+    "plannedEnd": "2026-07-10T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -943,9 +943,9 @@
     "id": "task_1782748349217_t8f3",
     "title": "Koppelen zakelijke betaalpas en creditcard aan Apple Pay",
     "description": "Zorg ervoor dat zowel de zakelijke betaalpas als de nieuwe creditcard goed zijn gekoppeld aan de Apple Pay automatisering.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-03",
     "softDeadline": null,
@@ -964,15 +964,16 @@
       }
     ],
     "createdAt": "2026-06-29",
-    "updatedAt": "2026-06-29",
+    "updatedAt": "2026-07-06",
     "tags": [],
-    "urgencyScore": 100,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08"
+    "plannedDate": "2026-07-08",
+    "completedAt": "2026-07-06T11:14:16.014Z"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1067,8 +1068,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-10T13:30:00",
-    "plannedEnd": "2026-07-10T16:30:00",
+    "plannedStart": "2026-07-10T12:30:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1279,8 +1280,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-09T11:00:00",
-    "plannedEnd": "2026-07-09T13:00:00",
+    "plannedStart": "2026-07-08T15:30:00",
+    "plannedEnd": "2026-07-08T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1298,7 +1299,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-08"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1314,8 +1315,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-09T17:00:00",
-    "plannedEnd": "2026-07-09T17:30:00",
+    "plannedStart": "2026-07-09T13:00:00",
+    "plannedEnd": "2026-07-09T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1396,8 +1397,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-11T10:00:00",
-    "plannedEnd": "2026-07-11T12:00:00",
+    "plannedStart": "2026-07-10T15:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1422,7 +1423,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1783088483577_pojv",
@@ -1438,8 +1439,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-09T13:00:00",
-    "plannedEnd": "2026-07-09T15:00:00",
+    "plannedStart": "2026-07-09T09:00:00",
+    "plannedEnd": "2026-07-09T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1473,8 +1474,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-09T15:00:00",
-    "plannedEnd": "2026-07-09T17:00:00",
+    "plannedStart": "2026-07-09T11:00:00",
+    "plannedEnd": "2026-07-09T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1544,9 +1545,9 @@
     "deadlineType": "none",
     "estimatedMinutes": 240,
     "nextAction": "Plugin toepassen in Grid.",
-    "plannedStart": "2026-07-11T12:00:00",
+    "plannedStart": "2026-07-08T19:00:00",
     "plannedEnd": "2026-07-11T15:00:00",
-    "plannedMinutes": 180,
+    "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
       {
@@ -1579,8 +1580,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T15:00:00",
-    "plannedEnd": "2026-07-11T16:00:00",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T10:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1614,8 +1615,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T16:00:00",
-    "plannedEnd": "2026-07-11T16:30:00",
+    "plannedStart": "2026-07-11T10:00:00",
+    "plannedEnd": "2026-07-11T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1649,9 +1650,44 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het documenteren van de tools en de GA4-analisator.",
-    "plannedStart": "2026-07-10T09:00:00",
-    "plannedEnd": "2026-07-10T13:00:00",
+    "plannedStart": "2026-07-09T13:30:00",
+    "plannedEnd": "2026-07-09T17:30:00",
     "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-09"
+  },
+  {
+    "id": "task_1783333190190_hkzp",
+    "title": "Beveiliging Reishacker met Fable",
+    "description": "Zorg ervoor dat de beveiliging van Reishacker goed is ingesteld met het Fable model.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met de beveiliging van Reishacker.",
+    "plannedStart": "2026-07-10T09:00:00",
+    "plannedEnd": "2026-07-10T11:00:00",
+    "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
       {
@@ -1671,9 +1707,9 @@
     "plannedDate": "2026-07-10"
   },
   {
-    "id": "task_1783333190190_hkzp",
-    "title": "Beveiliging Reishacker met Fable",
-    "description": "Zorg ervoor dat de beveiliging van Reishacker goed is ingesteld met het Fable model.",
+    "id": "task_1783336410551_6hf3",
+    "title": "AI buyer persona updaten",
+    "description": "Gebruik de goede GitHub voor personificeren van content.",
     "status": "open",
     "priority": "P2",
     "coveyQuadrant": "Q3",
@@ -1682,11 +1718,11 @@
     "softDeadline": null,
     "startBy": null,
     "deadlineType": "hard",
-    "estimatedMinutes": 120,
-    "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T13:00:00",
-    "plannedEnd": "2026-07-10T15:00:00",
-    "plannedMinutes": 120,
+    "estimatedMinutes": 60,
+    "nextAction": "Begin met het updaten van de AI buyer persona.",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
       {
@@ -1703,7 +1739,14 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-10",
+    "history": [
+      {
+        "at": "2026-07-06",
+        "type": "confirm",
+        "note": "Bevestigd via manual_input"
+      }
+    ]
   },
   {
     "id": "task_1782371403702_d8ls",
