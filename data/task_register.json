@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T18:00:00.825Z",
+    "updatedAt": "2026-07-06T19:00:01.332Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T18:00:00.825Z",
+      "lastSyncedAt": "2026-07-06T19:00:01.332Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1535,7 +1535,7 @@
     "id": "task_1783330530819_3xdm",
     "title": "Plugin bestemming in Grid toepassen",
     "description": "De plugin die vanochtend is gemaakt toepassen in Grid.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1564,7 +1564,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-11",
+    "completedAt": "2026-07-06T18:44:54.319Z"
   },
   {
     "id": "task_1783330530819_x2bf",
