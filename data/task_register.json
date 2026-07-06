@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T10:00:00.889Z",
+    "updatedAt": "2026-07-06T11:00:00.827Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T10:00:00.889Z",
+      "lastSyncedAt": "2026-07-06T11:00:00.827Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T09:00:00",
-    "plannedEnd": "2026-07-10T09:30:00",
+    "plannedStart": "2026-07-10T15:00:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1067,8 +1067,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-10T09:30:00",
-    "plannedEnd": "2026-07-10T12:30:00",
+    "plannedStart": "2026-07-10T13:30:00",
+    "plannedEnd": "2026-07-10T16:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1396,8 +1396,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-10T12:30:00",
-    "plannedEnd": "2026-07-10T14:30:00",
+    "plannedStart": "2026-07-11T10:00:00",
+    "plannedEnd": "2026-07-11T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1422,7 +1422,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783088483577_pojv",
@@ -1544,8 +1544,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 240,
     "nextAction": "Plugin toepassen in Grid.",
-    "plannedStart": "2026-07-10T14:30:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-11T12:00:00",
+    "plannedEnd": "2026-07-11T15:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1563,7 +1563,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783330530819_x2bf",
@@ -1579,8 +1579,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T09:00:00",
-    "plannedEnd": "2026-07-11T10:00:00",
+    "plannedStart": "2026-07-11T15:00:00",
+    "plannedEnd": "2026-07-11T16:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1614,8 +1614,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T10:00:00",
-    "plannedEnd": "2026-07-11T10:30:00",
+    "plannedStart": "2026-07-11T16:00:00",
+    "plannedEnd": "2026-07-11T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1634,6 +1634,76 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-11"
+  },
+  {
+    "id": "task_1783332083545_l09s",
+    "title": "Bron maken voor website tools en GA4-analisator",
+    "description": "Documenteer de tools die op de website zijn gebouwd en voeg een GA4-analisator toe voor de AI mentor sessie.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Begin met het documenteren van de tools en de GA4-analisator.",
+    "plannedStart": "2026-07-10T09:00:00",
+    "plannedEnd": "2026-07-10T13:00:00",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
+  },
+  {
+    "id": "task_1783333190190_hkzp",
+    "title": "Beveiliging Reishacker met Fable",
+    "description": "Zorg ervoor dat de beveiliging van Reishacker goed is ingesteld met het Fable model.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met de beveiliging van Reishacker.",
+    "plannedStart": "2026-07-10T13:00:00",
+    "plannedEnd": "2026-07-10T15:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1782371403702_d8ls",
