@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-06T16:00:00.922Z",
+    "updatedAt": "2026-07-06T17:00:00.902Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-06T16:00:00.922Z",
+      "lastSyncedAt": "2026-07-06T17:00:00.902Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T12:00:00",
-    "plannedEnd": "2026-07-10T12:30:00",
+    "plannedStart": "2026-07-10T17:00:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1068,8 +1068,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-10T12:30:00",
-    "plannedEnd": "2026-07-10T15:30:00",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T12:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1087,7 +1087,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1397,8 +1397,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan de uitbreiding van de hedge server.",
-    "plannedStart": "2026-07-10T15:30:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-11T12:00:00",
+    "plannedEnd": "2026-07-11T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1423,7 +1423,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783088483577_pojv",
@@ -1580,8 +1580,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T09:00:00",
-    "plannedEnd": "2026-07-11T10:00:00",
+    "plannedStart": "2026-07-11T14:00:00",
+    "plannedEnd": "2026-07-11T15:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1615,8 +1615,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T10:00:00",
-    "plannedEnd": "2026-07-11T10:30:00",
+    "plannedStart": "2026-07-11T15:00:00",
+    "plannedEnd": "2026-07-11T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1762,8 +1762,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan het onderzoek in een beschikbare tijd.",
-    "plannedStart": "2026-07-11T10:30:00",
-    "plannedEnd": "2026-07-11T12:30:00",
+    "plannedStart": "2026-07-11T15:30:00",
+    "plannedEnd": "2026-07-11T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1782,6 +1782,76 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-11"
+  },
+  {
+    "id": "task_1783354371346_t84f",
+    "title": "Aangepaste server voor Legends afmaken",
+    "description": "Inclusief buyer persona, content ideeën en marktsentiment.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
+    "plannedStart": "2026-07-10T12:00:00",
+    "plannedEnd": "2026-07-10T16:00:00",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
+  },
+  {
+    "id": "task_1783354371346_7tf8",
+    "title": "Contact opnemen met Legends figuren voor content ideeën",
+    "description": "Vraag om input voor video's en carrouselconcepten.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-17",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 60,
+    "nextAction": "Maak een lijst van figuren om te benaderen.",
+    "plannedStart": "2026-07-10T16:00:00",
+    "plannedEnd": "2026-07-10T17:00:00",
+    "plannedMinutes": 60,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1782371403702_d8ls",
