@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-07T11:30:00.589Z",
+    "updatedAt": "2026-07-07T16:00:01.038Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-07T11:30:00.589Z",
+      "lastSyncedAt": "2026-07-07T16:00:01.038Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T16:00:00",
-    "plannedEnd": "2026-07-10T16:30:00",
+    "plannedStart": "2026-07-10T16:30:00",
+    "plannedEnd": "2026-07-10T17:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-08T12:30:00",
-    "plannedEnd": "2026-07-08T14:30:00",
+    "plannedStart": "2026-07-08T13:00:00",
+    "plannedEnd": "2026-07-08T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1239,8 +1239,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Voer het sentimentonderzoek uit en maak een overzicht.",
-    "plannedStart": "2026-07-09T10:00:00",
-    "plannedEnd": "2026-07-09T12:00:00",
+    "plannedStart": "2026-07-09T10:30:00",
+    "plannedEnd": "2026-07-09T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1281,8 +1281,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-09T12:00:00",
-    "plannedEnd": "2026-07-09T14:00:00",
+    "plannedStart": "2026-07-09T12:30:00",
+    "plannedEnd": "2026-07-09T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1316,8 +1316,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-10T09:30:00",
-    "plannedEnd": "2026-07-10T10:00:00",
+    "plannedStart": "2026-07-10T10:00:00",
+    "plannedEnd": "2026-07-10T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1442,8 +1442,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-09T14:00:00",
-    "plannedEnd": "2026-07-09T16:00:00",
+    "plannedStart": "2026-07-09T14:30:00",
+    "plannedEnd": "2026-07-09T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1584,8 +1584,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T11:00:00",
-    "plannedEnd": "2026-07-11T12:00:00",
+    "plannedStart": "2026-07-11T11:30:00",
+    "plannedEnd": "2026-07-11T12:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1619,8 +1619,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T12:00:00",
-    "plannedEnd": "2026-07-11T12:30:00",
+    "plannedStart": "2026-07-11T12:30:00",
+    "plannedEnd": "2026-07-11T13:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1690,8 +1690,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T10:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedStart": "2026-07-10T10:30:00",
+    "plannedEnd": "2026-07-10T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1768,8 +1768,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan het onderzoek in een beschikbare tijd.",
-    "plannedStart": "2026-07-11T12:30:00",
-    "plannedEnd": "2026-07-11T14:30:00",
+    "plannedStart": "2026-07-11T13:00:00",
+    "plannedEnd": "2026-07-11T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1803,8 +1803,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-10T12:00:00",
-    "plannedEnd": "2026-07-10T16:00:00",
+    "plannedStart": "2026-07-10T12:30:00",
+    "plannedEnd": "2026-07-10T16:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1957,8 +1957,8 @@
       "mail"
     ],
     "plannedDate": "2026-07-13",
-    "plannedStart": "2026-07-13T10:40:00",
-    "plannedEnd": "2026-07-13T10:55:00",
+    "plannedStart": "2026-07-13T11:10:00",
+    "plannedEnd": "2026-07-13T11:25:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1990,8 +1990,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën en concepten verzamelen en uitwerken.",
-    "plannedStart": "2026-07-13T10:55:00",
-    "plannedEnd": "2026-07-13T12:55:00",
+    "plannedStart": "2026-07-13T11:25:00",
+    "plannedEnd": "2026-07-13T13:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2025,8 +2025,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T12:55:00",
-    "plannedEnd": "2026-07-13T14:55:00",
+    "plannedStart": "2026-07-13T13:25:00",
+    "plannedEnd": "2026-07-13T15:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2060,8 +2060,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Zoek en boek hotels voor de vakantie.",
-    "plannedStart": "2026-07-13T14:55:00",
-    "plannedEnd": "2026-07-13T16:55:00",
+    "plannedStart": "2026-07-13T15:25:00",
+    "plannedEnd": "2026-07-13T17:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2095,8 +2095,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in om de Pexels API te integreren.",
-    "plannedStart": "2026-07-13T15:10:00",
-    "plannedEnd": "2026-07-13T17:10:00",
+    "plannedStart": "2026-07-14T09:00:00",
+    "plannedEnd": "2026-07-14T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2114,7 +2114,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-14"
   },
   {
     "id": "task_1782371403702_d8ls",
