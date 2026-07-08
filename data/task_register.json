@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-11T14:00:00",
-    "plannedEnd": "2026-07-11T14:30:00",
+    "plannedStart": "2026-07-11T11:00:00",
+    "plannedEnd": "2026-07-11T11:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-09T10:30:00",
-    "plannedEnd": "2026-07-09T12:30:00",
+    "plannedStart": "2026-07-09T11:30:00",
+    "plannedEnd": "2026-07-09T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -919,8 +919,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-09T12:30:00",
-    "plannedEnd": "2026-07-09T16:30:00",
+    "plannedStart": "2026-07-09T13:30:00",
+    "plannedEnd": "2026-07-09T17:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1033,8 +1033,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-11T14:30:00",
-    "plannedEnd": "2026-07-11T17:30:00",
+    "plannedStart": "2026-07-11T11:30:00",
+    "plannedEnd": "2026-07-11T14:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1193,9 +1193,9 @@
     "id": "task_1783006233320_lg8l",
     "title": "Sentimentonderzoek voor Legend doen",
     "description": "Inclusief overzicht van besproken contentvormen.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-03",
     "softDeadline": null,
@@ -1214,9 +1214,9 @@
       }
     ],
     "createdAt": "2026-07-02",
-    "updatedAt": "2026-07-02",
+    "updatedAt": "2026-07-08",
     "tags": [],
-    "urgencyScore": 100,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "overdue",
     "history": [
@@ -1229,7 +1229,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-09",
+    "completedAt": "2026-07-08T13:17:30.285Z"
   },
   {
     "id": "task_1783008577642_4xvx",
@@ -1245,8 +1246,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-10T10:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedStart": "2026-07-10T09:00:00",
+    "plannedEnd": "2026-07-10T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1280,8 +1281,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-10T16:00:00",
-    "plannedEnd": "2026-07-10T16:30:00",
+    "plannedStart": "2026-07-10T13:00:00",
+    "plannedEnd": "2026-07-10T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1396,9 +1397,9 @@
     "id": "task_1783088483577_pojv",
     "title": "Sentimentautomatisering van Reishacker naar Legend",
     "description": "Automatisering van het sentimentonderzoek van Reishacker naar Legend.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-08",
     "softDeadline": null,
@@ -1406,8 +1407,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-10T12:00:00",
-    "plannedEnd": "2026-07-10T14:00:00",
+    "plannedStart": "2026-07-10T10:30:00",
+    "plannedEnd": "2026-07-10T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1417,15 +1418,16 @@
       }
     ],
     "createdAt": "2026-07-03",
-    "updatedAt": "2026-07-03",
+    "updatedAt": "2026-07-08",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "today",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-10",
+    "completedAt": "2026-07-08T13:17:34.144Z"
   },
   {
     "id": "task_1783088483578_97nx",
@@ -1441,8 +1443,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-10T14:00:00",
-    "plannedEnd": "2026-07-10T16:00:00",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1548,8 +1550,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-13T09:40:00",
-    "plannedEnd": "2026-07-13T10:10:00",
+    "plannedStart": "2026-07-11T14:30:00",
+    "plannedEnd": "2026-07-11T15:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1567,7 +1569,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783332083545_l09s",
@@ -1619,8 +1621,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T15:30:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-10T13:30:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1636,7 +1638,7 @@
     "importanceScore": 20,
     "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
-    "scheduleStatus": "missed",
+    "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-10"
   },
@@ -1733,8 +1735,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-11T10:00:00",
-    "plannedEnd": "2026-07-11T14:00:00",
+    "plannedStart": "2026-07-11T10:15:00",
+    "plannedEnd": "2026-07-11T14:15:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1922,8 +1924,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën en concepten verzamelen en uitwerken.",
-    "plannedStart": "2026-07-13T10:10:00",
-    "plannedEnd": "2026-07-13T12:10:00",
+    "plannedStart": "2026-07-11T15:00:00",
+    "plannedEnd": "2026-07-11T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1941,7 +1943,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783427598631_fp0x",
@@ -1957,8 +1959,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T12:10:00",
-    "plannedEnd": "2026-07-13T14:10:00",
+    "plannedStart": "2026-07-13T10:40:00",
+    "plannedEnd": "2026-07-13T12:40:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2018,7 +2020,7 @@
     "id": "task_1783427912875_13cf",
     "title": "Pexels API toevoegen aan blog",
     "description": "Voeg de Pexels API toe aan de blog voor het automatisch ophalen van afbeeldingen.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -2028,8 +2030,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in om de Pexels API te integreren.",
-    "plannedStart": "2026-07-13T14:10:00",
-    "plannedEnd": "2026-07-13T16:10:00",
+    "plannedStart": "2026-07-13T10:40:00",
+    "plannedEnd": "2026-07-13T12:40:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2039,7 +2041,7 @@
       }
     ],
     "createdAt": "2026-07-07",
-    "updatedAt": "2026-07-07",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -2047,7 +2049,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-13",
+    "completedAt": "2026-07-08T13:18:01.053Z"
   },
   {
     "id": "task_1783445897420_mrfd",
