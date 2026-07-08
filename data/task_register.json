@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-08T06:00:00.620Z",
+    "updatedAt": "2026-07-08T07:00:00.815Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-08T06:00:00.620Z",
+      "lastSyncedAt": "2026-07-08T07:00:00.815Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1499,42 +1499,6 @@
     "plannedDate": "2026-07-09"
   },
   {
-    "id": "task_1783103052373_v58g",
-    "title": "Reageren op Maarten",
-    "description": "Reactie op Maarten voorbereiden en versturen.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 30,
-    "nextAction": "Reageren op Maarten",
-    "plannedStart": "2026-07-10T12:30:00",
-    "plannedEnd": "2026-07-10T13:00:00",
-    "plannedMinutes": 30,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-03"
-      }
-    ],
-    "createdAt": "2026-07-03",
-    "updatedAt": "2026-07-06",
-    "tags": [],
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-10",
-    "completedAt": "2026-07-06T06:22:05.667Z"
-  },
-  {
     "id": "task_1783330530819_3xdm",
     "title": "Plugin bestemming in Grid toepassen",
     "description": "De plugin die vanochtend is gemaakt toepassen in Grid.",
@@ -2146,6 +2110,42 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
+  },
+  {
+    "id": "task_1783103052373_v58g",
+    "title": "Reageren op Maarten",
+    "description": "Reactie op Maarten voorbereiden en versturen.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Reageren op Maarten",
+    "plannedStart": "2026-07-10T12:30:00",
+    "plannedEnd": "2026-07-10T13:00:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10",
+    "completedAt": "2026-07-06T06:22:05.667Z"
   },
   {
     "id": "task_1782371403702_d8ls",
