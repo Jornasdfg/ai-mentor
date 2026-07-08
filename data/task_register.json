@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-08T07:00:00.815Z",
+    "updatedAt": "2026-07-08T08:00:00.959Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-08T07:00:00.815Z",
+      "lastSyncedAt": "2026-07-08T08:00:00.959Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-10T17:00:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T09:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -458,7 +458,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10",
+    "plannedDate": "2026-07-11",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-08T13:30:00",
-    "plannedEnd": "2026-07-08T15:30:00",
+    "plannedStart": "2026-07-08T14:00:00",
+    "plannedEnd": "2026-07-08T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1069,8 +1069,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-11T09:00:00",
-    "plannedEnd": "2026-07-11T12:00:00",
+    "plannedStart": "2026-07-11T09:30:00",
+    "plannedEnd": "2026-07-11T12:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1239,8 +1239,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Voer het sentimentonderzoek uit en maak een overzicht.",
-    "plannedStart": "2026-07-09T11:00:00",
-    "plannedEnd": "2026-07-09T13:00:00",
+    "plannedStart": "2026-07-09T11:30:00",
+    "plannedEnd": "2026-07-09T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1281,8 +1281,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-09T13:00:00",
-    "plannedEnd": "2026-07-09T15:00:00",
+    "plannedStart": "2026-07-09T13:30:00",
+    "plannedEnd": "2026-07-09T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1316,8 +1316,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-10T10:30:00",
-    "plannedEnd": "2026-07-10T11:00:00",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T11:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1442,8 +1442,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-09T15:00:00",
-    "plannedEnd": "2026-07-09T17:00:00",
+    "plannedStart": "2026-07-09T15:30:00",
+    "plannedEnd": "2026-07-09T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1477,8 +1477,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-09T15:30:00",
-    "plannedEnd": "2026-07-09T17:30:00",
+    "plannedStart": "2026-07-10T09:00:00",
+    "plannedEnd": "2026-07-10T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1496,7 +1496,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1783330530819_3xdm",
@@ -1538,7 +1538,7 @@
     "id": "task_1783330530819_x2bf",
     "title": "Buyer persona onderzoek voor Montenegro",
     "description": "Onderzoeken wat mijn buyer persona zou willen weten over Montenegro.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1548,8 +1548,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 60,
     "nextAction": "Onderzoek doen naar de buyer persona.",
-    "plannedStart": "2026-07-11T12:00:00",
-    "plannedEnd": "2026-07-11T13:00:00",
+    "plannedStart": "2026-07-11T12:15:00",
+    "plannedEnd": "2026-07-11T13:15:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1559,7 +1559,7 @@
       }
     ],
     "createdAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1567,7 +1567,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-11",
+    "completedAt": "2026-07-08T07:46:20.438Z"
   },
   {
     "id": "task_1783330653866_6gpg",
@@ -1583,8 +1584,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T13:00:00",
-    "plannedEnd": "2026-07-11T13:30:00",
+    "plannedStart": "2026-07-11T12:30:00",
+    "plannedEnd": "2026-07-11T13:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1654,8 +1655,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T11:00:00",
-    "plannedEnd": "2026-07-10T13:00:00",
+    "plannedStart": "2026-07-10T11:30:00",
+    "plannedEnd": "2026-07-10T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1722,7 +1723,7 @@
     "id": "task_1783343603418_nhz3",
     "title": "Onderzoek kosten van tools",
     "description": "Onderzoek de kosten van alle tools voor Reality Check en Reiziger, inclusief content en deals.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1743,7 +1744,7 @@
       }
     ],
     "createdAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1751,7 +1752,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-11",
+    "completedAt": "2026-07-08T07:12:17.390Z"
   },
   {
     "id": "task_1783354371346_t84f",
@@ -1767,8 +1769,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-10T13:00:00",
-    "plannedEnd": "2026-07-10T17:00:00",
+    "plannedStart": "2026-07-10T13:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1828,7 +1830,7 @@
     "id": "task_1783375069128_4ouv",
     "title": "AI Buyer Persona chat afmaken",
     "description": "",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -1849,7 +1851,7 @@
       }
     ],
     "createdAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -1857,7 +1859,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-11",
+    "completedAt": "2026-07-08T07:12:20.293Z"
   },
   {
     "id": "task_1783375200139_23lh",
@@ -1905,7 +1908,7 @@
   {
     "id": "task_1783408202837_ep9h",
     "title": "Productselectielijst doorgeven en 3 openstaande collaboration-orders afstemmen — Temu (Lumiya)",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -1916,13 +1919,13 @@
     "source": "mail",
     "reason": "Lumiya van Temu wacht in een lopende, directe samenwerking (geen aggregator) op Jorns productselectielijst en meldt 3 openstaande orders. Jorn heeft sinds 20 maart niet meer gereageerd op deze concrete vraag.",
     "createdAt": "2026-07-07",
-    "updatedAt": "2026-07-07",
+    "updatedAt": "2026-07-08",
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-13",
-    "plannedStart": "2026-07-13T11:40:00",
-    "plannedEnd": "2026-07-13T11:55:00",
+    "plannedDate": "2026-07-11",
+    "plannedStart": "2026-07-11T13:30:00",
+    "plannedEnd": "2026-07-11T13:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1938,7 +1941,8 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-08T07:12:23.917Z"
   },
   {
     "id": "task_1783427598630_3cuc",
@@ -1954,8 +1958,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën en concepten verzamelen en uitwerken.",
-    "plannedStart": "2026-07-13T11:55:00",
-    "plannedEnd": "2026-07-13T13:55:00",
+    "plannedStart": "2026-07-11T13:00:00",
+    "plannedEnd": "2026-07-11T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1973,7 +1977,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783427598631_fp0x",
@@ -1989,8 +1993,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T13:55:00",
-    "plannedEnd": "2026-07-13T15:55:00",
+    "plannedStart": "2026-07-11T15:00:00",
+    "plannedEnd": "2026-07-11T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2008,13 +2012,13 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783427598632_p0i1",
     "title": "Vakantie hotels regelen",
     "description": "Regel de hotels voor de vakantie.",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -2024,8 +2028,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Zoek en boek hotels voor de vakantie.",
-    "plannedStart": "2026-07-13T15:25:00",
-    "plannedEnd": "2026-07-13T17:25:00",
+    "plannedStart": "2026-07-13T09:40:00",
+    "plannedEnd": "2026-07-13T11:40:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2035,7 +2039,7 @@
       }
     ],
     "createdAt": "2026-07-07",
-    "updatedAt": "2026-07-07",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
@@ -2043,7 +2047,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-13",
+    "completedAt": "2026-07-08T07:12:33.004Z"
   },
   {
     "id": "task_1783427912875_13cf",
@@ -2059,8 +2064,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in om de Pexels API te integreren.",
-    "plannedStart": "2026-07-14T09:25:00",
-    "plannedEnd": "2026-07-14T11:25:00",
+    "plannedStart": "2026-07-13T09:55:00",
+    "plannedEnd": "2026-07-13T11:55:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2078,13 +2083,13 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-14"
+    "plannedDate": "2026-07-13"
   },
   {
     "id": "task_1783445897420_mrfd",
     "title": "Reageren Schiphol",
     "description": "",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "coveyQuadrant": "Q4",
     "deadline": null,
@@ -2105,11 +2110,51 @@
       }
     ],
     "createdAt": "2026-07-07",
-    "updatedAt": "2026-07-07",
+    "updatedAt": "2026-07-08",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 20,
-    "deadlinePressure": "none"
+    "deadlinePressure": "none",
+    "completedAt": "2026-07-08T07:12:37.093Z"
+  },
+  {
+    "id": "task_1783494602504_1p4k",
+    "title": "Reageer met tarieven op Emergent-samenwerking — Akshata (TCE)",
+    "status": "done",
+    "priority": "P3",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "source": "mail",
+    "reason": "Concrete paid-collab aanvraag (Reel/TikTok voor Emergent.sh) rechtstreeks van een mens, niet via aggregator; vraagt om tarieven, WhatsApp en stats. Jorn heeft nog niet gereageerd.",
+    "createdAt": "2026-07-08",
+    "updatedAt": "2026-07-08",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-07-11",
+    "plannedStart": "2026-07-11T17:15:00",
+    "plannedEnd": "2026-07-11T17:30:00",
+    "plannedMinutes": 15,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "completedAt": "2026-07-08T07:12:41.268Z"
   },
   {
     "id": "task_1783103052373_v58g",
