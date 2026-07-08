@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-08T11:00:00.751Z",
+    "updatedAt": "2026-07-08T11:30:00.467Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-08T11:00:00.751Z",
+      "lastSyncedAt": "2026-07-08T11:30:00.467Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-11T12:00:00",
-    "plannedEnd": "2026-07-11T12:30:00",
+    "plannedStart": "2026-07-11T13:00:00",
+    "plannedEnd": "2026-07-11T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-08T15:30:00",
-    "plannedEnd": "2026-07-08T17:30:00",
+    "plannedStart": "2026-07-09T09:30:00",
+    "plannedEnd": "2026-07-09T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -781,7 +781,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-08",
+    "plannedDate": "2026-07-09",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -919,8 +919,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-09T10:30:00",
-    "plannedEnd": "2026-07-09T14:30:00",
+    "plannedStart": "2026-07-09T11:30:00",
+    "plannedEnd": "2026-07-09T15:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -939,42 +939,6 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-07-09"
-  },
-  {
-    "id": "task_1782748349217_t8f3",
-    "title": "Koppelen zakelijke betaalpas en creditcard aan Apple Pay",
-    "description": "Zorg ervoor dat zowel de zakelijke betaalpas als de nieuwe creditcard goed zijn gekoppeld aan de Apple Pay automatisering.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": "2026-07-03",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 240,
-    "nextAction": "Koppelen van de kaarten aan Apple Pay.",
-    "plannedStart": "2026-07-08T09:00:00",
-    "plannedEnd": "2026-07-08T13:00:00",
-    "plannedMinutes": 240,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-06-29"
-      }
-    ],
-    "createdAt": "2026-06-29",
-    "updatedAt": "2026-07-06",
-    "tags": [],
-    "urgencyScore": 10,
-    "importanceScore": 20,
-    "deadlinePressure": "overdue",
-    "scheduleColorState": "red",
-    "scheduleStatus": "missed",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-08",
-    "completedAt": "2026-07-06T11:14:16.014Z"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1069,8 +1033,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-11T12:30:00",
-    "plannedEnd": "2026-07-11T15:30:00",
+    "plannedStart": "2026-07-11T13:30:00",
+    "plannedEnd": "2026-07-11T16:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1239,8 +1203,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Voer het sentimentonderzoek uit en maak een overzicht.",
-    "plannedStart": "2026-07-09T14:30:00",
-    "plannedEnd": "2026-07-09T16:30:00",
+    "plannedStart": "2026-07-09T15:30:00",
+    "plannedEnd": "2026-07-09T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1281,8 +1245,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-09T15:30:00",
-    "plannedEnd": "2026-07-09T17:30:00",
+    "plannedStart": "2026-07-10T09:00:00",
+    "plannedEnd": "2026-07-10T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1300,7 +1264,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1316,8 +1280,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-10T14:00:00",
-    "plannedEnd": "2026-07-10T14:30:00",
+    "plannedStart": "2026-07-10T15:00:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1442,8 +1406,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de sentimentautomatisering.",
-    "plannedStart": "2026-07-10T10:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1477,8 +1441,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-10T12:00:00",
-    "plannedEnd": "2026-07-10T14:00:00",
+    "plannedStart": "2026-07-10T13:00:00",
+    "plannedEnd": "2026-07-10T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1584,8 +1548,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-11T15:30:00",
-    "plannedEnd": "2026-07-11T16:00:00",
+    "plannedStart": "2026-07-11T16:30:00",
+    "plannedEnd": "2026-07-11T17:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1655,8 +1619,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T14:30:00",
-    "plannedEnd": "2026-07-10T16:30:00",
+    "plannedStart": "2026-07-10T15:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1769,8 +1733,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-10T13:30:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T13:00:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1788,7 +1752,7 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783354371346_7tf8",
@@ -1993,8 +1957,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T10:10:00",
-    "plannedEnd": "2026-07-13T12:10:00",
+    "plannedStart": "2026-07-13T11:10:00",
+    "plannedEnd": "2026-07-13T13:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2064,8 +2028,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in om de Pexels API te integreren.",
-    "plannedStart": "2026-07-13T12:10:00",
-    "plannedEnd": "2026-07-13T14:10:00",
+    "plannedStart": "2026-07-13T13:10:00",
+    "plannedEnd": "2026-07-13T15:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2155,6 +2119,42 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "completedAt": "2026-07-08T07:12:41.268Z"
+  },
+  {
+    "id": "task_1782748349217_t8f3",
+    "title": "Koppelen zakelijke betaalpas en creditcard aan Apple Pay",
+    "description": "Zorg ervoor dat zowel de zakelijke betaalpas als de nieuwe creditcard goed zijn gekoppeld aan de Apple Pay automatisering.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-03",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Koppelen van de kaarten aan Apple Pay.",
+    "plannedStart": "2026-07-08T09:00:00",
+    "plannedEnd": "2026-07-08T13:00:00",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-06-29"
+      }
+    ],
+    "createdAt": "2026-06-29",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-08",
+    "completedAt": "2026-07-06T11:14:16.014Z"
   },
   {
     "id": "task_1783103052373_v58g",
