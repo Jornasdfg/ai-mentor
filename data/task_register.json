@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-08T16:00:00.874Z",
+    "updatedAt": "2026-07-08T17:00:01.084Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-08T16:00:00.874Z",
+      "lastSyncedAt": "2026-07-08T17:00:01.084Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -2122,6 +2122,41 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "completedAt": "2026-07-08T07:12:41.268Z"
+  },
+  {
+    "id": "task_1783528469918_e69k",
+    "title": "Financieel repareren",
+    "description": "Herstel en verbeter financiële zaken.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Bepaal welke financiële zaken gerepareerd moeten worden.",
+    "plannedStart": "2026-07-13T12:40:00",
+    "plannedEnd": "2026-07-13T14:40:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-08"
+      }
+    ],
+    "createdAt": "2026-07-08",
+    "updatedAt": "2026-07-08",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-13"
   },
   {
     "id": "task_1782748349217_t8f3",
