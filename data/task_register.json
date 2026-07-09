@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-09T06:00:00.865Z",
+    "updatedAt": "2026-07-09T07:00:01.082Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-09T06:00:00.865Z",
+      "lastSyncedAt": "2026-07-09T07:00:01.082Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -1599,42 +1599,6 @@
     "plannedDate": "2026-07-11"
   },
   {
-    "id": "task_1783354371346_7tf8",
-    "title": "Contact opnemen met Legends figuren voor content ideeën",
-    "description": "Vraag om input voor video's en carrouselconcepten.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": "2026-07-17",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 60,
-    "nextAction": "Maak een lijst van figuren om te benaderen.",
-    "plannedStart": "2026-07-10T11:00:00",
-    "plannedEnd": "2026-07-10T12:00:00",
-    "plannedMinutes": 60,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-06"
-      }
-    ],
-    "createdAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
-    "tags": [],
-    "urgencyScore": 10,
-    "importanceScore": 20,
-    "deadlinePressure": "future",
-    "scheduleColorState": "green",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-10",
-    "completedAt": "2026-07-06T21:55:57.745Z"
-  },
-  {
     "id": "task_1783375069128_4ouv",
     "title": "AI Buyer Persona chat afmaken",
     "description": "",
@@ -2001,6 +1965,42 @@
     "unscheduledReason": null,
     "plannedDate": "2026-07-13",
     "completedAt": "2026-07-08T20:21:36.401Z"
+  },
+  {
+    "id": "task_1783354371346_7tf8",
+    "title": "Contact opnemen met Legends figuren voor content ideeën",
+    "description": "Vraag om input voor video's en carrouselconcepten.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-17",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 60,
+    "nextAction": "Maak een lijst van figuren om te benaderen.",
+    "plannedStart": "2026-07-10T11:00:00",
+    "plannedEnd": "2026-07-10T12:00:00",
+    "plannedMinutes": 60,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-06"
+      }
+    ],
+    "createdAt": "2026-07-06",
+    "updatedAt": "2026-07-06",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-10",
+    "completedAt": "2026-07-06T21:55:57.745Z"
   },
   {
     "id": "task_1783088412362_jtt6",
