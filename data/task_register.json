@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-09T09:00:00.606Z",
+    "updatedAt": "2026-07-09T10:00:00.839Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-09T09:00:00.606Z",
+      "lastSyncedAt": "2026-07-09T10:00:00.839Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-11T14:30:00",
-    "plannedEnd": "2026-07-11T15:00:00",
+    "plannedStart": "2026-07-11T15:30:00",
+    "plannedEnd": "2026-07-11T16:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-09T15:00:00",
-    "plannedEnd": "2026-07-09T17:00:00",
+    "plannedStart": "2026-07-09T15:30:00",
+    "plannedEnd": "2026-07-09T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -919,8 +919,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-09T13:30:00",
-    "plannedEnd": "2026-07-09T17:30:00",
+    "plannedStart": "2026-07-10T09:30:00",
+    "plannedEnd": "2026-07-10T13:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -938,7 +938,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-09"
+    "plannedDate": "2026-07-10"
   },
   {
     "id": "task_1782770400958_i1tp",
@@ -1246,8 +1246,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-10T12:30:00",
-    "plannedEnd": "2026-07-10T14:30:00",
+    "plannedStart": "2026-07-10T13:30:00",
+    "plannedEnd": "2026-07-10T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1281,8 +1281,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-10T16:30:00",
-    "plannedEnd": "2026-07-10T17:00:00",
+    "plannedStart": "2026-07-11T09:00:00",
+    "plannedEnd": "2026-07-11T09:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1298,9 +1298,9 @@
     "importanceScore": 20,
     "deadlinePressure": "tomorrow",
     "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
+    "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783088381822_7lir",
@@ -1400,8 +1400,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-10T14:30:00",
-    "plannedEnd": "2026-07-10T16:30:00",
+    "plannedStart": "2026-07-10T15:30:00",
+    "plannedEnd": "2026-07-10T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1471,8 +1471,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-13T10:10:00",
-    "plannedEnd": "2026-07-13T10:40:00",
+    "plannedStart": "2026-07-13T11:10:00",
+    "plannedEnd": "2026-07-13T11:40:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1506,8 +1506,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-10T15:30:00",
-    "plannedEnd": "2026-07-10T17:30:00",
+    "plannedStart": "2026-07-11T09:30:00",
+    "plannedEnd": "2026-07-11T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1525,7 +1525,7 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-10"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783343603418_nhz3",
@@ -1577,8 +1577,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-11T10:30:00",
-    "plannedEnd": "2026-07-11T14:30:00",
+    "plannedStart": "2026-07-11T11:30:00",
+    "plannedEnd": "2026-07-11T15:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1766,8 +1766,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T10:40:00",
-    "plannedEnd": "2026-07-13T12:40:00",
+    "plannedStart": "2026-07-13T11:40:00",
+    "plannedEnd": "2026-07-13T13:40:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
