@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-09T10:00:00.839Z",
+    "updatedAt": "2026-07-09T11:00:01.087Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-09T10:00:00.839Z",
+      "lastSyncedAt": "2026-07-09T11:00:01.087Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-11T15:30:00",
-    "plannedEnd": "2026-07-11T16:00:00",
+    "plannedStart": "2026-07-11T12:30:00",
+    "plannedEnd": "2026-07-11T13:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -919,8 +919,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-10T09:30:00",
-    "plannedEnd": "2026-07-10T13:30:00",
+    "plannedStart": "2026-07-10T10:30:00",
+    "plannedEnd": "2026-07-10T14:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1033,8 +1033,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-11T14:30:00",
-    "plannedEnd": "2026-07-11T17:30:00",
+    "plannedStart": "2026-07-11T13:00:00",
+    "plannedEnd": "2026-07-11T16:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1246,8 +1246,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-10T13:30:00",
-    "plannedEnd": "2026-07-10T15:30:00",
+    "plannedStart": "2026-07-10T14:30:00",
+    "plannedEnd": "2026-07-10T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1281,8 +1281,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-11T09:00:00",
-    "plannedEnd": "2026-07-11T09:30:00",
+    "plannedStart": "2026-07-11T10:00:00",
+    "plannedEnd": "2026-07-11T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1471,8 +1471,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-13T11:10:00",
-    "plannedEnd": "2026-07-13T11:40:00",
+    "plannedStart": "2026-07-11T16:00:00",
+    "plannedEnd": "2026-07-11T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1490,7 +1490,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-11"
   },
   {
     "id": "task_1783333190190_hkzp",
@@ -1506,8 +1506,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-11T09:30:00",
-    "plannedEnd": "2026-07-11T11:30:00",
+    "plannedStart": "2026-07-11T10:30:00",
+    "plannedEnd": "2026-07-11T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1567,9 +1567,9 @@
     "id": "task_1783354371346_t84f",
     "title": "Aangepaste server voor Legends afmaken",
     "description": "Inclusief buyer persona, content ideeën en marktsentiment.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
     "deadline": null,
     "hardDeadline": "2026-07-10",
     "softDeadline": null,
@@ -1577,8 +1577,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het opzetten van de server en verzamelen van informatie.",
-    "plannedStart": "2026-07-11T11:30:00",
-    "plannedEnd": "2026-07-11T15:30:00",
+    "plannedStart": "2026-07-11T12:00:00",
+    "plannedEnd": "2026-07-11T16:00:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1588,15 +1588,16 @@
       }
     ],
     "createdAt": "2026-07-06",
-    "updatedAt": "2026-07-06",
+    "updatedAt": "2026-07-09",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 10,
     "importanceScore": 20,
     "deadlinePressure": "tomorrow",
     "scheduleColorState": "orange",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-11"
+    "plannedDate": "2026-07-11",
+    "completedAt": "2026-07-09T10:27:43.671Z"
   },
   {
     "id": "task_1783375069128_4ouv",
@@ -1766,8 +1767,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-13T11:40:00",
-    "plannedEnd": "2026-07-13T13:40:00",
+    "plannedStart": "2026-07-13T12:10:00",
+    "plannedEnd": "2026-07-13T14:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
