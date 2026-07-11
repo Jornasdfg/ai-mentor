@@ -448,8 +448,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-14T14:15:00",
-    "plannedEnd": "2026-07-14T14:45:00",
+    "plannedStart": "2026-07-15T09:05:00",
+    "plannedEnd": "2026-07-15T09:35:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -458,7 +458,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-14",
+    "plannedDate": "2026-07-15",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -765,8 +765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-13T10:30:00",
-    "plannedEnd": "2026-07-13T12:30:00",
+    "plannedStart": "2026-07-13T11:30:00",
+    "plannedEnd": "2026-07-13T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -884,8 +884,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-13T12:30:00",
-    "plannedEnd": "2026-07-13T16:30:00",
+    "plannedStart": "2026-07-13T13:30:00",
+    "plannedEnd": "2026-07-13T17:30:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -998,8 +998,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-15T09:00:00",
-    "plannedEnd": "2026-07-15T12:00:00",
+    "plannedStart": "2026-07-15T09:50:00",
+    "plannedEnd": "2026-07-15T12:50:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1168,8 +1168,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-13T15:30:00",
-    "plannedEnd": "2026-07-13T17:30:00",
+    "plannedStart": "2026-07-14T09:00:00",
+    "plannedEnd": "2026-07-14T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1187,7 +1187,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-13"
+    "plannedDate": "2026-07-14"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1203,8 +1203,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-14T12:00:00",
-    "plannedEnd": "2026-07-14T12:30:00",
+    "plannedStart": "2026-07-14T13:00:00",
+    "plannedEnd": "2026-07-14T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1238,8 +1238,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-14T10:00:00",
-    "plannedEnd": "2026-07-14T12:00:00",
+    "plannedStart": "2026-07-14T11:00:00",
+    "plannedEnd": "2026-07-14T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1273,8 +1273,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-15T12:00:00",
-    "plannedEnd": "2026-07-15T12:30:00",
+    "plannedStart": "2026-07-15T12:50:00",
+    "plannedEnd": "2026-07-15T13:20:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1308,8 +1308,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-14T12:30:00",
-    "plannedEnd": "2026-07-14T14:30:00",
+    "plannedStart": "2026-07-14T12:45:00",
+    "plannedEnd": "2026-07-14T14:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1386,8 +1386,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-15T12:30:00",
-    "plannedEnd": "2026-07-15T14:30:00",
+    "plannedStart": "2026-07-15T13:20:00",
+    "plannedEnd": "2026-07-15T15:20:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
