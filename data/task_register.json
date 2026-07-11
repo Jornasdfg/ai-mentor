@@ -79,9 +79,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1782288396068_8d56",
@@ -407,7 +407,7 @@
     "source": "manual_input",
     "reason": "Belangrijk voor het Malaga project, maar geen harde deadline.",
     "createdAt": "2026-05-12",
-    "updatedAt": "2026-07-11T21:00:00.856Z",
+    "updatedAt": "2026-07-11T22:00:01.147Z",
     "tags": [
       "malaga"
     ],
@@ -425,7 +425,7 @@
       "calendarId": "primary",
       "eventId": "2e0fi98t1sj0q52262dsm06m58",
       "htmlLink": "https://www.google.com/calendar/event?eid=MmUwZmk5OHQxc2owcTUyMjYyZHNtMDZtNTggam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-11T21:00:00.856Z",
+      "lastSyncedAt": "2026-07-11T22:00:01.147Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-05-30T13:00:01.238Z"
@@ -543,9 +543,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1780602426889_h3ix",
