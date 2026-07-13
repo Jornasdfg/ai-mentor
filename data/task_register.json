@@ -1599,8 +1599,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-16T10:20:00",
-    "plannedEnd": "2026-07-16T13:20:00",
+    "plannedStart": "2026-07-16T11:50:00",
+    "plannedEnd": "2026-07-16T14:50:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
