@@ -1049,8 +1049,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-16T11:00:00",
-    "plannedEnd": "2026-07-16T11:30:00",
+    "plannedStart": "2026-07-16T13:50:00",
+    "plannedEnd": "2026-07-16T14:20:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1485,8 +1485,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Preview maken",
-    "plannedStart": "2026-07-15T09:00:00",
-    "plannedEnd": "2026-07-15T13:00:00",
+    "plannedStart": "2026-07-15T10:05:00",
+    "plannedEnd": "2026-07-15T14:05:00",
     "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
@@ -1599,8 +1599,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-16T11:30:00",
-    "plannedEnd": "2026-07-16T14:30:00",
+    "plannedStart": "2026-07-16T14:20:00",
+    "plannedEnd": "2026-07-16T17:20:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1769,8 +1769,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-15T13:00:00",
-    "plannedEnd": "2026-07-15T15:00:00",
+    "plannedStart": "2026-07-15T14:05:00",
+    "plannedEnd": "2026-07-15T16:05:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1839,8 +1839,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-15T15:00:00",
-    "plannedEnd": "2026-07-15T17:00:00",
+    "plannedStart": "2026-07-15T15:05:00",
+    "plannedEnd": "2026-07-15T17:05:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1874,8 +1874,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-16T14:30:00",
-    "plannedEnd": "2026-07-16T15:00:00",
+    "plannedStart": "2026-07-17T09:00:00",
+    "plannedEnd": "2026-07-17T09:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1893,7 +1893,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-16"
+    "plannedDate": "2026-07-17"
   },
   {
     "id": "task_1783333190190_hkzp",
@@ -1909,8 +1909,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-16T09:00:00",
-    "plannedEnd": "2026-07-16T11:00:00",
+    "plannedStart": "2026-07-16T09:50:00",
+    "plannedEnd": "2026-07-16T11:50:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1987,8 +1987,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-16T15:00:00",
-    "plannedEnd": "2026-07-16T17:00:00",
+    "plannedStart": "2026-07-16T15:20:00",
+    "plannedEnd": "2026-07-16T17:20:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2011,7 +2011,7 @@
   {
     "id": "task_1783840202233_z7wp",
     "title": "Betaal 2 openstaande Vimexx-facturen (hosting) — Vimexx",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2022,13 +2022,13 @@
     "source": "mail",
     "reason": "Twee openstaande hosting-facturen (bestellingen 20264804058 en 20264809504) moeten handmatig vóór de vervaldatum betaald worden, anders vervallen de producten/hosting van Reishacker/Boone Media.",
     "createdAt": "2026-07-12",
-    "updatedAt": "2026-07-12",
+    "updatedAt": "2026-07-14",
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-16",
-    "plannedStart": "2026-07-16T17:00:00",
-    "plannedEnd": "2026-07-16T17:10:00",
+    "plannedDate": "2026-07-17",
+    "plannedStart": "2026-07-17T09:20:00",
+    "plannedEnd": "2026-07-17T09:30:00",
     "plannedMinutes": 10,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2044,7 +2044,8 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-14T11:54:18.281Z"
   },
   {
     "id": "task_1783980001010_uaob",
@@ -2092,7 +2093,7 @@
   {
     "id": "task_1784013605065_5dns",
     "title": "Patrick (uitvoerder reiniging) toevoegen aan B&E dashboard/rapportage — Bennie",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2125,7 +2126,8 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-14T11:54:23.974Z"
   },
   {
     "id": "task_1784013605842_wq0r",
@@ -2145,9 +2147,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-16",
-    "plannedStart": "2026-07-16T17:10:00",
-    "plannedEnd": "2026-07-16T17:25:00",
+    "plannedDate": "2026-07-18",
+    "plannedStart": "2026-07-18T12:30:00",
+    "plannedEnd": "2026-07-18T12:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2168,7 +2170,7 @@
   {
     "id": "task_1784013616725_to6l",
     "title": "Bevestig/plan afspraak met Peter Stip — wo 9 sep 10:30 (kantoor Middelharnis of Teams)",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2183,9 +2185,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-18",
-    "plannedStart": "2026-07-18T14:00:00",
-    "plannedEnd": "2026-07-18T14:15:00",
+    "plannedDate": "2026-07-17",
+    "plannedStart": "2026-07-17T09:35:00",
+    "plannedEnd": "2026-07-17T09:50:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2201,12 +2203,13 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-14T11:54:46.966Z"
   },
   {
     "id": "task_1784013618039_xw6i",
     "title": "Productselectielijst doorgeven aan Temu (Lumiya) — 3 openstaande collaboration-orders",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2221,9 +2224,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-18",
-    "plannedStart": "2026-07-18T14:15:00",
-    "plannedEnd": "2026-07-18T14:30:00",
+    "plannedDate": "2026-07-17",
+    "plannedStart": "2026-07-17T09:35:00",
+    "plannedEnd": "2026-07-17T09:50:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2239,12 +2242,13 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-14T11:54:50.729Z"
   },
   {
     "id": "task_1784013619380_34zj",
     "title": "Betaal 2 openstaande Vimexx-facturen handmatig vóór vervaldatum (orders 20264804058 & 20264809504)",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2259,9 +2263,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-07-18",
-    "plannedStart": "2026-07-18T14:30:00",
-    "plannedEnd": "2026-07-18T14:40:00",
+    "plannedDate": "2026-07-17",
+    "plannedStart": "2026-07-17T09:35:00",
+    "plannedEnd": "2026-07-17T09:45:00",
     "plannedMinutes": 10,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2277,6 +2281,42 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-14T11:54:53.579Z"
+  },
+  {
+    "id": "task_1784030281648_byoe",
+    "title": "Strategie teeltrapporten + ads op Facebook en LinkedIn uitwerken",
+    "description": "Uitwerken van de strategie voor teeltrapporten en advertenties op Facebook en LinkedIn.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-16",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met het uitwerken van de strategie.",
+    "plannedStart": "2026-07-16T11:50:00",
+    "plannedEnd": "2026-07-16T13:50:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-14"
+      }
+    ],
+    "createdAt": "2026-07-14",
+    "updatedAt": "2026-07-14",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-16"
   }
 ]
