@@ -1049,8 +1049,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-16T14:45:00",
-    "plannedEnd": "2026-07-16T15:15:00",
+    "plannedStart": "2026-07-16T15:00:00",
+    "plannedEnd": "2026-07-16T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1804,8 +1804,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-15T17:00:00",
-    "plannedEnd": "2026-07-15T17:30:00",
+    "plannedStart": "2026-07-16T10:30:00",
+    "plannedEnd": "2026-07-16T11:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1823,7 +1823,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-15"
+    "plannedDate": "2026-07-16"
   },
   {
     "id": "task_1783088483578_97nx",
@@ -1874,8 +1874,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-17T09:45:00",
-    "plannedEnd": "2026-07-17T10:15:00",
+    "plannedStart": "2026-07-17T10:00:00",
+    "plannedEnd": "2026-07-17T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1909,8 +1909,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-16T10:45:00",
-    "plannedEnd": "2026-07-16T12:45:00",
+    "plannedStart": "2026-07-16T11:00:00",
+    "plannedEnd": "2026-07-16T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2148,8 +2148,8 @@
       "mail"
     ],
     "plannedDate": "2026-07-18",
-    "plannedStart": "2026-07-18T13:15:00",
-    "plannedEnd": "2026-07-18T13:30:00",
+    "plannedStart": "2026-07-18T13:30:00",
+    "plannedEnd": "2026-07-18T13:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2298,8 +2298,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-07-16T12:45:00",
-    "plannedEnd": "2026-07-16T14:45:00",
+    "plannedStart": "2026-07-16T13:00:00",
+    "plannedEnd": "2026-07-16T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
