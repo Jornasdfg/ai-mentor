@@ -1007,8 +1007,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-16T15:00:00",
-    "plannedEnd": "2026-07-16T15:30:00",
+    "plannedStart": "2026-07-16T16:00:00",
+    "plannedEnd": "2026-07-16T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1326,8 +1326,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-15T13:00:00",
-    "plannedEnd": "2026-07-15T15:00:00",
+    "plannedStart": "2026-07-15T14:00:00",
+    "plannedEnd": "2026-07-15T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1730,8 +1730,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-15T15:00:00",
-    "plannedEnd": "2026-07-15T17:00:00",
+    "plannedStart": "2026-07-15T15:30:00",
+    "plannedEnd": "2026-07-15T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1765,8 +1765,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-16T10:30:00",
-    "plannedEnd": "2026-07-16T11:00:00",
+    "plannedStart": "2026-07-16T11:30:00",
+    "plannedEnd": "2026-07-16T12:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1800,8 +1800,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-16T12:00:00",
-    "plannedEnd": "2026-07-16T14:00:00",
+    "plannedStart": "2026-07-16T09:30:00",
+    "plannedEnd": "2026-07-16T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1835,8 +1835,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-17T10:00:00",
-    "plannedEnd": "2026-07-17T10:30:00",
+    "plannedStart": "2026-07-18T12:00:00",
+    "plannedEnd": "2026-07-18T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1854,7 +1854,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-17"
+    "plannedDate": "2026-07-18"
   },
   {
     "id": "task_1783333190190_hkzp",
@@ -1870,8 +1870,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-16T11:00:00",
-    "plannedEnd": "2026-07-16T13:00:00",
+    "plannedStart": "2026-07-16T12:00:00",
+    "plannedEnd": "2026-07-16T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1948,8 +1948,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-18T15:00:00",
-    "plannedEnd": "2026-07-18T17:00:00",
+    "plannedStart": "2026-07-18T12:30:00",
+    "plannedEnd": "2026-07-18T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2260,8 +2260,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-07-16T13:00:00",
-    "plannedEnd": "2026-07-16T15:00:00",
+    "plannedStart": "2026-07-16T14:00:00",
+    "plannedEnd": "2026-07-16T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
