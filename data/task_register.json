@@ -921,8 +921,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-22T11:30:00",
-    "plannedEnd": "2026-07-22T12:00:00",
+    "plannedStart": "2026-07-22T13:30:00",
+    "plannedEnd": "2026-07-22T14:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1352,8 +1352,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-22T12:00:00",
-    "plannedEnd": "2026-07-22T15:00:00",
+    "plannedStart": "2026-07-22T14:00:00",
+    "plannedEnd": "2026-07-22T17:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1627,8 +1627,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-22T15:00:00",
-    "plannedEnd": "2026-07-22T15:30:00",
+    "plannedStart": "2026-07-22T17:00:00",
+    "plannedEnd": "2026-07-22T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1740,8 +1740,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-22T15:30:00",
-    "plannedEnd": "2026-07-22T17:30:00",
+    "plannedStart": "2026-07-23T09:00:00",
+    "plannedEnd": "2026-07-23T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1759,7 +1759,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-22"
+    "plannedDate": "2026-07-23"
   },
   {
     "id": "task_1783980001010_uaob",
@@ -2066,6 +2066,41 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null
+  },
+  {
+    "id": "task_1784289899940_5jrb",
+    "title": "Instagram Story design skill uitbreiden",
+    "description": "Uitbreiden van de Instagram Story skill in Cloud naar een design skill die de stijl van Instagram uitleest en waar je direct al je stories in kunt pushen.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-24",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met het ontwerpen van de Instagram Story skill in Cloud.",
+    "plannedStart": "2026-07-22T11:30:00",
+    "plannedEnd": "2026-07-22T13:30:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-17"
+      }
+    ],
+    "createdAt": "2026-07-17",
+    "updatedAt": "2026-07-17",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-22"
   },
   {
     "id": "task_1782288396068_adnv",
