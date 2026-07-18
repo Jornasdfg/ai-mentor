@@ -921,8 +921,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-22T16:00:00",
-    "plannedEnd": "2026-07-22T16:30:00",
+    "plannedStart": "2026-07-23T10:30:00",
+    "plannedEnd": "2026-07-23T11:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -931,7 +931,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-22",
+    "plannedDate": "2026-07-23",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -1352,8 +1352,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-22T14:30:00",
-    "plannedEnd": "2026-07-22T17:30:00",
+    "plannedStart": "2026-07-23T11:00:00",
+    "plannedEnd": "2026-07-23T14:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1371,7 +1371,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-07-22"
+    "plannedDate": "2026-07-23"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1627,8 +1627,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-23T11:00:00",
-    "plannedEnd": "2026-07-23T11:30:00",
+    "plannedStart": "2026-07-23T14:00:00",
+    "plannedEnd": "2026-07-23T14:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1740,8 +1740,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-23T11:30:00",
-    "plannedEnd": "2026-07-23T13:30:00",
+    "plannedStart": "2026-07-23T14:30:00",
+    "plannedEnd": "2026-07-23T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2047,9 +2047,9 @@
     "deadlineType": "hard",
     "estimatedMinutes": 240,
     "nextAction": "Begin met het implementeren van de pipeline voor de Hermes agent.",
-    "plannedStart": null,
-    "plannedEnd": null,
-    "plannedMinutes": 0,
+    "plannedStart": "2026-07-22T09:00:00",
+    "plannedEnd": "2026-07-22T13:00:00",
+    "plannedMinutes": 240,
     "source": "manual_input",
     "sources": [
       {
@@ -2065,7 +2065,8 @@
     "deadlinePressure": "this_week",
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-22"
   },
   {
     "id": "task_1784289899940_5jrb",
@@ -2081,8 +2082,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het ontwerpen van de Instagram Story skill in Cloud.",
-    "plannedStart": "2026-07-22T12:00:00",
-    "plannedEnd": "2026-07-22T14:00:00",
+    "plannedStart": "2026-07-22T13:00:00",
+    "plannedEnd": "2026-07-22T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2227,8 +2228,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-07-22T14:00:00",
-    "plannedEnd": "2026-07-22T16:00:00",
+    "plannedStart": "2026-07-22T15:00:00",
+    "plannedEnd": "2026-07-22T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2247,5 +2248,73 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-22"
+  },
+  {
+    "id": "task_1784365583141_dsxj",
+    "title": "Bestemmingen foto's automatiseren met Pixel AI",
+    "description": "Automatiseren van het toevoegen van foto's voor bestemmingen vanuit de Pixel AI.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-24",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Start met het automatiseren van foto's voor bestemmingen.",
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": 0,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-18"
+      }
+    ],
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
+  },
+  {
+    "id": "task_1784368390912_mnz4",
+    "title": "Prijsvrij uit deals flow halen",
+    "description": "",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-19",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 60,
+    "nextAction": "Taak uitvoeren en afronden.",
+    "plannedStart": null,
+    "plannedEnd": null,
+    "plannedMinutes": 0,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-18"
+      }
+    ],
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "tags": [],
+    "urgencyScore": 80,
+    "importanceScore": 20,
+    "deadlinePressure": "tomorrow",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null
   }
 ]
