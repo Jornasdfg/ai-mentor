@@ -2397,5 +2397,40 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null
+  },
+  {
+    "id": "task_1784408071457_cugg",
+    "title": "Jeroen terugbellen over AI-kennisdingen",
+    "description": "Even terugbellen met Jeroen om te overleggen over AI-kennisdingen.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": "2026-07-21",
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Kies een tijdstip om te bellen.",
+    "plannedStart": "2026-07-24T11:25:00",
+    "plannedEnd": "2026-07-24T11:55:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-18"
+      }
+    ],
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-24"
   }
 ]
