@@ -78,9 +78,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -90,7 +90,7 @@
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-07-27",
     "hardDeadline": "2026-07-27",
@@ -120,10 +120,10 @@
     "calendarSyncMode": "none",
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future",
+    "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null
@@ -652,16 +652,16 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1782288396069_oayx",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-07-27",
     "hardDeadline": "2026-07-27",
@@ -693,10 +693,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782288396069_tg48",
@@ -989,16 +989,16 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1780602426889_f7y2",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-07-27",
     "hardDeadline": "2026-07-27",
@@ -1030,10 +1030,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1780602426889_1395",
@@ -1973,9 +1973,9 @@
     "createdAt": "2026-07-18",
     "updatedAt": "2026-07-18",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 90,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "necessity": {
       "level": "must",
       "why": "Dit gaat naar buiten — mis je de dag, dan is dat moment weg",
@@ -2171,9 +2171,9 @@
     "createdAt": "2026-07-18",
     "updatedAt": "2026-07-18",
     "tags": [],
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
@@ -2327,9 +2327,9 @@
     "createdAt": "2026-07-19",
     "updatedAt": "2026-07-19",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 90,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "orange",
     "scheduleStatus": "missed",
     "unscheduledReason": null
@@ -2368,7 +2368,7 @@
     "tags": [],
     "urgencyScore": 10,
     "importanceScore": 90,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "completedAt": "2026-07-19T13:22:52.382Z"
   },
   {
