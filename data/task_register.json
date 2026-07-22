@@ -936,8 +936,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-25T15:00:00",
-    "plannedEnd": "2026-07-25T15:30:00",
+    "plannedStart": "2026-07-25T16:00:00",
+    "plannedEnd": "2026-07-25T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1169,8 +1169,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-23T14:55:00",
-    "plannedEnd": "2026-07-23T16:55:00",
+    "plannedStart": "2026-07-23T15:25:00",
+    "plannedEnd": "2026-07-23T17:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1552,8 +1552,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-23T15:25:00",
-    "plannedEnd": "2026-07-23T17:25:00",
+    "plannedStart": "2026-07-24T09:25:00",
+    "plannedEnd": "2026-07-24T11:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1571,7 +1571,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-23"
+    "plannedDate": "2026-07-24"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1623,8 +1623,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-24T10:25:00",
-    "plannedEnd": "2026-07-24T12:25:00",
+    "plannedStart": "2026-07-24T11:25:00",
+    "plannedEnd": "2026-07-24T13:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1658,8 +1658,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-23T14:00:00",
-    "plannedEnd": "2026-07-23T14:30:00",
+    "plannedStart": "2026-07-23T15:00:00",
+    "plannedEnd": "2026-07-23T15:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1698,8 +1698,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-24T12:25:00",
-    "plannedEnd": "2026-07-24T14:25:00",
+    "plannedStart": "2026-07-24T13:25:00",
+    "plannedEnd": "2026-07-24T15:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1776,8 +1776,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-27T11:00:00",
-    "plannedEnd": "2026-07-27T13:00:00",
+    "plannedStart": "2026-07-27T12:00:00",
+    "plannedEnd": "2026-07-27T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1854,8 +1854,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-07-24T14:25:00",
-    "plannedEnd": "2026-07-24T16:25:00",
+    "plannedStart": "2026-07-24T15:25:00",
+    "plannedEnd": "2026-07-24T17:25:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1889,8 +1889,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 30,
     "nextAction": "Post online zetten",
-    "plannedStart": "2026-07-22T15:00:00",
-    "plannedEnd": "2026-07-22T15:30:00",
+    "plannedStart": "2026-07-22T16:00:00",
+    "plannedEnd": "2026-07-22T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1929,8 +1929,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-07-25T09:00:00",
-    "plannedEnd": "2026-07-25T11:00:00",
+    "plannedStart": "2026-07-25T10:00:00",
+    "plannedEnd": "2026-07-25T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1964,8 +1964,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Start met het automatiseren van foto's voor bestemmingen.",
-    "plannedStart": "2026-07-25T11:00:00",
-    "plannedEnd": "2026-07-25T13:00:00",
+    "plannedStart": "2026-07-25T12:00:00",
+    "plannedEnd": "2026-07-25T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1999,8 +1999,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Taak uitvoeren en afronden.",
-    "plannedStart": "2026-07-24T16:25:00",
-    "plannedEnd": "2026-07-24T17:25:00",
+    "plannedStart": "2026-07-25T09:00:00",
+    "plannedEnd": "2026-07-25T10:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2018,7 +2018,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-24"
+    "plannedDate": "2026-07-25"
   },
   {
     "id": "task_1784369153424_s0fa",
@@ -2034,8 +2034,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-07-25T13:00:00",
-    "plannedEnd": "2026-07-25T15:00:00",
+    "plannedStart": "2026-07-25T14:00:00",
+    "plannedEnd": "2026-07-25T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2077,8 +2077,8 @@
       "upload-mislukt"
     ],
     "plannedDate": "2026-07-23",
-    "plannedStart": "2026-07-23T14:30:00",
-    "plannedEnd": "2026-07-23T14:55:00",
+    "plannedStart": "2026-07-23T15:30:00",
+    "plannedEnd": "2026-07-23T15:55:00",
     "plannedMinutes": 25,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2191,8 +2191,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het verbeteren van de skill.",
-    "plannedStart": "2026-07-23T12:00:00",
-    "plannedEnd": "2026-07-23T14:00:00",
+    "plannedStart": "2026-07-23T13:00:00",
+    "plannedEnd": "2026-07-23T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2231,8 +2231,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het fixen van de belasting.",
-    "plannedStart": "2026-07-23T11:00:00",
-    "plannedEnd": "2026-07-23T12:00:00",
+    "plannedStart": "2026-07-23T12:00:00",
+    "plannedEnd": "2026-07-23T13:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2356,8 +2356,8 @@
       "mail"
     ],
     "plannedDate": "2026-07-27",
-    "plannedStart": "2026-07-27T13:00:00",
-    "plannedEnd": "2026-07-27T13:15:00",
+    "plannedStart": "2026-07-27T14:00:00",
+    "plannedEnd": "2026-07-27T14:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
