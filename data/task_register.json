@@ -936,8 +936,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-25T16:55:00",
-    "plannedEnd": "2026-07-25T17:25:00",
+    "plannedStart": "2026-07-25T12:30:00",
+    "plannedEnd": "2026-07-25T13:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1169,8 +1169,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-23T15:25:00",
-    "plannedEnd": "2026-07-23T17:25:00",
+    "plannedStart": "2026-07-23T12:30:00",
+    "plannedEnd": "2026-07-23T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1367,8 +1367,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-27T10:00:00",
-    "plannedEnd": "2026-07-27T13:00:00",
+    "plannedStart": "2026-07-25T13:00:00",
+    "plannedEnd": "2026-07-25T16:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1386,7 +1386,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-07-27"
+    "plannedDate": "2026-07-25"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1552,8 +1552,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-24T10:25:00",
-    "plannedEnd": "2026-07-24T12:25:00",
+    "plannedStart": "2026-07-23T14:30:00",
+    "plannedEnd": "2026-07-23T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1571,7 +1571,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-24"
+    "plannedDate": "2026-07-23"
   },
   {
     "id": "task_1783087579648_bvce",
@@ -1623,8 +1623,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-24T12:25:00",
-    "plannedEnd": "2026-07-24T14:25:00",
+    "plannedStart": "2026-07-24T12:10:00",
+    "plannedEnd": "2026-07-24T14:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1658,8 +1658,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-23T16:00:00",
-    "plannedEnd": "2026-07-23T16:30:00",
+    "plannedStart": "2026-07-23T12:00:00",
+    "plannedEnd": "2026-07-23T12:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1698,8 +1698,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-24T14:25:00",
-    "plannedEnd": "2026-07-24T16:25:00",
+    "plannedStart": "2026-07-24T10:00:00",
+    "plannedEnd": "2026-07-24T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1854,8 +1854,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-07-24T15:25:00",
-    "plannedEnd": "2026-07-24T17:25:00",
+    "plannedStart": "2026-07-24T12:00:00",
+    "plannedEnd": "2026-07-24T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1879,9 +1879,9 @@
     "id": "task_1784354367700_jt7v",
     "title": "Schiphol post online zetten",
     "description": "Plaats de post over Schiphol op social media.",
-    "status": "open",
-    "priority": "P0",
-    "coveyQuadrant": "Q1",
+    "status": "done",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
     "deadline": null,
     "hardDeadline": "2026-07-20",
     "softDeadline": null,
@@ -1900,9 +1900,9 @@
       }
     ],
     "createdAt": "2026-07-18",
-    "updatedAt": "2026-07-18",
+    "updatedAt": "2026-07-22",
     "tags": [],
-    "urgencyScore": 100,
+    "urgencyScore": 10,
     "importanceScore": 90,
     "deadlinePressure": "overdue",
     "necessity": {
@@ -1913,7 +1913,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-22"
+    "plannedDate": "2026-07-22",
+    "completedAt": "2026-07-22T15:02:44.142Z"
   },
   {
     "id": "task_1784355434965_d1ur",
@@ -1929,8 +1930,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-07-25T10:55:00",
-    "plannedEnd": "2026-07-25T12:55:00",
+    "plannedStart": "2026-07-24T15:00:00",
+    "plannedEnd": "2026-07-24T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1946,9 +1947,9 @@
     "importanceScore": 20,
     "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
-    "scheduleStatus": "missed",
+    "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-25"
+    "plannedDate": "2026-07-24"
   },
   {
     "id": "task_1784365583141_dsxj",
@@ -1964,8 +1965,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Start met het automatiseren van foto's voor bestemmingen.",
-    "plannedStart": "2026-07-25T12:55:00",
-    "plannedEnd": "2026-07-25T14:55:00",
+    "plannedStart": "2026-07-25T09:00:00",
+    "plannedEnd": "2026-07-25T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1999,8 +2000,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Taak uitvoeren en afronden.",
-    "plannedStart": "2026-07-25T09:55:00",
-    "plannedEnd": "2026-07-25T10:55:00",
+    "plannedStart": "2026-07-24T14:00:00",
+    "plannedEnd": "2026-07-24T15:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2018,7 +2019,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-25"
+    "plannedDate": "2026-07-24"
   },
   {
     "id": "task_1784369153424_s0fa",
@@ -2034,8 +2035,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-07-25T14:55:00",
-    "plannedEnd": "2026-07-25T16:55:00",
+    "plannedStart": "2026-07-25T10:30:00",
+    "plannedEnd": "2026-07-25T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2059,7 +2060,7 @@
     "id": "task_1784370602254_03zw",
     "title": "⚠️ Bon-upload mislukte (500)",
     "project": "AI Mentor",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -2070,15 +2071,15 @@
     "source": "system",
     "reason": "Een bonfoto vanaf je iPhone kreeg HTTP 500 op 18-07 10:26 UTC — de foto is mogelijk niet aangekomen; controleer je laatste scan in Bonnen. De server-timeout staat op 300s; komt dit vaker voor, dan is er een dieper netwerk-/Shortcut-probleem (tip: verklein de foto in de Shortcut).",
     "createdAt": "2026-07-18",
-    "updatedAt": "2026-07-18",
+    "updatedAt": "2026-07-22",
     "tags": [
       "financien",
       "bonnen",
       "upload-mislukt"
     ],
     "plannedDate": "2026-07-23",
-    "plannedStart": "2026-07-23T16:30:00",
-    "plannedEnd": "2026-07-23T16:55:00",
+    "plannedStart": "2026-07-23T12:15:00",
+    "plannedEnd": "2026-07-23T12:40:00",
     "plannedMinutes": 25,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2099,51 +2100,16 @@
       "level": "should",
       "why": "Hier hangt geld aan — te laat kost je iets",
       "source": "inferred"
-    }
-  },
-  {
-    "id": "task_1784408071457_cugg",
-    "title": "Jeroen terugbellen over AI-kennisdingen",
-    "description": "Even terugbellen met Jeroen om te overleggen over AI-kennisdingen.",
-    "status": "cancelled",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": "2026-07-21",
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 30,
-    "nextAction": "Kies een tijdstip om te bellen.",
-    "plannedStart": "2026-07-25T09:25:00",
-    "plannedEnd": "2026-07-25T09:55:00",
-    "plannedMinutes": 30,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-18"
-      }
-    ],
-    "createdAt": "2026-07-18",
-    "updatedAt": "2026-07-20",
-    "tags": [],
-    "urgencyScore": 0,
-    "importanceScore": 20,
-    "deadlinePressure": "none",
-    "scheduleColorState": "gray",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-25",
-    "cancelledAt": "2026-07-20T09:17:12.121Z"
+    },
+    "completedAt": "2026-07-22T15:02:53.578Z"
   },
   {
     "id": "task_1784459544298_gf70",
     "title": "Flush-app video online zetten",
     "description": "Zorg ervoor dat de Flush-app video morgen online staat.",
-    "status": "open",
-    "priority": "P0",
-    "coveyQuadrant": "Q1",
+    "status": "done",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
     "deadline": null,
     "hardDeadline": "2026-07-20",
     "softDeadline": null,
@@ -2167,15 +2133,16 @@
       "source": "stated"
     },
     "createdAt": "2026-07-19",
-    "updatedAt": "2026-07-19",
+    "updatedAt": "2026-07-22",
     "tags": [],
-    "urgencyScore": 100,
+    "urgencyScore": 10,
     "importanceScore": 90,
     "deadlinePressure": "overdue",
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-23"
+    "plannedDate": "2026-07-23",
+    "completedAt": "2026-07-22T15:02:46.480Z"
   },
   {
     "id": "task_1784467420596_xn1h",
@@ -2191,8 +2158,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het verbeteren van de skill.",
-    "plannedStart": "2026-07-23T14:00:00",
-    "plannedEnd": "2026-07-23T16:00:00",
+    "plannedStart": "2026-07-23T10:00:00",
+    "plannedEnd": "2026-07-23T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2231,8 +2198,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het fixen van de belasting.",
-    "plannedStart": "2026-07-23T13:00:00",
-    "plannedEnd": "2026-07-23T14:00:00",
+    "plannedStart": "2026-07-23T09:00:00",
+    "plannedEnd": "2026-07-23T10:00:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2340,7 +2307,7 @@
   {
     "id": "task_1784704203826_8ied",
     "title": "Bevestig & bereid Teams-meeting 'Schiphol x Jorn Reishacker' voor — Yune (Roos Advocaat)",
-    "status": "open",
+    "status": "done",
     "priority": "P3",
     "deadline": null,
     "hardDeadline": null,
@@ -2356,8 +2323,8 @@
       "mail"
     ],
     "plannedDate": "2026-07-27",
-    "plannedStart": "2026-07-27T15:00:00",
-    "plannedEnd": "2026-07-27T15:15:00",
+    "plannedStart": "2026-07-27T10:15:00",
+    "plannedEnd": "2026-07-27T10:30:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2373,7 +2340,44 @@
     "deadlinePressure": "none",
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-07-22T15:03:04.888Z"
+  },
+  {
+    "id": "task_1784408071457_cugg",
+    "title": "Jeroen terugbellen over AI-kennisdingen",
+    "description": "Even terugbellen met Jeroen om te overleggen over AI-kennisdingen.",
+    "status": "cancelled",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": "2026-07-21",
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 30,
+    "nextAction": "Kies een tijdstip om te bellen.",
+    "plannedStart": "2026-07-25T09:25:00",
+    "plannedEnd": "2026-07-25T09:55:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-18"
+      }
+    ],
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-20",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 20,
+    "deadlinePressure": "none",
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-25",
+    "cancelledAt": "2026-07-20T09:17:12.121Z"
   },
   {
     "id": "task_1784289899940_5jrb",
