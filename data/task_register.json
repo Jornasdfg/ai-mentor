@@ -1574,42 +1574,6 @@
     "plannedDate": "2026-07-24"
   },
   {
-    "id": "task_1783087579648_bvce",
-    "title": "Vercel bellen voor marketing mail",
-    "description": "Neem contact op met Vercel voor de marketing mail.",
-    "status": "done",
-    "priority": "P3",
-    "coveyQuadrant": "Q4",
-    "deadline": null,
-    "hardDeadline": "2026-07-10",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 30,
-    "nextAction": "Bellen met Vercel",
-    "plannedStart": "2026-07-23T15:25:00",
-    "plannedEnd": "2026-07-23T15:55:00",
-    "plannedMinutes": 30,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-03"
-      }
-    ],
-    "createdAt": "2026-07-03",
-    "updatedAt": "2026-07-21",
-    "tags": [],
-    "urgencyScore": 10,
-    "importanceScore": 20,
-    "deadlinePressure": "overdue",
-    "scheduleColorState": "red",
-    "scheduleStatus": "missed",
-    "unscheduledReason": null,
-    "plannedDate": "2026-07-23",
-    "completedAt": "2026-07-21T16:21:34.310Z"
-  },
-  {
     "id": "task_1783088483578_97nx",
     "title": "Boardroom app afcoderen en koppelen aan server",
     "description": "Afcoderen van de boardroom app en koppelen aan de server.",
@@ -2225,43 +2189,6 @@
     "plannedDate": "2026-07-24"
   },
   {
-    "id": "task_1784553730866_06nn",
-    "title": "Nieuwe stijl aan carrousels introduceren",
-    "description": "Introductie van de nieuwe stijl aan carrousels op basis van de geschreven scripts vanaf vorige week. Duidelijkheid krijgen over de draaidag voor de legends.",
-    "status": "done",
-    "priority": "P1",
-    "coveyQuadrant": "Q2",
-    "deadline": null,
-    "hardDeadline": null,
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "none",
-    "estimatedMinutes": 120,
-    "nextAction": "Inplannen en bespreken van de draaidag",
-    "plannedStart": "2026-07-21T09:00:00",
-    "plannedEnd": "2026-07-21T11:00:00",
-    "plannedMinutes": 120,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-20"
-      }
-    ],
-    "necessity": {
-      "level": "must",
-      "why": "Nieuwe stijl moet morgen geïntroduceerd worden voor de legends.",
-      "source": "stated"
-    },
-    "createdAt": "2026-07-20",
-    "updatedAt": "2026-07-21",
-    "tags": [],
-    "urgencyScore": 0,
-    "importanceScore": 90,
-    "deadlinePressure": "none",
-    "completedAt": "2026-07-21T16:21:29.480Z"
-  },
-  {
     "id": "task_1784584800799_1p67",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
@@ -2342,6 +2269,79 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "completedAt": "2026-07-22T15:03:04.888Z"
+  },
+  {
+    "id": "task_1783087579648_bvce",
+    "title": "Vercel bellen voor marketing mail",
+    "description": "Neem contact op met Vercel voor de marketing mail.",
+    "status": "done",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-07-10",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 30,
+    "nextAction": "Bellen met Vercel",
+    "plannedStart": "2026-07-23T15:25:00",
+    "plannedEnd": "2026-07-23T15:55:00",
+    "plannedMinutes": 30,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-21",
+    "tags": [],
+    "urgencyScore": 10,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-07-23",
+    "completedAt": "2026-07-21T16:21:34.310Z"
+  },
+  {
+    "id": "task_1784553730866_06nn",
+    "title": "Nieuwe stijl aan carrousels introduceren",
+    "description": "Introductie van de nieuwe stijl aan carrousels op basis van de geschreven scripts vanaf vorige week. Duidelijkheid krijgen over de draaidag voor de legends.",
+    "status": "done",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Inplannen en bespreken van de draaidag",
+    "plannedStart": "2026-07-21T09:00:00",
+    "plannedEnd": "2026-07-21T11:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-20"
+      }
+    ],
+    "necessity": {
+      "level": "must",
+      "why": "Nieuwe stijl moet morgen geïntroduceerd worden voor de legends.",
+      "source": "stated"
+    },
+    "createdAt": "2026-07-20",
+    "updatedAt": "2026-07-21",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 90,
+    "deadlinePressure": "none",
+    "completedAt": "2026-07-21T16:21:29.480Z"
   },
   {
     "id": "task_1784408071457_cugg",
