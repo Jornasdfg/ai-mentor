@@ -2162,8 +2162,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Begin met het fixen van de belasting.",
-    "plannedStart": "2026-07-24T09:00:00",
-    "plannedEnd": "2026-07-24T10:00:00",
+    "plannedStart": "2026-07-24T09:00:00+02:00",
+    "plannedEnd": "2026-07-24T10:00:00+02:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2178,7 +2178,7 @@
       "source": "stated"
     },
     "createdAt": "2026-07-19",
-    "updatedAt": "2026-07-19",
+    "updatedAt": "2026-07-23T19:55:00.738Z",
     "tags": [],
     "urgencyScore": 90,
     "importanceScore": 90,
@@ -2186,7 +2186,19 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-24"
+    "plannedDate": "2026-07-24",
+    "autoSchedule": "off",
+    "locked": true,
+    "calendarLink": {
+      "provider": "google",
+      "calendarId": "primary",
+      "eventId": "o8gh5r0enra1rk0qh9ng6mm1tc",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bzhnaDVyMGVucmExcmswcWg5bmc2bW0xdGMgam9ybmJvb25laW5mQG0",
+      "lastSyncedAt": "2026-07-23T19:55:00.738Z",
+      "syncStatus": "synced",
+      "syncError": null,
+      "googleUpdatedAt": "2026-07-23T19:35:00.789Z"
+    }
   },
   {
     "id": "task_1784584800799_1p67",
@@ -2269,6 +2281,42 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "completedAt": "2026-07-22T15:03:04.888Z"
+  },
+  {
+    "id": "task_1784835277516_ma16",
+    "title": "Rieltje edit",
+    "description": "Tijd inplannen voor het editen van een rieltje.",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met het editen van het rieltje.",
+    "plannedStart": "2026-07-24T19:00:00",
+    "plannedEnd": "2026-07-24T21:00:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-23"
+      }
+    ],
+    "necessity": {
+      "level": "must",
+      "why": "Het rieltje moet af voor publicatie.",
+      "source": "stated"
+    },
+    "createdAt": "2026-07-23",
+    "updatedAt": "2026-07-23",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 90,
+    "deadlinePressure": "none"
   },
   {
     "id": "task_1783087579648_bvce",
