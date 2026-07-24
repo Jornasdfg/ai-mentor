@@ -937,8 +937,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-07-28T09:00:00",
-    "plannedEnd": "2026-07-28T09:30:00",
+    "plannedStart": "2026-07-28T10:00:00",
+    "plannedEnd": "2026-07-28T10:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -1170,8 +1170,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-07-25T09:00:00",
-    "plannedEnd": "2026-07-25T11:00:00",
+    "plannedStart": "2026-07-25T10:00:00",
+    "plannedEnd": "2026-07-25T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1368,8 +1368,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-07-28T09:30:00",
-    "plannedEnd": "2026-07-28T12:30:00",
+    "plannedStart": "2026-07-28T10:30:00",
+    "plannedEnd": "2026-07-28T13:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1553,8 +1553,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-07-25T11:00:00",
-    "plannedEnd": "2026-07-25T13:00:00",
+    "plannedStart": "2026-07-25T12:00:00",
+    "plannedEnd": "2026-07-25T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1588,8 +1588,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-07-25T13:00:00",
-    "plannedEnd": "2026-07-25T15:00:00",
+    "plannedStart": "2026-07-25T14:00:00",
+    "plannedEnd": "2026-07-25T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1623,8 +1623,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-07-24T17:00:00",
-    "plannedEnd": "2026-07-24T17:30:00",
+    "plannedStart": "2026-07-25T09:30:00",
+    "plannedEnd": "2026-07-25T10:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1642,7 +1642,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-24",
+    "plannedDate": "2026-07-25",
     "necessity": {
       "level": "should",
       "why": "Dit gaat naar buiten — mis je de dag, dan is dat moment weg",
@@ -1663,8 +1663,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-07-25T15:00:00",
-    "plannedEnd": "2026-07-25T17:00:00",
+    "plannedStart": "2026-07-25T15:30:00",
+    "plannedEnd": "2026-07-25T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1741,8 +1741,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-07-28T12:30:00",
-    "plannedEnd": "2026-07-28T14:30:00",
+    "plannedStart": "2026-07-28T13:30:00",
+    "plannedEnd": "2026-07-28T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1819,8 +1819,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-07-25T15:30:00",
-    "plannedEnd": "2026-07-25T17:30:00",
+    "plannedStart": "2026-07-27T09:30:00",
+    "plannedEnd": "2026-07-27T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1838,7 +1838,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-07-25"
+    "plannedDate": "2026-07-27"
   },
   {
     "id": "task_1784354367700_jt7v",
@@ -1895,8 +1895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-07-27T11:30:00",
-    "plannedEnd": "2026-07-27T13:30:00",
+    "plannedStart": "2026-07-27T12:30:00",
+    "plannedEnd": "2026-07-27T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1930,8 +1930,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Start met het automatiseren van foto's voor bestemmingen.",
-    "plannedStart": "2026-07-27T13:30:00",
-    "plannedEnd": "2026-07-27T15:30:00",
+    "plannedStart": "2026-07-27T14:30:00",
+    "plannedEnd": "2026-07-27T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1965,8 +1965,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Taak uitvoeren en afronden.",
-    "plannedStart": "2026-07-27T10:30:00",
-    "plannedEnd": "2026-07-27T11:30:00",
+    "plannedStart": "2026-07-27T11:30:00",
+    "plannedEnd": "2026-07-27T12:30:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -2123,8 +2123,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het verbeteren van de skill.",
-    "plannedStart": "2026-07-24T15:00:00",
-    "plannedEnd": "2026-07-24T17:00:00",
+    "plannedStart": "2026-07-24T15:30:00",
+    "plannedEnd": "2026-07-24T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2179,7 +2179,7 @@
       "source": "stated"
     },
     "createdAt": "2026-07-19",
-    "updatedAt": "2026-07-24T12:55:00.580Z",
+    "updatedAt": "2026-07-24T13:55:00.807Z",
     "tags": [],
     "urgencyScore": 100,
     "importanceScore": 90,
@@ -2195,7 +2195,7 @@
       "calendarId": "primary",
       "eventId": "o8gh5r0enra1rk0qh9ng6mm1tc",
       "htmlLink": "https://www.google.com/calendar/event?eid=bzhnaDVyMGVucmExcmswcWg5bmc2bW0xdGMgam9ybmJvb25laW5mQG0",
-      "lastSyncedAt": "2026-07-24T12:55:00.580Z",
+      "lastSyncedAt": "2026-07-24T13:55:00.807Z",
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-07-23T19:35:00.789Z"
