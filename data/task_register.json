@@ -121,9 +121,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -652,9 +652,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1782288396069_tg48",
@@ -989,9 +989,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780602426889_1395",
@@ -1969,9 +1969,9 @@
     "createdAt": "2026-07-19",
     "updatedAt": "2026-07-19",
     "tags": [],
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 55,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
@@ -2111,5 +2111,48 @@
     "scheduleStatus": "planned",
     "unscheduledReason": null,
     "plannedDate": "2026-07-28"
+  },
+  {
+    "id": "task_1785189600842_s977",
+    "title": "📊 Weekanalyse doorlezen & week plannen",
+    "project": "Routine",
+    "status": "open",
+    "priority": "P3",
+    "source": "recurring_manual",
+    "deadline": "2026-09-28",
+    "hardDeadline": "2026-09-28",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 20,
+    "nextAction": "Lees de weekanalyse en bepaal de focus voor deze week",
+    "tags": [
+      "weekreview",
+      "routine",
+      "recurring"
+    ],
+    "reason": "Routine: \"📊 Weekanalyse doorlezen & week plannen\"",
+    "isRecurringInstance": true,
+    "recurrenceTemplateId": "recurring_weekreview",
+    "recurrenceDate": "2026-09-28",
+    "recurrenceKey": "recurring_weekreview:2026-09-28",
+    "plannedDate": "2026-09-28",
+    "plannedStart": "2026-09-28T09:00:00",
+    "plannedEnd": "2026-09-28T09:20:00",
+    "plannedMinutes": 20,
+    "taskKind": "routine",
+    "autoSchedule": "auto",
+    "scheduleOnDate": "2026-09-28",
+    "preferredStartTime": null,
+    "calendarSyncMode": "none",
+    "createdAt": "2026-07-28",
+    "updatedAt": "2026-07-28",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   }
 ]
