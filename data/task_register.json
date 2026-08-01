@@ -164,9 +164,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week",
+    "deadlinePressure": "tomorrow",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -418,9 +418,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -694,9 +694,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1782288396069_bi1t",
@@ -857,9 +857,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_ai_video_analyzer",
@@ -1031,9 +1031,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1780602426890_8l06",
@@ -1068,9 +1068,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780956000978_e0nd",
