@@ -164,9 +164,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow",
+    "deadlinePressure": "today",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -176,7 +176,7 @@
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-08-10",
     "hardDeadline": "2026-08-10",
@@ -206,10 +206,10 @@
     "calendarSyncMode": "none",
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future",
+    "deadlinePressure": "this_week",
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null
@@ -694,16 +694,16 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1782288396069_bi1t",
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-08-10",
     "hardDeadline": "2026-08-10",
@@ -735,10 +735,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1782288396069_ffj7",
@@ -1031,9 +1031,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 80,
+    "urgencyScore": 90,
     "importanceScore": 20,
-    "deadlinePressure": "tomorrow"
+    "deadlinePressure": "today"
   },
   {
     "id": "task_1780602426890_8l06",
@@ -1077,7 +1077,7 @@
     "title": "📊 Weekanalyse doorlezen & week plannen",
     "project": "Routine",
     "status": "open",
-    "priority": "P3",
+    "priority": "P2",
     "source": "recurring_manual",
     "deadline": "2026-08-10",
     "hardDeadline": "2026-08-10",
@@ -1109,10 +1109,10 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "coveyQuadrant": "Q4",
-    "urgencyScore": 20,
+    "coveyQuadrant": "Q3",
+    "urgencyScore": 60,
     "importanceScore": 20,
-    "deadlinePressure": "future"
+    "deadlinePressure": "this_week"
   },
   {
     "id": "task_1781267325101_9tm5",
