@@ -164,9 +164,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today",
+    "deadlinePressure": "overdue",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -694,9 +694,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1782288396069_bi1t",
@@ -1031,9 +1031,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 90,
+    "urgencyScore": 100,
     "importanceScore": 20,
-    "deadlinePressure": "today"
+    "deadlinePressure": "overdue"
   },
   {
     "id": "task_1780602426890_8l06",
@@ -2524,5 +2524,48 @@
     "scheduleStatus": "missed",
     "unscheduledReason": null,
     "plannedDate": "2026-08-05"
+  },
+  {
+    "id": "task_1785794400465_9rzq",
+    "title": "📊 Weekanalyse doorlezen & week plannen",
+    "project": "Routine",
+    "status": "open",
+    "priority": "P3",
+    "source": "recurring_manual",
+    "deadline": "2026-10-05",
+    "hardDeadline": "2026-10-05",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 20,
+    "nextAction": "Lees de weekanalyse en bepaal de focus voor deze week",
+    "tags": [
+      "weekreview",
+      "routine",
+      "recurring"
+    ],
+    "reason": "Routine: \"📊 Weekanalyse doorlezen & week plannen\"",
+    "isRecurringInstance": true,
+    "recurrenceTemplateId": "recurring_weekreview",
+    "recurrenceDate": "2026-10-05",
+    "recurrenceKey": "recurring_weekreview:2026-10-05",
+    "plannedDate": "2026-10-05",
+    "plannedStart": "2026-10-05T09:00:00",
+    "plannedEnd": "2026-10-05T09:20:00",
+    "plannedMinutes": 20,
+    "taskKind": "routine",
+    "autoSchedule": "auto",
+    "scheduleOnDate": "2026-10-05",
+    "preferredStartTime": null,
+    "calendarSyncMode": "none",
+    "createdAt": "2026-08-04",
+    "updatedAt": "2026-08-04",
+    "coveyQuadrant": "Q4",
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   }
 ]
