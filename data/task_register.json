@@ -894,8 +894,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Bonnen verzamelen en invoeren in de administratie.",
-    "plannedStart": "2026-08-06T13:45:00",
-    "plannedEnd": "2026-08-06T14:15:00",
+    "plannedStart": "2026-08-07T09:15:00",
+    "plannedEnd": "2026-08-07T09:45:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "createdAt": "2026-05-21",
@@ -904,7 +904,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-06",
+    "plannedDate": "2026-08-07",
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none"
@@ -1127,8 +1127,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-04T13:45:00",
-    "plannedEnd": "2026-08-04T15:45:00",
+    "plannedStart": "2026-08-04T11:45:00",
+    "plannedEnd": "2026-08-04T13:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1325,8 +1325,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-06T14:15:00",
-    "plannedEnd": "2026-08-06T17:15:00",
+    "plannedStart": "2026-08-07T09:45:00",
+    "plannedEnd": "2026-08-07T12:45:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1344,7 +1344,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-08-06"
+    "plannedDate": "2026-08-07"
   },
   {
     "id": "task_1782934713589_fmv4",
@@ -1510,8 +1510,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-04T15:30:00",
-    "plannedEnd": "2026-08-04T17:30:00",
+    "plannedStart": "2026-08-04T13:45:00",
+    "plannedEnd": "2026-08-04T15:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1532,41 +1532,6 @@
     "plannedDate": "2026-08-04"
   },
   {
-    "id": "task_1783088483578_97nx",
-    "title": "Boardroom app afcoderen en koppelen aan server",
-    "description": "Afcoderen van de boardroom app en koppelen aan de server.",
-    "status": "open",
-    "priority": "P2",
-    "coveyQuadrant": "Q3",
-    "deadline": null,
-    "hardDeadline": "2026-07-08",
-    "softDeadline": null,
-    "startBy": null,
-    "deadlineType": "hard",
-    "estimatedMinutes": 120,
-    "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-05T09:15:00",
-    "plannedEnd": "2026-08-05T11:15:00",
-    "plannedMinutes": 120,
-    "source": "manual_input",
-    "sources": [
-      {
-        "source": "manual_input",
-        "at": "2026-07-03"
-      }
-    ],
-    "createdAt": "2026-07-03",
-    "updatedAt": "2026-07-03",
-    "tags": [],
-    "urgencyScore": 100,
-    "importanceScore": 20,
-    "deadlinePressure": "overdue",
-    "scheduleColorState": "red",
-    "scheduleStatus": "missed",
-    "unscheduledReason": null,
-    "plannedDate": "2026-08-05"
-  },
-  {
     "id": "task_1783330653866_6gpg",
     "title": "Kleine klussenpost online zetten op LinkedIn",
     "description": "Plaats de kleine klussenpost op je LinkedIn-profiel.",
@@ -1580,8 +1545,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-04T12:45:00",
-    "plannedEnd": "2026-08-04T13:15:00",
+    "plannedStart": "2026-08-04T11:15:00",
+    "plannedEnd": "2026-08-04T11:45:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1620,8 +1585,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-05T11:15:00",
-    "plannedEnd": "2026-08-05T13:15:00",
+    "plannedStart": "2026-08-05T09:15:00",
+    "plannedEnd": "2026-08-05T11:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1698,8 +1663,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-07T09:00:00",
-    "plannedEnd": "2026-08-07T11:00:00",
+    "plannedStart": "2026-08-07T12:45:00",
+    "plannedEnd": "2026-08-07T14:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1776,8 +1741,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-05T13:15:00",
-    "plannedEnd": "2026-08-05T15:15:00",
+    "plannedStart": "2026-08-05T11:15:00",
+    "plannedEnd": "2026-08-05T13:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1811,8 +1776,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-08-05T15:30:00",
-    "plannedEnd": "2026-08-05T17:30:00",
+    "plannedStart": "2026-08-05T14:15:00",
+    "plannedEnd": "2026-08-05T16:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1846,8 +1811,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Start met het automatiseren van foto's voor bestemmingen.",
-    "plannedStart": "2026-08-06T09:45:00",
-    "plannedEnd": "2026-08-06T11:45:00",
+    "plannedStart": "2026-08-06T10:15:00",
+    "plannedEnd": "2026-08-06T12:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1881,8 +1846,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 60,
     "nextAction": "Taak uitvoeren en afronden.",
-    "plannedStart": "2026-08-05T15:15:00",
-    "plannedEnd": "2026-08-05T16:15:00",
+    "plannedStart": "2026-08-05T13:15:00",
+    "plannedEnd": "2026-08-05T14:15:00",
     "plannedMinutes": 60,
     "source": "manual_input",
     "sources": [
@@ -1916,8 +1881,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-06T11:45:00",
-    "plannedEnd": "2026-08-06T13:45:00",
+    "plannedStart": "2026-08-06T09:45:00",
+    "plannedEnd": "2026-08-06T11:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1951,8 +1916,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het verbeteren van de skill.",
-    "plannedStart": "2026-08-03T15:30:00",
-    "plannedEnd": "2026-08-03T17:30:00",
+    "plannedStart": "2026-08-04T09:00:00",
+    "plannedEnd": "2026-08-04T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1975,15 +1940,15 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-03"
+    "plannedDate": "2026-08-04"
   },
   {
     "id": "task_1784467472589_pxhh",
     "title": "Belasting fixen",
     "description": "Zorg ervoor dat de belasting voor donderdag 23 juli is gefixt.",
-    "status": "open",
-    "priority": "P0",
-    "coveyQuadrant": "Q1",
+    "status": "done",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
     "deadline": null,
     "hardDeadline": "2026-07-23",
     "softDeadline": null,
@@ -2007,9 +1972,9 @@
       "source": "stated"
     },
     "createdAt": "2026-07-19",
-    "updatedAt": "2026-07-24T21:55:00.833Z",
+    "updatedAt": "2026-08-03",
     "tags": [],
-    "urgencyScore": 100,
+    "urgencyScore": 10,
     "importanceScore": 90,
     "deadlinePressure": "overdue",
     "scheduleColorState": "orange",
@@ -2027,7 +1992,8 @@
       "syncStatus": "synced",
       "syncError": null,
       "googleUpdatedAt": "2026-07-23T19:35:00.789Z"
-    }
+    },
+    "completedAt": "2026-08-03T15:29:37.179Z"
   },
   {
     "id": "task_1784584800799_1p67",
@@ -2076,7 +2042,7 @@
     "id": "task_1784835277516_ma16",
     "title": "Rieltje edit",
     "description": "Tijd inplannen voor het editen van een rieltje.",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -2086,8 +2052,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het editen van het rieltje.",
-    "plannedStart": "2026-08-04T10:30:00",
-    "plannedEnd": "2026-08-04T12:30:00",
+    "plannedStart": "2026-08-04T11:00:00",
+    "plannedEnd": "2026-08-04T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2102,7 +2068,7 @@
       "source": "stated"
     },
     "createdAt": "2026-07-23",
-    "updatedAt": "2026-07-23",
+    "updatedAt": "2026-08-03",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 90,
@@ -2110,7 +2076,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-04"
+    "plannedDate": "2026-08-04",
+    "completedAt": "2026-08-03T15:29:47.660Z"
   },
   {
     "id": "task_1785189600842_s977",
@@ -2173,9 +2140,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-06",
-    "plannedStart": "2026-08-06T17:15:00",
-    "plannedEnd": "2026-08-06T17:30:00",
+    "plannedDate": "2026-08-07",
+    "plannedStart": "2026-08-07T14:45:00",
+    "plannedEnd": "2026-08-07T15:00:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2264,8 +2231,8 @@
       "opvolging"
     ],
     "plannedDate": "2026-08-04",
-    "plannedStart": "2026-08-04T12:30:00",
-    "plannedEnd": "2026-08-04T12:45:00",
+    "plannedStart": "2026-08-04T11:00:00",
+    "plannedEnd": "2026-08-04T11:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2307,8 +2274,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-07",
-    "plannedStart": "2026-08-07T11:00:00",
-    "plannedEnd": "2026-08-07T11:15:00",
+    "plannedStart": "2026-08-07T15:00:00",
+    "plannedEnd": "2026-08-07T15:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2368,7 +2335,7 @@
   {
     "id": "task_1785482406216_m6hf",
     "title": "Reageren op Jill (Hot Pink Media) — VPN-campagne",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -2379,13 +2346,13 @@
     "source": "mail",
     "reason": "Jill wacht sinds 27 en 30 jul op antwoord: ze wil de leeftijdsverdeling van de doelgroep én bevestiging of er nog interesse is, zodat ze Jorn kan meenemen in het voorstel naar de VPN-klant. Jorn heeft na 17 jul niet meer gereageerd.",
     "createdAt": "2026-07-31",
-    "updatedAt": "2026-07-31",
+    "updatedAt": "2026-08-03",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-08-04",
-    "plannedStart": "2026-08-04T13:15:00",
-    "plannedEnd": "2026-08-04T13:30:00",
+    "plannedStart": "2026-08-04T11:45:00",
+    "plannedEnd": "2026-08-04T12:00:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2406,12 +2373,13 @@
     },
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-08-03T15:29:54.392Z"
   },
   {
     "id": "task_1785568203643_ll25",
     "title": "Reageren op Jill (Hot Pink Media) — interesse VPN-campagne bevestigen + leeftijdsverdeling doelgroep sturen",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "deadline": null,
     "hardDeadline": null,
@@ -2422,13 +2390,13 @@
     "source": "mail",
     "reason": "Jill vroeg 27 jul om de leeftijdsverdeling van de doelgroep en nudge'de 30 jul (cc Janine): 'Hoor graag of er nog interesse is!'. Jorns laatste reply was 17 jul; op deze concrete vraag heeft hij nog niet gereageerd en de klant wacht op het voorstel.",
     "createdAt": "2026-08-01",
-    "updatedAt": "2026-08-01",
+    "updatedAt": "2026-08-03",
     "tags": [
       "mail"
     ],
     "plannedDate": "2026-08-04",
-    "plannedStart": "2026-08-04T13:30:00",
-    "plannedEnd": "2026-08-04T13:45:00",
+    "plannedStart": "2026-08-04T11:45:00",
+    "plannedEnd": "2026-08-04T12:00:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -2449,6 +2417,112 @@
     },
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "unscheduledReason": null,
+    "completedAt": "2026-08-03T15:29:55.685Z"
+  },
+  {
+    "id": "task_1785770965990_v3d0",
+    "title": "Vacatures op Ledgnd website plaatsen",
+    "description": "Plaats de vacatures op de Ledgnd-website.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-08-07",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Begin met het plaatsen van vacatures op de website.",
+    "plannedStart": "2026-08-06T11:45:00",
+    "plannedEnd": "2026-08-06T15:45:00",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-03"
+      }
+    ],
+    "createdAt": "2026-08-03",
+    "updatedAt": "2026-08-03",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-08-06"
+  },
+  {
+    "id": "task_1785770965990_kmo6",
+    "title": "Spaanse vertaling teeltrapport",
+    "description": "Vertaal het teeltrapport naar het Spaans.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-08-07",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Begin met de vertaling van het teeltrapport.",
+    "plannedStart": "2026-08-07T09:45:00",
+    "plannedEnd": "2026-08-07T11:45:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-03"
+      }
+    ],
+    "createdAt": "2026-08-03",
+    "updatedAt": "2026-08-03",
+    "tags": [],
+    "urgencyScore": 60,
+    "importanceScore": 20,
+    "deadlinePressure": "this_week",
+    "scheduleColorState": "orange",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-08-07"
+  },
+  {
+    "id": "task_1783088483578_97nx",
+    "title": "Boardroom app afcoderen en koppelen aan server",
+    "description": "Afcoderen van de boardroom app en koppelen aan de server.",
+    "status": "open",
+    "priority": "P2",
+    "coveyQuadrant": "Q3",
+    "deadline": null,
+    "hardDeadline": "2026-07-08",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Plan de afcodering van de boardroom app.",
+    "plannedStart": "2026-08-05T09:15:00",
+    "plannedEnd": "2026-08-05T11:15:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-07-03"
+      }
+    ],
+    "createdAt": "2026-07-03",
+    "updatedAt": "2026-07-03",
+    "tags": [],
+    "urgencyScore": 100,
+    "importanceScore": 20,
+    "deadlinePressure": "overdue",
+    "scheduleColorState": "red",
+    "scheduleStatus": "missed",
+    "unscheduledReason": null,
+    "plannedDate": "2026-08-05"
   }
 ]
