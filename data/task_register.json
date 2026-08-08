@@ -207,9 +207,9 @@
     "createdAt": "2026-07-13",
     "updatedAt": "2026-07-13",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week",
+    "deadlinePressure": "tomorrow",
     "scheduleColorState": "gray",
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar"
@@ -736,9 +736,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1782288396069_ffj7",
@@ -1111,9 +1111,9 @@
     "scheduleStatus": "unscheduled",
     "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
-    "urgencyScore": 60,
+    "urgencyScore": 80,
     "importanceScore": 20,
-    "deadlinePressure": "this_week"
+    "deadlinePressure": "tomorrow"
   },
   {
     "id": "task_1781267325101_9tm5",
