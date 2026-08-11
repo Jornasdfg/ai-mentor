@@ -1099,8 +1099,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-11T15:25:00",
-    "plannedEnd": "2026-08-11T17:25:00",
+    "plannedStart": "2026-08-12T09:10:00",
+    "plannedEnd": "2026-08-12T11:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1115,7 +1115,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-11",
+    "plannedDate": "2026-08-12",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -1297,8 +1297,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-13T13:40:00",
-    "plannedEnd": "2026-08-13T16:40:00",
+    "plannedStart": "2026-08-13T14:30:00",
+    "plannedEnd": "2026-08-13T17:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1482,8 +1482,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-12T10:10:00",
-    "plannedEnd": "2026-08-12T12:10:00",
+    "plannedStart": "2026-08-12T11:10:00",
+    "plannedEnd": "2026-08-12T13:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1517,8 +1517,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-11T16:00:00",
-    "plannedEnd": "2026-08-11T16:30:00",
+    "plannedStart": "2026-08-11T17:00:00",
+    "plannedEnd": "2026-08-11T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1557,8 +1557,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-12T14:10:00",
-    "plannedEnd": "2026-08-12T16:10:00",
+    "plannedStart": "2026-08-12T15:10:00",
+    "plannedEnd": "2026-08-12T17:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1635,8 +1635,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-13T15:30:00",
-    "plannedEnd": "2026-08-13T17:30:00",
+    "plannedStart": "2026-08-14T09:30:00",
+    "plannedEnd": "2026-08-14T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1654,7 +1654,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-13"
+    "plannedDate": "2026-08-14"
   },
   {
     "id": "task_1783980001010_uaob",
@@ -1713,8 +1713,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-12T15:25:00",
-    "plannedEnd": "2026-08-12T17:25:00",
+    "plannedStart": "2026-08-13T09:00:00",
+    "plannedEnd": "2026-08-13T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1732,7 +1732,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-12"
+    "plannedDate": "2026-08-13"
   },
   {
     "id": "task_1784355434965_d1ur",
@@ -1748,8 +1748,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het implementeren van de nieuwe stijl voor pakketreizen en vliegtickets.",
-    "plannedStart": "2026-08-13T09:40:00",
-    "plannedEnd": "2026-08-13T11:40:00",
+    "plannedStart": "2026-08-13T11:00:00",
+    "plannedEnd": "2026-08-13T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1855,8 +1855,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-13T11:40:00",
-    "plannedEnd": "2026-08-13T13:40:00",
+    "plannedStart": "2026-08-13T13:00:00",
+    "plannedEnd": "2026-08-13T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2111,8 +2111,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-12T12:10:00",
-    "plannedEnd": "2026-08-12T14:10:00",
+    "plannedStart": "2026-08-12T13:10:00",
+    "plannedEnd": "2026-08-12T15:10:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2374,9 +2374,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-11",
-    "plannedStart": "2026-08-11T16:30:00",
-    "plannedEnd": "2026-08-11T16:40:00",
+    "plannedDate": "2026-08-12",
+    "plannedStart": "2026-08-12T09:00:00",
+    "plannedEnd": "2026-08-12T09:10:00",
     "plannedMinutes": 10,
     "calendarSyncMode": "auto",
     "taskKind": "task",
