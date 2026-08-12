@@ -1116,8 +1116,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-13T09:15:00",
-    "plannedEnd": "2026-08-13T11:15:00",
+    "plannedStart": "2026-08-13T09:45:00",
+    "plannedEnd": "2026-08-13T11:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1314,8 +1314,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-14T13:45:00",
-    "plannedEnd": "2026-08-14T16:45:00",
+    "plannedStart": "2026-08-14T14:15:00",
+    "plannedEnd": "2026-08-14T17:15:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -1536,8 +1536,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-12T17:00:00",
-    "plannedEnd": "2026-08-12T17:30:00",
+    "plannedStart": "2026-08-13T09:00:00",
+    "plannedEnd": "2026-08-13T09:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -1555,7 +1555,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-12",
+    "plannedDate": "2026-08-13",
     "necessity": {
       "level": "should",
       "why": "Dit gaat naar buiten — mis je de dag, dan is dat moment weg",
@@ -1654,8 +1654,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-14T15:30:00",
-    "plannedEnd": "2026-08-14T17:30:00",
+    "plannedStart": "2026-08-15T09:00:00",
+    "plannedEnd": "2026-08-15T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1673,7 +1673,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-14"
+    "plannedDate": "2026-08-15"
   },
   {
     "id": "task_1783980001010_uaob",
@@ -1732,8 +1732,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-14T09:45:00",
-    "plannedEnd": "2026-08-14T11:45:00",
+    "plannedStart": "2026-08-14T10:15:00",
+    "plannedEnd": "2026-08-14T12:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1875,8 +1875,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-14T11:45:00",
-    "plannedEnd": "2026-08-14T13:45:00",
+    "plannedStart": "2026-08-14T12:15:00",
+    "plannedEnd": "2026-08-14T14:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2131,8 +2131,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-13T14:15:00",
-    "plannedEnd": "2026-08-13T16:15:00",
+    "plannedStart": "2026-08-13T14:45:00",
+    "plannedEnd": "2026-08-13T16:45:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -2439,8 +2439,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-13",
-    "plannedStart": "2026-08-13T09:00:00",
-    "plannedEnd": "2026-08-13T09:15:00",
+    "plannedStart": "2026-08-13T09:30:00",
+    "plannedEnd": "2026-08-13T09:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
