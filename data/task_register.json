@@ -24,8 +24,8 @@
     "recurrenceDate": "2026-08-17",
     "recurrenceKey": "recurring_weekreview:2026-08-17",
     "plannedDate": "2026-08-17",
-    "plannedStart": "2026-08-17T12:25:00",
-    "plannedEnd": "2026-08-17T12:45:00",
+    "plannedStart": "2026-08-17T13:10:00",
+    "plannedEnd": "2026-08-17T13:30:00",
     "plannedMinutes": 20,
     "taskKind": "routine",
     "autoSchedule": "auto",
@@ -38,9 +38,9 @@
     "urgencyScore": 60,
     "importanceScore": 20,
     "deadlinePressure": "this_week",
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null
+    "scheduleColorState": "gray",
+    "scheduleStatus": "unscheduled",
+    "unscheduledReason": "Geen vrije slots beschikbaar"
   },
   {
     "id": "task_1783953131216_p89g",
@@ -285,8 +285,8 @@
     "recurrenceDate": "2026-08-17",
     "recurrenceKey": "recurring_weekreview:2026-08-17",
     "plannedDate": "2026-08-17",
-    "plannedStart": "2026-08-17T12:05:00",
-    "plannedEnd": "2026-08-17T12:25:00",
+    "plannedStart": "2026-08-17T12:50:00",
+    "plannedEnd": "2026-08-17T13:10:00",
     "plannedMinutes": 20,
     "taskKind": "routine",
     "autoSchedule": "auto",
@@ -294,9 +294,9 @@
     "calendarSyncMode": "none",
     "createdAt": "2026-06-24",
     "updatedAt": "2026-06-24",
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
+    "scheduleColorState": "gray",
+    "scheduleStatus": "unscheduled",
+    "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
     "urgencyScore": 60,
     "importanceScore": 20,
@@ -377,8 +377,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-14T15:30:00",
-    "plannedEnd": "2026-08-14T17:30:00",
+    "plannedStart": "2026-08-17T09:00:00",
+    "plannedEnd": "2026-08-17T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -393,7 +393,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-14",
+    "plannedDate": "2026-08-17",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -423,8 +423,8 @@
     "recurrenceDate": "2026-08-17",
     "recurrenceKey": "recurring_weekreview:2026-08-17",
     "plannedDate": "2026-08-17",
-    "plannedStart": "2026-08-17T11:45:00",
-    "plannedEnd": "2026-08-17T12:05:00",
+    "plannedStart": "2026-08-17T12:30:00",
+    "plannedEnd": "2026-08-17T12:50:00",
     "plannedMinutes": 20,
     "taskKind": "routine",
     "autoSchedule": "auto",
@@ -432,9 +432,9 @@
     "calendarSyncMode": "none",
     "createdAt": "2026-06-16",
     "updatedAt": "2026-06-16",
-    "scheduleColorState": "orange",
-    "scheduleStatus": "planned",
-    "unscheduledReason": null,
+    "scheduleColorState": "gray",
+    "scheduleStatus": "unscheduled",
+    "unscheduledReason": "Geen vrije slots beschikbaar",
     "coveyQuadrant": "Q3",
     "urgencyScore": 60,
     "importanceScore": 20,
@@ -575,8 +575,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-17T12:45:00",
-    "plannedEnd": "2026-08-17T15:45:00",
+    "plannedStart": "2026-08-18T14:00:00",
+    "plannedEnd": "2026-08-18T17:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -594,7 +594,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-08-17"
+    "plannedDate": "2026-08-18"
   },
   {
     "id": "task_1782934713589_i5zu",
@@ -660,8 +660,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-15T10:15:00",
-    "plannedEnd": "2026-08-15T12:15:00",
+    "plannedStart": "2026-08-17T11:00:00",
+    "plannedEnd": "2026-08-17T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -679,7 +679,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-15"
+    "plannedDate": "2026-08-17"
   },
   {
     "id": "task_1783330653866_6gpg",
@@ -695,8 +695,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-14T16:00:00",
-    "plannedEnd": "2026-08-14T16:30:00",
+    "plannedStart": "2026-08-15T16:45:00",
+    "plannedEnd": "2026-08-15T17:15:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -714,7 +714,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-14",
+    "plannedDate": "2026-08-15",
     "necessity": {
       "level": "should",
       "why": "Dit gaat naar buiten — mis je de dag, dan is dat moment weg",
@@ -735,8 +735,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-15T14:15:00",
-    "plannedEnd": "2026-08-15T16:15:00",
+    "plannedStart": "2026-08-17T15:00:00",
+    "plannedEnd": "2026-08-17T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -754,7 +754,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-15"
+    "plannedDate": "2026-08-17"
   },
   {
     "id": "task_1783375200139_23lh",
@@ -813,8 +813,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-17T15:30:00",
-    "plannedEnd": "2026-08-17T17:30:00",
+    "plannedStart": "2026-08-19T11:00:00",
+    "plannedEnd": "2026-08-19T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -832,7 +832,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-17"
+    "plannedDate": "2026-08-19"
   },
   {
     "id": "task_1783980001010_uaob",
@@ -891,8 +891,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-15T15:30:00",
-    "plannedEnd": "2026-08-15T17:30:00",
+    "plannedStart": "2026-08-17T14:30:00",
+    "plannedEnd": "2026-08-17T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -910,7 +910,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-15"
+    "plannedDate": "2026-08-17"
   },
   {
     "id": "task_1784369153424_s0fa",
@@ -926,8 +926,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-17T09:45:00",
-    "plannedEnd": "2026-08-17T11:45:00",
+    "plannedStart": "2026-08-18T10:30:00",
+    "plannedEnd": "2026-08-18T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -945,7 +945,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-17"
+    "plannedDate": "2026-08-18"
   },
   {
     "id": "task_1784584800799_1p67",
@@ -1136,8 +1136,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-15T12:15:00",
-    "plannedEnd": "2026-08-15T14:15:00",
+    "plannedStart": "2026-08-17T13:00:00",
+    "plannedEnd": "2026-08-17T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1155,7 +1155,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-15"
+    "plannedDate": "2026-08-17"
   },
   {
     "id": "task_1785794400465_9rzq",
@@ -1261,9 +1261,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-14",
-    "plannedStart": "2026-08-14T16:30:00",
-    "plannedEnd": "2026-08-14T16:45:00",
+    "plannedDate": "2026-08-15",
+    "plannedStart": "2026-08-15T17:15:00",
+    "plannedEnd": "2026-08-15T17:30:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1304,9 +1304,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-18",
-    "plannedStart": "2026-08-18T09:15:00",
-    "plannedEnd": "2026-08-18T09:30:00",
+    "plannedDate": "2026-08-19",
+    "plannedStart": "2026-08-19T13:00:00",
+    "plannedEnd": "2026-08-19T13:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1342,9 +1342,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-18",
-    "plannedStart": "2026-08-18T09:30:00",
-    "plannedEnd": "2026-08-18T09:45:00",
+    "plannedDate": "2026-08-19",
+    "plannedStart": "2026-08-19T13:15:00",
+    "plannedEnd": "2026-08-19T13:30:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1380,9 +1380,9 @@
     "tags": [
       "mail"
     ],
-    "plannedDate": "2026-08-18",
-    "plannedStart": "2026-08-18T09:45:00",
-    "plannedEnd": "2026-08-18T10:00:00",
+    "plannedDate": "2026-08-19",
+    "plannedStart": "2026-08-19T13:30:00",
+    "plannedEnd": "2026-08-19T13:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1399,6 +1399,194 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null
+  },
+  {
+    "id": "task_1786718186872_rqt8",
+    "title": "Keyword-strategie en AI-model onderzoek",
+    "description": "1. Bekijk de video over automatisering en keyword-strategie.  \n2. Ontwikkel een strategie voor informele en transactionele keywords.  \n3. Onderzoek de redenen voor model hallucinatiediagnose en zoek naar oplossingen binnen AI-modellen.  \n4. Denk na over manieren om meer omzet te genereren door te verwijzen naar tools.",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": "2026-08-31",
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 120,
+    "nextAction": "Bepaal een deadline voor deze taak.",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-14"
+      }
+    ],
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 90,
+    "deadlinePressure": "none",
+    "necessity": {
+      "level": "must",
+      "why": "Je hebt dit zelf als moetje opgeschreven",
+      "source": "inferred"
+    },
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedStart": "2026-08-15T14:45:00",
+    "plannedEnd": "2026-08-15T16:45:00",
+    "plannedDate": "2026-08-15"
+  },
+  {
+    "id": "task_1786718279549_jfg0",
+    "title": "Vier video's maken over reizen",
+    "description": "1. Samenwerkingsvideo over de sleeping pads op Schiphol.\n2. Italië-video voor Schiphol.\n3. Video over de 35 euro trein in Italië, waarmee je onbeperkt kunt reizen.\n4. Video over korting met de trein door gratis gebruik te maken van de Eurostar via KLM.",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": "2026-09-01",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Begin met het maken van de video's.",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-14"
+      }
+    ],
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14",
+    "tags": [],
+    "urgencyScore": 20,
+    "importanceScore": 90,
+    "deadlinePressure": "future",
+    "necessity": {
+      "level": "must",
+      "why": "Vast moment — dit kun je niet later inhalen",
+      "source": "inferred"
+    },
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
+  },
+  {
+    "id": "task_1786718317029_p3mn",
+    "title": "Werken aan cursus",
+    "description": "- Stappen maken met de cursus.\n- Doel: cursus eind deze maand afmaken.",
+    "status": "open",
+    "priority": "P3",
+    "coveyQuadrant": "Q4",
+    "deadline": null,
+    "hardDeadline": "2026-08-31",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 240,
+    "nextAction": "Plan tijd in voor volgende week om aan de cursus te werken.",
+    "plannedMinutes": 240,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-14"
+      }
+    ],
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14",
+    "tags": [],
+    "urgencyScore": 20,
+    "importanceScore": 20,
+    "deadlinePressure": "future",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedStart": "2026-08-18T12:30:00",
+    "plannedEnd": "2026-08-18T16:30:00",
+    "plannedDate": "2026-08-18"
+  },
+  {
+    "id": "task_1786718474071_6r4q",
+    "title": "Persoonlijke ontwikkeling en doelen",
+    "description": "1. Verdienmodel van Reishacker aanpassen: Zorg ervoor dat affiliate inkomsten meer geautomatiseerd worden en dat video's leuker zijn om te maken, zodat ze beter bij je passen. Focus ook op het verhogen van de inkomsten uit de cursussen die je gaat maken.\n2. Relatie: Werk aan je persoonlijke ontwikkeling en openstellen voor een relatie, ondanks de ongemakkelijkheid die je voelt. Dit vereist ook dat je fitter wordt in je hoofd en meer structuur in je leven aanbrengt.\n3. Gezonder leven: Verminder alcohol, leef gezonder, val af en zorg voor een actieve levensstijl door 's ochtends te hardlopen en misschien in de Oosterschelde te zwemmen.\n4. AI-onderneming: Meer betrokken raken bij je AI-onderneming voor financiële stabiliteit, vooral omdat je verwacht dat je huidige werk bij Legend niet onbeperkt is.\n5. Efficiëntie van Reishacker: Maak video's meer vanuit huis en in serievorm, zodat je meer content in minder tijd kunt produceren.",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": "2026-08-31",
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "hard",
+    "estimatedMinutes": 120,
+    "nextAction": "Plan tijd in voor deze doelen volgende week.",
+    "plannedStart": "2026-08-15T12:45:00",
+    "plannedEnd": "2026-08-15T14:45:00",
+    "plannedMinutes": 120,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-14"
+      }
+    ],
+    "necessity": {
+      "level": "should",
+      "why": "Ik wil mijn persoonlijke ontwikkeling en doelen weer op orde krijgen.",
+      "source": "stated"
+    },
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14",
+    "tags": [],
+    "urgencyScore": 20,
+    "importanceScore": 55,
+    "deadlinePressure": "future",
+    "scheduleColorState": "green",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null,
+    "plannedDate": "2026-08-15"
+  },
+  {
+    "id": "task_1786719198971_im1x",
+    "title": "Reageren op EasyJet Holidays",
+    "description": "Vraag of ze een affiliate-optie hebben in Nederland.",
+    "status": "open",
+    "priority": "P1",
+    "coveyQuadrant": "Q2",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "nextAction": "Stuur een e-mail naar EasyJet Holidays.",
+    "plannedStart": "2026-08-15T09:00:00",
+    "plannedEnd": "2026-08-15T09:15:00",
+    "plannedMinutes": 15,
+    "source": "manual_input",
+    "sources": [
+      {
+        "source": "manual_input",
+        "at": "2026-08-14"
+      }
+    ],
+    "createdAt": "2026-08-14",
+    "updatedAt": "2026-08-14",
+    "tags": [],
+    "urgencyScore": 0,
+    "importanceScore": 55,
+    "deadlinePressure": "none",
+    "necessity": {
+      "level": "should",
+      "why": "Iemand anders wacht hierop",
+      "source": "inferred"
+    }
   },
   {
     "id": "task_1783953131215_xma5",
