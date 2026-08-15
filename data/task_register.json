@@ -377,8 +377,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-17T09:30:00",
-    "plannedEnd": "2026-08-17T11:30:00",
+    "plannedStart": "2026-08-17T10:30:00",
+    "plannedEnd": "2026-08-17T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -575,8 +575,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-18T14:00:00",
-    "plannedEnd": "2026-08-18T17:00:00",
+    "plannedStart": "2026-08-19T09:30:00",
+    "plannedEnd": "2026-08-19T12:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -594,7 +594,7 @@
     "urgencyScore": 0,
     "importanceScore": 20,
     "deadlinePressure": "none",
-    "plannedDate": "2026-08-18"
+    "plannedDate": "2026-08-19"
   },
   {
     "id": "task_1782934713589_i5zu",
@@ -660,8 +660,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-17T11:30:00",
-    "plannedEnd": "2026-08-17T13:30:00",
+    "plannedStart": "2026-08-17T12:30:00",
+    "plannedEnd": "2026-08-17T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -695,8 +695,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-15T16:45:00",
-    "plannedEnd": "2026-08-15T17:15:00",
+    "plannedStart": "2026-08-17T09:30:00",
+    "plannedEnd": "2026-08-17T10:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -714,7 +714,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-15",
+    "plannedDate": "2026-08-17",
     "necessity": {
       "level": "should",
       "why": "Dit gaat naar buiten — mis je de dag, dan is dat moment weg",
@@ -813,8 +813,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-19T11:30:00",
-    "plannedEnd": "2026-08-19T13:30:00",
+    "plannedStart": "2026-08-19T12:30:00",
+    "plannedEnd": "2026-08-19T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -891,8 +891,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-18T09:00:00",
-    "plannedEnd": "2026-08-18T11:00:00",
+    "plannedStart": "2026-08-18T10:00:00",
+    "plannedEnd": "2026-08-18T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -926,8 +926,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-18T11:00:00",
-    "plannedEnd": "2026-08-18T13:00:00",
+    "plannedStart": "2026-08-18T12:00:00",
+    "plannedEnd": "2026-08-18T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1136,8 +1136,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-17T13:30:00",
-    "plannedEnd": "2026-08-17T15:30:00",
+    "plannedStart": "2026-08-17T14:30:00",
+    "plannedEnd": "2026-08-17T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1262,8 +1262,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-17",
-    "plannedStart": "2026-08-17T09:15:00",
-    "plannedEnd": "2026-08-17T09:30:00",
+    "plannedStart": "2026-08-17T10:00:00",
+    "plannedEnd": "2026-08-17T10:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1305,8 +1305,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-19",
-    "plannedStart": "2026-08-19T13:30:00",
-    "plannedEnd": "2026-08-19T13:45:00",
+    "plannedStart": "2026-08-19T14:30:00",
+    "plannedEnd": "2026-08-19T14:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1343,8 +1343,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-19",
-    "plannedStart": "2026-08-19T13:45:00",
-    "plannedEnd": "2026-08-19T14:00:00",
+    "plannedStart": "2026-08-19T14:45:00",
+    "plannedEnd": "2026-08-19T15:00:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1381,8 +1381,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-19",
-    "plannedStart": "2026-08-19T14:00:00",
-    "plannedEnd": "2026-08-19T14:15:00",
+    "plannedStart": "2026-08-19T15:00:00",
+    "plannedEnd": "2026-08-19T15:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1436,8 +1436,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-15T15:15:00",
-    "plannedEnd": "2026-08-15T17:15:00",
+    "plannedStart": "2026-08-15T15:30:00",
+    "plannedEnd": "2026-08-15T17:30:00",
     "plannedDate": "2026-08-15"
   },
   {
@@ -1476,8 +1476,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-15T09:15:00",
-    "plannedEnd": "2026-08-15T13:15:00",
+    "plannedStart": "2026-08-15T10:00:00",
+    "plannedEnd": "2026-08-15T14:00:00",
     "plannedDate": "2026-08-15"
   },
   {
@@ -1511,8 +1511,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-18T13:00:00",
-    "plannedEnd": "2026-08-18T17:00:00",
+    "plannedStart": "2026-08-18T13:30:00",
+    "plannedEnd": "2026-08-18T17:30:00",
     "plannedDate": "2026-08-18"
   },
   {
@@ -1529,8 +1529,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-15T13:15:00",
-    "plannedEnd": "2026-08-15T15:15:00",
+    "plannedStart": "2026-08-15T14:00:00",
+    "plannedEnd": "2026-08-15T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1590,6 +1590,49 @@
       "why": "Iemand anders wacht hierop",
       "source": "inferred"
     }
+  },
+  {
+    "id": "task_1786778404521_ey6u",
+    "title": "Reageren op easyJet Holidays linkverzoek — Jess Greaves",
+    "status": "open",
+    "priority": "P1",
+    "deadline": null,
+    "hardDeadline": null,
+    "softDeadline": null,
+    "startBy": null,
+    "deadlineType": "none",
+    "estimatedMinutes": 15,
+    "source": "mail",
+    "reason": "Persoonlijke outreach van easyJet Holidays (Publisher Partnership Manager) met concreet verzoek: een link naar easyjet.com/holidays plaatsen op de Reishacker top-10 reisorganisaties-pagina. Jorn heeft nog niet gereageerd. Geen aggregator, echt merk-contact — kans om een betaalde/affiliate-plaatsing te bespreken i.p.v. een gratis link.",
+    "createdAt": "2026-08-15",
+    "updatedAt": "2026-08-15",
+    "tags": [
+      "mail"
+    ],
+    "plannedDate": "2026-08-17",
+    "plannedStart": "2026-08-17T10:15:00",
+    "plannedEnd": "2026-08-17T10:30:00",
+    "plannedMinutes": 15,
+    "calendarSyncMode": "auto",
+    "taskKind": "task",
+    "autoSchedule": "auto",
+    "schedulingWindowId": "window_work",
+    "splittable": true,
+    "minBlockMinutes": 30,
+    "autoIgnore": false,
+    "locked": false,
+    "coveyQuadrant": "Q2",
+    "urgencyScore": 0,
+    "importanceScore": 55,
+    "deadlinePressure": "none",
+    "necessity": {
+      "level": "should",
+      "why": "Iemand anders wacht hierop",
+      "source": "inferred"
+    },
+    "scheduleColorState": "gray",
+    "scheduleStatus": "planned",
+    "unscheduledReason": null
   },
   {
     "id": "task_1783953131215_xma5",
