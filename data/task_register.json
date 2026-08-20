@@ -121,8 +121,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-21T13:00:00",
-    "plannedEnd": "2026-08-21T15:00:00",
+    "plannedStart": "2026-08-21T14:00:00",
+    "plannedEnd": "2026-08-21T16:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-24T12:30:00",
-    "plannedEnd": "2026-08-24T15:30:00",
+    "plannedStart": "2026-08-24T13:30:00",
+    "plannedEnd": "2026-08-24T16:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -278,8 +278,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-21T15:00:00",
-    "plannedEnd": "2026-08-21T17:00:00",
+    "plannedStart": "2026-08-21T15:30:00",
+    "plannedEnd": "2026-08-21T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-21T11:45:00",
-    "plannedEnd": "2026-08-21T12:15:00",
+    "plannedStart": "2026-08-21T12:45:00",
+    "plannedEnd": "2026-08-21T13:15:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -353,8 +353,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-22T10:30:00",
-    "plannedEnd": "2026-08-22T12:30:00",
+    "plannedStart": "2026-08-22T11:30:00",
+    "plannedEnd": "2026-08-22T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-22T12:30:00",
-    "plannedEnd": "2026-08-22T14:30:00",
+    "plannedStart": "2026-08-22T13:30:00",
+    "plannedEnd": "2026-08-22T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -458,8 +458,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitbouwen van de SEO-strategie en het integreren van data in je routine.",
-    "plannedStart": "2026-08-22T14:30:00",
-    "plannedEnd": "2026-08-22T16:30:00",
+    "plannedStart": "2026-08-22T15:00:00",
+    "plannedEnd": "2026-08-22T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -582,8 +582,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-21T15:30:00",
-    "plannedEnd": "2026-08-21T17:30:00",
+    "plannedStart": "2026-08-22T09:30:00",
+    "plannedEnd": "2026-08-22T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -601,7 +601,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-21"
+    "plannedDate": "2026-08-22"
   },
   {
     "id": "task_1786519804663_vc6f",
@@ -622,8 +622,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-21",
-    "plannedStart": "2026-08-21T12:15:00",
-    "plannedEnd": "2026-08-21T12:30:00",
+    "plannedStart": "2026-08-21T13:15:00",
+    "plannedEnd": "2026-08-21T13:30:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -665,8 +665,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-25",
-    "plannedStart": "2026-08-25T09:00:00",
-    "plannedEnd": "2026-08-25T09:15:00",
+    "plannedStart": "2026-08-25T10:00:00",
+    "plannedEnd": "2026-08-25T10:15:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -703,8 +703,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-25",
-    "plannedStart": "2026-08-25T09:15:00",
-    "plannedEnd": "2026-08-25T09:30:00",
+    "plannedStart": "2026-08-25T10:15:00",
+    "plannedEnd": "2026-08-25T10:30:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -741,8 +741,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-25",
-    "plannedStart": "2026-08-25T09:30:00",
-    "plannedEnd": "2026-08-25T09:45:00",
+    "plannedStart": "2026-08-25T10:30:00",
+    "plannedEnd": "2026-08-25T10:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -796,8 +796,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-21T09:30:00",
-    "plannedEnd": "2026-08-21T11:30:00",
+    "plannedStart": "2026-08-21T10:30:00",
+    "plannedEnd": "2026-08-21T12:30:00",
     "plannedDate": "2026-08-21"
   },
   {
@@ -836,8 +836,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-20T12:00:00",
-    "plannedEnd": "2026-08-20T16:00:00",
+    "plannedStart": "2026-08-20T13:00:00",
+    "plannedEnd": "2026-08-20T17:00:00",
     "plannedDate": "2026-08-20"
   },
   {
@@ -871,9 +871,9 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-22T13:00:00",
-    "plannedEnd": "2026-08-22T17:00:00",
-    "plannedDate": "2026-08-22"
+    "plannedStart": "2026-08-24T09:30:00",
+    "plannedEnd": "2026-08-24T13:30:00",
+    "plannedDate": "2026-08-24"
   },
   {
     "id": "task_1786718474071_6r4q",
@@ -929,8 +929,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 15,
     "nextAction": "Stuur een e-mail naar EasyJet Holidays.",
-    "plannedStart": "2026-08-21T12:30:00",
-    "plannedEnd": "2026-08-21T12:45:00",
+    "plannedStart": "2026-08-21T13:30:00",
+    "plannedEnd": "2026-08-21T13:45:00",
     "plannedMinutes": 15,
     "source": "manual_input",
     "sources": [
@@ -974,8 +974,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-21",
-    "plannedStart": "2026-08-21T12:45:00",
-    "plannedEnd": "2026-08-21T13:00:00",
+    "plannedStart": "2026-08-21T13:45:00",
+    "plannedEnd": "2026-08-21T14:00:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
@@ -1019,8 +1019,8 @@
       "opvolging"
     ],
     "plannedDate": "2026-08-21",
-    "plannedStart": "2026-08-21T11:30:00",
-    "plannedEnd": "2026-08-21T11:45:00",
+    "plannedStart": "2026-08-21T12:30:00",
+    "plannedEnd": "2026-08-21T12:45:00",
     "plannedMinutes": 15,
     "calendarSyncMode": "auto",
     "taskKind": "task",
