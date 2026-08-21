@@ -121,8 +121,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-22T09:45:00",
-    "plannedEnd": "2026-08-22T11:45:00",
+    "plannedStart": "2026-08-22T13:15:00",
+    "plannedEnd": "2026-08-22T15:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-26T09:15:00",
-    "plannedEnd": "2026-08-26T12:15:00",
+    "plannedStart": "2026-08-26T10:30:00",
+    "plannedEnd": "2026-08-26T13:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -278,8 +278,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-22T14:15:00",
-    "plannedEnd": "2026-08-22T16:15:00",
+    "plannedStart": "2026-08-22T15:00:00",
+    "plannedEnd": "2026-08-22T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-21T16:00:00",
-    "plannedEnd": "2026-08-21T16:30:00",
+    "plannedStart": "2026-08-21T17:00:00",
+    "plannedEnd": "2026-08-21T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -353,8 +353,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-24T10:15:00",
-    "plannedEnd": "2026-08-24T12:15:00",
+    "plannedStart": "2026-08-24T11:15:00",
+    "plannedEnd": "2026-08-24T13:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-26T12:15:00",
-    "plannedEnd": "2026-08-26T14:15:00",
+    "plannedStart": "2026-08-26T13:30:00",
+    "plannedEnd": "2026-08-26T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-24T12:15:00",
-    "plannedEnd": "2026-08-24T14:15:00",
+    "plannedStart": "2026-08-24T13:00:00",
+    "plannedEnd": "2026-08-24T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -583,8 +583,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-22T11:15:00",
-    "plannedEnd": "2026-08-22T13:15:00",
+    "plannedStart": "2026-08-24T09:15:00",
+    "plannedEnd": "2026-08-24T11:15:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -602,7 +602,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-22"
+    "plannedDate": "2026-08-24"
   },
   {
     "id": "task_1786519804663_vc6f",
@@ -842,8 +842,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-21T10:00:00",
-    "plannedEnd": "2026-08-21T14:00:00",
+    "plannedStart": "2026-08-21T11:00:00",
+    "plannedEnd": "2026-08-21T15:00:00",
     "plannedDate": "2026-08-21"
   },
   {
@@ -895,8 +895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-21T14:00:00",
-    "plannedEnd": "2026-08-21T16:00:00",
+    "plannedStart": "2026-08-21T15:00:00",
+    "plannedEnd": "2026-08-21T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -935,8 +935,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 15,
     "nextAction": "Stuur een e-mail naar EasyJet Holidays.",
-    "plannedStart": "2026-08-21T16:30:00",
-    "plannedEnd": "2026-08-21T16:45:00",
+    "plannedStart": "2026-08-22T13:00:00",
+    "plannedEnd": "2026-08-22T13:15:00",
     "plannedMinutes": 15,
     "source": "manual_input",
     "sources": [
@@ -959,7 +959,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-21"
+    "plannedDate": "2026-08-22"
   },
   {
     "id": "task_1786778404521_ey6u",
@@ -1082,8 +1082,8 @@
     "scheduleColorState": "orange",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-24T14:00:00",
-    "plannedEnd": "2026-08-24T15:00:00",
+    "plannedStart": "2026-08-24T16:15:00",
+    "plannedEnd": "2026-08-24T17:15:00",
     "plannedDate": "2026-08-24"
   },
   {
