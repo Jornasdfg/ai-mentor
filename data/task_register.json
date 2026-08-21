@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-26T13:30:00",
-    "plannedEnd": "2026-08-26T16:30:00",
+    "plannedStart": "2026-08-26T14:00:00",
+    "plannedEnd": "2026-08-26T17:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -278,8 +278,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-22T15:00:00",
-    "plannedEnd": "2026-08-22T17:00:00",
+    "plannedStart": "2026-08-24T11:00:00",
+    "plannedEnd": "2026-08-24T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -297,7 +297,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-22"
+    "plannedDate": "2026-08-24"
   },
   {
     "id": "task_1783330653866_6gpg",
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-22T14:30:00",
-    "plannedEnd": "2026-08-22T15:00:00",
+    "plannedStart": "2026-08-22T15:30:00",
+    "plannedEnd": "2026-08-22T16:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -583,8 +583,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-24T12:15:00",
-    "plannedEnd": "2026-08-24T14:15:00",
+    "plannedStart": "2026-08-24T13:00:00",
+    "plannedEnd": "2026-08-24T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -842,8 +842,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-21T13:00:00",
-    "plannedEnd": "2026-08-21T17:00:00",
+    "plannedStart": "2026-08-21T13:30:00",
+    "plannedEnd": "2026-08-21T17:30:00",
     "plannedDate": "2026-08-21"
   },
   {
@@ -877,8 +877,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T09:30:00",
-    "plannedEnd": "2026-08-26T13:30:00",
+    "plannedStart": "2026-08-26T10:00:00",
+    "plannedEnd": "2026-08-26T14:00:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -895,8 +895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-21T15:30:00",
-    "plannedEnd": "2026-08-21T17:30:00",
+    "plannedStart": "2026-08-22T13:30:00",
+    "plannedEnd": "2026-08-22T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -919,13 +919,13 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-21"
+    "plannedDate": "2026-08-22"
   },
   {
     "id": "task_1786719198971_im1x",
     "title": "Reageren op EasyJet Holidays",
     "description": "Vraag of ze een affiliate-optie hebben in Nederland.",
-    "status": "open",
+    "status": "done",
     "priority": "P1",
     "coveyQuadrant": "Q2",
     "deadline": null,
@@ -935,8 +935,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 15,
     "nextAction": "Stuur een e-mail naar EasyJet Holidays.",
-    "plannedStart": "2026-08-22T15:00:00",
-    "plannedEnd": "2026-08-22T15:15:00",
+    "plannedStart": "2026-08-22T15:30:00",
+    "plannedEnd": "2026-08-22T15:45:00",
     "plannedMinutes": 15,
     "source": "manual_input",
     "sources": [
@@ -946,7 +946,7 @@
       }
     ],
     "createdAt": "2026-08-14",
-    "updatedAt": "2026-08-14",
+    "updatedAt": "2026-08-21",
     "tags": [],
     "urgencyScore": 0,
     "importanceScore": 55,
@@ -959,7 +959,8 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-22"
+    "plannedDate": "2026-08-22",
+    "completedAt": "2026-08-21T11:21:19.172Z"
   },
   {
     "id": "task_1786778404521_ey6u",
@@ -1082,9 +1083,9 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-25T10:00:00",
-    "plannedEnd": "2026-08-25T11:00:00",
-    "plannedDate": "2026-08-25"
+    "plannedStart": "2026-08-26T09:00:00",
+    "plannedEnd": "2026-08-26T10:00:00",
+    "plannedDate": "2026-08-26"
   },
   {
     "id": "task_1787246910426_v4xw",
@@ -1102,8 +1103,8 @@
     "updatedAt": "2026-08-20",
     "tags": [],
     "plannedDate": "2026-08-27",
-    "plannedStart": "2026-08-27T10:00:00",
-    "plannedEnd": "2026-08-27T14:00:00",
+    "plannedStart": "2026-08-27T10:30:00",
+    "plannedEnd": "2026-08-27T14:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "none",
     "taskKind": "task",
