@@ -121,8 +121,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-24T11:00:00",
-    "plannedEnd": "2026-08-24T13:00:00",
+    "plannedStart": "2026-08-24T12:00:00",
+    "plannedEnd": "2026-08-24T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-24T09:30:00",
-    "plannedEnd": "2026-08-24T10:00:00",
+    "plannedStart": "2026-08-24T11:30:00",
+    "plannedEnd": "2026-08-24T12:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-27T10:30:00",
-    "plannedEnd": "2026-08-27T12:30:00",
+    "plannedStart": "2026-08-27T11:30:00",
+    "plannedEnd": "2026-08-27T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-26T09:00:00",
-    "plannedEnd": "2026-08-26T11:00:00",
+    "plannedStart": "2026-08-26T10:00:00",
+    "plannedEnd": "2026-08-26T12:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -877,8 +877,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T12:00:00",
-    "plannedEnd": "2026-08-26T16:00:00",
+    "plannedStart": "2026-08-26T13:00:00",
+    "plannedEnd": "2026-08-26T17:00:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1083,8 +1083,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T11:00:00",
-    "plannedEnd": "2026-08-26T12:00:00",
+    "plannedStart": "2026-08-26T12:00:00",
+    "plannedEnd": "2026-08-26T13:00:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1103,8 +1103,8 @@
     "updatedAt": "2026-08-20",
     "tags": [],
     "plannedDate": "2026-08-27",
-    "plannedStart": "2026-08-27T12:30:00",
-    "plannedEnd": "2026-08-27T16:30:00",
+    "plannedStart": "2026-08-27T13:30:00",
+    "plannedEnd": "2026-08-27T17:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "none",
     "taskKind": "task",
