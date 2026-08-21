@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-26T14:00:00",
-    "plannedEnd": "2026-08-26T17:00:00",
+    "plannedStart": "2026-08-26T14:30:00",
+    "plannedEnd": "2026-08-26T17:30:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -278,8 +278,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Zoek naar een oplossing voor TikTok-analyse.",
-    "plannedStart": "2026-08-24T11:00:00",
-    "plannedEnd": "2026-08-24T13:00:00",
+    "plannedStart": "2026-08-24T12:00:00",
+    "plannedEnd": "2026-08-24T14:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-22T15:30:00",
-    "plannedEnd": "2026-08-22T16:00:00",
+    "plannedStart": "2026-08-22T16:30:00",
+    "plannedEnd": "2026-08-22T17:00:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-26T15:30:00",
-    "plannedEnd": "2026-08-26T17:30:00",
+    "plannedStart": "2026-08-27T09:30:00",
+    "plannedEnd": "2026-08-27T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -407,7 +407,7 @@
     "scheduleColorState": "gray",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-26"
+    "plannedDate": "2026-08-27"
   },
   {
     "id": "task_1784030281648_byoe",
@@ -877,8 +877,8 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T10:00:00",
-    "plannedEnd": "2026-08-26T14:00:00",
+    "plannedStart": "2026-08-26T11:00:00",
+    "plannedEnd": "2026-08-26T15:00:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -895,8 +895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-22T13:30:00",
-    "plannedEnd": "2026-08-22T15:30:00",
+    "plannedStart": "2026-08-22T14:30:00",
+    "plannedEnd": "2026-08-22T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1083,8 +1083,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T09:00:00",
-    "plannedEnd": "2026-08-26T10:00:00",
+    "plannedStart": "2026-08-26T10:00:00",
+    "plannedEnd": "2026-08-26T11:00:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1103,8 +1103,8 @@
     "updatedAt": "2026-08-20",
     "tags": [],
     "plannedDate": "2026-08-27",
-    "plannedStart": "2026-08-27T10:30:00",
-    "plannedEnd": "2026-08-27T14:30:00",
+    "plannedStart": "2026-08-27T11:30:00",
+    "plannedEnd": "2026-08-27T15:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "none",
     "taskKind": "task",
