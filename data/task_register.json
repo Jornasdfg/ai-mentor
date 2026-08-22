@@ -121,8 +121,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-24T13:00:00",
-    "plannedEnd": "2026-08-24T15:00:00",
+    "plannedStart": "2026-08-25T09:00:00",
+    "plannedEnd": "2026-08-25T11:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -137,7 +137,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-24",
+    "plannedDate": "2026-08-25",
     "urgencyScore": 100,
     "importanceScore": 20,
     "deadlinePressure": "overdue"
@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-27T12:00:00",
-    "plannedEnd": "2026-08-27T15:00:00",
+    "plannedStart": "2026-08-27T13:00:00",
+    "plannedEnd": "2026-08-27T16:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-24T16:00:00",
-    "plannedEnd": "2026-08-24T16:30:00",
+    "plannedStart": "2026-08-24T17:00:00",
+    "plannedEnd": "2026-08-24T17:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -353,8 +353,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-26T11:30:00",
-    "plannedEnd": "2026-08-26T13:30:00",
+    "plannedStart": "2026-08-26T12:30:00",
+    "plannedEnd": "2026-08-26T14:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-27T15:00:00",
-    "plannedEnd": "2026-08-27T17:00:00",
+    "plannedStart": "2026-08-27T15:30:00",
+    "plannedEnd": "2026-08-27T17:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-26T13:30:00",
-    "plannedEnd": "2026-08-26T15:30:00",
+    "plannedStart": "2026-08-26T14:30:00",
+    "plannedEnd": "2026-08-26T16:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -583,8 +583,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-26T09:30:00",
-    "plannedEnd": "2026-08-26T11:30:00",
+    "plannedStart": "2026-08-26T10:30:00",
+    "plannedEnd": "2026-08-26T12:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -877,9 +877,9 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T13:30:00",
-    "plannedEnd": "2026-08-26T17:30:00",
-    "plannedDate": "2026-08-26"
+    "plannedStart": "2026-08-27T09:00:00",
+    "plannedEnd": "2026-08-27T13:00:00",
+    "plannedDate": "2026-08-27"
   },
   {
     "id": "task_1786718474071_6r4q",
@@ -1083,8 +1083,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T15:30:00",
-    "plannedEnd": "2026-08-26T16:30:00",
+    "plannedStart": "2026-08-26T16:30:00",
+    "plannedEnd": "2026-08-26T17:30:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1102,9 +1102,9 @@
     "createdAt": "2026-08-20",
     "updatedAt": "2026-08-20",
     "tags": [],
-    "plannedDate": "2026-08-27",
-    "plannedStart": "2026-08-27T13:30:00",
-    "plannedEnd": "2026-08-27T17:30:00",
+    "plannedDate": "2026-08-28",
+    "plannedStart": "2026-08-28T09:30:00",
+    "plannedEnd": "2026-08-28T13:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "none",
     "taskKind": "task",
@@ -1141,8 +1141,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-28",
-    "plannedStart": "2026-08-28T12:30:00",
-    "plannedEnd": "2026-08-28T16:30:00",
+    "plannedStart": "2026-08-28T13:30:00",
+    "plannedEnd": "2026-08-28T17:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "auto",
     "taskKind": "task",
