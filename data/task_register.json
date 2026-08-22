@@ -121,8 +121,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Ideeën verzamelen voor een interactieve LinkedIn-strategie met cases en AI-toepassingen.",
-    "plannedStart": "2026-08-24T12:30:00",
-    "plannedEnd": "2026-08-24T14:30:00",
+    "plannedStart": "2026-08-24T13:00:00",
+    "plannedEnd": "2026-08-24T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-27T09:00:00",
-    "plannedEnd": "2026-08-27T12:00:00",
+    "plannedStart": "2026-08-27T10:00:00",
+    "plannedEnd": "2026-08-27T13:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-24T12:00:00",
-    "plannedEnd": "2026-08-24T12:30:00",
+    "plannedStart": "2026-08-24T13:00:00",
+    "plannedEnd": "2026-08-24T13:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -353,8 +353,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-25T09:00:00",
-    "plannedEnd": "2026-08-25T11:00:00",
+    "plannedStart": "2026-08-26T09:30:00",
+    "plannedEnd": "2026-08-26T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -372,7 +372,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-25"
+    "plannedDate": "2026-08-26"
   },
   {
     "id": "task_1783427598631_fp0x",
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-27T12:00:00",
-    "plannedEnd": "2026-08-27T14:00:00",
+    "plannedStart": "2026-08-27T13:00:00",
+    "plannedEnd": "2026-08-27T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-26T10:30:00",
-    "plannedEnd": "2026-08-26T12:30:00",
+    "plannedStart": "2026-08-26T11:30:00",
+    "plannedEnd": "2026-08-26T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -895,8 +895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-22T15:00:00",
-    "plannedEnd": "2026-08-22T17:00:00",
+    "plannedStart": "2026-08-24T11:00:00",
+    "plannedEnd": "2026-08-24T13:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -919,7 +919,7 @@
     "scheduleColorState": "green",
     "scheduleStatus": "planned",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-22"
+    "plannedDate": "2026-08-24"
   },
   {
     "id": "task_1786719198971_im1x",
@@ -1083,8 +1083,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T12:30:00",
-    "plannedEnd": "2026-08-26T13:30:00",
+    "plannedStart": "2026-08-26T13:30:00",
+    "plannedEnd": "2026-08-26T14:30:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1141,8 +1141,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-28",
-    "plannedStart": "2026-08-28T09:30:00",
-    "plannedEnd": "2026-08-28T13:30:00",
+    "plannedStart": "2026-08-28T10:30:00",
+    "plannedEnd": "2026-08-28T14:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "auto",
     "taskKind": "task",
