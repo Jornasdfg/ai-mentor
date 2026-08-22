@@ -193,8 +193,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 180,
     "nextAction": "Kies een tijdslot voor deze taak.",
-    "plannedStart": "2026-08-27T11:00:00",
-    "plannedEnd": "2026-08-27T14:00:00",
+    "plannedStart": "2026-08-27T12:00:00",
+    "plannedEnd": "2026-08-27T15:00:00",
     "plannedMinutes": 180,
     "source": "manual_input",
     "sources": [
@@ -313,8 +313,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 30,
     "nextAction": "Kies een tijd om de post online te zetten.",
-    "plannedStart": "2026-08-24T14:00:00",
-    "plannedEnd": "2026-08-24T14:30:00",
+    "plannedStart": "2026-08-24T16:00:00",
+    "plannedEnd": "2026-08-24T16:30:00",
     "plannedMinutes": 30,
     "source": "manual_input",
     "sources": [
@@ -353,8 +353,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met de beveiliging van Reishacker.",
-    "plannedStart": "2026-08-26T10:30:00",
-    "plannedEnd": "2026-08-26T12:30:00",
+    "plannedStart": "2026-08-26T11:30:00",
+    "plannedEnd": "2026-08-26T13:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -388,8 +388,8 @@
     "deadlineType": "none",
     "estimatedMinutes": 120,
     "nextAction": "Structuur en inhoud van het businessplan bepalen.",
-    "plannedStart": "2026-08-27T14:00:00",
-    "plannedEnd": "2026-08-27T16:00:00",
+    "plannedStart": "2026-08-27T15:00:00",
+    "plannedEnd": "2026-08-27T17:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -423,8 +423,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Begin met het uitwerken van de strategie.",
-    "plannedStart": "2026-08-26T12:30:00",
-    "plannedEnd": "2026-08-26T14:30:00",
+    "plannedStart": "2026-08-26T13:30:00",
+    "plannedEnd": "2026-08-26T15:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -583,8 +583,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan de afcodering van de boardroom app.",
-    "plannedStart": "2026-08-25T09:00:00",
-    "plannedEnd": "2026-08-25T11:00:00",
+    "plannedStart": "2026-08-26T09:30:00",
+    "plannedEnd": "2026-08-26T11:30:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -602,7 +602,7 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedDate": "2026-08-25"
+    "plannedDate": "2026-08-26"
   },
   {
     "id": "task_1786519804663_vc6f",
@@ -895,8 +895,8 @@
     "deadlineType": "hard",
     "estimatedMinutes": 120,
     "nextAction": "Plan tijd in voor deze doelen volgende week.",
-    "plannedStart": "2026-08-24T12:00:00",
-    "plannedEnd": "2026-08-24T14:00:00",
+    "plannedStart": "2026-08-24T13:00:00",
+    "plannedEnd": "2026-08-24T15:00:00",
     "plannedMinutes": 120,
     "source": "manual_input",
     "sources": [
@@ -1083,8 +1083,8 @@
     "scheduleColorState": "red",
     "scheduleStatus": "missed",
     "unscheduledReason": null,
-    "plannedStart": "2026-08-26T14:30:00",
-    "plannedEnd": "2026-08-26T15:30:00",
+    "plannedStart": "2026-08-26T15:30:00",
+    "plannedEnd": "2026-08-26T16:30:00",
     "plannedDate": "2026-08-26"
   },
   {
@@ -1141,8 +1141,8 @@
       "mail"
     ],
     "plannedDate": "2026-08-28",
-    "plannedStart": "2026-08-28T11:30:00",
-    "plannedEnd": "2026-08-28T15:30:00",
+    "plannedStart": "2026-08-28T12:30:00",
+    "plannedEnd": "2026-08-28T16:30:00",
     "plannedMinutes": 240,
     "calendarSyncMode": "auto",
     "taskKind": "task",
